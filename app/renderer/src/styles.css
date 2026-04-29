@@ -934,9 +934,9 @@ p {
 
 .finder-results-panel {
   display: grid;
-  gap: 10px;
+  gap: 6px;
   border-top: 1px solid rgba(79, 200, 156, 0.12);
-  padding-top: 14px;
+  padding-top: 8px;
 }
 
 .finder-results-head strong {
@@ -945,63 +945,58 @@ p {
 }
 
 .finder-results-list {
-  max-height: min(68vh, 780px);
+  max-height: min(28vh, 320px);
   overflow: auto;
-  padding-right: 4px;
+  border: 1px solid rgba(79, 200, 156, 0.16);
+  background: rgba(6, 10, 15, 0.82);
+  padding: 4px 0;
 }
 
 .finder-result-card {
+  width: max-content;
+  min-width: 100%;
   display: grid;
-  gap: 8px;
-  padding: 12px 14px;
-  border: 1px solid rgba(79, 200, 156, 0.14);
-  border-radius: 14px;
-  background: linear-gradient(180deg, rgba(17, 24, 34, 0.96), rgba(12, 18, 27, 0.96));
+  grid-template-columns: 6rem 13rem max-content;
+  gap: 10px;
+  align-items: baseline;
+  padding: 3px 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   color: var(--text);
   text-align: left;
   cursor: pointer;
-  transition: border-color 120ms ease, transform 120ms ease, background-color 120ms ease;
-  min-height: 0;
-  margin-bottom: 10px;
+  min-height: 30px;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.86rem;
 }
 
 .finder-result-card:hover,
 .finder-result-card.selected {
-  border-color: rgba(79, 200, 156, 0.34);
+  background: rgba(79, 200, 156, 0.14);
 }
 
 .finder-result-card:active {
   transform: translateY(1px);
 }
 
-.finder-result-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+.finder-result-line-number,
+.finder-result-source {
   color: var(--muted);
-  font-size: 0.8rem;
-  font-family: Consolas, "Cascadia Mono", monospace;
-  gap: 10px 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.finder-result-head span {
-  min-width: 0;
-}
-
-.finder-result-body {
-  display: grid;
-  gap: 4px;
-  min-width: 0;
+.finder-result-line-number {
+  text-align: right;
 }
 
 .finder-result-primary {
   color: var(--log-text);
   font-family: Consolas, "Cascadia Mono", monospace;
-  line-height: 1.45;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  white-space: pre-wrap;
+  line-height: 1.35;
+  white-space: nowrap;
 }
 
 .finder-result-secondary,
@@ -1012,9 +1007,8 @@ p {
 }
 
 .finder-result-secondary {
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  white-space: pre-wrap;
+  color: var(--muted);
+  white-space: nowrap;
 }
 
 .time-inline-actions {

@@ -545,8 +545,8 @@ const referenceCategoryOrder = ["MESSAGE EXCHANGE", "GENISYS", "TRAIN MESSAGES",
 type LogCategory = (typeof categoryOrder)[number] | "OTHER" | "NETWORK" | "WORKFLOW" | (typeof referenceCategoryOrder)[number];
 const logRowHeight = 28;
 const logRowOverscan = 18;
-const finderResultRowHeight = 160;
-const finderResultOverscan = 8;
+const finderResultRowHeight = 30;
+const finderResultOverscan = 24;
 const pacificTimeZone = "America/Los_Angeles";
 type LogTimeSourceMode = "original" | "utc" | "pacific";
 type LogTimeDisplayMode = "source" | "utc" | "pacific";
@@ -4656,32 +4656,26 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                 >
                   {finderResults.length ? (
                     <>
-                      {finderResults.map((line) => {
-                    const referenceBubble = referenceSession ? getReferenceBubbleParts(line, lineDetails[line.id] ?? null) : null;
-                    return (
-                      <button
-                        key={`finder:${line.id}`}
-                        type="button"
-                        className={selected?.id === line.id ? "finder-result-card selected" : "finder-result-card"}
-                        onClick={() => selectLine(line)}
-                      >
-                        <div className="finder-result-head">
-                          <span>{referenceSession ? `Entry ${line.lineNumber}` : `Line ${line.lineNumber}`}</span>
-                          <span>{getSourceLabel(line.source)}</span>
-                        </div>
-                        <div className="finder-result-body">
-                          {referenceBubble ? (
-                            <>
-                              <div className="finder-result-primary">{renderHighlightedText(referenceBubble.primary, activeSearch)}</div>
-                              {referenceBubble.secondary ? <div className="finder-result-secondary">{renderHighlightedText(referenceBubble.secondary, activeSearch)}</div> : null}
-                            </>
-                          ) : (
-                            <div className="finder-result-primary">{renderHighlightedText(line.raw, activeSearch)}</div>
-                          )}
-                        </div>
-                      </button>
-                    );
+                      {virtualFinderResults.topPadding ? <div style={{ height: `${virtualFinderResults.topPadding}px` }} aria-hidden="true" /> : null}
+                      {virtualFinderResults.lines.map((line) => {
+                        const referenceBubble = referenceSession ? getReferenceBubbleParts(line, lineDetails[line.id] ?? null) : null;
+                        const primaryText = referenceBubble ? referenceBubble.primary : line.raw;
+                        const secondaryText = referenceBubble?.secondary ?? "";
+                        return (
+                          <button
+                            key={`finder:${line.id}`}
+                            type="button"
+                            className={selected?.id === line.id ? "finder-result-card selected" : "finder-result-card"}
+                            onClick={() => selectLine(line)}
+                          >
+                            <span className="finder-result-line-number">{referenceSession ? `Entry ${line.lineNumber}` : `Line ${line.lineNumber}`}</span>
+                            <span className="finder-result-source">{getSourceLabel(line.source)}</span>
+                            <span className="finder-result-primary">{renderHighlightedText(primaryText, activeSearch)}</span>
+                            {secondaryText ? <span className="finder-result-secondary">{renderHighlightedText(secondaryText, activeSearch)}</span> : null}
+                          </button>
+                        );
                       })}
+                      {virtualFinderResults.bottomPadding ? <div style={{ height: `${virtualFinderResults.bottomPadding}px` }} aria-hidden="true" /> : null}
                     </>
                   ) : (
                     <div className="finder-results-empty">No matching {referenceSession ? "entries" : "lines"} in the current view.</div>
