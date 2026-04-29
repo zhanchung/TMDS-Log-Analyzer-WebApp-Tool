@@ -4461,6 +4461,14 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                   >
                     Clear queued
                   </button>
+                  <button
+                    className="ghost"
+                    onClick={resetWorkspaceToEmpty}
+                    disabled={Boolean(workspaceBusy) || (!lines.length && !selected)}
+                    title="Clear the currently loaded parsed log view."
+                  >
+                    Clear logs
+                  </button>
                   <label className="toolbar-check">
                     <input
                       type="checkbox"
@@ -4479,6 +4487,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                     {queuedInputPaths.length ? `Start parsing (${queuedInputPaths.length === 1 ? "1 input" : `${queuedInputPaths.length} inputs`})` : "Start parsing"}
                   </button>
                   <button className="ghost" onClick={clearQueuedInputs} disabled={Boolean(workspaceBusy) || !queuedInputPaths.length}>Clear queued</button>
+                  <button className="ghost" onClick={resetWorkspaceToEmpty} disabled={Boolean(workspaceBusy) || (!lines.length && !selected)} title="Clear the currently loaded parsed log view.">Clear logs</button>
                   <label className="toolbar-check">
                     <input
                       type="checkbox"
