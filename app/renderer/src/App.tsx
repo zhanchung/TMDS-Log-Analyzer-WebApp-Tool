@@ -3,6 +3,7 @@ import type { Dispatch, DragEvent, ReactNode, SetStateAction } from "react";
 import type { DetailModel, ParsedLine, ReferenceArtifact, ReferenceChoiceGroup, ReferenceChoiceItem, ReferenceDiagram, SearchConfig, SessionData, WorkflowRelatedDetail, WorkspaceProgress } from "@shared/types";
 import type { WorkspaceMenuCommand } from "@shared/native-api";
 import { buildStaticDetailForLine, buildStaticReferenceSession, buildStaticReviewSampleSession, ingestBrowserFilesLocally } from "@shared/browser-parser";
+import { getFirstGenisysByteFromRaw } from "@shared/genisys";
 import { stripLeadingLogTimestamp } from "@shared/parser/primitives";
 import { AccountPanel, AdminPanel, LoginScreen, fetchAuthState, logout } from "./features/auth";
 import type { AuthState } from "./features/auth";
@@ -4368,12 +4369,7 @@ function normalizeCodeServerStation(raw: string): string {
 }
 
 function firstGenisysByte(raw: string): string {
-  const bracketed = /<\s*([A-F0-9]{2})\b/i.exec(raw)?.[1];
-  if (bracketed) return bracketed.toUpperCase();
-  const afterData = /\b(?:DATA|XMT|RCV):\s*(?:[A-Z0-9_]+,\s*)?([A-F0-9]{2})\b/i.exec(raw)?.[1];
-  if (afterData) return afterData.toUpperCase();
-  const standalone = /\b(F[0-9A-F])\b/i.exec(raw)?.[1];
-  return standalone ? standalone.toUpperCase() : "";
+  return getFirstGenisysByteFromRaw(raw);
 }
 
 function getCodeServerDirection(line: ParsedLine): CodeServerDirection {
