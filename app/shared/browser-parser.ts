@@ -2,6 +2,7 @@ import { unzip, gunzipSync } from "fflate";
 import genisysProtocolReference from "../../exports/mappings/genisys_protocol_reference.json";
 import icdMessageCatalog from "../../exports/mappings/icd_message_catalog.json";
 import assignmentRows from "../../exports/normalized/code_station_assignment_map.json";
+import stationFoundationRows from "../../exports/normalized/station_foundation_summary.json";
 import genisysSampleLog from "../../sample_logs/curated/genisys_sample.log?raw";
 import socketTraceSampleLog from "../../sample_logs/curated/sockettrace_sample.log?raw";
 import workflowSampleLog from "../../sample_logs/curated/workflow_sample.log?raw";
@@ -23,12 +24,36 @@ type AssignmentEntry = {
 
 type AssignmentRow = {
   code_line_name?: string;
+  code_line_number?: string;
   station_name?: string;
+  code_station_number?: string;
+  control_point_number?: string;
   control_point_name?: string;
+  subdivision_name?: string;
+  signal_count?: string | number;
+  track_count?: string | number;
+  switch_count?: string | number;
+  route_count?: string | number;
   control_address?: string;
   indication_address?: string;
   control_assignments?: AssignmentEntry[];
   indication_assignments?: AssignmentEntry[];
+};
+
+type StationFoundationRow = {
+  code_line_number?: string;
+  code_line_name?: string;
+  code_station_number?: string;
+  station_name?: string;
+  control_point_number?: string;
+  control_point_name?: string;
+  subdivision_name?: string;
+  signal_count?: string | number;
+  track_count?: string | number;
+  switch_count?: string | number;
+  route_count?: string | number;
+  number_of_controls?: string | number;
+  number_of_indications?: string | number;
 };
 
 type IcdCatalogRow = {
@@ -43,6 +68,7 @@ type IcdCatalogRow = {
 };
 
 const staticAssignmentRows = assignmentRows as AssignmentRow[];
+const staticStationRows = stationFoundationRows as StationFoundationRow[];
 const staticIcdRows = icdMessageCatalog as IcdCatalogRow[];
 const staticGenisysReference = genisysProtocolReference as {
   office_headers?: Array<{ byte?: string; meaning?: string }>;
@@ -50,6 +76,7 @@ const staticGenisysReference = genisysProtocolReference as {
   mode_bit_definitions?: Array<{ bit?: number; meaning?: string }>;
 };
 const assignmentByKey = new Map<string, AssignmentRow>();
+const stationByKey = new Map<string, StationFoundationRow>();
 const icdByMessageId = new Map<string, IcdCatalogRow>();
 
 function getFileLabel(source?: string): string {
@@ -60,7 +87,7 @@ function getFileLabel(source?: string): string {
 }
 
 function normalizeKey(value: string | undefined): string {
-  return String(value ?? "").trim().toUpperCase().replace(/\s+/g, " ");
+  return String(value ?? "").trim().toUpperCase().replace(/^CP\s+/, "").replace(/\s+/g, " ");
 }
 
 function addAssignmentKey(key: string | undefined, row: AssignmentRow) {
@@ -70,11 +97,27 @@ function addAssignmentKey(key: string | undefined, row: AssignmentRow) {
   }
 }
 
+function addStationKey(key: string | undefined, row: StationFoundationRow) {
+  const normalized = normalizeKey(key);
+  if (normalized && !stationByKey.has(normalized)) {
+    stationByKey.set(normalized, row);
+  }
+}
+
 for (const row of staticAssignmentRows) {
   addAssignmentKey(row.station_name, row);
   addAssignmentKey(row.control_point_name, row);
+  addAssignmentKey(row.control_point_number, row);
+  addAssignmentKey(row.code_station_number, row);
   addAssignmentKey(row.control_address, row);
   addAssignmentKey(row.indication_address, row);
+}
+
+for (const row of staticStationRows) {
+  addStationKey(row.station_name, row);
+  addStationKey(row.control_point_name, row);
+  addStationKey(row.control_point_number, row);
+  addStationKey(row.code_station_number, row);
 }
 
 function normalizeMessageId(value: string | number | undefined): string {
@@ -283,6 +326,10 @@ function findAssignmentRow(station: string): AssignmentRow | null {
   return assignmentByKey.get(normalizeKey(station)) ?? null;
 }
 
+function findStationRow(station: string): StationFoundationRow | null {
+  return stationByKey.get(normalizeKey(station)) ?? null;
+}
+
 function findNearbyStation(lines: ParsedLine[], index: number): string {
   const source = lines[index]?.source;
   for (let offset = 0; offset <= 16; offset += 1) {
@@ -300,7 +347,10 @@ function findNearbyStation(lines: ParsedLine[], index: number): string {
 function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number): DetailModel {
   const raw = line.raw;
   const station = findNearbyStation(lines, index);
-  const row = findAssignmentRow(station);
+  const stationRow = findStationRow(station);
+  const row = findAssignmentRow(station)
+    ?? findAssignmentRow(stationRow?.control_point_number ?? "")
+    ?? findAssignmentRow(stationRow?.control_point_name ?? "");
   const isControlMnemonic = /\bCTL MNEM:/i.test(raw);
   const isIndicationMnemonic = /\bIND MNEM:/i.test(raw);
   const controlPayload = /\b(SendControl|ProcessControlBegin)(\d*)?:\s*([01]+)/i.exec(raw);
@@ -328,9 +378,11 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
     ...mappedMnemonicStates.map((entry) => `Mnemonic state: ${entry}`),
   ].filter(Boolean);
   const databaseContext = [
-    row ? `Station: ${row.station_name}` : station ? `Station context unresolved: ${station}` : "Station context unresolved in local static mode.",
-    row?.control_point_name ? `Control point: ${row.control_point_name}` : "",
-    row?.code_line_name ? `Code line: ${row.code_line_name}` : "",
+    row || stationRow ? `Station: ${stationRow?.station_name ?? row?.station_name}` : station ? `Station context unresolved: ${station}` : "Station context unresolved in local static mode.",
+    row?.control_point_number || stationRow?.control_point_number ? `Control point: ${stationRow?.control_point_number ?? row?.control_point_number} (${stationRow?.control_point_name ?? row?.control_point_name ?? ""})`.replace(/\s+\(\)$/, "") : "",
+    stationRow?.subdivision_name || row?.subdivision_name ? `Subdivision: ${stationRow?.subdivision_name ?? row?.subdivision_name}` : "",
+    row?.code_line_name || stationRow?.code_line_name ? `Code line ${stationRow?.code_line_number ?? row?.code_line_number ?? ""}: ${stationRow?.code_line_name ?? row?.code_line_name}`.replace(/^Code line :/, "Code line:") : "",
+    stationRow ? `Station inventory: signals=${stationRow.signal_count ?? 0}, tracks=${stationRow.track_count ?? 0}, switches=${stationRow.switch_count ?? 0}, routes=${stationRow.route_count ?? 0}` : "",
     row ? `Control assignments: ${row.control_assignments?.length ?? 0}` : "",
     row ? `Indication assignments: ${row.indication_assignments?.length ?? 0}` : "",
   ].filter(Boolean);
@@ -354,15 +406,15 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
         ...databaseContext,
       ].filter(Boolean),
       english: [summary],
-      unresolved: row ? [] : ["No static assignment row was resolved for this line's nearby station context."],
+      unresolved: row ? [] : ["No bundled assignment row was resolved for this line's nearby station context."],
     },
     workflow: {
       summary,
       currentStep: controlPayload?.[1] ?? (controlUpdated ? "CONTROL UPDATED" : processInd ? "PROCESS IND" : directIndication ? "INDICATION" : codeServerControl ? "CONTROL" : controlSent ? "CONTROL SENT" : isControlMnemonic ? "CTL MNEM" : isIndicationMnemonic ? "IND MNEM" : ""),
       systems: ["Code line"],
-      objects: station ? [station] : [],
+      objects: (stationRow?.station_name ?? station) ? [stationRow?.station_name ?? station] : [],
       knownState: activePositions.length ? "One or more payload bits asserted" : payloadBits ? "All logged payload bits clear" : "",
-      unresolved: row ? [] : ["Static assignment context unavailable for this selected line."],
+      unresolved: row ? [] : ["Bundled assignment context unavailable for this selected line."],
     },
     genisysContext: [],
     icdContext: [],
