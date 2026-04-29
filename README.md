@@ -1,4 +1,4 @@
-# TMDS Log Analyzer
+# Log Analyzer
 
 Webapp-based TMDS / Genisys log analysis tool.
 
@@ -96,7 +96,7 @@ To deploy a local-mode fallback so users can keep working when your home PC is o
    - **GitHub Pages** — push to a `gh-pages` branch on a public/private repo
    - **Cloudflare Pages** — drag the folder into a new project at <https://dash.cloudflare.com/?to=/:account/pages>
    - **Netlify** — drag the folder into a new site at <https://app.netlify.com/drop>
-3. Share the resulting URL as a backup. Visitors who load it will see the **Local mode** banner; they can then drag/drop or pick log files and the parser runs entirely in their browser.
+3. Share the resulting URL as a backup. Visitors can then drag/drop or pick log files and the parser runs entirely in their browser.
 
 You can also force local mode at the home URL by appending `?local=1` to it. Opening the bundled `index.html` directly via `file://` also forces local mode.
 
@@ -111,7 +111,7 @@ One-time setup:
    ```powershell
    git init -b main
    git add .
-   git commit -m "Initial TMDS Log Analyzer"
+   git commit -m "Initial Log Analyzer"
    git remote add origin https://github.com/<username>/<repo>.git
    git push -u origin main
    ```
@@ -121,7 +121,7 @@ One-time setup:
 After that, every `git push` to `main` redeploys, and any user with the page open will see the **Update available** banner appear automatically. The banner has **Update now** (reload to fresh build) and **Later** (dismiss until a newer version arrives) so nobody loses work mid-task.
 
 Two notes:
-- The static URL serves only the renderer. It auto-detects no server and runs in **Local mode** — files parse in the browser, server-only features (reference library, sample review logs, per-line detail panels) are gated until the offline parser port is finished.
+- The static URL serves only the renderer. It auto-detects no server and parses files in the browser; server-only features (reference library, sample review logs, and fully grounded detail panels) are gated until the offline parser port is finished.
 - Both `*.github.io` and `*.pages.dev` (Cloudflare Pages, same workflow concept) are usually allowed by corporate URL filters that block Tailscale Funnel hostnames, so this is the path through restricted networks at work.
 
 ## Test

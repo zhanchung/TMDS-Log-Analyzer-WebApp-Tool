@@ -3,6 +3,7 @@ import type { Dispatch, DragEvent, ReactNode, SetStateAction } from "react";
 import type { DetailModel, ParsedLine, ReferenceArtifact, ReferenceChoiceGroup, ReferenceChoiceItem, ReferenceDiagram, SearchConfig, SessionData, WorkflowRelatedDetail, WorkspaceProgress } from "@shared/types";
 import type { WorkspaceMenuCommand } from "@shared/native-api";
 import { ingestBrowserFilesLocally } from "@shared/browser-parser";
+import { stripLeadingLogTimestamp } from "@shared/parser/primitives";
 import { AccountPanel, AdminPanel, LoginScreen, fetchAuthState, logout } from "./features/auth";
 import type { AuthState } from "./features/auth";
 
@@ -26,7 +27,7 @@ function buildMatchExpression(config: SearchConfig): RegExp | null {
     try {
       return new RegExp(config.query, flags);
     } catch {
-      return new RegExp(escapeRegExp(config.query), flags);
+      return null;
     }
   }
   const escaped = escapeRegExp(config.query);
@@ -542,7 +543,7 @@ function getSourceLabel(source?: string): string {
 const categoryOrder = ["CODE", "CODELINE", "SOCKET", "CAD"] as const;
 const referenceCategoryOrder = ["MESSAGE EXCHANGE", "GENISYS", "TRAIN MESSAGES", "CODELINES & STATIONS"] as const;
 type LogCategory = (typeof categoryOrder)[number] | "OTHER" | "NETWORK" | "WORKFLOW" | (typeof referenceCategoryOrder)[number];
-const logRowHeight = 68;
+const logRowHeight = 28;
 const logRowOverscan = 18;
 const finderResultRowHeight = 160;
 const finderResultOverscan = 8;
@@ -872,6 +873,23 @@ function sortLinesForViewer(lines: ParsedLine[]): ParsedLine[] {
 }
 
 function makeFallbackDetail(line: ParsedLine): DetailModel {
+  const message = stripLeadingLogTimestamp(line.raw);
+  const observedFields = extractObservedLineFields(message);
+  const bitStates = extractObservedBitStates(message);
+  const structured = [
+    line.source ? `Source: ${line.source}` : "",
+    line.timestamp ? `Timestamp: ${line.timestamp}` : "",
+    `Line number: ${line.lineNumber}`,
+    message && message !== line.raw ? `Message: ${message}` : "",
+    ...observedFields.map((field) => `Observed field: ${field}`),
+  ].filter(Boolean);
+  const payloadContext = bitStates.length
+    ? [
+        `Observed bit states: ${bitStates.length}`,
+        ...bitStates.map((bit) => `${bit.position} ${bit.name}=${bit.state}`),
+      ]
+    : [];
+
   return {
     lineId: line.id,
     lineNumber: line.lineNumber,
@@ -879,12 +897,15 @@ function makeFallbackDetail(line: ParsedLine): DetailModel {
     raw: line.raw,
     translation: {
       original: line.raw,
-      structured: [],
-      english: [],
+      structured,
+      english: [
+        "Static detail generated in the browser from the selected raw line.",
+        message ? `Message text: ${message}` : "",
+      ].filter(Boolean),
       unresolved: [],
     },
     workflow: {
-      summary: "",
+      summary: message || line.raw,
       currentStep: "",
       systems: [],
       objects: [],
@@ -895,8 +916,48 @@ function makeFallbackDetail(line: ParsedLine): DetailModel {
     icdContext: [],
     databaseContext: [],
     workflowContext: [],
+    payloadContext,
     sourceReferences: [],
   };
+}
+
+function extractObservedLineFields(message: string): string[] {
+  const fields: string[] = [];
+  const seen = new Set<string>();
+  const patterns = [
+    /\b([A-Z][A-Z0-9 _/-]{1,32}):\s*([^<>\r\n]{1,120})/g,
+    /\b([A-Za-z][A-Za-z0-9_-]{1,32})=([^<>\s,;]+)/g,
+  ];
+  for (const pattern of patterns) {
+    let match = pattern.exec(message);
+    while (match) {
+      const key = match[1].replace(/\s+/g, " ").trim();
+      const value = match[2].replace(/\s+/g, " ").trim();
+      const field = `${key}: ${value}`;
+      const normalized = field.toUpperCase();
+      if (key && value && !seen.has(normalized)) {
+        seen.add(normalized);
+        fields.push(field);
+      }
+      match = pattern.exec(message);
+    }
+  }
+  return fields.slice(0, 40);
+}
+
+function extractObservedBitStates(message: string): Array<{ position: string; name: string; state: string }> {
+  const out: Array<{ position: string; name: string; state: string }> = [];
+  const pattern = /\((\d+)\)\s*([A-Z0-9_/-]+)=([A-Za-z0-9_/-]+)/gi;
+  let match = pattern.exec(message);
+  while (match) {
+    out.push({
+      position: match[1],
+      name: match[2],
+      state: match[3],
+    });
+    match = pattern.exec(message);
+  }
+  return out;
 }
 
 function describeSessionSelection(session: SessionData): { selected: ParsedLine | null; detail: DetailModel | null } {
@@ -2680,6 +2741,7 @@ type AppMainProps = {
   onOpenAdmin?: () => void;
   onOpenAccount?: () => void;
   localOnlyMode?: boolean;
+  showLocalModeBanner?: boolean;
   serverReachable?: boolean;
   onReconnect?: () => void;
   updateAvailable?: boolean;
@@ -2687,7 +2749,7 @@ type AppMainProps = {
   onDismissUpdate?: () => void;
 };
 
-function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMode = false, serverReachable = false, onReconnect, updateAvailable = false, onApplyUpdate, onDismissUpdate }: AppMainProps = {}) {
+function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMode = false, showLocalModeBanner = true, serverReachable = false, onReconnect, updateAvailable = false, onApplyUpdate, onDismissUpdate }: AppMainProps = {}) {
   const referenceWindowMode = useMemo(() => {
     try {
       return new URLSearchParams(window.location.search).get("mode") === "reference";
@@ -3971,7 +4033,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }
 
   function applyFinderSearch(): SearchConfig | null {
-    const nextQuery = finderDraftQuery.replace(/\s+/g, " ").trim();
+    const nextQuery = search.regex ? finderDraftQuery.trim() : finderDraftQuery.replace(/\s+/g, " ").trim();
     if (finderDraftQuery !== nextQuery) {
       setFinderDraftQuery(nextQuery);
     }
@@ -3980,10 +4042,10 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     setFinderResultsScrollTop(0);
     setFinderShowResults(false);
     setSearch((state) => {
-      const nextState = { ...state, query: nextQuery, caseSensitive: false };
-      return state.query === nextQuery && state.caseSensitive === false ? state : nextState;
+      const nextState = { ...state, query: nextQuery };
+      return state.query === nextQuery ? state : nextState;
     });
-    return nextQuery.length > 0 ? { ...search, query: nextQuery, caseSensitive: false } : null;
+    return nextQuery.length > 0 ? { ...search, query: nextQuery } : null;
   }
 
   function openFinder(seedFromSelection = false) {
@@ -4267,7 +4329,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         <div className="topbar-head">
           <div className="topbar-title-block">
             <h1 className={referenceWindowMode ? "topbar-title" : "topbar-title topbar-title-workspace"}>
-              {referenceWindowMode ? "TMDS Reference Library" : "TMDS Log Analyzer"}
+              {referenceWindowMode ? "TMDS Reference Library" : "Log Analyzer"}
             </h1>
             <p className={referenceWindowMode ? "topbar-subtitle" : "topbar-subtitle topbar-subtitle-workspace"}>
               {referenceWindowMode
@@ -4441,7 +4503,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
           </div>
         </div>
 
-        {localOnlyMode ? (
+        {localOnlyMode && showLocalModeBanner ? (
           <div className="local-mode-banner" role="note">
             <strong>Local mode</strong> — TMDS server not reachable, so files are parsed in your browser. Line list, finder search, and ZIP/GZ archives all work; reference library, sample review logs, and per-line detail panels need the server.
             {serverReachable && onReconnect ? (
@@ -4457,7 +4519,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
 
         {updateAvailable ? (
           <div className="update-banner" role="note">
-            <strong>Update available</strong> — a newer version of the TMDS Log Analyzer was published.
+            <strong>Update available</strong> — a newer version of Log Analyzer was published.
             {onApplyUpdate ? (
               <>
                 {" "}
@@ -4538,7 +4600,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                 <button className="ghost" type="button" onClick={() => runFinderNavigation(1)} disabled={!finderHasQuery}>Find next</button>
                 <button className="ghost" type="button" onClick={() => runFinderNavigation(-1)} disabled={!finderHasQuery}>Find previous</button>
                 <button className="ghost" type="button" onClick={() => void runFinderFindAll()} disabled={!finderHasQuery || finderSearchRunning}>Find all</button>
-                <button className="ghost" type="button" onClick={clearSearch} disabled={!finderHasQuery && !search.filterOnlyMatches && !search.wholeWord}>Clear</button>
+                <button className="ghost" type="button" onClick={clearSearch} disabled={!finderHasQuery && !search.filterOnlyMatches && !search.wholeWord && !search.regex && !search.caseSensitive}>Clear</button>
               </div>
             </div>
             <div className="finder-option-row">
@@ -4546,9 +4608,25 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                 <input
                   type="checkbox"
                   checked={search.wholeWord}
-                  onChange={(event) => setSearch((state) => ({ ...state, wholeWord: event.target.checked }))}
+                  onChange={(event) => setSearch((state) => ({ ...state, wholeWord: event.target.checked, regex: event.target.checked ? false : state.regex }))}
                 />
                 Exact word match
+              </label>
+              <label className="toolbar-check">
+                <input
+                  type="checkbox"
+                  checked={search.regex}
+                  onChange={(event) => setSearch((state) => ({ ...state, regex: event.target.checked, wholeWord: event.target.checked ? false : state.wholeWord }))}
+                />
+                Regular expression
+              </label>
+              <label className="toolbar-check">
+                <input
+                  type="checkbox"
+                  checked={search.caseSensitive}
+                  onChange={(event) => setSearch((state) => ({ ...state, caseSensitive: event.target.checked }))}
+                />
+                Match case
               </label>
               <label className="toolbar-check">
                 <input
@@ -4598,7 +4676,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                               {referenceBubble.secondary ? <div className="finder-result-secondary">{renderHighlightedText(referenceBubble.secondary, activeSearch)}</div> : null}
                             </>
                           ) : (
-                            <div className="finder-result-primary">{renderHighlightedText(getViewerLineText(line), activeSearch)}</div>
+                            <div className="finder-result-primary">{renderHighlightedText(line.raw, activeSearch)}</div>
                           )}
                         </div>
                       </button>
@@ -4965,9 +5043,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
               {visible.length ? (
                 <>
                   {virtualLogWindow.topPadding ? <div style={{ height: `${virtualLogWindow.topPadding}px` }} aria-hidden="true" /> : null}
-                  {virtualLogWindow.lines.map((line) => {
-                    const timestampLabel = formatLineTimestamp(line);
-                    return (
+                  {virtualLogWindow.lines.map((line) => (
                       <div
                         key={line.id}
                         role="button"
@@ -4982,17 +5058,11 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                         }}
                       >
                         <span className="line-no">{line.lineNumber}</span>
-                        <span className={timestampLabel ? "line-text" : "line-text no-timestamp"}>
-                          {timestampLabel ? (
-                            <span className="line-meta">
-                              <span className="source-chip timestamp-chip">{timestampLabel}</span>
-                            </span>
-                          ) : null}
-                          <span className="line-raw">{renderHighlightedText(getViewerLineText(line), activeSearch)}</span>
+                        <span className="line-text no-timestamp">
+                          <span className="line-raw">{renderHighlightedText(line.raw, activeSearch)}</span>
                         </span>
                       </div>
-                    );
-                  })}
+                    ))}
                   {virtualLogWindow.bottomPadding ? <div style={{ height: `${virtualLogWindow.bottomPadding}px` }} aria-hidden="true" /> : null}
                 </>
               ) : (
@@ -5205,6 +5275,20 @@ function detectInitialLocalOnlyMode(): boolean {
   return false;
 }
 
+function shouldShowLocalModeBanner(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("localBanner") === "1") return true;
+    if (params.get("localBanner") === "0") return false;
+    if (window.location.hostname.endsWith(".github.io")) return false;
+    if (window.location.protocol === "file:") return false;
+  } catch {
+    // ignore
+  }
+  return true;
+}
+
 const CURRENT_BUILD_VERSION = typeof __TMDS_BUILD_VERSION__ === "string" ? __TMDS_BUILD_VERSION__ : "dev";
 
 export default function App() {
@@ -5212,6 +5296,7 @@ export default function App() {
   const [authState, setAuthState] = useState<AuthState | null>(null);
   const [authReady, setAuthReady] = useState(!webAppMode);
   const [localOnlyMode, setLocalOnlyMode] = useState<boolean>(() => webAppMode && detectInitialLocalOnlyMode());
+  const [showLocalModeBanner] = useState<boolean>(() => shouldShowLocalModeBanner());
   const [serverReachable, setServerReachable] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
   const [showAccount, setShowAccount] = useState(false);
@@ -5367,6 +5452,7 @@ export default function App() {
     return (
       <AppMain
         localOnlyMode
+        showLocalModeBanner={showLocalModeBanner}
         serverReachable={serverReachable}
         onReconnect={reconnectToServer}
         updateAvailable={updateAvailable}

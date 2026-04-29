@@ -158,7 +158,7 @@ export function LoginScreen({ state, onSignedIn }: Props) {
   return (
     <div className="auth-shell">
       <div className="auth-modal">
-        <h2>TMDS Log Analyzer</h2>
+        <h2>Log Analyzer</h2>
         <p>Sign in to continue.</p>
         <form className="auth-form" onSubmit={mode === "create-password" ? handleCreatePassword : handleSignIn}>
           <label className="auth-field">

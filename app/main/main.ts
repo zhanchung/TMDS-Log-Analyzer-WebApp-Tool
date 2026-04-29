@@ -20,7 +20,7 @@ import {
   stripLeadingLogTimestamp as sharedStripLeadingLogTimestamp,
 } from "../shared/parser/primitives";
 
-const APP_DISPLAY_NAME = "TMDS Log Analyzer";
+const APP_DISPLAY_NAME = "Log Analyzer";
 const TIME_CONVERT_TOOL_URL = "https://savvytime.com/converter/pst-to-utc";
 const ADMIN_USERNAME = "jchung";
 const BUILTIN_ADMIN_SALT_HEX = "ab34d20b415960f8c56d8768bb0841ca";
@@ -11512,7 +11512,7 @@ function createWindow(mode: WorkspaceWindowMode = "main"): BrowserWindow {
     y: mode === "reference" && typeof state.y === "number" ? state.y + 40 : state.y,
     show: false,
     backgroundColor: "#0b1016",
-    title: mode === "reference" ? "TMDS Reference Library" : "TMDS Log Analyzer",
+    title: mode === "reference" ? "TMDS Reference Library" : "Log Analyzer",
     webPreferences: {
       preload: join(__dirname, "preload.js"),
       contextIsolation: true,
@@ -12855,7 +12855,7 @@ async function startWebAppServer(): Promise<void> {
   const openHost = host === "0.0.0.0" || host === "::" ? "127.0.0.1" : host;
   const url = `http://${openHost}:${port}/`;
   logRuntime(`webapp-server started ${url}`);
-  console.log(`[TMDS Log Analyzer] Webapp running at ${url}`);
+  console.log(`[Log Analyzer] Webapp running at ${url}`);
   if (!process.argv.includes("--no-open")) {
     await shell.openExternal(url);
   }
