@@ -1,0 +1,290 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "CodeLineNumber",
+        "ordinal":  1,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "ControlPointNumber",
+        "ordinal":  2,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "CodeStationNumber",
+        "ordinal":  3,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "LineOrder",
+        "ordinal":  4,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "StationName",
+        "ordinal":  5,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "ControlAddress",
+        "ordinal":  6,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "IndicationAddress",
+        "ordinal":  7,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NumberOfControls",
+        "ordinal":  8,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NumberOfIndications",
+        "ordinal":  9,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "SetupParameterString",
+        "ordinal":  10,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NetworkPortalPrimary",
+        "ordinal":  11,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NetworkPortalSecondary",
+        "ordinal":  12,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NetworkPortalTertiary",
+        "ordinal":  13,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NetworkPortalAddress",
+        "ordinal":  14,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "PrivateKey",
+        "ordinal":  15,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NetworkPrimaryID",
+        "ordinal":  16,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NetworkSecondaryID",
+        "ordinal":  17,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "SBDMode",
+        "ordinal":  18,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "UID",
+        "ordinal":  19,
+        "data_type":  "nvarchar",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "LayerFourAckProcessingEnable",
+        "ordinal":  20,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "ControlPointStatusProcessingEnabled",
+        "ordinal":  21,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "ManualDisableStation",
+        "ordinal":  22,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "EnableCRCCalculationPriorToMask",
+        "ordinal":  23,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "WaysideATCSAddress",
+        "ordinal":  24,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "WaysideEMPAddress",
+        "ordinal":  25,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "WaysideConfigurationCRC",
+        "ordinal":  26,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "WaysideSecurityKey",
+        "ordinal":  27,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "WaysideBeaconFlag",
+        "ordinal":  28,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "WebPollIntervalSeconds",
+        "ordinal":  29,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "NMSEnabled",
+        "ordinal":  30,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "WebPollTabName",
+        "ordinal":  31,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "column":  "StationFailed",
+        "ordinal":  32,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    }
+]

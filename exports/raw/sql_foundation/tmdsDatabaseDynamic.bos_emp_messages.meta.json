@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "export_name":  "bos_emp_messages",
+    "row_count":  225,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_emp_messages.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_emp_messages.csv"
+}

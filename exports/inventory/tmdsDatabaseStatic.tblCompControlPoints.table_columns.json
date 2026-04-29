@@ -1,0 +1,956 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "UID",
+        "ordinal":  1,
+        "data_type":  "int",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ControlPoint",
+        "ordinal":  2,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Name",
+        "ordinal":  3,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Type",
+        "ordinal":  4,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "LX",
+        "ordinal":  5,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "LY",
+        "ordinal":  6,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "RX",
+        "ordinal":  7,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "RY",
+        "ordinal":  8,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "LeftLink",
+        "ordinal":  9,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "RightLink",
+        "ordinal":  10,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "LeftAltLink",
+        "ordinal":  11,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "RightAltLink",
+        "ordinal":  12,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AltLinkOne",
+        "ordinal":  13,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AltLinkTwo",
+        "ordinal":  14,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Codeline",
+        "ordinal":  15,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND1",
+        "ordinal":  16,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND2",
+        "ordinal":  17,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND3",
+        "ordinal":  18,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND4",
+        "ordinal":  19,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND5",
+        "ordinal":  20,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND6",
+        "ordinal":  21,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND7",
+        "ordinal":  22,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND8",
+        "ordinal":  23,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND9",
+        "ordinal":  24,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL1",
+        "ordinal":  25,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND10",
+        "ordinal":  26,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL2",
+        "ordinal":  27,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND11",
+        "ordinal":  28,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL3",
+        "ordinal":  29,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND12",
+        "ordinal":  30,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL4",
+        "ordinal":  31,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIND13",
+        "ordinal":  32,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AuthorityType",
+        "ordinal":  33,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "TerritoryAssignment",
+        "ordinal":  34,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Subdivision",
+        "ordinal":  35,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "UniqueID",
+        "ordinal":  36,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "TTUID",
+        "ordinal":  37,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "UniqueName",
+        "ordinal":  38,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "TimeZone",
+        "ordinal":  39,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "GraphicGroup",
+        "ordinal":  40,
+        "data_type":  "tinyint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ScreenRegion",
+        "ordinal":  41,
+        "data_type":  "tinyint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Spare01",
+        "ordinal":  42,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Spare02",
+        "ordinal":  43,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Spare03",
+        "ordinal":  44,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Spare04",
+        "ordinal":  45,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Spare05",
+        "ordinal":  46,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Notes",
+        "ordinal":  47,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "SlotSMControlOnIndication",
+        "ordinal":  48,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AllowStatusPublishing",
+        "ordinal":  49,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "EnableResendControlLogic",
+        "ordinal":  50,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ResendControlTime",
+        "ordinal":  51,
+        "data_type":  "tinyint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AllowAutomaticMode",
+        "ordinal":  52,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AutomaticModeOn",
+        "ordinal":  53,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AllowSnowMelterTimer",
+        "ordinal":  54,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "SnowMelterTime",
+        "ordinal":  55,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AllowForceOperationsToTWC",
+        "ordinal":  56,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AllowControlPointCorrelation",
+        "ordinal":  57,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CorrelatingControlPointReferences",
+        "ordinal":  58,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "TemporalMode",
+        "ordinal":  59,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL5",
+        "ordinal":  60,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL6",
+        "ordinal":  61,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL7",
+        "ordinal":  62,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL8",
+        "ordinal":  63,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL9",
+        "ordinal":  64,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL10",
+        "ordinal":  65,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "TemporalModePointOfConflict",
+        "ordinal":  66,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Milepost",
+        "ordinal":  67,
+        "data_type":  "float",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "MilepostSuffix",
+        "ordinal":  68,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "MilepostPrefix",
+        "ordinal":  69,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AdditionalReferenceUID",
+        "ordinal":  70,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "MakeInVisible",
+        "ordinal":  71,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "DisableAutomaticSignalSlotting",
+        "ordinal":  72,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "SnowMelterTimeStampOn",
+        "ordinal":  73,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "TunnelAutomaticMode",
+        "ordinal":  74,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "TunnelAutomaticControlled",
+        "ordinal":  75,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ScadaTractionPowerControlPointMode",
+        "ordinal":  76,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ScadaCommunicationControlPointMode",
+        "ordinal":  77,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ScadaNonReportingModeControlled",
+        "ordinal":  78,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ScadaAlarmReportingIndicationBit",
+        "ordinal":  79,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "DevicePTCUID",
+        "ordinal":  80,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ControllingWorkstation",
+        "ordinal":  81,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ControllingWorkStationIPString",
+        "ordinal":  82,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "PTC_SiteName",
+        "ordinal":  83,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "PTC_SiteAddress",
+        "ordinal":  84,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "PTC_SecurityKey",
+        "ordinal":  85,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "PTC_WIUID",
+        "ordinal":  86,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "PTC_RailroadSCAC",
+        "ordinal":  87,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "PTC_UID_KEY",
+        "ordinal":  88,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPIndex",
+        "ordinal":  89,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "StartCompUID",
+        "ordinal":  90,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ConnectingCompUID",
+        "ordinal":  91,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "Direction",
+        "ordinal":  92,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL11",
+        "ordinal":  93,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL12",
+        "ordinal":  94,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "CPCTL13",
+        "ordinal":  95,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "RailroadUniqueIdentifierName",
+        "ordinal":  96,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "AlarmDisabledByOffice",
+        "ordinal":  97,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "SnowMelterControlledBy",
+        "ordinal":  98,
+        "data_type":  "varchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "SnowMelterIndicateToOffice",
+        "ordinal":  99,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ExpSlotTimerFlag",
+        "ordinal":  100,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ExpSlotIndFlag",
+        "ordinal":  101,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ExpSlotTimer",
+        "ordinal":  102,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ExpSlotCPUID",
+        "ordinal":  103,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "ExpSlotCPIND",
+        "ordinal":  104,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "DisableTrackFlooding",
+        "ordinal":  105,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "column":  "EnablePTC",
+        "ordinal":  106,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    }
+]

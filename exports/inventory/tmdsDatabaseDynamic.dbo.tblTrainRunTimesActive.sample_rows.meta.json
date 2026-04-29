@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblTrainRunTimesActive",
+    "top":  20,
+    "order_by":  [
+                     "RecordGUID",
+                     "TrainGUID",
+                     "Symbol"
+                 ],
+    "row_count_exported":  0
+}

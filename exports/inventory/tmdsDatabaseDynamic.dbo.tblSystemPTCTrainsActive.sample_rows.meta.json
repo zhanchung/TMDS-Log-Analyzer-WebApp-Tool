@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblSystemPTCTrainsActive",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "CreationDate",
+                     "TrainSymbol"
+                 ],
+    "row_count_exported":  0
+}

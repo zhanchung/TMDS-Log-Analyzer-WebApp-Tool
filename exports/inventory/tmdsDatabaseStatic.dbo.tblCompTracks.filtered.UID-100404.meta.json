@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCompTracks",
+    "top":  5,
+    "where_clause":  "[UID] = @p0",
+    "filter":  {
+                   "UID":  100404
+               },
+    "row_count_exported":  1,
+    "sql":  "SELECT TOP (5) * FROM [dbo].[tblCompTracks] WHERE [UID] = @p0;"
+}

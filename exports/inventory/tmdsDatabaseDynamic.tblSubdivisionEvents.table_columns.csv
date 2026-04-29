@@ -1,0 +1,5 @@
+﻿"database","schema","table","column","ordinal","data_type","is_nullable"
+"tmdsDatabaseDynamic","dbo","tblSubdivisionEvents","EventDate","1","smalldatetime","YES"
+"tmdsDatabaseDynamic","dbo","tblSubdivisionEvents","EventMessage","2","nvarchar","YES"
+"tmdsDatabaseDynamic","dbo","tblSubdivisionEvents","Subdivision","3","nvarchar","YES"
+"tmdsDatabaseDynamic","dbo","tblSubdivisionEvents","UID","4","uniqueidentifier","NO"

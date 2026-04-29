@@ -1,0 +1,2182 @@
+[
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "LCK",
+    "resolved_long_name": "LOCAL CONTROL INDICATION",
+    "row_count": 14,
+    "distinct_component_count": 14,
+    "distinct_parent_control_point_count": 14,
+    "sample_component_paths": "CARL:CARL|DON:DON|STUART:STUART|MESA:MESA|ROSE:ROSE|SORRENTO:SORRENTO|PACIFIC:PACIFIC|ESCONDIDO JCT:ESCONDIDO JCT|SCRIPPS:SCRIPPS|FARR:FARR|TORREY:TORREY|MIRAMAR:MIRAMAR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "LCK",
+    "resolved_long_name": "LOCAL CONTROL",
+    "row_count": 4,
+    "distinct_component_count": 4,
+    "distinct_parent_control_point_count": 4,
+    "sample_component_paths": "SONGS:SONGS|CUDAHY:CUDAHY|BROADWAY:BROADWAY|SWAMI:SWAMI"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1001MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:RAILROAD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1003MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:WYE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1016MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CROUCH:CROUCH"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1026MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "TRUE:TRUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1029MOK",
+    "resolved_long_name": "1029MOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:EL CAMINO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1041MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RANCHO:RANCHO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1059MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:SCHOOL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1075MOK",
+    "resolved_long_name": "1075MOK LOCAL CONTROL",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MELROSE:MELROSE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1080MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:ANGEL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1101MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:CIVIC CTR VISTA"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1114MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:AVENUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1124MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:BUENA CREEK"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1145MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:MISSY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1151MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:PALOMAR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1165MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:LOOP WEST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1177MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SHELLY:SHELLY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1184MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:LOOP EAST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1192MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:NORDAHL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1211MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:YARD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "995MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:OCEAN"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "LCK",
+    "resolved_long_name": "LOCAL CONTROL INDICAITON",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PULGAS:PULGAS"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "RWRQR",
+    "resolved_long_name": "RWRQR",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PONTO:PONTO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 22,
+    "distinct_component_count": 22,
+    "distinct_parent_control_point_count": 22,
+    "sample_component_paths": "CARL:CARL|SONGS:SONGS|DON:DON|PULGAS:PULGAS|CUDAHY:CUDAHY|STUART:STUART|MESA:MESA|ROSE:ROSE|SORRENTO:SORRENTO|PACIFIC:PACIFIC|SHELL:SHELL|ESCONDIDO JCT:ESCONDIDO JCT"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1001POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:RAILROAD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1003POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:WYE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1016POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CROUCH:CROUCH"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1026POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "TRUE:TRUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1029POK",
+    "resolved_long_name": "1029POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:EL CAMINO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1041POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RANCHO:RANCHO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1059POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:SCHOOL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1075POK",
+    "resolved_long_name": "1075POK POWER OFF",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MELROSE:MELROSE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1080POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:ANGEL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1091POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:VISTA"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1101POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:CIVIC CTR VISTA"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1114POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:AVENUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1124POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:BUENA CREEK"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1145POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:MISSY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1151POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:PALOMAR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1165POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:LOOP WEST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1177POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SHELLY:SHELLY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1184POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:LOOP EAST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1192POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:NORDAHL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "1211POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:YARD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "995POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:OCEAN"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "POK",
+    "resolved_long_name": "POWER OFF",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BROADWAY:BROADWAY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "resolved_mnemonic": "POK",
+    "resolved_long_name": "POWER OFF INDICAITON",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MIRAMAR:MIRAMAR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 18,
+    "distinct_component_count": 18,
+    "distinct_parent_control_point_count": 18,
+    "sample_component_paths": "CARL:CARL|SONGS:SONGS|DON:DON|PULGAS:PULGAS|CUDAHY:CUDAHY|STUART:STUART|MESA:MESA|ROSE:ROSE|BROADWAY:BROADWAY|SORRENTO:SORRENTO|PACIFIC:PACIFIC|SCRIPPS:SCRIPPS"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1001LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:RAILROAD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1003LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:WYE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1016LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CROUCH:CROUCH"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1026LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "TRUE:TRUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1029LOK",
+    "resolved_long_name": "1029LOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:EL CAMINO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1041LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RANCHO:RANCHO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1059LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:SCHOOL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1075LOK",
+    "resolved_long_name": "1075LOK LIGHT OUT",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MELROSE:MELROSE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1080LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:ANGEL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1101LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:CIVIC CTR VISTA"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1114LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:AVENUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1124LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:BUENA CREEK"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1145LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:MISSY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1151LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:PALOMAR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1165LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:LOOP WEST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1177LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SHELLY:SHELLY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1184LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:LOOP EAST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1192LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:NORDAHL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "1211MOK",
+    "resolved_long_name": "MANUAL OPERATE INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:YARD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "995LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:OCEAN"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "resolved_mnemonic": "LOK",
+    "resolved_long_name": "SIGNAL LAMP OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ESCONDIDO JCT:ESCONDIDO JCT"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "DOK",
+    "resolved_long_name": "DOOR OPEN INDICATION",
+    "row_count": 8,
+    "distinct_component_count": 8,
+    "distinct_parent_control_point_count": 8,
+    "sample_component_paths": "DON:DON|PULGAS:PULGAS|ROSE:ROSE|BROADWAY:BROADWAY|PACIFIC:PACIFIC|ESCONDIDO JCT:ESCONDIDO JCT|TORREY:TORREY|CONVAIR:CONVAIR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 7,
+    "distinct_component_count": 7,
+    "distinct_parent_control_point_count": 7,
+    "sample_component_paths": "CARL:CARL|CUDAHY:CUDAHY|STUART:STUART|SORRENTO:SORRENTO|FARR:FARR|SWAMI:SWAMI|ASH:ASH"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "DOK",
+    "resolved_long_name": "DOOR INDICATION",
+    "row_count": 2,
+    "distinct_component_count": 2,
+    "distinct_parent_control_point_count": 2,
+    "sample_component_paths": "SCRIPPS:SCRIPPS|MIRAMAR:MIRAMAR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1001DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:RAILROAD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1003DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:WYE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1016DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CROUCH:CROUCH"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1026DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "TRUE:TRUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1029DOK",
+    "resolved_long_name": "1029DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:EL CAMINO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1041DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RANCHO:RANCHO"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1059DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:SCHOOL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1075DOK",
+    "resolved_long_name": "1075DOK DOOR OPEN",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MELROSE:MELROSE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1080DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:ANGEL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1091DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:VISTA"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1101DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:CIVIC CTR VISTA"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1114DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:AVENUE"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1124DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:BUENA CREEK"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1145DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:MISSY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1151DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:PALOMAR"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1165DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:LOOP WEST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1177DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SHELLY:SHELLY"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1184DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:LOOP EAST"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1192DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:NORDAHL"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "1211DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:YARD"
+  },
+  {
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "resolved_mnemonic": "995DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:OCEAN"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPCTL1",
+    "resolved_mnemonic": "3ERLZ",
+    "resolved_long_name": "3 EASTBOUND SIGNAL REQ",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:EAST TRAFFIC"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPCTL1",
+    "resolved_mnemonic": "3WRQZ",
+    "resolved_long_name": "3 WESTBOUND SIGNAL REQ",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:WEST TRAFFIC"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPCTL1",
+    "resolved_mnemonic": "EBRQS",
+    "resolved_long_name": "EBRQZ",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ESCONDIDO JCT:EBRLK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPCTL1",
+    "resolved_mnemonic": "FNWZ",
+    "resolved_long_name": "FAKE NORMAL FOR 1207SW",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:UNLOCK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPCTL1",
+    "resolved_mnemonic": "FNWZ",
+    "resolved_long_name": "FAKE NORMAL FOR 1205SW",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:UNLOCK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPCTL2",
+    "resolved_mnemonic": "1205WRZ",
+    "resolved_long_name": "REVERSE SWITCH CONTROL",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:UNLOCK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPCTL2",
+    "resolved_mnemonic": "1207WRZ",
+    "resolved_long_name": "REVERSE SWITCH CONTROL",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:UNLOCK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1009DOK",
+    "resolved_long_name": "1009DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:1009DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1009POK",
+    "resolved_long_name": "1009POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:1009POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1011DOK",
+    "resolved_long_name": "1011DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:1011DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1011POK",
+    "resolved_long_name": "1011POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:1011POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1012DOK",
+    "resolved_long_name": "1012DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:1012DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1012POK",
+    "resolved_long_name": "1012POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "WYE:1012POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1015DOK",
+    "resolved_long_name": "1015DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CROUCH:1015DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1015POK",
+    "resolved_long_name": "1015POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CROUCH:1015POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1020DOK",
+    "resolved_long_name": "1020DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "TRUE:1020DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1020POK",
+    "resolved_long_name": "1020POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "TRUE:1020POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1032DOK",
+    "resolved_long_name": "1032DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:1032DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1032POK",
+    "resolved_long_name": "1032POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:1032POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1037DOK",
+    "resolved_long_name": "1037DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:1037DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1037POK",
+    "resolved_long_name": "1037POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "EL CAMINO:1037POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1051DOK",
+    "resolved_long_name": "1051DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1051DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1051POK",
+    "resolved_long_name": "1051POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1051POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1054DOK",
+    "resolved_long_name": "1054DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1054DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1054POK",
+    "resolved_long_name": "1054POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1054POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1055DOK",
+    "resolved_long_name": "1055DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1055DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1055POK",
+    "resolved_long_name": "1055POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1055POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1056DOK",
+    "resolved_long_name": "1056DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1056DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1056POK",
+    "resolved_long_name": "1056POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1056POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1064DOK",
+    "resolved_long_name": "1064DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1064DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1064POK",
+    "resolved_long_name": "1064POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1064POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1069DOK",
+    "resolved_long_name": "1069DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1069DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1069POK",
+    "resolved_long_name": "1069POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SCHOOL:1069POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1072DOK",
+    "resolved_long_name": "1072DOK MISC DEVICE",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MELROSE:1072DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1072POK",
+    "resolved_long_name": "1072POK MISC DEVICE",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MELROSE:1072POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1082DOK",
+    "resolved_long_name": "1082DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:1082DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1082POK",
+    "resolved_long_name": "1082POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:1082POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1085DOK",
+    "resolved_long_name": "1085DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:1085DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1085POK",
+    "resolved_long_name": "1085POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:1085POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1088DOK",
+    "resolved_long_name": "1088DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:1088DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1088POK",
+    "resolved_long_name": "1088POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ANGEL:1088POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1092DOK",
+    "resolved_long_name": "1092DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:1092DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1092LOK",
+    "resolved_long_name": "1092LOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:1092LOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1092MOK",
+    "resolved_long_name": "1092MOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:1092MOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1092POK",
+    "resolved_long_name": "1092POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:1092POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1093DOK",
+    "resolved_long_name": "1093DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:1093DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1093POK",
+    "resolved_long_name": "1093POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "VISTA:1093POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1096DOK",
+    "resolved_long_name": "1096DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:1096DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1096POK",
+    "resolved_long_name": "1096POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:1096POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1102DOK",
+    "resolved_long_name": "1102DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:1102DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1102POK",
+    "resolved_long_name": "1102POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "CIVIC CTR VISTA:1102POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1108DOK",
+    "resolved_long_name": "1108DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:1108DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1108POK",
+    "resolved_long_name": "1108POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:1108POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1112DOK",
+    "resolved_long_name": "1112DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:1112DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1112POK",
+    "resolved_long_name": "1112POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "AVENUE:1112POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1119DOK",
+    "resolved_long_name": "1119DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:1119DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1119POK",
+    "resolved_long_name": "1119POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:1119POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1128DOK",
+    "resolved_long_name": "1128DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:1128DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1128POK",
+    "resolved_long_name": "1128POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BUENA CREEK:1128POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1137DOK",
+    "resolved_long_name": "1137DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:1137DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1137POK",
+    "resolved_long_name": "1137POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:1137POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1148DOK",
+    "resolved_long_name": "1148DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:1148DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1148POK",
+    "resolved_long_name": "1148POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:1148POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1149POK",
+    "resolved_long_name": "1149POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "MISSY:1149POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1153DOK",
+    "resolved_long_name": "1153DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:1153DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1153POK",
+    "resolved_long_name": "1153POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:1153POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1157DOK",
+    "resolved_long_name": "1157DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:1157DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1157POK",
+    "resolved_long_name": "1157POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PALOMAR:1157POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1161DOK",
+    "resolved_long_name": "1161DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:1161DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1161POK",
+    "resolved_long_name": "1161POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:1161POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1164DOK",
+    "resolved_long_name": "1164DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:1164DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1164POK",
+    "resolved_long_name": "1164POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:1164POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1166DOK",
+    "resolved_long_name": "1166DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:1166DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1166POK",
+    "resolved_long_name": "1166POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:1166POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1173DOK",
+    "resolved_long_name": "1173DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SHELLY:1173DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1173POK",
+    "resolved_long_name": "1173POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SHELLY:1173POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1188DOK",
+    "resolved_long_name": "1188DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:1188DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1188POK",
+    "resolved_long_name": "1188POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:1188POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1193DOK",
+    "resolved_long_name": "1193DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:1193DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1193LOK",
+    "resolved_long_name": "1193LOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:1193LOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1193MOK",
+    "resolved_long_name": "1193MOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:1193MOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1193POK",
+    "resolved_long_name": "1193POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "NORDAHL:1193POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1196DOK",
+    "resolved_long_name": "1196DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "HOLDOUT:1196DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1196POK",
+    "resolved_long_name": "1196POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "HOLDOUT:1196POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1199DOK",
+    "resolved_long_name": "1199DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "HOLDOUT:1199DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1199POK",
+    "resolved_long_name": "1199POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "HOLDOUT:1199POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1202POK",
+    "resolved_long_name": "1202POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "HOLDOUT:1202POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1206DOK",
+    "resolved_long_name": "1206DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:1206DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1206POK",
+    "resolved_long_name": "1206POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:1206POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1207POK",
+    "resolved_long_name": "1207POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:1207POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1208DOK",
+    "resolved_long_name": "1208DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:1208DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1208POK",
+    "resolved_long_name": "1208POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:1208POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "12125DOK",
+    "resolved_long_name": "12125DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:12125DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "12125POK",
+    "resolved_long_name": "12125POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:12125POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1212DOK",
+    "resolved_long_name": "1212DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:1212DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "1212POK",
+    "resolved_long_name": "1212POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:1212POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "13NWK",
+    "resolved_long_name": "13 NORMAL SWITCH INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:NORMAL"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "13RWK",
+    "resolved_long_name": "13 REVERSE SWITCH INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "YARD:REVERSE"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "2ECOK",
+    "resolved_long_name": "2 EAST SIGNAL CALL-ON INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ASH:2 E CALL-ON"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "2WCOK",
+    "resolved_long_name": "2W CALL-ON SIGNAL CLEAR INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ESCONDIDO JCT:2W CALL-ON"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "3ERQK",
+    "resolved_long_name": "3 EASTBOUND SIGNAL REQ",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:EAST TRAFFIC"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "3WRLK",
+    "resolved_long_name": "3 WESTBOUND SIGNAL REQ",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "RAILROAD:WEST TRAFFIC"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "4ECOK",
+    "resolved_long_name": "4 EAST SIGNAL CALL-ON INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ASH:4 E CALL-ON"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "4WCOK",
+    "resolved_long_name": "4W CALL-ON SIGNAL CLEAR INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ESCONDIDO JCT:4W CALL-ON"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "6WCOK",
+    "resolved_long_name": "6W CALL-ON SIGNAL CLEAR INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ESCONDIDO JCT:6W CALL-ON"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "995DOK",
+    "resolved_long_name": "ILLEGAL ENTRY INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:995dok"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "995LOK",
+    "resolved_long_name": "LIGHT OUT INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:995LOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "995POK",
+    "resolved_long_name": "POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:995pok"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "997DOK",
+    "resolved_long_name": "997DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:997dok"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "997POK",
+    "resolved_long_name": "997POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "OCEAN:997pok"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1167DOK",
+    "resolved_long_name": "B1167DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:B1167DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1167POK",
+    "resolved_long_name": "B1167POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:B1167POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1174DOK",
+    "resolved_long_name": "B1174DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:B1174DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1174POK",
+    "resolved_long_name": "B1174POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP WEST:B1174POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1176DOK",
+    "resolved_long_name": "B1176DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:B1176DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1176POK",
+    "resolved_long_name": "B1176POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:B1176POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1177DOK",
+    "resolved_long_name": "B1177DOK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:B1177DOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "B1177POK",
+    "resolved_long_name": "B1177POK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "LOOP EAST:B1177POK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "EBRELK",
+    "resolved_long_name": "EASTBOUND AUTHORIZATION INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ESCONDIDO JCT:EBRLK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "ECOK",
+    "resolved_long_name": "E CALL-ON SIGNAL CLEAR INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "PACIFIC:E CALL-ON"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "ERQK",
+    "resolved_long_name": "ERQK",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "SONGS:SUPERVISORY CONTROL"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "TPOK",
+    "resolved_long_name": "TROLLEY POWER OFF INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BROADWAY:TPOK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "WBRQK",
+    "resolved_long_name": "WESTBOUND REQUEST INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "ESCONDIDO JCT:WBRQK"
+  },
+  {
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "resolved_mnemonic": "WCOK",
+    "resolved_long_name": "WEST CALL-ON INDICATION",
+    "row_count": 1,
+    "distinct_component_count": 1,
+    "distinct_parent_control_point_count": 1,
+    "sample_component_paths": "BROADWAY:2W CALL-ON"
+  }
+]

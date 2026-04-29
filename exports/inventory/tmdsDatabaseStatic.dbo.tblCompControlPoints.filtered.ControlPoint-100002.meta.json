@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCompControlPoints",
+    "top":  5,
+    "where_clause":  "[ControlPoint] = @p0",
+    "filter":  {
+                   "ControlPoint":  100002
+               },
+    "row_count_exported":  1,
+    "sql":  "SELECT TOP (5) * FROM [dbo].[tblCompControlPoints] WHERE [ControlPoint] = @p0;"
+}

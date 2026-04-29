@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "export_name":  "locomotive_runtime_context",
+    "row_count":  2301,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_runtime_context.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_runtime_context.csv"
+}

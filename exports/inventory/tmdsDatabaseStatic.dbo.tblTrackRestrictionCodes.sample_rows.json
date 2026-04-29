@@ -1,0 +1,152 @@
+﻿[
+    {
+        "TRUID":  1,
+        "TRCode":  "BC",
+        "TRDescription":  "BALLAST CONDITION",
+        "TRType":  null
+    },
+    {
+        "TRUID":  3,
+        "TRCode":  "RC",
+        "TRDescription":  "BRIDGE CONDITION",
+        "TRType":  null
+    },
+    {
+        "TRUID":  4,
+        "TRCode":  "BR",
+        "TRDescription":  "BROKEN RAIL",
+        "TRType":  null
+    },
+    {
+        "TRUID":  5,
+        "TRCode":  "BT",
+        "TRDescription":  "BUCKLED TRACK",
+        "TRType":  null
+    },
+    {
+        "TRUID":  6,
+        "TRCode":  "CC",
+        "TRDescription":  "CULVERT CONDITION",
+        "TRType":  null
+    },
+    {
+        "TRUID":  7,
+        "TRCode":  "DF",
+        "TRDescription":  "DEFECTIVE FROG",
+        "TRType":  null
+    },
+    {
+        "TRUID":  8,
+        "TRCode":  "DR",
+        "TRDescription":  "DEFECTIVE RAIL",
+        "TRType":  null
+    },
+    {
+        "TRUID":  10,
+        "TRCode":  "DD",
+        "TRDescription":  "DERAILMENT DAMAGE",
+        "TRType":  null
+    },
+    {
+        "TRUID":  11,
+        "TRCode":  "DE",
+        "TRDescription":  "DESIGN ELEVATION",
+        "TRType":  null
+    },
+    {
+        "TRUID":  12,
+        "TRCode":  "DS",
+        "TRDescription":  "DESIGN SPEED",
+        "TRType":  null
+    },
+    {
+        "TRUID":  15,
+        "TRCode":  "GC",
+        "TRDescription":  "GAUGE CONDITION",
+        "TRType":  null
+    },
+    {
+        "TRUID":  16,
+        "TRCode":  "HW",
+        "TRDescription":  "HIGH WATER",
+        "TRType":  null
+    },
+    {
+        "TRUID":  17,
+        "TRCode":  "JB",
+        "TRDescription":  "JOINT BAR AREA",
+        "TRType":  null
+    },
+    {
+        "TRUID":  18,
+        "TRCode":  "LS",
+        "TRDescription":  "LANDSLIDE",
+        "TRType":  null
+    },
+    {
+        "TRUID":  19,
+        "TRCode":  "MT",
+        "TRDescription":  "MATERIAL ALONG SIDE OF TRACK",
+        "TRType":  null
+    },
+    {
+        "TRUID":  20,
+        "TRCode":  "MS",
+        "TRDescription":  "MUD SLIDE",
+        "TRType":  null
+    },
+    {
+        "TRUID":  21,
+        "TRCode":  "NG",
+        "TRDescription":  "NARROW GAUGE",
+        "TRType":  null
+    },
+    {
+        "TRUID":  22,
+        "TRCode":  "OM",
+        "TRDescription":  "OTHER MAINTAINENCE",
+        "TRType":  null
+    },
+    {
+        "TRUID":  26,
+        "TRCode":  "RC",
+        "TRDescription":  "RAIL CONDITION",
+        "TRType":  null
+    },
+    {
+        "TRUID":  29,
+        "TRCode":  "RT",
+        "TRDescription":  "ROUGH TRACK",
+        "TRType":  null
+    },
+    {
+        "TRUID":  30,
+        "TRCode":  "SC",
+        "TRDescription":  "SHORT CIRCUIT APPROACH",
+        "TRType":  null
+    },
+    {
+        "TRUID":  31,
+        "TRCode":  "SA",
+        "TRDescription":  "SLIDE ACTIVITY",
+        "TRType":  null
+    },
+    {
+        "TRUID":  33,
+        "TRCode":  "SR",
+        "TRDescription":  "SPERRY RAIL",
+        "TRType":  null
+    },
+    {
+        "TRUID":  34,
+        "TRCode":  "SK",
+        "TRDescription":  "SUN KINK",
+        "TRType":  null
+    },
+    {
+        "TRUID":  35,
+        "TRCode":  "SC",
+        "TRDescription":  "SURFACE CONDITION",
+        "TRType":  null
+    }
+]

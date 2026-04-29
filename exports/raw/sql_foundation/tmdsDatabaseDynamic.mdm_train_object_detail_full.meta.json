@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "export_name":  "mdm_train_object_detail_full",
+    "row_count":  5933,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.mdm_train_object_detail_full.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.mdm_train_object_detail_full.csv"
+}

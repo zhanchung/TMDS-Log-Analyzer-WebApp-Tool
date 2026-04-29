@@ -1,0 +1,21 @@
+﻿"Id","LocoID","LastCommunicationTimestamp","LocoState","StateSummary","Initializing","TrainSymbol","IsOnControlledSubdivision","EMPAddress","InterfaceVersion"
+"25647","BNSF  7117","2022-05-24 오후 8:55:30","CutOut                                            ","NonControlling                                    ","False","","False","bnsf.l.bnsf.7117:itc",
+"25675","AMTK    17","2022-05-24 오후 9:45:00","Initializing                                      ","NonControlling                                    ","True","","False","amtk.l.amtk.17:itc",
+"32154","BNSF  7756","2022-12-02 오전 8:01:09","Active                                            ","Controlling                                       ","False","","False","bnsf.l.bnsf.7756:itc",
+"32168","BNSF  5475","2022-12-02 오전 8:01:09","CutOut                                            ","NonControlling                                    ","False","","False","bnsf.l.bnsf.5475:itc",
+"33506","BNSF  4283","2023-01-25 오후 8:01:08","Disengaged                                        ","Controlling                                       ","False","","False","bnsf.l.bnsf.4283:itc",
+"33552","BNSF  3261","2023-01-25 오후 8:01:08","CutOut                                            ","NonControlling                                    ","False","","False","bnsf.l.bnsf.3261:itc",
+"33561","BNSF  6608","2023-01-25 오후 8:01:08","CutOut                                            ","NonControlling                                    ","False","","False","bnsf.l.bnsf.6608:itc",
+"33598","BNSF  6383","2023-01-27 오전 4:01:09","CutOut                                            ","NonControlling                                    ","False","","False","bnsf.l.bnsf.6383:itc",
+"33607","BNSF  7154","2023-01-27 오전 4:01:09","Active                                            ","Controlling                                       ","False","","False","bnsf.l.bnsf.7154:itc",
+"33675","BNSF  6211","2023-02-04 오전 11:01:09","CutOut                                            ","NonControlling                                    ","False","","False","bnsf.l.bnsf.6211:itc",
+"34008","BNSF   599","2023-02-28 오후 10:01:08","Failed                                            ","NonControlling                                    ","False","","False","bnsf.l.bnsf.599:itc",
+"71206","NCTC  2307","2026-03-22 오전 9:06:38","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.2307:itc","3.0"
+"71474","NCTC  5006","2026-03-22 오전 9:09:24","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.5006:itc","3.0"
+"71491","NCTC  2306","2026-03-22 오전 9:09:39","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.2306:itc","3.0"
+"71633","NCTC   423","2026-03-22 오전 9:09:16","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.423:itc","3.0"
+"71636","NCTC  2303","2026-03-22 오전 9:10:05","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.2303:itc","3.0"
+"71828","NCTC  5007","2026-03-21 오후 10:31:34","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.5007:itc","3.0"
+"71829","NCTC  2308","2026-03-22 오전 9:06:41","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.2308:itc","3.0"
+"71846","NCTC  5004","2026-03-22 오전 9:09:32","CutOut                                            ","NonControlling                                    ","False","","False","nctc.l.nctc.5004:itc","3.0"
+"71853","NCTC  5008","2026-03-22 오전 9:09:53","Disengaged                                        ","Controlling                                       ","False","C691DH","False","nctc.l.nctc.5008:itc","3.0"

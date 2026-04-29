@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemSignalRoutes",
+    "top":  10,
+    "where_clause":  "[ExitSignal] = @p0 AND [EntrySignal] = @p1",
+    "filter":  {
+                   "ExitSignal":  100167,
+                   "EntrySignal":  100170
+               },
+    "row_count_exported":  1,
+    "sql":  "SELECT TOP (10) * FROM [dbo].[tblSystemSignalRoutes] WHERE [ExitSignal] = @p0 AND [EntrySignal] = @p1;"
+}

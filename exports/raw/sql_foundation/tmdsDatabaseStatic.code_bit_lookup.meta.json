@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "export_name":  "code_bit_lookup",
+    "row_count":  3171,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_bit_lookup.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_bit_lookup.csv"
+}

@@ -1,0 +1,2810 @@
+ 
+CenTraCode ® II-s 
+and II-v 
+Communication 
+Systems Emulation 
+Genisys Code 
+System 
+Copyright © 1993, 2006 ALSTOM Signaling Inc.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Reference Guide 
+P2346F 
+
+ 
+
+ 
+CenTraCode ® II-s 
+and II-v 
+Communication 
+Systems Emulation 
+Genisys Code 
+System 
+Copyright © 1993, 2006 ALSTOM Signaling Inc. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Reference Guide 
+ALSTOM Signaling Inc. 
+P2346F, Rev. Feb/06 Printed in U.S.A. 
+
+ 
+ 
+ 
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+LIST OF EFFECTIVE PAGES 
+P2346F, CenTraCode ® II-s and II-v Communication Systems Emulation, Genisys 
+Code System Reference Guide 
+ORIGINAL ISSUE DATE:   Jan/93 
+CURRENT REVISION AND DATE:  Feb/06 
+CURRENT CHANGE AND DATE: Feb/06, Updated flag usage 
+PAGE    CHANGE OR REVISION LEVEL 
+Cover      Feb/06 
+Title page     Feb/06 
+Preface      Feb/06 
+i thru iv     Feb/06 
+1–1 thru 1–4     Feb/06 
+2–1 thru 2–12    Feb/06 
+3–1 thru 3–2     Feb/06 
+4–1 thru 4–10    Feb/06 
+5–1 thru 5–4     Feb/06 
+6–1 thru 6–4     Feb/06 
+7–1 thru 7–6     Feb/06 
+A–1 thru A–8     Feb/06 
+B–1 thru B–12    Feb/06 
+C–1 thru C–42    Feb/06 
+D–1 thru D–4     Feb/06 
+ 
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+PREFACE 
+NOTICE OF CONFIDENTIAL INFORMATION 
+Information contained herein is confidential and is the property of 
+ALSTOM Signaling Incorporated. Where furnished with a proposal, the 
+recipient shall use it solely to evaluate the proposal. Where furnished to 
+customer, it shall be used solely for the purposes of inspection, installation 
+or maintenance. Where furnished to a supplier, it shall be used solely in 
+the performance of the contract. The information shall not be used or 
+disclosed by the recipient for any other purposes whatsoever. 
+FOR QUESTIONS AND INQUIRIES, CONTACT CUSTOMER SERVICE AT  
+1–800–717–4477  
+OR 
+WWW.ALSTOMSIGNALINGSOLUTIONS.COM 
+ 
+ALSTOM SIGNALING INC.  
+1025 JOHN STREET 
+WEST HENRIETTA, NY 14586 
+ 
+ 
+ 
+REVISION LOG  
+Revision Date Description By Checked Approved
+0 Jan.1993 Original issue       
+1 Feb. 2006 Update MAS RR NI 
+      
+      
+      
+      
+      
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+ABOUT THE MANUAL 
+This manual is intended to explain how the ALSTOM CenTraCode® II-s (CTC2S) and 
+CenTraCode® II-v (CTC2V) communication systems emulate the Genisys code system. 
+This manual gives a detailed explanation of the software implementation of Genisys 
+centralized traffic control coding systems. These systems operate on ALSTOM 
+CenTraCode II hardware platform. 
+The information in this manual is arranged into sections. The title and a brief description 
+of each section follow: 
+Section 1 – GENERAL DESCRIPTION:  This section gives general information on the 
+CenTraCode II-s (CTC2S) and CenTraCode II-v (CTC2V) communication systems 
+emulation of the Genisys code system. 
+Section 2 – THEORY OF OPERATION:  This section gives general information on the 
+operation of the CenTraCode II-s (CTC2S) and CenTraCode II-v (CTC2V) 
+communication systems emulation of the Genisys code system. 
+Section 3 – MAINTENANCE ACCESS CONSOLE:  This section describes the 
+Maintenance ACcess (MAC) port that provides access to the operating system of the 
+CenTraCode field module. 
+Section 4 – DIAGNOSTIC MENUS:  This section discusses the Genisys specific 
+menus available for the diagnostics and maintenance of the CenTraCode unit.  
+Section 5 – CENTRACODE II-S HARDWARE:  This section describes the 
+CenTraCode II-s hardware, including installation. 
+Section 6 – CENTRACODE II-V HARDWARE:  This section describes the 
+CenTraCode II-v hardware, including installation. 
+Section 7 – TROUBLESHOOTING:  This section describes how to use various board 
+LEDs to assist in troubleshooting the CenTraCode unit. 
+Appendix A – CENTRACODE II-s SAMPLE CAA CONFIGURATION FILES:  This 
+section provides sample CenTraCode II-s CAA configuration files for reference.  
+Appendix B – CENTRACODE II-v SAMPLE CAA CONFIGURATION FILES:  This 
+section provides sample CenTraCode II-v CAA configuration files for reference. 
+Appendix C – COMMUNICATION SOFTWARE LIST:  This section lists the software 
+programs that can be used for communication with the MAC. 
+Appendix D – CENTRACODE II JUMPER CONFIGURATION:  This section provides 
+the CenTraCode II-s and CenTraCode II-v jumper configurations.  
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+MANUAL SPECIAL NOTATIONS 
+In the ALSTOM manuals, there are three methods used to convey special informational 
+notations to the reader. These notations are warnings, cautions, and notes. Both 
+warnings and cautions are readily noticeable by boldface type two lines beneath the 
+caption. 
+Warning 
+A warning is the most important notation to heed. A warning is used to tell the reader 
+that special attention needs to be paid to the message because if the instructions or 
+advice is not followed when working on the equipment then the result could be either 
+serious harm or death. The sudden, unexpected operation of a switch machine, for 
+example, or the technician contacting the third rail could lead to personal injury or death. 
+An example of a typical warning notice follows: 
+WARNING 
+DISCONNECT THE MOTOR ENERGY WHENEVER THE GEAR COVER 
+IS REMOVED. OTHERWISE, THE SWITCH MACHINE MAY OPERATE 
+UNEXPECTEDLY AND POSSIBLY CAUSE PERSONAL INJURY 
+Caution 
+A caution statement is used when an operating or maintenance procedure, practice, 
+condition, or statement, which if not strictly adhered to, could result in damage to or 
+destruction of equipment. A caution statement is also used when personnel could be 
+surprised if shocked by a circuit operating at a low current. A typical caution found in a 
+manual is as follows: 
+CAUTION 
+Turn power off before attempting to remove or insert circuit boards into a 
+module. Boards can be damaged if power is not turned off. 
+Note 
+A note is normally used to provide minor additional information to the reader to explain 
+the reason for a given step in a test procedure or to just provide a background detail. An 
+example of the use of a note follows: 
+NOTE 
+A capacitor may be mounted on the circuit board with a RTV adhesive. 
+Use the same color RTV. 
+ 
+
+ 
+P2346F, Rev. Feb/06  ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LET BLANK. 
+ 
+
+ 
+P2346F, Rev. Feb/06 i ALSTOM Signaling Inc. 
+TABLE OF CONTENTS 
+Topic            Page 
+1. SECTION 1 – GENERAL DESCRIPTION ............................................................. 1–1 
+1.1. SCOPE OF MANUAL ....................................................................................... 1–1 
+1.2. OVERVIEW ...................................................................................................... 1–1  
+1.3. CAPABILITIES/LIMITATIONS.......................................................................... 1–2 
+1.3.1. CenTraCode II-s (CTC2S) System ................................................................... 1–2 
+1.3.2. CenTraCode II-v (CTC2V) System ................................................................... 1–2 
+1.3.3. Configuration Limits.......................................................................................... 1–2  
+1.4. RELATED PUBLICATIONS.............................................................................. 1–3  
+2. SECTION 2 – THEORY OF OPERATION............................................................. 2–1  
+2.1. GENERAL ........................................................................................................ 2–1  
+2.2. PROTOCOL DESCRIPTION............................................................................ 2–1 
+2.2.1. Communication Addressing.............................................................................. 2–1 
+2.2.2. Message Structure ........................................................................................... 2–2 
+2.2.3. Transit Message Types .................................................................................... 2–2 
+2.2.4. Receive Message Types .................................................................................. 2–3 
+2.3. MODE OF OPERATION................................................................................... 2–4 
+2.4. DATA HANDLING ............................................................................................ 2–5 
+2.4.1. I/O Handler ....................................................................................................... 2–5  
+2.4.2. Receiver ........................................................................................................... 2–5  
+2.5. CONFIGURATION BY CAA PACKAGE ........................................................... 2–8 
+2.5.1. Serial Port......................................................................................................... 2–8  
+2.5.2. Configuration File ............................................................................................. 2–8 
+2.5.3. Baud Rate......................................................................................................... 2–8  
+2.5.4. Data Format...................................................................................................... 2–8  
+2.5.5. Control Message .............................................................................................. 2–8 
+2.5.6. Indication Message........................................................................................... 2–8  
+2.5.7. Special Message .............................................................................................. 2–9 
+2.6. LOCAL CONFIGURATION EDITOR .............................................................. 2–10 
+2.6.1. Using GENCFG .............................................................................................. 2–10 
+2.6.2. Genisys Emulation Configuration Parameters................................................ 2–11  
+3. SECTION – MAINTENANCE ACCESS CONSOLE .............................................. 3–1 
+3.1. GENERAL ........................................................................................................ 3–1  
+3.2. INTRODUCTION .............................................................................................. 3–1 
+3.3. HARDWARE REQUIREMENTS....................................................................... 3–1 
+4. SECTION 4 – DIAGNOSTIC MENUS.................................................................... 4–1 
+4.1. GENERAL ........................................................................................................ 4–1  
+4.2. INTRODUCTION .............................................................................................. 4–1 
+4.3. MAIN MENU..................................................................................................... 4–3  
+4.4. GENISYS DIAGNOSTIC MENU....................................................................... 4–4 
+4.4.1. Diags Option..................................................................................................... 4–6  
+
+ 
+P2346F, Rev. Feb/06 ii ALSTOM Signaling Inc. 
+TABLE OF CONTENTS (CONT.) 
+Topic            Page 
+5. SECTION 5 – CENTRACODE II-S HARDWARE .................................................. 5–1 
+5.1. GENERAL ........................................................................................................ 5–1  
+5.2. APPLICATION.................................................................................................. 5–1  
+5.3. CONFIGURATION -- SAMPLE CAA INPUT FILES.......................................... 5–1 
+5.4. INSTALLATION................................................................................................ 5–1  
+5.5. POWER-UP...................................................................................................... 5–1  
+5.6. CENTRACODE II-S SYSTEM DIAGRAM......................................................... 5–1 
+5.7. INSTALLATION PROCEDURE ........................................................................ 5–3 
+5.7.1. Installation Equipment ...................................................................................... 5–3 
+5.7.2. Installation/Line Interface.................................................................................. 5–3  
+5.7.3. Initial Operation ................................................................................................ 5–4 
+5.7.4. Interface with Local Control Panel.................................................................... 5–4 
+6. SECTION 6 – CENTRACODE II-V HARDWARE .................................................. 6–1 
+6.1. GENERAL ........................................................................................................ 6–1  
+6.2. APPLICATION.................................................................................................. 6–1  
+6.3. CONFIGURATION -- SAMPLE CAA INPUT FILES.......................................... 6–1 
+6.4. INSTALLATION................................................................................................ 6–1  
+6.5. POWER-UP...................................................................................................... 6–1  
+6.6. INTEGRATION OF CENTRACODE II-V (CSEX) SYSTEM DIAGRAM ............ 6–1 
+6.7. INSTALLATION PROCEDURE ........................................................................ 6–3 
+6.7.1. Installation Equipment ...................................................................................... 6–3 
+6.7.2. Installation/Line Interface.................................................................................. 6–3  
+6.7.3. Initial Operation ................................................................................................ 6–4 
+6.7.4. Interface with Local Control Panel.................................................................... 6–4 
+7. SECTION 7 - TROUBLESHOOTING .................................................................... 7–1 
+7.1. GENERAL ........................................................................................................ 7–1  
+7.2. DIAGNOSTIC LEDS......................................................................................... 7–1  
+7.2.1. CenTraCode II-s System .................................................................................. 7–2 
+7.2.2. CenTraCode II-v System .................................................................................. 7–4 
+7.3. TROUBLESHOOTING GUIDE ......................................................................... 7–6 
+A. APPENDIX A - CENTRACODE II-S SAMPLE CAA CONFIGURATION FILES ...A–1 
+B. APPENDIX B - CENTRACODE II-V SAMPLE CAA CONFIGURATION FILES ...B–1 
+C. APPENDIX C - COMMUNICATION SOFTWARE LIST ........................................C–1 
+D. APPENDIX D - CENTRACODE II JUMPER CONFIGURATION...........................D–1 
+D.1. CENTRACODE II-S SYSTEM ..........................................................................D–1  
+D.2. CENTRACODE II-V SYSTEM ..........................................................................D–2  
+ 
+
+ 
+P2346F, Rev. Feb/06 iii ALSTOM Signaling Inc. 
+LIST OF FIGURES 
+Description             Page 
+Figure 2–1.  Control Logic Flow Chart......................................................................... 2–6 
+Figure 2–2.  Indication Data Flow Chart...................................................................... 2–7  
+ 
+Figure 3–1.  MAC Interface Cable............................................................................... 3–2  
+ 
+Figure 4–1.  Emulation Diagnostic Menus and Options Structure ............................... 4–2 
+Figure 4–2.  Main Menu .............................................................................................. 4–3 
+Figure 4–3.  Genisys Emulation Menu with Port Selected........................................... 4–4 
+Figure 4–4.  Diags Option Menu ................................................................................. 4–6 
+Figure 4–5.  Msg Counts Screen Display .................................................................... 4–7 
+Figure 4–6.  Show Info Screen Display ....................................................................... 4–8 
+Figure 4–7.  Byte/Bit Mapping ..................................................................................... 4–9 
+Figure 4–8.  Timers Screen Display ............................................................................ 4–9 
+Figure 4–9.  Flags Screen Display ............................................................................ 4–10 
+ 
+Figure 5–1.  CenTraCode II-s System Structure ......................................................... 5–2 
+ 
+Figure 6–1.  CenTraCode II-v System Structure ......................................................... 6–2 
+ 
+Figure 7–1.  CPU Board Functional Layout................................................................. 7–3 
+Figure 7–2.  CSEX Board Functional Layout............................................................... 7–5 
+ 
+Figure D–1.  CenTraCode II-s CPU Board Memory Strapping....................................D–2 
+Figure D–2.  CenTraCode II-v Prom Strapping ...........................................................D–3 
+ 
+ 
+
+ 
+P2346F, Rev. Feb/06 iv ALSTOM Signaling Inc. 
+LIST OF TABLES  
+Description             Page 
+Table 2–1.  Control Mode Byte xEO............................................................................ 2–1 
+Table 2–2.  Indication Mode Byte xE0......................................................................... 2–2 
+Table 2–3.  Flag Usage............................................................................................... 2–9 
+ 
+Table 4–1.  Genisys Emulation Menu Options ............................................................ 4–5 
+ 
+Table 7–1.  CPU Board LEDs for the CenTraCode II-s System .................................. 7–2 
+Table 7–2.  CSEX Board LEDs for the CenTraCode II-v System................................ 7–4 
+Table 7–3.  Troubleshooting Guide ............................................................................. 7–6 
+ 
+Table D–1.  EPROM Memory Device Selection (CTC2S)...........................................D–1 
+Table D–2.  EPROM Memory Device Selection (CTC2V)...........................................D–2 
+ 
+ 
+ 
+ 
+
+ General Description 
+P2346F, Rev. Feb/06 1–1 ALSTOM Signaling Inc. 
+1. SECTION 1 – GENERAL DESCRIPTION 
+1.1. SCOPE OF MANUAL 
+The purpose of this manual is to explain how the ALSTOM CenTraCode® II-s (CTC2S) 
+and CenTraCode® II-v (CTC2V) communication systems emulate the Genisys code 
+system. This manual gives a detailed explanation of the software implementation of 
+Genisys centralized traffic control coding systems. These systems operate on ALSTOM 
+CenTraCode II hardware platform. 
+1.2. OVERVIEW 
+The Genisys code system is a system of communications that allows for the movement 
+of information. A Computer-Aided Application (CAA) program provides all the location-
+specific items, such as the location's code charts. It is used to program the system to 
+interface with the existing application cabinets. It can also be programmed to replace 
+the non-vital application logic functions performed in these application cabinets. The 
+Maintenance ACcess (MAC) port assures all access needed to the code unit. A menu-
+driven command interface is provided to clearly identify available commands and 
+options. 
+To access MAC, any VT-100 compatible terminal may be used or, with the proper 
+software, an IBM PC or compatible can also be used. Generally, a battery-operated 
+laptop is the most convenient terminal device for field work. It is recommended for use 
+with the code unit because logging modes that show the codeline's traffic can be 
+requested. Using a personal computer as a display terminal allows the capture of 
+logging displays to disk files for further analysis.  
+Appendix A and Appendix B provide sample CAA configuration files for both the 
+CenTraCode II-s and II-v systems. Appendix C lists the available software packages 
+that can be used for communication with the MAC. Appendix D gives the jumper 
+configuration for both systems. 
+
+ General Description 
+P2346F, Rev. Feb/06 1–2 ALSTOM Signaling Inc. 
+1.3. CAPABILITIES/LIMITATIONS 
+The CenTraCode II (CTC2) emulator replaces code steppers directly. It provides the 
+data path to move controls and indications from one location to another at a preset rate 
+of transmission.  
+1.3.1. CenTraCode II-s (CTC2S) System 
+This stand alone unit interfaces with an application logic cabinet or the function relays. 
+The basic CPU module contains solid state, parallel I/O consisting of 24 inputs and 16 
+outputs and 4 serial I/O ports providing RS232 voltage level support. 
+Indications must be connected to the unit directly. All latching and station mapping is 
+internal. 
+The unit provides non-vital logic applications without an external logic cabinet. 
+1.3.2. CenTraCode II-v (CTC2V) System 
+This unit provides the same non-vital logic functions as the CenTraCode II-s system but 
+within the VPI® Vital Processor Interlocking system chassis. The CTC2V unit, also 
+referred to as CSEX, receives indication data from and passes control data to the VPI 
+application logic through a dual port memory interface (DPRAM). The basic module 
+supports six serial ports; ports 1 and 2 can be strapped to support RS422 or RS423. 
+Ports 3, 4, and 5 support RS422 and port 6 supports the current loop. 
+For both hardware platforms the timing and configuration parameters are adjusted by 
+using console commands. No mechanical adjustments are needed. 
+1.3.3. Configuration Limits 
+The following are the maximum configuration parameters of the standard Genisys 
+protocol: 
+• 1,792 controls or indications 
+• 255 unique station address (address x00 is reserved) 
+
+ General Description 
+P2346F, Rev. Feb/06 1–3 ALSTOM Signaling Inc. 
+1.4. RELATED PUBLICATIONS 
+The appropriate associated publications are recommended reading before you continue 
+with this document. It is helpful to have these documents available to refer to 
+occasionally. 
+For detailed information on the CenTraCode II hardware and configuration as well as 
+other available emulations and protocols, refer to the following ALSTOM publications: 
+• P2086B VPI
+®, Vital Processor Interlocking Control System Operation and 
+Maintenance 
+• P2086C Software Reference Guide VPI ® Vital Processor Interlocking Control 
+System, Computer-Aided Application Program 
+• P2326B User's Guide CenTraCode ® II-s Communication System Operation, 
+Maintenance, and Installation  
+• P2326C Software Reference Guide for CenTraCode ® II-s Communications 
+System, Computer-Aided Application Package 
+
+ General Description 
+P2346F, Rev. Feb/06 1–4 ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+ 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–1 ALSTOM Signaling Inc. 
+2. SECTION 2 – THEORY OF OPERATION 
+2.1. GENERAL 
+This section contains the theory of operation of the CenTraCode II-s (CTC2S) and 
+CenTraCode II-v (CTC2V) communication systems emulation of the Genisys code 
+system. 
+2.2. PROTOCOL DESCRIPTION 
+The Genisys system protocol functions on any port of the CTC2S or CTC2V systems.  
+In the explanations that follow the letter 'x' followed by a number or letters A-F indicates 
+hexadecimal values. 
+2.2.1. Communication Addressing 
+All field units allow the addressing of messages to range from x01 to xFF (address x00 
+is reserved for common controls (x indicates hexadecimal notation). 
+All units allow message content for controls or indications in the range of x00 to xDF. 
+Controls are sent from Master to Slave, Indications are sent from Slave to Master. 
+Controls or Indications xE0 and beyond are reserved for status type information.  
+Table 2–1.  Control Mode Byte xEO 
+Bit Meaning 
+0 Data Base Complete (1 = complete) 
+1 Checkback Control Enable (1 = enable) 
+2 Secure Poll Enable (1 = enable) 
+3 Common Command Enable (1 = enable) 
+4-7 Reserved for future use. 
+ 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–2 ALSTOM Signaling Inc. 
+Table 2–2.  Indication Mode Byte xE0 
+Bit Meaning 
+0 Data Base Complete (0 = need controls) 
+1 Checkback Control Enable (1 = enable) 
+2 Secure Poll Enable (1 = enable) 
+3 Common Command Enable (1 = enable) 
+4-7 Reserved for future use. 
+ 
+2.2.2. Message Structure 
+All messages have a common structure. Messages start with a command byte, xF1 - 
+xF3, or xF7 - 0xFE and are terminated with a terminator byte 0xF6. The command byte 
+is followed by the address of the destination station. Some messages contain a body 
+before the terminator byte; see the next section for details. To avoid reserved byte 
+aliasing, any byte other than the command or terminator in the xF0 to xFF range is split 
+and sent to as two bytes. 
+Example: 
+ Byte  Sent As 
+ xF3  xF0 x03 
+2.2.3. Transit Message Types 
+The three transit message types: Acknowledge, Change, and Control Checkback are 
+described below. 
+Acknowledge – Informs the remote unit that the message was received and accepted.  
+  FORM : xF1 st xF6 
+Change – Sends changed indications to the remote unit. 
+  FORM : xF2 st {bn bi} cl ch xF6  
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–3 ALSTOM Signaling Inc. 
+Control Checkback – When control checkback is enabled in the mode byte (explained 
+below) and a control is received from the master, the message is echoed back to the 
+master. No action is taken until the master confirms the message by sending an 
+execute command.  
+  FORM:  xF3 st {bn bi} cl ch xF6 
+• xXX  are hard coded hexadecimal  values that never change 
+• {} indicates that byte pair may be repeated as needed 
+• cl indicates crc16 lower byte 
+• ch is crc16 upper byte  
+• bn is byte number, either control or indication byte number 
+• bi is byte information 
+• st indicates station address 
+• bi[x] is byte x of indication buffer 
+2.2.4. Receive Message Types 
+The seven receive message types: Reserved, Common Controls, Acknowledge, Poll, 
+Control, Recall, and Execute are described below. 
+Reserved – Message types xF7 and xF8 are reserved for future use. 
+Common Controls – Can be sent by master to any one station or broadcast to all 
+stations (address = x00). This message has access to change only bytes 0 and 1 of the 
+controls.  
+  FORM:  xF9 st {bn bi} cl ch xF6 
+Acknowledge – Informs the master unit that the message was received and accepted.  
+  FORM:  xFA st cl ch xF6 
+Poll – Requests that the slave report any changes or, if no changes have occurred, 
+then generates an acknowledge. 
+This command takes two forms depending on the mode byte.  
+  FORM:  xFB st cl ch xF6 - in secure mode 
+                     xFB st xF6       - in non-secure mode 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–4 ALSTOM Signaling Inc. 
+Control – Sends controls to the slave. 
+  FORM:  xFC st {bn bi} cl ch xF6 
+Recall – Requests slave to send a change message containing all indications. 
+  FORM:  xFD st cl ch xF6 
+Execute – In control checkback mode, if the slave response is valid, this command 
+causes the slave to use the controls. 
+  FORM:  xFE st cl ch xF6  
+2.3. MODE OF OPERATION 
+The Genisys protocol calls for a Master unit to poll all known stations in a system 
+periodically. When a slave receives a poll with its address, the slave responds. If the 
+slave has outstanding indications, the slave responds with an indication message. The 
+Master then either sends a control message to the slave or acknowledges the slaves 
+indication message. The slave can continue to send indication messages as long as the 
+Master continues to send messages to it. When the slave has no further messages for 
+the Master, or in response to a poll, the slave can return an acknowledge to the Master. 
+The Genisys emulation operates in the slave mode only. Upon powerup, the system 
+sets the mode byte to secure poll, no checkback, no common controls, and data base 
+not complete. When a poll with the matching station address is received, the slave 
+responds with a message containing all indications, and appends the mode byte (xE0) 
+onto the end. If the Master returns with another message, the slave then sends any new 
+indications, or acknowledges the Master to show no indications are left. 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–5 ALSTOM Signaling Inc. 
+2.4. DATA HANDLING 
+Data flow is controlled in two main tasks. 
+1. I/O Handler 
+2. Receiver 
+Figures 2–1 and 2–2 provide control logic and indication data flow charts. 
+2.4.1. I/O Handler 
+The I/O handler task checks the application logic buffer to determine when a new buffer 
+is ready to be sent. When a new buffer is detected, the information is copied into a local 
+buffer and the application buffer is released. The buffer is then flagged for transmission. 
+The local buffer that was copied and holds the application information is maintained and 
+held ready to be sent if a recall should be required. 
+2.4.2. Receiver 
+The receiver tasks checks the incoming data stream to see if there is a message for this 
+unit. When a message address of the proper value is detected the message is checked 
+for correct checksum (if applicable) and termination information. When all criteria are 
+met, the message is passed to the application logic. Flags are then set to indicate what 
+type of message was received. The appropriate response to the message is triggered to 
+the transmitter. 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–6 ALSTOM Signaling Inc. 
+START 
+CLEAR LOCAL 
+APPLICATION MESSAGE 
+BUFFER
+INPUT MESSAGE 
+AVAILABLE?
+CLEAR LOCAL 
+APPLICATION BUFFER
+ASSEMBLE CHANGES
+INTO LOCAL
+APPLICATION BUFFER
+POST LOCAL CHANGE 
+BUFFER TO 
+APPLICATION 
+NO
+YES 
+IS LATCHED
+CONTROL FLAG
+ENABLED?
+YES 
+NO
+SET FLAGS 
+FOR MESSAGE 
+RECEIVED
+ 
+Figure 2–1.  Control Logic Flow Chart 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–7 ALSTOM Signaling Inc. 
+START 
+CLEAR LOCAL 
+APPLICATION MESSAGE 
+BUFFER
+IS NEW  
+APPLICATION 
+INDICATION  
+AVALABLE? 
+COPY APPLICATION BUFFER 
+TO  LOCAL BUFFER AND  
+RELEASE APPLICATION 
+BUFFER
+YES 
+COUNT NUMBER OF 
+CHANGED BYTES IN
+THE NEW INDICATION
+IS  
+NUMBER  
+OF CHANGED BYTES  
+MORE THAN HALF  
+TOTAL BUFFER
+BYTES?
+NO
+BUILD A 
+BIT MAP MESSAGE 
+SET FLAGS FOR TRANSMIT  
+MESSAGE AVAILABLE 
+IS THERE A
+LOCAL OUTPUT
+BUFFER  
+AVAILABLE?
+NO
+YES 
+BUILD A 
+CHANGE MESSAGE
+YES 
+NO
+ 
+Figure 2–2.  Indication Data Flow Chart 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–8 ALSTOM Signaling Inc. 
+2.5. CONFIGURATION BY CAA PACKAGE 
+Many of the operating features of the system can be configured from the CAA. Each 
+option is discussed individually. For more detailed information about entering records in 
+the CAA program, please refer to Publications 2326C and 2086C. For a step by step 
+configuration and an example of the CAA input files, see the "Configuration -- Sample 
+CAA Input File" in Appendix A and B.  
+2.5.1. Serial Port 
+This option identifies the port on which the Genisys Emulation is run. This option must 
+be specified in the SERIAL PORT Record.  
+2.5.2. Configuration File 
+The configuration data file is specified using this option. If none is specified, then default 
+information is loaded. The CAA CONFIGURATION FILE Record defines the file name. 
+The configuration file is created and modified by the configuration file editor "GENCFG" 
+which is further explained later in this section. 
+2.5.3. Baud Rate 
+This option specifies the baud rate for the code system. This option is set in the 
+DEFAULT BAUD RATE Record. This option does not have to be explicitly specified. 
+2.5.4. Data Format 
+This format represents three different options:  data bits, stop bits, and parity. 
+2.5.5. Control Message 
+The CONTROL Record contains the location selection address (Location ID) and the 
+number of control bits. The station selection address may also be included with the 
+location selection to perform internal logic. The control bits may then be assigned.  
+2.5.6. Indication Message 
+The INDICATION Record contains the station address (Location ID) and the number of 
+indication bits. The indication bits may then be assigned.  
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–9 ALSTOM Signaling Inc. 
+2.5.7. Special Message 
+The SPECIAL CONTROL Records are optional. They contain the information required 
+for improved interface to the Genisys protocol.  
+Special message one, if installed, is fixed in length to 16 and is used to pass flags. The 
+flags are used as shown in Table 2–3. 
+Table 2–3.  Flag Usage 
+Bit Meaning 
+1 Control posted to application software 
+2 Received xFE for this station 
+3 Received xFD for this station 
+4 Received xFC for this station 
+5 Received xFB for this station 
+6 Received xFA for this station 
+7 Received xF9 for this station 
+8 Sent xF1 
+9 Sent xF2 
+10 Sent xF3 
+11 Sent xF2 containing all indications 
+12-15 Not used 
+16 Port not communicating 
+ 
+These flags are set when the conditions are met and must be reset by the application if 
+it requires an accurate update of them. 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–10 ALSTOM Signaling Inc. 
+2.6. LOCAL CONFIGURATION EDITOR 
+The configuration file is generated by the "GENCFG" editor. This file provides 
+installation specific timing data. The editor prompts you for values of the timing 
+parameters required to properly operate the code unit. This information is stored in a file 
+that is accessed by the CAA program when generating the application EPROMs. The 
+data is then stored in tables for the unit usage. These parameters can also be modified 
+using the MAC interface.  
+The editor stores the data in ASCII representation of the hexadecimal values. The file 
+created by the editor must be entered in the CAA input files for the CAA program to 
+access it. The proper format to enter the file name is using the following CAA record: 
+ CONFIGURATION FILE = filename 
+If this record is not defined, then the CAA program generates default data for the 
+installation. 
+2.6.1. Using GENCFG 
+This editor is used to tailor the timing parameters used by the protocol to the particular 
+application. The default values are assigned by ALSTOM in accordance to published 
+specifications. The following describes how to use the editor. 
+1. The editor is invoked by typing GENCFG ( optional filename .LPC) at the prompt line. 
+The initial welcome screen is displayed. Press a key to acknowledge the copyright 
+notice. 
+2. Enter the name of the confi guration file to use. The configuration file should always 
+use the file extension .LPC. If you are creating a new file, enter the new name and 
+press "Y" to create it. 
+3. The editor loads the values from the file . If the file size is incorrect, a warning 
+message is displayed. Continuing the process loads whatever values appeared in 
+the file. After loading is complete, the entire file content is displayed on the screen. 
+4. To change a particular parameter; one of these methods can be used: 
+− Press the space bar to highlight t he parameter. Once the parameter is 
+highlighted, press [ENTER]. 
+− Press the "Alpha" letter identifyi ng the parameter then press [ENTER]. 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–11 ALSTOM Signaling Inc. 
+5. When the parameter is sele cted, it displays the current file value in parenthesis and 
+prompts for the new value. The following are the acceptable entries: 
+− [ESC] to load the defined default value. 
+− The new decimal value of the parameter  followed by [ENTER]. Note that if no 
+value is entered, the parameter keeps its current value. 
+ 
+If an invalid entry is detected, then a beep is heard and the parameter maintains 
+its current value. 
+6. Repeat steps 4 and 5 to setup the desir ed values. When done, press [ESC]. To save 
+the changes press "Y". To exit press "N" and confirm the "lose current changes" 
+message by pressing "Y". 
+7. If the file edited is one created in this  session, the editor saves it and exits. 
+Otherwise, a prompt for the filename is displayed. Type the new filename or press 
+[Enter] to accept the current name. If the file exists, a confirmation to overwrite is 
+required.  
+8. The file is stored on disk. If an error is encountered, an error message is displayed 
+and step 4 is repeated. 
+2.6.2. Genisys Emulation C onfiguration Parameters 
+Rts to Cts – Defines the maximum amount of time after asserting Rts to wait for Cts. If 
+Cts does not become true after this time delay, Cts is ignored and transmission takes 
+place. If this is zero, the port waits 3 seconds and aborts the message transmission. 
+Hold Rts – Defines the amount of time to hold Rts true after the last byte of a message 
+has been transmitted. 
+Multi Drop – If true, causes Rts to assert at the beginning of transmission and deassert 
+at completion. If false, Rts is asserted all the time. 
+Cts – If true waits for Cts to become true before transmission begins. If false, ignores 
+Cts. 
+Invert Cts/Invert Rts – If false, the asserted level of that control is HIGH. If true, the 
+asserted level is LOW. 
+ 
+
+Theory of Operation 
+P2346F, Rev. Feb/06 2–12 ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+ 
+
+Maintenance Access Console 
+P2346F, Rev. Feb/06 3–1 ALSTOM Signaling Inc. 
+3. SECTION – MAINTENANCE ACCESS CONSOLE 
+3.1. GENERAL 
+This section describes the Maintenance ACcess (MAC) port that provides access to the 
+operating system of the CenTraCode field module. 
+3.2. INTRODUCTION 
+The Maintenance ACcess (MAC) port provides a list of menu driven displays that 
+provide access to the operating system of the CenTraCode field module. These menus 
+vary in use; some are used to report system status while others are for manual control. 
+A detail operation of the Genisys diagnostics menus is explained in the section on 
+Diagnostic Menus. For details on the system menus, refer to Publication P2326B. 
+MAC users do not need a technical background, nor do they have to understand the 
+details of the system design. However, it is important for them to understand the 
+operation of the Genisys code system. 
+3.3. HARDWARE REQUIREMENTS 
+To access the MAC port, any video terminal compatible with Digital Equipment 
+Corporation's VT-100 may be used, or with the proper terminal emulation software an 
+IBM PC or compatible also may be used. Generally, the recommended terminal device 
+is a battery operated laptop personal computer equipped with terminal emulation 
+software that allows capture of the serial data stream. This is because logging modes 
+that show the codeline's traffic can be invoked. Using a personal computer as a display 
+terminal allows the capture of logging displays to disk files for further analysis. Refer to 
+Appendix C for a list of the available software packages. 
+The following equipment is required for correct operation of the Maintenance Access 
+Console: 
+• Terminal with 24 lines and 80 columns. The terminal must be VT100 or ANSI 
+compatible. The required communication setup is: 9600 bits per second, 8 data bits, 
+1 stop, and no parity. 
+• Interface cable. Figure 3–1 details the construction of the cable. It shows the 
+interface to most terminals or computers. Consult the terminal/computer owner's 
+manual to verify proper connections. 
+• Proper documentation for the location of interest. 
+ 
+
+Maintenance Access Console 
+P2346F, Rev. Feb/06 3–2 ALSTOM Signaling Inc. 
+ DB9    to       DB25                  DB9     to           DB9
+(CPU)        (TERMINAL)           (CPU)          (TERMINAL)
+2 RX  _________ 2 TX               2 RX  _________ 3 TX
+3 TX  _________ 3 RX               3 TX  _________ 2 RX
+5 GND _________ 7 GND          5 GND _________ 5 GND
+Interface Cable for CenTraCode II-s system.  Typical of most terminals/computers.
+(CPU)         (TERMINAL)          (CPU)          (TERMINAL)
+*                                          *
+* Current Loop to RS232 Converter required.
+Interface Cable for CenTraCode II-v system.  Typical of most terminals/computers.
+2 RX  _________ 2 TX               2 RX  _________ 3 TX
+3 TX  _________ 3 RX               3 TX  _________ 2 RX
+5 GND _________ 7 GND          5 GND _________ 5 GND
+ DB9    to       DB25                  DB9     to           DB9
+ 
+Figure 3–1.  MAC Interface Cable 
+ 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–1 ALSTOM Signaling Inc. 
+4. SECTION 4 – DIAGNOSTIC MENUS 
+4.1. GENERAL 
+This section discusses the Genisys specific menus available for the diagnostics and 
+maintenance of the CenTraCode unit.  
+4.2. INTRODUCTION 
+The following discusses menus available for the diagnostics and maintenance of the 
+CenTraCode unit. The use of the Genisys specific menus are discussed in this section. 
+Refer to Publication 2326B for the detailed description of the menus for system 
+diagnostics.  
+The CenTraCode II communication system is menu driven. This means that from a list 
+of menus, you select (highlight) a desired option. The selected option is shown in 
+reverse video and, at the bottom of the screen, a brief description of the option appears. 
+Menu selections can be made using one of the following procedures: 
+• Press arrow keys or space bar to highli ght the menu option of interest and press 
+Enter; 
+ 
+or 
+• Press the first letter of a menu option. This letter is usually displayed in capital 
+letters. 
+The selected option either executes a function or displays another menu.  
+Examples of the menus appearing on the screen have been included with the text in this 
+section to assist in explaining and showing these menus. These examples may vary 
+slightly from what is on your screen. 
+Figure 4–1 displays the structure of the emulation diagnostic menus and options.  
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–2 ALSTOM Signaling Inc. 
+MAIN MENU
+Emulation    Monitor    System    Diagnostic    Logger    HHT_ Use    Password
+Port    Next    Last    Optns    Msg    Diags    Reset    Exit
+Msg Counts    Reset Counts    Show Info    Timers    Flags    Exit
+Rts - Cts        Hold  Rts    Exit
+Multi    Cts    Rts Invert    Invert Cts    Exit
+ 
+Figure 4–1.  Emulation Diagnostic Menus and Options Structure 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–3 ALSTOM Signaling Inc. 
+4.3. MAIN MENU 
+When the system is powered on, the initialization process starts. When it is completed, 
+the main menu is displayed on the monitor. The menu appears as shown in Figure 4–2.  
+The main menu provides a list of the system functions and/or operations. When a 
+selection is made from this menu, another menu appears. Refer to Publication P2326B 
+for a detailed discussion of these menus. 
+ 
+ 
+GENERAL RAILWAY SIGNAL 
+CenTraCode(R)II Maintenance System 
+Main Menu 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Emulation  Monitor  System  Diagnostic  Logger  HHT_Use  Password 
+ 
+Support emulations used 
+ 
+Figure 4–2.  Main Menu 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–4 ALSTOM Signaling Inc. 
+4.4. GENISYS DIAGNOSTIC MENU 
+From the system's main menu, select Emulations. Select the desired Port. A message 
+showing the port usage and the Genisys protocol version information appears as shown 
+in Figure 4–3. 
+ 
+ 
+GENERAL RAILWAY SIGNAL 
+CenTraCode(R)II Maintenance System 
+Emulation Control Module 
+ 
+ 
+ 
+ 
+ 
+ 
+Port  Next  Last  Optns  Msg  Diags  Reset Exit 
+  
+Port 1 has 2 stations using GENISYS VER B, COPYRIGHT ALSTOM, 1991 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Select the code port 
+ 
+Figure 4–3.  Genisys Emulation Menu with Port Selected 
+Table 4–1 on the following page lists the options that can be selected from the Genisys 
+Emulation Menu. Along with these options is a description of their usage. 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–5 ALSTOM Signaling Inc. 
+Table 4–1.  Genisys Emulation Menu Options 
+Option Description 
+Port Selects the port number. 
+Next Displays station configuration information stored in the system. Use 
+Next/Last to step through this information. 
+Last See Next description above. 
+Optns Displays the port configuration options. 
+Msg Displays current message traffi c between the protocol and the 
+application logic routines. 
+Diags Displays the Genisys diagnostics menu. 
+ 
+Reset Resets the system operation. 
+Exit Exits to main menu. 
+ 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–6 ALSTOM Signaling Inc. 
+4.4.1. Diags Option 
+Selecting the Diags option invokes the Genisys diagnostics. The menu in Figure 4–4 
+appears.  
+ 
+ 
+GENERAL RAILWAY SIGNAL 
+CenTraCode(R)II Maintenance System 
+Emulation Control Module 
+Genisys Code System Diagnostics 
+ 
+ 
+Genisys Emulation, Rev E00, COPYRIGHT ALSTOM, 1991                    
+                                                         
+                                                       
+                                                     
+                                                 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                       
+Msg Counts    Reset Counts    Show Info    Timers    Flags             Exit  
+                                                        
+Show Counts of messages                                       
+                                                                                        
+Figure 4–4.  Diags Option Menu 
+Following are the options and screen displays that can be selected from the Diags 
+option menu.  
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–7 ALSTOM Signaling Inc. 
+4.4.1.1. Msg Counts 
+The Msg Counts option causes the system to display the number and types of 
+messages that have been sent and received by the local unit for each address defined 
+(see Figure 4–5). The numbers range from 0 to 255 and wrap when the maximum count 
+is reached. The Message Aborts display lists the number of buffers that were dropped 
+because of receiver errors or invalid addresses or crc errors.  
+The address column on this display below shows the address of the currently displaying 
+station in hexadecimal. Each message type AA, AB, and AC is shown for both received 
+(in) and transmitted (out) messages. 
+ 
+                             
+GENERAL RAILWAY SIGNAL                        
+                     CenTraCode(R)II Maintenance System                 
+                           Emulation Control Module                       
+                       Genisys Code System Diagnostics               
+                                                                          
+addr  1out  2out  3out  9in  ain  bin  cin  din  ein  
+12     1     2     2     1     3   2    1    2    2            
+13     0     0     0     0     0   0    0    0    0        
+14     1     2     2     1     3   2    1    2    2    
+Message Aborts = 126                                                      
+                                                                          
+                                                                          
+                                                                          
+                                                                          
+                                                                          
+                                                                          
+                                                                          
+                                                                          
+                                                                          
+                                                                          
+ Msg Counts    Reset Counts    Show Info    Timers    Flags             Exit 
+                                                                          
+Show Counts of messages                                                   
+ 
+Figure 4–5.  Msg Counts Screen Display  
+4.4.1.2. Reset Counts 
+The Reset Counts option causes the number of messages both sent and received to be 
+reset to zero. 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–8 ALSTOM Signaling Inc. 
+4.4.1.3. Show Info 
+The Show Info option causes a detailed synopsis of any one station address to be 
+displayed (see Figure 4–6). The line above Message Aborts is the same as the first line 
+of information in the Msg Counts screen display. Next out tells which buffer the system 
+transmits next. Next use tells which buffer the system builds the next message into. This 
+line is followed by 8 buffer images. Each of these buffers has either been sent or is 
+waiting transmission. If there is an asterisk ( * ) at the beginning of the line, the buffer is 
+current not sent, or sent but not yet acknowledged for. 
+In the following screen display, the same information is available for only one station at 
+a time. In addition, the currently pending messages are listed and the last several 
+messages are shown. Messages with an asterisk ( * ) in front of them are pending 
+transmission/acknowledgement. The message shown on the line following the abort line 
+is the current bit map as reported by the application logic. See Figure 4–6. 
+ 
+                                                                         
+                            GENERAL RAILWAY SIGNAL                       
+                     CenTraCode(R)II Maintenance System                
+                           Emulation Control Module                      
+                       Genisys Code System Diagnostics              
+                                                                         
+addr  1out  2out  3out  9in  ain  bin  cin  din  ein      
+12     1     2     2     1    3    2    1    2    2          
+Message Aborts = 0                                                       
+F2 12 00 01 01 00 02 55 03 88 AA 55                                              
+Next Out  3 use 5                                                        
+  F2 12 00 00 00 00 AA 55                                                
+  F2 12 01 01 AA 55                                                      
+  F2 12 01 00 AA 55                                                      
+ *F2 12 01 01 02 02 AA 55                                                
+ *F2 12 01 00 AA 55                                                      
+  F2 12 01 01 AA 55                                                      
+  F2 12 00 00 AA 55                                                      
+  F2 12 03 00 AA 55                                                      
+                                                                                          
+ Msg Counts    Reset Counts    Show Info    Timers    Flags              Exit      
+ 
+Show Station Info                                                        
+ 
+Figure 4–6.  Show Info Screen Display 
+ 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–9 ALSTOM Signaling Inc. 
+4.4.1.3.1. Byte/Bit Mapping 
+The displayed bits on the screen are byte inverted as shown in Figure 4–7. This means 
+that the bits are in reverse order on a byte boundary from the code chart. For example, 
+in Byte 1 Bit 01 of the input file has a displayed hex value of 8.   
+Application Bit Buffer:
+01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16
+Screen Display:
+Byte 1 Byte 2
+08 07 06 05 04 03 02 01 16 15 14 13 12 11 10 09
+  
+Figure 4–7.  Byte/Bit Mapping 
+4.4.1.4. Timers 
+The Timers option invokes the timer adjustment. The screen display is shown in Figure 
+4–8.  
+                            
+GENERAL RAILWAY SIGNAL                         
+                     CenTraCode(R)II Maintenance System                 
+                           Emulation Control Module                       
+                       Genisys Code System Diagnostics               
+                                                                          
+ 
+ 
+                                                                                
+                                                                   
+                                        
+      RTS to CTS Maximum Delay (ms) xxxx                                  
+      Hold RTS Time Interval   (ms) xxxx                                  
+                                                                          
+                                                                          
+ 
+ 
+ 
+                                                                          
+                                                                          
+    Rts-Cts   Hold Rts                                            Exit       
+ Adjust Message Timeout value                                             
+                                                                         
+Figure 4–8.  Timers Screen Display 
+
+Diagnostic Menus 
+P2346F, Rev. Feb/06 4–10 ALSTOM Signaling Inc. 
+Rts-Cts –  If this number is set to zero, in multi-drop mode the system asserts Rts and 
+waits for Cts to become true before transmitting regardless of the amount of time 
+needed. If there is a non zero value, then the system weighs the indicated number of 
+milliseconds and then begin transmitting whether Cts is true or not. If Cts becomes true 
+before the time elapses, transmissions commence. By strapping Cts low, this can be 
+used to digitally adjust the time between Rts and transmission starting. 
+Hold Rts –  Sets the number of milliseconds the system holds Rts true after 
+transmission is complete. 
+4.4.1.5. Flags 
+The Flags option invokes the Rts/Cts line control. The screen display is shown in Figure 
+4–9. 
+ 
+GENERAL RAILWAY SIGNAL                        
+                     CenTraCode(R)II Maintenance System                 
+                           Emulation Control Module                       
+                       Genisys Code System Diagnostics               
+                                                                          
+                                                                          
+                                                                          
+       Multi drop Flag is True                                            
+       Cts Flag is        False                                           
+       Rts Invert Flag is True                                            
+       Invert Cts Flag is True                                            
+                                                  
+                                                                         
+ 
+  
+                                                                          
+                                                                         
+Multi      Cts      Rts Invert     Invert Cts                       Exit      
+Multi Drop Flag                                                           
+ 
+ 
+Figure 4–9.  Flags Screen Display 
+Multi – This flag causes the system to assert true Rts prior to all transmissions and de-
+assert Rts when done. 
+Cts – This flag causes the system to hold transmissions until the Cts line is true. 
+Rts Invert – This flag, when true, changes the normal assertion of Rts from true being 
+high, to true being low. 
+Invert Cts – This flag, when true, changes the normal sense of Cts from true being 
+high, to true being low. 
+
+CenTraCode II-s Hardware 
+P2346F, Rev. Feb/06 5–1 ALSTOM Signaling Inc. 
+5. SECTION 5 – CENTRACODE II-S HARDWARE 
+5.1. GENERAL  
+This section describes the CenTraCode II-s hardware, including installation. 
+5.2. APPLICATION 
+See the Maintenance Access Console section for interfacing details. Refer to ALSTOM 
+Publication P2326B for details on the CenTraCode II-s hardware. 
+5.3. CONFIGURATION -- SAMPLE CAA INPUT FILES 
+See Appendix A for sample CAA files. Refer to ALSTOM Publication P2326C for 
+detailed explanations of the generation and compilation of CAA input files. 
+5.4. INSTALLATION 
+Installation requirements for the Genisys system on the CenTraCode II-s system are 
+primarily with the carrier system used as the codeline. The codeline must be interfaced 
+with either Port 1 or Port 2, because Port 3 and Port 4 do not support "modem control" 
+lines. Along the same lines, the Rts and Cts signals must be used for handshaking with 
+the modem. 
+5.5. POWER-UP 
+The module is ready to go after power-up. No further action is necessary. All power to 
+the module must be off when inserting and extracting boards.  
+5.6. CENTRACODE II-S SYSTEM DIAGRAM 
+Figure 5–1  is a block diagram of the system structure of the CenTraCode II-s system. 
+
+CenTraCode II-s Hardware 
+P2346F, Rev. Feb/06 5–2 ALSTOM Signaling Inc. 
+CenTraCode II-s System Software 
+Protocol Emulation Software 
+Interface Messages
+I/O 
+Other 
+Serial Ports
+Port 1 Port 2
+Control Indication Special 
+CAA Generated 
+Application 
+ 
+Figure 5–1.  CenTraCode II-s System Structure 
+ 
+
+CenTraCode II-s Hardware 
+P2346F, Rev. Feb/06 5–3 ALSTOM Signaling Inc. 
+5.7. INSTALLATION PROCEDURE 
+This part of the section is to help install the Genisys code unit. An understanding of the 
+operation of Genisys protocol is assumed. Refer to the Theory of Operation section for 
+a detailed description of the operation of this code system. 
+5.7.1. Installation Equipment 
+The following is a list of the equipment needed for installation of this code unit: 
+• Code unit with software and documentation 
+• VT100 compatible terminal or a pers onal computer with the proper terminal 
+emulation software 
+• All required interface cables 
+• Protocol analyzer 
+• Code charts for the specified location 
+5.7.2. Installation/Line Interface 
+Connect and verify all wiring to the code unit according to the wiring diagrams. 
+
+CenTraCode II-s Hardware 
+P2346F, Rev. Feb/06 5–4 ALSTOM Signaling Inc. 
+5.7.3. Initial Operation 
+1. Connect the protocol analyzer to the c odeline and obtain a recording of control 
+messages.  
+2. Examine the recording to determine the integrity of the control messages, and to 
+insure that the proper parameters have been used.  
+3. Connect the terminal to the CPUs front port.  
+4. Power up the code system. MACs Main Menu should be displayed. If the menu does 
+not appear, check the following: 
+− Power connections to the terminal or the code unit. 
+− Correct monitor. The unit us es the following parameters: 
+• 8 data bits 
+• 1 Stop 
+• No parity 
+• 9600 baud 
+− Interface cable is constructed correctly 
+− Correct jumper configuration (see Appendix D) 
+ 
+5.7.4. Interface with Local Control Panel 
+The CenTraCode II code unit may be interfaced with a local control panel of switches 
+and indicators. The panel can be driven by the application logic internal to the unit, or 
+may be completely external. When connecting an external local control panel: 
+1. Verify that the indicator lights do not  drop the voltage on the inputs when connected. 
+2. Use the "Output Disable" input on the I/O to disable the outputs when in the local 
+mode. This guarantees that the output circuits are not shorted. 
+ 
+ 
+
+CenTraCode II-v Hardware 
+P2346F, Rev. Feb/06 6–1 ALSTOM Signaling Inc. 
+6. SECTION 6 – CENTRACODE II-V HARDWARE 
+6.1. GENERAL  
+This section describes the CenTraCode II-v hardware, including installation. 
+6.2. APPLICATION 
+See the Maintenance Access Console section for interfacing details. Refer to ALSTOM 
+Publication P2086B for details on the CenTraCode II-v (CSEX) hardware. 
+6.3. CONFIGURATION -- SAMPLE CAA INPUT FILES 
+See Appendix B for sample CAA files. Refer to ALSTOM Publication P2086C for 
+detailed explanations of the generation and compilation of CAA input files. 
+6.4. INSTALLATION 
+Installation requirements for the Genisys system on the CenTraCode II-v system are 
+primarily with the carrier system used as the codeline. The codeline must be interfaced 
+with either Port 1 or Port 2, because Port 3, 4, 5, and 6 do not support "modem control" 
+lines. Along the same lines, the Rts and Cts signals must be used for handshaking with 
+the modem. 
+6.5. POWER-UP 
+The module is ready to go after power-up. No further action is necessary. All power to 
+the module must be off when inserting and extracting boards. 
+6.6. INTEGRATION OF CENTRACODE II-V (CSEX) SYSTEM DIAGRAM 
+Figure 6–1 is a block diagram of the system structure of the CenTraCode II-v system 
+when integrated with the VPI system. 
+
+CenTraCode II-v Hardware 
+P2346F, Rev. Feb/06 6–2 ALSTOM Signaling Inc. 
+CenTraCode II-v System Software
+Genisys
+Protocol Emulation Software
+Interface Messages
+NVI/O
+Other
+Serial Ports
+Port 1 Port 2
+Control Indication Special
+VPI System Software
+VPI Vital Logic
+  DPRAM   
+VPI
+CSEX
+VPI
+CPU
+CAA Generated
+Non-Vital Application
+ 
+Figure 6–1.  CenTraCode II-v System Structure 
+
+CenTraCode II-v Hardware 
+P2346F, Rev. Feb/06 6–3 ALSTOM Signaling Inc. 
+6.7. INSTALLATION PROCEDURE 
+This part of the section is to help install the Genisys code unit. An understanding of the 
+operation of Genisys protocol is assumed. Refer to the Theory of Operation section for 
+a detailed description of the operation of this code system. 
+6.7.1. Installation Equipment 
+The following is a list of the equipment needed for installation of this code unit: 
+• Code unit with software and documentation 
+• VT100 compatible terminal or a pers onal computer with the proper terminal 
+emulation software 
+• All required interface cables 
+• Protocol analyzer 
+• Code charts for the specified location 
+6.7.2. Installation/Line Interface 
+Connect and verify all wiring to the code unit according to the wiring diagrams. 
+
+CenTraCode II-v Hardware 
+P2346F, Rev. Feb/06 6–4 ALSTOM Signaling Inc. 
+6.7.3. Initial Operation 
+1. Connect the protocol analyzer to the c odeline and obtain a recording of control 
+messages.  
+2. Examine the recording to determine the integrity of the control messages, and to 
+insure that the proper parameters have been used.  
+3. Connect the terminal to the CPUs front port.  
+4. Power up the code system. MACs Main Menu should be displayed. If the menu does 
+not appear, check the following: 
+− Power connections to the terminal or the code unit. 
+− Correct monitor. The unit us es the following parameters: 
+• 8 data bits 
+• 1 Stop 
+• No parity 
+• 9600 baud 
+− Interface cable is constructed correctly. 
+− Correct jumper configuration (see Appendix D). 
+ 
+6.7.4. Interface with Local Control Panel 
+The CenTraCode II code unit may be interfaced with a local control panel of switches 
+and indicators. The panel can be driven by the application logic internal to the unit, or 
+may be completely external. When connecting an external local control panel: 
+1. Verify that the indicator lights do not drop the voltage on the inputs when connected. 
+2. Use the "Output Disable" input on the I/O to disable the outputs when in the local 
+mode. This guarantees that the output circuits are not shorted. 
+ 
+ 
+
+Troubleshooting 
+P2346F, Rev. Feb/06 7–1 ALSTOM Signaling Inc. 
+7. SECTION 7 - TROUBLESHOOTING 
+7.1. GENERAL 
+This section describes how to use various board LEDs to assist troubleshooting the 
+CenTraCode II unit. 
+7.2. DIAGNOSTIC LEDS 
+On the front edge of the CenTraCode II units some LEDs are used specifically for 
+troubleshooting the Genisys system. 
+The LEDs are turned on at the end of each incoming message. This means that any 
+valid condition causing a change in LED state shows when the current incoming 
+message is fully received. If the LEDs are not changing, then the codeline has failed, 
+the state is the same for each message, or this unit is not being addressed. The only 
+exception to this rule is the receiver error LED, which displays errors as soon as they 
+are detected. 
+For a further explanation of all LEDs used for troubleshooting the CenTraCode II 
+systems, refer to Publication P2086B for the CenTraCode II-v system and Publication 
+2326B for the CenTraCode II-s system. 
+The LEDs used specifically for troubleshooting the Genisys are defined as follows. 
+
+Troubleshooting 
+P2346F, Rev. Feb/06 7–2 ALSTOM Signaling Inc. 
+7.2.1. CenTraCode II-s System 
+Table 7–1 summarizes the LEDs used for troubleshooting the Genisys code system 
+found on the front of the CPU board. For an explanation of the function codes used with 
+the LEDs see Publication 2326B. The function code must be at 00 on the digital display 
+for the following LEDs. Figure 7–1 shows the CPU board functional layout.  
+Table 7–1.  CPU Board LEDs for the CenTraCode II-s System 
+Port 1 Port 2 Meaning 
+DS8 DS4 Receiver Error 
+DS9 DS5 Invalid Address Received 
+DS10 DS6 Channel Responding 
+DS11 DS7 Valid Address Received 
+ 
+
+Troubleshooting 
+P2346F, Rev. Feb/06 7–3 ALSTOM Signaling Inc. 
+BLOWN FUSE
+5 VDC ON
+POWER 
+LEDs for
+Genisys 
+Code System 
+LOGIC VOLTAGE LOW 
+B1 BATTERY VOLTAGE LOW
+CPU RESET 
+SYSTEM
+RAM 
+SYSTEM/ 
+APPLICATION 
+CPU 
+INTEL 
+80C188
+(U55) 
+KEYED 
+CONNECTOR 
+FUSE
+F1
+1 
+2 
+3 
+4 
+5 
+6 
+7 
+8 
+9 
+10
+11
+12
+MAINTENANCE 
+PORT FOR  
+HHT OR PC 
+TERMINAL
+(DB9) 
+ENTRY 
+SWITCHES FOR  
+DIGITAL DISPLAY 
+DIGITAL 
+DISPLAY 
+DC CODE LINE
+OUTPUT RELAY
+P1
+OPTIONAL  
+MODEM 
+INTERFACE 
+CONNECTION
+P2
+P3
+(U44) 
+(U51) 
+(U54) 
+(U61) 
+ADDITIONAL
+MEMORY
+SYSTEM/ 
+APPLICATION 
+SW 4 SW 5OFF OFF 
+1 8 1 8 
+B1
+SW3 
+SW2 
+TB3 
+TB2 
+TB1 
+J1
+J2
+SW1 
+K1
+NON-VITAL OUTPUTS 
+POWER 
+SUPPLY
+NON-VITAL INPUTS
+D 
+U 
+A 
+R 
+T 
+D 
+U 
+S 
+A 
+R 
+T 
+MEMORY
+ARRAY 
+DS1 
+DS2 
+DS3 
+DS4 
+DS7 
+DS8 
+DS11
+DS12
+DS13
+DS14
+L 
+R 
+L 
+R 
+ 
+Figure 7–1.  CPU Board Functional Layout 
+
+Troubleshooting 
+P2346F, Rev. Feb/06 7–4 ALSTOM Signaling Inc. 
+7.2.2. CenTraCode II-v System 
+Following are the LEDs used for troubleshooting the Genisys code system found on the 
+front of the CSEX board. Figure 7–2 shows the CSEX board functional layout. 
+Table 7–2.  CSEX Board LEDs for the CenTraCode II-v System 
+Port 1 Port 2 Meaning 
+CR1 CR5 Valid Address Received  
+CR2 CR6 Channel Responding  
+CR3 CR7 Invalid Address Received 
+CR4 CR8 Receiver Error 
+
+Troubleshooting 
+P2346F, Rev. Feb/06 7–5 ALSTOM Signaling Inc. 
+CSEX BOARD 59473-938 
+APPLICATION 
+EPROM 
+APPLICATION 
+EPROM 
+SYSTEM 
+EPROM 
+SYSTEM 
+EPROM 
+RESET 
+SWITCH
+WATCH DOG 
+TIMER 
+JUMPER
+TP2  +5V 
+TP3  COM 
+TP1 
+COMMUNICATIONS
+JUMPERS 
+SYSTEM 
+EPROM 
+JUMPERS 
+APPLICATION 
+EPROM 
+JUMPERS 
+CR19 
+CR18 
+CR17 
+CR12 
+CR11 
+CR10 
+CR9 
+CR8 
+CR7 
+CR6 
+CR5 
+CR4 
+CR3 
+CR2 
+CR1 
+CR16 
+CR15 
+CR14 
+CR13 
+DB9 
+MAINTENANCE 
+INTERFACE 
+U36 
+ U37 
+ U38 
+ U39 
+U49 
+ U50 
+ U51 
+ U52 
+P3
+P2
+P1
+LEDs for
+Genisys 
+Code System 
+ 
+Figure 7–2.  CSEX Board Functional Layout 
+
+Troubleshooting 
+P2346F, Rev. Feb/06 7–6 ALSTOM Signaling Inc. 
+7.3. TROUBLESHOOTING GUIDE 
+Following is a troubleshooting guide for the CenTraCode II-s and II-v systems. 
+Table 7–3.  Troubleshooting Guide 
+Symptom Possible Trouble 
+LEDs Extinguished Power (see installation section). 
+Nothing happens 
+LEDs do not Change  
+Code line interface. 
+Code line problem. 
+Valid Address LED does not 
+light 
+CAA configuration. Address not programmed same 
+as remote expects. 
+Controls do not work as 
+expected 
+CAA Programming. 
+Wiring error. 
+Unit does not respond Rts/Cts not connected or not functioning as 
+programmed. 
+ 
+ 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-1 ALSTOM Signaling Inc. 
+A. APPENDIX A - CENTRACODE II-S SAMPLE CAA CONFIGURATION FILES 
+Sam8.CSI 
+ 
+********************************************************************** 
+*                                                                    * 
+*     FILE: SAM8.CSI                       7/2/92                   * 
+*                                                                    * 
+********************************************************************** 
+********** INPUT FILE FOR CSEX REPORTS AND PROM CODE ***************** 
+********************************************************************** 
+********************************************************************** 
+*                                                                    * 
+*                   DOCUMENTATION SECTION                            * 
+*                                                                    * 
+********************************************************************** 
+COMPILER RUN CONTROLS =   LIST ALL,PROM 
+* 
+CTC2 PROGRAM NUMBER = 51607-000 GR 00, REV. A, RGF 
+COPYRIGHT YEAR = 1992 
+ 
+*===================================================================== 
+*SYSTEM SOFTWARE = 40026-0XX GR 00 
+*USE ONLY IF NONSTANDARD SOFTWARE IS TO BE USED 
+*===================================================================== 
+*=========COMPILER #31746-0XX GR00 
+*===================================================================== 
+* 
+CONTRACT NUMBER = 91- 
+CONTRACT NAME = SAMPLE 
+CUSTOMER NAME = RAILROAD 
+EQUIPMENT LOCATION = PHYSICAL 
+DESIGNER = RGF 
+CHECKER = 
+* 
+CTC2 ID = SAM8 
+****** MUST AGREE WITH .COM  FILE ************** 
+* 
+***HARDWARE FILE 
+INCLUDE SAM8.HDW 
+* 
+*** CTC2 COMMUNICATIONS FILE 
+* 
+INCLUDE SAM8.COM 
+* 
+*** NON VITAL LOGIC FILE 
+INCLUDE SAM8.NV 
+ 
+ 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-2 ALSTOM Signaling Inc. 
+ 
+CSAM8.NV 
+ 
+********************************************************************** 
+********************************************************************** 
+* 
+*         FILE CSAM-Genisys.NV                  7/2/92 
+* 
+********************************************************************** 
+***** NON-VITAL LOGIC INPUT FILE ************************************* 
+***** GENISYS  EMULATION      ************************************* 
+********************************************************************** 
+********************************************************************** 
+                       BOOLEAN PARAMETER SECTION 
+*===================================================================== 
+*      INCOMING DATA CAN BE LISTED DIRECTLY IN .HDW AND .COM FILES 
+*===================================================================== 
+*        OUTGOING DATA MUST BE LISTED AND TREATED AS BOOLEAN 
+*           AS WELL AS LISTED IN .HDW AND .COM FILES 
+*===================================================================== 
+  WORD1BIT1K  WORD2BIT1K  WORD3BIT1K 
+  WORD1BIT2K  WORD2BIT2K  WORD3BIT2K 
+  WORD1BIT3K  WORD2BIT3K  WORD3BIT3K 
+  WORD1BIT4K  WORD2BIT4K  WORD3BIT4K 
+  WORD1BIT5K  WORD2BIT5K  WORD3BIT5K 
+  WORD1BIT6K  WORD2BIT6K  WORD3BIT6K 
+  WORD1BIT7K  WORD2BIT7K  WORD3BIT7K 
+  WORD1BIT8K  WORD2BIT8K  WORD3BIT8K 
+ 
+ 
+********************************************************************** 
+                        NONVITAL LOGIC SECTION 
+********************************************************************** 
+**==================================================================== 
+********************************************************************** 
+**==================================================================== 
+** USE THE CONTROL SECTION ONLY IF LOGIC is needed to allow for 
+** Latched outputs or other signal circuit requirements. 
+**==================================================================== 
+** 
+**APPLICATION = Genisys CONTROLS TO OUTPUTS 
+** 
+**         BOOL WORD1BIT1-NVO = WORD1BIT1 
+********************************************************************** 
+********** From .HDW File   = From .COM  File ************************ 
+********************************************************************** 
+**        BOOL WORD1BIT2-NVO = WORD1BIT2 
+**        BOOL WORD1BIT3-NVO = WORD1BIT3 
+**        BOOL WORD1BIT4-NVO = WORD1BIT4 
+**        BOOL WORD1BIT5-NVO = WORD1BIT5 
+**        BOOL WORD1BIT6-NVO = WORD1BIT6 
+**        BOOL WORD1BIT7-NVO = WORD1BIT7 
+**        BOOL WORD1BIT8-NVO = WORD1BIT8 
+** 
+**        BOOL WORD2BIT1-NVO = WORD2BIT1 
+**        BOOL WORD2BIT2-NVO = WORD2BIT2 
+**        BOOL WORD2BIT3-NVO = WORD2BIT3 
+**        BOOL WORD2BIT4-NVO = WORD2BIT4 
+**        BOOL WORD2BIT5-NVO = WORD2BIT5 
+**        BOOL WORD2BIT6-NVO = WORD2BIT6 
+**        BOOL WORD2BIT7-NVO = WORD2BIT7 
+**        BOOL WORD2BIT8-NVO = WORD2BIT8 
+** 
+**==================================================================== 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-3 ALSTOM Signaling Inc. 
+**   START OF ACTIVE PROGRAM    ************************************** 
+**==================================================================== 
+********************************************************************** 
+APPLICATION = INPUTS TO Genisys INDICATIONS 
+ 
+        BOOL WORD1BIT1K = .N.WORD1BIT1-NVI 
+********************************************************************** 
+********* From .COM File   = From .HDW  File ************************* 
+********************************************************************** 
+        BOOL WORD1BIT2K = .N.WORD1BIT2-NVI 
+        BOOL WORD1BIT3K = .N.WORD1BIT3-NVI 
+        BOOL WORD1BIT4K = .N.WORD1BIT4-NVI 
+        BOOL WORD1BIT5K = .N.WORD1BIT5-NVI 
+        BOOL WORD1BIT6K = .N.WORD1BIT6-NVI 
+        BOOL WORD1BIT7K = .N.WORD1BIT7-NVI 
+        BOOL WORD1BIT8K = .N.WORD1BIT8-NVI 
+ 
+        BOOL WORD2BIT1K = .N.WORD2BIT1-NVI 
+        BOOL WORD2BIT2K = .N.WORD2BIT2-NVI 
+        BOOL WORD2BIT3K = .N.WORD2BIT3-NVI 
+        BOOL WORD2BIT4K = .N.WORD2BIT4-NVI 
+        BOOL WORD2BIT5K = .N.WORD2BIT5-NVI 
+        BOOL WORD2BIT6K = .N.WORD2BIT6-NVI 
+        BOOL WORD2BIT7K = .N.WORD2BIT7-NVI 
+        BOOL WORD2BIT8K = .N.WORD2BIT8-NVI 
+ 
+        BOOL WORD3BIT1K = .N.WORD3BIT1-NVI 
+        BOOL WORD3BIT2K = .N.WORD3BIT2-NVI 
+        BOOL WORD3BIT3K = .N.WORD3BIT3-NVI 
+        BOOL WORD3BIT4K = .N.WORD3BIT4-NVI 
+        BOOL WORD3BIT5K = .N.WORD3BIT5-NVI 
+        BOOL WORD3BIT6K = .N.WORD3BIT6-NVI 
+        BOOL WORD3BIT7K = .N.WORD3BIT7-NVI 
+        BOOL WORD3BIT8K = .N.WORD3BIT8-NVI 
+ 
+ 
+ 
+ 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-4 ALSTOM Signaling Inc. 
+SAM8.HDW 
+ 
+ 
+********************************************************************** 
+*                                                                    * 
+*     FILE: SAM8.HDW                      7/1/92                   * 
+*                                                                    * 
+********************************************************************** 
+****************** HARDWARE FOR COMPILER  **************************** 
+********************************************************************** 
+*CONTRACT NUMBER = 91- 
+*CONTRACT NAME = SAMPLE 
+*EQUIPMENT LOCATION = PHYSICAL 
+*DESIGNER = RGF 
+*CHECKER = 
+********************************************************************** 
+*                                                                    * 
+*                           MODULE SECTION                           * 
+*                                                                    * 
+********************************************************************** 
+CTC2S 3U MODULE SECTION 
+********  OR   CTC2S 9U MODULE SECTION  ***** 
+* 
+MODULE = 59473-000 GR 00 
+* 
+*RACK = ### 
+*POSITION = A-K 
+* 
+MODULE_PREFIX = 3U 
+******** OR   9U ****** 
+ 
+FLASH =  120 
+******** FLASH2 IS TWO TIMES RATE OF FLASH 
+ 
+PULSE = 100 MSEC. 
+********* IN 50 MSEC. STEPS MINIMUM  IS 100 MS 
+**** DEFAULT (NO PULSE OR PULSE2 LINE) IS 200 FOR PULSE FOR 400 PULSE2 
+ 
+********************************************************************** 
+* 
+BOARD ASSIGNMENT SUBSECTION 
+* 
+* 
+* 
+SLOT 01 = CPU 24 IN / 16 BIP, 59473-976 GR 02 
+FUNCTION = CODE INDICATIONS 
+ 
+INPUT GROUP A = N24 
+DEBOUNCE = 50 MSEC. 
+*********** 0,25,50 MSEC ALLOWED 
+********  DEFAULT IS 0 
+  01,WORD1BIT1-NVI  =  WORD1BIT1-I 
+  02,WORD1BIT2-NVI  =  WORD1BIT2-I 
+  03,WORD1BIT3-NVI  =  WORD1BIT3-I 
+  04,WORD1BIT4-NVI  =  WORD1BIT4-I 
+  05,WORD1BIT5-NVI  =  WORD1BIT5-I 
+  06,WORD1BIT6-NVI  =  WORD1BIT6-I 
+  07,WORD1BIT7-NVI  =  WORD1BIT7-I 
+  08,WORD1BIT8-NVI  =  WORD1BIT8-I 
+ 
+INPUT GROUP B = N24 
+DEBOUNCE = 50 MSEC. 
+  09,WORD2BIT1-NVI =   WORD2BIT1-I 
+  10,WORD2BIT2-NVI  =  WORD2BIT2-I 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-5 ALSTOM Signaling Inc. 
+  11,WORD2BIT3-NVI  =  WORD2BIT3-I 
+  12,WORD2BIT4-NVI  =  WORD2BIT4-I 
+  13,WORD2BIT5-NVI  =  WORD2BIT5-I 
+  14,WORD2BIT6-NVI  =  WORD2BIT6-I 
+  15,WORD2BIT7-NVI  =  WORD2BIT7-I 
+  16,WORD2BIT8-NVI  =  WORD2BIT8-I 
+ 
+INPUT GROUP C = N24 
+DEBOUNCE = 50 MSEC. 
+  17,WORD3BIT1-NVI  =  WORD3BIT1-I 
+  18,WORD3BIT2-NVI  =  WORD3BIT2-I 
+  19,WORD3BIT3-NVI  =  WORD3BIT3-I 
+  20,WORD3BIT4-NVI  =  WORD3BIT4-I 
+  21,WORD3BIT5-NVI  =  WORD3BIT5-I 
+  22,WORD3BIT6-NVI  =  WORD3BIT6-I 
+  23,WORD3BIT7-NVI  =  WORD3BIT7-I 
+  24,WORD3BIT8-NVI  =  WORD3BIT8-I 
+ 
+OUTPUT GROUP A = B24, N24 
+*FUNCTION = CODE CONTROLS 
+  01,NO SOURCE =  WORD1BIT1-C 
+  01 (SINK),WORD1BIT1-NVO 
+*===================================================================== 
+**********  OPTION  ************************************************** 
+* 01,SOURCEPARAM1-NVO = WIRENAME1 
+* 01 (SINK),SINKPARAM1 
+*===================================================================== 
+* 01 (FLASH),FLASHPARAM1 
+* 01 (FLASH2),FLASH2PARAM1 
+  01 (PULSE),PERMONE 
+* 01 (PULSE2),PULSE2PERAM1 
+*===================================================================== 
+********* PERMONE CAN BE USED TO MAKE PORT ALWAYS FLASHING OR 
+********* ALWAYS PULSING 
+*===================================================================== 
+ 
+  02,NO SOURCE =  WORD1BIT2-C 
+  02 (SINK), WORD1BIT2-NVO 
+  02 (PULSE),PERMONE 
+  03,NO SOURCE =  WORD1BIT3-C 
+  03 (SINK), WORD1BIT3-NVO 
+  03 (PULSE),PERMONE 
+  04,NO SOURCE =  WORD1BIT4-C 
+  04 (SINK), WORD1BIT4-NVO 
+  04 (PULSE),PERMONE 
+ 
+OUTPUT GROUP B = B24, N24 
+  05,NO SOURCE =  WORD1BIT4-C 
+  05 (SINK), WORD1BIT4-NVO 
+  05 (PULSE),PERMONE 
+  06,NO SOURCE =  WORD1BIT4-C 
+  06 (SINK), WORD1BIT4-NVO 
+  06 (PULSE),PERMONE 
+  07,NO SOURCE =  WORD1BIT4-C 
+  07 (SINK), WORD1BIT4-NVO 
+  07 (PULSE),PERMONE 
+  08,NO SOURCE =  WORD1BIT4-C 
+  08 (SINK), WORD1BIT4-NVO 
+  08 (PULSE),PERMONE 
+ 
+OUTPUT GROUP C = B24, N24 
+  09,NO SOURCE =  WORD1BIT4-C 
+  09 (SINK), WORD1BIT4-NVO 
+  09 (PULSE),PERMONE 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-6 ALSTOM Signaling Inc. 
+  10,NO SOURCE =  WORD1BIT4-C 
+  10 (SINK), WORD1BIT4-NVO 
+  10 (PULSE),PERMONE 
+  11,NO SOURCE =  WORD1BIT4-C 
+  11 (SINK), WORD1BIT4-NVO 
+  11 (PULSE),PERMONE 
+  12,NO SOURCE =  WORD1BIT4-C 
+  12 (SINK), WORD1BIT4-NVO 
+  12 (PULSE),PERMONE 
+ 
+OUTPUT GROUP D = B24, N24 
+  13,NO SOURCE =  WORD1BIT4-C 
+  13 (SINK), WORD1BIT4-NVO 
+  13 (PULSE),PERMONE 
+  14,NO SOURCE =  WORD1BIT4-C 
+  14 (SINK), WORD1BIT4-NVO 
+  14 (PULSE),PERMONE 
+  15,NO SOURCE =  WORD1BIT4-C 
+  15 (SINK), WORD1BIT4-NVO 
+  15 (PULSE),PERMONE 
+  16,NO SOURCE =  WORD1BIT4-C 
+  16 (SINK), WORD1BIT4-NVO 
+  16 (PULSE),PERMONE 
+ 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-7 ALSTOM Signaling Inc. 
+SAM8.COM 
+ 
+********************************************************************** 
+*     SAM8.COM                           7/1/92 
+* 
+********************************************************************** 
+***** COMMUNICATIONS INPUT FILE ************************************** 
+***** GENISYS EMULATION         ************************************** 
+********************************************************************** 
+* 
+                  SERIAL COMMUNICATIONS SECTION 
+* 
+* 
+********************************************************************** 
+SERIAL PORT 1 = TYPE ( Genisys PEER ), UNLATCHED CONTROLS 
+********************************************************************** 
+CONFIGURATION FILE = SAM8.LPC 
+ 
+DEFAULT BAUD RATE = 1200 
+ 
+*DATA FORMAT = 8,1,N 
+ 
+DESTINATION = SAM8 
+SOURCE = OTHEREND 
+*===================================================================== 
+* NAME MUST MATCH .CSI FILE RECORD 
+********************************************************************** 
+MESSAGE = ADDRESS(00000001), LENGTH(16 ) 
+ 
+ 
+    1 = WORD1BIT1-NVO 
+    2 = WORD1BIT2-NVO 
+    3 = WORD1BIT3-NVO 
+    4 = WORD1BIT4-NVO 
+    5 = WORD1BIT5-NVO 
+    6 = WORD1BIT6-NVO 
+    7 = WORD1BIT7-NVO 
+    8 = WORD1BIT8-NVO 
+ 
+    9 = WORD2BIT1-NVO 
+   10 = WORD2BIT2-NVO 
+   11 = WORD2BIT3-NVO 
+   12 = WORD2BIT4-NVO 
+   13 = WORD2BIT5-NVO 
+   14 = WORD2BIT6-NVO 
+   15 = WORD2BIT7-NVO 
+   16 = WORD2BIT8-NVO 
+ 
+ 
+ 
+ 
+DESTINATION = OTHEREND 
+SOURCE = SAM8 
+ 
+MESSAGE = ADDRESS(00000001), LENGTH(24 ) 
+ 
+ 
+    1 = WORD1BIT1K 
+    2 = WORD1BIT2K 
+    3 = WORD1BIT3K 
+    4 = WORD1BIT4K 
+    5 = WORD1BIT5K 
+    6 = WORD1BIT6K 
+    7 = WORD1BIT7K 
+
+ CenTraCode II-s Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 A-8 ALSTOM Signaling Inc. 
+    8 = WORD1BIT8K 
+ 
+    9 = WORD2BIT1K 
+   10 = WORD2BIT2K 
+   11 = WORD2BIT3K 
+   12 = WORD2BIT4K 
+   13 = WORD2BIT5K 
+   14 = WORD2BIT6K 
+   15 = WORD2BIT7K 
+   16 = WORD2BIT8K 
+ 
+   17 = WORD3BIT1K 
+   18 = WORD3BIT2K 
+   19 = WORD3BIT3K 
+   20 = WORD3BIT4K 
+   21 = WORD3BIT5K 
+   22 = WORD3BIT6K 
+   23 = WORD3BIT7K 
+   24 = WORD3BIT8K 
+ 
+ 
+ 
+SPECIAL CONTROL = LENGTH (16) 
+*===================================================================== 
+* FIXED LENGTH OF 16 
+* USED TO PASS FLAGS FROM SYSTEM TO NON-VITAL APPLICATION 
+* USED IN NON VITAL LOGIC FILE 
+* MUST ALWAYS BE USED 
+*===================================================================== 
+**** ALL FLAGS SET BY SYSTEM 
+**** MUST BE CLEARED BY NON-VITAL LOGIC STATEMENT 
+*===================================================================== 
+ 
+  1 = EXECUTE REC 
+  2 = RECALL REC 
+  3 = CONTROL REC 
+  4 = POLL REC 
+  5 = ACK REC 
+  6 = COMMON CONTROLS REC 
+  7 = SENT ACK 
+  8 = SENT CHANGE 
+  9 = CONTROL CHECKBACK SENT 
+  10 = SENT CONTROL CONTAINING ALL BITS 
+  11 = PERMZERO 
+  12 = PERMZERO 
+  13 = PERMZERO 
+  14 = PERMZERO 
+  15 = PERMZERO 
+  16 = PERMZERO 
+*===================================================================== 
+**** USE COMPLETE SPECIAL MESSAGE INCLUDING # 11-16 
+*===================================================================== 
+ 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-1 ALSTOM Signaling Inc. 
+B. APPENDIX B - CENTRACODE II-V SAMPLE CAA CONFIGURATION FILES 
+TNG.CSI 
+ 
+ 
+********************************************************************** 
+*                                                                    * 
+*     FILE: TNG.CSI                       07/2/92 
+*                                                                    * 
+********************************************************************** 
+********** INPUT FILE FOR CSEX REPORTS AND PROM CODE ***************** 
+********************************************************************** 
+********************************************************************** 
+COMPILER RUN CONTROLS = LIST ALL,PROM 
+* 
+VPI PROGRAM NUMBER = 51607-000 GR 00, REV. A, RGF 
+CSEX 1  PROGRAM NUMBER = 33917-000 GR 00, REV. A, RGF 
+COPYRIGHT YEAR = 1992 
+*SYSTEM SOFTWARE = 40026-081 GR 00 
+CSEX 1 SYSTEM SOFTWARE = 40026-433 GR 00 
+*===================================================================== 
+*=========COMPILER #31746-007 GR00 
+*===================================================================== 
+* 
+CONTRACT NUMBER = 91- 
+CONTRACT NAME = SAMPLE 
+CUSTOMER NAME = RAILROAD 
+EQUIPMENT LOCATION = PHYSICAL 
+DESIGNER = RGF 
+CHECKER = 
+CSEX 1 ID = TNGCSEX1 
+* 
+***HARDWARE FILE 
+INCLUDE TNG.HDW 
+* 
+***VPI COMMUNICATIONS FILE 
+***FOR THIS BOARD 
+INCLUDE TNG.VC1 
+ 
+***NON VITAL COMMUNICATIONS FILE 
+***FOR THIS BOARD 
+INCLUDE TNG.COM 
+* 
+***NON VITAL LOGIC FILE 
+INCLUDE TNG.NV 
+ 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-2 ALSTOM Signaling Inc. 
+TNG.COM 
+ 
+********************************************************************** 
+********************************************************************** 
+* 
+*          FILE TNG.COM                          06-29-92 
+* 
+********************************************************************** 
+************ NON VITAL   AND VPI TO CSEX COMMUNICATION *************** 
+************ GENISYS EMULATION   ************************************* 
+********************************************************************** 
+* 
+* 
+*CONTRACT NUMBER = 91-90000 
+*CONTRACT NAME = DISPLAY MODULE 
+*CUSTOMER NAME = GENERAL RAILWAY SIGNAL 
+*EQUIPMENT LOCATION = ROCHESTER 
+*DESIGNER = RGF 
+*CHECKER = 
+********************************************************************** 
+      SERIAL COMMUNICATIONS SECTION 
+********************************************************************** 
+* 
+**PORT 1 OFFICE      GENISYS 
+**PORT 2 NOT USED 
+**PORT 3 NOT USED 
+**PORT 4 NOT USED 
+**PORT 5 NOT USED 
+* 
+* 
+SERIAL PORT 1 = TYPE ( GENISYS ) 
+ 
+CONFIGURATION FILE = TNG.LPC 
+ 
+DEFAULT BAUD RATE = 600 
+* 
+DESTINATION = OFFICE 
+SOURCE = TNGCSEX1 
+MESSAGE =ADDRESS (0000001)  , LENGTH (16) 
+* 
+* 
+********************************************************************** 
+**THE FOLLOWING INDICATIONS WILL BE SENT TO OFFICE 
+**VIA RADIO AND GENISYS TYPE CODE SYSTEM 
+********************************************************************** 
+* 
+  1  =  2NWK 
+  2  =  2RWK 
+  3  =  1EGK 
+  4  =  1WGK 
+  5  =  2TPK 
+  6  =  EATK 
+  7  =  WATK 
+  8  =  SATK 
+  9  =  2ATK 
+  10 =  TROUBLE 
+  11 =  2LK 
+  12 =  PERMZERO 
+  13 =  PERMZERO 
+  14 =  PERMZERO 
+  15 =  PERMZERO 
+  16 =  PERMZERO 
+ 
+DESTINATION = TNGCSEX1 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-3 ALSTOM Signaling Inc. 
+SOURCE = OFFICE 
+MESSAGE =ADDRESS (0000001)  , LENGTH ( 8) 
+* 
+********************************************************************** 
+**THE FOLLOWING CONTROLS WILL BE RECEIVED FROM OFFICE 
+**VIA GENISYS 
+********************************************************************** 
+* 
+* 
+  1  =  2NW-CS 
+  2  =  2RW-CS 
+  3  =  1WGZ-CS 
+  4  =  1EGZ-CS 
+  5  =  1GZCAN-CS 
+  6  =  MCON-CS 
+  7  =  MCOFF-CS 
+  8  =  PERMZERO 
+ 
+ 
+SPECIAL CONTROL = LENGTH (16) 
+ 
+  1 = EXECUTE REC 
+  2 = RECALL REC 
+  3 = CONTROL REC 
+  4 = POLL REC 
+  5 = ACK REC 
+  6 = COMMON CONTROLS REC 
+  7 = SENT ACK 
+  8 = SENT CHANGE 
+  9 = CONTROL CHECKBACK SENT 
+  10 = SENT CONTROL CONTAINING ALL BITS 
+  11 = PERMZERO 
+  12 = PERMZERO 
+  13 = PERMZERO 
+  14 = PERMZERO 
+  15 = PERMZERO 
+  16 = PERMZERO 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-4 ALSTOM Signaling Inc. 
+TNG.COM 
+ 
+********************************************************************** 
+* 
+*     FILE: TNG.HDW            CREATED   9/20/91 
+ 
+********************************************************************** 
+********************************************************************** 
+********************************************************************** 
+*****                  ***                  ***                 ****** 
+*****                  ***                  ***                 ****** 
+*****     *********    ***     ********     ***     ********    ****** 
+*****     *********    ***     ********     ***     ********    ****** 
+*****     *********    ***     ********     ***     ********    ****** 
+*****     ****************     ********     ***     ****************** 
+*****     ****************     ********     ***     ****************** 
+*****     ****************     ********     ***     ****************** 
+*****     ****                              ***                 ****** 
+*****     ****                              ***                 ****** 
+*****     ********     ***     ****     *******************     ****** 
+*****     ********     ***     *****     ******************     ****** 
+*****     ********     ***     ******     *****************     ****** 
+*****     ********     ***     *******     ****************     ****** 
+*****                  ***     ********                         ****** 
+*****                  ***     *********                        ****** 
+********************************************************************** 
+********************************************************************** 
+********************** MP 000.00 ************************************* 
+**                                                                  ** 
+**        (WT)             2 TK      O--I 1W          (ET)          ** 
+**   * * * * * * * *I* * * * * * * * * *I* * * * * * * * * * *      ** 
+**              1EA I--O     *  2SW                                 ** 
+**                          *                                       ** 
+**                         *                                        ** 
+**         (ST)           *                                         ** 
+**   * * * * * * * *I* * *                                          ** 
+**              1EB I--O                                            ** 
+**                                                                  ** 
+**                                                                  ** 
+**                                                                  ** 
+**                                                                  ** 
+********************************************************************** 
+********************************************************************** 
+********************************************************************** 
+ 
+*COMPILER RUN CONTROLS = LIST ALL 
+*VPI PROGRAM NUMBER = 51607-000 GR 00, REV. A,FEB 6 1989 
+*COPYRIGHT YEAR =  1990 
+*SYSTEM SOFTWARE = 40026-067 GR 00 
+* VPI CAA PACKAGE = 31746-005 
+*SOFTWARE REVISION SIGNATURE = 11 
+**RELAY CIRCUITS = 12 PARAMETERS,10 TERMS 
+*CIRCUIT REV A = 1/03/89 
+*VITAL OUTPUT FLASHING = NO 
+*CONTRACT NUMBER = 91-00000 
+*CONTRACT NAME = DISPLAY MODULE 
+*CUSTOMER NAME = GENERAL RAILWAY SIGNAL 
+*EQUIPMENT LOCATION = ROCHESTER 
+*DESIGNER = RGF 
+*CHECKER = 
+ 
+********************************************************************** 
+ 
+                      VPI SYSTEM MODULE SECTION 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-5 ALSTOM Signaling Inc. 
+ 
+********************************************************************** 
+MODULE = 70000-000 GR 1 
+I/O LABEL = 00000-000 GR 00 
+********************************************************************** 
+ 
+                      HARNESS WIRING SUBSECTION 
+ 
+********************************************************************** 
+PLUG COUPLER ROWS = A,B,C 
+ 
+NONVITAL, 38216-393 GR 01 = 2 = PCB7 
+NONVITAL, 38216-393 GR 01 = 3 = PCC7 
+CSE,      38216-392 GR 04 = 4 = PCA6 
+VRD,      38216-392 GR 05 = 5 = PCB6 
+INPUT,    38216-394 GR 02 = 10, 11, 12 = PCA4, PCB4, PCC4 
+OUTPUT,   38216-394 GR 01 = 19, 20, 21 = PCA1, PCB1, PCC1 
+ 
+********************************************************************** 
+ 
+                      BOARD ASSIGNMENT SUBSECTION 
+ 
+********************************************************************** 
+SLOT 02 = NV INPUT BOARD (1), 59473-757 GR 01 
+*ADDRESS = 4080 
+GROUP A = N24 
+ 1, 1WPB-NVI     = 1WPB 
+*2, 
+*3, 
+ 4, 1WSTOPPB-NVI = 1WSTOPPB 
+ 5, 1EPB-NVI     = 1EPB 
+*6, 
+*7, 
+ 8, 1ESTOPPB-NVI = 1ESTOPPB 
+GROUP B = N24 
+ 9, 2NPB-NVI     = 2NPB 
+10, 2RPB-NVI     = 2RPB 
+*11, 
+*12, 
+*13, 
+*14, 
+*15, 
+*16, 
+GROUP C = N24 
+17, LOCAL-NVI    = LOCAL 
+*18, SMRPB-NVI    = SMRPB 
+*19, 
+*20, 
+*21, 
+*22, 
+*23, 
+*24, 
+GROUP D = N24 
+*25, 
+*26, 
+*27, 
+ 
+SLOT 03 = NV OUTPUT BOARD (1), 59473-785 GR 01 
+*ADDRESS = 4084 
+GROUP A = B24, N24 
+ 1, 1WTERE-NVO   = 1WTERE 
+ 1  (FLASH) , PERMONE 
+*2, 
+*3, 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-6 ALSTOM Signaling Inc. 
+ 4, 1WGE-NVO     = 1WGE 
+ 4  (FLASH)      = 1WGE-F 
+ 5, 1ETERE-NVO   = 1ETERE 
+ 5  (FLASH) , PERMONE 
+*6, 
+*7, 
+ 8, 1EAGE-NVO    = 1EAGE 
+ 8  (FLASH)      = 1EAGE-F 
+GROUP B = B24, N24 
+ 9, 1EBGE-NVO    = 1EBGE 
+ 9  (FLASH)      = 1EBGE-F 
+10, 2NE-NVO      = 2NE 
+10  (FLASH)      = 2NE-F 
+11, 2LE-NVO      = 2LE 
+12, 2RE-NVO      = 2RE 
+12  (FLASH)      = 2RE-F 
+*13, 
+*14, SMKE-NVO     = SMKE 
+*14  (FLASH)      = SMKE-F 
+*15, 
+*16, 
+GROUP C = B24, N24 
+*17, 
+18, 1WAE-NVO     = 1WAE 
+*18  (FLASH)      = 1WAE-F 
+19, 1EAAE-NVO    = 1EAAE 
+*19  (FLASH)      = 1EAAE-F 
+20, 1EBAE-NVO    = 1EBAE 
+*20  (FLASH)      = 1EBAE-F 
+21, 2TE-NVO      = 2TE 
+*22, 2ATK-NVO     = 2ATK 
+*23, 
+*24, 
+GROUP D = B24, N24 
+*25, 
+*26, 
+*27, 
+*28, 
+29, LOCAL-NVO    = LOCALE 
+30, MCALM-NVO    = MCALM 
+*31, 
+*32, 
+ 
+SLOT 04 = CSEX BOARD 1, 59473-938 GR 01 
+ 
+SLOT 05 = VRD BOARD,   59473-740 GR 01 
+SLOT 07 = CPU BOARD,   59473-742 GR 04 
+ 
+SLOT 08 = PD BOARD,    59473-737 GR 01 
+ 
+SLOT 09 = I/O BOARD 1, 59473-827 GR 01 
+*ADDRESS = 30000 
+*SIGNATURE = A 
+ 
+SLOT 10 = DI BOARD, 59473-867 GR 03 
+*ADDRESS = 0002 
+*SIGNATURE = P 
+ 1(2CD), VRDFRNT-DI = VRDFRNT, N12 
+ 2(1CD), 2NWP-DI = 2WP, N2WP 
+ 3(1CD), 2RWP-DI = N2WP, 2WP 
+*4(1CD), TSTTMR-DI =TSTTMRB,N12 
+ 5(0CD), 1EARGP-DI = 1EARGP,N12 
+ 6(0CD), 1EAGGP-DI = 1EAGGP,N12 
+ 7(0CD), 1EAYGP-DI = 1EAYGP,N12 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-7 ALSTOM Signaling Inc. 
+*8(0CD), 
+*9(0CD), 
+ 10(0CD), 4TP-DI  = 4TP,N12 
+ 11(2CD), 2TP-DI  = 2TP,N12 
+ 12(2CD), SWT-DI  = ST,N12 
+ 
+SLOT 11 = DI BOARD, 59473-867 GR 03 
+*ADDRESS = 0004 
+*SIGNATURE = O 
+ 1(2CD),   WT-DI = WTPR , N12 
+ 2(2CD),   WH-DI = WHR , N12 
+ 3(2CD),   WD-DI = WDR , N12 
+*4(2CD),   SPARE 
+ 5(2CD),   ET-DI = ETPR , N12 
+ 6(2CD),   EH-DI = EHR , N12 
+ 7(2CD),   ED-DI = EDR , N12 
+* 8(2CD),  SPARE 
+*9(0CD), 
+*10(0CD), 
+*11(0CD), 
+*12(0CD), 
+*13(0CD), 
+*14(0CD), 
+*15(0CD), 
+*16(0CD), 
+ 
+SLOT 15 = TIMER BOARD 1, 59473-748 GR 01 
+*ADDRESS = 000C 
+*SIGNATURE = O 
+TIMER 1 = 1WTER 
+TIMER 2 = 1EATER 
+TIMER 3 = 1EBTER 
+ 
+SLOT 19 = LDO BOARD (00), 59473-749 GR 02 
+*ADDRESS = 0010 
+*SIGNATURE = O 
+GROUP A = B12-L, N12-L 
+1,1EA-LDO = N1EAE 
+1 (HOT-LO-CK),1EA-HCK 
+1 (COLD-LO-CK),1EA-CCK 
+2,MCDE = NMCE 
+3,1EBR-LDO = N1BRE 
+3 (HOT-LO-CK),1EBR-HCK 
+3 (COLD-LO-CK),1EBR-CCK 
+4,1EBY-LDO = N1EBYE 
+4 (HOT-LO-CK),1EBY-HCK 
+4 (COLD-LO-CK),1EBY-CCK 
+GROUP B = B12-L, N12-L 
+5,1WR-LDO = N1WRE 
+5 (HOT-LO-CK),1WR-HCK 
+5 (COLD-LO-CK),1WR-CCK 
+6,1WL-LDO = N1EBLE 
+6 (HOT-LO-CK),1WL-HCK 
+6 (COLD-LO-CK),1WL-CCK 
+7,1WG-LDO = N1WG 
+7 (HOT-LO-CK),1WG-HCK 
+7 (COLD-LO-CK),1WG-CCK 
+8,1WY-LDO = N1WYE 
+8 (HOT-LO-CK),1WY-HCK 
+8 (COLD-LO-CK),1WY-CCK 
+ 
+ 
+SLOT 20 = DBO BOARD (21), 59473-747 GR 01 
+*ADDRESS = 0012 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-8 ALSTOM Signaling Inc. 
+*SIGNATURE = O 
+GROUP A = B12, N12 
+1, 2NW-DBO = 2NW, 2RW (N2NW) 
+2, 2RW-DBO = 2RW, 2NW (N2RW) 
+GROUP B = B12, N12 
+5, 1EAG-DBO = 1EAG,1EAY (N1EAG) 
+6, 1EAY-DBO = 1EAY,1EAG (N1EAY) 
+ 
+SLOT 21 = DBO BOARD (20), 59473-747 GR 01 
+*ADDRESS = 0012 
+*SIGNATURE = O 
+GROUP A = B12, N12 
+1,    EH-DBO = EH , NEH 
+*2,   SPARE 
+3,   EHD-DBO = NEH , EH 
+*4, SPARE 
+GROUP B = B12, N12 
+5,    WH-DBO = WH , NWH 
+*6,   SPARE 
+7,   WHD-DBO = NWH , WH 
+*8, SPARE 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-9 ALSTOM Signaling Inc. 
+TNG.NV 
+ 
+ 
+********************************************************************** 
+* 
+*     FILE: TNG.NV             CREATED   9/18/90 (7/92) 
+********************************************************************** 
+*CONTRACT NUMBER = 91-00000 
+*CONTRACT NAME = SAMPLE SYSTEM 
+*CUSTOMER NAME = GENERAL RAILWAY SIGNAL 
+*EQUIPMENT LOCATION = ROCHESTER NY 
+*DESIGNER = RGF 
+*CHECKER = 
+ 
+********************************************************************** 
+                       BOOLEAN PARAMETER SECTION 
+********************************************************************** 
+ 
+ 1WSTOP      2RWZ-CALL 
+ 1ESTOP      2NWZ-CALL 
+ MCALM       2NW-CS1 
+ 1WCANGZ     2RW-CS1    MCR 
+ 1ECANGZ     MCZ        MCE    1EGZ-CS1 
+ REMOTE      REMOTE-SLO        1WGZ-CS1 
+ TROUBLE     1EGZ       1WGZ   1GZCAN-CS1 
+ 2NWK        2RWK       1EGK   1WGK       2TPK       2LK 
+ EATK        WATK       SATK   2ATK       LOCALE 
+ 
+********************************************************************** 
+                     TIMER PARAMETER SECTION 
+********************************************************************** 
+ 
+  MCALMOFF 
+ 
+********************************************************************** 
+                      BOOLEAN EQUATION SECTION 
+********************************************************************** 
+                     APPLICATION = LOCAL/REMOTE CONTROL 
+********************************************************************* 
+ 
+BOOL REMOTE = (.N.LOCAL-NVI) 
+ 
+BOOL REMOTE-SLO = (REMOTE * (REMOTE-SLO + .N.1WGZ * .N.1EGZ + RCP)) 
+ 
+BOOL LOCALE = (.N.REMOTE-SLO) 
+ 
+                                  APPLICATION = SWITCH CALL- REQUESTS 
+********************************************************************* 
+* 
+BOOL 2RWZ-CALL = (2L * (REMOTE * 2RW-CS * .N.2RW-CS1 * .N.2NW-CS + 
+                  2RPB-NVI *.N.2NPB-NVI)) 
+ 
+BOOL 2NWZ-CALL = (2L * (REMOTE * 2NW-CS  * .N.2NW-CS1 * .N.2RW-CS + 
+                  2NPB-NVI *.N.2RPB-NVI)) 
+ 
+                                         APPLICATION = SIGNAL REQUEST 
+********************************************************************* 
+ 
+BOOL 1ESTOP = (1ESTOPPB-NVI) 
+ 
+BOOL 1ECANGZ = (1ESTOP  + REMOTE * 1GZCAN-CS * .N.1GZCAN-CS1) 
+ 
+BOOL 1EGZ = (1EGZ * .N.1ECANGZ * 2TPP + 
+             .N.1WGZ * REMOTE * 1EGZ-CS * .N.1EGZ-CS1 + 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-10 ALSTOM Signaling Inc. 
+             .N.1WGZ * 1EPB-NVI) 
+ 
+BOOL 1WSTOP = (1WSTOPPB-NVI) 
+ 
+BOOL 1WCANGZ = (1WSTOP  + REMOTE * 1GZCAN-CS * .N.1GZCAN-CS1) 
+ 
+BOOL 1WGZ = (1WGZ * .N.1WCANGZ * 2TPP + 
+             .N.1EGZ * REMOTE * 1WGZ-CS * .N.1WGZ-CS1 + 
+              .N.1EGZ * 1WPB-NVI) 
+ 
+                                     APPLICATION = TROUBLE CONDITIONS 
+********************************************************************* 
+ 
+BOOL TROUBLE = (LOK + .N.VRDFRNT-DI) 
+ 
+                                        APPLICATION = MAINTAINER CALL 
+********************************************************************* 
+ 
+BOOL MCZ = (MCON-CS + MCZ *.N.MCOFF-CS) 
+ 
+BOOL MCE = (MCZ + TROUBLE) 
+ 
+BOOL MCALM = (MCE * .N.MCALMOFF) 
+ 
+TIME DELAY = 3 SECONDS 
+BOOL MCALMOFF = (MCE) 
+ 
+BOOL MCR = (MCE) 
+ 
+                           APPLICATION = LOCAL CONTROL PANEL LIGHTING 
+********************************************************************* 
+ 
+ 
+BOOL 1WTERE-NVO   = (1WTERE) 
+ 
+BOOL 1WGE-NVO     = (.N.1WRGP + .N.VRDFRNT-DI) 
+ 
+BOOL 1WGE-F       = (.N.1WRGP * 1WTERE + .N.VRDFRNT-DI) 
+ 
+BOOL 1ETERE-NVO   = (1ETERE) 
+BOOL 1EAGE-NVO    = (.N.1EARGP * 2NWC + .N.VRDFRNT-DI) 
+ 
+BOOL 1EAGE-F      = (.N.1EARGP * 1ETERE * 2NWC + .N.VRDFRNT-DI) 
+ 
+BOOL 1EBGE-NVO    = (.N.1EBRGP + .N.VRDFRNT-DI) 
+ 
+BOOL 1EBGE-F      = (.N.1EBRGP * 1ETERE + .N.VRDFRNT-DI) 
+ 
+BOOL 2NE-NVO      =  (2NWZ) 
+ 
+BOOL 2NE-F        = (2NWZ * .N.2NWC) 
+ 
+BOOL 2LE-NVO      = (.N.2L) 
+ 
+BOOL 2RE-NVO      = (2RWZ) 
+ 
+BOOL 2RE-F        = (2RWZ * .N.2RWC) 
+ 
+ 
+BOOL 1WAE-NVO     = (.N.ET) 
+ 
+BOOL 1EAAE-NVO    = (.N.WT) 
+ 
+BOOL 1EBAE-NVO    = (.N.ST) 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-11 ALSTOM Signaling Inc. 
+ 
+BOOL 2TE-NVO      = (.N.2TPP) 
+ 
+ 
+BOOL LOCAL-NVO    = (LOCALE) 
+ 
+BOOL MCALM-NVO    = (MCALM) 
+ 
+ 
+ 
+                    APPLICATION = CODE INDICATIONS 
+********************************************************************* 
+ 
+BOOL 2NWK   =  (2NWC) 
+BOOL 2RWK   =  (2RWC) 
+BOOL 1WGK   =  (.N.1WRGP) 
+BOOL 1EGK   =  (.N.1EARGP + .N.1EBRGP) 
+BOOL 2TPK   =  (.N.2TPP) 
+BOOL EATK   =  (.N.ET) 
+BOOL WATK   =  (.N.WT) 
+BOOL SATK   =  (.N.ST) 
+BOOL 2ATK   =  (.N.2TPP * 2RWC) 
+BOOL 2LK   =  (.N.2L) 
+********************************************************************* 
+BOOL 2NW-CS1 = (2NW-CS) 
+BOOL 2RW-CS1 = (2RW-CS) 
+BOOL 1EGZ-CS1 = (1EGZ-CS) 
+BOOL 1WGZ-CS1 = (1WGZ-CS) 
+BOOL 1GZCAN-CS1 = (1GZCAN-CS) 
+ 
+********************************************************************* 
+********************************************************************* 
+ 
+ 
+
+ CenTraCode II-v Sample CAA Configuration Files 
+P2346F, Rev. Feb/06 B-12 ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+
+ Communication Software List 
+P2346F, Rev. Feb/06 C-1 ALSTOM Signaling Inc. 
+C. APPENDIX C - COMMUNI CATION SOFTWARE LIST 
+These software programs can be used for communication with the MAC. 
+• Crosstalk XVI, Digital Communications Associates, Inc. 
+• Smartcom II, Hayes Microcomputer Products, Inc. 
+• ProComm, Datastorm Technologies, Inc.  
+
+ Communication Software List 
+P2346F, Rev. Feb/06 C-2 ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+ 
+
+ CenTraCode II Jumper Configuration 
+P2346F, Rev. Feb/06 D-1 ALSTOM Signaling Inc. 
+D. APPENDIX D - CENTRACODE II JUMPER CONFIGURATION 
+In this Appendix the jumper configuration is detailed for CenTraCode II-v and II-s. 
+D.1. CENTRACODE II-S SYSTEM 
+The CPU board provides many options for memory usage. Jumper straps select 
+between various devices. CMOS versions are used where available, 200 ns or faster. 
+The CPU operates using either 32KB or 128KB RAM installed in U44. No jumper 
+changes are required. Refer to Table D–1 and Figure D–1 for memory and jumper 
+installation and options. 
+Table D–1.  EPROM Memory Device Selection (CTC2S) 
+Device Capacity Type System EPROM U61 (TB3) 
+27256    32KB EPROM 3-4, 5-6     
+27512  64KB EPROM  1-2, 5-6 
+27010 128KB EPROM    1-2, 5-6 
+27020 256KB EPROM   1-2, 7-8 
+Device Capacity Type Application EPROM/EEPROM U54 (TB2)   
+27256 32KB EPROM    3-4, 9-10 
+27512 64KB EPROM    3-4, 7-8 
+27010 128KB EPROM    3-4, 7-8, 11-12  
+xxx64 8KB EEPROM/RAM 1-2, 9-10   
+xx128 16KB EEPROM/RAM 1-2, 9-10  
+xx256 32KB    EEPROM/RAM 1-2, 5-6 
+xx010 128KB RAM 1-2, 7-8, 13-14 
+Device Capacity Type Additional Memory U51 (TB1) 
+27256 32KB EPROM    3-4, 9-10 
+27512 64KB EPROM    3-4, 7-8 
+27010 128KB EPROM    3-4, 7-8, 11-12  
+xxx64 8KB EEPROM/RAM 1-2, 9-10, * 
+xx128 16KB    EEPROM/RAM 1-2, 9-10, *  
+xx256 32KB    EEPROM/RAM 1-2, 5-6, * 
+xx010 128KB RAM 1-2, 7-8, 13-14, * 
+* Select chip power option: 15-16 for system power, 17-18 for battery backup when using RAM only 
+
+ CenTraCode II Jumper Configuration 
+P2346F, Rev. Feb/06 D-2 ALSTOM Signaling Inc. 
+SYSTEM
+RAM 
+SYSTEM/ 
+APPLICATION 
+CPU 
+INTEL 
+80C188
+(U55) 
+PRESET FOR  
+APPLICATION 
+SOFTWARE
+P3
+(U44) 
+(U51) 
+(U54) 
+(U61) 
+ADDITIONAL
+MEMORY
+SYSTEM/ 
+APPLICATION 
+SW 4 SW 5OFF OFF 
+1 8 1 8 
+B1
+SW3 
+SW2 
+TB3 
+TB2 
+TB1 
+MEMORY
+ARRAY 
+MEMORY DEVICE 
+SELECTORS 
+DS12
+DS13
+DS14
+L 
+R 
+L 
+R 
+ 
+Figure D–1.  CenTraCode II-s CPU Board Memory Strapping 
+D.2. CENTRACODE II-V SYSTEM 
+The EPROM pairs of the memory array have jumper straps to select between various 
+devices. 2764, 27128A, 27256, and 27512 devices are supported, CMOS versions are 
+used where available, 200 ns or faster. Refer to Table D–2 and Figure D–2 for memory 
+installation. 
+Table D–2.  EPROM Memory Device Selection (CTC2V) 
+Device System EPROM (JU1)  
+( U36 & U49 ) 
+Application PROM (JU2)  
+( U37 & U56 ) 
+2764 3-4, 7-8, 11-12 3-4, 7-8, 11-12 
+27128 1-2, 7-8, 11-12 1-2, 7-8, 11-12 
+27256 1-2, 5-6, 11-12 1-2, 5-6, 11-12 
+27512 1-2, 5-6, 9-10 1-2, 5-6, 9-10 
+ 
+
+ CenTraCode II Jumper Configuration 
+P2346F, Rev. Feb/06 D-3 ALSTOM Signaling Inc. 
+ 
+EPROM 
+TP1 
+SYSTEM 
+EPROM 
+JUMPERS 
+APPLICATION 
+EPROM 
+JUMPERS 
+CSEX BOARD 59473-938
+RAM 
+ RAM 
+RAM 
+ 8 
+1 
+JU1 JU2 
+1 13
+2 14
+1 13
+2 14
+U36 U37 U38 U39 
+U49 U51 U52 
+PROM 
+Strapping 
+U50 
+ 
+Figure D–2.  CenTraCode II-v Prom Strapping 
+
+ CenTraCode II Jumper Configuration 
+P2346F, Rev. Feb/06 D-4 ALSTOM Signaling Inc. 
+ 
+THIS PAGE INTENTIONALLY LEFT BLANK. 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+FOR QUESTIONS AND INQUIRIES, CONTACT CUSTOMER SERVICE AT  
+1-800-717-4477  
+OR 
+WWW.ALSTOMSIGNALINGSOLUTIONS.COM 
+ 
+ 
+ALSTOM SIGNALING INC. 
+1025 JOHN STREET 
+WEST HENRIETTA, NY 14586 
+ 

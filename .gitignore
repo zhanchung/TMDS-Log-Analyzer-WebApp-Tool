@@ -1,0 +1,25 @@
+node_modules/
+dist/
+
+# Per-machine TMDS settings — never commit
+.tmds-update-source
+.tmds-web-host
+.tmds-web-port
+.tmds-node-modules.stamp
+TMDS-Shared-URL.txt
+TMDS-Hosting-Checklist.txt
+
+# Local agent/runtime state
+.tmp/
+.claude/settings.local.json
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Local environment overrides
+.env
+.env.local

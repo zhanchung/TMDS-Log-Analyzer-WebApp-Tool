@@ -1,0 +1,122 @@
+﻿[
+    {
+        "EventDate":  "\/Date(1476234120000)\/",
+        "EventMessage":  "1800, 66, 1SW, CLEAR ",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "f7998fc6-6711-4cc3-92e6-00019eb80fc7"
+    },
+    {
+        "EventDate":  "\/Date(1471784880000)\/",
+        "EventMessage":  "0600, 63, VAR, SCATTERED CLOUDS",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "ccd898a8-4dd3-4a47-a564-0001e9593075"
+    },
+    {
+        "EventDate":  "\/Date(1664413020000)\/",
+        "EventMessage":  "1800, 74, 7SW, MOSTLY CLOUDY",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "8fd0c696-3032-4d90-ae9c-0002d2d55c80"
+    },
+    {
+        "EventDate":  "\/Date(1443316020000)\/",
+        "EventMessage":  "1800, 81, 6E, SUNNY",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "bfd2ee56-d8db-4c22-a14f-0007fd3ee875"
+    },
+    {
+        "EventDate":  "\/Date(1671438300000)\/",
+        "EventMessage":  "0000, 41, 3NE, CLOUDY",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "da763b3b-a0a8-4f9d-80a9-000aa97a765c"
+    },
+    {
+        "EventDate":  "\/Date(1463036460000)\/",
+        "EventMessage":  "0000, 62, 4WSW, OVERCAST",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "f69bbaf9-ada7-489d-8a95-000fd9bf7e7d"
+    },
+    {
+        "EventDate":  "\/Date(1389470460000)\/",
+        "EventMessage":  "1200, 63.5, 4SW, CLEAR",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "0b3f63ae-acb1-4e37-9760-000fe3fb90f5"
+    },
+    {
+        "EventDate":  "\/Date(1651410240000)\/",
+        "EventMessage":  "0600, 52, 3SE, MOSTLY CLOUDY",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "6e73946e-0be1-491e-b380-00106a5754d0"
+    },
+    {
+        "EventDate":  "\/Date(1352060400000)\/",
+        "EventMessage":  "1200- 69, 6WNW, CLEAR",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "1bec3eec-4484-4437-862e-00115ce1da33"
+    },
+    {
+        "EventDate":  "\/Date(1599419340000)\/",
+        "EventMessage":  "1200, 110, 8E, SUNNY",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "1b007197-72e8-41e1-8801-0011edd89800"
+    },
+    {
+        "EventDate":  "\/Date(1496149620000)\/",
+        "EventMessage":  "0600, 58, 1W, OVERCAST",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "299bfa5e-0841-401e-8750-00141bf668c3"
+    },
+    {
+        "EventDate":  "\/Date(1366053000000)\/",
+        "EventMessage":  "1200- 55, 3WNW, LIGHT RAIN MIST",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "aa47b50b-ea94-44cb-92e4-00156527fe4e"
+    },
+    {
+        "EventDate":  "\/Date(1551816180000)\/",
+        "EventMessage":  "1200, 64, 5WSW, PARTY CLOUDY",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "31e96583-a292-4bff-bb16-001d53f1e4be"
+    },
+    {
+        "EventDate":  "\/Date(1609423560000)\/",
+        "EventMessage":  "0600, 44, 0, MOSTLY CLOUDY",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "62882fe2-2a24-4b56-b1ff-00222df482e9"
+    },
+    {
+        "EventDate":  "\/Date(1627801500000)\/",
+        "EventMessage":  "0001, 64, 2N, CLEAR",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "fb3586cd-8a65-4534-91e4-00232f9df482"
+    },
+    {
+        "EventDate":  "\/Date(1556132280000)\/",
+        "EventMessage":  "1200, 73, 3NE, FAIR",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "0f60bc31-2e96-496d-97fa-00256f4e4489"
+    },
+    {
+        "EventDate":  "\/Date(1419149160000)\/",
+        "EventMessage":  "0001, 50.5, CALM, MOSTLY CLOUDY",
+        "Subdivision":  "ESCONDIDO",
+        "UID":  "976eb052-5c02-47e2-92fa-002b9242b730"
+    },
+    {
+        "EventDate":  "\/Date(1625965860000)\/",
+        "EventMessage":  "1800, 76, 6NE, SUNNY",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "dd13ba43-4e2e-4498-8254-002c45022758"
+    },
+    {
+        "EventDate":  "\/Date(1436878920000)\/",
+        "EventMessage":  "0600, 67, 0, OVERCAST",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "c19a3125-7538-482b-aef1-002e89c1fde4"
+    },
+    {
+        "EventDate":  "\/Date(1613940900000)\/",
+        "EventMessage":  "1200, 73, 12NE, CLEAR",
+        "Subdivision":  "SAN DIEGO",
+        "UID":  "c4c86564-ec9e-44f5-b9e8-003049e5cffb"
+    }
+]

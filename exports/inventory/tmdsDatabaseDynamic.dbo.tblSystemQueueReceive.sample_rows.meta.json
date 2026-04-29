@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblSystemQueueReceive",
+    "top":  20,
+    "order_by":  [
+                     "TimeCreated",
+                     "TimeProcessed",
+                     "Status",
+                     "MessageUID"
+                 ],
+    "row_count_exported":  0
+}

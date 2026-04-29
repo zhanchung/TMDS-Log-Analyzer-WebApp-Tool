@@ -1,0 +1,212 @@
+=== Slide 1 ===
+Train Management and Dispatch System (TMDS)
+System Administrator Training
+
+=== Slide 2 ===
+TMDS Code Server
+
+=== Slide 3 ===
+Workstation (laptop) with TMDS installed
+Handouts:
+TMDS System Administrator Training:
+Code Server Presentation
+Module Exam
+Tools/Resources
+
+=== Slide 4 ===
+Acronyms
+Acronym
+Description
+GUI
+Graphical User Interface
+TMDS
+Train Management Dispatch System
+
+=== Slide 5 ===
+Code Server
+The Code Server provides for control and indication functionality between TMDS and the various legacy field signal system code lines. The packet switch provides the protocol emulation for the many code line variations in use in the industry today. The Code Line Interface Service provides a graphical directory view of the code lines, control stations, and associated control/indication bits. Furthermore, it provides the standard tools (e.g., recalls, resends, inhibiting, etc.) required to manage the code line from an administrator’s perspective.
+The TMDS System Administrator – Code Server Module focuses on:
+Code Server Overview
+Code Server Functionality
+Module Topics
+
+=== Slide 6 ===
+
+=== Slide 7 ===
+Code Server Overview
+
+=== Slide 8 ===
+Code Server Overview
+Code Server
+All wayside communication messaging is channeled through an array of code servers. Each server has a warm redundant backup for failover purposes. The redundant backup is the secondary/offline code server. The code servers maintain persistent connections to an array of packet switch devices. Packet switch devices are communication equipment such as protocol converters that process data sent to/from the field devices.
+Each physical territory loaded and running on the different clients will automatically detect and subscribe to the appropriate code server(s) in order to process controls and indications for the respective code stations. A code station is an entity that contains the communication settings. This includes station addresses and control and indication values. There are other system services that also subscribe to the wayside communication server through the control server in order to read real time device status and train movement.
+
+=== Slide 9 ===
+Code Server Functionality
+Start and Exit the Code Server
+Start
+the Code Server by double-clicking on the
+application shortcut or alternately on the
+Codeserver.exe file.
+Exit
+the application by browsing to the menu bar, selecting the System menu, and then selecting EXIT. The application window will close once the EXIT function is selected.
+
+=== Slide 10 ===
+The Code Server provides a Graphical User Interface (GUI) for ease of use.
+The
+Main Screen
+displays Application Name, Title Bar, Menu Bar and all the options available.
+Code Server Overview
+
+=== Slide 11 ===
+Code Server Overview
+The
+Menu Bar
+provides access to the following functional areas:
+System
+–Helps to shut down the server
+View
+–Will bring up the Function Assignments window which displays the Controls and Indications for the selected code station
+Options
+- Selections available are:
+Display Logging
+Historical Logging
+Workstation Connections
+Packet Switch Connections
+Reload Certificates (Not Available)
+
+=== Slide 12 ===
+System Menu
+Exit
+– Clicking on Exit allows the user to shut down the server.
+View Menu
+Show Code Functions
+- Clicking on Show Code Functions displays the Function Assignments window which provides information on the Controls and Indications for the selected code station. An example of a Code Function is shown on Slide 19.
+Code Server Overview
+
+=== Slide 13 ===
+Code Server Functionality
+The Function Assignments Window
+This window will display the CONTROLS and INDICATIONS for the selected CODE STATION.
+The window is divided into three sections.
+The top section identifies the control station and code line
+The left section displays all of the CONTROLS assigned to the control point
+The right section displays all of the INDICATIONS assigned to that control point
+A drop-down menu selection under
+Options
+at the top of the window allows the window to be closed by left clicking on
+EXIT
+.
+
+=== Slide 14 ===
+Code Server Overview
+Options Menu
+Display Logging :
+Low Level Protocol –
+Displays protocol bytes at the socket level.
+Function Mnemonics –
+Displays code function assignments against the indications/controls.
+System Exceptions –
+Displays any system exceptions logged in the exceptions file.
+Debug Messages –
+Displays debug messages from low level code.
+Cluster Messages –
+Displays cluster messages between primary/secondary server.
+Socket Level Details –
+Displays details on the socket level connections.
+MSC II Protocol –
+Specifies how a code server talks to field code units.
+PEER Protocol Details –
+Peer to Peer.
+AMQP Messages –
+Advanced Message Querying Protocol - Option is grayed out unless an AMQP connection is made.
+Display Log Colors
+
+=== Slide 15 ===
+Code Server Overview
+The Connections Section of the Code Server Main Window:
+Three major categories of connections:
+Code Line
+– The code lines connected to a particular code server.
+Packet Connections
+– The name, IP address and port number of each packet switch connected to a particular code server.
+Client Connections –
+Workstations connected to the code server.
+
+=== Slide 16 ===
+Code Server Overview
+The Code line Information Section of the Code Server Main Window
+Statistics for each of the code lines on the code server are displayed in a spreadsheet format:
+Line –
+Code line Number.
+Name –
+Code line Name.
+Stats –
+Number of Stations associated with the code line.
+CTLS –
+Number of Controls sent by the code server for each code line since last cleared.
+RCLS –
+Recalls.
+INDS –
+Number of indications received by the code server for each code line since last cleared.
+Fails –
+Number of code station failures detected by the code server for each code station on each code line since last cleared.
+Description –
+Will contain “Code Line Limits” as found in Code Line table.
+
+=== Slide 17 ===
+Code Server Overview
+The Event History Section of the Code Server Main Window
+The inputs to and outputs from the code server as well as code server health static and setting are displayed in this section:
+The options available under this sub-menu are (Right Click on Event History Window):
+Pause Scrolling
+Clear Events
+Show Event Log
+Show Exception Log
+
+=== Slide 18 ===
+Code Server Overview
+Pause Scrolling –
+Left clicking on this option will pause
+the scrolling of the
+EVENT HISTORY
+display.
+If the scrolling of the
+EVENT HISTORY
+display has been paused,
+Enable Scrolling
+will be displayed as the first menu option. Left clicking on this option will restart the display scrolling in the
+EVENT HISTORY
+display.
+Clear Events -
+Left clicking on this option will clear all of the events in the
+EVENT HISTORY
+display.
+Show Event Log -
+Left clicking on this option will open an instance of MS Notepad in a separate window and load the current code server event log into Notepad.
+Show Exception Log -
+Left clicking on this option will open an instance of MS Notepad in a separate window and load the current code server exception log into Notepad.
+The Event History Sub-Menu
+
+=== Slide 19 ===
+Code Server Functionality
+The Code Server Log Files
+Both an event and an exception log for each day of operation for the code server are kept in the
+EventLogs
+folder found in the
+TMDS-CODE-SERVER
+file on the
+D
+drive of the code server
+.
+Inside the
+EventLogs
+folder you will find a folder for each code line associated with that code server, a current event log, a current exceptions log, and event and exception logs for previous days operations.
+
+=== Slide 20 ===
+ACTION FLASH:
+Review Key Elements of Code Server Overview
+
+=== Slide 21 ===
+ACTION FLASH:
+Time to take your exam, I know you will hit the bullseye!

@@ -1,0 +1,38 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSubdivisionEvents",
+        "column":  "EventDate",
+        "ordinal":  1,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSubdivisionEvents",
+        "column":  "EventMessage",
+        "ordinal":  2,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSubdivisionEvents",
+        "column":  "Subdivision",
+        "ordinal":  3,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSubdivisionEvents",
+        "column":  "UID",
+        "ordinal":  4,
+        "data_type":  "uniqueidentifier",
+        "is_nullable":  "NO"
+    }
+]

@@ -1,0 +1,234 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "component_lookup",
+        "row_count":  877,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.component_lookup.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.component_lookup.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.component_lookup.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "code_bit_lookup",
+        "row_count":  3171,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_bit_lookup.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_bit_lookup.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_bit_lookup.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "code_line_context",
+        "row_count":  27,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "code_line_detail_full",
+        "row_count":  27,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "code_station_context",
+        "row_count":  50,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "code_station_detail_full",
+        "row_count":  50,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "code_assignment_context",
+        "row_count":  3171,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_assignment_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_assignment_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_assignment_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "component_reference_rows",
+        "row_count":  9760,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.component_reference_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.component_reference_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.component_reference_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "control_point_detail_full",
+        "row_count":  50,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.control_point_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.control_point_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.control_point_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "signal_detail_full",
+        "row_count":  165,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.signal_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.signal_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.signal_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "track_detail_full",
+        "row_count":  444,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.track_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.track_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.track_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "switch_detail_full",
+        "row_count":  99,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.switch_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.switch_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.switch_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "route_context",
+        "row_count":  291,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.route_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.route_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.route_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "subdivision_context",
+        "row_count":  3,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.subdivision_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.subdivision_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.subdivision_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "misc_device_context",
+        "row_count":  119,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.misc_device_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.misc_device_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.misc_device_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "export_name":  "misc_device_detail_full",
+        "row_count":  119,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.misc_device_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.misc_device_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.misc_device_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "active_train_detail_full",
+        "row_count":  310,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.active_train_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.active_train_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.active_train_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "active_train_context",
+        "row_count":  310,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.active_train_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.active_train_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.active_train_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "locomotive_position_detail_full",
+        "row_count":  2301,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_position_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_position_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_position_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "mdm_train_object_detail_full",
+        "row_count":  5933,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.mdm_train_object_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.mdm_train_object_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.mdm_train_object_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "bos_departure_test_detail_full",
+        "row_count":  14,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_departure_test_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_departure_test_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "locomotive_runtime_context",
+        "row_count":  2301,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_runtime_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_runtime_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_runtime_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "os_event_detail_full",
+        "row_count":  130,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "os_event_context",
+        "row_count":  130,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "authority_detail_full",
+        "row_count":  4,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "authority_component_context",
+        "row_count":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_component_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_component_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_component_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "bulletin_detail_full",
+        "row_count":  19,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bulletin_detail_full.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bulletin_detail_full.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bulletin_detail_full.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "bulletin_component_context",
+        "row_count":  869,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bulletin_component_context.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bulletin_component_context.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bulletin_component_context.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "export_name":  "bos_emp_messages",
+        "row_count":  225,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_emp_messages.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_emp_messages.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_emp_messages.meta.json"
+    }
+]

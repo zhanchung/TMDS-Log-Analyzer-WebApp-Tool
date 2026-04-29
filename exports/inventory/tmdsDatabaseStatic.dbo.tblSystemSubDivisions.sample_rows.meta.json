@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemSubDivisions",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "Name",
+                     "RailRoadName"
+                 ],
+    "row_count_exported":  3
+}

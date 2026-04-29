@@ -1,0 +1,29 @@
+sample_family,bit,name,scope
+indications,1,2NWK,sample manual mapping only; not an NCTD site-specific assignment
+indications,2,2RWK,sample manual mapping only; not an NCTD site-specific assignment
+indications,3,1EGK,sample manual mapping only; not an NCTD site-specific assignment
+indications,4,1WGK,sample manual mapping only; not an NCTD site-specific assignment
+indications,5,2TPK,sample manual mapping only; not an NCTD site-specific assignment
+indications,6,EATK,sample manual mapping only; not an NCTD site-specific assignment
+indications,7,WATK,sample manual mapping only; not an NCTD site-specific assignment
+indications,8,SATK,sample manual mapping only; not an NCTD site-specific assignment
+indications,9,2ATK,sample manual mapping only; not an NCTD site-specific assignment
+indications,10,TROUBLE,sample manual mapping only; not an NCTD site-specific assignment
+indications,11,2LK,sample manual mapping only; not an NCTD site-specific assignment
+controls,1,2NW-CS,sample manual mapping only; not an NCTD site-specific assignment
+controls,2,2RW-CS,sample manual mapping only; not an NCTD site-specific assignment
+controls,3,1WGZ-CS,sample manual mapping only; not an NCTD site-specific assignment
+controls,4,1EGZ-CS,sample manual mapping only; not an NCTD site-specific assignment
+controls,5,1GZCAN-CS,sample manual mapping only; not an NCTD site-specific assignment
+controls,6,MCON-CS,sample manual mapping only; not an NCTD site-specific assignment
+controls,7,MCOFF-CS,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,1,EXECUTE REC,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,2,RECALL REC,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,3,CONTROL REC,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,4,POLL REC,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,5,ACK REC,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,6,COMMON CONTROLS REC,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,7,SENT ACK,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,8,SENT CHANGE,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,9,CONTROL CHECKBACK SENT,sample manual mapping only; not an NCTD site-specific assignment
+special_control_bits,10,SENT CONTROL CONTAINING ALL BITS,sample manual mapping only; not an NCTD site-specific assignment

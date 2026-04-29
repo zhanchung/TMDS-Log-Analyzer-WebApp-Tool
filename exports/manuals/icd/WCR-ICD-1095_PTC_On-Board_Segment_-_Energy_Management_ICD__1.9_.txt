@@ -1,0 +1,2310 @@
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+ 
+-1- 
+ 
+ 
+PTC On-board Segment– Energy Management 
+ 
+Interface Control Document (ICD) 
+ 
+ 
+WCR-ICD-1095 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-2- 
+ 
+REVISION DATE DESCRIPTION INCORPORATED 
+Release 1.0 6-11-2010 Initial Version after split from EM On-Board ICD Wabtec Railway Electronics 
+Release 1.1 9-21-2010 Update after internal EM Requirement Review Wabtec Railway Electronics 
+Release 1.2 10-27-2010 Updates after on-board spec review Wabtec Railway Electronics 
+Release 1.3 8-3-2011 Updated per CAF6941 Wabtec Railway Electronics 
+Release 1.4 2-6-2012 Updated per CAF7934 and CAF 8350 Wabtec Railway Electronics 
+Release 1.5 11-13-2012 Updated per CAF 7976, CAF8007, and CAF 8575 Wabtec Railway Electronics 
+Release 1.6 5-3-2013 Updated per CAF 10341 Wabtec Railway Electronics 
+Release 1.7 4-15-2014 Updated per CAF 10892, CAF 11266, CAF 11343, 
+CAF 11410 
+Wabtec Railway Electronics 
+Release 1.8 10-31-2016 Updated per CAF 12531 and DCR 16772 Wabtec Railway Electronics 
+Release 1.9 4-7-2017 Updated per CAF 10861 and CAF 15715 Wabtec Railway Electronics 
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-3- 
+TABLE OF CONTENTS 
+1. PTC ON-BOARD SEGMENT – ENERGY MANAGEMENT (EM) MESSAGES ........................................................................................................ 5 
+1.1 SCOPE AND INTRODUCTION ............................................................................................................................................................................................. 5 
+1.2 REFERENCES .................................................................................................................................................................................................................... 5 
+1.3 MESSAGE FORMAT .......................................................................................................................................................................................................... 6 
+1.4 EDGE MESSAGE PROTOCOL USE CONVENTIONS .............................................................................................................................................................. 7 
+1.5 PTC TO ENERGY MANAGEMENT MESSAGES ................................................................................................................................................................... 8 
+1.5.1 PTC Status Data (0500) - Version 5 ....................................................................................................................................................................... 9 
+1.5.2 EM Access Screen Status (0501) - Version 2 ........................................................................................................................................................ 13 
+1.5.3 OPK Encryption Key (0504) - Version 1 .............................................................................................................................................................. 14 
+1.5.4 Operational Private Key (0505) - Version 3 ......................................................................................................................................................... 15 
+1.5.5 Railroad Office Addresses (0506) – Version 2 ..................................................................................................................................................... 16 
+1.5.6 Track Database Information (0510) - Version 3 .................................................................................................................................................. 17 
+1.5.7 Track Clear (0511) - Version 3 ............................................................................................................................................................................. 18 
+1.5.8 Track Database Data (0514) - Version 3 ............................................................................................................................................................. 19 
+1.5.9 Summary Train Consist (0520) - Version 3 .......................................................................................................................................................... 20 
+1.5.10 Locomotive Run Status (0521) - Version 2 ........................................................................................................................................................... 22 
+1.5.11 Train and Crew Data (0523) - Version 3 .............................................................................................................................................................. 23 
+1.5.12 Current Position (0530) - Version 3 ..................................................................................................................................................................... 24 
+1.5.13 Train Route (0531) - Version 3 ............................................................................................................................................................................. 25 
+1.5.14 Target List (0532) - Version 4 .............................................................................................................................................................................. 27 
+1.5.15 Speed Restriction List (0533) - Version 4 ............................................................................................................................................................. 32 
+1.5.16 Speed Restriction Data (0534) - Version 2 ........................................................................................................................................................... 34 
+1.5.17 EM Banner Display Status (0540) - Version 2 ..................................................................................................................................................... 38 
+1.5.18 EM Soft-Key Status (0541) - Version 2 ................................................................................................................................................................. 39 
+1.5.19 EM Control Indicator Status (0542) – Version 3 .................................................................................................................................................. 40 
+1.5.20 ITF/BCP Overlay Status (0544) – Version 1 ........................................................................................................................................................ 41 
+1.6 ENERGY MANAGEMENT TO PTC MESSAGES ................................................................................................................................................................. 42 
+1.6.1 Energy Management Status (0600) - Version 3 .................................................................................................................................................... 43 
+1.6.2 Energy Management Access Screen (0601) - Version 3 ....................................................................................................................................... 45 
+1.6.3 OPK Encryption Key Reply (0604) - Version 1 .................................................................................................................................................... 48 
+1.6.4 Operational Private Key Request (0605) - Version 2 ........................................................................................................................................... 49 
+1.6.5 Railroad Office Address Request (0606) – Version 2 ........................................................................................................................................... 50 
+1.6.6 Track Request (0612) - Version 3 ......................................................................................................................................................................... 51 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-4- 
+1.6.7 Track Database Data Request (0614) – Version 3 ............................................................................................................................................... 52 
+1.6.8 Summary Train Consist Request (0620) - Version 2 ............................................................................................................................................. 53 
+1.6.9 Locomotive Run Status Request (0621) - Version 2 .............................................................................................................................................. 54 
+1.6.10 Train and Crew Data Request (0623) - Version 2 ................................................................................................................................................ 55 
+1.6.11 Train and Crew Data Acknowledge (0624) - Version 2 ....................................................................................................................................... 56 
+1.6.12 In-Train Forces (0625) - Version 1 ...................................................................................................................................................................... 57 
+1.6.13 Speed Prediction (0627) - Version 3 ..................................................................................................................................................................... 58 
+1.6.14 In-Train Brake Cylinder Pressures (0628) - Version 1......................................................................................................................................... 59 
+1.6.15 Target List Acknowledge (0632) - Version 1 ........................................................................................................................................................ 60 
+1.6.16 Restriction List Request (0633) - Version 4 .......................................................................................................................................................... 61 
+1.6.17 Restriction Request (0634) - Version 1 ................................................................................................................................................................. 62 
+1.6.18 EM Banner Display (0640) - Version 2 ................................................................................................................................................................ 63 
+1.6.19 EM Soft-Key Text (0641) - Version 2 .................................................................................................................................................................... 68 
+1.6.20 EM Control Indicator (0642) - Version 3 ............................................................................................................................................................. 69 
+1.6.21 ITF/BCP Overlay Display (0644) - Version 1 ...................................................................................................................................................... 70 
+1.7 DATA DICTIONARY ........................................................................................................................................................................................................ 73 
+1.8 ENERGY MANAGEMENT TBC VALUES .......................................................................................................................................................................... 75 
+1.9 DEFINITIONS .................................................................................................................................................................................................................. 76 
+1.9.1 On-Board Segment State ....................................................................................................................................................................................... 76 
+1.9.1.1 Self Test .................................................................................................................................................................................................................................... 76 
+1.9.1.2 Failed ........................................................................................................................................................................................................................................ 76 
+1.9.1.3 Cut Out ...................................................................................................................................................................................................................................... 76 
+1.9.1.4 Initializing ................................................................................................................................................................................................................................. 77 
+1.9.1.5 Disengaged ................................................................................................................................................................................................................................ 77 
+1.9.1.6 Active ........................................................................................................................................................................................................................................ 77 
+1.9.1.7 Restricted .................................................................................................................................................................................................................................. 77 
+2. APPENDIX A: ENUMERATED MESSAGE RULES: ................................................................................................................................................... 78 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-5- 
+1. PTC ON-BOARD SEGMENT – ENERGY MANAGEMENT (EM) MESSAGES 
+1.1 Scope and Introduction 
+This document contains messages passed between a PTC On-board Segment and an Energy Management (EM) system that operates on a 
+locomotive. The PTC on-board segment connects to Energy Management as an EMP client and Energy Management acts as an EMP server.  
+The port number used for the Class D link connection is 10050. 
+ 
+The interchange of the PTC Status Data (0500) message and EM Status (0600) message are ‘heartbeat’ messages between the PTC on-board 
+segment and Energy Management.  Using these messages, the PTC on-board segment and Energy Management negotiate the message 
+“interface version” and determine which functions are supported and in operation between the two systems. 
+ 
+Other messages exchanged between PTC and EM support the exchange of track data information, restriction information, and feedback to the 
+crews. 
+1.2 References 
+The following documents were used in the preparation of this document.  
+ 
+# Title Source Revision Date 
+1.  Positive Train Control Office – Locomotive Segment Interface Control 
+Document (ICD).  See Note A 
+Wabtec Version 
+2.11.1 
+10/26/2012 
+2.  PTC Back Office - Energy Management Interface Control Document. Wabtec Version 1.4 11/2/2012 
+3.  AAR MSRP Section K-IV, Office Architecture and Railroad Electronics 
+Messaging 
+Association of American 
+Railroads 
+ effective August 
+2012 
+4.  PTC Track Data Model: S-9501 S-9351 Association of American 
+Railroads 
+Version 1 Pending 
+5.  I-ETMS Back Office Segment Requirements Specification Wabtec 1.37 Pending 
+6.  I-ETMS On-board Data Distribution Messages Interface Control 
+Document 
+Wabtec Version 1.2 7/3/2012 
+7.  I-ETMS Security Implementation Guide Wabtec Version 1.2 2/17/2012 
+NOTES: 
+A This document corresponds to the pending release of AAR S-9352B. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-6- 
+1.3 Message Format 
+Message content is in the form of a message header and data.  Every message will have an EMP header field followed by message data and a 
+data integrity value.  The message content will segment as shown in the table below. 
+ 
+Field Size Type Description Note 
+EMP Message 
+Header 
+17 Message 
+Header 
+Contains the information that is common to all 
+messages sent between Energy Management and 
+PTC. Explained below in the following section. 
+See section 1.4 for 
+definition 
+Message Content * Variable This is the message payload. See the following 
+sections for specifics. 
+See section 1.6 for 
+message descriptions 
+Data integrity value 4 CRC-32 This is the EMP data integrity check and is a CRC 
+computed around the EMP Message Header + 
+Message Content. 
+See section 1.7 for 
+definition. 
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-7- 
+1.4 Edge Message Protocol Use Conventions 
+Each message has a 17-byte EMP header preceding the data message.  The header format is: 
+ 
+Field Size Type Description Note 
+Protocol (header) 
+Version 
+1 Numeric 0x04 = Version 1 of S-9354  
+Message 
+Type(ID) 
+2 Numeric Message ID number (0 – 65535)  
+Message Version 1 Numeric Version number of message in range 1 – 255.  This is 
+to accommodate backward compatibility to build or 
+revision levels. 
+ 
+Flags 1 Numeric 0x09 = UTC Timestamp, no encryption, no 
+compression, CRC.  See S-9354 section 3.2.1.4 
+No other options allowed 
+Data Length 3 Numeric Size of the payload of each message, in bytes.  Does 
+NOT include the header or the 4 bytes of the CRC-32. 
+ 
+Message Number 4 Numeric This is sequence number of the message which is 
+incremented by one for each new transmission. 
+Retransmissions use same 
+message number. 
+Message Time 4 Numeric UTC Time of message. 
+See S-9354 section 3.2.2.2 for options 
+ 
+Variable Header 
+Size 
+1 Numeric 0x00 = No variable header used  
+ 
+NOTES: 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-8- 
+1.5 PTC to Energy Management Messages 
+The following messages are sent from a PTC on-board segment to Energy Management. 
+ 
+Message 
+ID 
+Message Name Supported Message 
+Versions for “Interface 
+Version” 3 
+(identified in 0500/0600 
+message) 
+0500 PTC Status Data 5 
+0501 EM Access Screen Status 2 
+0504 OPK Encryption Key 1 
+0505 Operational Private Key 3 
+0506 Railroad Office Addresses 2 
+0510 Track Database Information 3 
+0511 Track Clear 4 
+0514 Track Database Data 3 
+0520 Summary Train Consist 3 
+0521 Locomotive Run Status 2 
+0523 Train and Crew Data 3 
+0530 Current Position 3 
+0531 Train Route 3 
+0532 Target List 4 
+0533 Speed Restriction List 4 
+0534 Restriction Data 2 
+0540 EM Banner Display Status 2 
+0541 EM Soft Key Status 2 
+0542 EM Control Indicator Status 3 
+0544 ITF/BCP Overlay Status 1 
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-9- 
+1.5.1 L2I218 PTC Status Data (0500) - Version 5 
+This message conveys status of PTC data to Energy Management.  PTC and Energy Management negotiate and reach agreement on the 
+“Interface version” (achieved through 0500-0600 message exchanges) before PTC sends any other types of messages to Energy Management.  
+The fields “Summary train consist CRC”, “Subdivision ID”, “Subdivision version”, “Subdivision CRC”, “Restriction Aggregate CRC”, and 
+“Locomotive run status ID” must match with the EM data for these fields, or else PTC and Energy Management are out-of-synchronization 
+(OOS).  When OOS Energy Management needs to obtain the data needed to become synchronized with PTC for consistent operation of the 
+two systems.  Energy Management is responsible for determining the correct operating behavior when it is OOS with PTC. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Interface version 1 Numeric 0x04 Note A 
+2 PTC state 1 Enumeration 0 – Undetermined 
+1 – Self Test 
+2 – Initializing 
+3 – Disengaged 
+4 – Cut Out 
+5 – Active 
+6 – Restricted 
+7 – Failed 
+Note B 
+3 PTC additional status 1 1 HGFEDCBA Additional PTC operating state information Note C 
+4 PTC additional status 2 1 HGFEDCBA PTC substate information Note I 
+5 EM status 1 HGFEDCBA EM status acknowledgement Note D 
+6 Locomotive ID 10 Alphanumeric ID of host locomotive 
+(See Data Dictionary sect.) 
+ 
+7 Summary train consist CRC 4 CRC-32 (See Data Dictionary sect.) Note E 
+8 Track data subdivision count 1 Numeric Number of track subdivisions to be synchronized. Note F 
+Loop once for each subdivision 
+<Start Subdivision Information Loop> 
+8.1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+8.2 Subdivision/District ID  2 Numeric PTC Subdivision/District ID  
+8.3 Track Data version 4 Numeric From corresponding Track Database (0510) message  
+8.4 Track Version CRC 4 CRC-32 From corresponding Track Database (0510) message  
+<End Subdivision Information Loop> 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-10- 
+9 Locomotive run status ID 1 Numeric Locomotive run status ID number (see message 521) Note H 
+10 Restriction Aggregate CRC 4 CRC-32 Speed restriction aggregate CRC for determining current 
+applicable restrictions. 
+Note G 
+ 
+NOTES: 
+A. PTC initially reports the current EM interface version  
+B. Enumeration value “Undetermined” is specified if PTC state cannot be obtained or determined. 
+C. PTC Additional Status 1 
+a. Bit A: 1 = PTC Penalty Brake Cut Out Switch is Cut Out 
+b. Bit B: 1 = PTC is not receiving valid cab signal indication or cab signal system is Cut Out or Partial Cut Out  
+c. Bit C: 1 = Departure test is required in order for PTC to become ACTIVE 
+d. Bit D: 1 = PTC on-board segment is out of communication with PTC office segment 
+e. Bit E: 1 = Parking function is enabled 
+f. Bit F: 1 = PTC datasets are out of sync with the office for the current subdivision/district that the train occupies; value is 1 if the 
+position is unknown. 
+g. Bit G: 1 = The locomotive air brake system is Cut Out 
+h. Bit H: 1 = PTC is operating under Restricted Speed rules 
+D. EM Status 
+a. Bit A: Spare 
+b. Bit B: 1 = Energy Management Advisory Functions Ready Acknowledge 
+c. Bit C: 1 = Energy Management Cruise Functions Ready Acknowledge 
+d. Bit D: 1 = Energy Management Cruise Functions Active Acknowledge 
+e. Bit E: Spare 
+f. Bit F: Spare 
+g. Bit G: Spare 
+h. Bit H: Spare 
+E. This CRC value is the one that is sent in a Summary Train Consist (0520) message. 
+F. Entries 8.1 through 8.4 are repeated for each track data subdivision (entry 8). 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-11- 
+G. PTC includes a Restriction Aggregate CRC value for the current set of restrictions, which is an indicator to EM as to whether EM has 
+the most current set of speed restrictions, i.e. Speed Restriction List (0533) and Speed Restriction Data (0534) message information.  If 
+EM does not have a match on the Restriction Aggregate CRC value, EM may then request the Speed Restriction List (0533) message 
+by sending a Restriction List Request (0633) message.  The Restriction Aggregate CRC is a CRC of each set of restriction data sets 
+(listed within the Speed Restriction (0533) message) starting with the lowest Individual Restriction Reference Number to the highest 
+Individual Restriction Reference Number.  In the event there are duplicate individual restriction reference numbers (different SCAC), the 
+order will be done alphabetically by SCAC (ex: “BNSF” > “CSX” > “UP”) for the duplicates. 
+The table below shoes the fields over which the ‘Restriction Aggregate CRC’ is calculated in order. 
+Field Size 
+(Bytes) 
+Type 
+Repeated for each Individual Restriction Reference Number listed in the Speed Restriction List 
+(0533) message.  The CRC is computed on the Speed Restriction List (0533) message fields 2.1 
+through 2.3 in the order as they are listed within the Speed Restriction List (0533) message. 
+  
+Individual Restriction Reference Number 4 Numeric 
+Restriction SCAC 4 Alphanumeric 
+Restriction Type 1 Enumeration 
+H. The “Locomotive run status ID” is the one sent in the last Locomotive Run Status (0521) message 
+I. PTC additional status 2 
+a. Bit A: 1 = BRAKING (enforcement braking is in process) 
+b. Bit B: 1 = STOPPED (Note L) 
+c. Bit C: 1 = EM Access Screen Active (data currently being displayed) 
+d. Bit D: 1 = WARNING 
+e. Bit E: Spare 
+f. Bit F: Spare 
+g. Bit G: Spare 
+h. Bit H: Spare 
+J. General: Maximum elapsed time for sending a PTC Status Data (0500) message is TBC 224 seconds.  An updated message will be 
+sent immediately upon any change. 
+K. General: The train is considered stopped when the speed falls below TBC 163 MPH. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-12- 
+L. General: The combination of an Individual Restriction Reference Number and the SCAC of the track owner are required to uniquely 
+identify an individual restriction due to the possibility of different track owners using the same restriction numbers when a train travels 
+over track owned by multiple railroads. 
+M. When the crew is logged off the following values shall be set to zero: 
+ Summary Train Consist CRC 
+ Track Data Subdivision Count 
+ Locomotive Run Status ID 
+ Restriction Aggregate CRC 
+N. The following data is only guaranteed to be correct when PTC is in the ‘DISENGAGED’, ‘ACTIVE’ OR ‘RESTRICTED’ state: 
+ Summary Train Consist CRC 
+ Track Data Subdivision Count 
+ Locomotive Run Status ID 
+ Restriction Aggregate CRC 
+  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-13- 
+1.5.2 L2I160 EM Access Screen Status (0501) - Version 2 
+This message provides the key index for a softkey pressed while Energy Management Access Screens are active. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Key index 1 Numeric 0 to 7 Note A 
+2 Access Screen Status 1 Enumeration 0: Screen inactive 
+1: Screen active 
+2: Softkey pressed 
+ 
+3 Message Coordination 
+Number 
+4 Numeric Use Coordination Number from Energy Management Access 
+Screen (0601) message when sent as a response.  Use 
+0x00000000 when sent unsolicited to represent a keypress or the 
+screen activity state changes. 
+ 
+ 
+NOTES: 
+A. Key 7 is reserved for exiting the Energy management Access Screen 
+.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-14- 
+1.5.3 L2I397 OPK Encryption Key (0504) - Version 1 
+This message is sent from PTC to EM to provide a portion of the key needed to decrypt the HMAC OPK.  EM will respond with an OPK 
+Encryption Key Reply (0604) message containing the remainder of the information needed to decrypt the HMAC OPK. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 P Value 16 Hexadecimal Fixed at 0xD4A2559DF0A39C04C0BD16DA75D662B3  
+2 G Value 1 Hexadecimal Fixed at 0x05  
+3 A Value length 1 Numeric Size of A value in bytes,   
+4 A Value 16 Hexadecimal “A” value used for calculating “s” value Note A 
+5 Message Coordination 
+Number 
+4 Numeric PTC assigned Coordination Number for use by OPK Encryption 
+Key Reply (0604) message. 
+ 
+ 
+NOTES: 
+A. The A value is based on the following calculation: 
+ 
+A = g^a mod p 
+Where: 
+a = 128 bit random number generated by PTC 
+g = 0x05 
+p = 0xD4A2559DF0A39C04C0BD16DA75D662B3 
+ 
+Additional information on this process will be provided in a restricted distribution white paper for those with a need to know.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-15- 
+1.5.4 L2I161 Operational Private Key (0505) - Version 3 
+This message provides the locomotive’s Operational Private Key for Energy Management to use for offboard message authentication. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 OPK 32 Numeric Encrypted key value for use in offboard communications.  
+2 Message Coordination 
+Number 
+4 Numeric Use Coordination Number from Operational Private Key Request 
+(0605) message. 
+ 
+.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-16- 
+1.5.5 L2I342 Railroad Office Addresses (0506) – Version 2 
+This message provides the default EMP address of all railroads selected for operation during initialization along with the employing railroad for 
+the crew and the owning railroad of the locomotive.  This message is sent in response to a Railroad Address Office Request (0606) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Number of railroads 1 Numeric Number of railroads  
+Data for each Railroad.  These fields are repeated for each Railroad.  
+<Beginning of Railroad Information Loop> 
+1.1 Railroad SCAC 4 Alphanumeric Railroad SCAC Note A 
+1.2 Railroad state 1 HGFEDCBA Railroad locomotive Relationship Note C 
+1.3 EMP address length 1 Numeric Length of the EMP Address  
+1.4 Default Office EMP address Variable Alphanumeric Default EMP Address of the office for the railroad specified  
+<End of Railroad Information Loop> 
+2 AG address length 1 Numeric   
+3 AG IP address Variable Alphanumeric IP Address of the AG Note B 
+4 AG port number 2 Numeric Port number to connect to the AG  
+5 Message Coordination 
+Number 
+4 Numeric Use Coordination Number from Railroad Office Address Request 
+(0606) message. 
+ 
+ 
+NOTES: 
+A. Fields 1.1 through 1.4 are repeated for each railroad selected for operation. 
+B. The AG address provided is for the EM to make a class D connection to the current applicable AG. 
+C. The Railroad State 
+Bit A: 1 = Owning Railroad 
+Bit B: 1 = Employing Railroad 
+Bit C: 1 = Operating Railroad 
+Bit D: Spare 
+Bit E: Spare 
+Bit F: Spare 
+Bit G: Spare 
+Bit H: Spare  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-17- 
+1.5.6 L2I162 Track Database Information (0510) - Version 3 
+This message contains information to describe the attributes of one complete subdivision/district of EM-formatted track data.  It is sent in 
+response to receiving an EM Track Request (0612) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2 Subdivision/District ID 2 Numeric PTC Subdivision/District ID  
+3 Track data version 4 Numeric Track Data version for subdivision/district ID Note A 
+4 Track version CRC 4 CRC-32 CRC-32 of track data version.  Used only for version verification Note A 
+5 File size 4 Numeric  Note A 
+6 Message Coordination 
+Number 
+4 Numeric Use Coordination Number from Track Request (0612) message.  
+ 
+NOTES: 
+A. The fields noted by “Note A” are zeroed out if PTC is unable to obtain this information for the given Subdivision/District ID.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-18- 
+1.5.7 L2I163 Track Clear (0511) - Version 3 
+This message commands the clearing of track data for a single subdivision in anticipation of updated track data.  This message is sent to EM 
+when PTC loads a new version of subdivision track data. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2 Subdivision/District ID 2 Numeric PTC Subdivision/district ID  
+3 Track data version 4 Numeric Track Data version for subdivision/district Note A 
+4 Track version CRC 4 CRC-32 CRC-32 of track data version.  Used only for version verification Note A 
+ 
+NOTES: 
+A. This is the old (obsolete) subdivision version number and CRC that EM has currently.  PTC uses this message to tell EM to delete this 
+version of track data from its data store in anticipation of PTC sending a new version of this track data.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-19- 
+1.5.8 L2I345 Track Database Data (0514) - Version 3 
+This message is sent in response to receiving an EM Track Database Data Request (0614) message.  This message contains the track data for 
+a “portion” of one complete subdivision of track data.  (Please see AAR document S-9501 (reference 6) for the format of a complete subdivision 
+of EM-formatted track data.) 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2 Subdivision/District ID 2 Numeric PTC Subdivision/district ID  
+3 Track data version 4 Numeric Track Data version for subdivision/district  
+4 Track version CRC 4 CRC-32 CRC-32 of track data version.  Used only for version verification  
+5 Offset (into data file) 4 Numeric 0-based offset into subdivision track data Note A 
+6 Size of data transmitted 2 Numeric Maximum size is 14000 bytes Note B 
+7 Data Variable Binary Sequence of bytes (a byte stream) starting at the specified 0-
+based ”Offset” and having length that of the specified “Size of 
+data”. 
+ 
+8 Data CRC-32 4 CRC-32 CRC value covering data (field 7) only  
+9 Message Coordination 
+Number 
+4 Numeric Use Message Coordination Number from Track Database Data 
+Request (0614) message. 
+ 
+ 
+NOTES: 
+A. The 0-based “Offset” counts the beginning byte as byte 0 and is the number of bytes offset into the EM subdivision data file at which to 
+begin collecting data for the “Data” portion of this message.  The amount of data to be collected for this message, including the offset 
+and onwards, is the value in the “Size of data” field. 
+B. This value corresponds to the size in bytes of the data being sent within this particular message in field 7 rather than the total file size.  
+In the event of a file size mismatch between the stated file size and the received file size EM is to assume the file is corrupted and issue 
+a new Track Database Data Request (0614) message.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-20- 
+1.5.9 L2I165 Summary Train Consist (0520) - Version 3 
+This message provides summary train consist information. This message uses a similar format to the “Train Consist (01030)” message of the 
+Electronic Train Management System Office – Locomotive Segment Interface Control Document (ICD), with an additional enumeration value for 
+“Reason for sending.” 
+Note: A” detailed” train consist will be provided through a separate message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Reason for sending 1 Enumeration 0 – Not used 
+1 – Response to EM request 
+2 – Unsolicited (BOS is source) 
+3 – Crew updated consist 
+NOT IN CRC 
+Note A 
+2 Train length 2 Numeric (40 - 25,000) Total train length in feet. (locomotives and cars)  
+3 Lead locomotive orientation 1 Enumeration 0 – Not used 
+1 – Front (default) 
+2 – Back 
+ 
+4 Number of loaded car count 2 Numeric (0 – 999)  
+5 Number of empty car count 2 Numeric (0 – 999)  
+6 Trailing Tonnage 2 Numeric (0 – 45,000) Short tons  
+7 Maximum train speed 1 Numeric (0 – 125) MPH - Maximum train speed  
+8 Train type 1 Enumeration 0 – Unknown 
+1 – Freight 
+2 – Passenger 
+3 – Intermodal 
+4 – High Speed Passenger 
+5 – Tilt Train 
+6 – Commuter 
+ 
+9 Number of locomotives  1 Numeric (1 – 24) All locomotive ID’s in train Note B 
+Data For Each Locomotive.  These fields are repeated for each locomotive.  
+<Beginning of Locomotive Information Loop> 
+9.1 Locomotive ID 10 Alphanumeric Locomotive ID (see Data Dictionary sect.)  
+9.2 Locomotive position 2 Numeric (1-999) Position of the locomotive in the train  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-21- 
+ Field Size 
+(Bytes) 
+Type Description Note 
+9.3 Tonnage of locomotive 2 Numeric (50 – 400) Short tons  
+9.4 Locomotive status 1 Enumeration 0 – Unknown 
+1 – Run 
+2 – Isolated 
+ 
+9.5 Locomotive length 1 Numeric (0- 255) Feet  
+9.6 Locomotive horsepower 2 Numeric (0 - 10,000) horsepower  
+<End of Locomotive Information Loop> 
+10 Number of operative brakes 2 Numeric (0 – 999) operative brakes  
+11 Number of axles 2 Numeric (0 – 3996) axles  
+12 Total braking force 4 Numeric (0 – 30,000,000) lbs – Total braking force for the train excluding 
+the locomotives listed under the ‘Number of Locomotives’ field 
+above. 
+ 
+13 Source of Consist Information 
+– Railroad SCAC 
+4 Alphanumeric Railroad SCAC of the office that provided summary consist 
+information 
+ 
+14 Consist Source – EMP address 
+length 
+1 Numeric Length of EMP Address  
+15 Consist Source – EMP address Variable Alphanumeric EMP Address of the office that provided summary consist 
+information 
+ 
+16 CRC 4 CRC-32 This is the CRC around all the fields from the ‘Train length’ 
+through ‘Consist Source – EMP address’, fields 2 through 15 
+ 
+17 Message Coordination Number 4 Numeric Use Coordination Number from Summary Train Consist Request 
+(0620) message.  Use 0x00000000 when sent unsolicited 
+ 
+ 
+NOTES: 
+A. The value “Response to EM request” is used when this message is sent in response to an EM Summary Train Consist Request (0620) 
+message. 
+B. Entries 9.1 through 9.6 are repeated for each locomotive (entry 9). 
+C. The Summary Train Consist is only guaranteed to be correct when PTC is in the ‘DISENGAGED’, ‘ACTIVE’ or ‘RESTRICTED’ state.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-22- 
+1.5.10 L2I166 Locomotive Run Status (0521) - Version 2 
+This message provides the run/isolate status for all locomotives in the train.  This message is sent when the crew updates locomotive run 
+status, or in response to a Locomotive Run Status Request (0621) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Locomotive run status ID 1 Numeric Used in heartbeat messages (500/600)  
+2 Total number of locomotives in 
+train 
+1 Numeric (1 – 24)  All locomotives including those in DP groups Note A 
+<Start Locomotive Information Loop> 
+2.1 Locomotive ID 10 Alphanumeric Locomotive ID that is on this train including those in DP groups  
+2.2 Run status 1 Enumeration 0 – unknown 
+1 – run 
+2 – isolated 
+ 
+<End Locomotive Information Loop> 
+3 Message Coordination Number 4 Numeric Use Coordination Number from Locomotive Run Status Request 
+(0621) message when responding.  Use 0x00000000 when sent 
+unsolicited 
+ 
+ 
+NOTES: 
+A. Entries 2.1 through 2.2 are repeated for each locomotive (entry 2).  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-23- 
+1.5.11 L2I167 Train and Crew Data (0523) - Version 3 
+This message provides employee ID and train IDs. It is sent whenever a train ID is established or changed, or when a crewmember successfully 
+logs in or logs out. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Employee identifier length 1 Numeric Length of the employee identifier Note A 
+2 Employee identifier Variable Alphanumeric Employee identifier Note A 
+3 Employing RR SCAC 4 Alphanumeric SCAC of the Employing Railroad  
+4 Crew log in status 1 Enumeration 0 = Crew Not Logged In 
+1 = Crew Logged In 
+ 
+5 Number of train IDs 1 Numeric  Note B 
+Repeat once for each Train ID 
+<Start Train ID Information Loop> 
+5.1 Train ID length 1 Numeric Train ID length Note C 
+5.2 Train ID Variable Alphanumeric Train ID See Data 
+Dictionary sect. 
+5.3 Train ID Railroad SCAC 4 Alphanumeric Railroad SCAC of this train ID  
+<End Train ID Information Loop> 
+6 Message Coordination Number 4 Numeric Use Coordination Number from Train and Crew Data Request 
+(0623) message when responding.  PTC assigns a value when sent 
+unsolicited. 
+ 
+ 
+NOTES: 
+A. Employee identifier is unpopulated if the “Employee identifier length” field is valued with 0.  Also, see Data Dictionary sect. 
+B. During initialization, the crew selects a list of train ids, one per operating railroad.  Entries 5.1 through 5.3 are repeated for each train id 
+(entry 5).  If the “Number of train IDs” is a value 0, then the Train ID portion of this message is ‘empty’, which may be valid before 
+“Initialization”, or may be invalid data if after initialization (i.e. in Disengaged or Active state).  After a successful “Initialization”, the crew 
+must have selected at least one operating railroad, and thus Train ID. 
+C. Train ID is unpopulated if the “Train ID length” field is valued with 0.  Also, see Data Dictionary sect.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-24- 
+1.5.12 L2I168 Current Position (0530) - Version 3 
+This message provides the PTC resolution of absolute position of the train head end in terms of stored track database.  Track segment offset is 
+expressed as feet from the start (lower value milepost end) of the track segment.  The Current Position (0530) message is sent every TBC 227 
+seconds or every TBC 228 feed of change in distance. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2 Subdivision/Division ID 2 Numeric Subdivision/District ID 
+0 = Unknown 
+ 
+3 Track segment ID 4 Numeric 0 = Unknown  
+4 Offset into track segment 4 Numeric Feet into track segment 
+0 = Unknown 
+ 
+5 Direction of travel 1 Enumeration  0 = Unknown 
+1 = Increasing milepost direction 
+2 = Decreasing milepost direction 
+ 
+ 
+NOTES:  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-25- 
+1.5.13 L2I169 Train Route (0531) - Version 3 
+Track Segment-Track Segment and Track Segment-switch-Track Segment list  (TBC 172 miles in front and TBC 173 miles behind the train).  
+This is an ordered list of the track segments and switches to be encountered. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Switch Count 1 Numeric (0-
+254) 
+ Note A 
+Complete once for each switch 
+<Start Switch Information Loop> 
+1.1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad owning the switch  
+1.2 Subdivision ID 2 Numeric   
+1.3 Switch ID 4 Numeric   
+1.4 Previous Track Segment 
+Connection 
+1 Enumeration   Note B 
+1.5 Next Track Segment 
+Connection 
+1 Enumeration   Note B 
+1.6 Alignment 1 Enumeration   Note C 
+<End Switch Information Loop> 
+2 Track Segment Count 1 Numeric  Note D 
+Complete once for each track segment 
+<Start Track Segment Information Loop> 
+2.1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad owning the subdivision, left 
+justified space filled 
+ 
+2.2 Subdivision/District ID 2 Numeric PTC Subdivision/District ID  
+2.3 Track Segment ID 4 Numeric   
+2.4 Direction of Travel 1 Enumeration  0 = Unknown 
+1 = Increasing milepost direction  
+2 = Decreasing milepost direction 
+ 
+2.5 Length 4 Numeric feet  
+2.6 Previous Switch Index 1 Numeric 255 if not connected to switch  
+2.7 Next Switch Index 1 Numeric 255 if not connected to switch  
+<End Track Segment Information Loop> 
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-26- 
+NOTES:  
+A. The switch fields (1.1 – 1.6) are repeated the number of times contained in ‘Switch count’ (entry 1). 
+B. Indicates what leg of the switch the previous or next Track Segment is connected to: 
+a. 0 = Facing Normal 
+b. 1 = Trailing Normal 
+c. 2 = Trailing Reverse 
+d. 3 = Unknown 
+C. Indicates switch alignment 
+a. 0 = Unknown 
+b. 1 = Normal 
+c. 2 = Reverse 
+D. Entries 2.1 through 2.7 are repeated for each track segment (entry 2). 
+E. When the on-board segment has a known locomotive track location and direction of travel, the on-board segment sends a Train Route 
+(0531) message with the calculated route information to Energy Management at a minimum of once every TBC229 seconds or 
+immediately upon the change of any calculated route information.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-27- 
+1.5.14 L2I170 Target List (0532) - Version 4 
+This message contains the list of active targets that have at least one end point along the current route. 
+Subdivision/Track Segment/Offset triplet of 0/0/0 indicates an unbounded target.  If the start is unbounded, the target begins at the beginning of 
+route.  If the end is unbounded, the target ends at the end of route. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Target list ID 1 Numeric Identifies the list of targets.  Note A 
+2 Target count 1 Numeric Number of targets in this message Note B 
+Repeat for each target 
+<Start Target Information Loop> 
+2.1 Target ID 4 Numeric   
+2.2 Speed limit 1 Numeric Speed in mph Note C 
+2.3 Target state 1 Enumeration 1 = Active 
+2 = Predictive Warning 
+3 = Reactive Warning 
+4 = Predictive Braking 
+5 = Reactive Braking 
+6 = Predictive Emergency Braking  
+Note D 
+2.4 Start Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2.5 Start location 
+subdivision/district ID 
+2 Numeric PTC Subdivision/District ID Note E 
+2.6 Start location track segment 
+ID 
+4 Numeric   
+2.7 Start location offset 4 Numeric   
+2.8 End Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2.9 End location 
+subdivision/district ID 
+2 Numeric PTC Subdivision/District ID Note E 
+2.10 End location track segment 
+ID 
+4 Numeric   
+2.11 End location offset 4 Numeric   
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-28- 
+2.12 Target type 1 Enumeration  Notes G and I 
+2.13 Speed applicability 1 Enumeration 0 = entire train;  
+1 = head end only 
+ 
+2.14 Restricted speed 1 Enumeration 0 = Not restricted speed 
+1 = Restricted speed applies 
+Note C 
+2.15 Time to enforcement 2 Numeric Seconds until braking Note H 
+2.16 SG-3 speed 1 Numeric Speed in mph Note J 
+<End Target Information Loop> 
+ 
+NOTES: 
+A. The Target List ID is used in the Target List Acknowledge (0632) message. PTC increments the Target List ID with each modification of 
+data. The ID is not incremented if the same data is resent due to missing acknowledgement. The value rolls over from 255 to 0. 
+B. The target information (2.1 – 2.15) is repeated the number of times contained in ‘Target count’ (entry 2). 
+C. If the target speed is restricted speed (entry 2.14), the ‘speed limit’ (entry 2.2) is the numeric value PTC uses to enforce restricted 
+speed. 
+D. Target States: 
+a) “Active” is the default state for a target. 
+b) “Predictive Warning” indicates PTC is warning the crew as a result of this target based on predictive algorithms.. 
+c) “Reactive Warning” is like Predictive Warning, but has no time to enforcement (has no countdown timer) for activating braking 
+enforcement 
+d) “Predictive Braking” indicates PTC braking enforcement is occurring as a result of this target based on predictive algorithms. 
+e) “Reactive Braking” indicates PTC braking enforcement is occurring, but due to ‘overspeed’ as versus predictive algorithms. 
+f) “Predictive Emergency Braking” indicates PTC braking enforcement is occurring as a result of this target based on predictive 
+algorithms 
+Subdivision/Track Segment/Offset triplet of 0/0/0 indicates an unbounded target. 
+E. If the start is unbounded, the target begins at the beginning of route.  If the end is unbounded, the target ends at the end of route. 
+F. General: The Target List (0532) message is sent every TBC 230 seconds or as soon as a change is detected.  If a single target is 
+added, removed or modified then the whole list will be resent. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-29- 
+G. The target type will be populated using PTC specific enumeration values.  Future additions will be added when needed and all 
+concerned parties notified.  Addition of placeholders is to minimize future updates to this message. 
+ 
+Enumeration 
+Value 
+Description 
+0  Track based speed restriction – maximum authorized speed 
+ Speed restriction of type ‘speed restriction’ received in movement authority dataset 
+1  Track based speed restriction – permanent speed restriction, turnout speed restriction 
+2  Speed restriction received in bulletin dataset of type ‘speed restriction’ 
+3  End of form based authority on track where form based authority is required 
+ Stop short 
+ Authority required to pass signal at stop on track where signal and form-based authority is required 
+4  Signal indication in SG-1 or SG-2 
+ Absolute or intermediate signal with unknown indication 
+ Dark absolute or intermediate signal 
+Note: SG-3 signal indications have enumeration value ‘28’  
+Note: SG-4 signal indications have enumeration value ‘27’ 
+5  Improper switch alignment 
+6  Unknown switch position – not protected by signal or track circuit 
+7  Unacknowledged work zone limit 
+ Acknowledged work zone limits 
+ Work zone train orientation change 
+8  Equipment speed restriction 
+9  Train ahead violation 
+ Violation no longer being reported 
+Note: ‘Violation no longer being reported’ refers to any reason for removing a violation other than a positive clearing of th at violation: 
+timeout, loss of location on the part of the violator, or ch ange of system state on the part of the violator. 
+10  Reserved 
+11  Conditional movement authority 
+12  Track circuit condition detected 
+ Track circuit status unknown 
+13  Reserved 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-30- 
+14  Route based cab signal except SG-3 and SG-4 
+Note: SG-3 signal indications have enumeration value ‘28’ 
+Note: SG-4 signal indications have enumeration value ‘27’  
+15  Crew verification prior to changing track 
+16  Critical alert 
+17  Reverse move in form based authority 
+18  Track out of service 
+19  Bulletined crossing warning system malfunction 
+20  Joint movement authority 
+Note: this enumeration covers both stop and restricted speed targets  
+21  Subdivision/district not synchronized 
+ Cab signal cut out 
+ Unknown location 
+ Position uncertainty 
+ Unknown direction 
+22  Restricted 
+23  Reserved 
+24  Yard limits 
+25  Enter main track 
+26  Unknown switch position – protected by signal or track circuit 
+27  SG-4 signal indication 
+28  SG-3 signal indication 
+29  Location Unknown Location 
+30  Location Position Uncertainty Maximum 
+31  Location Loss of Direction 
+32  Cab Signal Cut Out 
+33  Pass Signal at Stop 
+34  Test Target 
+35  TWE Territory 
+36  Unhealthy Wireless Crossing 
+37  Delayed in Block 
+38  End of Form Based Authority on Signaled Track 
+39  Speed enforcement cab signal 
+40  Clear to next interlocking 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-31- 
+41  Future Addition 1 (To be implemented as needed) 
+42  Future Addition 2 (To be implemented as needed) 
+43  Future Addition 3 (To be implemented as needed) 
+44  Future Addition 4 (To be implemented as needed) 
+45  Future Addition 5 (To be implemented as needed) 
+46  Future Addition 6 (To be implemented as needed) 
+47  Future Addition 7 (To be implemented as needed) 
+48  Future Addition 8 (To be implemented as needed) 
+49  Future Addition 9 (To be implemented as needed) 
+50  Future Addition 10 (To be implemented as needed) 
+ 
+H. This field is 0 when the target state is ‘Reactive Warning’ or any of the various braking target states. 
+I. Target types ‘SG-4 signal indication’ and ‘SG-3 signal indication’ represent track segments which are within an area controlled by a 
+signal indicating an I-ETMS signal group 4 (SG-4) or signal group 3 (SG-3) respectively.  The target speed values accompanying these 
+two target types will be enforced but may not represent the owning railroad’s operating rules.  The EM system is responsible for 
+determining the actual speed limit to apply to these target types in order to operate the train within the railroad’s operating rules.  The 
+EM vendor must work directly with the individual railroads to define their respective operating rules for handling ‘SG-4 signal indication’ 
+and ‘SG-3 signal indication’ target types. 
+J. For a target of type ‘SG-3 signal indication, the ‘SG-3 speed’ field identifies the ‘soft’ target speed configured for the operating road 
+where the signal is located and the current train type.  For a target of any other type, this field is set to zero.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-32- 
+1.5.15 L2I171 Speed Restriction List (0533) - Version 4 
+This message is sent in response to a Restriction List Request (0633) message but can be sent unsolicited in the event of a bulletin or authority 
+change in one of the subdivisions reported within the current PTC Status Data (0500) message.  I-ETMS On-board obtains the speed restriction 
+information initially from the office in the Bulletin Dataset (01041) and Movement Authority Dataset (01051) messages.  All speed restrictions 
+applicable to the current train type are included (not just the most restrictive).  The EM provider must be capable of determining and using the 
+most restrictive applicable speed restrictions provided.  As all bulletins received from the office applicable to the current train type are passed 
+onto EM, the EM provider must be capable of determining which bulletins are applicable and in effect for the current route. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Restriction Aggregate CRC 4 CRC-32 Overall Speed Restriction Data CRC value used for 
+synchronization 
+Note A 
+2 Restriction Count 1 Numeric Currently, 0-255 (zeroed out if no restrictions) Note B 
+Data for each Speed Restriction.  These fields are repeated for each restriction 
+<Beginning of Restriction Information Loop> 
+2.1 Individual Restriction 
+Reference Number 
+4 Numeric Restriction reference number assigned to each individual 
+restriction. 
+ 
+2.2 Restriction SCAC 4 Alphanumeric SCAC of railroad owning the track restriction is on. Note E 
+2.3 Individual Restriction Type 1 Enumeration Type of restriction Note C 
+<End of Time Restriction Information Loop> 
+3 Message Coordination 
+Number 
+4 Numeric Use Message Coordination Number from Restriction List 
+Request (0633) message.  If sent unsolicited use 0x00000000 
+ 
+ 
+NOTES: 
+A. The Restriction Aggregate CRC value is used to synchronize speed restriction data for each subdivision reported within the current PTC 
+Status Data (0500) message.  (See PTC Status Data (0500) and Energy Management Status (0600) messages for subdivision/district 
+synchronization information.)  PTC includes a Restriction Aggregate CRC for the current set of restrictions, which is an indicator to EM 
+as to whether EM has the most current set of speed restrictions, i.e. Speed Restriction List (0533) and Speed Restriction Data (0534) 
+message information.  If EM does not have a match on the Restriction Aggregate CRC, EM may then request the Speed Restriction List 
+(0533) message by sending a Restriction List Request (0633) message.  See PTC Status Data (0500) message note G for a definition 
+of the fields covered by this CRC value. 
+B. Entries 2.1 through 2.3 are repeated for each restriction (entry 2). 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-33- 
+C. Note that enumeration values 1-4 are associated with information received in an office Movement Authority Dataset (01051) message, 
+while 5-10 are associated with information received in an office Bulletin Dataset (01041) message.  
+0 = Not Used 
+1 = Track Warrant / Track Authority 
+2 = Track and Time / Track Permit 
+3 = Enter Main Track 
+4 = Pass Signal at Stop 
+5 = Temporary Speed Restriction 
+6 = Work Zone 
+7 = Grade Crossing 
+8 = Track Out-Of-Service 
+9 = Advisory / Cautionary 
+10 = Critical Alert 
+11 = Reserved 
+D. General: If any restrictions change the entire Restrictions List will be resent. 
+E. The SCAC of the subdivision/district is needed as restriction numbers could be repeated if the train travels on track owned by multiple 
+railroads.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-34- 
+1.5.16 L2I470 Speed Restriction Data (0534) - Version 2 
+This message provides a single speed restriction applicable to this train (this train type).  A separate message is sent for each bulletin or 
+authority that contains a speed restriction.  The Speed Restriction Data (0534) message is sent in response to a Speed Restriction Data 
+Request (0634) message for a single restriction.  Speed Restriction Data is requested individually from information contained within the Speed 
+Restriction List (0533) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Individual Restriction 
+Reference Number 
+4 Numeric Assigned number used for tracking individual restrictions Note A 
+2 Restriction SCAC 4 Alphanumeric SCAC of railroad owning the track restriction is on.  
+3 Restriction Type 1 Enumeration Bulletin or Authority type Note B 
+4 Head End Only Speed 
+Restriction 
+1 Enumeration 1 = Yes 
+2 = No 
+ 
+5 Restricted Speed 1 Enumeration 1 = Yes 
+2 = No 
+Note C 
+6 Restriction start time 7 Time Restriction Start Date and Time YYYYMMDDHHMMSS 
+(For Restriction Types 5-10 only; zero-filled otherwise) 
+See Data 
+Dictionary 
+sect. 
+7 Restriction end time 7 Time Restriction End Date and Time YYYYMMDDHHMMSS 
+(For Restriction Types 5-10 only; zero-filled otherwise) 
+See Data 
+Dictionary 
+sect. 
+8 Number of Time of Day 
+Filters 
+1 Numeric Number of restriction time ranges 0-7 
+(For Restriction Types 5-10 only; 0 otherwise 
+Note D 
+Data for each Time of Day Filter.  Loop once for each filter.  
+<Beginning of Time of Day Filter Loop> 
+8.1 Day of Week 1 Enumeration 1 – Monday 
+2 – Tuesday 
+3 – Wednesday 
+4 – Thursday 
+5 – Friday 
+6 – Saturday 
+7 – Sunday 
+ 
+8.2 Start Time Stamp 3  HHMMSS  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-35- 
+8.3 End Time Stamp 3  HHMMSS: 
+Byte 0 Hour 00-23 
+Byte 1 Minute 00-59 
+Byte 2 Second 00-59 
+ 
+<End of Time of Day Filter Loop> 
+9 Number of Speed Restriction 
+Segments 
+1 Numeric Quantity of speed restrictions associated with this Individual 
+Restriction Reference Number 
+Note F 
+Data for each Speed Restriction Segment.  Loop once for each restriction value.  
+<Beginning of Speed Restriction Segments Loop> 
+9.1 Starting Track Segment ID 4 Numeric Restriction starting segment  
+9.2 Starting Offset 4 Numeric Restriction starting segment offset  
+9.3 Milepost Direction 1 Enumeration Direction of travel between the start segment and end segment 
+pair 
+1 = Increasing milepost direction 
+2 = Decreasing milepost direction 
+Note G 
+9.4 Ending Track Segment ID 4 Numeric Restriction ending segment  
+9.5 Ending Offset 4 Numeric Restriction ending segment offset  
+9.6 Subdivision/District ID 2 Numeric Subdivision/district ID containing the restriction for this loop  
+9.7 Speed 1 Numeric Maximum authorized speed for restriction in mph 
+0xFF sent if no speed value is associated with this restriction 
+ 
+9.8 Enforcement Direction 1 Enumeration 1 – Enforceable in both directions 
+2 – Enforceable in the increasing MP direction 
+3 – Enforceable in the decreasing MP direction 
+ 
+<End of Time of Speed Restriction Segments Loop> 
+10 DOT ID 7 Alphanumeric DOT number of public crossing Note H 
+11 Number of “ALL” Track 
+Speed Restriction Segments 
+1 Numeric Number of “ALL” track speed restrictions associated with this 
+individual restriction reference number 
+Note I 
+<Start All Track Flag Loop> 
+11.1 Start Milepost 4 Numeric From location milepost xxxx.xxxx X 10000  
+11.2 Start Milepost Modifier Type 1 Enumeration 0 – No modifier 
+1 – Prefix 
+2 – Suffix 
+ 
+11.3 Start Milepost Modifier 5 ASCII Milepost prefix or suffix  
+11.4 End Milepost 4 Numeric To location milepost xxxx.xxxx X 10000  
+11.5 End Milepost Modifier Type 1 Enumeration 0 – No modifier  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-36- 
+1 – Prefix 
+2 – Suffix 
+11.6 End Milepost Modifier  5 ASCII Milepost prefix or suffix  
+11.7 Subdivision/District ID 2 Numeric Subdivision/district ID containing the restriction for this loop  
+<End All Track Flag Loop> 
+12 Message Coordination 
+Number 
+4 Numeric Use Message Coordination Number from Restriction List 
+Request (0634) message. 
+ 
+ 
+NOTES: 
+A. The Individual Restriction Reference Number is used to coordinate speed restriction data with the Speed Restriction List.  The 
+Individual Restriction Reference Number is used to identify an individual restriction within the speed restriction list. 
+B. Note that enumeration values 1-4 are associated with information received in an office Movement Authority Dataset (01051) message, 
+while 5-10 are associated with information received in an office Bulletin Dataset (01041) message. 
+0 = Not Used 
+1 = Track Warrant / Track Authority 
+2 = Track and Time / Track Permit 
+3 = Enter Main Track 
+4 = Pass Signal at Stop 
+5 = Temporary Speed Restriction 
+6 = Work Zone 
+7 = Grade Crossing 
+8 = Track Out-Of-Service 
+9 = Advisory / Cautionary 
+10 = Critical Alert 
+11 = Reserved 
+C. If the target speed is restricted speed, the ‘speed limit’ is the numeric value PTC uses to enforce restricted speed. 
+D. If the “Number of Time of Day Filters” value is zero then the restriction(s) apply to every day and 24 hours each day; fields 8.1 through 
+8.3 will be omitted as they are then unnecessary.  The “Restriction Start Time” and “Restriction Stop Time” define the applicable 
+daytime hours of the restriction for the stated day(s) of the week, i.e. from start time until stop time.  The “Day of Week” value specifies 
+which day of the week the stated restriction is in effect for.  There will be a separate “Time of Day” (field 8) loop for each day in which a 
+restriction is in effect. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-37- 
+E. General: If any restriction changes the Speed Restriction List will be rebuild, a new Restriction Aggregate CRC computed and an 
+unsolicited Speed Restriction List (0533) message will be sent.  In addition, the Restriction Aggregate CRC value will be updated within 
+the PTC Status Data (0500) message. 
+F. Each set of Start Segment/End Segment pairs covers a contiguous set of track segments on track where the track name is unchanged.  
+This implies that there are no alternate paths to get from the Starting Segment to the Ending Segment.  There is only one path possible.  
+Segment pairs will never cross a subdivision boundary. 
+G. Milepost Direction is intended to provide an unambiguous statement of travel direction for use in determining the connectivity between 
+the start segment and end segment pair. 
+H. A bulletin of type “Grade Crossing” may be defined with a DOT ID in lieu of speed restriction segments.  When a bulletin is defined with 
+speed restriction segments, the ‘DOT ID’ field is set to “0000000”.  When a bulletin is defined with a DOT ID, the ‘Number of Speed 
+Restriction Segments’ field is set to zero. 
+I. A bulletin may be defined with a track designation of “ALL” if either the starting milepost or ending milepost exists on every track over 
+which the bulletin is to be applied.  Otherwise, each track name must be listed in a separate segment  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-38- 
+1.5.17 L2I172 EM Banner Display Status (0540) - Version 2 
+PTC sends this message to Energy Management when the EM Banner is displayed in the prompt area of the PTC display. It can be removed 
+from the display due to becoming inactive, or be hidden by a higher priority prompt text.  PTC conditionally displays Energy Management-related 
+information. PTC retains control of the screen for priority information. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Banner Display ID 2 Numeric Denotes the specific EM Banner Display (0640) message this 
+message is providing display status for. 
+Note C 
+2 Banner Display acknowledge 1 Enumeration 1 = Accepted 
+2 = Rejected – higher priority PTC message 
+3 = Rejected – Display not available in current state 
+4 = Rejected – Other 
+5 = Expired 
+Note A 
+3 Banner Display Status 1 Enumeration 0 = prompt inactive 
+1 = active, and not visible 
+2 = active, and visible 
+Note B 
+Note D 
+ 
+NOTES: 
+A. If the EM Banner Display information received from Energy Management in an EM Banner Display (0640) message is accepted by 
+PTC, PTC acknowledges this by returning an EM Banner Display Status (0540) message with “accepted” populated; else, “rejected” is 
+populated along with the reason for rejection. 
+B. When the EM Banner Display is active and not visible due to a higher priority prompt text being displayed, the value “1” is populated.  
+The value “0’ indicates the EM Banner Display is not active and is not displayed.  The value “2” indicates the EM Banner Display is 
+active and is actively displayed. 
+C. This is an echo of the Banner Display ID field from the EM Banner Display (0640) message. 
+D. In the event an EM Banner Display message is pre-empted by a higher priority message the EM provider may choose to resend the EM 
+Banner Display message or adjust the display time value. 
+E. When the “Time to Live” for a message has expired an EM Banner Display (0540) message will be sent with the Banner Display 
+Acknowledge field set to “Expired”.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-39- 
+1.5.18 L2I173 EM Soft-Key Status (0541) - Version 2 
+Sent in response to an EM Soft-Key Text (0641) message or when the crew presses the corresponding soft-key. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 EM Soft-Key ID 2 Numeric  Note A 
+2 EM Soft-Key status 1 Enumeration 0 = Soft-Key inactive 
+1 = Soft-Key active 
+2 = Soft-Key pressed 
+Note B 
+3 Message Coordination 
+Number 
+4 Numeric Use Correlation Number from EM Soft-Key Text (0641) 
+message.  Use 0x00000000 when sent unsolicited. 
+ 
+ 
+NOTES: 
+A. From the EM Soft-Key Text (0641) message sent by Energy Management. 
+B. Status of “inactive” sent in response to EM Soft-Key Text (0641) message if PTC will not display the soft-key.  Status of ‘active’ sent in 
+response to EM Soft-Key Text (0641) message when PTC has displayed the button with corresponding text.  Status of ‘pressed’ sent 
+when crew has pressed the EM soft-key.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-40- 
+1.5.19 L2I343 EM Control Indicator Status (0542) – Version 3 
+PTC sends this message to Energy Management when the EM Control Indicator is displayed on the PTC display. It can be removed from the 
+display due to becoming inactive or by EM sending an EM Control Indicator (0642) message with NULL text.  This message is sent in response 
+to an EM Control Indicator (0642) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 EM Indicator ID 2 Numeric Indicates which EM Control Indicator (0642) message this 
+message is in response to. 
+Note A 
+2 EM Indicator acknowledge 1 Enumeration 1 = Accepted 
+2 = Rejected – higher priority PTC message 
+3 = Rejected – Display not available in current state 
+4 = Rejected – Other 
+Note B 
+3 EM Indicator Status 1 Enumeration 0 = Indicator inactive 
+1 = Indicator active 
+Note C 
+ 
+NOTES: 
+A. This is an echo of the EM Control Indicator ID field included in the EM Control Indicator (0642) message. 
+B. If the EM Control Indicator information received from Energy Management in an EM Control Indicator (0642) message is accepted by 
+PTC, PTC acknowledges this by sending an EM Control Indicator Status (0542) message with “accepted” populated; else, “rejected” is 
+populated. 
+C. The value “0’ indicates the EM Control Indicator is not active and is not displayed.  The value “1” indicates the indicator is active and is 
+displayed.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-41- 
+1.5.20 L2I488 ITF/BCP Overlay Status (0544) – Version 1 
+This message provides the status of the current ITF/BCP Overlay display.  This message is sent in response to an ITF/BCP Overlay Display 
+(0644) message.  This message is also sent whenever there is a change in the current ITF/BCP Overlay Display’s status. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 ITF/BCP Overlay ID 1 Numeric ITF/BCP Overlay ID from ITF/BCP Overlay Display (0644) 
+message this message is responding to. 
+Note C 
+2 Overlay Acknowledge 1 Enumeration 0 = Not used 
+1 = Accepted 
+2 = Rejected – Invalid Message 
+3 = Rejected – Other 
+4 = Message Expired 
+Note A 
+3 Overlay Status 1 Enumeration 0 = Prompt inactive 
+1 = Active – Not visible 
+2 = Active – Visible 
+Note B 
+ 
+NOTES: 
+A. If the ITF/BCP Overlay Display information received from Energy Management in an ITF/BCP Overlay Display (0644) message is 
+accepted by PTC, PTC acknowledges this by returning an ITF/BCP Overlay Status (0544) message with “accepted” populated.  If the 
+message is improperly created or received “Rejected – Invalid Message” is populated.  When the Time to Live expires PTC will remove 
+the overlay message and send an ITF/BCP Overlay Status (0544) with “Message Expired” populated. 
+B. The value “0” indicates the ITF/BCP Overlay Display is not active and no valid overlay message is present to be displayed.  The value 
+“1” indicates the ITF/BCP Overlay Display is active but the current overlay message is not visible due to another activity utilizing the 
+display.  The value “2” indicates the ITF/BCP Overlay Display is active and is actively displaying the current message. 
+C. This is an echo of the ITF/BCP Overlay ID field from the ITF/BCP Overlay Display (0644) message.  
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-42- 
+1.6 Energy Management to PTC Messages 
+The following messages are sent from Energy Management to PTC. 
+Note that Energy Management Advisory messages contain data that is presented to the crew and PTC may discard those messages if PTC 
+functions take priority or if it is determined by the PTC system that data from those messages cannot be supported. 
+ 
+Message 
+ID 
+Message Name Supported Message 
+Versions for 
+“Interface Version” 3 
+(identified in 
+0500/0600 message) 
+0600 Energy Management Status 3 
+0601 Energy Management Access Screen 3 
+0604 OPK Encryption Key Reply 1 
+0605 Operational Private Key Request 2 
+0606 Railroad Office Address Request 2 
+0612 Track Request 3 
+0614 Track Database Data Request 3 
+0620 Summary Train Consist Request 2 
+0621 Locomotive Run Status Request 2 
+0623 Train and Crew Data Request 2 
+0624 Train and Crew Data Acknowledge 2 
+0625 In-Train Forces 1 
+0627 Speed Prediction 3 
+0628 In-Train Brake Cylinder Pressures 1 
+0632 Target List Acknowledge 1 
+0633 Restriction List Request 4 
+0634 Restriction Request 1 
+0640 EM Banner Display 2 
+0641 EM Soft-Key Text 2 
+0642 EM Control Indicator 3 
+0644 ITF/BCP Overlay Display 1 
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-43- 
+1.6.1 L2I174 Energy Management Status (0600) - Version 3 
+This message acts as a heartbeat message between Energy Management and PTC.  Energy Management reports the software interface 
+version, the Restriction Aggregate CRC and the ID, Version and CRC of all subdivisions back to PTC in this message.  The heartbeat message 
+is to be sent in response to each PTC Status Data (0500) message and upon a change of any reported data. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Interface version 1 Numeric (see message 0500)  
+2 Function support 1 HGFEDCBA Defines readiness of EM functions Note A 
+3 Operating state 1 HGFEDCBA Defines operating status of EM functions Note B 
+4 Summary Train Consist CRC 4 Numeric CRC value from current summary train consist  
+5 Locomotive run status ID 1 Numeric Locomotive run status ID (see message 521)  
+6 Restriction Aggregate CRC 4 CRC-32 Restriction synchronization value  
+7 Track data subdivision count 1 Numeric Number of track subdivisions to be synchronized Note C 
+Repeat for each subdivision 
+<Start Subdivision Information Loop> 
+7.1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+7.2 Subdivision/District ID  2 Numeric PTC Subdivision/District ID  
+7.3 Subdivision/District Track 
+version ID  
+4 Numeric Track Data version for subdivision/district  
+7.4 Track Version CRC 4 CRC-32 Used in conjunction with field 7.3 to uniquely determine a 
+Subdivision/District file 
+ 
+<End Subdivision Information Loop> 
+ 
+NOTES: 
+A.  Function support 
+a. Bit A: Spare 
+b. Bit B: 1 = Energy Management Advisory functions Ready 
+c. Bit C: 1 = Energy Management Cruise functions Ready 
+d. Bit D Spare 
+e. Bit E Spare 
+f. Bit F: Spare 
+g. Bit G: Spare 
+h. Bit H: Spare 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-44- 
+B. Operating state 
+a. Bit A:  Spare 
+b. Bit B:  1 = Energy Management Advisory functions active 
+c. Bit C: 1 = Energy Management Cruise functions active 
+d. Bit D: 1 = Energy Management Cruise function exit initiated 
+e. Bit E: Spare 
+f. Bit F: Spare 
+g. Bit G: Spare 
+h. Bit H: Spare 
+C. Entries 7.1 through 7.5 are repeated for each subdivision/district (entry 7).  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-45- 
+1.6.2 L2I175 Energy Management Access Screen (0601) - Version 3 
+This message provides text to PTC for display. It is sent by Energy Management when Energy Management receives an indication from PTC 
+that the “Energy Mgmt” soft key was pressed. Energy Management can control the refresh rate of this text by periodically sending this message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Number of keys 1 1 byte 0 to 6 Note A 
+Repeat for each key 
+<Start Key Information Loop> 
+1.1 Key location 1 Numeric 0 to 6 (0 being left-most position, 6 being right-most position)  
+1.2 Key color 1 Enumeration 1: Standard color (blue) 
+2: Alert color (yellow)  
+3: Disabled (grey) 
+4: Menu color (green) 
+ 
+1.3 Key text variable Alphanumeric Up to 30 characters, inclusive of any LF characters and a null 
+terminating character 
+Note B 
+Note C 
+<End Key Information Loop> 
+2 Text variable Alphanumeric Up to 4000 characters, inclusive of any LF characters and a null 
+terminating character 
+Note D 
+3 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in EM Access Screen 
+Status (0501) message response. 
+ 
+ 
+NOTES: 
+A. The maximum number of keys possibly displayed is 8 keys, numbered from 0 to 7.  Key numbers 0 to 6 are for EM functionality, and 
+key number 7 (8th key) is reserved to exit EM access screens and return to I-ETMS.  Entries 1.1 through 1.3 are repeated for each key 
+(entry 1). 
+B. The key text is displayed as a maximum of 3 lines, each line up to a maximum of 9 actual characters (‘actual’ characters means no LF 
+and no null terminating character).  A new line can be specified using the LF new line character (0x0A). 
+C. The CDU may display directional arrows rather than text by displaying only the following in the Key text field: 
+ %d = Down arrow 
+ %u = Up arrow 
+ %r = Right arrow 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-46- 
+ %l = Left arrow 
+D. The default display format for this text is up to 16 lines of text, each line up to 64 actual characters (‘actual’ characters means no LF and 
+no null terminating character).  A new line can be specified using the LF new line character (0x0A).  Attributes and position of the text 
+can be specified using a subset of ANSI standard terminal control sequences as defined in the table below: 
+ 
+Escape Sequence Description Notes 
+<ESC>c Reset device  
+<ESC>[K Erase to end of line  
+<ESC>[2J Erase screen  
+<ESC>[0m Reset attributes  
+<ESC>[{row};{column}H Cursor home  
+<ESC>[{rows}A Cursor up  
+<ESC>[{rows}B Cursor down  
+<ESC>[{rows}C Cursor right  
+<ESC>[{rows}D Cursor left  
+<ESC>[1m Set bright attribute  
+<ESC>[2m Set dim attribute  
+<ESC>[22m Set default brightness (non-standard code)  
+<ESC>[{color_idx}m Set color Note E 
+<ESC>) Set bold font (non-standard)  
+<ESC>( Set default with respect to bold (non-standard)  
+<ESC>[3m Set italic font (non-standard)  
+<ESC>[23m Set default with respect to italic (non-standard)  
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-47- 
+E. 
+ 
+Color Attribute Color 
+30 Foreground Black 
+31 Foreground Red 
+32 Foreground Green 
+33 Foreground Yellow 
+34 Foreground Blue 
+35 Foreground Magenta 
+36 Foreground Cyan 
+37 Foreground White 
+40 Background Black 
+41 Background Red 
+42 Background Green 
+43 Background Yellow 
+44 Background Blue 
+45 Background Magenta 
+46 Background Cyan 
+47 Background White 
+.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-48- 
+1.6.3 L2I398 OPK Encryption Key Reply (0604) - Version 1 
+This message is sent from EM to PTC to provide the remaining portion of the key needed to decrypt the HMAC OPK. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 B Value length 1 Numeric Size of the B value in bytes  
+2 B value 16 Hexadecimal “B” value used in calculation of “s” value Note A 
+3 Message Coordination 
+Number 
+4 Numeric Use Coordination Number from OPK Encryption Key (0504) 
+message. 
+ 
+ 
+NOTES: 
+A. The B value is based on the following calculation: 
+ 
+B = g^b mod p 
+Where: 
+b = 128 bit random number generated by EM 
+g = value supplied in OPK Encryption Key (0504) message 
+p = value supplied in OPK Encryption Key (0504) message 
+ 
+Additional information on this process will be provided in a restricted distribution white paper for those with a need to know.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-49- 
+1.6.4 L2I346 Operational Private Key Request (0605) - Version 2 
+This message is a request for the locomotive’s Operation Private Key.  PTC will respond with an Operational Private Key (0505) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in PTC Operational 
+Private Key (0505) message response 
+ 
+ 
+NOTES:  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-50- 
+1.6.5 L2I344 Railroad Office Address Request (0606) – Version 2 
+This message is a request for the Railroad Office Address data.  PTC will respond with a Railroad Office Address (0506) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in Railroad Office 
+Addresses (0506) message response. 
+ 
+.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-51- 
+1.6.6 L2I178 Track Request (0612) - Version 3 
+This message requests track data for a single subdivision/district.  PTC will respond with a Track Database Information (0510) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2 Subdivision/District ID 2 Numeric PTC Subdivision/District ID   
+3 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for Track Database 
+Information (0510) message response. 
+ 
+ 
+NOTES: 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-52- 
+1.6.7 L2I347 Track Database Data Request (0614) – Version 3 
+This message requests a “portion” of one subdivision/district of track data (See AAR document 9501 for the layout of one complete 
+subdivision/district of track data.)  The requested data is sent back in a Track Database Data (0514) response message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad providing the list of 
+subdivisions/districts, left justified space filled 
+ 
+2 Subdivision/District ID 2 Numeric PTC Subdivision/District ID  
+3 Track Data version 4 Numeric Track Data version for subdivision/district ID  
+4 Track version CRC 4 CRC-32 CRC-32 of track data version  
+5 Offset 4 Numeric 0-based offset into subdivision track data Note A 
+6 Size of data 2 Numeric maximum is 14000 bytes  
+7 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for Track Database Data 
+(0514) message response. 
+ 
+ 
+NOTES: 
+A. The 0-based “Offset” counts the beginning byte as byte 0 and is the number of bytes offset into the EM subdivision data file at which to 
+begin collecting data to fulfill this request.  The amount of data requested to be collected by this message, including the offset byte, is 
+the value in the “Size of data” field. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-53- 
+1.6.8 L2I348 Summary Train Consist Request (0620) - Version 2 
+This message requests current summary train consist (0520).  PTC will respond with a Summary Train Consist (0520) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in Summary Train 
+Consist (0520) message response. 
+ 
+ 
+NOTES:  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-54- 
+1.6.9 L2I181 Locomotive Run Status Request (0621) - Version 2 
+This message requests the locomotive run status.  PTC will respond with a Locomotive Run Status (0521) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Message Coordination 
+Number 
+4  EM assigned Coordination Number for use in Locomotive Run 
+Status (0521) message response 
+ 
+ 
+NOTES: 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-55- 
+1.6.10 L2I182 Train and Crew Data Request (0623) - Version 2 
+This message requests Train and Crew information.  PTC will respond with a Train and Crew Data (0523) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in Train and Crew 
+Data (0523) message response 
+ 
+ 
+NOTES: 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-56- 
+1.6.11 L2I183 Train and Crew Data Acknowledge (0624) - Version 2 
+This message acknowledges receipt of Train and Crew Data (message 0523). 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Acknowledgement Indication 1 Enumeration 0 – Acknowledged 
+1 – NAK – CRC-32 failed 
+2 – NAK – Other reasons  
+ 
+2 Message Coordination 
+Number 
+4 Numeric Use Message Coordination Number from Train and Crew Data 
+(0523) message 
+ 
+ 
+NOTES: 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-57- 
+1.6.12 L2I184 In-Train Forces (0625) - Version 1 
+This message provides an array of in-train forces for graphic display.  The maximum update rate on the display for in-train forces data, and the 
+maximum rate this message is to be sent is 5Hz. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Force threshold 2 Numeric Maximum allowed force  
+2 Force offset  1 Numeric Average distance between each force value (in feet).  Note A 
+3 Number of force values 2 Numeric 0-999 Note B 
+Repeat for each force value 
+<Start Force Values Information Loop> 
+3.1 Force value 2 Numeric 
+(signed) 
+Kip Note C 
+<End Force Values Information Loop> 
+ 
+NOTES: 
+A. The “Force offset” entry is currently not used by PTC.  PTC instead divides the pixel length of the train that is displayed by the number 
+of force values to determine the separation distance (e.g. the number of train cars) for display of the “Force values”. 
+B. Entry 3.1 is repeated for each force (entry 3). 
+C. The first “Force value” corresponds to coupler force at the first locomotive in the train. Each subsequent force value is one more offset 
+back from the front of the train  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-58- 
+1.6.13 L2I185 Speed Prediction (0627) - Version 3 
+This message provides the data required to display predicted speeds or basic text cues along the map. 
+Note: Speed predictions or basic text cues can be displayed at fixed locations along the track map.  Those data elements must not exceed 10 
+characters and will be located on the track map based upon subdivision, track segment and offset. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Number of entries 1 Numeric 1 to 12 Note A 
+Data for each Speed Prediction.  These fields are repeated for each prediction.  
+<Beginning of Predictive Data Information Loop>  
+1.1 Size of text 1 Numeric Number of characters in Speed/Text field to display.  Maximum 
+is 10 characters. 
+ 
+1.2 Speed / Text variable Alphanumeric Number or text to be displayed on track map  
+1.3 Railroad SCAC 4 Alphanumeric Railroad SCAC of the railroad subdivision/district where text is 
+to be displayed, left justified space filled 
+Note B 
+1.4 Subdivision/District ID 2 Numeric  Note B 
+1.5 Track segment ID 4 Numeric  Note B 
+1.6 Offset into track segment 4 Numeric Feet into track segment Note B 
+1.7 Blink 1 Enumeration 0 – Don’t blink on display 
+1 – Blink on display 
+Note C 
+<End of Predictive Data Information Loop> 
+ 
+NOTES: 
+A. Entries 1.1 through 1.7 are repeated for each predicted speed / text (entry 1). 
+B. The position for each predicted speed / text item is defined with the combination of Railroad SCAC, Subdivision/District ID, Track 
+Segment ID, and Offset into the segment. 
+C. Attribute to control blinking on the display.  This attribute should be set to ‘1’ when the predicted speed exceeds maximum authorized 
+speed at the location of the predicted speed.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-59- 
+1.6.14 L2I186 In-Train Brake Cylinder Pressures (0628) - Version 1 
+This message provides an array of individual rail car and locomotive brake cylinder pressures for graphic display. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Number of pressure values 2 Numeric 0-999 Note A 
+Repeat for each pressure valve. 
+<Start Brake Cylinder Pressure Information Loop> 
+1.1 BC pressure 1 Numeric Pressure (PSI) Note B 
+<End Brake Cylinder Pressure Information Loop> 
+ 
+NOTES: 
+A. Entry 1.1 is repeated for each pressure (entry 1). 
+B. The first “BC Pressure” corresponds to the brake cylinder pressure on the lead locomotive.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-60- 
+1.6.15 L2I188 Target List Acknowledge (0632) - Version 1 
+This message acknowledges receipt of Target List (message 0532). 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Acknowledgement indication 1 Enumeration 0 – Acknowledged 
+1 – NAK – CRC-32 failed 
+2 – NAK – Other reasons 
+ 
+2 Target list ID 1 Numeric ID from message 0532 to be acknowledged.  
+ 
+NOTES:  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-61- 
+1.6.16 L2I189 Restriction List Request (0633) - Version 4 
+This message requests the restriction list for all current speed restrictions for all subdivisions currently contained within the PTC Status Data 
+(0500) message.  PTC will respond with a Speed Restriction List (0533) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in the Speed 
+Restriction List (0533) message response. 
+ 
+ 
+NOTES: 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-62- 
+1.6.17 L2I471 Restriction Request (0634) - Version 1 
+This message is sent from EM to I-ETMS On-board to request specific speed restriction data.  Each restriction will be requested separately. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Individual Restriction 
+Reference Number 
+4 Numeric Reference number of the speed restriction requested from the 
+Speed Restriction List 
+ 
+2 Restriction SCAC 4 Alphanumeric SCAC of district/subdivision owning railroad Note B 
+3 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in the Speed 
+Restriction Data (0534) message response. 
+ 
+ 
+NOTES: 
+A. General:  No more than one request may be active at a given time. 
+B. Individual Restriction Reference Number and SCAC of track owner needed to define a unique restriction. 
+C. General:  I-ETMS will respond back with a Speed Restriction List (0533) message if an invalid restriction is requested.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-63- 
+1.6.18 L2I190 EM Banner Display (0640) - Version 2 
+This message provides the data required to display an Energy Management Banner Display to the user. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Banner Display ID 2 Numeric Unique identifier for Banner Display Note A 
+2 Priority 1 Numeric 1 = high priority 
+2 = normal priority 
+Note B 
+3 Audible count 1 Numeric Number of beeps when initially displayed.  2 beeps maximum Note M 
+4 Audible volume 1 Enumeration 0 – Quiet 
+1 – Loud 
+ 
+5 Time to live 1 Numeric Max display time in seconds Note G 
+6 EM Banner Display Type 1 Enumeration Display type 0: No banner displayed 
+Display type 1: 2 rows of 65characters (Old Advisory Text) 
+Display type 2: 1 row of 85 characters, 3 data groups 
+Display type 3: 1 row of 85 characters, 4 data groups 
+Note C 
+Note J 
+Note H 
+Note M 
+Delete this section for type 0 display 
+Start of deleted section for type 0 display 
+7 Size of EM Banner Text 1 Numeric Size in bytes of the EM Banner text  
+8 EM Banner Text Variable Alphanumeric Text to be displayed in the freeform text portion of the display. 
+ 
+Insert a mandatory LF (0x0A) character at the end of the first line 
+on a type 1 display. 
+ 
+Insert a %d to designate the location of a countdown timer if one 
+is used. 
+Note C 
+9 Banner Text Background 
+Color 
+1 Enumeration 0 = No banner text to be displayed 
+1 = Gray Background – Data/Normal 
+2 = Cyan Background – Instructions/Emphasis 
+Note F 
+10 Banner Countdown Timer 
+Used 
+1 Enumeration Large countdown timer in lower left corner of display 
+0 = Not used or displayed 
+1 = Countdown timer displayed 
+Note G 
+Delete this section for type 1 display 
+Start of deleted section for type 1 display 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-64- 
+11 Data Group 1 – 2 Field Label 
+Size 
+1 Numeric Size of Data Group 1 – 2 Label in bytes  
+12 Data Group 1 – 2 Field Label Variable Alphanumeric Name of Data Group 1 – 2 Label.  Up to 5 characters maximum  
+13 Data Group 1 Display Color 1 Enumeration 0 = Not Displayed 
+1 = Gray Background – Normal 
+2 = Cyan Background – Emphasis 
+Note E 
+Note F 
+Note H 
+14 Data Group 1 Field Label 
+Size 
+1 Numeric Size of Data Group 1 Label in bytes  
+15 Data Group 1 Field Label Variable Alphanumeric Name of Data Group 1 parameter to be displayed.  Up to 16 
+characters maximum 
+ 
+16 Data Group 1 Field Value 
+Size 
+1 Numeric Size of Data Group 1 Parameter Value in bytes  
+17 Data Group 1 Field Value Variable Alphanumeric Parameter value to be displayed.  Up to 6 characters  
+18 Data Group 1 Arrow 
+Direction 
+1 Enumeration 0 = Not used (no arrow displayed) 
+1 = Arrow pointing up 
+2 = Arrow pointing down 
+Note D 
+19 Data Group 2 Display Color 1 Enumeration 0 = Not Displayed 
+1 = Gray Background – Normal 
+2 = Cyan Background – Emphasis 
+Note E 
+Note F 
+Note I 
+20 Data Group 2 Field Label 
+Size 
+1 Numeric Size of Data Group 2 Label in bytes  
+21 Data Group 2 Field Label Variable Alphanumeric Name of Data Group 2 parameter to be displayed.  Up to 16 
+characters maximum 
+ 
+22 Data Group 2 Field Value 
+Size 
+1 Numeric Size of Data Group 2 Parameter Value in bytes  
+23 Data Group 2 Field Value Variable Alphanumeric Parameter value to be displayed.  Up to 6 characters  
+24 Data Group 2 Arrow 
+Direction 
+1 Enumeration 0 = Not used (no arrow displayed) 
+1 = Arrow pointing up 
+2 = Arrow pointing down 
+Note D 
+Start of Group 3 and 4 Information Loop  
+(This loop is used 1 time for Type 2 displays and 2 times for Type 3 displays)  
+25 Data Group Display Color 1 Enumeration 0 = Not Displayed 
+1 = Gray Background – Normal 
+2 = Cyan Background – Emphasis 
+Note L 
+26 Data Group Label Size 1 Numeric Size of Data Group Label in bytes  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-65- 
+27 Data Group Label Variable Alphanumeric Name of Data Group.  Up to 5 characters maximum  
+28 Data Group Field Label Size 1 Numeric Size of Data Group Field Label in bytes  
+29 Data Group Field Label Variable Alphanumeric Name of the Data Group parameter to be displayed. 
+16 characters maximum 
+ 
+30 Data Group Field Value Size 1 Numeric Size of Data Group Parameter Value in bytes  
+31 Data Group Field Value Variable Alphanumeric Parameter value to be displayed. 
+Up to 6 characters 
+ 
+32 Data Group Arrow Direction 1 Enumeration 0 = Not used (no arrow displayed) 
+1 = Arrow pointing up 
+2 = Arrow pointing down 
+Note D 
+33 Data Group Fence 1 Enumeration 0 = No Data Group Fence displayed 
+1 = Data Group Fence displayed 
+ 
+End of Group 3 and 4 Information Loop  
+End of deleted section for type 1 display 
+End of deleted section for type 0 display 
+ 
+NOTES: 
+A. Energy Management is responsible for the assignment of unique Banner Display IDs. PTC will only use this identifier in EM Banner 
+Display Status (0540) message to provide the display status on this request.  Use a new Banner Display ID each time the display is 
+updated. 
+B. Currently, NOT supported by PTC; all EM Display Banners are lowest priority compared to PTC prompts. 
+1 = High priority = Higher priority than some PTC-related prompts 
+2 = Low priority = Lower priority than all PTC-related prompts 
+C. 
+ To remove the EM Banner Display set size of field value to 0.  
+ To change any displayed information, send a new EM Banner Display (0640) message with the new information to be displayed. 
+The current EM Banner Display will be deleted/removed (without status response) and the new EM Banner Display created. 
+ To extend the life of active EM Banner Display, send the same EM Banner Display (0640) message (with the same Banner Display 
+ID) again (extending time to live). 
+ The priority of the EM Banner Display is the lowest with relation to PTC prompts.  An active EM Banner Display is overlaid, and thus 
+‘hidden’, when any higher priority PTC Banner needs to be displayed by PTC. 
+D. Arrow color, when displayed, matches DP Parameter Value color. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-66- 
+E. Color choice covers the Data Group Field Label, Data Group Field Value and Data Group Arrow Direction fields on the display. 
+F. Background color used shall be consistent with ITC designated usage rules: 
+ Gray:  Used for displaying information and optional crew actions. 
+ Cyan:  Used for displaying changing data and required crew actions. 
+G. When a countdown timer is used the message time to live becomes the countdown timer value. 
+H. Skip fields 14 through 18 when Data Group 1 is not displayed. 
+I. Skip fields 20 through 24 when Data Group 2 is not displayed. 
+J. Skip fields 7 through 33 when a Type 0 display is selected. 
+K. Skip fields 11 through 33 when a Type 1 display is selected. 
+L. Skip fields 26 through 33 when no data group is being displayed. 
+M. Number of beeps allowed is limited to 2.  Use a single beep for routine information changes or instructions.  Use 2 beeps for priority 
+instructions. 
+N. The term ‘skip’ used within this message means that the skipped fields are not to be populated with any values.  They are to be 
+removed from the transmitted message.  
+ 
+Figure 1 – Display Type 1 – 2 Line x 65 Characters 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-67- 
+ 
+Figure 2 – Display Type 2 and Type 3 showing individual field names used in the EM Banner Display message 
+Note:  Arrows are not labeled due to space constraints in this example. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-68- 
+1.6.19 L2I191 EM Soft-Key Text (0641) - Version 2 
+This message is sent by Energy Management to indicate when to display an Energy Management soft-key and the corresponding text.  Energy 
+Management uses this key within the context of controlling EM functions.  PTC will respond with an EM Soft-Key Status (0541) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 EM Soft-Key ID 2 Numeric Unique identifier for soft-key Note A 
+2 Key text 1 ASCII Up to 30 characters; null terminated Note B 
+Note C 
+3 Key Color 1 Enumeration 1: Standard color (blue) 
+2: Alert color (yellow) 
+3: Disabled (grey) 
+ 
+4 Message Coordination 
+Number 
+4 Numeric EM assigned Coordination Number for use in EM Soft-Key 
+Status (0541) message response 
+ 
+ 
+NOTES: 
+A. Energy Management is responsible for the assignment of unique EM Soft-Key IDs. PTC will use this identifier in the EM Soft-Key Status 
+(0541) message. 
+B. EM Soft-Key is removed by sending a null string here. 
+C. EM may display up to 3 lines of 9 characters separated by a linefeed character (0x0A).  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-69- 
+1.6.20 L2I349 EM Control Indicator (0642) - Version 3 
+This message provides the data required to display an Energy Management control indicator on the CDU.  PTC will respond with an EM Control 
+Indicator (0542) message. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Indicator text ID 2 Numeric Unique identifier for text Note A 
+2 Indicator text Variable ASCII string Up to 16 characters; 
+Null terminated 
+ 
+3 Indicator color 1 Enumeration 0: Not used 
+1:  Gray – Normal 
+2:  Cyan – Emphasis 
+ 
+ 
+NOTES: 
+A. 
+ Energy Management is responsible for the assignment of unique prompt IDs. PTC will only use this identifier in EM Control 
+Indicator Status (0542) message. 
+ To clear the indicator display, send the message with a null string. 
+ To change an active indicator or change the color, send the message with the new text or color. The current indicator will be 
+removed and the new indicator displayed.  
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-70- 
+1.6.21 L2I487 ITF/BCP Overlay Display (0644) - Version 1 
+This message provides the ability to display an ITF/BCP Overlay Display to be displayed over the current In-Train Forces graph and Brake 
+Cylinder Pressure graph.  This message will receive an ITF/BCP Overlay Status (0544) message in response. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 ITF/BCP Overlay ID 1 Numeric ITF/BCP Overlay ID assigned by EM Note A 
+2 Type of Overlay to Display 1 Enumeration 0 = Display no ITF/BCP Overlay 
+1 = Display 5 Line ITF/BCP Overlay 
+2 = Display Top 2 Line ITF/BCP Overlay 
+3 = Display Bottom 2 Line ITF/BCP Overlay 
+Note B 
+3 Background Color 1 Enumeration 0 = Do not display/Cancel existing display 
+1 = Gray – Information/Normal 
+2 = Cyan – Instructions/Emphasis 
+3 = Yellow – Enumerated Messages 
+Note C 
+4 Message Type 1 Enumeration 0xFF = Freeform text 
+All others = RR approved enumerated text ID for the type of 
+display chosen in field 2 
+Note D 
+5 Size of Overlay Message 1 Numeric Size of the overlay message in bytes  
+6 Overlay Message Variable Alphanumeric Information to be displayed. 
+Insert a LF (0x0A) character between each line of the overlay 
+message in a message type 0xFF display. 
+ 
+16 characters maximum per line; does not count LF character. 
+ 
+Enumerated Message Insertions: 
+ %d = Countdown timer, displayed as a 2 digit decimal 
+number (counts as 2 characters) (A countdown timer can 
+be used in Non-Enumerated messages as well) 
+ %t = Throttle Notch, displayed as ‘Nx’, where x is the 
+notch value supplied (Max value 8) (counts as 2 
+characters) 
+ %b = Dynamic Braking Notch, displayed as ‘Dx’, where 
+x is the braking notch supplied (Max value 8) (counts as 
+2 characters) 
+Note E 
+Note F 
+Note G 
+Note H 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-71- 
+ %p = Braking Pressure, displayed as a 2 character 
+decimal number (Max value 99) (counts as 2 characters) 
+ %i = Integer Insertion, displayed as a single digit 
+decimal number (counts as 1 character) 
+ 
+Insertions are made at the %x location in a message, where x is 
+the insertion character. 
+7 Audible Count 1 Numeric Number of beeps when initially displayed.  Maximum of 2 beeps. 
+ 
+Set to zero when no ITF/BCP Overlay displayed 
+Note I 
+8 Audible Volume 1 Enumeration 0 = Quiet 
+1 = Loud 
+ 
+9 Time to Live 1 Numeric Time to display the information on the screen in seconds Note G 
+Note H 
+ 
+NOTES: 
+A. Use a new Overlay Display ID each time the display is changed. 
+B. To remove all ITF/BCP Overlay display(s) set this field to zero.  Skip fields 3 through 9. 
+C. Any message containing a countdown timer will be removed 1 second after the countdown timer reaches zero.  At time expiration the 
+message will be displayed with a countdown timer value of “0” for 1 second before being removed and an ITF/BCP Overlay Text Status 
+(0544) being sent. 
+D. ITC maintains the list of approved enumerated messages for display.  The enumerated message value chosen must be a valid choice 
+from the list of 2 line or 5 line messages available or the result will be a rejected message in the ITF/BCP Overlay Status (0544) 
+message response.  The official ITC document will be cited when it becomes available. 
+E. When this is displaying an enumerated message this field will include any throttle notch value, dynamic braking notch value or brake 
+pressure information to be inserted into the message in this field.  If a countdown time is used in an Enumerated Message this field will 
+not be populated with the timer value but will have the time to live value from field 9 inserted instead.  As no Enumerated Messages 
+have multiple insertions of a non-countdown timer parameter there is no need to have a separator at this time; however a whitespace 
+character will be used as a separator between insertion values in the event this should be needed in the future.  If no parameter is to be 
+inserted into the Enumerated Message or only a countdown timer is inserted place a null in this field. 
+F. All text in both freeform text and enumerated messages is centered horizontally and vertically in the space available. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-72- 
+G. The ‘0’ enumeration feature for 2 line displays only:  Selecting a zero here will cancel only the top or bottom 2 line display type chosen in 
+Field 2: Type of display to overlay.  Skip fields 4 through 9.  The other active 2 line displays would remain being displayed if one is 
+currently active. 
+H. Any countdown timer will be assigned the same value as the message’s time to live. 
+I. Number of beeps allowed is limited to 2.  Use 1 beep for routine information changes or instructions when the operator’s attention is 
+wanted.  Use 2 beeps for Enumerated Messages or priority instructions. 
+J. The term ‘skip’ used within this message means that the skipped fields are not to be populated with any values.  They are to be 
+removed from the transmitted message.  
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-73- 
+1.7 Data Dictionary 
+When fields are comprised of multi-byte quantities the byte order is presumed to be most significant byte first; for example, if a data quantity is 
+represented in two bytes as a binary value of 259; the byte order for this field (as byte n and n+1) as it would appear in the message byte stream 
+is: 
+….. 
+byte n   1 (msb) 
+byte n+1  3 (lsb) 
+….. 
+The same convention applies to multi-byte quantities of other lengths. 
+ 
+Field Size (Bytes) Type Description 
+CRC-32  4  CRC-32  The CRC-32 used is defined within S-9354.  
+Please see this document for all details. 
+EM Restriction 
+Reference Number 
+4 Numeric This is special to EM and should not be 
+confused with the ‘normal’ speed restriction 
+reference number for the office 01041 and 
+other office messages.  Please see Note G for 
+the PTC Status Data (0500) message. 
+ 
+PTC includes an EM restriction reference 
+number for each subdivision, which is just an 
+indicator to EM as to whether EM has the 
+most current set of speed restrictions, i.e. 
+Speed Restriction List (0533) message 
+information, for a given subdivision.  If EM 
+does not have a match on the EM restriction 
+reference number for a given subdivision, EM 
+may then request the Speed Restriction List 
+(0533) message by sending a Restriction List 
+Request (0633) message. 
+Interface Version 1 Numeric  This is the version of software in operation for 
+the energy management interface, which is 
+negotiated between PTC and Energy 
+Management   Please see Note A for the PTC 
+Status Data (0500) message. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-74- 
+Field Size (Bytes) Type Description 
+Locomotive ID 10 Alphanumeric:  
+RR SCAC 
+(4)+Loco 
+No.(6) 
+Represents Locomotive ID as reported by 
+locomotive to office, ASCII text comprising 4 
+(alpha) bytes for RR (SCAC), left justified 
+space filled and 6 (numeric) bytes, right 
+justified space filled for engine number. 
+ASCII Text 
+First 4 characters are railroad id, last six 
+characters are unit number 
+Ex: BNSF   208,  BN     208 
+Time 7 Time Byte 0-1  Year  
+Byte 2     Month 1-12 
+Byte 3     Day 1-31 
+Byte 4     Hour 00- 23 
+Byte 5     Minute 00-59 
+Byte 6     Second 00-59 
+ 
+Unless otherwise noted, all time fields in this 
+document refer to UTC time. 
+Train ID Variable Alphanumeric: 
+RR SCAC 
+(4)+RR 
+assigned 
+identifier 
+(variable) 
+Represents Train ID as reported by locomotive 
+to office, ASCII text comprising 4 (alpha) 
+bytes for RR (SCAC), left justified space filled 
+and variable (alphanumeric) bytes, for RR 
+assigned identifier. 
+Various1 Variable Alphanumeric Any field of variable size and type 
+‘Alphanumeric’ or ASCII is defined to be a 
+fixed length of characters. 
+Various2 1 HGFEDCBA Fields broken into sizes less than 1 byte are 
+represented with characters HGFEDCBA 
+where H is MSB and A is LSB of the byte. 
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-75- 
+1.8 Energy Management TBC Values 
+Note:  This TBC information is provided as reference only and is controlled within reference document 7 (see section 1.2).  The information will 
+be updated whenever the information within the controlled source is changed.  In the event of a conflict in data the controlling document will take 
+precedence over this document 
+ 
+TBC Number TBC Description Default Value Range Units 
+163 The speed at which the train is considered stopped 0.1 0 – 2.0 MPH 
+172 Train’s Front Route Calculation Distance 8 0 - 8 Miles 
+173 Train’s Rear Route Calculation Distance 8 0 - 8 Miles 
+224 Elapsed time for sending PTC Status Data (0500) message 5 5 – 5 Seconds 
+227 Periodic Time for sending Current Position (0530) message 5 5 - 5 Seconds 
+228 Distance for sending Current Position (0530) message 500 500 – 500 Feet 
+229 Periodic time for sending Train Route (0531) message 15 15 – 15 Seconds 
+230 Periodic time for sending Target List (0532) message 15 15 – 15 Seconds 
+231 Elapsed time for receiving EM Display Information 5 5-5 Seconds 
+232 Elapsed time for receiving Crew and Train Data Acknowledge (0624) message 1 1-1 Seconds 
+233 Elapsed time for receiving Target List Acknowledge (0632) message 1 1-1 Seconds 
+ 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-76- 
+1.9 Definitions 
+1.9.1 On-Board Segment State 
+1.9.1.1 Self Test 
+A state in which the on-board segment performs a self-test of certain of its hardware and software components.  The on-board segment enters 
+this state on power-up or reboot.  After a successful self test, the on-board segment transitions to CUT OUT. 
+1.9.1.2 Failed 
+A state in which a hardware or software error has been detected.  The on-board segment transitions to FAILED when a failure has been 
+detected in any other state. 
+1.9.1.3 Cut Out 
+A state in which the on-board segment has not yet initialized or has detected a condition that does not allow it to enforce.  The on-board 
+segment transitions to the CUT OUT state: 
+ 
+a. From SELF TEST 
+ After a successful self test 
+b. From INITIALIZING, DISENGAGED, ACTIVE or RESTRICTED 
+ Upon a command from a BOS 
+ Locomotive air brake system is cut out 
+ I-ETMS penalty brake cut out switch in “Cut Out” position 
+c. From DISENGAGED, ACTIVE or RESTRICTED 
+ Via crew key press to cut out or log off 
+d. From INITIALIZING 
+ After an unsuccessful initialization 
+e. From INITIALIZING, DISENGAGED or ACTIVE 
+ After an unsuccessful departure test 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-77- 
+f. From FAILED 
+ When all failures are cleared in FAILED state 
+1.9.1.4 Initializing 
+A transitional state initiated by the crew in which the on-board segment validates its configuration and the crew credentials and obtains essential 
+information about the train.  The on-board segment transitions to this state from the CUT OUT, DISENGAGED and ACTIVE states via crew key 
+press. 
+1.9.1.5 Disengaged 
+A state in which the on-board segment has initialized but is not prepared to enforce.  The on-board segment transitions to this state: 
+ 
+a. From INITIALIZING 
+ After successful initialization has successfully completed 
+b. From ACTIVE 
+ When the on-board segment is not prepared to enforce 
+c. From RESTRICTED 
+ Upon crew key press 
+1.9.1.6 Active 
+A state in which the on-board segment is prepared to enforce.  The on-board segment transitions to this state: 
+ 
+a. From DISENGAGED 
+ When the on-board segment is prepared to enforce 
+1.9.1.7 Restricted 
+A state in which the on-board segment enforces restricted speed but is not otherwise prepared to enforce.  The on-board segment transitions to 
+this state from the ACTIVE state via crew key press. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-78- 
+2. Appendix A: Enumerated Message Rules: 
+The following rules will be applied to the use of Enumerated Messages: 
+1. Each line within the Enumerated Message will be a maximum of 16 characters followed by a linefeed character to separate lines to be 
+displayed. 
+2. Each Enumerated Message shall end with a NULL character. 
+3. The Enumerated Message will allow only predefined insertion types to be included in the displayed message.  All submitted 
+Enumerated Messages must comply with the defined format for insertable characters. 
+a. When the Enumerated Message contains a ‘%T’ the displayed Enumerated Message will insert ‘NX’ where ‘X’ is the throttle 
+notch value provided in the request message.  The ‘%T’ counts as 2 printable characters in the character count. 
+b. When the Enumerated Message contains a ‘%B’ the displayed Enumerated Message will insert ‘DX’ where ‘X’ is the dynamic 
+braking notch value provided in the request message.  The ‘%B’ counts as 2 printable characters in the character count. 
+c. When the Enumerated Message contains a ‘%D’ the displayed Enumerated Message will insert ‘XY’ where ‘XY’ is the base 10 
+value of the countdown timer value provided in the request message.  The ‘%D’ counts as 2 printable characters in the 
+character count. 
+d. When the Enumerated Message contains a ‘%P’ the displayed Enumerated Message will insert ‘XY’ where ‘XY’ is the base 10 
+value of the brake pressure value provided in the request message.  The ‘%P’ counts as 2 printable characters in the character 
+count. 
+Note that there are no units or braking type associated with this brake pressure insertion.  This must be included in the 
+Enumerated Message. 
+4. Invalid Enumerated Message requests will generate an acknowledgement message stating an invalid display request message was 
+sent. 
+5. An Enumerated Message request containing a countdown timer will have the countdown timer displayed as the message time to live 
+value. 
+
+PTC On-board – Energy Management ICD, Rel. 1.9, 4/7/2017 
+-79- 
+6. When the countdown timer within an Enumerated Message reaches zero the message will be displayed for one second with a 
+countdown value of zero before being removed. 
+7. Enumerated Messages can be cancelled by sending an Enumerated Message display request with the overlay message type 
+enumeration value set to zero or overwriting the ITF/BCP Overlay with another displayed message. 
+8. Enumerated Messages shall not be brand or product specific. 
+9. Use the term ‘AUTO’ to refer to the EM state where EM is controlling the locomotive’s throttle. 
+10. Use the term ‘MANUAL’ to refer to the EM state where EM is not controlling the locomotive’s throttle. 
+ 

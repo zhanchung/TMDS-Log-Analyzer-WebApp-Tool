@@ -1,0 +1,503 @@
+{
+  "document_family": "genisys_protocol",
+  "sources": [
+    "exports/manuals/genisys/Reading_Genisys_Data-DRAFT_1.txt",
+    "exports/manuals/genisys/P2346F_Genisys_Code_System.txt",
+    "exports/manuals/genisys/Genisys_Trace_Analysis.ocr.txt"
+  ],
+  "framing": {
+    "message_terminator": "0xF6",
+    "station_address_position": 2,
+    "data_escape_trigger": "0xF0",
+    "data_escape_rule": "bytes from 0xF0 to 0xFF inside the frame are split into two transmitted bytes",
+    "mode_byte": "0xE0"
+  },
+  "office_headers": [
+    {
+      "byte": "0xFA",
+      "meaning": "Acknowledge"
+    },
+    {
+      "byte": "0xFB",
+      "meaning": "Poll"
+    },
+    {
+      "byte": "0xFC",
+      "meaning": "Control"
+    },
+    {
+      "byte": "0xFD",
+      "meaning": "Recall"
+    },
+    {
+      "byte": "0xFE",
+      "meaning": "Execute"
+    }
+  ],
+  "field_headers": [
+    {
+      "byte": "0xF1",
+      "meaning": "Poll Response No Data"
+    },
+    {
+      "byte": "0xF2",
+      "meaning": "Poll Response With Data"
+    },
+    {
+      "byte": "0xF3",
+      "meaning": "Control Response With Data"
+    }
+  ],
+  "mode_examples": [
+    {
+      "bytes": [
+        "0xE0",
+        "0x07"
+      ],
+      "meaning": "non-secure polling and control checkback"
+    },
+    {
+      "bytes": [
+        "0xE0",
+        "0x05"
+      ],
+      "meaning": "non-secure polling and no control checkback"
+    }
+  ],
+  "mode_scope_note": "TMDS reading guide states the TMDS wayside server supports non-secure polling; the general Genisys protocol manuals also describe secure-poll behavior. Translation must follow actual mode bytes and TMDS-specific configuration, not a single global assumption.",
+  "mode_bit_definitions": [
+    {
+      "bit": 0,
+      "meaning": "Data Base Complete"
+    },
+    {
+      "bit": 1,
+      "meaning": "Checkback Control Enable"
+    },
+    {
+      "bit": 2,
+      "meaning": "Secure Poll Enable"
+    },
+    {
+      "bit": 3,
+      "meaning": "Common Command Enable"
+    }
+  ],
+  "trace_record_types": [
+    {
+      "record_type": "A",
+      "meaning": "Acknowledgement"
+    },
+    {
+      "record_type": "P",
+      "meaning": "Poll"
+    },
+    {
+      "record_type": "R",
+      "meaning": "Recall"
+    },
+    {
+      "record_type": "C",
+      "meaning": "Control"
+    },
+    {
+      "record_type": "E",
+      "meaning": "Execute"
+    }
+  ],
+  "trace_analysis_rules": [
+    {
+      "rule_id": "trace_record_structure",
+      "meaning": "A trace record contains a sent office message, a received field message, and a trailing information line."
+    },
+    {
+      "rule_id": "trace_info_line_fields",
+      "meaning": "The information line contains timestamp, trace record type, code line number/name, and station number/name."
+    },
+    {
+      "rule_id": "control_word_value_pairs",
+      "meaning": "Control messages send only the control words that need to change, as [word number] [value] pairs."
+    },
+    {
+      "rule_id": "trace_word_numbering",
+      "meaning": "Word numbering starts with 0."
+    },
+    {
+      "rule_id": "trace_bit_order_reversal",
+      "meaning": "Trace data values are bit-reversed from the code system database tabling order before device names are matched."
+    },
+    {
+      "rule_id": "unused_bits_hidden",
+      "meaning": "Unused bits are not shown in the trace bit-state display."
+    },
+    {
+      "rule_id": "indication_trace_full_station",
+      "meaning": "The trace bit-state display shows all indication bit states for the station even when the field only sends changed indication words."
+    },
+    {
+      "rule_id": "recall_returns_full_indications",
+      "meaning": "A recall returns all indications for the station."
+    },
+    {
+      "rule_id": "reserved_f_escape",
+      "meaning": "Data or checksum bytes starting with F are split into two transmitted bytes, such as F8 -> F0 08 and F0 -> F0 00."
+    },
+    {
+      "rule_id": "ff_not_allowed",
+      "meaning": "FF is undefined and not allowed."
+    }
+  ],
+  "message_forms": {
+    "transit_messages": [
+      {
+        "name": "Acknowledge",
+        "form": "xF1 st xF6"
+      },
+      {
+        "name": "Change",
+        "form": "xF2 st {bn bi} cl ch xF6"
+      },
+      {
+        "name": "Control Checkback",
+        "form": "xF3 st {bn bi} cl ch xF6"
+      }
+    ],
+    "receive_messages": [
+      {
+        "name": "Common Controls",
+        "form": "xF9"
+      },
+      {
+        "name": "Acknowledge",
+        "form": "xFA st cl ch xF6"
+      },
+      {
+        "name": "Poll",
+        "form": "xFB st cl ch xF6 in secure mode; xFB st xF6 in non-secure mode"
+      },
+      {
+        "name": "Control",
+        "form": "xFC st {bn bi} cl ch xF6"
+      },
+      {
+        "name": "Recall",
+        "form": "xFD st cl ch xF6"
+      },
+      {
+        "name": "Execute",
+        "form": "xFE st cl ch xF6"
+      }
+    ]
+  },
+  "numbering_rules": {
+    "word_zero_is_first_word": true,
+    "word_zero_contains_bits": "1-8",
+    "display_order": "least-significant-bit first",
+    "example": "0x59 -> 01011001 binary -> 10011010 displayed"
+  },
+  "sample_caa_mapping": {
+    "scope": "sample manual mapping only; not an NCTD site-specific assignment",
+    "indications": [
+      {
+        "bit": 1,
+        "name": "2NWK"
+      },
+      {
+        "bit": 2,
+        "name": "2RWK"
+      },
+      {
+        "bit": 3,
+        "name": "1EGK"
+      },
+      {
+        "bit": 4,
+        "name": "1WGK"
+      },
+      {
+        "bit": 5,
+        "name": "2TPK"
+      },
+      {
+        "bit": 6,
+        "name": "EATK"
+      },
+      {
+        "bit": 7,
+        "name": "WATK"
+      },
+      {
+        "bit": 8,
+        "name": "SATK"
+      },
+      {
+        "bit": 9,
+        "name": "2ATK"
+      },
+      {
+        "bit": 10,
+        "name": "TROUBLE"
+      },
+      {
+        "bit": 11,
+        "name": "2LK"
+      }
+    ],
+    "controls": [
+      {
+        "bit": 1,
+        "name": "2NW-CS"
+      },
+      {
+        "bit": 2,
+        "name": "2RW-CS"
+      },
+      {
+        "bit": 3,
+        "name": "1WGZ-CS"
+      },
+      {
+        "bit": 4,
+        "name": "1EGZ-CS"
+      },
+      {
+        "bit": 5,
+        "name": "1GZCAN-CS"
+      },
+      {
+        "bit": 6,
+        "name": "MCON-CS"
+      },
+      {
+        "bit": 7,
+        "name": "MCOFF-CS"
+      }
+    ],
+    "special_control_bits": [
+      {
+        "bit": 1,
+        "name": "EXECUTE REC"
+      },
+      {
+        "bit": 2,
+        "name": "RECALL REC"
+      },
+      {
+        "bit": 3,
+        "name": "CONTROL REC"
+      },
+      {
+        "bit": 4,
+        "name": "POLL REC"
+      },
+      {
+        "bit": 5,
+        "name": "ACK REC"
+      },
+      {
+        "bit": 6,
+        "name": "COMMON CONTROLS REC"
+      },
+      {
+        "bit": 7,
+        "name": "SENT ACK"
+      },
+      {
+        "bit": 8,
+        "name": "SENT CHANGE"
+      },
+      {
+        "bit": 9,
+        "name": "CONTROL CHECKBACK SENT"
+      },
+      {
+        "bit": 10,
+        "name": "SENT CONTROL CONTAINING ALL BITS"
+      }
+    ]
+  },
+  "manual_code_indication_booleans": [
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "2NWK",
+      "expression": "(2NWC)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "2RWK",
+      "expression": "(2RWC)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "1WGK",
+      "expression": "(.N.1WRGP)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "1EGK",
+      "expression": "(.N.1EARGP + .N.1EBRGP)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "2TPK",
+      "expression": "(.N.2TPP)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "EATK",
+      "expression": "(.N.ET)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "WATK",
+      "expression": "(.N.WT)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "SATK",
+      "expression": "(.N.ST)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "2ATK",
+      "expression": "(.N.2TPP * 2RWC)"
+    },
+    {
+      "application": "CODE INDICATIONS",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-11",
+      "mnemonic": "2LK",
+      "expression": "(.N.2L)"
+    }
+  ],
+  "manual_local_control_panel_outputs": [
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 4,
+      "output_name": "1WGE-NVO",
+      "flash_output_name": "1WGE-F",
+      "source_boolean": "1WGE",
+      "expression": "(.N.1WRGP + .N.VRDFRNT-DI)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 8,
+      "output_name": "1EAGE-NVO",
+      "flash_output_name": "1EAGE-F",
+      "source_boolean": "1EAGE",
+      "expression": "(.N.1EARGP * 2NWC + .N.VRDFRNT-DI)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 9,
+      "output_name": "1EBGE-NVO",
+      "flash_output_name": "1EBGE-F",
+      "source_boolean": "1EBGE",
+      "expression": "(.N.1EBRGP + .N.VRDFRNT-DI)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 10,
+      "output_name": "2NE-NVO",
+      "flash_output_name": "2NE-F",
+      "source_boolean": "2NE",
+      "expression": "(2NWZ)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 12,
+      "output_name": "2RE-NVO",
+      "flash_output_name": "2RE-F",
+      "source_boolean": "2RE",
+      "expression": "(2RWZ)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 18,
+      "output_name": "1WAE-NVO",
+      "flash_output_name": "1WAE-F",
+      "source_boolean": "1WAE",
+      "expression": "(.N.ET)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 19,
+      "output_name": "1EAAE-NVO",
+      "flash_output_name": "1EAAE-F",
+      "source_boolean": "1EAAE",
+      "expression": "(.N.WT)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 20,
+      "output_name": "1EBAE-NVO",
+      "flash_output_name": "1EBAE-F",
+      "source_boolean": "1EBAE",
+      "expression": "(.N.ST)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 21,
+      "output_name": "2TE-NVO",
+      "flash_output_name": "",
+      "source_boolean": "2TE",
+      "expression": "(.N.2TPP)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 29,
+      "output_name": "LOCAL-NVO",
+      "flash_output_name": "",
+      "source_boolean": "LOCALE",
+      "expression": "(.N.REMOTE-SLO)"
+    },
+    {
+      "application": "LOCAL CONTROL PANEL LIGHTING",
+      "source_scope": "sample manual mapping only; not an NCTD site-specific assignment",
+      "manual_pages": "B-10 to B-11",
+      "slot": 30,
+      "output_name": "MCALM-NVO",
+      "flash_output_name": "",
+      "source_boolean": "MCALM",
+      "expression": "(MCE * .N.MCALMOFF)"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "flat_metrics": [
+    {
+      "metric": "component_reference_total",
+      "value": 11433
+    },
+    {
+      "metric": "component_reference_resolved",
+      "value": 1684
+    },
+    {
+      "metric": "component_reference_resolved_explicit",
+      "value": 94
+    },
+    {
+      "metric": "component_reference_resolved_inferred_bp_assignment",
+      "value": 687
+    },
+    {
+      "metric": "component_reference_resolved_inferred_trailing_code_line",
+      "value": 903
+    },
+    {
+      "metric": "component_reference_unresolved",
+      "value": 6749
+    },
+    {
+      "metric": "component_reference_default_zero",
+      "value": 3000
+    },
+    {
+      "metric": "scope_reference_total",
+      "value": 3074
+    },
+    {
+      "metric": "scope_reference_with_candidates",
+      "value": 14
+    },
+    {
+      "metric": "scope_reference_without_candidates",
+      "value": 3060
+    },
+    {
+      "metric": "zero_first_reference_total",
+      "value": 6736
+    },
+    {
+      "metric": "zero_first_reference_scoped_with_resolved_sibling",
+      "value": 355
+    },
+    {
+      "metric": "zero_first_reference_scoped_without_resolved_sibling",
+      "value": 5998
+    },
+    {
+      "metric": "zero_first_reference_unscoped_with_resolved_sibling",
+      "value": 0
+    },
+    {
+      "metric": "zero_first_reference_unscoped_without_resolved_sibling",
+      "value": 284
+    },
+    {
+      "metric": "cp_reference_total",
+      "value": 2001
+    },
+    {
+      "metric": "cp_reference_resolved",
+      "value": 286
+    },
+    {
+      "metric": "cp_reference_unresolved",
+      "value": 1312
+    },
+    {
+      "metric": "cp_reference_default_zero",
+      "value": 403
+    },
+    {
+      "metric": "cp_control_point_resolved",
+      "value": 162
+    },
+    {
+      "metric": "cp_control_point_unresolved",
+      "value": 722
+    },
+    {
+      "metric": "cp_control_point_default_zero",
+      "value": 403
+    },
+    {
+      "metric": "cp_misc_device_resolved",
+      "value": 124
+    },
+    {
+      "metric": "cp_misc_device_unresolved",
+      "value": 590
+    },
+    {
+      "metric": "cp_misc_device_default_zero",
+      "value": 0
+    },
+    {
+      "metric": "bos_emp_source_message_total",
+      "value": 225
+    },
+    {
+      "metric": "bos_emp_candidate_row_total",
+      "value": 450
+    },
+    {
+      "metric": "bos_emp_source_messages_with_catalog_match",
+      "value": 225
+    },
+    {
+      "metric": "bos_emp_source_messages_without_catalog_match",
+      "value": 0
+    },
+    {
+      "metric": "bos_emp_source_messages_without_message_id",
+      "value": 0
+    }
+  ],
+  "nested_metrics": {
+    "component_status_counts": {
+      "unresolved": 6749,
+      "default_zero": 3000,
+      "resolved": 1684
+    },
+    "component_family_counts": {
+      "control_point": 1337,
+      "misc_device": 714,
+      "signal": 2970,
+      "switch": 2026,
+      "track": 4386
+    },
+    "resolution_method_counts": {
+      "inferred_bp_assignment_station_control_point_via_unique_cp_line": 687,
+      "inferred_bp_assignment_station_control_point_with_trailing_code_line": 903,
+      "explicit_code_line_station_control_point_bp_assignment": 94
+    },
+    "scope_status_counts": {
+      "no_scope_candidates": 3060,
+      "has_scope_candidates": 14
+    },
+    "zero_first_class_counts": {
+      "scoped_zero_first_without_resolved_sibling": 5998,
+      "unscoped_zero_first_without_resolved_sibling": 284,
+      "scoped_zero_first_with_resolved_sibling": 355,
+      "unknown_word_type_zero_first": 99
+    },
+    "zero_first_scope_source_counts": {
+      "component_codeline+unique_cp_line": 6070,
+      "none": 284,
+      "trailing_token4+component_codeline+unique_cp_line": 273,
+      "unknown_word_type": 99,
+      "unique_cp_line": 10
+    },
+    "zero_first_reference_column_counts": {
+      "CPCTL1": 162,
+      "CPCTL2": 165,
+      "CPCTL3": 167,
+      "CPCTL4": 48,
+      "CPCTL5": 48,
+      "CPIND1": 12,
+      "CPIND10": 50,
+      "CPIND11": 48,
+      "CPIND12": 48,
+      "CPIND13": 48,
+      "CPIND2": 124,
+      "CPIND3": 130,
+      "CPIND4": 12,
+      "CPIND5": 50,
+      "CPIND6": 50,
+      "CPIND7": 50,
+      "CPIND8": 50,
+      "CPIND9": 50,
+      "FleetControlBit": 165,
+      "LockBit": 99,
+      "PCTL": 719,
+      "PIND": 27,
+      "QCTL": 309,
+      "QIND": 36,
+      "RCPSControlBits": 396,
+      "RCPSIndicationBits": 495,
+      "SCTL": 882,
+      "SIND": 588,
+      "ScadaAlarmReportingIndicationBit": 50,
+      "SwitchBlockControlBit": 2,
+      "TCTL": 950,
+      "TIND": 706
+    },
+    "cp_status_counts": {
+      "unresolved": 1312,
+      "default_zero": 403,
+      "resolved": 286
+    },
+    "cp_component_family_status_counts": {
+      "control_point|default_zero": 403,
+      "control_point|resolved": 162,
+      "control_point|unresolved": 722,
+      "misc_device|resolved": 124,
+      "misc_device|unresolved": 590
+    },
+    "bos_match_counts": {
+      "inferred_leading_zero_normalization": 450
+    },
+    "bos_message_match_counts": {
+      "inferred_leading_zero_normalization": 225
+    },
+    "bos_prefix_counts": {
+      "2010": 2,
+      "2020": 2,
+      "2080": 432,
+      "2083": 10,
+      "2087": 4
+    }
+  }
+}

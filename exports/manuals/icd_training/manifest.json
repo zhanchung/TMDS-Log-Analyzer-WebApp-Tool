@@ -1,0 +1,26 @@
+[
+  {
+    "source": "C:\\Users\\Ji\\Music\\TCOS TRAINING\\I-ETMS On-Board Data Distribution Messages ICD v1.1.pdf",
+    "type": "pdf",
+    "page_count": 15,
+    "total_chars": 19146,
+    "text_path": "exports\\manuals\\icd_training\\I-ETMS_On-Board_Data_Distribution_Messages_ICD_v1.1.txt",
+    "page_json_path": "exports\\manuals\\icd_training\\I-ETMS_On-Board_Data_Distribution_Messages_ICD_v1.1.pages.json"
+  },
+  {
+    "source": "C:\\Users\\Ji\\Music\\TCOS TRAINING\\Office-Locomotive Segment ICD _2.11.1_.pdf",
+    "type": "pdf",
+    "page_count": 158,
+    "total_chars": 245125,
+    "text_path": "exports\\manuals\\icd_training\\Office-Locomotive_Segment_ICD__2.11.1_.txt",
+    "page_json_path": "exports\\manuals\\icd_training\\Office-Locomotive_Segment_ICD__2.11.1_.pages.json"
+  },
+  {
+    "source": "C:\\Users\\Ji\\Music\\TCOS TRAINING\\WCR-ICD-1214 Office-Locomotive Segment ICD (3.1).pdf",
+    "type": "pdf",
+    "page_count": 175,
+    "total_chars": 281552,
+    "text_path": "exports\\manuals\\icd_training\\WCR-ICD-1214_Office-Locomotive_Segment_ICD__3.1_.txt",
+    "page_json_path": "exports\\manuals\\icd_training\\WCR-ICD-1214_Office-Locomotive_Segment_ICD__3.1_.pages.json"
+  }
+]

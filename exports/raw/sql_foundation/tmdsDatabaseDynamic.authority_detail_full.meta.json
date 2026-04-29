@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "export_name":  "authority_detail_full",
+    "row_count":  4,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_detail_full.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_detail_full.csv"
+}

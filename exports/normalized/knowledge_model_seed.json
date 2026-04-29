@@ -1,0 +1,17 @@
+﻿{
+    "generated_at":  "2026-04-08T15:05:39.9975295-07:00",
+    "entities":  [
+                     "source_record",
+                     "workflow_definition",
+                     "workflow_relation",
+                     "genisys_bit_definition",
+                     "genisys_byte_definition",
+                     "office_header_definition",
+                     "field_header_definition",
+                     "icd_version_definition",
+                     "icd_message_definition",
+                     "translation_template",
+                     "unresolved_token"
+                 ],
+    "fallback_policy":  "Preserve raw evidence when source meaning is unavailable."
+}

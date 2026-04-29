@@ -1,0 +1,5 @@
+﻿"database","schema","table","column","ordinal","data_type","is_nullable"
+"tmdsDatabaseDynamic","dbo","MdmTrainObjectData","Id","1","int","NO"
+"tmdsDatabaseDynamic","dbo","MdmTrainObjectData","LocomotiveId","2","nvarchar","NO"
+"tmdsDatabaseDynamic","dbo","MdmTrainObjectData","Last2100","3","datetime","NO"
+"tmdsDatabaseDynamic","dbo","MdmTrainObjectData","IcdInterfaceVersion","4","nvarchar","NO"

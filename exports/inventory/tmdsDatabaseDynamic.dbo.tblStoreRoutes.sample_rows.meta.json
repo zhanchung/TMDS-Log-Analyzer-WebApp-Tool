@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblStoreRoutes",
+    "top":  20,
+    "order_by":  [
+                     "RouteGUID",
+                     "TerrUID",
+                     "ControlPoint",
+                     "CreateTime"
+                 ],
+    "row_count_exported":  0
+}

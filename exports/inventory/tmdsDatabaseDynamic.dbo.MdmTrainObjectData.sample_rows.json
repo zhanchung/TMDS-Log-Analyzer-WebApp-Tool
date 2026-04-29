@@ -1,0 +1,122 @@
+﻿[
+    {
+        "Id":  57,
+        "LocomotiveId":  "NCTC  2306",
+        "Last2100":  "\/Date(1774368341120)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  560,
+        "LocomotiveId":  "SCAX   909",
+        "Last2100":  "\/Date(1774364511293)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  567,
+        "LocomotiveId":  "SCAX   896",
+        "Last2100":  "\/Date(1774345323783)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  595,
+        "LocomotiveId":  "SCAX   904",
+        "Last2100":  "\/Date(1774365397993)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  620,
+        "LocomotiveId":  "SCAX   903",
+        "Last2100":  "\/Date(1774365904160)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  629,
+        "LocomotiveId":  "SCAX   934",
+        "Last2100":  "\/Date(1774365490010)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  648,
+        "LocomotiveId":  "SCAX   928",
+        "Last2100":  "\/Date(1774362811827)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  650,
+        "LocomotiveId":  "SCAX  2222",
+        "Last2100":  "\/Date(1774347047480)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  2521,
+        "LocomotiveId":  "SCAX   669",
+        "Last2100":  "\/Date(1774363688357)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  2537,
+        "LocomotiveId":  "SCAX   653",
+        "Last2100":  "\/Date(1774348716773)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  3450,
+        "LocomotiveId":  "SCAX   941",
+        "Last2100":  "\/Date(1774361735233)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  3613,
+        "LocomotiveId":  "SCAX   889",
+        "Last2100":  "\/Date(1774360776983)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  4190,
+        "LocomotiveId":  "SCAX   923",
+        "Last2100":  "\/Date(1774361047580)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  4203,
+        "LocomotiveId":  "SCAX  1111",
+        "Last2100":  "\/Date(1774312430920)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  5231,
+        "LocomotiveId":  "SCAX   695",
+        "Last2100":  "\/Date(1773987025253)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  5477,
+        "LocomotiveId":  "SCAX   929",
+        "Last2100":  "\/Date(1774366809657)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  6058,
+        "LocomotiveId":  "SCAX   905",
+        "Last2100":  "\/Date(1774364744623)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  6752,
+        "LocomotiveId":  "SCAX   661",
+        "Last2100":  "\/Date(1774346608927)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  6921,
+        "LocomotiveId":  "BNSF  6161",
+        "Last2100":  "\/Date(1774323951453)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    },
+    {
+        "Id":  8255,
+        "LocomotiveId":  "SCAX   658",
+        "Last2100":  "\/Date(1774364357493)\/",
+        "IcdInterfaceVersion":  "BOS_ICD_3_0"
+    }
+]

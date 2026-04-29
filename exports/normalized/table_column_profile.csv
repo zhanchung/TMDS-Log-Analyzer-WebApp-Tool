@@ -1,0 +1,1004 @@
+database_name,table_name,column_name,ordinal_position,data_type,row_count,non_empty_count,empty_count,distinct_non_empty_count,max_length,sample_values,profile_source_csv
+tmdsDatabaseDynamic,MdmTrainObjectData,Id,1,,5933,5933,0,5933,5,29137|29920|18292|19193|22606|26410|20122|25863,exports\raw\sql_foundation\tmdsDatabaseDynamic.mdm_train_object_detail_full.csv
+tmdsDatabaseDynamic,MdmTrainObjectData,LocomotiveId,2,,5933,5933,0,5933,10,BNSF 3650|NCTC 2308|BNSF 3851|BNSF 5847|NCTC 5001|BNSF 4165|BNSF 7778|BNSF 6857,exports\raw\sql_foundation\tmdsDatabaseDynamic.mdm_train_object_detail_full.csv
+tmdsDatabaseDynamic,MdmTrainObjectData,Last2100,3,,5933,5933,0,4843,22,2026-03-24 오전 9:05:51|2026-03-24 오전 9:05:50|2026-03-24 오전 9:05:49|2026-03-24 오전 9:05:48|2026-03-24 오전 9:05:45|2026-03-24 오전 9:05:44|2026-03-24 오전 9:05:42|2026-03-24 오전 9:05:41,exports\raw\sql_foundation\tmdsDatabaseDynamic.mdm_train_object_detail_full.csv
+tmdsDatabaseDynamic,MdmTrainObjectData,IcdInterfaceVersion,4,,5933,5933,0,2,11,ICD_4_0|BOS_ICD_3_0,exports\raw\sql_foundation\tmdsDatabaseDynamic.mdm_train_object_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityNumber,1,,4,4,0,4,4,5419|5420|5423|5429,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,RailRoadName,2,,4,4,0,1,9,SAN DIEGO,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,DispatcherName,3,,4,4,0,2,22,"FLORES, MARIANNA {MLF}|ANDROVICH, ERINA {EAA}",exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,CreateDate,4,,4,4,0,4,22,2026-03-23 오후 10:00:10|2026-03-23 오후 10:22:10|2026-03-23 오후 10:39:42|2026-03-24 오전 1:49:11,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,Direction,5,,4,4,0,2,5,RIGHT|LEFT,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityDate,6,,4,4,0,4,22,2026-03-23 오후 10:00:00|2026-03-23 오후 10:22:00|2026-03-23 오후 10:39:00|2026-03-24 오전 1:49:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityType,7,,4,4,0,1,2,TT,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,IssueTo,8,,4,4,0,2,17,"PANGELINAN, JAMIE|NCTC DUFFY",exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityLimits,9,,4,4,0,4,132,GRANTED ON MT1 TRACK|BETWEEN CP SORRENTO|AND CP SCRIPPS||GRANTED ON MAIN TRACK|BETWEEN CP TORREY|AND CP DEL MAR||GRANTED ON MAIN TRACK|BETWEEN WEST LIMITS CP SCRIPPS|AND EAST LIMITS CP MIRAMAR|GRANTED ON MT1 TRACK|BETWEEN CP MIRAMAR|AND CP ROSE||GRANTED ON MT2 TRACK|BETWEEN CP MIRAMAR|AND CP ROSE|,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,OKTime,10,,4,4,0,4,22,2026-03-23 오후 10:00:00|2026-03-23 오후 10:22:00|2026-03-23 오후 10:39:00|2026-03-24 오전 1:49:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,UntilTime,11,,4,4,0,4,22,2026-03-24 오전 12:30:00|2026-03-23 오전 5:00:00|2026-03-23 오전 3:45:00|2026-03-24 오전 3:45:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,MobileID,12,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,Components,13,,4,4,0,4,133,100649|100816||100887|100411||100823|100825|100820|100821|100824|100827|100864|100436|100443|100437|100852|100456|100457|100459|100438|100439|100458|100444|100319||100352|100445|,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,ReportClear,14,,4,4,0,1,22,1900-01-01 오전 12:00:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,TerritoryAssignment,15,,4,4,0,1,3,100,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityUID,16,,4,4,0,4,4,5419|5420|5423|5429,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,VehicleAssocations,17,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,JointAuthority,18,,4,4,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,BehindTrains,19,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,BeginMilePostLimits,20,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,EndMilePostLimits,21,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,JointLimits,22,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,TerritoryAssignmentSecondary,23,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthGUID,24,,4,4,0,4,36,8BE91264-8440-4109-A62D-BF223D27EBAE|B17572B7-B2E2-47FB-966C-1C27DF2AC54C|E60D1164-06F1-47C6-9BAC-7165DD86CE91|6FE4C3BC-0A45-4A84-A198-E345056AF998,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,TerrIDTeritary,25,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,TerrIDQuadtary,26,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,LastNameEIC,27,,4,4,0,2,10,PANGELINAN|NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,FirstNameEIC,28,,4,4,0,2,5,JAMIE|NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PassWordEIC,29,,4,4,0,1,7,PRIVATE,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,EICPIN,30,,4,4,0,2,4,1234|NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,EICENABLED,31,,4,4,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,EICDS,32,,4,4,0,4,38,869743127FFE56ED434AC06E17F679DB3E5E7D|NONE|136F3E6AE13CAC8B965A98CF4407C26B7DD3E5|94368CAEC8C733134652B183AC4087E784FDE4,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,CopiedBy,33,,4,4,0,1,26,10 MINUTES NOTICE TO CLEAR,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,RelayedTo,34,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,EICNotes,35,,4,2,2,1,6,SMC645,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,RollUpEvent,36,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCTextualStatus,37,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCAuthorityStatus,38,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCAuthorityText,39,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,IssuedToTrain,40,,4,4,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,JointAuthorityOverlapInformation,41,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,TrainSymbol,42,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,IssuedFromWorkstation,43,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCAckPending,44,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCComponents,45,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,LimitsInfo,46,,4,1,3,1,75,54|GRANTED ON MAIN TRACK BETWEEN CP TORREY AND CP DEL MAR|3|100887-100411-;,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,BehindTrainsInfo,47,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityStatus,48,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,VoidList,49,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,JointVerbiage,50,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,UntilTimeInfo,51,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,Box1Void,52,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCAuthoritySegments,53,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCRestrictionSegments,54,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCCompositionCRC,55,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCContingencySegments,56,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,ObjectCRC,57,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,TacticalRouteList,58,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,MovementAuthorityDataset,59,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,MixModeAuthorityType,60,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,UntilReleased,61,,4,4,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,NoticeTime,62,,4,4,0,1,2,10,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,SoleJointInfo,63,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,OverrideFieldBlocking,64,,4,4,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,VoidedBy,65,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,SwitchList,66,,4,1,3,1,39,100825|FALSE;100443|FALSE;100459|FALSE;,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,ReportedClearBy,67,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,RouteCompData,68,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,BLockDeviceAppliedTime,69,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,ForeignBLockDeviceAppliedTime,70,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,ForeignBLockDeviceReleasedTime,71,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,IssueInitials,72,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCBOSAuthorityStatus,73,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCAuthoritySegmentsOriginatingDesk,74,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCAuthoritySegmentsRemoteDesk,75,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityLimitsOriginatingDesk,76,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityLimitsRemoteDesk,77,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityDirection,78,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,LimitFrom,79,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,LimitTo,80,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityOtherInformation,81,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityFacingSwitchFrom,82,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityFacingSwitchTo,83,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,AuthorityFacingSwitchesTrack,84,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,MilePostLimitsBegin,85,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,MilePostLimitsEnd,86,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,IsRejected,87,,4,4,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,IsPTC,88,,4,4,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,OkTimeOffSet,89,,4,0,4,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,PTCReference,90,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblAuthoritiesActive,Version,91,,4,4,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.authority_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,Id,1,,14,14,0,14,4,7551|7550|7549|7548|7547|7546|7545|7544,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,LocoId,2,,14,14,0,14,10,NCTC 2308|NCTC 5005|NCTC 2303|NCTC 423|NCTC 2309|NCTC 5008|NCTC 5004|NCTC 5001,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,TrainSymbol,3,,14,0,14,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,MilePost,4,,14,14,0,1,6,0.0000,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,MilePostPrefix,5,,14,0,14,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,MilePostSuffix,6,,14,0,14,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,TrackName,7,,14,0,14,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,LocationName,8,,14,0,14,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,CurrentPositionRRScac,9,,14,14,0,1,4,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,SubDivisionPTCId,10,,14,14,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,CurrentPositionUncertainty,11,,14,14,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,ComputedMilepost,12,,14,14,0,1,6,0.0000,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,EcefXCoordinate,13,,14,14,0,14,10,-245859080|-245862075|-245858469|-245859226|-245853188|-245862761|-245861725|-245856397,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,EcefYCoordinate,14,,14,14,0,14,10,-473998964|-473991342|-473998659|-473999200|-474012464|-473991166|-473991545|-474005058,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,EcefZCoordinate,15,,14,14,0,14,9,347661203|347669262|347661667|347660806|347646609|347669150|347669499|347654737,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,DepartureTestStatus,16,,14,14,0,1,4,Pass,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,EmployeeUid,17,,14,14,0,7,6,000609|140500|140513|034463|002607|034013|845120,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,LocoStateSummary,18,,14,14,0,1,15,Non-controlling,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,OnboardSoftwareVersion,19,,14,14,0,2,9,6.3.24.11|6.3.24.12,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,VirtualDepartureTestSlip,20,,14,0,14,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,DepartureTest,21,,14,0,14,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblBosDepartureTestData,DepartureTestTimeStamp,22,,14,14,0,14,22,2026-03-24 07:42:46|2026-03-24 07:14:14|2026-03-24 07:12:04|2026-03-24 07:04:11|2026-03-24 06:49:51|2026-03-24 06:46:18|2026-03-24 06:41:30|2026-03-24 06:26:41,exports\raw\sql_foundation\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,id,1,,2301,2301,0,2301,4,1137|1020|1017|1019|1989|2513|1010|1570,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,loco_id,2,,2301,2301,0,2301,10,NCTC 2303|NCTC 5001|NCTC 5004|NCTC 5005|NCTC 5006|NCTC 423|NCTC 2308|SCAX 661,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,train_symbol,3,,2301,358,1943,171,14,A595|A588|BNSF TEST NCTD|A581|HBARSDG1 21|M1859|HSDGBAR1 18|VSDGBAR1 17,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_latitude,4,,2301,2301,0,1448,9,33.244031|33.243276|33.244851|33.244839|33.243224|33.243919|33.243969|33.243188,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_longitude,5,,2301,2301,0,1745,11,-117.415328|-117.414815|-117.415984|-117.416032|-117.414840|-117.415369|-117.415371|-117.414502,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,last_updated,6,,2301,2301,0,2257,22,2026-03-24 오전 9:05:48|2026-03-24 오전 9:05:44|2026-03-24 오전 9:05:43|2026-03-24 오전 9:05:42|2026-03-24 오전 9:05:34|2026-03-24 오전 9:05:32|2026-03-24 오전 9:05:28|2026-03-24 오전 9:05:27,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,scac,7,,2301,2301,0,1,4,NCTC,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,current_ptc_authority_reference_number,8,,2301,2301,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_milepost,9,,2301,2301,0,102,8,0.0000|0.0083|81.0082|267.6410|74.1420|6.7783|54.2100|42.7206,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_milepost_prefix,10,,2301,0,2301,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_milepost_suffix,11,,2301,0,2301,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_track_name,12,,2301,101,2200,14,15,TRACK 11|MAIN 3|SIDING|MAIN 2|MAIN 1|MAIN|MT1|MT2,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_scac,13,,2301,2301,0,5,4,|SCAX|BNSF|NCTC|UP,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_subdivision_id,14,,2301,2301,0,17,4,0|2000|7032|7039|7169|7074|100|7143,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,rear_end_milepost,15,,2301,2301,0,102,8,0.0000|0.0991|0.3089|268.8265|75.3374|7.8127|55.5504|44.1079,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,rear_end_milepost_prefix,16,,2301,0,2301,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,rear_end_milepost_suffix,17,,2301,0,2301,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,rear_end_track_name,18,,2301,101,2200,14,20,TRACK 11|MAIN 3|SIDING|MAIN 2|MAIN 1|MAIN|MT1|MT2,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,rear_end_scac,19,,2301,2301,0,5,4,|SCAX|BNSF|NCTC|UP,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,rear_end_subdivision_id,20,,2301,2301,0,17,4,0|2000|7169|7039|7032|7074|100|7143,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,speed,21,,2301,2301,0,47,2,0|28|14|29|3|1|39|8,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,direction_of_travel,22,,2301,2301,0,3,1,0|2|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,current_position_uncertainty,23,,2301,2301,0,7,3,164|17|0|18|20|40|19,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,position_validity,24,,2301,2301,0,3,1,2|0|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,reason_for_report,25,,2301,2301,0,7,2,0|9|6|10|4|1|12,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,locomotive_state_summary,26,,2301,2301,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,locomotive_state,27,,2301,2301,0,6,1,4|2|5|7|3|6,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,locomotive_state_time,28,,2301,2301,0,2252,22,2026-03-24 오전 9:05:47|2026-03-24 오전 9:05:44|2026-03-24 오전 9:05:32|2026-03-24 오전 9:05:43|2026-03-24 오전 9:05:41|2026-03-24 오전 9:05:34|2026-03-24 오전 9:05:27|2026-03-24 오전 9:05:26,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,control_brake,29,,2301,2301,0,4,1,1|2|0|4,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,time_elapsed,30,,2301,2301,0,2,2,60|0,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,distance_elapsed,31,,2301,2301,0,3,2,10|0|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_current_pos_x,32,,2301,2301,0,1898,10,-245858535|-245856395|-245861644|-245862044|-245856764|-245859176|-245859015|-245854100,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_current_pos_y,33,,2301,2301,0,1875,10,-473998795|-474005051|-473991511|-473991308|-474005251|-473999200|-473998846|-474006957,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblLocomotivePositionReport,head_end_current_pos_z,34,,2301,2301,0,1731,9,347661825|347654805|347669395|347669238|347654334|347660766|347661176|347654051,exports\raw\sql_foundation\tmdsDatabaseDynamic.locomotive_position_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SystemUID,1,,19,19,0,19,36,F89CB35F-6DA7-4A58-84C9-044F7A9305B4|A2230CB9-1C8A-4171-B2DC-EFED8E59425A|FD6C911C-D3C0-48DA-977C-EEFC6FE29A7B|E78B84F2-1D73-4A15-8570-D26E13E91DC0|32E7879A-5E86-408F-89A6-0D7C0ADA181A|9F56F96A-67FB-4015-A0AC-FA1639A0CBAD|3C210789-A5EC-42FF-8CDF-BC59C27BCFA7|5B6EA62C-9E47-4054-849F-1AA905285ED2,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RestrictionUID,2,,19,19,0,19,3,300|301|457|458|459|526|533|535,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RestrictionType,3,,19,19,0,3,17,SPEED RESTRICTION|WORKZONE|MISC,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RestrictionDate,4,,19,19,0,19,22,2025-10-25 오전 4:01:17|2025-10-25 오전 4:03:09|2026-03-23 오후 3:52:11|2026-03-23 오후 4:24:45|2026-03-23 오후 4:26:49|2024-07-19 오전 12:39:42|2026-01-29 오후 6:22:54|2026-02-01 오전 1:05:01,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TimeZone,5,,19,19,0,1,7,PACIFIC,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RestrictionSubName,6,,19,19,0,2,9,SAN DIEGO|ESCONDIDO,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RestrictionData,7,,19,19,0,5,28,||NONE|FOREMAN S CASSELL|NONE|NONE|FOREMAN J. VINCENT|NONE|NONE|FOREMAN G. GWIN|NONE|NONE|Foreman Name|NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RestrictionDataSupplement,8,,19,13,6,2,27,SORT IN GENERAL INFORMATION|SORT IN SPECIFIED LOCATION,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RestrictionUIDString,9,,19,19,0,19,3,300|301|457|458|459|526|533|535,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MilePostBegin,10,,19,19,0,11,6,259.9|265.0|110.0|233.7|243.9|0|256.15|234.8,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MilePostEnd,11,,19,19,0,11,6,260.1|266.0|111.4|235.4|245.8|0|262.25|234.8,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrackType,12,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrackName,13,,19,19,0,3,10,Mt1|All Tracks|Main,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainMessageFreight,14,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainSpeedFreight,15,,19,19,0,4,2,30|35|0|15,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainMessagePassengar,16,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainSpeedPassengar,17,,19,19,0,4,2,75|35|0|15,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,Creator,18,,19,19,0,7,23,"BRIDGES, ROSEMARY (RJB)|EVANS, SHALENE (SME)|FLORES, MARIANNA (MLF)|WOLF, ELIZABETH (EMW)|ANDROVICH, ERINA (EAA)|CANADA, GLORIA (GC)|GEDDES, DEBBIE (DJG)",exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,StopCommand,19,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TerrUID,20,,19,19,0,3,3,100|200|0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CompList,21,,19,12,7,10,1861,100473|100368-100496-100497-100508-100509-100617-100618-100619-100620-100621-100622-100365|200252-200254-200255-200272-200273-200274-200275-200277-200279-200247-200248|100329-100330-100331-100332-100325-100335-100342|100404-100406-100403-100887|100271-100280-100323-100324-100337-100473-100283-100322|100335|200100-200114-200115-200116-200117-200120-200121-200122-200123-200125-200129-200135-200136-200137-200145-200146-200147-200148-200149-200154-200155-200159-200160-200161-200162-200165-200174-200190-200191-200192-200193-200194-200195-200196-200197-200198-200199-200200-200201-200202-200203-200218-200219-200220-200221-200224-200226-200228-200229-200230-200231-200232-200233-200234-200235-200236-200237-200238-200239-200240-200241-200242-200247-200248-200252-200253-200254-200255-200258-200272-200273-200274-200275-200276-200277-200278-200279-200283-200284-200285-200286-200287-200288-200290-200291-200292-200293-200294-200295-200303-200304-200305-200306-200309-200310-200311-200312-200313-200314-200315-200320-200321-200332-200333-200334-200335-200336-200338-200353-200354-200355-200360-200379-200380-200381-200385-200407-200409-200410-200411-200412-200416-200425-200426-200429-200431-200435-200436-200437-200441-200444-200445-200447-200448-200454-200458-200459-200460-200461-200467-200468-200473-200510-200534-200536-200537,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,Information,22,,19,15,4,15,1110,"EASTBOUND FLAGS ARE DISPLAYED ON THE LEFT HAND SIDE.|SHORT FLAG AT MP 267.00|AT MP 244.3 WESTBOUND WHISTLE BOARD SIGN WAS REMOVED DUE TO CONSTRUCTION.|MP 216.28 CP DON SWITCH NUMBER 1X IS TAGGED OUT OF SERVICE WITH POINT CLAMP LINED FOR MAIN TRACK MOVEMENT PER MOS. MP 231.34 SDGE SWITCH IS TAGGED OUT OF SERVICE, SPIKED AND LINED FOR MAIN TRACK TWO MOVEMENT. MP 251.1 TO MP 251.3 BARRIER ON RIGHT OF WAY FOR ROAD CLOSURE, ON ACCOUNT OF EROSION. MP 265.6 WASHINGTON STREET WYE EAST LEG IS TAGGED OUT OF SERVICE, SPIKED AND LINED FOR MAIN TRACK TWO MOVEMENT.|NORTH COUNTY TRANSIT - SAN DIEGO RAILROAD (NCTD) IS CURRENTLY OPERATING UNDER THE GENERAL CODE OF OPERATING RULES (GCOR), NINTH EDITION, OCTOBER 8, 2025, AT 0001. BEGINNING SUNDAY, FEBRUARY 01, 2026, AT 0001 HOURS, GENERAL ORDER #8S IS IN EFFECT.|NORTH COUNTY TRANSIT - SAN DIEGO RAILROAD (NCTD) IS CURRENTLY OPERATING UNDER THE GENERAL CODE OF OPERATING RULES (GCOR). NINTH EDITION, OCTOBER 8, 2025, AT 0001. BEGINNING SUNDAY, FEBRUARY 01, 2026, AT 0001 HOURS, GENERAL ORDER #8S IS IN EFFECT.|THE DETECTOR AT THE FOLLOWING LOCATION IS OUT OF SERVICE: MP 252.8 ON MAIN TRACK. PER MOS WOODILL.|TIMETABLE 6 AND SPECIAL INSTRUCTIONS NO. 6 ITEM #7: ESCONDIDO SUBDIVISION SPECIAL INSTRUCTIONS APPLICABLE TO ALL OPERATIONS THE FOLLOWING LANGUAGE IS ADDED TO RULE 6.32.2 - AUTOMATIC WARNING DEVICES MANUAL ACTIVATION OF AUTOMATIC WARNING DEVICES AT THE FOLLOWING LOCATION, AUTOMATIC WARNING DEVICES MAY BE ACTIVATED MANUALLY: OCEANSIDE TRANSIT CENTER PEDESTRIAN CROSSING, MP 99.35 EASTWARD TRAINS DEPARTING OCEANSIDE TRANSIT CENTER (OTC) MAY ACTIVATE THE CROSSING WARNING DEVICES AT THE OTC PEDESTRIAN CROSSING BY ENTERING 099 ON THE RADIO DTMF PAD A MINIMUM OF 20 SECONDS PRIOR TO DEPARTURE.",exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MilePostBeginSuffix,23,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MilePostEndSuffix,24,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SubType,25,,19,19,0,5,6,FORM A|FORM B|FORM F|FORMTC|FORM X,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SubdivisionUID,26,,19,19,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagData,27,,19,2,17,1,35,0.00;;;San Diego;|0.00;;;San Diego;,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,Comments,28,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,Direction,29,,19,3,16,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TimeFrom,30,,19,19,0,17,22,1900-01-01 오전 12:00:00|2026-03-24 오전 7:00:00|2026-03-24 오전 6:30:00|2024-07-19 오전 12:39:42|2026-01-29 오후 6:22:54|2026-02-01 오전 1:05:01|2026-02-01 오전 2:42:46|2026-02-23 오후 6:55:10,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TimeUntil,31,,19,19,0,18,22,1900-01-01 오전 12:00:00|2026-03-24 오후 3:30:00|2026-03-24 오후 5:00:00|2026-03-24 오후 4:00:00|2024-07-19 오전 12:39:42|2026-01-29 오후 6:22:54|2026-02-01 오전 1:05:01|2026-02-01 오전 2:42:46,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DailyCheck,32,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DisplayIndex,33,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,EffectiveTime,34,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CorrelatingTagUID,35,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP1Sub,36,,19,19,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP1,37,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP1Suffix,38,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP2Sub,39,,19,19,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP2,40,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP2Suffix,41,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP3Sub,42,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP3,43,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP3Suffix,44,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP4Sub,45,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP4,46,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP4Suffix,47,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP5Sub,48,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP5,49,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP5Suffix,50,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP6Sub,51,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP6,52,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagMP6Suffix,53,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,Status,54,,19,19,0,3,10,OK|NC|EXCEPTIONS,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ConfirmationData,55,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MileRangeGUID1,56,,19,12,7,2,3,100|200,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MileRangeGUID2,57,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MileRangeGUID3,58,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MileRangeGUID4,59,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ExceptionList,60,,19,1,18,1,292,31D12DE7-FE2F-4ABB-B123-5027CF7B0274;MOW SAN PM;4C355517-A88B-4E72-96CB-4F41FBF8E05B;SANDIE;2329|8351D928-B53F-4119-8794-CE9BDBC4443B;RCAL0153 23;8268410B-D15F-44DB-A152-040392E929CC;SANDIE;2327|BE97E881-2700-4130-AD41-9B81F707A001;VSBDSDG4 23;5020E505-DA19-494B-8D16-65EE92AE4084;SANDIE;2309,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagBulletinStatus1,61,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagBulletinStatus2,62,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagBulletinStatus3,63,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagBulletinStatus4,64,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagBulletinStatus5,65,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagBulletinStatus6,66,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SubdivisionFromUID,67,,19,19,0,3,1,2|0|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SubdivisionFromName,68,,19,3,16,2,9,SAN DIEGO|ESCONDIDO,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SubdivisionToUID,69,,19,19,0,3,1,2|0|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SubdivisionToName,70,,19,3,16,2,9,SAN DIEGO|ESCONDIDO,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PersonRequesting,71,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DispatchPointFromUID,72,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DispatchPointFromName,73,,19,16,3,1,14,Dispatch Point,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DispatchPointToUID,74,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DispatchPointToName,75,,19,16,3,1,14,Dispatch Point,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrackNameList,76,,19,19,0,3,10,Mt1|All Tracks|Main,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,FlagDisplayInfo,77,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainMessageExpedite,78,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainSpeedExpedite,79,,19,19,0,4,2,75|35|0|15,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainSpecific,80,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrainSymbol,81,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,BulletinComments,82,,19,2,17,2,52,EASTBOUND FLAGS ARE DISPLAYED ON THE LEFT HAND SIDE.|SHORT FLAG AT MP 267.00,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ReasonCode,83,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ActivatedTime,84,,19,19,0,19,22,2025-10-25 오전 4:01:00|2025-10-25 오전 4:03:00|2026-03-23 오후 3:52:00|2026-03-23 오후 4:25:00|2026-03-23 오후 4:27:00|2024-07-19 오전 12:40:00|2026-01-29 오후 6:23:00|2026-02-01 오전 1:05:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DateExceptions,85,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CrossingProtectionItem,86,,19,1,18,1,61,Automatic Crossing Warning Device False Or Partial Activation,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CrossingProtectionReason,87,,19,1,18,1,23,Malfunctioning Crossing,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CrossingName,88,,19,1,18,1,14,VALLEY PARKWAY,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CrossingDOT,89,,19,1,18,1,7,026737W,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,BulletinReadData,90,,19,19,0,19,1221,"Bulletin <300>|<San Diego> Sub|Between MP < 259.9 > And MP < 260.1 >|<75> MPH Psgr Trains|<30> MPH Freight Trains|<Mt1> ||<Eastbound Flags Are Displayed On The Left Hand Side. >||Bulletin <301>|<San Diego> Sub|Between MP < 265.0 > And MP < 266.0 >|<35> MPH|<All Tracks>||<Short Flag At Mp 267.00 >||Bulletin <457>|<Escondido> Sub|<On March 24 >|<From 0700 Until 1530>|Between MP < 110.0> And MP < 111.4>|<All Tracks>|<Foreman S Cassell>||Bulletin <458>|<San Diego> Sub|<On March 24 >|<From 0630 Until 1700>|Between MP < 233.7> And MP < 235.4>|<All Tracks>|<Foreman J. Vincent>||Bulletin <459>|<San Diego> Sub|<On March 24 >|<From 0630 Until 1600>|Between MP < 243.9> And MP < 245.8>|<Main> Track|<Foreman G. Gwin>||Bulletin <526>|<San Diego> Sub|AT MP 244.3 WESTBOUND WHISTLE BOARD SIGN WAS |REMOVED DUE TO CONSTRUCTION. ||Bulletin <533>|<San Diego> Sub|MP 216.28 CP DON SWITCH NUMBER 1X IS TAGGED OUT OF |SERVICE WITH POINT CLAMP LINED FOR MAIN TRACK |MOVEMENT PER MOS. | |MP 231.34 SDGE SWITCH IS TAGGED OUT OF SERVICE, |SPIKED AND LINED FOR MAIN TRACK TWO MOVEMENT. | |MP 251.1 TO MP 251.3 BARRIER ON RIGHT OF WAY FOR |ROAD CLOSURE, ON ACCOUNT OF EROSION. | |MP 265.6 WASHINGTON STREET WYE EAST LEG IS TAGGED |OUT OF SERVICE, SPIKED AND LINED FOR MAIN TRACK |TWO MOVEMENT. ||Bulletin <535>|<San Diego> Sub|NORTH COUNTY TRANSIT - SAN DIEGO RAILROAD (NCTD) |IS CURRENTLY OPERATING UNDER THE GENERAL CODE OF |OPERATING RULES (GCOR), NINTH EDITION, OCTOBER 8, |2025, AT 0001. | |BEGINNING SUNDAY, FEBRUARY 01, 2026, AT 0001 |HOURS, GENERAL ORDER #8S IS IN EFFECT. |",exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelledBulletin,91,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelledByPerson,92,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelledTimeStamp,93,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrackBlocked,94,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,TrackOutOfService,95,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,GeneralInformationTGBO,96,,19,19,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,GeneralInformationDOB,97,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,BulletinInitialedByList,98,,19,19,0,7,3,RJB|SME|MLF|EMW|EAA|GC|DJG,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PTCComponents,99,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PTCTrackSegments,100,,19,15,4,15,3190,300;SAN DIEGO;259.9;;260.1;;;MT1;2;TRUE|301;SAN DIEGO;265;;266;;;MT2;2;TRUE|301;SAN DIEGO;265;;266;;;MT1;2;TRUE|301;SAN DIEGO;265.1499;;265.2493;;;XO;2;TRUE|458;SAN DIEGO;234.3922;;235.4;;;MAIN;2;TRUE|458;SAN DIEGO;234.3881;;234.5023;;;TO;2;TRUE|458;SAN DIEGO;233.7;;234.3881;;;MT1;2;TRUE|458;SAN DIEGO;233.7;;234.3922;;;MT2;2;TRUE|459;SAN DIEGO;243.9;;245.8;;;MAIN;2;TRUE|459;SAN DIEGO;243.9;;243.9551;;;TO;2;TRUE|526;SAN DIEGO;0;;0;;;NONE;2;TRUE|533;SAN DIEGO;0;;0;;;NONE;2;TRUE|535;SAN DIEGO;0;;0;;;NONE;2;TRUE|536;ESCONDIDO;0;;0;;;NONE;1;TRUE,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PTCBulletinText,101,,19,19,0,19,1220,"Track Bulletin No 300|San Diego Sub|Between MP 259.9 And MP 260.1 |75 MPH Psgr Trains|30 MPH Freight Trains|Mt1|Eastbound Flags Are Displayed On The Left Hand Side. ||Track Bulletin No 301|San Diego Sub|Between MP 265.0 And MP 266.0 |35 MPH|All Tracks|Short Flag At Mp 267.00 ||Track Bulletin No 457|Escondido Sub|On March 24 |From 0700 Until 1530|Between MP 110.0 And MP 111.4|All Tracks|Foreman S Cassell||Track Bulletin No 458|San Diego Sub|On March 24 |From 0630 Until 1700|Between MP 233.7 And MP 235.4|All Tracks|Foreman J. Vincent||Track Bulletin No 459|San Diego Sub|On March 24 |From 0630 Until 1600|Between MP 243.9 And MP 245.8|Main Track|Foreman G. Gwin||Track Bulletin No 526|San Diego Sub|AT MP 244.3 WESTBOUND WHISTLE BOARD SIGN WAS |REMOVED DUE TO CONSTRUCTION. ||Track Bulletin No 533|San Diego Sub|MP 216.28 CP DON SWITCH NUMBER 1X IS TAGGED OUT OF |SERVICE WITH POINT CLAMP LINED FOR MAIN TRACK |MOVEMENT PER MOS. | |MP 231.34 SDGE SWITCH IS TAGGED OUT OF SERVICE, |SPIKED AND LINED FOR MAIN TRACK TWO MOVEMENT. | |MP 251.1 TO MP 251.3 BARRIER ON RIGHT OF WAY FOR |ROAD CLOSURE, ON ACCOUNT OF EROSION. | |MP 265.6 WASHINGTON STREET WYE EAST LEG IS TAGGED |OUT OF SERVICE, SPIKED AND LINED FOR MAIN TRACK |TWO MOVEMENT. ||Track Bulletin No 535|San Diego Sub|NORTH COUNTY TRANSIT - SAN DIEGO RAILROAD (NCTD) |IS CURRENTLY OPERATING UNDER THE GENERAL CODE OF |OPERATING RULES (GCOR), NINTH EDITION, OCTOBER 8, |2025, AT 0001. | |BEGINNING SUNDAY, FEBRUARY 01, 2026, AT 0001 |HOURS, GENERAL ORDER #8S IS IN EFFECT. |",exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MilePostBeginPrefix,102,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MilePostEndPrefix,103,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,HeadEndRestrictionOnly,104,,19,19,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PTCCompositionCRC,105,,19,19,0,16,10,31917109|4208241710|0|1893411913|3536691502|3448799745|2330573059|2519348328,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ObjectCRC,106,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,SystemWideBulletin,107,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,NonBlockingBulletin,108,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CorrelatingRestrictionUID,109,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelReason,110,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,OnBoardCRC,111,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelledBulletinUID,112,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelledBulletinGUID,113,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelledBulletinCRC,114,,19,19,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,IsNonControlledTrack,115,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,BulletinDirection,116,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,MobileID,117,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DelayCode,118,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DelayExcused,119,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,OnTrain,120,,19,19,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CreateRequestedBy,121,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,CancelRequestedBy,122,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,DCActivity,123,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,AssociatedIncidentReport,124,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,AutoBlockUID,125,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,AutoBlockWarning,126,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,IsPTC,127,,19,19,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ModifiedBulletinGuid,128,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ModifiedBulletinNum,129,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ModifiedBulletinVerbiage,130,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,ModifiedBy,131,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RICBulletinCRC,132,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,RICBulletinCancellationCRC,133,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PTCReference,134,,19,0,19,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PTCStatus,135,,19,19,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,PassengerOnlySpeedRestriction,136,,19,19,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblSystemBulletins,Version,137,,19,17,2,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.bulletin_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,TrainSheetGUID,1,,130,130,0,11,36,04D05968-BFE2-4675-8D05-3C9F8798FF3A|BA89992B-4F97-45B7-ABAD-198609FF62CB|D9A854AF-E94F-41A3-8AFC-E35F76690015|E6786EA2-0E2D-45EC-8E88-B13391C2D086|48A78D62-D53A-490E-A8F5-E00230A4255C|77D8A7B5-ADA8-4298-9033-38E7C495927D|CA826A71-EDF6-4CA5-933A-AF1B5FF60D2F|8514F930-F700-4EC8-9D3C-12D8A8044FF6,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,OsPoint,2,,130,130,0,40,13,LOOP EAST|HOLDOUT|YARD|LOOP WEST|SWAMI|MISSY|PONTO|FARR,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,OsTime,3,,130,130,0,130,22,2026-03-24 오전 2:04:13|2026-03-24 오전 1:32:25|2026-03-24 오전 1:31:10|2026-03-23 오후 11:41:37|2026-03-23 오후 11:39:48|2026-03-23 오후 11:35:19|2026-03-23 오후 11:31:57|2026-03-23 오후 11:28:50,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,TrackGUID,4,,130,130,0,52,6,200380|200100|200426|200312|100346|200292|100330|100760,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,SubName,5,,130,130,0,2,9,ESCONDIDO|SAN DIEGO,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,ReportData,6,,130,130,0,130,176,RCAL0253 23|3/24/2026 02:04:13|0|7|215|505||BNSF 171;|LOOP EAST|200019||NONE|0|BNSF 154|NONE||RCAL0253 23|3/24/2026 01:32:25|0|7|215|505||BNSF 171;|HOLDOUT|200026||NONE|0|BNSF 154|NONE||RCAL0253 23|3/24/2026 01:31:10|0|7|215|505||BNSF 171;|YARD|200027||NONE|0|BNSF 154|NONE||RCAL0253 23|3/23/2026 23:41:37|4|0|530|358||BNSF 154;|YARD|200027||NONE|0|BNSF 171|NONE||RCAL0253 23|3/23/2026 23:39:48|4|0|530|358||BNSF 154;|HOLDOUT|200026||NONE|0|BNSF 171|NONE||RCAL0253 23|3/23/2026 23:35:19|4|0|530|358||BNSF 154;|LOOP EAST|200019||NONE|0|BNSF 171|NONE||RCAL0253 23|3/23/2026 23:31:57|4|0|530|358||BNSF 154;|LOOP WEST|200017||NONE|0|BNSF 171|NONE||VSBDSDG4 23|3/23/2026 23:28:50|0|56|2878|5400||BNSF 6142;|SWAMI|100019||NONE|0|BNSF 8368|NONE|,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,RecordGUID,7,,130,130,0,130,36,CA07F57F-1071-4BB9-B6A9-A727C8AE2A01|AEA2CE6E-0968-4E67-AD52-83F9519545D7|5EE26B7E-F06D-489F-B9D7-E21013B149C3|1CA31C4B-E798-4E8C-9840-BC134BFCBF11|44A3353D-E531-4AEF-9566-ADDD7199CD71|21169C20-B0E7-4D8E-AEE6-1525210D3FFC|5D5434D0-938B-4849-B18C-A49B1ED1F04A|E9B8C840-1EA5-4574-9913-CB69020DE1E7,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,Direction,8,,130,0,130,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainOsEventsActive,EventCreator,9,,130,130,0,6,23,"CANADA, GLORIA {GC}|ANDROVICH, ERINA {EAA}|VUNCANNON, KRYSTAL {KV}|GEDDES, DEBBIE {DJG}|EVANS, SHALENE {SME}|BRIDGES, ROSEMARY {RJB}",exports\raw\sql_foundation\tmdsDatabaseDynamic.os_event_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Symbol,1,,310,310,0,310,18,A1562|A1591|A1765|A1769|A1770|A1774|A1777|A1784,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngineID,2,,310,116,194,48,10,X|AMTK 6904|AMTK 6908|BNSF 6161|BNSF 6562|NCTC 2304|NCTC 2309|NCTC 5001,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,InUsed,3,,310,310,0,2,1,0|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Subdivision,4,,310,310,0,4,4,NONE|2|0|1,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TerritoryAssignmentID,5,,310,310,0,3,3,0|100|200,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrackGUID,6,,310,310,0,12,6,0|100921|100156|200578|200859|200861|100449|100153,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,OsEvents,7,,310,204,106,6,21,NONE|NOT AVAILABLE|22:52 (ESCONDIDO JCT)|02:04 (LOOP EAST)|14:23 (YARD)|23:28 (SWAMI),exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SymbolComment,8,,310,198,112,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Direction,9,,310,309,1,3,6,WEST|EAST|NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CallTime,10,,310,310,0,127,22,2025-06-07 오전 12:01:00|2026-03-24 오전 12:01:00|2026-03-24 오전 12:54:00|2023-07-24 오전 12:01:00|2024-09-09 오전 12:01:00|2023-04-29 오전 12:01:00|2023-03-20 오전 12:01:00|2025-01-14 오전 7:00:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Units,11,,310,67,243,26,44,CDTX 2118||CDTX 2110||BNSF 6735||NCTC 5002||NCTC 5001||NCTC 2309||NCTC 5005||NCTC 2308|,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,UnitComment,12,,310,198,112,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DepTime,13,,310,310,0,165,22,2025-06-07 오전 4:50:00|2026-03-24 오전 4:20:00|2026-03-24 오전 5:20:00|2026-03-24 오전 12:00:00|2023-07-24 오후 2:31:00|2026-03-24 오전 4:31:00|2026-03-24 오전 4:50:00|2024-09-09 오전 8:50:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,ArrTime,14,,310,310,0,161,22,2025-06-07 오전 5:20:00|2026-03-24 오전 4:50:00|2026-03-24 오전 5:50:00|2026-03-24 오전 12:00:00|2023-07-24 오후 3:01:00|2026-03-24 오전 5:01:00|2026-03-24 오전 5:20:00|2024-09-09 오전 9:20:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,FinalTime,15,,310,310,0,62,22,2025-06-07 오전 12:01:00|2026-03-24 오전 12:01:00|1900-01-01 오전 12:00:00|2023-07-24 오전 12:01:00|2024-09-09 오전 12:01:00|2023-04-29 오전 12:01:00|2023-03-20 오전 12:01:00|2024-06-25 오전 2:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,OLoads,16,,310,310,0,11,2,0|6|1|40|2|3|4|7,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,OEmts,17,,310,310,0,5,2,0|40|7|56|43,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,OTons,18,,310,310,0,18,4,0|565|49|4500|178|267|356|64,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,OLength,19,,310,310,0,17,4,0|582|94|5280|327|412|497|138,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DLoads,20,,310,310,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DEmts,21,,310,310,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DTons,22,,310,310,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DLength,23,,310,310,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,MaxSpd,24,,310,310,0,4,2,0|90|55|30,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,HorsePowerTrailing,25,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TonsPerOperativeBrake,26,,310,310,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,HazMat,27,,310,310,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,HighWide,28,,310,310,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Origin,29,,310,198,112,6,11,LOS ANGELES|SAN DIEGO|OCEANSIDE|SMF|OTC|SONGS,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Dest,30,,310,198,112,7,11,SAN DIEGO|LOS ANGELES|OCEANSIDE|OTC|SONGS|SMF|EASTBROOK,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EOTD,31,,310,198,112,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,HOTD,32,,310,198,112,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngName,33,,310,166,144,48,26,"BOBOWICZ, K|BORREGO, D|ALVAREZ, E.|BANCROFT, GEORGE|CULP, C.S|LESINSKI, D|BOWLER, E|SMITH, A",exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngOnDuty,34,,310,310,0,62,22,1900-01-01 오전 12:00:00|2026-03-24 오전 4:20:00|2026-03-24 오전 6:20:00|2026-03-24 오전 1:01:00|2026-03-24 오전 4:06:00|2026-03-24 오후 1:11:00|2026-03-24 오후 4:01:00|2026-03-24 오전 11:10:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngTimeUp,35,,310,310,0,62,22,1900-01-01 오전 12:00:00|2026-03-24 오후 4:20:00|2026-03-24 오후 6:20:00|2026-03-24 오전 1:01:00|2026-03-24 오후 4:06:00|2026-03-25 오전 1:11:00|2026-03-25 오전 4:01:00|2026-03-24 오후 11:10:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondName,36,,310,188,122,50,17,"PIERCE, N|WILLIAMS, K.|CAMERON, D|LAPP, E|MUNOZ, M|SANDLIN, JAVON|BENAVIDES, B|PITTS, R.",exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondOnDuty,37,,310,310,0,62,22,1900-01-01 오전 12:00:00|2026-03-24 오전 4:20:00|2026-03-24 오전 6:20:00|2026-03-24 오전 1:01:00|2026-03-24 오전 4:06:00|2026-03-24 오후 1:11:00|2026-03-24 오후 4:01:00|2026-03-24 오전 11:10:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondTimeUp,38,,310,310,0,62,22,1900-01-01 오전 12:00:00|2026-03-24 오후 4:20:00|2026-03-24 오후 6:20:00|2026-03-24 오전 1:01:00|2026-03-24 오후 4:06:00|2026-03-25 오전 1:11:00|2026-03-25 오전 4:01:00|2026-03-24 오후 11:10:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DelayInfo,39,,310,198,112,2,5,NONE|NONE|,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrackBull,40,,310,198,112,2,5,NONE|NONE|,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,BadOrderSetOuts,41,,310,198,112,2,5,NONE|NONE|,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngNameRel,42,,310,310,0,2,4,NONE|----,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngOnDutyRel,43,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngTimeUpRel,44,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondNameRel,45,,310,310,0,2,4,NONE|----,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondOnDutyRel,46,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondTimeUpRel,47,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainSheetEvents,48,,310,198,112,2,5,NONE|NONE|,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngNameP,49,,310,310,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngOnDutyP,50,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngTimeUpP,51,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondNameP,52,,310,310,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondOnDutyP,53,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondTimeUpP,54,,310,310,0,97,22,2025-06-07 오전 12:01:00|2026-03-24 오전 1:22:00|2026-03-24 오전 1:23:00|2026-03-24 오전 1:01:00|2023-07-24 오전 12:01:00|2026-03-24 오전 1:25:00|2024-09-09 오전 12:01:00|2026-03-24 오전 12:01:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,UnitsP,55,,310,122,188,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EngineIDP,56,,310,122,188,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Helper,57,,310,310,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,KeyTrain,58,,310,310,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainGUID,59,,310,310,0,310,36,3b566cc0-3c57-443d-adc5-638fb70b2a57|58cf8215-e7ae-4ade-b62c-54256889d173|ec1441cd-e222-402f-a564-2f5aec8c1f41|138a6e91-1eba-4460-95c8-5719d931c0fb|e7a99ab5-f41c-4049-b9c3-15da813132fd|cac9eb6d-d08d-4058-88ac-795faccf539f|5edd5427-9eaf-4a74-b2c3-e5528d09cc3f|1abd45a8-0864-4d2c-9fba-2f706479b2d4,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TotalHP,60,,310,310,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,ScheduleStatus,61,,310,198,112,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLink,62,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrailingHorsePower,63,,310,310,0,19,8,0|07.8|07.1|89.8|02.0|24.7|16.5|12.4,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,StackOrder,64,,310,310,0,36,2,0|3|4|5|2|7|6|9,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainType,65,,310,309,1,4,8,COMMUTER|FREIGHT|UNKNOWN|HYBRID,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SpecialNote,66,,310,310,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,PseudoName,67,,310,310,0,307,18,A1562|A1591|A1765|A1769|A1770|A1774|A1777|A1784,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SubType,68,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CBTCEquipped,69,,310,310,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TimeTableID,70,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,HomeRoadUID,71,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CurrentGTBUID,72,,310,171,139,24,4,0|2058|2097|2430|2215|2829|2446|2169,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,GTBActive,73,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,GTBTimeIssued,74,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,GTBStationID,75,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,GTBStateID,76,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,PTCStatus,77,,310,4,306,2,8,ACTIVE|INACTIVE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,ActiveSubTrainSheet,78,,310,310,0,310,36,19762813-9435-4360-882F-211D8FA2C1C2|5FFB59ED-874D-4F19-876F-E8B9D0A433E5|622AC4BA-7DE9-4C63-888E-9A6714F771DC|B449A393-1978-4930-BE67-9A155BE884A1|24847DAF-BC12-4A6C-A141-029CD9516703|50D3BDAC-5998-40DC-8E70-B7447C1F6C9A|C03B4C47-4C8E-408D-B794-9455C65AC3FA|CB4C47C1-2A53-4452-AF8C-8BBE9FB86FC4,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondName2,79,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondOnDuty2,80,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondTimeUp2,81,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondName3,82,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondOnDuty3,83,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CondTimeUp3,84,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CrewCurrent,85,,310,310,0,66,438,"NONE|Engineer|NONE|NONE|NONE;NONE|Conductor|NONE|NONE|NONE;NONE|ConductorTwo|NONE|NONE|NONE;NONE|ConductorThree|NONE|NONE|NONE;NONE|BrakeMan|NONE|NONE|NONE;NONE|BrakeManTwo|NONE|NONE|NONE;NONE|BrakeManThree|NONE|NONE|NONE;NONE|EngineerTrainee|NONE|NONE|NONE;NONE|ConductorTrainee|NONE|NONE|NONE0000|BOBOWICZ, K|Engineer|03-24-26 04:20|03-24-26 16:20|NONE|||0|;PIERCE, N|Conductor|03-24-26 04:20|03-24-26 16:20|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000|BORREGO, D|Engineer|03-24-26 06:20|03-24-26 18:20|NONE|||0|;WILLIAMS, K.|Conductor|03-24-26 06:20|03-24-26 18:20|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000|ALVAREZ, E.|Engineer|03-24-26 06:20|03-24-26 18:20|NONE|||0|;CAMERON, D|Conductor|03-24-26 06:20|03-24-26 18:20|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000|BANCROFT, GEORGE|Engineer|NONE|NONE|NONE|||0|;LAPP, E|Conductor|NONE|NONE|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000|CULP, C.S|Engineer|03-24-26 04:06|03-24-26 16:06|NONE|||0|;MUNOZ, M|Conductor|03-24-26 04:06|03-24-26 16:06|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000|LESINSKI, D|Engineer|03-24-26 13:11|03-25-26 01:11|NONE|||0|;SANDLIN, JAVON|Conductor|03-24-26 13:11|03-25-26 01:11|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000|BOWLER, E|Engineer|03-24-26 16:01|03-25-26 04:01|NONE|||0|;BENAVIDES, B|Conductor|03-24-26 16:01|03-25-26 04:01|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000",exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CrewRelief,86,,310,310,0,3,344,NONE|Engineer|NONE|NONE|NONE;NONE|Conductor|NONE|NONE|NONE;NONE|ConductorTwo|NONE|NONE|NONE;NONE|ConductorThree|NONE|NONE|NONE;NONE|BrakeMan|NONE|NONE|NONE;NONE|BrakeManTwo|NONE|NONE|NONE;NONE|BrakeManThree|NONE|NONE|NONE;NONE|EngineerTrainee|NONE|NONE|NONE;NONE|ConductorTrainee|NONE|NONE|NONE0000|----|Engineer|NONE|NONE|NONE|||0|;----|Conductor|NONE|NONE|NONE|||0|;----|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;----|BrakeMan|NONE|NONE|NONE|||0|;----|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;----|EngineerTrainee|NONE|NONE|NONE|||0|;----|ConductorTrainee|NONE|NONE|NONE|||0|0000|NONE|Engineer|NONE|NONE|NONE|||0|;NONE|Conductor|NONE|NONE|NONE|||0|;NONE|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;NONE|BrakeMan|NONE|NONE|NONE|||0|;NONE|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;NONE|EngineerTrainee|NONE|NONE|NONE|||0|;NONE|ConductorTrainee|NONE|NONE|NONE|||0|0000,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CrewPending,87,,310,310,0,2,344,NONE|Engineer|NONE|NONE|NONE;NONE|Conductor|NONE|NONE|NONE;NONE|ConductorTwo|NONE|NONE|NONE;NONE|ConductorThree|NONE|NONE|NONE;NONE|BrakeMan|NONE|NONE|NONE;NONE|BrakeManTwo|NONE|NONE|NONE;NONE|BrakeManThree|NONE|NONE|NONE;NONE|EngineerTrainee|NONE|NONE|NONE;NONE|ConductorTrainee|NONE|NONE|NONE0000|NONE|Engineer|NONE|NONE|NONE|||0|;NONE|Conductor|NONE|NONE|NONE|||0|;NONE|ConductorTwo|NONE|NONE|NONE|||0|;NONE|ConductorThree|NONE|NONE|NONE|||0|;NONE|BrakeMan|NONE|NONE|NONE|||0|;NONE|BrakeManTwo|NONE|NONE|NONE|||0|;NONE|BrakeManThree|NONE|NONE|NONE|||0|;NONE|EngineerTrainee|NONE|NONE|NONE|||0|;NONE|ConductorTrainee|NONE|NONE|NONE|||0|0000,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CrewLists,88,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SecondaryInUsed,89,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SecondarySubID,90,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SecondaryTerrID,91,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SecondaryTrackGUID,92,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SecondaryStackOrder,93,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SubdvnGeoReference,94,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainSheetRoute,95,,310,198,112,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,LocomotiveTotalTonnage,96,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DPLocomotiveList,97,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,MiscellanousInfoOne,98,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,MiscellanousInfoTwo,99,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,MiscellanousInfoThree,100,,310,2,308,1,9,ESCONDIDO,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,HomeRoadCode,101,,310,310,0,6,5,AMTK|BNSF|NCTC|NCTS|SCAX|SCRRA,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,FlashSymbol,102,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,AutomaticModeOn,103,,310,6,304,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,PriorityCode,104,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,PullerTrain,105,,310,188,122,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLegRoutePointGUIDs,106,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLegConsistGUIDs,107,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLegCrewGUIDs,108,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLegLocoGUIDs,109,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLegID,110,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLegName,111,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainLegStatus,112,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,GhostTrain,113,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TGBOLimits,114,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,AuthorityDesignation,115,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CurrentConsistData,116,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,LocoConsistData,117,,310,113,197,51,209,X|4400|4400|R|FORWARD|1|False|4||AMTK 6904|0|0|I|FORWARD|1|True|4|;CDTX 2118|4000|4000|R|FORWARD|1|True|4||AMTK 6908|0|0|I|FORWARD|1|True|4|;CDTX 2110|4000|4000|R|FORWARD|1|True|4||BNSF 6161|4400|4400|R|FORWARD|1|True|4||BNSF 6562|4400|4400|R|FORWARD|1|True|4|4;BNSF 6735|4400|4400|R|FORWARD|1|True|4|4|NCTC 2304|0|0|I|FORWARD|1|True|4|;NCTC 5002|4400|4400|R|FORWARD|1|True|4||NCTC 2309|0|0|I|FORWARD|1|True|4|;NCTC 5001|4400|4400|R|FORWARD|1|True|4||NCTC 5001|4400|4400|R|FORWARD|1|True|4|;NCTC 2309|0|0|R|FORWARD|1|True|4|,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EventTimesdata,118,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainlegNotes,119,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TGBONumber,120,,310,5,305,5,4,2330|2329|2327|2324|2309,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TGBOStatus,121,,310,5,305,1,6,ACTIVE,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CTCAuthorityDesignation,122,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,LocationInformation,123,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,FuelInformation,124,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,ConversationNotes,125,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,EntityUID,126,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,NumberOperatingBrakes,127,,310,181,129,11,2,6|1|40|2|3|4|0|7,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,NumberOfAxles,128,,310,181,129,13,3,28|32|8|168|16|20|24|4,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CrewRelease,129,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,PTCAggregateCRC,130,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainIsNotActive,131,,310,112,198,1,5,False,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SchDepTime,132,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SchArrTime,133,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainConsistInformationForPTC,134,,310,188,122,30,41,COMMUTER;FORWARD;565;28;6;582;6;0;90|COMMUTER;FORWARD;565;32;6;582;6;0;90|COMMUTER;FORWARD;565;28;6;582;6;0;0|FREIGHT;FORWARD;49;8;1;94;1;0;55|FREIGHT;FORWARD;4500;168;40;5280;40;0;55|COMMUTER;FORWARD;178;16;2;327;2;0;90|COMMUTER;FORWARD;267;20;3;412;3;0;90|COMMUTER;FORWARD;356;24;4;497;4;0;90,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,LocomotiveConsistInformationForPTC,135,,310,116,194,51,156,X;1;215;RUN;75;4400|AMTK 6904;1;171444;ISOLATE;85;0|CDTX 2118;1;264556;RUN;72;4000|AMTK 6908;1;171444;ISOLATE;85;0|CDTX 2110;1;264556;RUN;72;4000|BNSF 6161;1;420000;RUN;74;4400|BNSF 6562;1;420000;RUN;74;4400|BNSF 6735;1;420000;RUN;74;4400|NCTC 2304;1;122000;ISOLATE;85;0|NCTC 5002;1;271000;RUN;72;4400|NCTC 2309;1;122000;ISOLATE;85;0|NCTC 5001;1;271000;RUN;72;4400|NCTC 5001;1;271000;RUN;72;4400|NCTC 2309;1;122000;RUN;85;0,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,LocomotiveConsistsInformationMIS,136,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,GrossTons,137,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,GrossLength,138,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,HOS,139,,310,188,122,1,22,2013-08-24 오전 12:00:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TotalCars,140,,310,188,122,13,2,6|1|40|2|3|4|0|7,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,VIA,141,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Release,142,,310,188,122,1,22,2013-08-24 오전 12:00:00,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TestTrainPTC,143,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,LocomotiveMISInformation,144,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainSymbolLink,145,,310,196,114,145,12,07|A179007|A156207|A177007|A177407|A178407|A57324|A77724,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,CrewCodeUID,146,,310,194,116,70,6,ATK175|ATK159|ATK179|ATK177|ATK185|ATK400|ATK405|ATK460,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,ConsistCodeUID,147,,310,194,116,70,3,175|159|179|177|185|400|405|460,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,BulletinRouteCode,148,,310,198,112,2,9,SANDIE|METROLINK,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,ComplianceStatus,149,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,StagingOrigin,150,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,StagingDest,151,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,ScheduleType,152,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,isPublic,153,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,VATPTime,154,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,Annulled,155,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TOPSImport,156,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,SuperTrain,157,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DGrossTons,158,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,DGrossLength,159,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,IsForeignTrain,160,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseDynamic,tblTrainsActive,TrainRestrictionTypes,161,,310,0,310,0,0,,exports\raw\sql_foundation\tmdsDatabaseDynamic.active_train_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,CodelineNumber,1,,27,27,0,27,2,1|2|3|5|6|7|8|9,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,NormalCodeserverName,2,,27,27,0,3,8,TEST|CODE-02A|CODE-01A,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,StandbyCodeserverName,3,,27,27,0,3,8,TEST|CODE-02B|CODE-01B,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,CodeLineLimits,4,,27,27,0,27,18,OCEAN TO SCHOOL|MELROSE TO PALOMAR|LOOP WEST TO AVO|CODE LINE LIMITS|CP OCEAN|CP RAILROAD|CP WYE|CROUCH STATION,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,AddressATCS,5,,27,27,0,2,10,2022000000|0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,PacketSwitchPIP,6,,27,27,0,2,13,127.0.0.1|172.20.20.218,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,PacketSwitchSIP,7,,27,27,0,2,13,127.0.0.1|172.20.20.219,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,PacketSwitchPPort,8,,27,27,0,2,4,0|5505,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,PacketSwitchSPort,9,,27,27,0,2,4,0|5505,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,CodeLineName,10,,27,27,0,27,7,CDLN-1|CDLN-2|CDLN-3|CDLN-5|CDLN-6|CDLN-7|CDLN-8|CDLN-9,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,LegacyType,11,,27,27,0,2,7,GENESYS|ATCS,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,PacketSwitchPName,12,,27,27,0,3,8,NONE|WCC 3713|CP OCEAN,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,PacketSwitchSName,13,,27,27,0,3,8,NONE|WCC 3714|CP OCEAN,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,SetupParameterString,14,,27,27,0,2,19,5;28;28;28;3;3;3;5|5;28;28;28;3;3;3;5;,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,WNCPrimary,15,,27,27,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,WNCSecondary,16,,27,27,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,WNCProtocol,17,,27,27,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,LinkLayerType,18,,27,27,0,2,6,PORTAL|0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,LinkLayerProtocol,19,,27,27,0,2,3,TCP|0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,LinkLayerUID,20,,27,27,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,SessionProtocol,21,,27,27,0,2,7,GENESYS|0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,UseSecondaryPacketSwitch,22,,27,27,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,UseTimeOutPauseBetweenRecallsOnStartup,23,,27,27,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,SuppressConnection,24,,27,0,27,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeLines,StaleTimer,25,,27,0,27,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_line_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,CodeLineNumber,1,,50,50,0,24,2,5|6|7|8|9|10|11|12,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,ControlPointNumber,2,,50,50,0,50,6,100000|100001|100002|100003|100004|100005|100006|100007,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,CodeStationNumber,3,,50,50,0,1,1,1,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,LineOrder,4,,50,50,0,34,3,55|5|10|15|130|20|25|120,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,StationName,5,,50,50,0,50,16,CP CARL|CP SONGS|CP DON|CP PULGAS|CP CUDAHY|CP STUART|CP MESA|CP ROSE,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,ControlAddress,6,,50,50,0,50,14,73405050580202|73405050200202|73405050250202|73405050270202|73405050870202|73405050350202|73405050360202|73405050830202,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,IndicationAddress,7,,50,50,0,50,14,73405050580202|73405050200202|73405050250202|73405050270202|73405050870202|73405050350202|73405050360202|73405050830202,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NumberOfControls,8,,50,50,0,4,2,8|16|24|48,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NumberOfIndications,9,,50,50,0,4,2,16|24|40|48,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,SetupParameterString,10,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NetworkPortalPrimary,11,,50,23,27,23,7,PORT-48|PORT-46|PORT-44|PORT-42|PORT-40|PORT-38|PORT-36|PORT-34,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NetworkPortalSecondary,12,,50,23,27,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NetworkPortalTertiary,13,,50,23,27,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NetworkPortalAddress,14,,50,23,27,23,2,48|46|44|42|40|38|36|34,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,PrivateKey,15,,50,22,28,2,4,|NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NetworkPrimaryID,16,,50,23,27,23,2,48|46|44|42|40|38|36|34,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NetworkSecondaryID,17,,50,23,27,23,2,48|46|44|42|40|38|36|34,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,SBDMode,18,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,UID,19,,50,50,0,50,36,1BF3E9AB-2AB2-49C7-A800-33FA79CB3331|423EF1C3-695E-4D68-A6B5-6C90F5C01CE3|2C79ADD4-7922-4056-B52B-A978F50805E1|60FA44F1-7CD3-4558-82E4-4A29C95FFB4F|74ED128F-524D-4C4F-849F-BDB5AB99C24C|E8F0F55A-70CF-4D94-9CF9-B9B661379677|2CFCC3D7-BC23-4F7C-8F4D-C4C5A31EC623|A1D4CC0D-8197-4D5E-AEC8-3C8EE4234ACA,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,LayerFourAckProcessingEnable,20,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,ControlPointStatusProcessingEnabled,21,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,ManualDisableStation,22,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,EnableCRCCalculationPriorToMask,23,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,WaysideATCSAddress,24,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,WaysideEMPAddress,25,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,WaysideConfigurationCRC,26,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,WaysideSecurityKey,27,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,WaysideBeaconFlag,28,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,WebPollIntervalSeconds,29,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,NMSEnabled,30,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,WebPollTabName,31,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCodeStations,StationFailed,32,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.code_station_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,UID,1,,50,50,0,50,6,100000|100001|100002|100003|100004|100005|100006|100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ControlPoint,2,,50,50,0,50,6,100000|100001|100002|100003|100004|100005|100006|100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Name,3,,50,50,0,50,15,CARL|SONGS|DON|PULGAS|CUDAHY|STUART|MESA|ROSE,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Type,4,,50,50,0,1,1,N,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,LX,5,,50,50,0,45,4,1110|160|545|825|535|1150|1525|155,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,LY,6,,50,50,0,17,3,315|70|835|840|820|580|355|610,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,RX,7,,50,50,0,42,4,1235|365|605|910|840|1020|1215|400,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,RY,8,,50,50,0,36,4,455|125|500|885|205|1075|780|440,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,LeftLink,9,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,RightLink,10,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,LeftAltLink,11,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,RightAltLink,12,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AltLinkOne,13,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AltLinkTwo,14,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Codeline,15,,50,50,0,24,2,5|6|7|10|8|9|12|13,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND1,16,,50,50,0,50,12,9;1;100000|9;1;100001|18;1;100002|9;1;100003|18;1;100004|9;1;100005|9;1;100006|9;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND2,17,,50,50,0,50,12,8;1;100000|8;1;100001|17;1;100002|8;1;100003|17;1;100004|8;1;100005|8;1;100006|8;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND3,18,,50,50,0,50,12,13;1;100000|13;1;100001|20;1;100002|13;1;100003|20;1;100004|13;1;100005|13;1;100006|13;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND4,19,,50,50,0,50,12,11;1;100000|0;1;100001|19;1;100002|11;1;100003|19;1;100004|11;1;100005|0;1;100006|11;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND5,20,,50,50,0,50,12,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND6,21,,50,50,0,50,12,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND7,22,,50,50,0,50,12,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND8,23,,50,50,0,50,12,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND9,24,,50,50,0,50,12,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL1,25,,50,50,0,49,10,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND10,26,,50,50,0,50,12,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL2,27,,50,50,0,49,10,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND11,28,,50,50,0,49,13,0;0;100000;5|0;0;100001;5|0;0;100002;5|0;0;100003;5|0;0;100004;5|0;0;100005;5|0;0;100006;5|0;0;100007;5,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL3,29,,50,50,0,49,10,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND12,30,,50,50,0,49,13,0;0;100000;5|0;0;100001;5|0;0;100002;5|0;0;100003;5|0;0;100004;5|0;0;100005;5|0;0;100006;5|0;0;100007;5,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL4,31,,50,50,0,49,10,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIND13,32,,50,50,0,49,13,0;0;100000;5|0;0;100001;5|0;0;100002;5|0;0;100003;5|0;0;100004;5|0;0;100005;5|0;0;100006;5|0;0;100007;5,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AuthorityType,33,,50,50,0,1,3,CTC,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,TerritoryAssignment,34,,50,50,0,2,3,100|200,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Subdivision,35,,50,50,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,UniqueID,36,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,TTUID,37,,50,50,0,25,2,12|1|2|3|0|4|5|8,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,UniqueName,38,,50,50,0,1,4,NULL,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,TimeZone,39,,50,50,0,1,7,PACIFIC,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,GraphicGroup,40,,50,50,0,1,1,1,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ScreenRegion,41,,50,50,0,9,2,6|2|16|15|11|7|12|14,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Spare01,42,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Spare02,43,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Spare03,44,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Spare04,45,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Spare05,46,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Notes,47,,50,50,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,SlotSMControlOnIndication,48,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AllowStatusPublishing,49,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,EnableResendControlLogic,50,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ResendControlTime,51,,50,50,0,1,2,60,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AllowAutomaticMode,52,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AutomaticModeOn,53,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AllowSnowMelterTimer,54,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,SnowMelterTime,55,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AllowForceOperationsToTWC,56,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AllowControlPointCorrelation,57,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CorrelatingControlPointReferences,58,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,TemporalMode,59,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL5,60,,50,50,0,49,10,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL6,61,,50,48,2,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL7,62,,50,48,2,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL8,63,,50,48,2,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL9,64,,50,48,2,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL10,65,,50,48,2,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,TemporalModePointOfConflict,66,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Milepost,67,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,MilepostSuffix,68,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,MilepostPrefix,69,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AdditionalReferenceUID,70,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,MakeInVisible,71,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,DisableAutomaticSignalSlotting,72,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,SnowMelterTimeStampOn,73,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,TunnelAutomaticMode,74,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,TunnelAutomaticControlled,75,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ScadaTractionPowerControlPointMode,76,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ScadaCommunicationControlPointMode,77,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ScadaNonReportingModeControlled,78,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ScadaAlarmReportingIndicationBit,79,,50,50,0,50,10,0;1;100000|0;1;100001|0;1;100002|0;1;100003|0;1;100004|0;1;100005|0;1;100006|0;1;100007,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,DevicePTCUID,80,,50,1,49,1,24,CP Broadway|734050500695,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ControllingWorkstation,81,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ControllingWorkStationIPString,82,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,PTC_SiteName,83,,50,27,23,27,16,CP Carl|CP Songs|CP Don|CP Pulgas|CP Cudahy|CP Stuart|CP Mesa|CP Rose,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,PTC_SiteAddress,84,,50,27,23,27,20,nctc.w.505003:58.wiu|nctc.w.505001:20.wiu|nctc.w.505001:14.wiu|nctc.w.505001:27.wiu|nctc.w.505006:87.wiu|nctc.w.505002:18.wiu|nctc.w.505002:36.wiu|nctc.w.505005:83.wiu,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,PTC_SecurityKey,85,,50,27,23,3,48,C4590F7DF5E2F86AAA05FBC65BB7FB4E46AADBFB6B9ED3AD|785406149F59E3D55A0D26D955793349F5E7E63E9F3CA3E0|1335a0E9DFC77BFF270370241441407618EF2D37aB37C8E7,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,PTC_WIUID,86,,50,27,23,27,12,734050500358|734050500120|734050500114|734050500127|734050500687|734050500218|734050500236|734050500583,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,PTC_RailroadSCAC,87,,50,27,23,1,4,NCTC,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,PTC_UID_KEY,88,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPIndex,89,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,StartCompUID,90,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ConnectingCompUID,91,,50,50,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,Direction,92,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL11,93,,50,49,1,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL12,94,,50,49,1,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,CPCTL13,95,,50,49,1,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,RailroadUniqueIdentifierName,96,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,AlarmDisabledByOffice,97,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,SnowMelterControlledBy,98,,50,14,36,1,7,NOTHING,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,SnowMelterIndicateToOffice,99,,50,50,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ExpSlotTimerFlag,100,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ExpSlotIndFlag,101,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ExpSlotTimer,102,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ExpSlotCPUID,103,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,ExpSlotCPIND,104,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,DisableTrackFlooding,105,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompControlPoints,EnablePTC,106,,50,0,50,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.control_point_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,UID,1,,119,119,0,119,6,100270|100273|100290|100292|100358|100359|100360|100361,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,ControlPoint,2,,119,119,0,26,6,100011|100013|100008|100033|100001|200027|200004|200008,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,Name,3,,119,119,0,117,19,E CALL-ON|2W CALL-ON|4W CALL-ON|6W CALL-ON|2 E CALL-ON|4 E CALL-ON|TPOK|WBRQK,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,Type,4,,119,119,0,1,1,D,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,LX,5,,119,119,0,55,4,290|765|785|655|1820|1130|1695|755,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,LY,6,,119,119,0,53,3,395|402|442|362|962|885|995|845,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,RX,7,,119,119,0,90,4,305|700|780|800|1155|1170|1730|900,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,RY,8,,119,119,0,66,3,375|345|400|445|860|990|795|360,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,LeftLink,9,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,RightLink,10,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,LeftAltLink,11,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,RightAltLink,12,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,AltLinkOne,13,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,AltLinkTwo,14,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,Codeline,15,,119,119,0,22,2,5|27|8|11|13|14|15|16,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,CPIND1,16,,119,119,0,118,16,14;1;100011;0005|9;1;100013;0005|10;1;100013;0005|15;1;100013;0005|21;1;100008;0005|29;1;100033;0005|30;1;100033;0005|20;1;100008;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,CPIND2,17,,119,119,0,29,15,0;1;100011;0005|0;1;100013;0005|0;1;100008;0005|0;1;100033;0005|0;1;100001;0005|0;1;200027;0027|0;1;200027;27|0;1;200004;0001,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,CPIND3,18,,119,119,0,29,15,0;1;100011;0005|0;1;100013;0005|0;1;100008;0005|0;1;100033;0005|0;1;100001;0005|0;1;200027;0027|0;1;200027;27|0;1;200004;0001,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,CPCTL1,19,,119,119,0,30,12,0;1;100011;|0;1;100013;|0;1;100008;|0;1;100033;|9;1;100013;|0;1;100001;|33;1;200027;|0;1;200027;,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,CPCTL2,20,,119,119,0,28,12,0;1;100011;|0;1;100013;|0;1;100008;|0;1;100033;|0;1;100001;|32;1;200027;|0;1;200027;|31;1;200027;,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,CPCTL3,21,,119,119,0,26,11,0;1;100011;|0;1;100013;|0;1;100008;|0;1;100033;|0;1;100001;|0;1;200027;|0;1;200004;|0;1;200008;,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,TerritoryAssignment,22,,119,119,0,2,3,100|200,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,MatchMode,23,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,IndicateOnly,24,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,ControlOnly,25,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,FlashIndicate,26,,119,119,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,FlashControl,27,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,Color,28,,119,119,0,6,9,-256|-128|-1|-65536|-16711936|-4419697,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,TypeOfDevice,29,,119,119,0,4,12,IndicateOnly|ArrowLeft|ArrowRight|ControlOnly,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,Subdivision,30,,119,119,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,GraphicGroup,31,,119,119,0,1,1,1,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,ScreenRegion,32,,119,119,0,17,2,8|9|7|18|17|19|16|6,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,TrackGUID,33,,119,0,119,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,FontString,34,,119,119,0,2,33,Microsoft Sans Serif;Regular;8.25|Calibri;Regular;9,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,SecondaryText,35,,119,119,0,5,15,NONE;-1|WBRQK;-16711936|EBRLK;-16711936|ERQK;-16711936|LOCK;-1,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,DeviceControl,36,,119,119,0,1,3,;-;,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,ControlStatus,37,,119,5,114,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,Notes,38,,119,119,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,AlarmOnIndication,39,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,AlarmNotification,40,,119,0,119,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,SlotControlOnIndication,41,,119,0,119,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,InvertIndication,42,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,ManualOperateMode,43,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,AllowSnowMelterTimer,44,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,SnowMelterTime,45,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,ScadaMode,46,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,TrackInterlockMode,47,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,DisableSlotting,48,,119,119,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,RRUniqueIdentifierName,49,,119,0,119,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,ScadaSuppressTime,50,,119,119,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompMiscDevices,DeviceCategory,51,,119,0,119,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.misc_device_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,UID,1,,165,165,0,165,6,100121|100122|100123|100142|100143|100144|100148|100151,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,ControlPoint,2,,165,165,0,50,6,100001|100003|100002|100005|100006|100025|100009|100012,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Name,3,,165,165,0,41,18,E-SIGNAL|W-SIGNAL|65-SIGNAL|66-SIGNAL|2E-SIGNAL|2W-SIGNAL|4W-SIGNAL|4E-SIGNAL,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Type,4,,165,165,0,2,1,R|L,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,LX,5,,165,165,0,86,4,85|185|195|765|880|445|660|1275,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,LY,6,,165,165,0,45,4,185|165|115|135|205|225|695|675,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,RX,7,,165,165,0,90,4,345|445|890|990|760|975|1085|1175,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,RY,8,,165,165,0,98,4,200|180|140|575|555|515|245|225,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,LeftLink,9,,165,165,0,165,6,100189|100118|100120|100116|100139|100141|100339|100146,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,RightLink,10,,165,165,0,165,6,100117|100125|100126|100138|100886|100885|100115|100116,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,LeftAltLink,11,,165,165,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,RightAltLink,12,,165,165,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AltLinkOne,13,,165,165,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AltLinkTwo,14,,165,165,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Codeline,15,,165,165,0,24,2,5|6|7|8|11|10|9|12,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PIND,16,,165,165,0,128,16,5;1;100001;0005|7;1;100001;0005|5;1;100003;0005|7;1;100003;0005|5;1;100002;0005|6;1;100002;0005|23;1;100005;0005|7;1;100002;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PCTL,17,,165,165,0,128,32,5;1;100001;0005|0;1;100001;0005|7;1;100001;0005|0;1;100001;0005|5;1;100003;0005|0;1;100003;0005|7;1;100003;0005|0;1;100003;0005|5;1;100002;0005|0;1;100002;0005|6;1;100002;0005|0;1;100002;0005|23;1;100005;0005|0;1;100005;0005|7;1;100002;0005|0;1;100002;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SIND,18,,165,165,0,52,15,0;1;100001;0005|0;1;100003;0005|0;1;100002;0005|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005|0;1;100009;0005|0;1;100012;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SCTL,19,,165,165,0,51,31,0;1;100001;0005|0;1;100001;0005|0;1;100003;0005|0;1;100003;0005|0;1;100002;0005|0;1;100002;0005|0;1;100005;0005|0;1;100005;0005|0;1;100006;0005|0;1;100006;0005|0;1;100025;0005|0;1;100025;0005|0;1;100009;0005|0;1;100009;0005|0;1;100012;0005|0;1;100012;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,TIND,20,,165,165,0,50,15,0;1;100001;0005|0;1;100003;0005|0;1;100002;0005|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005|0;1;100009;0005|0;1;100012;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,TCTL,21,,165,165,0,50,31,0;1;100001;0005|0;1;100001;0005|0;1;100003;0005|0;1;100003;0005|0;1;100002;0005|0;1;100002;0005|0;1;100005;0005|0;1;100005;0005|0;1;100006;0005|0;1;100006;0005|0;1;100025;0005|0;1;100025;0005|0;1;100009;0005|0;1;100009;0005|5;1;100012;0005|0;1;100012;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AuthorityType,22,,165,165,0,1,3,CTC,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,TerritoryAssignment,23,,165,165,0,2,3,100|200,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Subdivision,24,,165,165,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,IndicateOnly,25,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Fleeting,26,,165,165,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Stacking,27,,165,165,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Blocking,28,,165,165,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,CallOn,29,,165,165,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,InTimeType,30,,165,165,0,2,9,INTIMEBIT|OPPOSING,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,InTimeBit,31,,165,165,0,78,11,10;1;100001|10;1;100003|11;1;100002|12;1;100005|12;1;100002|12;1;100006|11;1;100025|10;1;100009,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DrillSignal,32,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DrillType,33,,165,165,0,1,4,NULL,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DrillControl,34,,165,165,0,1,5,0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DrillStop,35,,165,165,0,1,5,0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DrillIndOne,36,,165,165,0,1,5,0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DrillIndTwo,37,,165,165,0,1,5,0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SignalBlockInd,38,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,BlockIndBit,39,,165,165,0,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AutoClearCount,40,,165,165,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PreferredRoutes,41,,165,165,0,1,4,NULL,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,CallOnBit,42,,165,165,0,9,16,0;0;0;0|12;1;100013;0005|14;1;100013;0005|10;1;100013;0005|8;1;100008;0005|22;1;100033;0005|6;1;100033;0005|6;1;100011;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,NoOpposingCheck,43,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SignalSlotting,44,,165,165,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,GraphicGroup,45,,165,165,0,1,1,1,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,ScreenRegion,46,,165,165,0,15,2,4|3|5|13|12|8|9|7,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,MatchMode,47,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,NoAlarmOnPending,48,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,MakeInVisible,49,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,ForceStopControl,50,,165,165,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SignalAspectIndications,51,,165,165,0,5,167,|||||||||||||||||||||0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0|0;0;0;0||||||||||||0;0;100008;0005||||||||||0;0;100008;0005|||||||||||||||||||||0;1;100008;0005||||||||||||||||||||,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,FleetControlBit,52,,165,165,0,50,15,0;1;100001;0005|0;1;100003;0005|0;1;100002;0005|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005|0;1;100009;0005|0;1;100012;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Notes,53,,165,165,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,HoldingSignal,54,,165,165,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SignalClearAheadCount,55,,165,165,0,2,1,3|0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AllowAutomaticMode,56,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AutomaticModeOn,57,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,IndicateOnlyWithControlSetEnabled,58,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SignalControlled,59,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,CallOnAllowedWithoutOpposingTraffic,60,,165,165,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,CallOnSendSignalClearBit,61,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PTCUID,62,,165,165,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,ToolTipName,63,,165,165,0,49,18,EA_B|WA|WB|2EA_B|2WA_B|4WA|4WC|4EA_B,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,JointControlAuthorizationEnabled,64,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,JointControlAuthorizationIndBit,65,,165,165,0,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,JointControlAuthorizationCtlBit,66,,165,165,0,1,15,0;0;0;0|0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,NearSideSignalEnabled,67,,165,165,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,NearSideSignalControlOn,68,,165,26,139,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,NearSideSignalBitControl,69,,165,165,0,25,16,0;0;0;0|12;1;200004;0008|7;1;200002;0007|4;1;200008;0011|4;1;200005;0009|6;1;200006;0012|4;1;200006;0012|6;1;200008;0011,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,NearSideSignaBitlIndication,70,,165,165,0,25,16,0;0;0;0|12;1;200004;0008|7;1;200002;0007|4;1;200008;0011|4;1;200005;0009|6;1;200006;0012|4;1;200006;0012|6;1;200008;0011,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,Milepost,71,,165,165,0,84,8,209.1186|209.219|218.1299|218.2336|218.2322|216.267|216.5195|221.6284,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,MilepostSuffix,72,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,MilepostPrefix,73,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AdditionalReferenceUID,74,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,CallOnControlled,75,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PublishStatusToPTC,76,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DevicePTCUID,77,,165,13,152,13,14,CP Pulgas|WB|CP Pulgas|WA|CP Broadway|ED|CP Broadway|EC|CP Broadway|EB|CP Broadway|EA|CP Broadway|W|CP Ash|4E,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AutomaticSignal,78,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DisableTrafficProjection,79,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,JointControlAuthorizationOfficeMode,80,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,JointControlAuthorizationOfficeModeRequested,81,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,JointControlAuthorizationOfficeModeConfirmed,82,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,EnableDynamicSignalRouteControlBit,83,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DynamicSignalRouteControlBitList,84,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,EnablePulseStopControl,85,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DynamicSignalRouteCallOnBitList,86,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PTC_UID_KEY,87,,165,101,64,85,3,96|119|145|99|127|3|12|24,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PTC_DeviceName,88,,165,101,64,33,5,E|WA|WB|EA_B|2EA_B|2WA_B|4WA|4WC,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PTC_ProperName,89,,165,101,64,22,12,EB MT|WB MT2|WB MT1|WA MT1|EB MT1|WB MT|WB Slide|EB MT2,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PTC_WIUStatusIndex,90,,165,101,64,24,2,2|12|7|8|13|19|24|18,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PTC_DeviceBlockID,91,,165,101,64,75,5,5000|7000|6000|5002|11005|10004|6001|6003,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,PTC_Enable_PSS,92,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SupressSignalStopWithOutOS,93,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DisableEntryExitFunction,94,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DisableStoreRouteFunction,95,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,RRUniqueIdentifierName,96,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,EnableAbsoluteBlockSignalRequest,97,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AlarmTime,98,,165,165,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,SuppressUnSolicitedSignalAlert,99,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,DISABLEBULLEXCEPTNCHK,100,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,BlueFlag,101,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,TrackPermit,102,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,FoulTime,103,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,TrackTime,104,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,TrackLock,105,,165,165,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AllowCallOnWithOutOccupancyInRoute,106,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSignals,AllowCallOnWithPendingClearRequest,107,,165,0,165,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.signal_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,UID,1,,99,99,0,99,6,100124|100145|100149|100150|100166|100168|100169|100187,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,ControlPoint,2,,99,99,0,40,6,100001|100003|100002|100005|100025|100009|100018|100013,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Name,3,,99,99,0,20,24,1-SWITCH|3-SWITCH|PONTO HOUSE TRACK|EDISON POWER PLANT|EAST LEG ESCONDIDO JCT|SDGE HOUSE TRACK|5-SWITCH|7-SWITCH,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Type,4,,99,99,0,5,4,S|SPLT|SPRB|SPLB|SPRT,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,LX,5,,99,99,0,83,4,120|800|480|625|1190|530|575|1060,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,LY,6,,99,99,0,19,3,175|125|685|385|425|950|910|465,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RX,7,,99,99,0,70,4,380|925|805|930|1020|845|890|800,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RY,8,,99,99,0,83,4,120|800|480|625|1190|530|575|1060,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,LeftLink,9,,99,99,0,86,6,100117|100138|100115|100136|100159|100154|100155|100180,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RightLink,10,,99,99,0,87,6,100118|100141|100136|100146|100160|100155|100161|100181,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,LeftAltLink,11,,99,99,0,41,6,0|100137|100157|100876|100269|100280|100294|100311,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RightAltLink,12,,99,99,0,40,6,100119|100140|100127|0|100678|100158|100182|100248,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AltLinkOne,13,,99,99,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AltLinkTwo,14,,99,99,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Codeline,15,,99,99,0,14,2,5|6|7|10|8|13|15|18,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PIND,16,,99,99,0,74,12,1;1;100001;|1;1;100003;|1;1;100002;|3;1;100002;|17;1;100005;|1;1;100025;|1;1;100009;|0;1;100018;,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PCTL,17,,99,99,0,74,24,1;1;100001;|0;1;100001;|1;1;100003;|0;1;100003;|1;1;100002;|0;1;100002;|3;1;100002;|0;1;100002;|17;1;100005;|0;1;100005;|1;1;100025;|0;1;100025;|1;1;100009;|0;1;100009;|0;1;100018;|0;1;100018;,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SIND,18,,99,99,0,73,12,3;1;100001;|3;1;100003;|2;1;100002;|4;1;100002;|19;1;100005;|2;1;100025;|3;1;100009;|0;1;100018;,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SCTL,19,,99,99,0,74,24,3;1;100001;|0;1;100001;|3;1;100003;|0;1;100003;|2;1;100002;|0;1;100002;|4;1;100002;|0;1;100002;|19;1;100005;|0;1;100005;|2;1;100025;|0;1;100025;|3;1;100009;|0;1;100009;|0;1;100018;|0;1;100018;,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,TIND,20,,99,99,0,40,11,0;1;100001;|0;1;100003;|0;1;100002;|0;1;100005;|0;1;100025;|0;1;100009;|0;1;100018;|0;1;100013;,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,TCTL,21,,99,99,0,45,24,0;1;100001;|0;1;100001;|0;1;100003;|0;1;100003;|0;1;100002;|0;1;100002;|0;1;100005;|0;1;100005;|0;1;100025;|0;1;100025;|0;1;100009;|0;1;100009;|0;1;100018;|0;1;100018;|0;1;100013;|0;1;100013;,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AuthorityType,22,,99,99,0,1,3,CTC,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,TrkName,23,,99,99,0,7,10,MAIN|MT1|MT2|MAIN 1|MAIN2|MAIN1|OSD POCKET,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,TerritoryAssignment,24,,99,99,0,2,3,100|200,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Subdivision,25,,99,99,0,2,1,2|1,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,IndicateOnly,26,,99,99,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Blocking,27,,99,99,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,LockBit,28,,99,99,0,40,10,0;1;100001|0;1;100003|0;1;100002|0;1;100005|0;1;100025|0;1;100009|0;1;100018|0;1;100013,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchBlockInd,29,,99,99,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchBlkBit,30,,99,99,0,8,11,0;0;0|9;1;200002|9;1;200004|17;1;200027|19;1;200027|20;1;200027|8;1;200028|10;1;200002,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Controlled,31,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,ProtectOpenSwitch,32,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,OSLocking,33,,99,99,0,1,4,True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,NoValidate,34,,99,99,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,TypeOfSwitch,35,,99,99,0,3,8,NORMAL|SPM ONLY|DERAIL,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,MatchMode,36,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,GraphicGroup,37,,99,99,0,1,1,1,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,ScreenRegion,38,,99,99,0,13,2,4|3|13|8|18|17|9|14,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,FlipOperations,39,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,IgnoreOS,40,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,BlueFlag,41,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,OCS,42,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,ICS,43,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Notes,44,,99,99,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,IgnoreBothIndBits,45,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RCPS,46,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RCPSControlBits,47,,99,99,0,40,43,0;1;100001|0;1;100001|0;1;100001|0;1;100001|0;1;100003|0;1;100003|0;1;100003|0;1;100003|0;1;100002|0;1;100002|0;1;100002|0;1;100002|0;1;100005|0;1;100005|0;1;100005|0;1;100005|0;1;100025|0;1;100025|0;1;100025|0;1;100025|0;1;100009|0;1;100009|0;1;100009|0;1;100009|0;1;100018|0;1;100018|0;1;100018|0;1;100018|0;1;100013|0;1;100013|0;1;100013|0;1;100013,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RCPSIndicationBits,48,,99,99,0,40,54,0;1;100001|0;1;100001|0;1;100001|0;1;100001|0;1;100001|0;1;100003|0;1;100003|0;1;100003|0;1;100003|0;1;100003|0;1;100002|0;1;100002|0;1;100002|0;1;100002|0;1;100002|0;1;100005|0;1;100005|0;1;100005|0;1;100005|0;1;100005|0;1;100025|0;1;100025|0;1;100025|0;1;100025|0;1;100025|0;1;100009|0;1;100009|0;1;100009|0;1;100009|0;1;100009|0;1;100018|0;1;100018|0;1;100018|0;1;100018|0;1;100018|0;1;100013|0;1;100013|0;1;100013|0;1;100013|0;1;100013,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchPointMonitorMode,49,,99,99,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchLockNoControl,50,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchPointMonitorModeTimeOut,51,,99,99,0,1,2,15,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SPICoordinate,52,,99,99,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AllowSwitchRestoralOnAuthRelease,53,,99,99,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,UsedForEntryToMain,54,,99,99,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PTCUID,55,,99,99,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AllowForceOperationsToTWC,56,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,Milepost,57,,99,99,0,88,8,209.1286|218.1412|216.2774|216.5097|221.5854|216.383|216.4013|247.7817,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,MilepostSuffix,58,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,ToolTipName,59,,99,99,0,23,24,1-SWITCH|1X|3X|3-SWITCH|PONTO HOUSE TRACK|EDISON POWER PLANT|EAST LEG ESCONDIDO JCT|SDGE HOUSE TRACK,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchBlockControlBit,60,,99,23,76,9,29,0;0;0;0|0;0;0;0|0;1;0;1|0;1;0;1|9;1;200002;7|12;1;200002;7|9;1;200004;8|10;1;200004;8|17;1;200027;27|25;1;200027;27|19;1;200027;27|27;1;200027;27|20;1;200027;27|28;1;200027;27|6;1;200028;28|14;1;200028;28,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,MakeInVisible,61,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,MilepostPrefix,62,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AdditionalReferenceUID,63,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PublishStatusToPTC,64,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,DevicePTCUID,65,,99,6,93,6,13,CP Songs|1|CP Pulgas|1|CP Broadway|5|CP Broadway|1|CP Broadway|3|CP Ash|1,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,EnableDTMFType,66,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PTC_UID_KEY,67,,99,75,24,67,7,1000030|1000050|1000004|1000013|1000028|1000011|1000012|1000003,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PTC_DeviceName,68,,99,75,24,9,2,1|1X|3X|3|0|5|7|7X,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PTC_ProperName,69,,99,75,24,75,50,1 Dual Controlled - Songs Main MP209.1286|1 Dual Controlled - Pulgas Main MP218.1412|1X Dual Controlled - Don Main1 MP216.277|3X Dual Controlled - Don Main1 MP216.510|3 Dual Controlled - Stuart Main2 MP221.585|1 Dual Controlled - Don Main2 MP216.383|3 Dual Controlled - Don Main2 MP216.401|1 Dual Controlled - Torrey Main MP247.782,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PTC_WIUStatusIndex,70,,99,75,24,4,1,0|2|6|4,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PTC_DeviceBlockID,71,,99,75,24,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,PTC_Enable_EMT,72,,99,99,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchPairList,73,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AutoRestore,74,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,ShowElectricLockIcon,75,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,RRUniqueIdentifierName,76,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,AlarmTime,77,,99,99,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchingMode,78,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompSwitches,SwitchEventID,79,,99,0,99,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.switch_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,UID,1,,444,444,0,444,6,100115|100116|100117|100118|100119|100120|100125|100126,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,ControlPoint,2,,444,444,0,50,6,100002|100003|100001|100012|100033|100005|100006|100025,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,Name,3,,444,444,0,113,21,1TK|EAK|TK|WAAK|WBAK|SHELF|3TK|4WAK,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,Type,4,,444,444,0,2,2,T|T+,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LX,5,,444,444,0,201,4,445|660|85|120|170|185|195|480,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LY,6,,444,444,0,44,4,125|175|150|515|1030|215|685|645,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RX,7,,444,444,0,204,4,480|765|120|185|170|195|315|505,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RY,8,,444,444,0,44,4,125|175|150|515|1030|215|685|645,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LeftLink,9,,444,444,0,380,6,100148|100151|100121|100124|100119|100122|100123|100149,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RightLink,10,,444,444,0,380,6,100149|100142|100124|100122|100120|100123|100338|100339,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LeftAltLink,11,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RightAltLink,12,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AltLinkOne,13,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AltLinkTwo,14,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,Codeline,15,,444,444,0,24,2,5|26|6|7|10|9|28|11,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,PIND,16,,444,444,0,220,16,9;1;100002;0005|4;1;100003;0005|2;1;100001;0005|6;1;100001;0005|14;1;100001;0005|2;1;100003;0005|0;1;100012;0005|10;1;100002;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,PCTL,17,,444,444,0,67,15,0;1;100002;0005|0;1;100003;0005|0;1;100001;0005|0;1;100012;0005|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005|0;1;100013;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,SIND,18,,444,444,0,95,16,0;1;100002;0005|14;1;100002;0005|0;1;100001;0005|0;1;100003;0005|0;1;100012;0005|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,SCTL,19,,444,444,0,68,16,0;1;100002;0005|0;1;100003;0005|0;1;100001;0005|0;1;100012;0005|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005|0;1;100013;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TIND,20,,444,442,2,67,15,0;1;100002;0005|0;1;100003;0005|0;1;100001;0005|0;1;100012;0005|0;1;0;0001|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TCTL,21,,444,444,0,67,15,0;1;100002;0005|0;1;100003;0005|0;1;100001;0005|0;1;100012;0005|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005|0;1;100013;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LeftLimitRange,22,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RightLimitRange,23,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LeftLimitMPRange,24,,444,444,0,309,8,216.267|216.5195|209.1186|209.1286|209.2|209.219|216.2774|216.4133,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RightLimitMPRange,25,,444,444,0,312,8,216.2774|218.1299|209.1286|209.219|209.2|213|216.2999|216.5097,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AuthorityType,26,,444,444,0,4,9,CTC|SHELF|YL|CTC-OTHER,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrkName,27,,444,444,0,19,18,MT1|MAIN|MT2|WYE|SM YARD LEAD|OSD POCKET|MT3|MT4,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LeftLimitName,28,,444,444,0,102,28,WEST LIMITS CP DON|CP DON|WEST LIMITS CP SONGS|CP SONGS|WEST LIMITS CP PULGAS|LEFT LIMIT NAME|WEST LIMITS CP STUART|WEST LIMITS CP MESA,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RightLimitName,29,,444,444,0,102,28,EAST LIMITS CP DON|CP PULGAS|EAST LIMITS CP SONGS|CP DON|EAST LIMITS CP PULGAS|RIGHT LIMIT NAME|EAST LIMITS CP STUART|NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TerritoryAssignment,30,,444,444,0,2,3,100|200,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,Subdivision,31,,444,444,0,3,1,2|1|0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,SlottingTK,32,,444,444,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackLength,33,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DeviceBlocking,34,,444,444,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,FieldBlocking,35,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,FoulTime,36,,444,444,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackPermit,37,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackTime,38,,444,444,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,Traffic,39,,444,444,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,FBZ,40,,444,444,0,3,33,0;0;0;0||0;0;0;0|0;0;0;0|11;1;200002;0007|14;1;200002;0007,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,FBK,41,,444,444,0,2,16,0;0;0;0|11;1;200002;0007,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TimeZone,42,,444,444,0,1,7,PACIFIC,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackLock,43,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackLockBit,44,,444,444,0,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackUID,45,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,OSReporting,46,,444,444,0,2,5,True|False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,GraphicGroup,47,,444,444,0,1,1,1,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,ScreenRegion,48,,444,444,0,15,2,3|4|10|19|13|12|8|9,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LossOfShunt,49,,444,444,0,2,2,10|0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,FBZ2,50,,444,444,0,4,31,0;0;0;0||0;0;0;0|0;0;0;0|||0;1;200002;0007|0;1;200002;0007,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,FBK2,51,,444,441,3,2,15,0;0;0;0|0;1;200002;0007,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,ReleaseTrainIDTrack,52,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DisallowTNTOnSplit,53,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,BlueFlag,54,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,OCS,55,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackSpeeds,56,,444,444,0,1,11,40|30|20|10,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,PassRedSignalAlertOff,57,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,Notes,58,,444,444,0,1,4,NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,SlotFieldTraffic,59,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,PTCBlockID,60,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RefuseOpposingAuthoritiesFromLeft,61,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RefuseOpposingAuthoritiesFromRight,62,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AllowOpposingAuthorityCreationToLeft,63,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AllowOpposingAuthorityCreationToRight,64,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,HoldingSignalSlottingTrack,65,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,HoldingSignalOSLeftBoundReporting,66,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,HoldingSignalOSRightBoundReporting,67,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,OverrideLeftTrafficCheck,68,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,OverrideRightTrafficCheck,69,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackBlockingReferences,70,,444,3,441,3,7,200449||200450||200451|,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,MatchMode,71,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,MilePostSuffix,72,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TurnOutTrack,73,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AltLinkThree,74,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AltLinkFour,75,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,HAZMATAlarming,76,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,FoulingTrackSPMS,77,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RouteName,78,,444,444,0,2,10,ROUTE NAME|NONE,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RouteBlocking,79,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackIntegrityZone,80,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackIntegrityZoneUID,81,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackIntegrityZoneName,82,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TIZMonitorModeTimeOut,83,,444,444,0,1,3,450,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AuthorityConfirmationRequired,84,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AlternateTrackNames,85,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AlternateTrackAbbreviation,86,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AllowMainTrackEntrance,87,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,MainTrackEntrancePoints,88,,444,7,437,7,28,100238||100241||100236||100601||100243||100592|100597|100598|100599||100600|,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AllowForceOperationsToTWC,89,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,EnableAbsolutePermissiveBlock,90,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AbsolutePermissiveBlockPTCUID,91,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LineSegmentGroupUID,92,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DerailmentDetectorEnabled,93,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DerailmentDetectorIndBit,94,,444,444,0,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DerailmentDetectorCtlBit,95,,444,444,0,1,7,0;0;0;0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DerailmentDetectorInhibited,96,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,MilepostPrefix,97,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,AdditionalReferenceUID,98,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,EnablePositionReporting,99,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackNameAlias,100,,444,444,0,23,23,MT1|MAIN|TO|MT2|XO|STUARTMESAYARDLEAD|SPUR|NOTHING,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,EnableNonControlledSiding,101,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,EnableControlledSiding,102,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DisallowLeftSignalRequestOnOccupancy,103,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DisallowRightSignalRequestOnOccupancy,104,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackSpeedAverage,105,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackSpeedMaximum,106,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackElevationAverage,107,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackElevationMaximum,108,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackElevationAscending,109,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackSpeedMaximumFreight,110,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackSpeedMaximumPassengar,111,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,QIND,112,,444,77,367,7,12,0;0;0;0|0;0;100008;5|0;0;100004;5|0;0;100035;5|0;0;100029;5|0;0;100013;5|0;0;100020;5,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,QCTL,113,,444,312,132,44,15,0;1;100002;0005|0;1;100003;0005|0;1;100001;0005|0;1;100012;0005|0;1;0;0000|0;1;100005;0005|0;1;100006;0005|0;1;100025;0005,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,PTCTrackType,114,,444,444,0,2,5,NONE|ENTRY,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,JointControl,115,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSEnabled,116,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSCircuitName,117,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSLinkLeft,118,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSLinkRight,119,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSLinkAlt1,120,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSLinkAlt2,121,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSLinkAlt3,122,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TMPSLinkAlt4,123,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LatitudeLeft,124,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LongitudeLeft,125,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LatitudeRight,126,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LongitudeRight,127,,444,444,0,1,1,0,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,ForceIgnoreTrainDirectionChange,128,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,SuppressAuthorityRelease,129,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,TrackWarrantEnforcementEnabled,130,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RailroadUniqueIdentifierName,131,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DisallowBulletin,132,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DisallowEntryExitSelection,133,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LocationName1,134,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LocationValue1,135,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LocationName2,136,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LocationValue2,137,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,ExcludeFromPTCSegments,138,,444,444,0,2,5,False|True,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,DisallowTrainTypes,139,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LeftDarkAreaFlag,140,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,LeftDarkShelfTrack,141,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RightDarkAreaFlag,142,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,RightDarkShelfTrack,143,,444,0,444,0,0,,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,ManualInterlocking,144,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv
+tmdsDatabaseStatic,tblCompTracks,EATCEnable,145,,444,444,0,1,5,False,exports\raw\sql_foundation\tmdsDatabaseStatic.track_detail_full.csv

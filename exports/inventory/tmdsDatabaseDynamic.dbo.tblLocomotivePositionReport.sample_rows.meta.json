@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblLocomotivePositionReport",
+    "top":  20,
+    "order_by":  [
+                     "id",
+                     "loco_id",
+                     "train_symbol",
+                     "head_end_latitude"
+                 ],
+    "row_count_exported":  20
+}

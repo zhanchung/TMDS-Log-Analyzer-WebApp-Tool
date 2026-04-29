@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "export_name":  "os_event_detail_full",
+    "row_count":  130,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_detail_full.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_detail_full.csv"
+}

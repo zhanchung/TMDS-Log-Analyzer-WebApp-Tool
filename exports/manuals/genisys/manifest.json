@@ -1,0 +1,26 @@
+[
+  {
+    "source": "C:\\Users\\Ji\\Music\\03_GenisysManuals.zip\\P2346F Genisys Code System.pdf",
+    "type": "pdf",
+    "page_count": 86,
+    "total_chars": 102724,
+    "text_path": "exports\\manuals\\genisys\\P2346F_Genisys_Code_System.txt",
+    "page_json_path": "exports\\manuals\\genisys\\P2346F_Genisys_Code_System.pages.json"
+  },
+  {
+    "source": "C:\\Users\\Ji\\Music\\03_GenisysManuals.zip\\Reading Genisys Data-DRAFT 1.docx",
+    "type": "docx",
+    "paragraph_count": 111,
+    "total_chars": 6340,
+    "text_path": "exports\\manuals\\genisys\\Reading_Genisys_Data-DRAFT_1.txt",
+    "paragraph_json_path": "exports\\manuals\\genisys\\Reading_Genisys_Data-DRAFT_1.paragraphs.json"
+  },
+  {
+    "source": "C:\\Users\\Ji\\Music\\03_GenisysManuals.zip\\Genisys Trace Analysis.pdf",
+    "type": "pdf",
+    "page_count": 8,
+    "total_chars": 14,
+    "text_path": "exports\\manuals\\genisys\\Genisys_Trace_Analysis.txt",
+    "page_json_path": "exports\\manuals\\genisys\\Genisys_Trace_Analysis.pages.json"
+  }
+]

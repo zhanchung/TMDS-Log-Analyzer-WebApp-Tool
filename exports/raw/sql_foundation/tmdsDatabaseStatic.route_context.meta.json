@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "export_name":  "route_context",
+    "row_count":  291,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.route_context.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.route_context.csv"
+}

@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblBosDepartureTestData",
+    "top":  20,
+    "order_by":  [
+                     "Id",
+                     "LocoId",
+                     "TrainSymbol"
+                 ],
+    "row_count_exported":  14
+}

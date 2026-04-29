@@ -1,0 +1,103 @@
+message_id,direction,status,release_2_11_1_name,release_2_11_1_version,release_2_11_1_page,release_3_1_name,release_3_1_version,release_3_1_page,version_delta
+01000,office_to_locomotive,version_changed,Verify Employee Info Response,2,12,Verify Employee Info Response,3,14,1
+01001,office_to_locomotive,version_changed,Train ID List,1,13,Train ID List,2,16,1
+01003,office_to_locomotive,version_changed,Request Selected Train ID,1,14,Request Selected Train ID,2,17,1
+01004,office_to_locomotive,version_changed,Confirmation of Selected Train ID,2,15,Confirmation of Selected Train ID,3,18,1
+01005,office_to_locomotive,version_changed,Configuration Version List,3,16,Configuration Version List,4,19,1
+01007,office_to_locomotive,version_changed,Train Subdivision/District List,3,17,Train Subdivision/District List,4,20,1
+01010,office_to_locomotive,version_changed,Command/Confirm Locomotive System State,1,19,Command/Confirm Locomotive System State,3,22,2
+01011,office_to_locomotive,version_changed,Confirmation of Departure Test Report,2,20,Confirmation of Departure Test Report,3,23,1
+01012,office_to_locomotive,added_by_3.1,,,,Ancillary Subdivision/District Version,1,24,
+01020,office_to_locomotive,version_changed,Confirmation of Poll Registration,2,21,Confirmation of Poll Registration,4,25,2
+01021,office_to_locomotive,version_changed,Office Segment Poll,3,22,Office Segment Poll,5,26,2
+01022,office_to_locomotive,version_changed,Current Dataset List,2,24,Current Dataset List,4,28,2
+01030,office_to_locomotive,version_changed,Train Consist,4,25,Train Consist,6,29,2
+01033,office_to_locomotive,version_changed,Confirmation of Onboard Train Consist,2,27,Confirmation of Onboard Train Consist,3,32,1
+01040,office_to_locomotive,version_changed,Request Crew Acknowledgement of Bulletin,2,28,Request Crew Acknowledgement of Bulletin,3,33,1
+01041,office_to_locomotive,version_changed,Bulletin Dataset,4,29,Bulletin Dataset,6,34,2
+01043,office_to_locomotive,version_changed,Bulletin Cancellation,2,34,Bulletin Cancellation,4,39,2
+01050,office_to_locomotive,version_changed,Confirmation of Crew Authority Request,2,36,Confirmation of Crew Authority Request,3,41,1
+01051,office_to_locomotive,version_changed,Movement Authority Dataset,4,37,Movement Authority Dataset,6,42,2
+01053,office_to_locomotive,version_changed,Movement Authority Void,2,43,Movement Authority Void,3,48,1
+01054,office_to_locomotive,version_changed,Confirmation of EMT/PSS Authority Used Notification,2,44,Confirmation of EMT/PSS Authority Used Notification,3,49,1
+01060,office_to_locomotive,version_changed,Crew Message,2,45,Crew Message,3,50,1
+01061,office_to_locomotive,version_changed,Confirmation of Crew Acknowledgement of Mandatory Directive Status,2,46,Confirmation of Crew Acknowledgement of Mandatory Directive Status,3,51,1
+01062,office_to_locomotive,version_changed,Bulletin Sequence,2,47,Bulletin Sequence,3,52,1
+01070,office_to_locomotive,version_changed,Confirmation of Violation Report,2,48,Confirmation of Violation Report,3,53,1
+01071,office_to_locomotive,version_changed,Violation Report,4,49,Violation Report,5,54,1
+01072,office_to_locomotive,version_changed,Violation Cleared,2,51,Violation Cleared,4,56,2
+01073,office_to_locomotive,version_changed,Confirmation of Onboard Violation Cleared,1,52,Confirmation of Onboard Violation Cleared,2,57,1
+01080,office_to_locomotive,version_changed,Request Locomotive Position Report,1,53,Request Locomotive Position Report,2,58,1
+01081,office_to_locomotive,version_changed,Request Locomotive Fault Summary,1,54,Request Locomotive Fault Summary,2,59,1
+01082,office_to_locomotive,version_changed,Confirmation of Locomotive Fault Summary Report,2,55,Confirmation of Locomotive Fault Summary Report,3,60,1
+01083,office_to_locomotive,version_changed,Confirmation of Enforcement Warning/Braking Notification,1,56,Confirmation of Enforcement Warning/Braking Notification,2,61,1
+01084,office_to_locomotive,version_changed,Confirmation of Emergency Brake Application Report,1,57,Confirmation of Emergency Brake Application Report,2,62,1
+01085,office_to_locomotive,version_changed,Confirmation of Train Handling Exception Report,2,58,Confirmation of Train Handling Exception Report,3,63,1
+01086,office_to_locomotive,version_changed,Confirmation of Acknowledge Conditional Authority Report,1,59,Confirmation of Acknowledge Conditional Authority Report,2,64,1
+01087,office_to_locomotive,version_changed,Confirmation of Locomotive Fault Report,2,60,Confirmation of Locomotive Fault Report,3,65,1
+01088,office_to_locomotive,version_changed,Request Onboard Component Configuration,1,61,Request Onboard Component Configuration,2,66,1
+01089,office_to_locomotive,version_changed,Confirmation of Onboard Component Configuration Report,2,62,Confirmation of Onboard Component Configuration Report,3,67,1
+01090,office_to_locomotive,removed_after_2.11.1,Control Point Status,2,63,,,,
+01100,office_to_locomotive,version_changed,Fileset List,4,64,Fileset List,5,68,1
+01101,office_to_locomotive,version_changed,File Info,2,66,File Info,4,70,2
+01102,office_to_locomotive,version_changed,File Part Checksum,1,67,File Part Checksum,2,71,1
+01103,office_to_locomotive,version_changed,File Data,1,68,File Data,2,72,1
+01104,office_to_locomotive,version_changed,No File,1,69,No File,2,73,1
+01105,office_to_locomotive,version_changed,File Transfer Unavailable,1,70,File Transfer Unavailable,2,74,1
+01120,office_to_locomotive,version_changed,File Request,2,71,File Request,3,75,1
+01122,office_to_locomotive,version_changed,File Data Request,1,72,File Data Request,2,76,1
+01123,office_to_locomotive,version_changed,File Complete,1,73,File Complete,2,77,1
+01500,office_to_locomotive,unchanged,Confirmation of WSRS Subscribe,1,144,Confirmation of WSRS Subscribe,1,159,0
+01501,office_to_locomotive,unchanged,Confirmation of WSRS Unsubscribe,1,145,Confirmation of WSRS Unsubscribe,1,160,0
+02000,locomotive_to_office,version_changed,Verify Employee Info Request,3,74,Verify Employee Info Request,5,78,2
+02001,locomotive_to_office,version_changed,Request Train ID List,1,75,Request Train ID List,2,79,1
+02003,locomotive_to_office,version_changed,Selected Train ID,3,76,Selected Train ID,5,80,2
+02005,locomotive_to_office,version_changed,Configuration Version List Request,3,78,Configuration Version List Request,4,82,1
+02007,locomotive_to_office,version_changed,Request Train Subdivision/District List,1,79,Request Train Subdivision/District List,2,83,1
+02008,locomotive_to_office,version_changed,Confirmation of Train Subdivision/District List,2,80,Confirmation of Train Subdivision/District List,3,84,1
+02010,locomotive_to_office,version_changed,Locomotive System State,2,81,Locomotive System State,4,85,2
+02011,locomotive_to_office,version_changed,Departure Test Report,4,82,Departure Test Report,5,89,1
+02012,locomotive_to_office,added_by_3.1,,,,Request Ancillary Subdivision/District Version,1,91,
+02020,locomotive_to_office,version_changed,Poll Registration,3,84,Poll Registration,5,92,2
+02021,locomotive_to_office,added_by_3.1,,,,Poll Response,1,94,
+02022,locomotive_to_office,version_changed,Request Current Dataset List,2,85,Request Current Dataset List,3,95,1
+02030,locomotive_to_office,version_changed,Request Train Consist,1,86,Request Train Consist,2,96,1
+02031,locomotive_to_office,version_changed,Confirmation of Train Consist,3,87,Confirmation of Train Consist,4,97,1
+02032,locomotive_to_office,version_changed,Onboard Train Consist,4,88,Onboard Train Consist,6,98,2
+02040,locomotive_to_office,version_changed,Confirmation of Crew Acknowledgement of Bulletin,1,90,Confirmation of Crew Acknowledgement of Bulletin,2,100,1
+02041,locomotive_to_office,version_changed,Request Bulletin Dataset,1,91,Request Bulletin Dataset,2,101,1
+02042,locomotive_to_office,version_changed,Confirmation of Bulletin Dataset,3,92,Confirmation of Bulletin Dataset,5,102,2
+02043,locomotive_to_office,version_changed,Confirmation of Bulletin Cancellation,1,93,Confirmation of Bulletin Cancellation,3,104,2
+02050,locomotive_to_office,version_changed,Crew Authority Request,3,94,Crew Authority Request,4,105,1
+02051,locomotive_to_office,version_changed,Request Movement Authority Dataset,1,96,Request Movement Authority Dataset,2,107,1
+02052,locomotive_to_office,version_changed,Confirmation of Movement Authority,3,97,Confirmation of Movement Authority,5,108,2
+02053,locomotive_to_office,version_changed,Confirmation of Movement Authority Void,1,98,Confirmation of Movement Authority Void,3,109,2
+02054,locomotive_to_office,version_changed,EMT/PSS Authority Used Notification,2,99,EMT/PSS Authority Used Notification,5,110,3
+02060,locomotive_to_office,version_changed,Confirmation of Crew Message,3,101,Confirmation of Crew Message,4,112,1
+02061,locomotive_to_office,version_changed,Crew Acknowledgement of Mandatory Directive Status,2,102,Crew Acknowledgement of Mandatory Directive Status,4,113,2
+02062,locomotive_to_office,version_changed,Confirmation of Bulletin Sequence,2,104,Confirmation of Bulletin Sequence,3,115,1
+02070,locomotive_to_office,version_changed,Onboard Violation Report,4,105,Onboard Violation Report,5,116,1
+02071,locomotive_to_office,version_changed,Confirmation of Violation Report,2,107,Confirmation of Violation Report,3,119,1
+02072,locomotive_to_office,version_changed,Onboard Violation Cleared,2,108,Onboard Violation Cleared,4,120,2
+02073,locomotive_to_office,version_changed,Confirmation of Violation Cleared,1,109,Confirmation of Violation Cleared,2,121,1
+02080,locomotive_to_office,version_changed,Locomotive Position Report,4,110,Locomotive Position Report,7,122,3
+02081,locomotive_to_office,version_changed,Locomotive Fault Summary Report,3,113,Locomotive Fault Summary Report,4,125,1
+02082,locomotive_to_office,version_changed,PTC Interaction,2,115,PTC Interaction,3,127,1
+02083,locomotive_to_office,version_changed,Enforcement Warning/Braking Notification,4,116,Enforcement Warning/Braking Notification,6,128,2
+02084,locomotive_to_office,version_changed,Emergency Brake Application Report,3,121,Emergency Brake Application Report,4,135,1
+02085,locomotive_to_office,version_changed,Train Handling Exception Report,4,124,Train Handling Exception Report,6,139,2
+02086,locomotive_to_office,version_changed,Acknowledge Conditional Authority Report,1,127,Acknowledge Conditional Authority Report,2,142,1
+02087,locomotive_to_office,version_changed,Locomotive Fault Report,3,128,Locomotive Fault Report,5,144,2
+02088,locomotive_to_office,version_changed,Onboard Component Configuration Report,4,130,Onboard Component Configuration Report,5,146,1
+02090,locomotive_to_office,removed_after_2.11.1,Control Point Request,2,131,,,,
+02100,locomotive_to_office,version_changed,Client Fileset List-,4,132,Client Fileset List-,5,147,1
+02101,locomotive_to_office,version_changed,File Info Request,2,134,File Info Request,3,149,1
+02102,locomotive_to_office,version_changed,File Part Checksum Request,1,136,File Part Checksum Request,2,151,1
+02103,locomotive_to_office,version_changed,File Data Request,1,137,File Data Request,2,152,1
+02104,locomotive_to_office,version_changed,File Complete,1,138,File Complete,2,153,1
+02105,locomotive_to_office,version_changed,File Download Failed,1,139,File Download Failed,3,154,2
+02120,locomotive_to_office,version_changed,File Info,2,140,File Info,3,155,1
+02121,locomotive_to_office,version_changed,No File,1,141,No File,2,156,1
+02122,locomotive_to_office,version_changed,File Data,1,142,File Data,2,157,1
+02500,locomotive_to_office,unchanged,WSRS Subscribe,1,146,WSRS Subscribe,1,161,0
+02501,locomotive_to_office,unchanged,WSRS Unsubscribe,1,147,WSRS Unsubscribe,1,162,0

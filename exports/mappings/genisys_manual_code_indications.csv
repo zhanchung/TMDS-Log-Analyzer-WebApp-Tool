@@ -1,0 +1,11 @@
+application,source_scope,manual_pages,mnemonic,expression
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,2NWK,(2NWC)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,2RWK,(2RWC)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,1WGK,(.N.1WRGP)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,1EGK,(.N.1EARGP + .N.1EBRGP)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,2TPK,(.N.2TPP)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,EATK,(.N.ET)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,WATK,(.N.WT)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,SATK,(.N.ST)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,2ATK,(.N.2TPP * 2RWC)
+CODE INDICATIONS,sample manual mapping only; not an NCTD site-specific assignment,B-11,2LK,(.N.2L)

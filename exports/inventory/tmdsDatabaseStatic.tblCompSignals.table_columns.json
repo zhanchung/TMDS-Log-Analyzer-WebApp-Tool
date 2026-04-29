@@ -1,0 +1,965 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "UID",
+        "ordinal":  1,
+        "data_type":  "int",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "ControlPoint",
+        "ordinal":  2,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Name",
+        "ordinal":  3,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Type",
+        "ordinal":  4,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "LX",
+        "ordinal":  5,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "LY",
+        "ordinal":  6,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "RX",
+        "ordinal":  7,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "RY",
+        "ordinal":  8,
+        "data_type":  "smallint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "LeftLink",
+        "ordinal":  9,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "RightLink",
+        "ordinal":  10,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "LeftAltLink",
+        "ordinal":  11,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "RightAltLink",
+        "ordinal":  12,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AltLinkOne",
+        "ordinal":  13,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AltLinkTwo",
+        "ordinal":  14,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Codeline",
+        "ordinal":  15,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PIND",
+        "ordinal":  16,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PCTL",
+        "ordinal":  17,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SIND",
+        "ordinal":  18,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SCTL",
+        "ordinal":  19,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "TIND",
+        "ordinal":  20,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "TCTL",
+        "ordinal":  21,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AuthorityType",
+        "ordinal":  22,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "TerritoryAssignment",
+        "ordinal":  23,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Subdivision",
+        "ordinal":  24,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "IndicateOnly",
+        "ordinal":  25,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Fleeting",
+        "ordinal":  26,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Stacking",
+        "ordinal":  27,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Blocking",
+        "ordinal":  28,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "CallOn",
+        "ordinal":  29,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "InTimeType",
+        "ordinal":  30,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "InTimeBit",
+        "ordinal":  31,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DrillSignal",
+        "ordinal":  32,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DrillType",
+        "ordinal":  33,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DrillControl",
+        "ordinal":  34,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DrillStop",
+        "ordinal":  35,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DrillIndOne",
+        "ordinal":  36,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DrillIndTwo",
+        "ordinal":  37,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SignalBlockInd",
+        "ordinal":  38,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "BlockIndBit",
+        "ordinal":  39,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AutoClearCount",
+        "ordinal":  40,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PreferredRoutes",
+        "ordinal":  41,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "CallOnBit",
+        "ordinal":  42,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "NoOpposingCheck",
+        "ordinal":  43,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SignalSlotting",
+        "ordinal":  44,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "GraphicGroup",
+        "ordinal":  45,
+        "data_type":  "tinyint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "ScreenRegion",
+        "ordinal":  46,
+        "data_type":  "tinyint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "MatchMode",
+        "ordinal":  47,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "NoAlarmOnPending",
+        "ordinal":  48,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "MakeInVisible",
+        "ordinal":  49,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "ForceStopControl",
+        "ordinal":  50,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SignalAspectIndications",
+        "ordinal":  51,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "FleetControlBit",
+        "ordinal":  52,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Notes",
+        "ordinal":  53,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "HoldingSignal",
+        "ordinal":  54,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SignalClearAheadCount",
+        "ordinal":  55,
+        "data_type":  "tinyint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AllowAutomaticMode",
+        "ordinal":  56,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AutomaticModeOn",
+        "ordinal":  57,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "IndicateOnlyWithControlSetEnabled",
+        "ordinal":  58,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SignalControlled",
+        "ordinal":  59,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "CallOnAllowedWithoutOpposingTraffic",
+        "ordinal":  60,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "CallOnSendSignalClearBit",
+        "ordinal":  61,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PTCUID",
+        "ordinal":  62,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "ToolTipName",
+        "ordinal":  63,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "JointControlAuthorizationEnabled",
+        "ordinal":  64,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "JointControlAuthorizationIndBit",
+        "ordinal":  65,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "JointControlAuthorizationCtlBit",
+        "ordinal":  66,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "NearSideSignalEnabled",
+        "ordinal":  67,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "NearSideSignalControlOn",
+        "ordinal":  68,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "NearSideSignalBitControl",
+        "ordinal":  69,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "NearSideSignaBitlIndication",
+        "ordinal":  70,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "Milepost",
+        "ordinal":  71,
+        "data_type":  "float",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "MilepostSuffix",
+        "ordinal":  72,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "MilepostPrefix",
+        "ordinal":  73,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AdditionalReferenceUID",
+        "ordinal":  74,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "CallOnControlled",
+        "ordinal":  75,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PublishStatusToPTC",
+        "ordinal":  76,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DevicePTCUID",
+        "ordinal":  77,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AutomaticSignal",
+        "ordinal":  78,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DisableTrafficProjection",
+        "ordinal":  79,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "JointControlAuthorizationOfficeMode",
+        "ordinal":  80,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "JointControlAuthorizationOfficeModeRequested",
+        "ordinal":  81,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "JointControlAuthorizationOfficeModeConfirmed",
+        "ordinal":  82,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "EnableDynamicSignalRouteControlBit",
+        "ordinal":  83,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DynamicSignalRouteControlBitList",
+        "ordinal":  84,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "EnablePulseStopControl",
+        "ordinal":  85,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DynamicSignalRouteCallOnBitList",
+        "ordinal":  86,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PTC_UID_KEY",
+        "ordinal":  87,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PTC_DeviceName",
+        "ordinal":  88,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PTC_ProperName",
+        "ordinal":  89,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PTC_WIUStatusIndex",
+        "ordinal":  90,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PTC_DeviceBlockID",
+        "ordinal":  91,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "PTC_Enable_PSS",
+        "ordinal":  92,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SupressSignalStopWithOutOS",
+        "ordinal":  93,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DisableEntryExitFunction",
+        "ordinal":  94,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DisableStoreRouteFunction",
+        "ordinal":  95,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "RRUniqueIdentifierName",
+        "ordinal":  96,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "EnableAbsoluteBlockSignalRequest",
+        "ordinal":  97,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AlarmTime",
+        "ordinal":  98,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "SuppressUnSolicitedSignalAlert",
+        "ordinal":  99,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "DISABLEBULLEXCEPTNCHK",
+        "ordinal":  100,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "BlueFlag",
+        "ordinal":  101,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "TrackPermit",
+        "ordinal":  102,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "FoulTime",
+        "ordinal":  103,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "TrackTime",
+        "ordinal":  104,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "TrackLock",
+        "ordinal":  105,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AllowCallOnWithOutOccupancyInRoute",
+        "ordinal":  106,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "column":  "AllowCallOnWithPendingClearRequest",
+        "ordinal":  107,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    }
+]

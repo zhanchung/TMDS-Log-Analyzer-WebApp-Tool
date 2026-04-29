@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemDispatchableStations",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "ControlPoint",
+                     "Name",
+                     "Type"
+                 ],
+    "row_count_exported":  0
+}

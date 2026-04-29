@@ -1,0 +1,639 @@
+[
+  {
+    "slide_name": "ppt/slides/slide1.xml",
+    "slide_number": 1,
+    "text_items": [
+      "CAD Training",
+      "North County Transit District",
+      "(NCTD)"
+    ],
+    "text": "CAD Training\nNorth County Transit District\n(NCTD)"
+  },
+  {
+    "slide_name": "ppt/slides/slide2.xml",
+    "slide_number": 2,
+    "text_items": [
+      "Train Management and Dispatch System (TMDS)",
+      "Computer Aided Dispatch (CAD) Training"
+    ],
+    "text": "Train Management and Dispatch System (TMDS)\nComputer Aided Dispatch (CAD) Training"
+  },
+  {
+    "slide_name": "ppt/slides/slide3.xml",
+    "slide_number": 3,
+    "text_items": [
+      "This presentation is broken up into the following sections:",
+      "Overview",
+      "Computer Aided Dispatch (CAD) Training",
+      "Simulated Demo",
+      "AGENDA"
+    ],
+    "text": "This presentation is broken up into the following sections:\nOverview\nComputer Aided Dispatch (CAD) Training\nSimulated Demo\nAGENDA"
+  },
+  {
+    "slide_name": "ppt/slides/slide4.xml",
+    "slide_number": 4,
+    "text_items": [
+      "Starting CAD",
+      "Starting TMDS",
+      "To Start TMDS double-click on the desktop icon.",
+      "Then verify that the Title Bar shows the correct version."
+    ],
+    "text": "Starting CAD\nStarting TMDS\nTo Start TMDS double-click on the desktop icon.\nThen verify that the Title Bar shows the correct version."
+  },
+  {
+    "slide_name": "ppt/slides/slide5.xml",
+    "slide_number": 5,
+    "text_items": [
+      "Starting CAD",
+      "Starting TMDS",
+      "To log on:",
+      "On menu bar CONTROL",
+      " SYSTEM LOG ON",
+      "Select User from the drop-down menu",
+      "Enter user password"
+    ],
+    "text": "Starting CAD\nStarting TMDS\nTo log on:\nOn menu bar CONTROL\n SYSTEM LOG ON\nSelect User from the drop-down menu\nEnter user password"
+  },
+  {
+    "slide_name": "ppt/slides/slide6.xml",
+    "slide_number": 6,
+    "text_items": [
+      "Starting CAD",
+      "Selecting a Territory",
+      "After credentials are accepted:",
+      "Right-Click on territory you wish to control. Multiple territories can be selected.",
+      "The click Load",
+      "Note: To remove territories from the control frame, click the CLEAR button. Individual territories cannot be cleared."
+    ],
+    "text": "Starting CAD\nSelecting a Territory\nAfter credentials are accepted:\nRight-Click on territory you wish to control. Multiple territories can be selected.\nThe click Load\nNote: To remove territories from the control frame, click the CLEAR button. Individual territories cannot be cleared."
+  },
+  {
+    "slide_name": "ppt/slides/slide7.xml",
+    "slide_number": 7,
+    "text_items": [
+      "When CAD loads you will have two screens: The track line display (TLD) and the System Summary.",
+      "Note: If more than one territory is selected, each territory will have it’s own window.",
+      "On multiple monitor set ups these can moved to desired monitor."
+    ],
+    "text": "When CAD loads you will have two screens: The track line display (TLD) and the System Summary.\nNote: If more than one territory is selected, each territory will have it’s own window.\nOn multiple monitor set ups these can moved to desired monitor."
+  },
+  {
+    "slide_name": "ppt/slides/slide8.xml",
+    "slide_number": 8,
+    "text_items": [
+      "Logging Off CAD:",
+      "CONTROL",
+      "",
+      "Log Off – Locks the workstation.",
+      "Screen greys out and no dispatcher",
+      "functionality is available. Useful for breaks or",
+      "stepping away from workstation.",
+      "Release Territory – Releases the territory under DS control. An authorized user can then sign into that territory",
+      "Exit System – Once territory released,",
+      "then Exit System is available",
+      "Logging On/Off"
+    ],
+    "text": "Logging Off CAD:\nCONTROL\n\nLog Off – Locks the workstation.\nScreen greys out and no dispatcher\nfunctionality is available. Useful for breaks or\nstepping away from workstation.\nRelease Territory – Releases the territory under DS control. An authorized user can then sign into that territory\nExit System – Once territory released,\nthen Exit System is available\nLogging On/Off"
+  },
+  {
+    "slide_name": "ppt/slides/slide9.xml",
+    "slide_number": 9,
+    "text_items": [
+      "After logging off:",
+      "Only password is needed",
+      "After releasing territory:",
+      "Full log in needed",
+      "To log back on:"
+    ],
+    "text": "After logging off:\nOnly password is needed\nAfter releasing territory:\nFull log in needed\nTo log back on:"
+  },
+  {
+    "slide_name": "ppt/slides/slide10.xml",
+    "slide_number": 10,
+    "text_items": [
+      "To Exit System:",
+      "After releasing the territory",
+      "CONTROL",
+      " EXIT SYSTEM"
+    ],
+    "text": "To Exit System:\nAfter releasing the territory\nCONTROL\n EXIT SYSTEM"
+  },
+  {
+    "slide_name": "ppt/slides/slide11.xml",
+    "slide_number": 11,
+    "text_items": [
+      "Consists of 4 parts",
+      "Title Bar – Red Arrow",
+      "Pull-down Menu Bar – Green Arrow",
+      "Track Line Display – Red Square",
+      "Status Bar – Yellow Arrow",
+      "CAD WINDOW",
+      "TMDS CAD WINDOW"
+    ],
+    "text": "Consists of 4 parts\nTitle Bar – Red Arrow\nPull-down Menu Bar – Green Arrow\nTrack Line Display – Red Square\nStatus Bar – Yellow Arrow\nCAD WINDOW\nTMDS CAD WINDOW"
+  },
+  {
+    "slide_name": "ppt/slides/slide12.xml",
+    "slide_number": 12,
+    "text_items": [
+      "Includes:",
+      "Name of Application",
+      "Version Number",
+      "Railroad",
+      "The Title Bar"
+    ],
+    "text": "Includes:\nName of Application\nVersion Number\nRailroad\nThe Title Bar"
+  },
+  {
+    "slide_name": "ppt/slides/slide13.xml",
+    "slide_number": 13,
+    "text_items": [
+      "Tools:",
+      "Options",
+      "Command Window",
+      "Report and Issue",
+      "The Pull-Down Menu Bar",
+      "Control:",
+      "Log On/Off",
+      "Transfer Control",
+      "Release Territory",
+      "Exit System",
+      "Display:",
+      "Summary Windows",
+      "Display Options",
+      "Window:",
+      "Track Line Display 1",
+      "Track Line Display 2",
+      "Help:",
+      "About TMDS"
+    ],
+    "text": "Tools:\nOptions\nCommand Window\nReport and Issue\nThe Pull-Down Menu Bar\nControl:\nLog On/Off\nTransfer Control\nRelease Territory\nExit System\nDisplay:\nSummary Windows\nDisplay Options\nWindow:\nTrack Line Display 1\nTrack Line Display 2\nHelp:\nAbout TMDS"
+  },
+  {
+    "slide_name": "ppt/slides/slide14.xml",
+    "slide_number": 14,
+    "text_items": [
+      "Control Drop-Down menu:",
+      "Log Off – Locks the workstation.",
+      "Screen greys out and no dispatcher",
+      "functionality is available. Useful for breaks or",
+      "stepping away from workstation.",
+      "Release Territory – Releases the territory under DS control. An authorized user can then sign into that territory",
+      "Exit System – Once territory released,",
+      "then Exit System is available"
+    ],
+    "text": "Control Drop-Down menu:\nLog Off – Locks the workstation.\nScreen greys out and no dispatcher\nfunctionality is available. Useful for breaks or\nstepping away from workstation.\nRelease Territory – Releases the territory under DS control. An authorized user can then sign into that territory\nExit System – Once territory released,\nthen Exit System is available"
+  },
+  {
+    "slide_name": "ppt/slides/slide15.xml",
+    "slide_number": 15,
+    "text_items": [
+      "Options:",
+      "Printing – not used",
+      "Swap Mouse Buttons – useful for left-handed dispatchers",
+      "Tools Drop-Down Menu",
+      "Maintenance:",
+      "Add Entity –",
+      "allows the dispatcher to add or delete an employee's system message.",
+      "System Message – useful for left-handed dispatchers",
+      "Command:",
+      "F",
+      "or administrative purposes only. You must have administrator credentials to access this"
+    ],
+    "text": "Options:\nPrinting – not used\nSwap Mouse Buttons – useful for left-handed dispatchers\nTools Drop-Down Menu\nMaintenance:\nAdd Entity –\nallows the dispatcher to add or delete an employee's system message.\nSystem Message – useful for left-handed dispatchers\nCommand:\nF\nor administrative purposes only. You must have administrator credentials to access this"
+  },
+  {
+    "slide_name": "ppt/slides/slide16.xml",
+    "slide_number": 16,
+    "text_items": [
+      "Report an Issue:",
+      "Takes a screen shot then allows user to enter comments",
+      "Image saved in",
+      "IssueScreen",
+      "Capture",
+      "folder in TMDS folder on workstation",
+      "Tools Drop-Down Menu",
+      "Near Side Signal Control:",
+      "Turns Local Mode on/off"
+    ],
+    "text": "Report an Issue:\nTakes a screen shot then allows user to enter comments\nImage saved in\nIssueScreen\nCapture\nfolder in TMDS folder on workstation\nTools Drop-Down Menu\nNear Side Signal Control:\nTurns Local Mode on/off"
+  },
+  {
+    "slide_name": "ppt/slides/slide17.xml",
+    "slide_number": 17,
+    "text_items": [
+      "Summary Windows:",
+      "Time Table Summary",
+      "Bulletin Summary",
+      "Display Drop-Down Menu",
+      "Display Options:"
+    ],
+    "text": "Summary Windows:\nTime Table Summary\nBulletin Summary\nDisplay Drop-Down Menu\nDisplay Options:"
+  },
+  {
+    "slide_name": "ppt/slides/slide18.xml",
+    "slide_number": 18,
+    "text_items": [
+      "Windows Drop-Down Menu",
+      "Help Drop-Down Menu"
+    ],
+    "text": "Windows Drop-Down Menu\nHelp Drop-Down Menu"
+  },
+  {
+    "slide_name": "ppt/slides/slide19.xml",
+    "slide_number": 19,
+    "text_items": [
+      "THE TRACK LINE DISPLAY"
+    ],
+    "text": "THE TRACK LINE DISPLAY"
+  },
+  {
+    "slide_name": "ppt/slides/slide20.xml",
+    "slide_number": 20,
+    "text_items": [
+      "Track Line Display"
+    ],
+    "text": "Track Line Display"
+  },
+  {
+    "slide_name": "ppt/slides/slide21.xml",
+    "slide_number": 21,
+    "text_items": [
+      "Track Line Display",
+      "Track Segment End Shapes",
+      "Westbound",
+      "Eastbound"
+    ],
+    "text": "Track Line Display\nTrack Segment End Shapes\nWestbound\nEastbound"
+  },
+  {
+    "slide_name": "ppt/slides/slide22.xml",
+    "slide_number": 22,
+    "text_items": [
+      "Track Line Display",
+      "Track Segment Colors"
+    ],
+    "text": "Track Line Display\nTrack Segment Colors"
+  },
+  {
+    "slide_name": "ppt/slides/slide23.xml",
+    "slide_number": 23,
+    "text_items": [
+      "Track Line Display",
+      "Track Segment Crosshatching",
+      "Track Line Cursors"
+    ],
+    "text": "Track Line Display\nTrack Segment Crosshatching\nTrack Line Cursors"
+  },
+  {
+    "slide_name": "ppt/slides/slide24.xml",
+    "slide_number": 24,
+    "text_items": [
+      "Track Line Display",
+      "Status Bar",
+      "LL:",
+      "Left limit of a currently selected track segment",
+      "RL:",
+      "Right limit of a currently selected track",
+      "USER:",
+      "Name of the user logged in and having control of the territory",
+      "X:",
+      "The X coordinate of the current mouse cursor position on the track line display. The left side X = 0, and the right X = 1898",
+      "Y:",
+      "The Y coordinates the current mouse cursor position on the track line display. The top Y = 0, and the bottom Y = 1073",
+      "Date and time:",
+      "The time and date from the system clock",
+      "H:",
+      "The number of handles the application is currently using",
+      "M:",
+      "The amount of computer memory that the application is currently using",
+      "CONNECTED TO:",
+      "This shows that the workstation is connected to the database server",
+      "FEEDBACK:",
+      "Shows feedback to the dispatcher"
+    ],
+    "text": "Track Line Display\nStatus Bar\nLL:\nLeft limit of a currently selected track segment\nRL:\nRight limit of a currently selected track\nUSER:\nName of the user logged in and having control of the territory\nX:\nThe X coordinate of the current mouse cursor position on the track line display. The left side X = 0, and the right X = 1898\nY:\nThe Y coordinates the current mouse cursor position on the track line display. The top Y = 0, and the bottom Y = 1073\nDate and time:\nThe time and date from the system clock\nH:\nThe number of handles the application is currently using\nM:\nThe amount of computer memory that the application is currently using\nCONNECTED TO:\nThis shows that the workstation is connected to the database server\nFEEDBACK:\nShows feedback to the dispatcher"
+  },
+  {
+    "slide_name": "ppt/slides/slide25.xml",
+    "slide_number": 25,
+    "text_items": [
+      "TMDS Functions",
+      "General Functions Menu",
+      "Right-click on the black background area within the track line display window and a General Functions (GF) menu will be displayed."
+    ],
+    "text": "TMDS Functions\nGeneral Functions Menu\nRight-click on the black background area within the track line display window and a General Functions (GF) menu will be displayed."
+  },
+  {
+    "slide_name": "ppt/slides/slide26.xml",
+    "slide_number": 26,
+    "text_items": [
+      "TMDS Functions",
+      "Dynamic Context Menu",
+      "Right-clicking while the cursor is on a track segment, signal, switch point, or control point of any window containing a track line display causes the DC menu to appear."
+    ],
+    "text": "TMDS Functions\nDynamic Context Menu\nRight-clicking while the cursor is on a track segment, signal, switch point, or control point of any window containing a track line display causes the DC menu to appear."
+  },
+  {
+    "slide_name": "ppt/slides/slide27.xml",
+    "slide_number": 27,
+    "text_items": [
+      "TMDS Functions",
+      "Hot Keys and Shortcuts",
+      "F4:",
+      "Enter Issue a Restrictive Information Tag Mode",
+      "F5:",
+      "Enter Issue T&T Mode",
+      "F7:",
+      "Enter Device",
+      "Blocl",
+      "Create mode",
+      "F9:",
+      "Enter Position a Train ID Mode",
+      "F11:",
+      "Train ID Displa",
+      "y Option Toggle",
+      "CTRL+A:",
+      "Displays Alias ID for train symbol",
+      "CTRL+E:",
+      "Engine IDs Displayed",
+      "CTRL+G:",
+      "Toggle Signals On/Off",
+      "CTRL+H:",
+      "Toggle Crossings On/Off",
+      "CTRL+I:",
+      "Instant Message",
+      "CTRL+L:",
+      "Log On/Off",
+      "CTRL+P:",
+      "Displays Train Symbol",
+      "Psuedo",
+      "IDs",
+      "CTRL+Q:",
+      "Toggle Fast Route Mode On/Off",
+      "CTRL+S:",
+      "Displays Symbol identifier for train symbol",
+      "CTRL+F6:",
+      "Rotate through stacked track line screen will be displayed",
+      "CTRL+F12:",
+      "Toggles between Fast Route Mode and Stack Route Mode. Fast Route Mode is the default option. The cursor is signal with arrow – Stack Rote Mode cursor is same but with “STACK” under the signal."
+    ],
+    "text": "TMDS Functions\nHot Keys and Shortcuts\nF4:\nEnter Issue a Restrictive Information Tag Mode\nF5:\nEnter Issue T&T Mode\nF7:\nEnter Device\nBlocl\nCreate mode\nF9:\nEnter Position a Train ID Mode\nF11:\nTrain ID Displa\ny Option Toggle\nCTRL+A:\nDisplays Alias ID for train symbol\nCTRL+E:\nEngine IDs Displayed\nCTRL+G:\nToggle Signals On/Off\nCTRL+H:\nToggle Crossings On/Off\nCTRL+I:\nInstant Message\nCTRL+L:\nLog On/Off\nCTRL+P:\nDisplays Train Symbol\nPsuedo\nIDs\nCTRL+Q:\nToggle Fast Route Mode On/Off\nCTRL+S:\nDisplays Symbol identifier for train symbol\nCTRL+F6:\nRotate through stacked track line screen will be displayed\nCTRL+F12:\nToggles between Fast Route Mode and Stack Route Mode. Fast Route Mode is the default option. The cursor is signal with arrow – Stack Rote Mode cursor is same but with “STACK” under the signal."
+  },
+  {
+    "slide_name": "ppt/slides/slide28.xml",
+    "slide_number": 28,
+    "text_items": [
+      "TMDS Functions",
+      "Tool Tips",
+      "Hovering over a track segment, switch (point), or signal causes a tooltip to be displayed that provides information about that element.",
+      "Hovering over a track segment containing bulleting restrictions, device blocks, track tags, and/or track and time authorities will provide information about those, along with the track segment information.",
+      "TO THE CAD DISPLAY!"
+    ],
+    "text": "TMDS Functions\nTool Tips\nHovering over a track segment, switch (point), or signal causes a tooltip to be displayed that provides information about that element.\nHovering over a track segment containing bulleting restrictions, device blocks, track tags, and/or track and time authorities will provide information about those, along with the track segment information.\nTO THE CAD DISPLAY!"
+  },
+  {
+    "slide_name": "ppt/slides/slide29.xml",
+    "slide_number": 29,
+    "text_items": [
+      "TMDS Functions",
+      "ALERT BANNERS",
+      "TMDS displays an alert banner along the bottom of the primary track line screen whenever the dispatcher needs to be alerted to a situation that requires his/her attention.",
+      "Clicking on the alert banner brings the ALERT tab of the SYSTEM SUMMARY to the foreground."
+    ],
+    "text": "TMDS Functions\nALERT BANNERS\nTMDS displays an alert banner along the bottom of the primary track line screen whenever the dispatcher needs to be alerted to a situation that requires his/her attention.\nClicking on the alert banner brings the ALERT tab of the SYSTEM SUMMARY to the foreground."
+  },
+  {
+    "slide_name": "ppt/slides/slide30.xml",
+    "slide_number": 30,
+    "text_items": [
+      "System Summary Window",
+      "System Summary Window Overview"
+    ],
+    "text": "System Summary Window\nSystem Summary Window Overview"
+  },
+  {
+    "slide_name": "ppt/slides/slide31.xml",
+    "slide_number": 31,
+    "text_items": [
+      "System Summary Window",
+      "System Summary Window Tabs:"
+    ],
+    "text": "System Summary Window\nSystem Summary Window Tabs:"
+  },
+  {
+    "slide_name": "ppt/slides/slide32.xml",
+    "slide_number": 32,
+    "text_items": [
+      "System Summary Window",
+      "Bulletins Window:",
+      "Each",
+      "Bullitin",
+      "entry is listed with the following details:"
+    ],
+    "text": "System Summary Window\nBulletins Window:\nEach\nBullitin\nentry is listed with the following details:"
+  },
+  {
+    "slide_name": "ppt/slides/slide33.xml",
+    "slide_number": 33,
+    "text_items": [
+      "System Summary Window",
+      "General Track Bulletin Window:",
+      "Each GTB entry is listed with the following details:"
+    ],
+    "text": "System Summary Window\nGeneral Track Bulletin Window:\nEach GTB entry is listed with the following details:"
+  },
+  {
+    "slide_name": "ppt/slides/slide34.xml",
+    "slide_number": 34,
+    "text_items": [
+      "System Summary Window",
+      "Options Menu:",
+      "A right-Click on either the Bulletins Window or the General Track Bulletin Window will bring up:",
+      "Bulletins",
+      "GTB"
+    ],
+    "text": "System Summary Window\nOptions Menu:\nA right-Click on either the Bulletins Window or the General Track Bulletin Window will bring up:\nBulletins\nGTB"
+  },
+  {
+    "slide_name": "ppt/slides/slide35.xml",
+    "slide_number": 35,
+    "text_items": [
+      "System Summary Window",
+      "Stored Routes Tab:"
+    ],
+    "text": "System Summary Window\nStored Routes Tab:"
+  },
+  {
+    "slide_name": "ppt/slides/slide36.xml",
+    "slide_number": 36,
+    "text_items": [
+      "System Summary Window",
+      "Other Tabs:",
+      "Tags",
+      "Device Blocks",
+      "Alerts",
+      "Mobile Messages – Not Used",
+      "System Trains",
+      "Instant Messages – SSMC/Dispatchers to Dispatcher",
+      "Locomotive Tracking"
+    ],
+    "text": "System Summary Window\nOther Tabs:\nTags\nDevice Blocks\nAlerts\nMobile Messages – Not Used\nSystem Trains\nInstant Messages – SSMC/Dispatchers to Dispatcher\nLocomotive Tracking"
+  },
+  {
+    "slide_name": "ppt/slides/slide37.xml",
+    "slide_number": 37,
+    "text_items": [
+      "TMDS Functions",
+      "CTC Dispatch Modes:",
+      "Switch Functions",
+      "Signal Functions",
+      "Fast Route Mode",
+      "Entry/Exit (NX) Routing",
+      "Stored Routes",
+      "Storing Routes",
+      "Stacking Routes",
+      "Pass Red Signal (PSS)",
+      "Enter Main Track (EMT)",
+      "Control Point Status",
+      "OS Train",
+      "Auto-Routing Operation"
+    ],
+    "text": "TMDS Functions\nCTC Dispatch Modes:\nSwitch Functions\nSignal Functions\nFast Route Mode\nEntry/Exit (NX) Routing\nStored Routes\nStoring Routes\nStacking Routes\nPass Red Signal (PSS)\nEnter Main Track (EMT)\nControl Point Status\nOS Train\nAuto-Routing Operation"
+  },
+  {
+    "slide_name": "ppt/slides/slide38.xml",
+    "slide_number": 38,
+    "text_items": [
+      "TMDS Functions",
+      "Track Tags:",
+      "Speed",
+      "– Contains information about speed restrictions that must be communicated to a. maintenance personnel and train crews who enter the speed restriction's limits.",
+      "Highway Xing (Crossing)",
+      "– Contains information about a failure or malfunction of a highway crossing safety device that must be communicated to a. maintenance personnel and b. any train crew before they reach that crossing location.",
+      "Informational",
+      "– Contains information and reminders that are useful to the dispatcher regarding conditions other than a speed restriction or highway crossing protection system issue and which may need to be conveyed to maintenance personnel or a train crew."
+    ],
+    "text": "TMDS Functions\nTrack Tags:\nSpeed\n– Contains information about speed restrictions that must be communicated to a. maintenance personnel and train crews who enter the speed restriction's limits.\nHighway Xing (Crossing)\n– Contains information about a failure or malfunction of a highway crossing safety device that must be communicated to a. maintenance personnel and b. any train crew before they reach that crossing location.\nInformational\n– Contains information and reminders that are useful to the dispatcher regarding conditions other than a speed restriction or highway crossing protection system issue and which may need to be conveyed to maintenance personnel or a train crew."
+  },
+  {
+    "slide_name": "ppt/slides/slide39.xml",
+    "slide_number": 39,
+    "text_items": [
+      "TMDS Functions",
+      "Device Blocks:",
+      "When a device block is applied on a track, the track is colored lavender",
+      "If the dispatcher attempts to line a signal through the track block, the feedback message will display a",
+      "BLOCK IN ROUTE",
+      "message, and the route request will be canceled."
+    ],
+    "text": "TMDS Functions\nDevice Blocks:\nWhen a device block is applied on a track, the track is colored lavender\nIf the dispatcher attempts to line a signal through the track block, the feedback message will display a\nBLOCK IN ROUTE\nmessage, and the route request will be canceled."
+  },
+  {
+    "slide_name": "ppt/slides/slide40.xml",
+    "slide_number": 40,
+    "text_items": [
+      "TMDS Functions",
+      "CTC Track Authorities:",
+      "Issuing a Simple Track and Time",
+      "Issuing a Replacement Track and Time",
+      "Modifying a Track Authority",
+      "Reporting Clear"
+    ],
+    "text": "TMDS Functions\nCTC Track Authorities:\nIssuing a Simple Track and Time\nIssuing a Replacement Track and Time\nModifying a Track Authority\nReporting Clear"
+  },
+  {
+    "slide_name": "ppt/slides/slide41.xml",
+    "slide_number": 41,
+    "text_items": [
+      "TMDS Functions",
+      "TRAIN IDS:",
+      "View –",
+      "View a Train from a drop-down list",
+      "Position Train ID",
+      "OS Train",
+      "– Not Used",
+      "Release Train ID",
+      "Modify Train ID",
+      "Move Train ID",
+      "Delete Train ID",
+      "– Finalize Train",
+      "Create Train ID",
+      "Simulate Train",
+      "– Sim mode only, not used"
+    ],
+    "text": "TMDS Functions\nTRAIN IDS:\nView –\nView a Train from a drop-down list\nPosition Train ID\nOS Train\n– Not Used\nRelease Train ID\nModify Train ID\nMove Train ID\nDelete Train ID\n– Finalize Train\nCreate Train ID\nSimulate Train\n– Sim mode only, not used"
+  },
+  {
+    "slide_name": "ppt/slides/slide42.xml",
+    "slide_number": 42,
+    "text_items": [
+      "TMDS Functions",
+      "TRAIN SHEET SUMMARY:",
+      "Method 1:",
+      "Right Click on Train ID",
+      " Modify Train",
+      "Method 2:",
+      "Click on Train symbol Trains Tab in the System Summary",
+      "Method 3:",
+      "automatically opens when a new train symbol is placed on a track segment using the",
+      "position train",
+      "option from the track segment CS menu"
+    ],
+    "text": "TMDS Functions\nTRAIN SHEET SUMMARY:\nMethod 1:\nRight Click on Train ID\n Modify Train\nMethod 2:\nClick on Train symbol Trains Tab in the System Summary\nMethod 3:\nautomatically opens when a new train symbol is placed on a track segment using the\nposition train\noption from the track segment CS menu"
+  },
+  {
+    "slide_name": "ppt/slides/slide43.xml",
+    "slide_number": 43,
+    "text_items": [
+      "TMDS Functions",
+      "OTHER CTC FUNCTIONS:",
+      "Annotations System Tools"
+    ],
+    "text": "TMDS Functions\nOTHER CTC FUNCTIONS:\nAnnotations System Tools"
+  },
+  {
+    "slide_name": "ppt/slides/slide44.xml",
+    "slide_number": 44,
+    "text_items": [
+      "TMDS Functions",
+      "BULLETINS:",
+      "Bulletin Summary Window"
+    ],
+    "text": "TMDS Functions\nBULLETINS:\nBulletin Summary Window"
+  },
+  {
+    "slide_name": "ppt/slides/slide45.xml",
+    "slide_number": 45,
+    "text_items": [
+      "TMDS Functions",
+      "BULLETINS:",
+      "Types of Bulletins"
+    ],
+    "text": "TMDS Functions\nBULLETINS:\nTypes of Bulletins"
+  },
+  {
+    "slide_name": "ppt/slides/slide46.xml",
+    "slide_number": 46,
+    "text_items": [
+      "GTBs",
+      "General Track Bulletins:"
+    ],
+    "text": "GTBs\nGeneral Track Bulletins:"
+  },
+  {
+    "slide_name": "ppt/slides/slide47.xml",
+    "slide_number": 47,
+    "text_items": [
+      "Thanks!"
+    ],
+    "text": "Thanks!"
+  },
+  {
+    "slide_name": "ppt/slides/slide48.xml",
+    "slide_number": 48,
+    "text_items": [],
+    "text": ""
+  }
+]

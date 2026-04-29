@@ -1,0 +1,9 @@
+header_family,byte,meaning
+office,0xFA,Acknowledge
+office,0xFB,Poll
+office,0xFC,Control
+office,0xFD,Recall
+office,0xFE,Execute
+field,0xF1,Poll Response No Data
+field,0xF2,Poll Response With Data
+field,0xF3,Control Response With Data

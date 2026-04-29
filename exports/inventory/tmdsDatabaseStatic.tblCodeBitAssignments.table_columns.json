@@ -1,0 +1,218 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "WordType",
+        "ordinal":  1,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "CDLNNumber",
+        "ordinal":  2,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "CPNumber",
+        "ordinal":  3,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "CSNumber",
+        "ordinal":  4,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "BPAssignment",
+        "ordinal":  5,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "Mnemonic",
+        "ordinal":  6,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "LongName",
+        "ordinal":  7,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "BitType",
+        "ordinal":  8,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "InvertedPosition",
+        "ordinal":  9,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "AlwaysOnState",
+        "ordinal":  10,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "UID",
+        "ordinal":  11,
+        "data_type":  "nvarchar",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "TrapEventNMS",
+        "ordinal":  12,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "TrapEventTypeNMS",
+        "ordinal":  13,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "AlarmLevel",
+        "ordinal":  14,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "AlarmDescription",
+        "ordinal":  15,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "AlarmEquipmentUID",
+        "ordinal":  16,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "WaysideATCSAddress",
+        "ordinal":  17,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "WaysideStatusIndex",
+        "ordinal":  18,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "RRUniqueIdentifierName",
+        "ordinal":  19,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "SoundFileName",
+        "ordinal":  20,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "AlertsInterval",
+        "ordinal":  21,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "NumberOfAlertsAnnunciations",
+        "ordinal":  22,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "OnTime",
+        "ordinal":  23,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "column":  "OffTime",
+        "ordinal":  24,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    }
+]

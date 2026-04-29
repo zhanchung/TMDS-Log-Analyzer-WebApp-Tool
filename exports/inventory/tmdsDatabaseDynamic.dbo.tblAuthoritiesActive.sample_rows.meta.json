@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblAuthoritiesActive",
+    "top":  20,
+    "order_by":  [
+                     "AuthGUID",
+                     "AuthorityNumber",
+                     "RailRoadName",
+                     "DispatcherName"
+                 ],
+    "row_count_exported":  4
+}

@@ -1,0 +1,10 @@
+message_family,message_name,form
+transit_messages,Acknowledge,xF1 st xF6
+transit_messages,Change,xF2 st {bn bi} cl ch xF6
+transit_messages,Control Checkback,xF3 st {bn bi} cl ch xF6
+receive_messages,Common Controls,xF9
+receive_messages,Acknowledge,xFA st cl ch xF6
+receive_messages,Poll,xFB st cl ch xF6 in secure mode; xFB st xF6 in non-secure mode
+receive_messages,Control,xFC st {bn bi} cl ch xF6
+receive_messages,Recall,xFD st cl ch xF6
+receive_messages,Execute,xFE st cl ch xF6

@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblTrackRestrictionCodes",
+    "top":  25,
+    "order_by":  [
+                     "TRUID",
+                     "TRCode",
+                     "TRDescription"
+                 ],
+    "row_count_exported":  25
+}

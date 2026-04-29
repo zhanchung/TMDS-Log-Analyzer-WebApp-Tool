@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "export_name":  "code_station_context",
+    "row_count":  50,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_context.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_context.csv"
+}

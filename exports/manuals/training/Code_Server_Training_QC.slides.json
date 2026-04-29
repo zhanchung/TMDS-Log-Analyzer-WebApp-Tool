@@ -1,0 +1,319 @@
+[
+  {
+    "slide_name": "ppt/slides/slide1.xml",
+    "slide_number": 1,
+    "text_items": [
+      "Train Management and Dispatch System (TMDS)",
+      "System Administrator Training"
+    ],
+    "text": "Train Management and Dispatch System (TMDS)\nSystem Administrator Training"
+  },
+  {
+    "slide_name": "ppt/slides/slide2.xml",
+    "slide_number": 2,
+    "text_items": [
+      "TMDS Code Server"
+    ],
+    "text": "TMDS Code Server"
+  },
+  {
+    "slide_name": "ppt/slides/slide3.xml",
+    "slide_number": 3,
+    "text_items": [
+      "Workstation (laptop) with TMDS installed",
+      "Handouts:",
+      "TMDS System Administrator Training:",
+      "Code Server Presentation",
+      "Module Exam",
+      "Tools/Resources"
+    ],
+    "text": "Workstation (laptop) with TMDS installed\nHandouts:\nTMDS System Administrator Training:\nCode Server Presentation\nModule Exam\nTools/Resources"
+  },
+  {
+    "slide_name": "ppt/slides/slide4.xml",
+    "slide_number": 4,
+    "text_items": [
+      "Acronyms",
+      "Acronym",
+      "Description",
+      "GUI",
+      "Graphical User Interface",
+      "TMDS",
+      "Train Management Dispatch System"
+    ],
+    "text": "Acronyms\nAcronym\nDescription\nGUI\nGraphical User Interface\nTMDS\nTrain Management Dispatch System"
+  },
+  {
+    "slide_name": "ppt/slides/slide5.xml",
+    "slide_number": 5,
+    "text_items": [
+      "Code Server",
+      "The Code Server provides for control and indication functionality between TMDS and the various legacy field signal system code lines. The packet switch provides the protocol emulation for the many code line variations in use in the industry today. The Code Line Interface Service provides a graphical directory view of the code lines, control stations, and associated control/indication bits. Furthermore, it provides the standard tools (e.g., recalls, resends, inhibiting, etc.) required to manage the code line from an administrator’s perspective.",
+      "The TMDS System Administrator – Code Server Module focuses on:",
+      "Code Server Overview",
+      "Code Server Functionality",
+      "Module Topics"
+    ],
+    "text": "Code Server\nThe Code Server provides for control and indication functionality between TMDS and the various legacy field signal system code lines. The packet switch provides the protocol emulation for the many code line variations in use in the industry today. The Code Line Interface Service provides a graphical directory view of the code lines, control stations, and associated control/indication bits. Furthermore, it provides the standard tools (e.g., recalls, resends, inhibiting, etc.) required to manage the code line from an administrator’s perspective.\nThe TMDS System Administrator – Code Server Module focuses on:\nCode Server Overview\nCode Server Functionality\nModule Topics"
+  },
+  {
+    "slide_name": "ppt/slides/slide6.xml",
+    "slide_number": 6,
+    "text_items": [],
+    "text": ""
+  },
+  {
+    "slide_name": "ppt/slides/slide7.xml",
+    "slide_number": 7,
+    "text_items": [
+      "Code Server Overview"
+    ],
+    "text": "Code Server Overview"
+  },
+  {
+    "slide_name": "ppt/slides/slide8.xml",
+    "slide_number": 8,
+    "text_items": [
+      "Code Server Overview",
+      "Code Server",
+      "All wayside communication messaging is channeled through an array of code servers. Each server has a warm redundant backup for failover purposes. The redundant backup is the secondary/offline code server. The code servers maintain persistent connections to an array of packet switch devices. Packet switch devices are communication equipment such as protocol converters that process data sent to/from the field devices.",
+      "Each physical territory loaded and running on the different clients will automatically detect and subscribe to the appropriate code server(s) in order to process controls and indications for the respective code stations. A code station is an entity that contains the communication settings. This includes station addresses and control and indication values. There are other system services that also subscribe to the wayside communication server through the control server in order to read real time device status and train movement."
+    ],
+    "text": "Code Server Overview\nCode Server\nAll wayside communication messaging is channeled through an array of code servers. Each server has a warm redundant backup for failover purposes. The redundant backup is the secondary/offline code server. The code servers maintain persistent connections to an array of packet switch devices. Packet switch devices are communication equipment such as protocol converters that process data sent to/from the field devices.\nEach physical territory loaded and running on the different clients will automatically detect and subscribe to the appropriate code server(s) in order to process controls and indications for the respective code stations. A code station is an entity that contains the communication settings. This includes station addresses and control and indication values. There are other system services that also subscribe to the wayside communication server through the control server in order to read real time device status and train movement."
+  },
+  {
+    "slide_name": "ppt/slides/slide9.xml",
+    "slide_number": 9,
+    "text_items": [
+      "Code Server Functionality",
+      "Start and Exit the Code Server",
+      "Start",
+      "the Code Server by double-clicking on the",
+      "application shortcut or alternately on the",
+      "Codeserver.exe file.",
+      "Exit",
+      "the application by browsing to the menu bar, selecting the System menu, and then selecting EXIT. The application window will close once the EXIT function is selected."
+    ],
+    "text": "Code Server Functionality\nStart and Exit the Code Server\nStart\nthe Code Server by double-clicking on the\napplication shortcut or alternately on the\nCodeserver.exe file.\nExit\nthe application by browsing to the menu bar, selecting the System menu, and then selecting EXIT. The application window will close once the EXIT function is selected."
+  },
+  {
+    "slide_name": "ppt/slides/slide10.xml",
+    "slide_number": 10,
+    "text_items": [
+      "The Code Server provides a Graphical User Interface (GUI) for ease of use.",
+      "The",
+      "Main Screen",
+      "displays Application Name, Title Bar, Menu Bar and all the options available.",
+      "Code Server Overview"
+    ],
+    "text": "The Code Server provides a Graphical User Interface (GUI) for ease of use.\nThe\nMain Screen\ndisplays Application Name, Title Bar, Menu Bar and all the options available.\nCode Server Overview"
+  },
+  {
+    "slide_name": "ppt/slides/slide11.xml",
+    "slide_number": 11,
+    "text_items": [
+      "Code Server Overview",
+      "The",
+      "Menu Bar",
+      "provides access to the following functional areas:",
+      "System",
+      "–Helps to shut down the server",
+      "View",
+      "–Will bring up the Function Assignments window which displays the Controls and Indications for the selected code station",
+      "Options",
+      "- Selections available are:",
+      "Display Logging",
+      "Historical Logging",
+      "Workstation Connections",
+      "Packet Switch Connections",
+      "Reload Certificates (Not Available)"
+    ],
+    "text": "Code Server Overview\nThe\nMenu Bar\nprovides access to the following functional areas:\nSystem\n–Helps to shut down the server\nView\n–Will bring up the Function Assignments window which displays the Controls and Indications for the selected code station\nOptions\n- Selections available are:\nDisplay Logging\nHistorical Logging\nWorkstation Connections\nPacket Switch Connections\nReload Certificates (Not Available)"
+  },
+  {
+    "slide_name": "ppt/slides/slide12.xml",
+    "slide_number": 12,
+    "text_items": [
+      "System Menu",
+      "Exit",
+      "– Clicking on Exit allows the user to shut down the server.",
+      "View Menu",
+      "Show Code Functions",
+      "- Clicking on Show Code Functions displays the Function Assignments window which provides information on the Controls and Indications for the selected code station. An example of a Code Function is shown on Slide 19.",
+      "Code Server Overview"
+    ],
+    "text": "System Menu\nExit\n– Clicking on Exit allows the user to shut down the server.\nView Menu\nShow Code Functions\n- Clicking on Show Code Functions displays the Function Assignments window which provides information on the Controls and Indications for the selected code station. An example of a Code Function is shown on Slide 19.\nCode Server Overview"
+  },
+  {
+    "slide_name": "ppt/slides/slide13.xml",
+    "slide_number": 13,
+    "text_items": [
+      "Code Server Functionality",
+      "The Function Assignments Window",
+      "This window will display the CONTROLS and INDICATIONS for the selected CODE STATION.",
+      "The window is divided into three sections.",
+      "The top section identifies the control station and code line",
+      "The left section displays all of the CONTROLS assigned to the control point",
+      "The right section displays all of the INDICATIONS assigned to that control point",
+      "A drop-down menu selection under",
+      "Options",
+      "at the top of the window allows the window to be closed by left clicking on",
+      "EXIT",
+      "."
+    ],
+    "text": "Code Server Functionality\nThe Function Assignments Window\nThis window will display the CONTROLS and INDICATIONS for the selected CODE STATION.\nThe window is divided into three sections.\nThe top section identifies the control station and code line\nThe left section displays all of the CONTROLS assigned to the control point\nThe right section displays all of the INDICATIONS assigned to that control point\nA drop-down menu selection under\nOptions\nat the top of the window allows the window to be closed by left clicking on\nEXIT\n."
+  },
+  {
+    "slide_name": "ppt/slides/slide14.xml",
+    "slide_number": 14,
+    "text_items": [
+      "Code Server Overview",
+      "Options Menu",
+      "Display Logging :",
+      "Low Level Protocol –",
+      "Displays protocol bytes at the socket level.",
+      "Function Mnemonics –",
+      "Displays code function assignments against the indications/controls.",
+      "System Exceptions –",
+      "Displays any system exceptions logged in the exceptions file.",
+      "Debug Messages –",
+      "Displays debug messages from low level code.",
+      "Cluster Messages –",
+      "Displays cluster messages between primary/secondary server.",
+      "Socket Level Details –",
+      "Displays details on the socket level connections.",
+      "MSC II Protocol –",
+      "Specifies how a code server talks to field code units.",
+      "PEER Protocol Details –",
+      "Peer to Peer.",
+      "AMQP Messages –",
+      "Advanced Message Querying Protocol - Option is grayed out unless an AMQP connection is made.",
+      "Display Log Colors"
+    ],
+    "text": "Code Server Overview\nOptions Menu\nDisplay Logging :\nLow Level Protocol –\nDisplays protocol bytes at the socket level.\nFunction Mnemonics –\nDisplays code function assignments against the indications/controls.\nSystem Exceptions –\nDisplays any system exceptions logged in the exceptions file.\nDebug Messages –\nDisplays debug messages from low level code.\nCluster Messages –\nDisplays cluster messages between primary/secondary server.\nSocket Level Details –\nDisplays details on the socket level connections.\nMSC II Protocol –\nSpecifies how a code server talks to field code units.\nPEER Protocol Details –\nPeer to Peer.\nAMQP Messages –\nAdvanced Message Querying Protocol - Option is grayed out unless an AMQP connection is made.\nDisplay Log Colors"
+  },
+  {
+    "slide_name": "ppt/slides/slide15.xml",
+    "slide_number": 15,
+    "text_items": [
+      "Code Server Overview",
+      "The Connections Section of the Code Server Main Window:",
+      "Three major categories of connections:",
+      "Code Line",
+      "– The code lines connected to a particular code server.",
+      "Packet Connections",
+      "– The name, IP address and port number of each packet switch connected to a particular code server.",
+      "Client Connections –",
+      "Workstations connected to the code server."
+    ],
+    "text": "Code Server Overview\nThe Connections Section of the Code Server Main Window:\nThree major categories of connections:\nCode Line\n– The code lines connected to a particular code server.\nPacket Connections\n– The name, IP address and port number of each packet switch connected to a particular code server.\nClient Connections –\nWorkstations connected to the code server."
+  },
+  {
+    "slide_name": "ppt/slides/slide16.xml",
+    "slide_number": 16,
+    "text_items": [
+      "Code Server Overview",
+      "The Code line Information Section of the Code Server Main Window",
+      "Statistics for each of the code lines on the code server are displayed in a spreadsheet format:",
+      "Line –",
+      "Code line Number.",
+      "Name –",
+      "Code line Name.",
+      "Stats –",
+      "Number of Stations associated with the code line.",
+      "CTLS –",
+      "Number of Controls sent by the code server for each code line since last cleared.",
+      "RCLS –",
+      "Recalls.",
+      "INDS –",
+      "Number of indications received by the code server for each code line since last cleared.",
+      "Fails –",
+      "Number of code station failures detected by the code server for each code station on each code line since last cleared.",
+      "Description –",
+      "Will contain “Code Line Limits” as found in Code Line table."
+    ],
+    "text": "Code Server Overview\nThe Code line Information Section of the Code Server Main Window\nStatistics for each of the code lines on the code server are displayed in a spreadsheet format:\nLine –\nCode line Number.\nName –\nCode line Name.\nStats –\nNumber of Stations associated with the code line.\nCTLS –\nNumber of Controls sent by the code server for each code line since last cleared.\nRCLS –\nRecalls.\nINDS –\nNumber of indications received by the code server for each code line since last cleared.\nFails –\nNumber of code station failures detected by the code server for each code station on each code line since last cleared.\nDescription –\nWill contain “Code Line Limits” as found in Code Line table."
+  },
+  {
+    "slide_name": "ppt/slides/slide17.xml",
+    "slide_number": 17,
+    "text_items": [
+      "Code Server Overview",
+      "The Event History Section of the Code Server Main Window",
+      "The inputs to and outputs from the code server as well as code server health static and setting are displayed in this section:",
+      "The options available under this sub-menu are (Right Click on Event History Window):",
+      "Pause Scrolling",
+      "Clear Events",
+      "Show Event Log",
+      "Show Exception Log"
+    ],
+    "text": "Code Server Overview\nThe Event History Section of the Code Server Main Window\nThe inputs to and outputs from the code server as well as code server health static and setting are displayed in this section:\nThe options available under this sub-menu are (Right Click on Event History Window):\nPause Scrolling\nClear Events\nShow Event Log\nShow Exception Log"
+  },
+  {
+    "slide_name": "ppt/slides/slide18.xml",
+    "slide_number": 18,
+    "text_items": [
+      "Code Server Overview",
+      "Pause Scrolling –",
+      "Left clicking on this option will pause",
+      "the scrolling of the",
+      "EVENT HISTORY",
+      "display.",
+      "If the scrolling of the",
+      "EVENT HISTORY",
+      "display has been paused,",
+      "Enable Scrolling",
+      "will be displayed as the first menu option. Left clicking on this option will restart the display scrolling in the",
+      "EVENT HISTORY",
+      "display.",
+      "Clear Events -",
+      "Left clicking on this option will clear all of the events in the",
+      "EVENT HISTORY",
+      "display.",
+      "Show Event Log -",
+      "Left clicking on this option will open an instance of MS Notepad in a separate window and load the current code server event log into Notepad.",
+      "Show Exception Log -",
+      "Left clicking on this option will open an instance of MS Notepad in a separate window and load the current code server exception log into Notepad.",
+      "The Event History Sub-Menu"
+    ],
+    "text": "Code Server Overview\nPause Scrolling –\nLeft clicking on this option will pause\nthe scrolling of the\nEVENT HISTORY\ndisplay.\nIf the scrolling of the\nEVENT HISTORY\ndisplay has been paused,\nEnable Scrolling\nwill be displayed as the first menu option. Left clicking on this option will restart the display scrolling in the\nEVENT HISTORY\ndisplay.\nClear Events -\nLeft clicking on this option will clear all of the events in the\nEVENT HISTORY\ndisplay.\nShow Event Log -\nLeft clicking on this option will open an instance of MS Notepad in a separate window and load the current code server event log into Notepad.\nShow Exception Log -\nLeft clicking on this option will open an instance of MS Notepad in a separate window and load the current code server exception log into Notepad.\nThe Event History Sub-Menu"
+  },
+  {
+    "slide_name": "ppt/slides/slide19.xml",
+    "slide_number": 19,
+    "text_items": [
+      "Code Server Functionality",
+      "The Code Server Log Files",
+      "Both an event and an exception log for each day of operation for the code server are kept in the",
+      "EventLogs",
+      "folder found in the",
+      "TMDS-CODE-SERVER",
+      "file on the",
+      "D",
+      "drive of the code server",
+      ".",
+      "Inside the",
+      "EventLogs",
+      "folder you will find a folder for each code line associated with that code server, a current event log, a current exceptions log, and event and exception logs for previous days operations."
+    ],
+    "text": "Code Server Functionality\nThe Code Server Log Files\nBoth an event and an exception log for each day of operation for the code server are kept in the\nEventLogs\nfolder found in the\nTMDS-CODE-SERVER\nfile on the\nD\ndrive of the code server\n.\nInside the\nEventLogs\nfolder you will find a folder for each code line associated with that code server, a current event log, a current exceptions log, and event and exception logs for previous days operations."
+  },
+  {
+    "slide_name": "ppt/slides/slide20.xml",
+    "slide_number": 20,
+    "text_items": [
+      "ACTION FLASH:",
+      "Review Key Elements of Code Server Overview"
+    ],
+    "text": "ACTION FLASH:\nReview Key Elements of Code Server Overview"
+  },
+  {
+    "slide_name": "ppt/slides/slide21.xml",
+    "slide_number": 21,
+    "text_items": [
+      "ACTION FLASH:",
+      "Time to take your exam, I know you will hit the bullseye!"
+    ],
+    "text": "ACTION FLASH:\nTime to take your exam, I know you will hit the bullseye!"
+  }
+]

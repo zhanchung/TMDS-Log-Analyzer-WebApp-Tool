@@ -1,0 +1,11 @@
+rule_id,meaning
+trace_record_structure,"A trace record contains a sent office message, a received field message, and a trailing information line."
+trace_info_line_fields,"The information line contains timestamp, trace record type, code line number/name, and station number/name."
+control_word_value_pairs,"Control messages send only the control words that need to change, as [word number] [value] pairs."
+trace_word_numbering,Word numbering starts with 0.
+trace_bit_order_reversal,Trace data values are bit-reversed from the code system database tabling order before device names are matched.
+unused_bits_hidden,Unused bits are not shown in the trace bit-state display.
+indication_trace_full_station,The trace bit-state display shows all indication bit states for the station even when the field only sends changed indication words.
+recall_returns_full_indications,A recall returns all indications for the station.
+reserved_f_escape,"Data or checksum bytes starting with F are split into two transmitted bytes, such as F8 -> F0 08 and F0 -> F0 00."
+ff_not_allowed,FF is undefined and not allowed.

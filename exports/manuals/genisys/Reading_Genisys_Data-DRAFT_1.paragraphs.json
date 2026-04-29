@@ -1,0 +1,557 @@
+[
+  {
+    "paragraph_number": 1,
+    "char_count": 16,
+    "text": "Genisys Protocol"
+  },
+  {
+    "paragraph_number": 2,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 3,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 4,
+    "char_count": 434,
+    "text": "The TMDS wayside server supports non-secured polling for the Genisys protocol. The implementation and description of the protocol is listed below. The data is always framed with a header and footer byte. The header byte describes the mode or type of packet being transmitted or received. The footer is the termination of the message, which is always a 0xF6. The second byte in the message is always the station address (0x1 to 0xff). "
+  },
+  {
+    "paragraph_number": 5,
+    "char_count": 431,
+    "text": "There will never be a byte value greater than 0xF0 between the header and footer byte. If a byte has a higher value of 0xF0 between the header and footer it will be represented by two bytes. For example, if there is a data byte that needs to be transmitted in the frame of 0xFF, it will be represented by 0xF0 & 0x0F (e.g. <F0><0F>). The 0xF0 byte in a data frame is a trigger that there are two bytes used to represent one value. "
+  },
+  {
+    "paragraph_number": 6,
+    "char_count": 471,
+    "text": "There is also a special byte call the 0xE0 byte, which is found in the office and field messages typically during initialization only and indicates how the polls and controls interact between the office and field. We only support non-secure polling (this means there is no CRC in the poll messages from field) and we support control check back (this means the field echoes the control back to the office, the office checks the echo and then tells field to execute 0xFE). "
+  },
+  {
+    "paragraph_number": 7,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 8,
+    "char_count": 102,
+    "text": "All valid genisys messages start with one of the following two-character Office or Field Header bytes:"
+  },
+  {
+    "paragraph_number": 9,
+    "char_count": 20,
+    "text": "Office Header Bytes "
+  },
+  {
+    "paragraph_number": 10,
+    "char_count": 19,
+    "text": "0xFA – Acknowledge "
+  },
+  {
+    "paragraph_number": 11,
+    "char_count": 12,
+    "text": "0xFB – Poll "
+  },
+  {
+    "paragraph_number": 12,
+    "char_count": 15,
+    "text": "0xFC – Control "
+  },
+  {
+    "paragraph_number": 13,
+    "char_count": 14,
+    "text": "0xFD – Recall "
+  },
+  {
+    "paragraph_number": 14,
+    "char_count": 15,
+    "text": "0xFE – Execute "
+  },
+  {
+    "paragraph_number": 15,
+    "char_count": 19,
+    "text": "Field Header Bytes "
+  },
+  {
+    "paragraph_number": 16,
+    "char_count": 29,
+    "text": "0xF1 – Poll Response No Data "
+  },
+  {
+    "paragraph_number": 17,
+    "char_count": 30,
+    "text": "0xF2 – Poll Response with Data"
+  },
+  {
+    "paragraph_number": 18,
+    "char_count": 80,
+    "text": "0xF3 – Control Response with Data (only used if “control check back” is enabled)"
+  },
+  {
+    "paragraph_number": 19,
+    "char_count": 34,
+    "text": "Data frames dissected with legend "
+  },
+  {
+    "paragraph_number": 20,
+    "char_count": 33,
+    "text": "• Bytes in yellow are the CRC-16 "
+  },
+  {
+    "paragraph_number": 21,
+    "char_count": 52,
+    "text": "Bytes in blue are the control point address (in hex)"
+  },
+  {
+    "paragraph_number": 22,
+    "char_count": 88,
+    "text": "• Bytes in gray are the data byte positions (in hex - starting at zero… 0, 1, 2, 3, etc)"
+  },
+  {
+    "paragraph_number": 23,
+    "char_count": 84,
+    "text": "• Bytes in green are the values of the data bytes for their relative positions (1-8)"
+  },
+  {
+    "paragraph_number": 24,
+    "char_count": 205,
+    "text": "• Bytes in red are the initialization bytes.  <E0> <07>  the field uses non-secure polling and control check back, if these values are <E0> <05> the field  uses non-secure polling and NO control check back"
+  },
+  {
+    "paragraph_number": 25,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 26,
+    "char_count": 40,
+    "text": "All valid genisys messages end with <F6>"
+  },
+  {
+    "paragraph_number": 27,
+    "char_count": 72,
+    "text": "Additional characters may be present after the F6, but they are ignored."
+  },
+  {
+    "paragraph_number": 28,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 29,
+    "char_count": 34,
+    "text": "Office Poll\t\t\t<FB><12><C3><3D><F6>"
+  },
+  {
+    "paragraph_number": 30,
+    "char_count": 29,
+    "text": "Field Response\t\t\t<F1><12><F6>"
+  },
+  {
+    "paragraph_number": 31,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 32,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 33,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 34,
+    "char_count": 37,
+    "text": "Office Recall \t\t\t<FD><0B><01><57><F6>"
+  },
+  {
+    "paragraph_number": 35,
+    "char_count": 91,
+    "text": "Field Indication data\t\t<F2><0B><00><01><01><01><02><40><03><00><04><00><E0><07><78><0C><F6>"
+  },
+  {
+    "paragraph_number": 36,
+    "char_count": 43,
+    "text": "Office Acknowledgment \t<FA><0B><03><67><F6>"
+  },
+  {
+    "paragraph_number": 37,
+    "char_count": 37,
+    "text": "Field Indication no/data\t<F1><0B><F6>"
+  },
+  {
+    "paragraph_number": 38,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 39,
+    "char_count": 84,
+    "text": "Office Control (check back)\t<FC><02><00><59><01><AA><02><86><03><00><EC><F0><01><F6>"
+  },
+  {
+    "paragraph_number": 40,
+    "char_count": 78,
+    "text": "Field Control Check Back \t<F3><02><00><59><01><AA><02><86><03><00><DC><C1><F6>"
+  },
+  {
+    "paragraph_number": 41,
+    "char_count": 45,
+    "text": "Office Control Execute \t\t<FE><02><C1><A1><F6>"
+  },
+  {
+    "paragraph_number": 42,
+    "char_count": 37,
+    "text": "Field Indication no/data\t<F1><02><F6>"
+  },
+  {
+    "paragraph_number": 43,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 44,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 45,
+    "char_count": 237,
+    "text": "A common setting is for field generated indications caused by a change of state to only send the data that has changed.  In this case, the value of word 2 changed to <00>.  Office Recalls will still respond with a full indication string."
+  },
+  {
+    "paragraph_number": 46,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 47,
+    "char_count": 34,
+    "text": "Office Poll\t\t\t<FB><08><C3><3D><F6>"
+  },
+  {
+    "paragraph_number": 48,
+    "char_count": 53,
+    "text": "Field Response\t\t\t<F2><0B>02><00><E0><07><78><0C><F6>\t"
+  },
+  {
+    "paragraph_number": 49,
+    "char_count": 43,
+    "text": "Office Acknowledgment \t<FA><0B><03><67><F6>"
+  },
+  {
+    "paragraph_number": 50,
+    "char_count": 37,
+    "text": "Field Indication no/data\t<F1><0B><F6>"
+  },
+  {
+    "paragraph_number": 51,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 52,
+    "char_count": 162,
+    "text": "Another common setting is for non-secure polling and NO control check back.  Initialization bytes <E0> <05> are used when in this mode.  <FE> Execute is not used."
+  },
+  {
+    "paragraph_number": 53,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 54,
+    "char_count": 83,
+    "text": "Office Control (no check back)\t<FC><01><00><01><01><00><02><00><E0><05><41><C6><F6>"
+  },
+  {
+    "paragraph_number": 55,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 56,
+    "char_count": 116,
+    "text": "Indication and control data bytes are in hex.  They need to be converted to binary in least significant digit order."
+  },
+  {
+    "paragraph_number": 57,
+    "char_count": 113,
+    "text": "Each byte is eight digits long.  If the binary conversion is less than eight digits, leading zeros must be added."
+  },
+  {
+    "paragraph_number": 58,
+    "char_count": 12,
+    "text": "For example…"
+  },
+  {
+    "paragraph_number": 59,
+    "char_count": 94,
+    "text": "01 Hex = 01 Binary -> eight digits long = 00000001 -> least significant digit order = 10000000"
+  },
+  {
+    "paragraph_number": 60,
+    "char_count": 96,
+    "text": "59 Hex = 01011001 Binary -> no leading digits needed -> least significant digit order = 10011010"
+  },
+  {
+    "paragraph_number": 61,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 62,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 63,
+    "char_count": 90,
+    "text": "Field Indication data <F2><0B><00><01><01><59><02><40><03><00><04><00><E0><07><78><0C><F6>"
+  },
+  {
+    "paragraph_number": 64,
+    "char_count": 33,
+    "text": "<F2> = Field Indication with data"
+  },
+  {
+    "paragraph_number": 65,
+    "char_count": 51,
+    "text": "<08> = Station address (in hex, convert to decimal)"
+  },
+  {
+    "paragraph_number": 66,
+    "char_count": 24,
+    "text": "<00> = Word 0 (bits 1-8)"
+  },
+  {
+    "paragraph_number": 67,
+    "char_count": 124,
+    "text": "<01> = Word 0 data = 01 hex = 01 binary + leading digits = 00000001 -> converted to least-significant-digit order = 10000000"
+  },
+  {
+    "paragraph_number": 68,
+    "char_count": 25,
+    "text": "<01> = Word 1 (bits 9-16)"
+  },
+  {
+    "paragraph_number": 69,
+    "char_count": 78,
+    "text": "<59> = Word 1 data = 59 = 01011001 -> 10011010 (bits 9, 12, 13, and 15 = TRUE)"
+  },
+  {
+    "paragraph_number": 70,
+    "char_count": 26,
+    "text": "<02> = Word 2 (bits 17-24)"
+  },
+  {
+    "paragraph_number": 71,
+    "char_count": 113,
+    "text": "<40> = Word 2 data = 40 = 01000000 -> 00000010 (bit 23 = TRUE.  Bit 23 may also be referred to as “Word 2 Bit 7”)"
+  },
+  {
+    "paragraph_number": 72,
+    "char_count": 26,
+    "text": "<03> = Word 3 (bits 25-32)"
+  },
+  {
+    "paragraph_number": 73,
+    "char_count": 34,
+    "text": "<00> = Word 3 data = 00 = 00000000"
+  },
+  {
+    "paragraph_number": 74,
+    "char_count": 26,
+    "text": "<04> = Word 4 (bits 33-40)"
+  },
+  {
+    "paragraph_number": 75,
+    "char_count": 34,
+    "text": "<00> = Word 4 data = 00 = 00000000"
+  },
+  {
+    "paragraph_number": 76,
+    "char_count": 62,
+    "text": "The indication string would be all indication values together:"
+  },
+  {
+    "paragraph_number": 77,
+    "char_count": 40,
+    "text": "1000000010011010000000100000000000000000"
+  },
+  {
+    "paragraph_number": 78,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 79,
+    "char_count": 60,
+    "text": "In the next example, the value of indication word 3 is F3.  "
+  },
+  {
+    "paragraph_number": 80,
+    "char_count": 51,
+    "text": "Values larger than F0 are represented as two bytes."
+  },
+  {
+    "paragraph_number": 81,
+    "char_count": 65,
+    "text": "<F2><0B><00><01><02><59><03><F0><03>><04><00><E0><07><78><0C><F6>"
+  },
+  {
+    "paragraph_number": 82,
+    "char_count": 26,
+    "text": "<03> = Word 3 (bits 25-32)"
+  },
+  {
+    "paragraph_number": 83,
+    "char_count": 41,
+    "text": "<F0> = Word 3 data byte 1 = F0 = 00001111"
+  },
+  {
+    "paragraph_number": 84,
+    "char_count": 41,
+    "text": "<03> = Word 3 data byte 2 = 03 = 11000000"
+  },
+  {
+    "paragraph_number": 85,
+    "char_count": 39,
+    "text": "Word 3 data is then combined = 11001111"
+  },
+  {
+    "paragraph_number": 86,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 87,
+    "char_count": 40,
+    "text": "Control Data would be read the same way."
+  },
+  {
+    "paragraph_number": 88,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 89,
+    "char_count": 72,
+    "text": "When converting hex to binary, I use an iOS application called NerdCalc."
+  },
+  {
+    "paragraph_number": 90,
+    "char_count": 40,
+    "text": "Leading zeros are automatically added.  "
+  },
+  {
+    "paragraph_number": 91,
+    "char_count": 104,
+    "text": "To show least significant digit order, I simple disable screen rotation, and turn the phone upside down."
+  },
+  {
+    "paragraph_number": 92,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 93,
+    "char_count": 104,
+    "text": "The windows calculator can be used.  Base conversion can be performed if it is set to “Programmer Mode”."
+  },
+  {
+    "paragraph_number": 94,
+    "char_count": 178,
+    "text": "Make sure you reverse the conversion so it will be in least significant digit order.  Be careful with the calculator in older versions of windows as leading digits are not added."
+  },
+  {
+    "paragraph_number": 95,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 96,
+    "char_count": 5,
+    "text": "NOTE:"
+  },
+  {
+    "paragraph_number": 97,
+    "char_count": 37,
+    "text": "Genisys numbering STARTS with WORD-0."
+  },
+  {
+    "paragraph_number": 98,
+    "char_count": 25,
+    "text": "Word-0 contains bits 1-8."
+  },
+  {
+    "paragraph_number": 99,
+    "char_count": 64,
+    "text": "Word-0 Bit-1 is going to be displayed in the CodeServer as Bit-1"
+  },
+  {
+    "paragraph_number": 100,
+    "char_count": 26,
+    "text": "Word-1 contains bits 9-16."
+  },
+  {
+    "paragraph_number": 101,
+    "char_count": 65,
+    "text": "Word-1 Bit-1 is going to be displayed in the CodeServer as Bit-9."
+  },
+  {
+    "paragraph_number": 102,
+    "char_count": 173,
+    "text": "Prints may contain a different numbering scheme.  For instance, BRC/Alstrom prints start with Word-1 Bit-0… so Word-1 Bit-7 on the print is the same as genisys Word-0 Bit-8."
+  },
+  {
+    "paragraph_number": 103,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 104,
+    "char_count": 127,
+    "text": "When setting up new locations, the number of control and indication bits needs to match the value programmed in the field unit."
+  },
+  {
+    "paragraph_number": 105,
+    "char_count": 76,
+    "text": "If the number of controls does not match, the control will most likely fail."
+  },
+  {
+    "paragraph_number": 106,
+    "char_count": 75,
+    "text": "If the number of indications does not match, unexpected behavior may occur."
+  },
+  {
+    "paragraph_number": 107,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 108,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 109,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 110,
+    "char_count": 0,
+    "text": ""
+  },
+  {
+    "paragraph_number": 111,
+    "char_count": 0,
+    "text": ""
+  }
+]

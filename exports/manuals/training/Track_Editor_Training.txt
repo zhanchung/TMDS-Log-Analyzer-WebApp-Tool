@@ -1,0 +1,157 @@
+=== Slide 1 ===
+Train Management and Dispatch System (TMDS)
+System Administrator Training
+
+=== Slide 2 ===
+Track Editor
+
+=== Slide 3 ===
+These are powerful tools that can delete and or duplicate entire territories on a database server including authority and bulletin information. Care should be taken to ensure that these tools are used properly and by qualified users only.
+
+=== Slide 4 ===
+Workstation (laptop) with TMDS installed
+Reference Material:
+Positive Train Control (PTC) Project
+Track Editor User Manual
+Handouts:
+TMDS System Administrator Training:
+Track Editor Presentation
+Module Exam & Key
+Tools/Resources
+
+=== Slide 5 ===
+Module Topics
+The Track Editor is the part of the TMDS that is used to build and edit the track line display and all associated components.
+The TMDS System Administrator Track Editor Module focuses on
+:
+Overview
+Territory Basics
+Verifying Territory Components
+PTC Functions
+
+=== Slide 6 ===
+Acronyms
+Acronym
+Definition
+ATCS
+Advanced Train Control System
+CAD
+Computer Aided Dispatching, synonymous with “dispatching system” in this document
+CFA
+Code Function Assignments
+CTC
+Centralized Traffic Control
+DXOD
+Double Crossover Down
+DXOU
+Double Crossover Up
+EOSD
+End of Siding Down
+EOSU
+End of Siding Up
+FED
+Failed Equipment Detector
+GIS
+Geographical Information System
+GUID
+Global Unique Identification
+HAZMAT
+Hazardous Materials
+HLCS
+Hyrail Limits Compliance System
+ID
+Identification
+OCS
+Occupancy Control System
+PTC
+Positive Train Control
+
+=== Slide 7 ===
+Acronyms
+Acronym
+Definition
+SPM
+Switch Point Monitoring
+SQL
+Structured Query Language
+TNT
+Track & Time
+TMDS
+Train Management and Dispatch System
+TPMS
+Traction Power Management System
+TWC
+Track Warrant Control
+UID
+Unique Identifier
+XML
+Extensible Markup Language
+XOD
+Crossover Down
+XOU
+Crossover Up
+
+=== Slide 8 ===
+Overview
+
+=== Slide 9 ===
+This course will go over:
+How to sign in
+Picking the database
+Territory Information
+Signal Routes Table
+Components and how they are linked
+Linkage Tools
+
+=== Slide 10 ===
+Overview
+The Track Editor is used to maintain the attributes of the track and components.
+Track Editor provides access to:
+Code Servers
+Code Lines
+Code Stations
+Code Function Assignments
+Track Line Components
+
+=== Slide 11 ===
+Signing In
+
+=== Slide 12 ===
+Overview
+To open from the Database:
+Open Project
+ From Database Server
+Then Select the appropriate database
+Select the Territory
+
+=== Slide 13 ===
+Territory Basics
+
+=== Slide 14 ===
+A Territory
+is the base component of the TMDS track line display.
+Territories are containers for Control Points, which in turn are containers for all track-line devices(signals, switches, tracks, and other miscellaneous devices).
+When the dispatcher logs in and selects a territory, they are loading several smaller territories.
+Territories have a maximum size of 1920x1200, which is the size of a single dispatch monitor.
+Depending the number of track components, we can combine two territories to display on a single dispatch monitor.
+Each territory is assigned a three-digit
+Unique ID (UID).
+All components placed on a territory will automatically be assigned a six-digit UID with the first three digits containing the territory UID.
+For example, all components on territory number 710 will be assigned UIDs from
+710000-710999.
+UIDs 0-99 are reserved for Control Points and 100-999 are for all other components.
+
+=== Slide 15 ===
+Territories are comprised of:
+Control Points
+: an addressable collection of devices that encompasses one or more Code Stations.
+Devices:
+Track, signals, switches, Misc Devices, MODs, etc. All devices MUST be assigned to a Control Point.
+Code Stations
+: logical group set of Controls and Indications for a corresponding programmable logic controller at the wayside. (aka – Code Function Assignments).
+Code Function Assignments (
+CFAs) are the control and indication mnemonic bits that are assigned to a Code Station. These control and indication bits are then assigned to track line devices to enable functionally with field devices.
+
+=== Slide 16 ===
+ACTION FLASH:
+Time to take your exam, I know you will hit the bullseye!

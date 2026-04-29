@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemTrackRoutes",
+    "top":  20,
+    "order_by":  [
+                     "RouteGUID",
+                     "RouteName",
+                     "EntryPoint"
+                 ],
+    "row_count_exported":  0
+}

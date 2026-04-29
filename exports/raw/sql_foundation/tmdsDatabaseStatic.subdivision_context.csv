@@ -1,0 +1,4 @@
+﻿"UID","Name","LongName","RailRoadName","BeginLimit","EndLimit","OfficeName","GeneralOrder","TimeTableDate","PTCUID","PTCDatabaseVersion","PTCDatabaseFileXmlUID","BackOfficeServerPrimary","BackOfficeServerSecondary","EnablePTCOperations","BOSDynamicStagingStatus","GTBNUMBER","GTBRANGE","GTBFACTOR","CurrentOperatingCircularUID"
+"1","ESCONDIDO","ESCONDIDO","SDNR Railway","OCEAN TC (MP 99.3)","AVO (MP 121.7)","ESCONDIDO","8S","6/27/2022",,,,,,,,"2679","2000","999","3"
+"2","SAN DIEGO","SAN DIEGO","SDNR Railway","SONGS (MP 209.12)","ASH (MP 267.7)","SAN DIEGO","8S","6/27/2022","100","9134001;3620229446","2F844C89-8E03-4CBC-8F8D-200C2B5BE2D1","BOS-01A","BOS-01B","True","2","1163","2000","999","1"
+"999","ALL SUBS","ALL SUBS","SDNR Railway","NONE","NONE","ALL SUBS",,"6/27/2022",,,,,,,,,,,

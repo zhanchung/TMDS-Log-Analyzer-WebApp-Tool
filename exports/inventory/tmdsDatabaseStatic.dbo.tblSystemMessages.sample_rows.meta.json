@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemMessages",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "MessageType",
+                     "MessageContent"
+                 ],
+    "row_count_exported":  0
+}

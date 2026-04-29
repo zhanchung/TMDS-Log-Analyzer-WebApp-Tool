@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblTrainsActive",
+    "top":  20,
+    "order_by":  [
+                     "Symbol",
+                     "EngineID",
+                     "InUsed"
+                 ],
+    "row_count_exported":  20
+}

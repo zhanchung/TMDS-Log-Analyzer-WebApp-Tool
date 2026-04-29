@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblTrainOsEventsActive",
+    "top":  10,
+    "where_clause":  "[TrackGUID] = @p0",
+    "filter":  {
+                   "TrackGUID":  100404
+               },
+    "row_count_exported":  3,
+    "sql":  "SELECT TOP (10) * FROM [dbo].[tblTrainOsEventsActive] WHERE [TrackGUID] = @p0;"
+}

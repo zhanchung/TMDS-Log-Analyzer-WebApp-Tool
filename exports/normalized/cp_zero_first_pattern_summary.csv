@@ -1,0 +1,859 @@
+component_family,assignment_owner_type,reference_column,reference_kind,reference_format,raw_reference_value,subdivision_name,row_count,distinct_component_count,distinct_parent_control_point_count,distinct_component_codeline_count,component_codelines,cp_alignment_values,trailing_alignment_values,station_names,sample_component_paths
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPCTL1,control,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPCTL2,control,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPCTL3,control,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPCTL4,control,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPCTL5,control,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND1,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND10,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100000;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100001;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100002;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100003;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100004;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100005;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100006;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100007;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100008;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100010;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100012;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100013;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100017;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100018;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100019;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100020;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100022;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100023;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100024;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100025;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100027;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100033;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;100035;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200000;3,ESCONDIDO,1,1,1,1,6,same_cp,differs_from_codeline,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200002;3,ESCONDIDO,1,1,1,1,7,same_cp,differs_from_codeline,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200003;3,ESCONDIDO,1,1,1,1,10,same_cp,differs_from_codeline,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200004;1,ESCONDIDO,1,1,1,1,8,same_cp,differs_from_codeline,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200005;3,ESCONDIDO,1,1,1,1,9,same_cp,differs_from_codeline,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200006;1,ESCONDIDO,1,1,1,1,12,same_cp,differs_from_codeline,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200007;1,ESCONDIDO,1,1,1,1,13,same_cp,differs_from_codeline,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200008;1,ESCONDIDO,1,1,1,1,11,same_cp,differs_from_codeline,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200009;1,ESCONDIDO,1,1,1,1,14,same_cp,differs_from_codeline,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200010;1,ESCONDIDO,1,1,1,1,15,same_cp,differs_from_codeline,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200011;1,ESCONDIDO,1,1,1,1,16,same_cp,differs_from_codeline,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200012;1,ESCONDIDO,1,1,1,1,17,same_cp,differs_from_codeline,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200013;1,ESCONDIDO,1,1,1,1,18,same_cp,differs_from_codeline,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200014;1,ESCONDIDO,1,1,1,1,19,same_cp,differs_from_codeline,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200015;1,ESCONDIDO,1,1,1,1,21,same_cp,differs_from_codeline,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200016;1,ESCONDIDO,1,1,1,1,20,same_cp,differs_from_codeline,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200017;1,ESCONDIDO,1,1,1,1,22,same_cp,differs_from_codeline,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200019;1,ESCONDIDO,1,1,1,1,24,same_cp,differs_from_codeline,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200020;1,ESCONDIDO,1,1,1,1,23,same_cp,differs_from_codeline,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200025;1,ESCONDIDO,1,1,1,1,25,same_cp,differs_from_codeline,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200026;26,ESCONDIDO,1,1,1,1,26,same_cp,matches_codeline,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200027;1,ESCONDIDO,1,1,1,1,27,same_cp,differs_from_codeline,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND11,indication,code_line_station_control_point_bit,0;0;200028;28,ESCONDIDO,1,1,1,1,28,same_cp,matches_codeline,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100000;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100001;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100002;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100003;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100004;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100005;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100006;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100007;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100008;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100010;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100012;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100013;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100017;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100018;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100019;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100020;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100022;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100023;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100024;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100025;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100027;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100033;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;100035;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200000;3,ESCONDIDO,1,1,1,1,6,same_cp,differs_from_codeline,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200002;3,ESCONDIDO,1,1,1,1,7,same_cp,differs_from_codeline,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200003;3,ESCONDIDO,1,1,1,1,10,same_cp,differs_from_codeline,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200004;1,ESCONDIDO,1,1,1,1,8,same_cp,differs_from_codeline,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200005;3,ESCONDIDO,1,1,1,1,9,same_cp,differs_from_codeline,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200006;1,ESCONDIDO,1,1,1,1,12,same_cp,differs_from_codeline,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200007;1,ESCONDIDO,1,1,1,1,13,same_cp,differs_from_codeline,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200008;1,ESCONDIDO,1,1,1,1,11,same_cp,differs_from_codeline,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200009;1,ESCONDIDO,1,1,1,1,14,same_cp,differs_from_codeline,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200010;1,ESCONDIDO,1,1,1,1,15,same_cp,differs_from_codeline,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200011;1,ESCONDIDO,1,1,1,1,16,same_cp,differs_from_codeline,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200012;1,ESCONDIDO,1,1,1,1,17,same_cp,differs_from_codeline,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200013;1,ESCONDIDO,1,1,1,1,18,same_cp,differs_from_codeline,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200014;1,ESCONDIDO,1,1,1,1,19,same_cp,differs_from_codeline,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200015;1,ESCONDIDO,1,1,1,1,21,same_cp,differs_from_codeline,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200016;1,ESCONDIDO,1,1,1,1,20,same_cp,differs_from_codeline,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200017;1,ESCONDIDO,1,1,1,1,22,same_cp,differs_from_codeline,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200019;1,ESCONDIDO,1,1,1,1,24,same_cp,differs_from_codeline,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200020;1,ESCONDIDO,1,1,1,1,23,same_cp,differs_from_codeline,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200025;1,ESCONDIDO,1,1,1,1,25,same_cp,differs_from_codeline,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200026;26,ESCONDIDO,1,1,1,1,26,same_cp,matches_codeline,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200027;1,ESCONDIDO,1,1,1,1,27,same_cp,differs_from_codeline,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND12,indication,code_line_station_control_point_bit,0;0;200028;28,ESCONDIDO,1,1,1,1,28,same_cp,matches_codeline,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100000;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100001;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100002;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100003;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100004;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100005;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100006;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100007;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100008;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100010;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100012;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100013;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100017;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100018;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100019;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100020;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100022;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100023;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100024;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100025;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100027;0,SAN DIEGO,1,1,1,1,5,same_cp,differs_from_codeline,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100033;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;100035;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200000;3,ESCONDIDO,1,1,1,1,6,same_cp,differs_from_codeline,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200002;3,ESCONDIDO,1,1,1,1,7,same_cp,differs_from_codeline,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200003;3,ESCONDIDO,1,1,1,1,10,same_cp,differs_from_codeline,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200004;1,ESCONDIDO,1,1,1,1,8,same_cp,differs_from_codeline,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200005;3,ESCONDIDO,1,1,1,1,9,same_cp,differs_from_codeline,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200006;1,ESCONDIDO,1,1,1,1,12,same_cp,differs_from_codeline,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200007;1,ESCONDIDO,1,1,1,1,13,same_cp,differs_from_codeline,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200008;1,ESCONDIDO,1,1,1,1,11,same_cp,differs_from_codeline,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200009;1,ESCONDIDO,1,1,1,1,14,same_cp,differs_from_codeline,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200010;1,ESCONDIDO,1,1,1,1,15,same_cp,differs_from_codeline,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200011;1,ESCONDIDO,1,1,1,1,16,same_cp,differs_from_codeline,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200012;1,ESCONDIDO,1,1,1,1,17,same_cp,differs_from_codeline,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200013;1,ESCONDIDO,1,1,1,1,18,same_cp,differs_from_codeline,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200014;1,ESCONDIDO,1,1,1,1,19,same_cp,differs_from_codeline,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200015;1,ESCONDIDO,1,1,1,1,21,same_cp,differs_from_codeline,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200016;1,ESCONDIDO,1,1,1,1,20,same_cp,differs_from_codeline,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200017;1,ESCONDIDO,1,1,1,1,22,same_cp,differs_from_codeline,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200019;1,ESCONDIDO,1,1,1,1,24,same_cp,differs_from_codeline,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200020;1,ESCONDIDO,1,1,1,1,23,same_cp,differs_from_codeline,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200025;1,ESCONDIDO,1,1,1,1,25,same_cp,differs_from_codeline,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200026;26,ESCONDIDO,1,1,1,1,26,same_cp,matches_codeline,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200027;1,ESCONDIDO,1,1,1,1,27,same_cp,differs_from_codeline,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND13,indication,code_line_station_control_point_bit,0;0;200028;28,ESCONDIDO,1,1,1,1,28,same_cp,matches_codeline,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND2,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND2,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND2,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND2,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND2,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND3,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND4,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND5,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND6,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND7,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND8,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point_bit,0;0;100009;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP EAST BROOK,EAST BROOK:EAST BROOK
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point_bit,0;0;100016;5,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP LONGBOARD,LONGBOARD:LONGBOARD
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100000,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARL,CARL:CARL
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100001,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SONGS
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100002,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DON,DON:DON
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100003,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PULGAS,PULGAS:PULGAS
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100004,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CUDAHY,CUDAHY:CUDAHY
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100005,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP STUART,STUART:STUART
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100006,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MESA,MESA:MESA
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100007,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ROSE,ROSE:ROSE
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100008,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:BROADWAY
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100010,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SORRENTO,SORRENTO:SORRENTO
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100011,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:PACIFIC
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100012,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SHELL,SHELL:SHELL
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100013,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:ESCONDIDO JCT
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100015,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SCRIPPS,SCRIPPS:SCRIPPS
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100017,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP FARR,FARR:FARR
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100018,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PONTO,PONTO:PONTO
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100019,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SWAMI,SWAMI:SWAMI
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100020,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CARDIFF,CARDIFF:CARDIFF
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100022,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP VALLEY,VALLEY:VALLEY
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100023,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CROSBY,CROSBY:CROSBY
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100024,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP DEL MAR,DEL MAR:DEL MAR
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100025,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP TORREY,TORREY:TORREY
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100027,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP MIRAMAR,MIRAMAR:MIRAMAR
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100033,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP ASH,ASH:ASH
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;100035,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP CONVAIR,CONVAIR:CONVAIR
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200000,ESCONDIDO,1,1,1,1,6,same_cp,blank,OCEAN TC,OCEAN:OCEAN
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200002,ESCONDIDO,1,1,1,1,7,same_cp,blank,RAILROAD,RAILROAD:RAILROAD
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200003,ESCONDIDO,1,1,1,1,10,same_cp,blank,TRUE,TRUE:TRUE
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200004,ESCONDIDO,1,1,1,1,8,same_cp,blank,WYE,WYE:WYE
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200005,ESCONDIDO,1,1,1,1,9,same_cp,blank,CROUCH,CROUCH:CROUCH
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200006,ESCONDIDO,1,1,1,1,12,same_cp,blank,RANCHO,RANCHO:RANCHO
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200007,ESCONDIDO,1,1,1,1,13,same_cp,blank,SCHOOL,SCHOOL:SCHOOL
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200008,ESCONDIDO,1,1,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:EL CAMINO
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200009,ESCONDIDO,1,1,1,1,14,same_cp,blank,MELROSE,MELROSE:MELROSE
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200010,ESCONDIDO,1,1,1,1,15,same_cp,blank,ANGEL,ANGEL:ANGEL
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200011,ESCONDIDO,1,1,1,1,16,same_cp,blank,VISTA,VISTA:VISTA
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200012,ESCONDIDO,1,1,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:CIVIC CTR VISTA
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200013,ESCONDIDO,1,1,1,1,18,same_cp,blank,AVENUE,AVENUE:AVENUE
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200014,ESCONDIDO,1,1,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:BUENA CREEK
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200015,ESCONDIDO,1,1,1,1,21,same_cp,blank,PALOMAR,PALOMAR:PALOMAR
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200016,ESCONDIDO,1,1,1,1,20,same_cp,blank,MISSY,MISSY:MISSY
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200017,ESCONDIDO,1,1,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:LOOP WEST
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200019,ESCONDIDO,1,1,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:LOOP EAST
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200020,ESCONDIDO,1,1,1,1,23,same_cp,blank,SHELLY,SHELLY:SHELLY
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200025,ESCONDIDO,1,1,1,1,25,same_cp,blank,NORDAHL,NORDAHL:NORDAHL
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200026,ESCONDIDO,1,1,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:HOLDOUT
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200027,ESCONDIDO,1,1,1,1,27,same_cp,blank,YARD,YARD:YARD
+control_point,direct_control_point_slot,CPIND9,indication,code_line_station_control_point,0;1;200028,ESCONDIDO,1,1,1,1,28,same_cp,blank,AVO,AVO:AVO
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200027;,ESCONDIDO,13,13,1,1,27,same_cp,blank,YARD,YARD:UNLOCK|YARD:REVERSE|YARD:NORMAL|YARD:1208POK|YARD:1207POK|YARD:1206DOK|YARD:1206POK|YARD:1208DOK|YARD:1212POK|YARD:1212DOK|YARD:12125POK|YARD:12125DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200007;,ESCONDIDO,12,12,1,1,13,same_cp,blank,SCHOOL,SCHOOL:1051POK|SCHOOL:1051DOK|SCHOOL:1054POK|SCHOOL:1054DOK|SCHOOL:1055POK|SCHOOL:1055DOK|SCHOOL:1056POK|SCHOOL:1056DOK|SCHOOL:1064POK|SCHOOL:1064DOK|SCHOOL:1069POK|SCHOOL:1069DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200007;,ESCONDIDO,12,12,1,1,13,same_cp,blank,SCHOOL,SCHOOL:1051POK|SCHOOL:1051DOK|SCHOOL:1054POK|SCHOOL:1054DOK|SCHOOL:1055POK|SCHOOL:1055DOK|SCHOOL:1056POK|SCHOOL:1056DOK|SCHOOL:1064POK|SCHOOL:1064DOK|SCHOOL:1069POK|SCHOOL:1069DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200007;,ESCONDIDO,12,12,1,1,13,same_cp,blank,SCHOOL,SCHOOL:1051POK|SCHOOL:1051DOK|SCHOOL:1054POK|SCHOOL:1054DOK|SCHOOL:1055POK|SCHOOL:1055DOK|SCHOOL:1056POK|SCHOOL:1056DOK|SCHOOL:1064POK|SCHOOL:1064DOK|SCHOOL:1069POK|SCHOOL:1069DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200007;0001,ESCONDIDO,12,12,1,1,13,same_cp,differs_from_codeline,SCHOOL,SCHOOL:1051POK|SCHOOL:1051DOK|SCHOOL:1054POK|SCHOOL:1054DOK|SCHOOL:1055POK|SCHOOL:1055DOK|SCHOOL:1056POK|SCHOOL:1056DOK|SCHOOL:1064POK|SCHOOL:1064DOK|SCHOOL:1069POK|SCHOOL:1069DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200007;0001,ESCONDIDO,12,12,1,1,13,same_cp,differs_from_codeline,SCHOOL,SCHOOL:1051POK|SCHOOL:1051DOK|SCHOOL:1054POK|SCHOOL:1054DOK|SCHOOL:1055POK|SCHOOL:1055DOK|SCHOOL:1056POK|SCHOOL:1056DOK|SCHOOL:1064POK|SCHOOL:1064DOK|SCHOOL:1069POK|SCHOOL:1069DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200027;,ESCONDIDO,11,11,1,1,27,same_cp,blank,YARD,YARD:REVERSE|YARD:NORMAL|YARD:1208POK|YARD:1207POK|YARD:1206DOK|YARD:1206POK|YARD:1208DOK|YARD:1212POK|YARD:1212DOK|YARD:12125POK|YARD:12125DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200027;,ESCONDIDO,11,11,1,1,27,same_cp,blank,YARD,YARD:REVERSE|YARD:NORMAL|YARD:1208POK|YARD:1207POK|YARD:1206DOK|YARD:1206POK|YARD:1208DOK|YARD:1212POK|YARD:1212DOK|YARD:12125POK|YARD:12125DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200027;27,ESCONDIDO,11,11,1,1,27,same_cp,matches_codeline,YARD,YARD:REVERSE|YARD:NORMAL|YARD:1208POK|YARD:1207POK|YARD:1206DOK|YARD:1206POK|YARD:1208DOK|YARD:1212POK|YARD:1212DOK|YARD:12125POK|YARD:12125DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200027;27,ESCONDIDO,11,11,1,1,27,same_cp,matches_codeline,YARD,YARD:REVERSE|YARD:NORMAL|YARD:1208POK|YARD:1207POK|YARD:1206DOK|YARD:1206POK|YARD:1208DOK|YARD:1212POK|YARD:1212DOK|YARD:12125POK|YARD:12125DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200017;,ESCONDIDO,10,10,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:1166DOK|LOOP WEST:1166POK|LOOP WEST:1164DOK|LOOP WEST:1164POK|LOOP WEST:1161DOK|LOOP WEST:B1167POK|LOOP WEST:B1167DOK|LOOP WEST:B1174POK|LOOP WEST:B1174DOK|LOOP WEST:1161POK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200017;,ESCONDIDO,10,10,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:1166DOK|LOOP WEST:1166POK|LOOP WEST:1164DOK|LOOP WEST:1164POK|LOOP WEST:1161DOK|LOOP WEST:B1167POK|LOOP WEST:B1167DOK|LOOP WEST:B1174POK|LOOP WEST:B1174DOK|LOOP WEST:1161POK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200017;,ESCONDIDO,10,10,1,1,22,same_cp,blank,LOOP WEST,LOOP WEST:1166DOK|LOOP WEST:1166POK|LOOP WEST:1164DOK|LOOP WEST:1164POK|LOOP WEST:1161DOK|LOOP WEST:B1167POK|LOOP WEST:B1167DOK|LOOP WEST:B1174POK|LOOP WEST:B1174DOK|LOOP WEST:1161POK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200017;22,ESCONDIDO,10,10,1,1,22,same_cp,matches_codeline,LOOP WEST,LOOP WEST:1166DOK|LOOP WEST:1166POK|LOOP WEST:1164DOK|LOOP WEST:1164POK|LOOP WEST:1161DOK|LOOP WEST:B1167POK|LOOP WEST:B1167DOK|LOOP WEST:B1174POK|LOOP WEST:B1174DOK|LOOP WEST:1161POK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200017;22,ESCONDIDO,10,10,1,1,22,same_cp,matches_codeline,LOOP WEST,LOOP WEST:1166DOK|LOOP WEST:1166POK|LOOP WEST:1164DOK|LOOP WEST:1164POK|LOOP WEST:1161DOK|LOOP WEST:B1167POK|LOOP WEST:B1167DOK|LOOP WEST:B1174POK|LOOP WEST:B1174DOK|LOOP WEST:1161POK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200004;,ESCONDIDO,6,6,1,1,8,same_cp,blank,WYE,WYE:1009DOK|WYE:1009POK|WYE:1011POK|WYE:1011DOK|WYE:1012POK|WYE:1012DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200010;,ESCONDIDO,6,6,1,1,15,same_cp,blank,ANGEL,ANGEL:1082POK|ANGEL:1082DOK|ANGEL:1085POK|ANGEL:1085DOK|ANGEL:1088POK|ANGEL:1088DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200011;,ESCONDIDO,6,6,1,1,16,same_cp,blank,VISTA,VISTA:1092MOK|VISTA:1092DOK|VISTA:1092POK|VISTA:1092LOK|VISTA:1093POK|VISTA:1093DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200019;,ESCONDIDO,6,6,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:B1177POK|LOOP EAST:B1176DOK|LOOP EAST:B1176POK|LOOP EAST:B1177DOK|LOOP EAST:1188POK|LOOP EAST:1188DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200004;,ESCONDIDO,6,6,1,1,8,same_cp,blank,WYE,WYE:1009DOK|WYE:1009POK|WYE:1011POK|WYE:1011DOK|WYE:1012POK|WYE:1012DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200010;,ESCONDIDO,6,6,1,1,15,same_cp,blank,ANGEL,ANGEL:1082POK|ANGEL:1082DOK|ANGEL:1085POK|ANGEL:1085DOK|ANGEL:1088POK|ANGEL:1088DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200011;,ESCONDIDO,6,6,1,1,16,same_cp,blank,VISTA,VISTA:1092MOK|VISTA:1092DOK|VISTA:1092POK|VISTA:1092LOK|VISTA:1093POK|VISTA:1093DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200019;,ESCONDIDO,6,6,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:B1177POK|LOOP EAST:B1176DOK|LOOP EAST:B1176POK|LOOP EAST:B1177DOK|LOOP EAST:1188POK|LOOP EAST:1188DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200004;,ESCONDIDO,6,6,1,1,8,same_cp,blank,WYE,WYE:1009DOK|WYE:1009POK|WYE:1011POK|WYE:1011DOK|WYE:1012POK|WYE:1012DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200010;,ESCONDIDO,6,6,1,1,15,same_cp,blank,ANGEL,ANGEL:1082POK|ANGEL:1082DOK|ANGEL:1085POK|ANGEL:1085DOK|ANGEL:1088POK|ANGEL:1088DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200011;,ESCONDIDO,6,6,1,1,16,same_cp,blank,VISTA,VISTA:1092MOK|VISTA:1092DOK|VISTA:1092POK|VISTA:1092LOK|VISTA:1093POK|VISTA:1093DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200019;,ESCONDIDO,6,6,1,1,24,same_cp,blank,LOOP EAST,LOOP EAST:B1177POK|LOOP EAST:B1176DOK|LOOP EAST:B1176POK|LOOP EAST:B1177DOK|LOOP EAST:1188POK|LOOP EAST:1188DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200004;0001,ESCONDIDO,6,6,1,1,8,same_cp,differs_from_codeline,WYE,WYE:1009DOK|WYE:1009POK|WYE:1011POK|WYE:1011DOK|WYE:1012POK|WYE:1012DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200010;0001,ESCONDIDO,6,6,1,1,15,same_cp,differs_from_codeline,ANGEL,ANGEL:1082POK|ANGEL:1082DOK|ANGEL:1085POK|ANGEL:1085DOK|ANGEL:1088POK|ANGEL:1088DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200011;0001,ESCONDIDO,6,6,1,1,16,same_cp,differs_from_codeline,VISTA,VISTA:1092MOK|VISTA:1092DOK|VISTA:1092POK|VISTA:1092LOK|VISTA:1093POK|VISTA:1093DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200019;24,ESCONDIDO,6,6,1,1,24,same_cp,matches_codeline,LOOP EAST,LOOP EAST:B1177POK|LOOP EAST:B1176DOK|LOOP EAST:B1176POK|LOOP EAST:B1177DOK|LOOP EAST:1188POK|LOOP EAST:1188DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200004;0001,ESCONDIDO,6,6,1,1,8,same_cp,differs_from_codeline,WYE,WYE:1009DOK|WYE:1009POK|WYE:1011POK|WYE:1011DOK|WYE:1012POK|WYE:1012DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200010;0001,ESCONDIDO,6,6,1,1,15,same_cp,differs_from_codeline,ANGEL,ANGEL:1082POK|ANGEL:1082DOK|ANGEL:1085POK|ANGEL:1085DOK|ANGEL:1088POK|ANGEL:1088DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200011;0001,ESCONDIDO,6,6,1,1,16,same_cp,differs_from_codeline,VISTA,VISTA:1092MOK|VISTA:1092DOK|VISTA:1092POK|VISTA:1092LOK|VISTA:1093POK|VISTA:1093DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200019;24,ESCONDIDO,6,6,1,1,24,same_cp,matches_codeline,LOOP EAST,LOOP EAST:B1177POK|LOOP EAST:B1176DOK|LOOP EAST:B1176POK|LOOP EAST:B1177DOK|LOOP EAST:1188POK|LOOP EAST:1188DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200000;,ESCONDIDO,5,5,1,1,6,same_cp,blank,OCEAN TC,OCEAN:997pok|OCEAN:997dok|OCEAN:995pok|OCEAN:995dok|OCEAN:995LOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200016;,ESCONDIDO,5,5,1,1,20,same_cp,blank,MISSY,MISSY:1148POK|MISSY:1137DOK|MISSY:1137POK|MISSY:1148DOK|MISSY:1149POK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200026;,ESCONDIDO,5,5,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:1199POK|HOLDOUT:1196DOK|HOLDOUT:1196POK|HOLDOUT:1199DOK|HOLDOUT:1202POK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;100013;,SAN DIEGO,5,5,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:2W CALL-ON|ESCONDIDO JCT:4W CALL-ON|ESCONDIDO JCT:6W CALL-ON|ESCONDIDO JCT:WBRQK|ESCONDIDO JCT:EBRLK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200000;,ESCONDIDO,5,5,1,1,6,same_cp,blank,OCEAN TC,OCEAN:997pok|OCEAN:997dok|OCEAN:995pok|OCEAN:995dok|OCEAN:995LOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200016;,ESCONDIDO,5,5,1,1,20,same_cp,blank,MISSY,MISSY:1148POK|MISSY:1137DOK|MISSY:1137POK|MISSY:1148DOK|MISSY:1149POK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200026;,ESCONDIDO,5,5,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:1199POK|HOLDOUT:1196DOK|HOLDOUT:1196POK|HOLDOUT:1199DOK|HOLDOUT:1202POK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;100013;,SAN DIEGO,5,5,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:2W CALL-ON|ESCONDIDO JCT:4W CALL-ON|ESCONDIDO JCT:6W CALL-ON|ESCONDIDO JCT:WBRQK|ESCONDIDO JCT:EBRLK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200000;,ESCONDIDO,5,5,1,1,6,same_cp,blank,OCEAN TC,OCEAN:997pok|OCEAN:997dok|OCEAN:995pok|OCEAN:995dok|OCEAN:995LOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200016;,ESCONDIDO,5,5,1,1,20,same_cp,blank,MISSY,MISSY:1148POK|MISSY:1137DOK|MISSY:1137POK|MISSY:1148DOK|MISSY:1149POK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200026;,ESCONDIDO,5,5,1,1,26,same_cp,blank,HOLDOUT,HOLDOUT:1199POK|HOLDOUT:1196DOK|HOLDOUT:1196POK|HOLDOUT:1199DOK|HOLDOUT:1202POK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;100013;0005,SAN DIEGO,5,5,1,1,5,same_cp,matches_codeline,CP ESCONDIDO JCT,ESCONDIDO JCT:2W CALL-ON|ESCONDIDO JCT:4W CALL-ON|ESCONDIDO JCT:6W CALL-ON|ESCONDIDO JCT:WBRQK|ESCONDIDO JCT:EBRLK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200000;0006,ESCONDIDO,5,5,1,1,6,same_cp,matches_codeline,OCEAN TC,OCEAN:997pok|OCEAN:997dok|OCEAN:995pok|OCEAN:995dok|OCEAN:995LOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200016;0001,ESCONDIDO,5,5,1,1,20,same_cp,differs_from_codeline,MISSY,MISSY:1148POK|MISSY:1137DOK|MISSY:1137POK|MISSY:1148DOK|MISSY:1149POK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;100013;0005,SAN DIEGO,5,5,1,1,5,same_cp,matches_codeline,CP ESCONDIDO JCT,ESCONDIDO JCT:2W CALL-ON|ESCONDIDO JCT:4W CALL-ON|ESCONDIDO JCT:6W CALL-ON|ESCONDIDO JCT:WBRQK|ESCONDIDO JCT:EBRLK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200000;0006,ESCONDIDO,5,5,1,1,6,same_cp,matches_codeline,OCEAN TC,OCEAN:997pok|OCEAN:997dok|OCEAN:995pok|OCEAN:995dok|OCEAN:995LOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200016;0001,ESCONDIDO,5,5,1,1,20,same_cp,differs_from_codeline,MISSY,MISSY:1148POK|MISSY:1137DOK|MISSY:1137POK|MISSY:1148DOK|MISSY:1149POK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;100013;,SAN DIEGO,4,4,1,1,5,same_cp,blank,CP ESCONDIDO JCT,ESCONDIDO JCT:2W CALL-ON|ESCONDIDO JCT:4W CALL-ON|ESCONDIDO JCT:6W CALL-ON|ESCONDIDO JCT:WBRQK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200008;,ESCONDIDO,4,4,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:1032POK|EL CAMINO:1032DOK|EL CAMINO:1037DOK|EL CAMINO:1037POK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200012;,ESCONDIDO,4,4,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:1096DOK|CIVIC CTR VISTA:1096POK|CIVIC CTR VISTA:1102POK|CIVIC CTR VISTA:1102DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200013;,ESCONDIDO,4,4,1,1,18,same_cp,blank,AVENUE,AVENUE:1108DOK|AVENUE:1108POK|AVENUE:1112POK|AVENUE:1112DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200014;,ESCONDIDO,4,4,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:1119DOK|BUENA CREEK:1119POK|BUENA CREEK:1128POK|BUENA CREEK:1128DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200015;,ESCONDIDO,4,4,1,1,21,same_cp,blank,PALOMAR,PALOMAR:1153DOK|PALOMAR:1153POK|PALOMAR:1157POK|PALOMAR:1157DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200025;,ESCONDIDO,4,4,1,1,25,same_cp,blank,NORDAHL,NORDAHL:1193DOK|NORDAHL:1193POK|NORDAHL:1193MOK|NORDAHL:1193LOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200008;,ESCONDIDO,4,4,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:1032POK|EL CAMINO:1032DOK|EL CAMINO:1037DOK|EL CAMINO:1037POK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200012;,ESCONDIDO,4,4,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:1096DOK|CIVIC CTR VISTA:1096POK|CIVIC CTR VISTA:1102POK|CIVIC CTR VISTA:1102DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200013;,ESCONDIDO,4,4,1,1,18,same_cp,blank,AVENUE,AVENUE:1108DOK|AVENUE:1108POK|AVENUE:1112POK|AVENUE:1112DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200014;,ESCONDIDO,4,4,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:1119DOK|BUENA CREEK:1119POK|BUENA CREEK:1128POK|BUENA CREEK:1128DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200015;,ESCONDIDO,4,4,1,1,21,same_cp,blank,PALOMAR,PALOMAR:1153DOK|PALOMAR:1153POK|PALOMAR:1157POK|PALOMAR:1157DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200025;,ESCONDIDO,4,4,1,1,25,same_cp,blank,NORDAHL,NORDAHL:1193DOK|NORDAHL:1193POK|NORDAHL:1193MOK|NORDAHL:1193LOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200008;,ESCONDIDO,4,4,1,1,11,same_cp,blank,EL CAMINO,EL CAMINO:1032POK|EL CAMINO:1032DOK|EL CAMINO:1037DOK|EL CAMINO:1037POK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200012;,ESCONDIDO,4,4,1,1,17,same_cp,blank,ESCON,CIVIC CTR VISTA:1096DOK|CIVIC CTR VISTA:1096POK|CIVIC CTR VISTA:1102POK|CIVIC CTR VISTA:1102DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200013;,ESCONDIDO,4,4,1,1,18,same_cp,blank,AVENUE,AVENUE:1108DOK|AVENUE:1108POK|AVENUE:1112POK|AVENUE:1112DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200014;,ESCONDIDO,4,4,1,1,19,same_cp,blank,BUENA CREEK,BUENA CREEK:1119DOK|BUENA CREEK:1119POK|BUENA CREEK:1128POK|BUENA CREEK:1128DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200015;,ESCONDIDO,4,4,1,1,21,same_cp,blank,PALOMAR,PALOMAR:1153DOK|PALOMAR:1153POK|PALOMAR:1157POK|PALOMAR:1157DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200025;,ESCONDIDO,4,4,1,1,25,same_cp,blank,NORDAHL,NORDAHL:1193DOK|NORDAHL:1193POK|NORDAHL:1193MOK|NORDAHL:1193LOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200012;0001,ESCONDIDO,4,4,1,1,17,same_cp,differs_from_codeline,ESCON,CIVIC CTR VISTA:1096DOK|CIVIC CTR VISTA:1096POK|CIVIC CTR VISTA:1102POK|CIVIC CTR VISTA:1102DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200013;0001,ESCONDIDO,4,4,1,1,18,same_cp,differs_from_codeline,AVENUE,AVENUE:1108DOK|AVENUE:1108POK|AVENUE:1112POK|AVENUE:1112DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200014;0001,ESCONDIDO,4,4,1,1,19,same_cp,differs_from_codeline,BUENA CREEK,BUENA CREEK:1119DOK|BUENA CREEK:1119POK|BUENA CREEK:1128POK|BUENA CREEK:1128DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200015;0001,ESCONDIDO,4,4,1,1,21,same_cp,differs_from_codeline,PALOMAR,PALOMAR:1153DOK|PALOMAR:1153POK|PALOMAR:1157POK|PALOMAR:1157DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200025;25,ESCONDIDO,4,4,1,1,25,same_cp,matches_codeline,NORDAHL,NORDAHL:1193DOK|NORDAHL:1193POK|NORDAHL:1193MOK|NORDAHL:1193LOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200026;26,ESCONDIDO,4,4,1,1,26,same_cp,matches_codeline,HOLDOUT,HOLDOUT:1199POK|HOLDOUT:1196DOK|HOLDOUT:1196POK|HOLDOUT:1199DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200012;0001,ESCONDIDO,4,4,1,1,17,same_cp,differs_from_codeline,ESCON,CIVIC CTR VISTA:1096DOK|CIVIC CTR VISTA:1096POK|CIVIC CTR VISTA:1102POK|CIVIC CTR VISTA:1102DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200013;0001,ESCONDIDO,4,4,1,1,18,same_cp,differs_from_codeline,AVENUE,AVENUE:1108DOK|AVENUE:1108POK|AVENUE:1112POK|AVENUE:1112DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200014;0001,ESCONDIDO,4,4,1,1,19,same_cp,differs_from_codeline,BUENA CREEK,BUENA CREEK:1119DOK|BUENA CREEK:1119POK|BUENA CREEK:1128POK|BUENA CREEK:1128DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200015;0001,ESCONDIDO,4,4,1,1,21,same_cp,differs_from_codeline,PALOMAR,PALOMAR:1153DOK|PALOMAR:1153POK|PALOMAR:1157POK|PALOMAR:1157DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200025;25,ESCONDIDO,4,4,1,1,25,same_cp,matches_codeline,NORDAHL,NORDAHL:1193DOK|NORDAHL:1193POK|NORDAHL:1193MOK|NORDAHL:1193LOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200026;26,ESCONDIDO,4,4,1,1,26,same_cp,matches_codeline,HOLDOUT,HOLDOUT:1199POK|HOLDOUT:1196DOK|HOLDOUT:1196POK|HOLDOUT:1199DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200008;0001,ESCONDIDO,3,3,1,1,11,same_cp,differs_from_codeline,EL CAMINO,EL CAMINO:1032POK|EL CAMINO:1032DOK|EL CAMINO:1037POK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200008;0001,ESCONDIDO,3,3,1,1,11,same_cp,differs_from_codeline,EL CAMINO,EL CAMINO:1032POK|EL CAMINO:1032DOK|EL CAMINO:1037POK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;100008;,SAN DIEGO,2,2,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:2W CALL-ON|BROADWAY:TPOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;100033;,SAN DIEGO,2,2,1,1,5,same_cp,blank,CP ASH,ASH:2 E CALL-ON|ASH:4 E CALL-ON
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200003;,ESCONDIDO,2,2,1,1,10,same_cp,blank,TRUE,TRUE:1020POK|TRUE:1020DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200005;,ESCONDIDO,2,2,1,1,9,same_cp,blank,CROUCH,CROUCH:1015POK|CROUCH:1015DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200009;,ESCONDIDO,2,2,1,1,14,same_cp,blank,MELROSE,MELROSE:1072POK|MELROSE:1072DOK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;200020;,ESCONDIDO,2,2,1,1,23,same_cp,blank,SHELLY,SHELLY:1173DOK|SHELLY:1173POK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;100008;,SAN DIEGO,2,2,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:2W CALL-ON|BROADWAY:TPOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;100033;,SAN DIEGO,2,2,1,1,5,same_cp,blank,CP ASH,ASH:2 E CALL-ON|ASH:4 E CALL-ON
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200002;,ESCONDIDO,2,2,1,1,7,same_cp,blank,RAILROAD,RAILROAD:EAST TRAFFIC|RAILROAD:WEST TRAFFIC
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200003;,ESCONDIDO,2,2,1,1,10,same_cp,blank,TRUE,TRUE:1020POK|TRUE:1020DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200005;,ESCONDIDO,2,2,1,1,9,same_cp,blank,CROUCH,CROUCH:1015POK|CROUCH:1015DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200009;,ESCONDIDO,2,2,1,1,14,same_cp,blank,MELROSE,MELROSE:1072POK|MELROSE:1072DOK
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;200020;,ESCONDIDO,2,2,1,1,23,same_cp,blank,SHELLY,SHELLY:1173DOK|SHELLY:1173POK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;100008;,SAN DIEGO,2,2,1,1,5,same_cp,blank,CP BROADWAY,BROADWAY:2W CALL-ON|BROADWAY:TPOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;100033;,SAN DIEGO,2,2,1,1,5,same_cp,blank,CP ASH,ASH:2 E CALL-ON|ASH:4 E CALL-ON
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200002;,ESCONDIDO,2,2,1,1,7,same_cp,blank,RAILROAD,RAILROAD:EAST TRAFFIC|RAILROAD:WEST TRAFFIC
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200003;,ESCONDIDO,2,2,1,1,10,same_cp,blank,TRUE,TRUE:1020POK|TRUE:1020DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200005;,ESCONDIDO,2,2,1,1,9,same_cp,blank,CROUCH,CROUCH:1015POK|CROUCH:1015DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200009;,ESCONDIDO,2,2,1,1,14,same_cp,blank,MELROSE,MELROSE:1072POK|MELROSE:1072DOK
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;200020;,ESCONDIDO,2,2,1,1,23,same_cp,blank,SHELLY,SHELLY:1173DOK|SHELLY:1173POK
+misc_device,misc_device_cp_slot,CPIND1,indication,code_line_station_control_point_bit,0;1;200027;0027,ESCONDIDO,2,2,1,1,27,same_cp,matches_codeline,YARD,YARD:UNLOCK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;100008;0005,SAN DIEGO,2,2,1,1,5,same_cp,matches_codeline,CP BROADWAY,BROADWAY:2W CALL-ON|BROADWAY:TPOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;100033;0005,SAN DIEGO,2,2,1,1,5,same_cp,matches_codeline,CP ASH,ASH:2 E CALL-ON|ASH:4 E CALL-ON
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200002;7,ESCONDIDO,2,2,1,1,7,same_cp,matches_codeline,RAILROAD,RAILROAD:EAST TRAFFIC|RAILROAD:WEST TRAFFIC
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200003;10,ESCONDIDO,2,2,1,1,10,same_cp,matches_codeline,TRUE,TRUE:1020POK|TRUE:1020DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200005;9,ESCONDIDO,2,2,1,1,9,same_cp,matches_codeline,CROUCH,CROUCH:1015POK|CROUCH:1015DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200009;0001,ESCONDIDO,2,2,1,1,14,same_cp,differs_from_codeline,MELROSE,MELROSE:1072POK|MELROSE:1072DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200020;23,ESCONDIDO,2,2,1,1,23,same_cp,matches_codeline,SHELLY,SHELLY:1173DOK|SHELLY:1173POK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200027;0027,ESCONDIDO,2,2,1,1,27,same_cp,matches_codeline,YARD,YARD:UNLOCK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;100008;0005,SAN DIEGO,2,2,1,1,5,same_cp,matches_codeline,CP BROADWAY,BROADWAY:2W CALL-ON|BROADWAY:TPOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;100033;0005,SAN DIEGO,2,2,1,1,5,same_cp,matches_codeline,CP ASH,ASH:2 E CALL-ON|ASH:4 E CALL-ON
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200002;7,ESCONDIDO,2,2,1,1,7,same_cp,matches_codeline,RAILROAD,RAILROAD:EAST TRAFFIC|RAILROAD:WEST TRAFFIC
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200003;10,ESCONDIDO,2,2,1,1,10,same_cp,matches_codeline,TRUE,TRUE:1020POK|TRUE:1020DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200005;9,ESCONDIDO,2,2,1,1,9,same_cp,matches_codeline,CROUCH,CROUCH:1015POK|CROUCH:1015DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200009;0001,ESCONDIDO,2,2,1,1,14,same_cp,differs_from_codeline,MELROSE,MELROSE:1072POK|MELROSE:1072DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200020;23,ESCONDIDO,2,2,1,1,23,same_cp,matches_codeline,SHELLY,SHELLY:1173DOK|SHELLY:1173POK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200027;0027,ESCONDIDO,2,2,1,1,27,same_cp,matches_codeline,YARD,YARD:UNLOCK
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;100001;,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SUPERVISORY CONTROL
+misc_device,misc_device_cp_slot,CPCTL1,control,code_line_station_control_point,0;1;100011;,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:E CALL-ON
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;100001;,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SUPERVISORY CONTROL
+misc_device,misc_device_cp_slot,CPCTL2,control,code_line_station_control_point,0;1;100011;,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:E CALL-ON
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;100001;,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP SONGS,SONGS:SUPERVISORY CONTROL
+misc_device,misc_device_cp_slot,CPCTL3,control,code_line_station_control_point,0;1;100011;,SAN DIEGO,1,1,1,1,5,same_cp,blank,CP PACIFIC,PACIFIC:E CALL-ON
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;100001;0005,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SONGS,SONGS:SUPERVISORY CONTROL
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;100011;0005,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP PACIFIC,PACIFIC:E CALL-ON
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200008;11,ESCONDIDO,1,1,1,1,11,same_cp,matches_codeline,EL CAMINO,EL CAMINO:1037DOK
+misc_device,misc_device_cp_slot,CPIND2,indication,code_line_station_control_point_bit,0;1;200026;0026,ESCONDIDO,1,1,1,1,26,same_cp,matches_codeline,HOLDOUT,HOLDOUT:1202POK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;100001;0005,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP SONGS,SONGS:SUPERVISORY CONTROL
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;100011;0005,SAN DIEGO,1,1,1,1,5,same_cp,matches_codeline,CP PACIFIC,PACIFIC:E CALL-ON
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200008;11,ESCONDIDO,1,1,1,1,11,same_cp,matches_codeline,EL CAMINO,EL CAMINO:1037DOK
+misc_device,misc_device_cp_slot,CPIND3,indication,code_line_station_control_point_bit,0;1;200026;0026,ESCONDIDO,1,1,1,1,26,same_cp,matches_codeline,HOLDOUT,HOLDOUT:1202POK

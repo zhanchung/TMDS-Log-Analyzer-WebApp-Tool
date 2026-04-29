@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblSubdivisionEvents",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "EventDate",
+                     "EventMessage",
+                     "Subdivision"
+                 ],
+    "row_count_exported":  20
+}

@@ -1,0 +1,54 @@
+{
+  "scannedRootPaths": [
+    "C:\\Users\\Ji\\Music\\CodeServer-BackupEventLogs-03-02-26"
+  ],
+  "scannedSourceCount": 72,
+  "scannedLineCount": 3423159,
+  "fallbackLineCount": 4,
+  "families": [
+    {
+      "family": "CLIENT DISCONNECTED...",
+      "count": 1,
+      "examples": [
+        {
+          "source": "C:\\Users\\Ji\\Music\\CodeServer-BackupEventLogs-03-02-26\\CodeServer-EventLog-03-02-26.txt",
+          "lineNumber": 18296,
+          "raw": "03-02-2026 15:01:41.383     CLIENT DISCONNECTED..."
+        }
+      ]
+    },
+    {
+      "family": "CLUSTER CONNECTED...",
+      "count": 1,
+      "examples": [
+        {
+          "source": "C:\\Users\\Ji\\Music\\CodeServer-BackupEventLogs-03-02-26\\CodeServer-EventLog-03-02-26.txt",
+          "lineNumber": 18298,
+          "raw": "03-02-2026 15:01:46.451     CLUSTER CONNECTED..."
+        }
+      ]
+    },
+    {
+      "family": "STATUS MESSAGE RECEIVED AT LISTENER. CLUSTER BROTHER IS",
+      "count": 1,
+      "examples": [
+        {
+          "source": "C:\\Users\\Ji\\Music\\CodeServer-BackupEventLogs-03-02-26\\CodeServer-EventLog-03-02-26.txt",
+          "lineNumber": 18299,
+          "raw": "03-02-2026 15:01:47.467     STATUS MESSAGE RECEIVED AT LISTENER. CLUSTER BROTHER IS OFFLINE"
+        }
+      ]
+    },
+    {
+      "family": "STATUS MESSAGE REQUESTED AT LISTENER. CODE-01A IS ONLINE",
+      "count": 1,
+      "examples": [
+        {
+          "source": "C:\\Users\\Ji\\Music\\CodeServer-BackupEventLogs-03-02-26\\CodeServer-EventLog-03-02-26.txt",
+          "lineNumber": 18375,
+          "raw": "03-02-2026 15:05:02.392     STATUS MESSAGE REQUESTED AT LISTENER. CODE-01A IS ONLINE"
+        }
+      ]
+    }
+  ]
+}

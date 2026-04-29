@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblTrainInterfaceImportConfiguration",
+    "top":  20,
+    "order_by":  [
+                     "ConfigurationID",
+                     "CarrierCode",
+                     "LineCode"
+                 ],
+    "row_count_exported":  0
+}

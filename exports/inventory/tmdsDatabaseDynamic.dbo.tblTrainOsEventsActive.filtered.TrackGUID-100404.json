@@ -1,0 +1,35 @@
+﻿[
+    {
+        "TrainSheetGUID":  "68394EAE-8F00-476F-A064-5231D9FB41A1",
+        "OsPoint":  "DEL MAR",
+        "OsTime":  "\/Date(1698994155000)\/",
+        "TrackGUID":  100404,
+        "SubName":  "SAN DIEGO",
+        "ReportData":  "HBARSDG1 02|11/2/2023 23:49:15|37|9|3551|4166||BNSF   618;NS    9806;BNSF   983;BNSF  4171;|DEL MAR|100024||NONE|0|BNSF  7316|NONE|",
+        "RecordGUID":  "0C3E7DB9-826B-4C55-8894-325EDC34F493",
+        "Direction":  null,
+        "EventCreator":  "BRIDGES, ROSEMARY {RJB}"
+    },
+    {
+        "TrainSheetGUID":  "77D8A7B5-ADA8-4298-9033-38E7C495927D",
+        "OsPoint":  "DEL MAR",
+        "OsTime":  "\/Date(1741680533000)\/",
+        "TrackGUID":  100404,
+        "SubName":  "SAN DIEGO",
+        "ReportData":  "VSBDSDG4 10|3/11/2025 01:08:53|0|73|3743|7142||BNSF  7014;BNSF  6822;BNSF  4123;|DEL MAR|100024||NONE|0|BNSF  3706|NONE|",
+        "RecordGUID":  "16BADCB3-F202-4548-8E36-05089C7C2527",
+        "Direction":  null,
+        "EventCreator":  "CANADA, GLORIA {GC}"
+    },
+    {
+        "TrainSheetGUID":  "48A78D62-D53A-490E-A8F5-E00230A4255C",
+        "OsPoint":  "DEL MAR",
+        "OsTime":  "\/Date(1748927123000)\/",
+        "TrackGUID":  100404,
+        "SubName":  "SAN DIEGO",
+        "ReportData":  "VSDGBAR1 02|6/2/2025 22:05:23|65|1|4303|6068||BNSF  7402;BNSF  6704;|DEL MAR|100024||NONE|0|BNSF  7910|NONE|",
+        "RecordGUID":  "409D82EC-B273-4C74-9773-F159C11A9C16",
+        "Direction":  null,
+        "EventCreator":  "CANADA, GLORIA {GC}"
+    }
+]

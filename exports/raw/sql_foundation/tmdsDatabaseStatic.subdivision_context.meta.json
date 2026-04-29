@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "export_name":  "subdivision_context",
+    "row_count":  3,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.subdivision_context.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.subdivision_context.csv"
+}

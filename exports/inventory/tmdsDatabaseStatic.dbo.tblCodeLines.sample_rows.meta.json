@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCodeLines",
+    "top":  25,
+    "order_by":  [
+                     "CodelineNumber",
+                     "NormalCodeserverName",
+                     "StandbyCodeserverName"
+                 ],
+    "row_count_exported":  25
+}

@@ -1,0 +1,56 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblDispatcherLog",
+        "column":  "DispatcherName",
+        "ordinal":  1,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblDispatcherLog",
+        "column":  "Event",
+        "ordinal":  2,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblDispatcherLog",
+        "column":  "EventTime",
+        "ordinal":  3,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblDispatcherLog",
+        "column":  "TerritoryID",
+        "ordinal":  4,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblDispatcherLog",
+        "column":  "WorkstationID",
+        "ordinal":  5,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblDispatcherLog",
+        "column":  "UID",
+        "ordinal":  6,
+        "data_type":  "uniqueidentifier",
+        "is_nullable":  "NO"
+    }
+]

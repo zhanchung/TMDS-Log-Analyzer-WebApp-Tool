@@ -1,0 +1,1451 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Symbol",
+        "ordinal":  1,
+        "data_type":  "nvarchar",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngineID",
+        "ordinal":  2,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "InUsed",
+        "ordinal":  3,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Subdivision",
+        "ordinal":  4,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TerritoryAssignmentID",
+        "ordinal":  5,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrackGUID",
+        "ordinal":  6,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "OsEvents",
+        "ordinal":  7,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SymbolComment",
+        "ordinal":  8,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Direction",
+        "ordinal":  9,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CallTime",
+        "ordinal":  10,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Units",
+        "ordinal":  11,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "UnitComment",
+        "ordinal":  12,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DepTime",
+        "ordinal":  13,
+        "data_type":  "datetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "ArrTime",
+        "ordinal":  14,
+        "data_type":  "datetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "FinalTime",
+        "ordinal":  15,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "OLoads",
+        "ordinal":  16,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "OEmts",
+        "ordinal":  17,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "OTons",
+        "ordinal":  18,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "OLength",
+        "ordinal":  19,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DLoads",
+        "ordinal":  20,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DEmts",
+        "ordinal":  21,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DTons",
+        "ordinal":  22,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DLength",
+        "ordinal":  23,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "MaxSpd",
+        "ordinal":  24,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "HorsePowerTrailing",
+        "ordinal":  25,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TonsPerOperativeBrake",
+        "ordinal":  26,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "HazMat",
+        "ordinal":  27,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "HighWide",
+        "ordinal":  28,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Origin",
+        "ordinal":  29,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Dest",
+        "ordinal":  30,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EOTD",
+        "ordinal":  31,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "HOTD",
+        "ordinal":  32,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngName",
+        "ordinal":  33,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngOnDuty",
+        "ordinal":  34,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngTimeUp",
+        "ordinal":  35,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondName",
+        "ordinal":  36,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondOnDuty",
+        "ordinal":  37,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondTimeUp",
+        "ordinal":  38,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DelayInfo",
+        "ordinal":  39,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrackBull",
+        "ordinal":  40,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "BadOrderSetOuts",
+        "ordinal":  41,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngNameRel",
+        "ordinal":  42,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngOnDutyRel",
+        "ordinal":  43,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngTimeUpRel",
+        "ordinal":  44,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondNameRel",
+        "ordinal":  45,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondOnDutyRel",
+        "ordinal":  46,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondTimeUpRel",
+        "ordinal":  47,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainSheetEvents",
+        "ordinal":  48,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngNameP",
+        "ordinal":  49,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngOnDutyP",
+        "ordinal":  50,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngTimeUpP",
+        "ordinal":  51,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondNameP",
+        "ordinal":  52,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondOnDutyP",
+        "ordinal":  53,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondTimeUpP",
+        "ordinal":  54,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "UnitsP",
+        "ordinal":  55,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EngineIDP",
+        "ordinal":  56,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Helper",
+        "ordinal":  57,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "KeyTrain",
+        "ordinal":  58,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainGUID",
+        "ordinal":  59,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TotalHP",
+        "ordinal":  60,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "ScheduleStatus",
+        "ordinal":  61,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLink",
+        "ordinal":  62,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrailingHorsePower",
+        "ordinal":  63,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "StackOrder",
+        "ordinal":  64,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainType",
+        "ordinal":  65,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SpecialNote",
+        "ordinal":  66,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "PseudoName",
+        "ordinal":  67,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SubType",
+        "ordinal":  68,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CBTCEquipped",
+        "ordinal":  69,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TimeTableID",
+        "ordinal":  70,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "HomeRoadUID",
+        "ordinal":  71,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CurrentGTBUID",
+        "ordinal":  72,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "GTBActive",
+        "ordinal":  73,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "GTBTimeIssued",
+        "ordinal":  74,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "GTBStationID",
+        "ordinal":  75,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "GTBStateID",
+        "ordinal":  76,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "PTCStatus",
+        "ordinal":  77,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "ActiveSubTrainSheet",
+        "ordinal":  78,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondName2",
+        "ordinal":  79,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondOnDuty2",
+        "ordinal":  80,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondTimeUp2",
+        "ordinal":  81,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondName3",
+        "ordinal":  82,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondOnDuty3",
+        "ordinal":  83,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CondTimeUp3",
+        "ordinal":  84,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CrewCurrent",
+        "ordinal":  85,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CrewRelief",
+        "ordinal":  86,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CrewPending",
+        "ordinal":  87,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CrewLists",
+        "ordinal":  88,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SecondaryInUsed",
+        "ordinal":  89,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SecondarySubID",
+        "ordinal":  90,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SecondaryTerrID",
+        "ordinal":  91,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SecondaryTrackGUID",
+        "ordinal":  92,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SecondaryStackOrder",
+        "ordinal":  93,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SubdvnGeoReference",
+        "ordinal":  94,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainSheetRoute",
+        "ordinal":  95,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "LocomotiveTotalTonnage",
+        "ordinal":  96,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DPLocomotiveList",
+        "ordinal":  97,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "MiscellanousInfoOne",
+        "ordinal":  98,
+        "data_type":  "varchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "MiscellanousInfoTwo",
+        "ordinal":  99,
+        "data_type":  "varchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "MiscellanousInfoThree",
+        "ordinal":  100,
+        "data_type":  "varchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "HomeRoadCode",
+        "ordinal":  101,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "FlashSymbol",
+        "ordinal":  102,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "AutomaticModeOn",
+        "ordinal":  103,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "PriorityCode",
+        "ordinal":  104,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "PullerTrain",
+        "ordinal":  105,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLegRoutePointGUIDs",
+        "ordinal":  106,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLegConsistGUIDs",
+        "ordinal":  107,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLegCrewGUIDs",
+        "ordinal":  108,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLegLocoGUIDs",
+        "ordinal":  109,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLegID",
+        "ordinal":  110,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLegName",
+        "ordinal":  111,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainLegStatus",
+        "ordinal":  112,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "GhostTrain",
+        "ordinal":  113,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TGBOLimits",
+        "ordinal":  114,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "AuthorityDesignation",
+        "ordinal":  115,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CurrentConsistData",
+        "ordinal":  116,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "LocoConsistData",
+        "ordinal":  117,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EventTimesdata",
+        "ordinal":  118,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainlegNotes",
+        "ordinal":  119,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TGBONumber",
+        "ordinal":  120,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TGBOStatus",
+        "ordinal":  121,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CTCAuthorityDesignation",
+        "ordinal":  122,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "LocationInformation",
+        "ordinal":  123,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "FuelInformation",
+        "ordinal":  124,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "ConversationNotes",
+        "ordinal":  125,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "EntityUID",
+        "ordinal":  126,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "NumberOperatingBrakes",
+        "ordinal":  127,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "NumberOfAxles",
+        "ordinal":  128,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CrewRelease",
+        "ordinal":  129,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "PTCAggregateCRC",
+        "ordinal":  130,
+        "data_type":  "bigint",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainIsNotActive",
+        "ordinal":  131,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SchDepTime",
+        "ordinal":  132,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SchArrTime",
+        "ordinal":  133,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainConsistInformationForPTC",
+        "ordinal":  134,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "LocomotiveConsistInformationForPTC",
+        "ordinal":  135,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "LocomotiveConsistsInformationMIS",
+        "ordinal":  136,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "GrossTons",
+        "ordinal":  137,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "GrossLength",
+        "ordinal":  138,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "HOS",
+        "ordinal":  139,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TotalCars",
+        "ordinal":  140,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "VIA",
+        "ordinal":  141,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Release",
+        "ordinal":  142,
+        "data_type":  "datetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TestTrainPTC",
+        "ordinal":  143,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "LocomotiveMISInformation",
+        "ordinal":  144,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainSymbolLink",
+        "ordinal":  145,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "CrewCodeUID",
+        "ordinal":  146,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "ConsistCodeUID",
+        "ordinal":  147,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "BulletinRouteCode",
+        "ordinal":  148,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "ComplianceStatus",
+        "ordinal":  149,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "StagingOrigin",
+        "ordinal":  150,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "StagingDest",
+        "ordinal":  151,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "ScheduleType",
+        "ordinal":  152,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "isPublic",
+        "ordinal":  153,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "VATPTime",
+        "ordinal":  154,
+        "data_type":  "smalldatetime",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "Annulled",
+        "ordinal":  155,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TOPSImport",
+        "ordinal":  156,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "SuperTrain",
+        "ordinal":  157,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DGrossTons",
+        "ordinal":  158,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "DGrossLength",
+        "ordinal":  159,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "IsForeignTrain",
+        "ordinal":  160,
+        "data_type":  "bit",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "column":  "TrainRestrictionTypes",
+        "ordinal":  161,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    }
+]

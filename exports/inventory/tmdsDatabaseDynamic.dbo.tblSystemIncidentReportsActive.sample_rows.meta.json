@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblSystemIncidentReportsActive",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "CreateTime",
+                     "CreatedBy"
+                 ],
+    "row_count_exported":  0
+}

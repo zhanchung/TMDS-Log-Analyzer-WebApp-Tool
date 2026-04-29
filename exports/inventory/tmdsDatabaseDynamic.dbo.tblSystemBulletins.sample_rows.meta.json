@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblSystemBulletins",
+    "top":  20,
+    "order_by":  [
+                     "SystemUID",
+                     "RestrictionUID",
+                     "RestrictionType"
+                 ],
+    "row_count_exported":  19
+}

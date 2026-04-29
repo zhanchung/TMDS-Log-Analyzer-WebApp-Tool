@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblBosTrainObjectData",
+    "top":  20,
+    "order_by":  [
+                     "Id",
+                     "LocoID",
+                     "LastCommunicationTimestamp",
+                     "LocoState"
+                 ],
+    "row_count_exported":  20
+}

@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCodeBitAssignments",
+    "top":  25,
+    "order_by":  [
+                     "UID",
+                     "WordType",
+                     "CDLNNumber",
+                     "CPNumber"
+                 ],
+    "row_count_exported":  25
+}

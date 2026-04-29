@@ -1,0 +1,6 @@
+record_type,meaning
+A,Acknowledgement
+P,Poll
+R,Recall
+C,Control
+E,Execute

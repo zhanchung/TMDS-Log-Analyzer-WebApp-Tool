@@ -1,0 +1,14 @@
+[
+  {
+    "runtime_join_status": "engine_id_without_runtime_match",
+    "row_count": 47
+  },
+  {
+    "runtime_join_status": "exact_engine_to_loco_match",
+    "row_count": 69
+  },
+  {
+    "runtime_join_status": "no_engine_id",
+    "row_count": 194
+  }
+]

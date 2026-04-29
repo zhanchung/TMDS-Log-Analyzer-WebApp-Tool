@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemWorkStations",
+    "top":  25,
+    "order_by":  [
+                     "UID",
+                     "WrkStnName",
+                     "IpAddress",
+                     "Type"
+                 ],
+    "row_count_exported":  25
+}

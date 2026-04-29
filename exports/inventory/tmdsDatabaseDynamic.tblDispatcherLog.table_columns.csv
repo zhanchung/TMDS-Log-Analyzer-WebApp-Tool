@@ -1,0 +1,7 @@
+﻿"database","schema","table","column","ordinal","data_type","is_nullable"
+"tmdsDatabaseDynamic","dbo","tblDispatcherLog","DispatcherName","1","nvarchar","YES"
+"tmdsDatabaseDynamic","dbo","tblDispatcherLog","Event","2","nvarchar","YES"
+"tmdsDatabaseDynamic","dbo","tblDispatcherLog","EventTime","3","smalldatetime","YES"
+"tmdsDatabaseDynamic","dbo","tblDispatcherLog","TerritoryID","4","nvarchar","YES"
+"tmdsDatabaseDynamic","dbo","tblDispatcherLog","WorkstationID","5","nvarchar","YES"
+"tmdsDatabaseDynamic","dbo","tblDispatcherLog","UID","6","uniqueidentifier","NO"

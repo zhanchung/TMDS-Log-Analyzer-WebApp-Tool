@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblBosTrainObjectData",
+    "top":  20,
+    "order_by":  [
+                     "Id",
+                     "LocoID",
+                     "LastCommunicationTimestamp"
+                 ],
+    "row_count_exported":  0
+}

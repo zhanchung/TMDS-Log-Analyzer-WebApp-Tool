@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblDispatcherLog",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "DispatcherName",
+                     "Event",
+                     "EventTime"
+                 ],
+    "row_count_exported":  20
+}

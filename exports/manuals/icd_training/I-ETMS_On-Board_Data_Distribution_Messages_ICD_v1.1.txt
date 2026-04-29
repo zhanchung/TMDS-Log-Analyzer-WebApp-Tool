@@ -1,0 +1,750 @@
+I-ETMS® On-Board Segment 
+Data Distribution  Messages 
+Interface Control Document ( ICD) 
+ 
+Wabtec Railway Electronics 
+5250 North River Blvd., N.E. 
+Cedar Rapids, IA  52411-7797 
+Revision 1.1 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev. 1.1 Wabtec Railway Electronics Page i  
+  
+Revision History 
+Date Revision Description Author 
+2/6/2012 1.0 Initial Draft Wabtec Railway Electonics 
+5/9/2012 1.1 Removed Proprietary Legend Wabtec Railway Electronics 
+    
+ 
+ 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev. 1.1 Wabtec Railway Electronics Page ii  
+  
+Table of Contents 
+1 Introduction .......................................................................................................................................... 1 
+1.1 Purpose ........................................................................................................................................ 1 
+1.2 Scope ........................................................................................................................................... 1 
+1.3 References................................................................................................................................... 1 
+1.4 Definitions .................................................................................................................................... 1 
+1.5 Acronyms ..................................................................................................................................... 1 
+1.6 Document Organization ............................................................................................................... 2 
+2 Message Format .................................................................................................................................. 3 
+2.1 Edge Message Protocol Header Use Conventions ..................................................................... 4 
+3 Data Distribution Messages ................................................................................................................. 5 
+3.1 Locomotive Data (03000) – Version 2 ......................................................................................... 5 
+3.2 GPS GGA (03001) – Version 1.................................................................................................... 9 
+3.3 Distributed Power Data (03002) – Version 1 ............................................................................. 10 
+4 Data Dictionary................................................................................................................................... 12 
+ 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 1 of 12 
+  
+1 Introduction 
+1.1 Purpose 
+The purpose of this ICD is to define the I-ETMS® On-board broadcast messages. 
+ 
+1.2 Scope 
+This document contains the specifications for messages broadcast by the I-ETMS® as per the Class 
+C Messaging Specification S-9355.  
+ 
+1.3 References 
+The following documents are referenced by this user guide: 
+ ‘EMP Message Format Specifications S-9354,’ Version 1.0.  Association of American Railroads, 
+August 2010. 
+ ‘Class C Messaging Specification S-9355,’ Version 1.0.  Association of American Railroads, 
+August 2010. 
+ ‘Class D Messaging Specification S-9356,’ Version 1.0.  Association of American Railroads, 
+August 2010. 
+ 
+1.4 Definitions 
+None. 
+Term Description 
+  
+ 
+1.5 Acronyms 
+Acronym Description 
+CFM Cubic Feet per Minute 
+CMU Communications Management Unit 
+CRC Cyclic Redundancy Check 
+DB Dynamic Braking 
+DGPS Dual GPS 
+DP Distributed Power 
+EAB Electronic Air Brake 
+EMP Edge Message protocol 
+EOT End of Train 
+Ft-lbs Foot Pounds 
+GPS Global Positioning Satellite 
+GGA GPS Fix Data 
+HMAC Hash-based Message Authentication Code 
+ICD Interface Control Document 
+ID Identification 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 2 of 12 
+  
+Acronym Description 
+I-ETMS®  Interoperable  Electronic Train Management System 
+LCS Locomotive Computer System 
+LIG Locomotive Interface Gateway 
+MSB Most Significant Byte 
+PSI Pounds per Square inch 
+PTC Positive Train Control 
+QoS Quality of Service 
+TBC To Be Configured 
+UTC Coordinated Universal Time  
+WRE Wabtec Railway Electronics 
+ 
+1.6 Document Organization 
+This document is organized into four sections: 
+ Section 1 – Introduction, defines the purpose and scope, identifies referenced documents, 
+provides definitions for key elements and acronyms, and provides an organizational overview of 
+the standards guide. 
+ Section 2 – Message Format, defines the message format used for the I-ETMS® On-board 
+3000 series broadcast messages. 
+ Section 3 – Data Distribution Messages, defines the individual broadcast messages. 
+ Section 4 – Data Dictionary, defines individual data terms used within the data distribution 
+messages in section 3. 
+ Data Distribution Messages Interface Control Document (ICD) 
+ 1.11.1 
+ I-ETMS® On-Board Segment 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 3 of 12 
+  
+2 Message Format 
+Message content is in the form of a message header and data.  Every message will have an EMP 
+header field followed by message data.  The message content will segment as shown in the table 
+below. 
+Field Size Type Description Note 
+EMP Message 
+Header 
+* Message Header Contains the information that is common to 
+all I-ETMS® on-board broadcast messages. 
+Explained below in the following section. 
+Note A 
+Message Content * Variable This is the message payload. See the 
+following sections for specifics. 
+Note B 
+Data Integrity 4 CRC This is the HMAC computed around the 
+Application Header + Message Content. 
+This provides authentication of message 
+source and integrity of message content. 
+Note C 
+Notes 
+A. This field is defined within section 2.1 herein. 
+B. This field is defined as the individual message contained within section 3 herein. 
+C. This field is calculated using a CRC method as selected within the header flags field. 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 4 of 12 
+  
+ 
+ 
+2.1 Edge Message Protocol Header Use Conventions 
+Each message has a fixed length EMP header preceding the data message.  The header format is: 
+Field Size Type Description Note 
+Protocol Version 1 Numeric 0x04 is to be used for Version 1.0 of 
+EMP protocol specification S-9354 
+ 
+Message ID 2 Numeric Message ID number (0 – 65535).  
+Message Version 1 Numeric Version number of message in range 
+1 – 255.  This is to accommodate 
+backward compatibility to build or 
+revision levels. 
+ 
+Flags 1 Numeric 0x09 = UTC Timestamp, no 
+encryption, no compression, utilizing 
+a CRC algorithm per S-9354 
+paragraph 3.2.1.4. 
+ 
+Data Length 3 Numeric Size of each message body, in bytes.  
+Does NOT include the 4 bytes HMAC 
+The Data length is the 
+size of the message 
+content as defined within 
+S-9354 section 3.2.1.5. 
+Message Number 4 Numeric This is sequence number of the 
+message which is updated for each 
+new transmission. 
+The Message Number 
+may not repeat any 
+values used within the last 
+60 seconds 
+Message time 4 Numeric UTC of message creation by sending 
+application. 
+ 
+Variable header 
+size 
+1 Numeric Use the value 0x00 and no variable 
+header fields are needed 
+The Variable header size 
+value is defined within S-
+9354 section 3.2.3 
+ 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 5 of 12 
+  
+3 Data Distribution Messages 
+ 
+Message ID Message Name Supported Message Version for 
+“Interface Version” 3 
+Message Groups 
+(Vendor Specific) 
+03000 Locomotive Data 2 239.255.0.128 
+03001 GPS GGA 1 239.255.0.128 
+03002 Distributed Power Data 1 239.255.0.128 
+ 
+3.1 Locomotive Data (03000) – Version 2 
+This message is sent from Data Distribution to report the current brake system and propulsio n 
+system status that has been collected from the locomotive.  The message is sent once per second.  
+Fields broken into sizes less than 1 byte are represented with characters HGFEDCBA where H is 
+MSB and A is LSB of the byte. 
+ 
+ Field Size (Bytes) Type Description Note 
+1 Locomotive ID 10 Alphanumeric AAAABBBBBB 
+AAAA = Railroad SCAC Code 
+BBBBBB = Locomotive Road Number 
+(pad with leading zeros) 
+See Data 
+Dictionary sect. 
+2 Configuration 
+(EAB lead/trail 
+setting) 
+1 Enumeration 0 = Lead 
+1 = Trail 
+2 = Remote lead 
+0xFF = Unknown 
+ 
+3 Brake pipe 
+pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+4 Brake cylinder 
+pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+5 Main reservoir 
+pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+6 Equalizing 
+reservoir 
+pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+7 Target 
+equalizing 
+reservoir 
+pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+8 Commanded 
+cylinder 
+pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+9 Feed valve 
+pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+10 Flow 2 Numeric 0.1 CFM (0xFFFF = Unknown)  
+      
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 6 of 12 
+  
+ Field Size (Bytes) Type Description Note 
+11 Auto brake 
+handle position 
+4 bits 
+(HGFE) 
+Enumeration 00 – Release 
+01 – Minimum Reduction 
+02 – Service Zone 
+03 – Full Service 
+04 – Suppression 
+05 – Over Reduction 
+06 – Handle Off 
+07 – Emergency 
+0xF – Unknown 
+ 
+12 Independent 
+brake handle 
+2 bits 
+(DC) 
+Enumeration 00 – Release 
+01 – Applied 
+10 – Invalid 
+11 - Unknown 
+ 
+13 Bail 2 bits 
+(BA) 
+Enumeration 00 – No Bail 
+01 – Bail 
+10 – Invalid 
+11 - Unknown 
+ 
+      
+14 EAB setup 4 bits 
+(HGFE) 
+Enumeration 0 – Cutout 
+1 – Reserved 
+2 – Freight Cutin 
+3 – Passenger Cutin 
+0xF = Unknown 
+ 
+15 Air brake failure 2 bits 
+(DC) 
+Enumeration 00 – OK 
+01 – Air Brake Failure 
+10 – Invalid 
+11 – Unknown 
+ 
+16 Unused 2 bits 
+(BA) 
+   
+      
+17 Penalty brake 
+applied 
+2 bits 
+(HG) 
+Enumeration 00 – Not in Penalty 
+01 – Penalty Brake Applied 
+10 – Invalid 
+11 – Unknown 
+ 
+18 Emergency 
+brake applied 
+2 bits 
+(FE) 
+Enumeration 00 – Not in Emergency 
+01 – Emergency Brake Applied 
+10 – Invalid 
+11 – Unknown 
+ 
+19 PCS open 2 bits 
+(DC) 
+Enumeration 00 – Closed 
+01 – Open 
+10 – Invalid 
+11 – Unknown 
+ 
+20 Unused 2 bits 
+(BA) 
+   
+      
+21 EOT brake pipe 
+pressure 
+1 Numeric 1 PSI 
+0xFF = Unknown 
+ 
+      
+22 EOT marker 2 bits 
+(HG) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+23 EOT movement 2 bits 
+(FE) 
+Enumeration 00 – Stopped 
+01 – Moving 
+10 – Invalid 
+11 – Unknown 
+ 
+24 Unused 4 bits    
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 7 of 12 
+  
+ Field Size (Bytes) Type Description Note 
+(DCBA) 
+      
+25 Throttle notch 4 bits 
+(HGFE) 
+Enumeration 0 – Idle or DB Setup 
+1 – N1 or B1 
+2 – N2 or B2 
+3 – N3 or B3 
+4 – N4 or B4 
+5 – N5 or B5 
+6 – N6 or B6 
+7 – N7 or B7 
+8 – N8 or B8 
+9 – Low Idle 
+0xF = Unknown 
+ 
+Note: To determine which setting 
+applies (Idle, N1, N2… or DB Setup, 
+D1, D2 …) see the DB On field. 
+ 
+26 Reverser 4 bits 
+(DCBA) 
+Enumeration 0 – Forward 
+1 – Reverse 
+2 – Off 
+0xF = Unknown 
+ 
+      
+27 Isolate switch 2 bits 
+(HG) 
+Enumeration 00 – Isolate 
+01 – Run 
+10 – Start 
+11 - Invalid 
+ 
+28 Engine run 2 bits 
+(FE) 
+Enumeration 00 – Engine Off 
+01 – Engine Run 
+10 – Invalid 
+11 – Unknown 
+ 
+29 Generator field 2 bits 
+(DC) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+30 Wheel slip 2 bits 
+(BA) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+      
+31 Sand 2 bits 
+(HG) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+32 Emergency 
+sand 
+2 bits 
+(FE) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+33 Horn 2 bits 
+(DC) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+34 Bell 2 bits 
+(BA) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+      
+35 Dynamic brake 
+on (TL21) 
+2 bits 
+(HG) 
+Enumeration 00 – Off 
+01 – On 
+ 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 8 of 12 
+  
+ Field Size (Bytes) Type Description Note 
+10 – Invalid 
+11 – Unknown 
+36 Dynamic brake 
+setup (TL17) 
+2 bits 
+(FE) 
+Enumeration 00 – Off 
+01 – On 
+10 – Invalid 
+11 – Unknown 
+ 
+37 Unused 4 bits 
+(DCBA) 
+   
+      
+38 Dynamic brake 
+excitation 
+1 Numeric Volts (0xFF = Unknown)  
+39 Traction motor 
+current (A 
+Truck) 
+1 Numeric 20 AMPS, -1000A Offset 
+(eg. 10 = -800A, 50 = 0A, 100 = 
+1000A) 
+(0xFF = Unknown) 
+ 
+40 Traction motor 
+current (B 
+Truck) 
+1 Numeric 20 AMPS, -1000A Offset 
+(eg. 10 = -800A, 50 = 0A, 100 = 
+1000A) 
+(0xFF = Unknown) 
+ 
+41 Tractive effort 1 Numeric 1000 ft-lbs (0xFF = Unknown)  
+42 Generator 
+voltage 
+2 Numeric Volts (0xFFFF = Unknown)  
+43 Acceleration 2 Numeric 0.001 FT/SEC² (0xFFFF = Unknown)  
+44 Speed 2 Numeric 0.01 FT/SEC  (0xFFFF = Unknown)  
+ 
+NOTES:   
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 9 of 12 
+  
+3.2 GPS GGA (03001) – Version 1 
+This message is sent from Data Distribution to report the current GPS status. T he fields of this 
+message are based on the content of the NMEA GGA sentence. The message is sent once per 
+second. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Time 4 Numeric UTC time expressed as the absolute 
+number of seconds since midnight, 
+January 1, 1970, including leap 
+seconds. 
+ 
+2 GPS latitude 
+degrees 
+1 Numeric 1 degree  
+3 GPS latitude 
+minutes 
+4 Numeric .000001 minute  
+4 GPS latitude 
+sign 
+1 Enumeration 0 – North 
+1 – South 
+ 
+5 GPS longitude 
+degrees 
+1 Numeric 1 Degree  
+6 GPS longitude 
+minutes 
+4 Numeric .000001 minute  
+7 GPS longitude 
+sign 
+1 Enumeration 0 – East 
+1 – West 
+ 
+8 GPS altitude 2 Numeric 0.1 Meters  
+9 GPS heading 2 Numeric 0.1 Degrees  
+10 GPS speed 2 Numeric 0.01 FT/SEC  
+11 GPS quality 1 Enumeration 0 – Invalid 
+1 – GPS Fix 
+2 – DGPS Fix 
+ 
+12 GPS # of 
+satellites 
+1 Numeric   
+ 
+NOTES:   
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 10 of 12 
+  
+3.3 Distributed Power Data (03002) – Version 1 
+This message is sent from Data Distribution to report the current distributed power system status that 
+has been collected from the locomotive.  The message is sent once per second (1Hz rate).  Fields 
+broken into sizes smaller than 1 byte are represented with characters HGFEDCBA where H is MSB 
+and A is LSB of the byte. 
+ 
+ Field Size 
+(Bytes) 
+Type Description Note 
+1 Source 
+component 
+1 Enumeration 0 – Invalid 
+1 – LCS 
+2 – PTC 
+3 – CMU 
+See Data 
+Dictionary sect. 
+2 Distributed 
+Power Enable 
+Status 
+2 bits 
+(HG) 
+Enumeration 00 = DP Not Engaged 
+01 = DP Enabled 
+10 = Invalid 
+11 = Unknown 
+ 
+3 Distributed 
+Power Lead 
+Status 
+2 bits 
+(FE) 
+Enumeration 00 = DP Remote 
+01 = DP Lead 
+10 = Invalid 
+11 = Unknown 
+ 
+4 Distributed 
+Power Linked 
+Status 
+2 bits 
+(DC) 
+Enumeration 00 = DP Not Linked 
+01 = DP Linked 
+10 = Invalid 
+11 = Unknown 
+ 
+5 Distributed 
+Power 
+2 bits 
+(BA) 
+Enumeration 00 = Idle Mode 
+01 = Run Mode 
+10 = Tower Mode 
+11 = Unknown 
+ 
+6 Number of 
+Remote Units 
+1 Numeric 0xFF = Unknown  
+Data for each Remote Unit – Note: This information is repeated for each remote unit. 
+<Beginning of Remote Unit Information Loop> 
+6.1 Remote ID 4 ASCII Represents the road ID of the remote 
+locomotive, where MSB is transmitted 
+first.  The four bytes represent the 4-
+digit road number of the respective 
+remote unit (e.g. “9409”). 
+ 
+6.2 Remote Group 2 bits 
+(HG) 
+Enumeration 00 = Front Group 
+01 = Back Group 
+10 = Transitory State 
+11 = Unknown 
+ 
+6.3 Remote Unit 
+Mode 
+3 bits 
+(FED) 
+Enumeration 000 = Normal Mode 
+001 = Idle Mode 
+010 = Brake valve Out mode 
+011 = Isolate Mode 
+100 = Setout Mode 
+101 = Stop Mode 
+110 = Undefined 
+111 = Unknown 
+ 
+6.4 Remote Unit 
+Command 
+Status 
+3 bits 
+(CBA) 
+Enumeration 000 = Null (No units in back group) 
+001 = Traction 8 
+010 = Traction 1-7 
+011 = Dynamic Brake 8 Position 
+100 = Dynamic Brake 1-7 Position 
+101 = Idle 
+110 = Undefined 
+111 = Unknown 
+ 
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 11 of 12 
+  
+ Field Size 
+(Bytes) 
+Type Description Note 
+6.5 Engine Status 1 Enumeration 0 – Idle 
+1 – Throttle 1 
+2 – Throttle 2 
+3 – Throttle 3 
+4 – Throttle 4 
+5 – Throttle 5 
+6 – Throttle 6 
+7 – Throttle 7 
+8 – Throttle 8 
+9 – Isolate 
+10 – Stop 
+11 – DB Setup 
+12 – DB 1 
+13 – DB 2 
+14 – DB 3 
+15 – DB 4 
+16 – DB 5 
+17 – DB 6 
+18 – DB 7 
+19 – DB 8 
+20 – 30 Undefined 
+31 – Unknown 
+ 
+6.6 Traction Motor 
+Current 
+1 Numeric 20 AMPS, -1000A Offset 
+(e.g. 10 = -800A, 50 = 0A, 100 = 
+1000A) 
+(0xFF = Unknown) 
+ 
+6.7 Tractive Effort 1 Numeric 1000 ft-lbs (0xFF = Unknown)  
+6.8 Generator 
+Voltage 
+2 Numeric Volts (0xFFFF = Unknown)  
+6.9 Brake Pipe 
+Pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+6.10 Equalizing 
+Reservoir 
+Pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+6.11 Brake Cylinder 
+Pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+6.12 Main Reservoir 
+Pressure 
+2 Numeric 0.1 PSI (0xFFFF = Unknown)  
+6.13 Air Flow 2 Numeric 0.1 CFM (0xFFFF = Unknown)  
+6.14 Fault Status A 1 HGFEDCBA A – Wheel Slip 
+B – PCS Open 
+C – Sand 
+D – Brake Warning 
+E – Major System Malfunction 
+F – Penalty Brake Application in Effect 
+G – Spare (Set to 0) 
+H – Spare (Set to 0) 
+ 
+6.15 Fault Status B 1 HGFEDCBA A – Alarm Bell Active 
+B – Comm Interrupt for > 45 Sec. 
+C – Comm Interrupt for < 45 Sec. 
+D – Engine Status Miscompare 
+E – Unexpected Air Flow Increase 
+F – Brake Valve Out 
+G – Spare (Set to 0) 
+H – Spare (Set to 0) 
+ 
+<End of Remote Unit Information Loop> 
+ 
+NOTES:   
+
+ I-ETMS® On-Board Segment Data Distribution Messages Interface Control Document (ICD) 
+Rev.1.1 Wabtec Railway Electronics Page 12 of 12 
+  
+4 Data Dictionary 
+ 
+Data Format Description 
+Numeric Unsigned integer of byte size indicated 
+Alphanumeric String of Alphanumeric ASCII characters of maximum size indicated, left-justified and blank-filled 
+CRC-32 The CRC-32 referenced within this document corresponds to the method defined within S-9354 section 
+3.6.  This method will be used for all applications defined as using a CRC-32 value within this document. 
+HMAC Hash-based Message Authentication Code used for message source verification and data integrity.  This 
+application specifically uses the HMAC-SHA-1 algorithm. 
+Locomotive ID Represents Locomotive as reported by locomotive to office.  Field is ASCII text comprising 4 (alpha) bytes 
+for the RR (SCAC), left justified space filled and and 6 (numeric) bytes, right justified space filled for the 
+individual locomotive number. 
+ASCII text: First 4 characters are RR ID (SCAC) and last 6 are locomotive unit number 
+Ex:  BNSF   208, BN     208, UPRR  4422 
+ 

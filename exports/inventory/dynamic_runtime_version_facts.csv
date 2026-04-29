@@ -1,0 +1,5 @@
+﻿"fact_type","fact_value","row_count"
+"MdmTrainObjectData.IcdInterfaceVersion","ICD_4_0","2225"
+"MdmTrainObjectData.IcdInterfaceVersion","BOS_ICD_3_0","3708"
+"tblBosDepartureTestData.OnboardSoftwareVersion","6.3.24.11","10"
+"tblBosDepartureTestData.OnboardSoftwareVersion","6.3.24.12","4"

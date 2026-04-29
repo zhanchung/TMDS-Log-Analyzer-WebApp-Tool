@@ -1,0 +1,162 @@
+﻿[
+    {
+        "DispatcherName":  "LITTLE|JENNIFER|JML",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1432533900000)\/",
+        "TerritoryID":  "(((100|SAN DIEGO);200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "101",
+        "UID":  "ed7d6d1f-607d-48ee-a176-00019801d129"
+    },
+    {
+        "DispatcherName":  "DUNN|JOHN|JPD",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1389732420000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "103",
+        "UID":  "fcd6cf85-1584-420c-ba06-0002efeef13f"
+    },
+    {
+        "DispatcherName":  "GEDDES|DEBBIE|DJG",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1692994080000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "128",
+        "UID":  "d57d5d8d-0294-418a-a895-0003a11c78ec"
+    },
+    {
+        "DispatcherName":  "OCAMPO|OLIVER|OMO",
+        "Event":  "OFFDUTY",
+        "EventTime":  "\/Date(1461787260000)\/",
+        "TerritoryID":  "(((100|SAN DIEGO);200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "105",
+        "UID":  "d8a86270-85b4-4fc2-aa87-0004ba29ed8f"
+    },
+    {
+        "DispatcherName":  "FLORES|MARIANNA|MLF",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1726309740000)\/",
+        "TerritoryID":  "((200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "126",
+        "UID":  "75ea44ca-efb8-489c-949f-0005395a3347"
+    },
+    {
+        "DispatcherName":  "WOLF|ELIZABETH|EMW",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1735304640000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "128",
+        "UID":  "5c031dc2-dd11-402c-881e-0005669bed00"
+    },
+    {
+        "DispatcherName":  "LITTLE|JENNIFER|JML",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1522755540000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "128",
+        "UID":  "dd912e1c-6d53-4b38-9b8d-000606aae553"
+    },
+    {
+        "DispatcherName":  "DUNN|JOHN|JPD",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1430855280000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "106",
+        "UID":  "00289ed3-35eb-488c-b1b5-00067adba1a5"
+    },
+    {
+        "DispatcherName":  "YELVERTON|BOBBY|BJY",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1398797100000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "103",
+        "UID":  "2e08be56-d91f-4d17-99ba-0007819b20cc"
+    },
+    {
+        "DispatcherName":  "DOE|JOHN|JJD",
+        "Event":  "OFFDUTY",
+        "EventTime":  "\/Date(1328800020000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "103",
+        "UID":  "f8ba50ac-2e19-4893-a992-0007fa6c9ec9"
+    },
+    {
+        "DispatcherName":  "BRIDGES|ROSEMARY|RJB",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1642309140000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "128",
+        "UID":  "5eb81064-5d90-47fb-9fa4-0008e2a97145"
+    },
+    {
+        "DispatcherName":  "BRIDGES|ROSEMARY|RJB",
+        "Event":  "OFFDUTY",
+        "EventTime":  "\/Date(1511642280000)\/",
+        "TerritoryID":  "(((100|SAN DIEGO);200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "122",
+        "UID":  "b9d337a9-47dc-4ae6-83af-000aa8e69201"
+    },
+    {
+        "DispatcherName":  "EVANS|SHALENE|SME",
+        "Event":  "OFFDUTY",
+        "EventTime":  "\/Date(1609811100000)\/",
+        "TerritoryID":  "((100|SAN DIEGO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "128",
+        "UID":  "8cf57a5b-478a-4c0d-8a96-000bfa41739b"
+    },
+    {
+        "DispatcherName":  "LITTLE|JENNIFER|JML",
+        "Event":  "LOGOFF",
+        "EventTime":  "\/Date(1468960620000)\/",
+        "TerritoryID":  "(((100|SAN DIEGO);200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "105",
+        "UID":  "bd08af9c-b3ec-4cbd-a707-000c92204faa"
+    },
+    {
+        "DispatcherName":  "WOLF|ELIZABETH|EMW",
+        "Event":  "OFFDUTY",
+        "EventTime":  "\/Date(1714162920000)\/",
+        "TerritoryID":  "((200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "126",
+        "UID":  "7284e98c-2644-4dc6-bfa9-000db84a9796"
+    },
+    {
+        "DispatcherName":  "OCAMPO|OLIVER|OMO",
+        "Event":  "LOGOFF",
+        "EventTime":  "\/Date(1454749500000)\/",
+        "TerritoryID":  "(((100|SAN DIEGO);200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "105",
+        "UID":  "75dbb9be-c597-49fa-bbae-000e3cf1d631"
+    },
+    {
+        "DispatcherName":  "LITTLE|JENNIFER|JML",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1460976720000)\/",
+        "TerritoryID":  "((200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "101",
+        "UID":  "7ca50e70-8dd4-4047-a7df-000ee6680104"
+    },
+    {
+        "DispatcherName":  "VUNCANNON|KRYSTAL|KV",
+        "Event":  "OFFDUTY",
+        "EventTime":  "\/Date(1677934140000)\/",
+        "TerritoryID":  "((200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "126",
+        "UID":  "5b868446-e620-446b-ae60-001006863df1"
+    },
+    {
+        "DispatcherName":  "LITTLE|JENNIFER|JML",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1668344160000)\/",
+        "TerritoryID":  "((200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "126",
+        "UID":  "6ccb1d03-65e4-411a-9024-001131d7e5a0"
+    },
+    {
+        "DispatcherName":  "DUNN|JOHN|JPD",
+        "Event":  "ONDUTY",
+        "EventTime":  "\/Date(1421095380000)\/",
+        "TerritoryID":  "((200|ESCONDIDO);0|ALL SUBDIVISIONS);",
+        "WorkstationID":  "101",
+        "UID":  "468d4e95-4e18-4845-951a-001207c63915"
+    }
+]

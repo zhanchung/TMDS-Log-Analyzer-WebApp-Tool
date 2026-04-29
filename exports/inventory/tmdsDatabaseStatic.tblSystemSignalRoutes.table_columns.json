@@ -1,0 +1,83 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "SystemUID",
+        "ordinal":  1,
+        "data_type":  "nvarchar",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "RouteGUID",
+        "ordinal":  2,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "EntrySignal",
+        "ordinal":  3,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "ExitSignal",
+        "ordinal":  4,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "SwitchList",
+        "ordinal":  5,
+        "data_type":  "nvarchar",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "TerrUID",
+        "ordinal":  6,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "CPUID",
+        "ordinal":  7,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "Priority",
+        "ordinal":  8,
+        "data_type":  "int",
+        "is_nullable":  "YES"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "column":  "IsEnabled",
+        "ordinal":  9,
+        "data_type":  "bit",
+        "is_nullable":  "NO"
+    }
+]

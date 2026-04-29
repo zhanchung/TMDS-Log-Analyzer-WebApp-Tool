@@ -1,0 +1,7 @@
+﻿WHOAMI: desktop-p6bd8s3\ji
+CONNECTION_STRING: Data Source=localhost;Initial Catalog=master;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=True;Application Name="Codex SQL Probe";Connect Timeout=5
+LOGIN_NAME: DESKTOP-P6BD8S3\Ji
+SYSTEM_USER: DESKTOP-P6BD8S3\Ji
+SERVER_NAME: DESKTOP-P6BD8S3
+DATABASE_NAME: master
+STATUS: connected

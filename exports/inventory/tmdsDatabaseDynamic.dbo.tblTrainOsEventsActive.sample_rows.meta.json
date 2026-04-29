@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblTrainOsEventsActive",
+    "top":  20,
+    "order_by":  [
+                     "RecordGUID",
+                     "TrainSheetGUID",
+                     "OsPoint",
+                     "OsTime"
+                 ],
+    "row_count_exported":  20
+}

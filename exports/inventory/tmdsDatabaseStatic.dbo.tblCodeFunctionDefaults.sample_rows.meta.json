@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCodeFunctionDefaults",
+    "top":  20,
+    "order_by":  [
+                     "MnemonicName",
+                     "LongName",
+                     "Type"
+                 ],
+    "row_count_exported":  0
+}

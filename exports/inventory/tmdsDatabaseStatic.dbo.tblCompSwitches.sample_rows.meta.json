@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCompSwitches",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "ControlPoint",
+                     "Name"
+                 ],
+    "row_count_exported":  20
+}

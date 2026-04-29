@@ -1,0 +1,100 @@
+[
+  {
+    "database_name": "tmdsDatabaseDynamic",
+    "table_name": "MdmTrainObjectData",
+    "row_count": 5933,
+    "column_count": 4,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.mdm_train_object_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseDynamic",
+    "table_name": "tblAuthoritiesActive",
+    "row_count": 4,
+    "column_count": 91,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.authority_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseDynamic",
+    "table_name": "tblBosDepartureTestData",
+    "row_count": 14,
+    "column_count": 22,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bos_departure_test_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseDynamic",
+    "table_name": "tblLocomotivePositionReport",
+    "row_count": 2301,
+    "column_count": 34,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.locomotive_position_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseDynamic",
+    "table_name": "tblSystemBulletins",
+    "row_count": 19,
+    "column_count": 137,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.bulletin_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseDynamic",
+    "table_name": "tblTrainOsEventsActive",
+    "row_count": 130,
+    "column_count": 9,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.os_event_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseDynamic",
+    "table_name": "tblTrainsActive",
+    "row_count": 310,
+    "column_count": 161,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseDynamic.active_train_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseStatic",
+    "table_name": "tblCodeLines",
+    "row_count": 27,
+    "column_count": 25,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseStatic",
+    "table_name": "tblCodeStations",
+    "row_count": 50,
+    "column_count": 32,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_station_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseStatic",
+    "table_name": "tblCompControlPoints",
+    "row_count": 50,
+    "column_count": 106,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseStatic.control_point_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseStatic",
+    "table_name": "tblCompMiscDevices",
+    "row_count": 119,
+    "column_count": 51,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseStatic.misc_device_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseStatic",
+    "table_name": "tblCompSignals",
+    "row_count": 165,
+    "column_count": 107,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseStatic.signal_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseStatic",
+    "table_name": "tblCompSwitches",
+    "row_count": 99,
+    "column_count": 79,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseStatic.switch_detail_full.csv"
+  },
+  {
+    "database_name": "tmdsDatabaseStatic",
+    "table_name": "tblCompTracks",
+    "row_count": 444,
+    "column_count": 145,
+    "profile_source_csv": "exports\\raw\\sql_foundation\\tmdsDatabaseStatic.track_detail_full.csv"
+  }
+]

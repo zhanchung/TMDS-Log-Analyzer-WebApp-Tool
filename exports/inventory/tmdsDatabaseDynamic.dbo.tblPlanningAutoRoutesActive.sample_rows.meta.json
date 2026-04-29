@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblPlanningAutoRoutesActive",
+    "top":  20,
+    "order_by":  [
+                     "UID",
+                     "TerrUID",
+                     "TrainSymbol"
+                 ],
+    "row_count_exported":  0
+}

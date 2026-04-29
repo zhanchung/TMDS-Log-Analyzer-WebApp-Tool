@@ -1,0 +1,38 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "MdmTrainObjectData",
+        "column":  "Id",
+        "ordinal":  1,
+        "data_type":  "int",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "MdmTrainObjectData",
+        "column":  "LocomotiveId",
+        "ordinal":  2,
+        "data_type":  "nvarchar",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "MdmTrainObjectData",
+        "column":  "Last2100",
+        "ordinal":  3,
+        "data_type":  "datetime",
+        "is_nullable":  "NO"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "MdmTrainObjectData",
+        "column":  "IcdInterfaceVersion",
+        "ordinal":  4,
+        "data_type":  "nvarchar",
+        "is_nullable":  "NO"
+    }
+]

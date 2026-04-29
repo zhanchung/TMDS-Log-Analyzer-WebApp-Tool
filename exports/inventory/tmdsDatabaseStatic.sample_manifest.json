@@ -1,0 +1,211 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblBosTrainObjectData",
+        "top":  20,
+        "order_by":  "Id, LocoID, LastCommunicationTimestamp, LocoState",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblBosTrainObjectData.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblBosTrainObjectData.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblBosTrainObjectData.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeBitAssignments",
+        "top":  25,
+        "order_by":  "UID, WordType, CDLNNumber, CPNumber",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeBitAssignments.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeBitAssignments.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeBitAssignments.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeFunctionDefaults",
+        "top":  20,
+        "order_by":  "MnemonicName, LongName, Type",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeFunctionDefaults.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeFunctionDefaults.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeFunctionDefaults.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeLines",
+        "top":  25,
+        "order_by":  "CodelineNumber, NormalCodeserverName, StandbyCodeserverName",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeLines.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeLines.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeLines.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCodeStations",
+        "top":  25,
+        "order_by":  "UID, CodeLineNumber, ControlPointNumber, CodeStationNumber",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeStations.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeStations.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCodeStations.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompControlPoints",
+        "top":  25,
+        "order_by":  "UID, ControlPoint, Name",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompControlPoints.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompControlPoints.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompControlPoints.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSignals",
+        "top":  25,
+        "order_by":  "UID, ControlPoint, Name",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompSignals.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompSignals.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompSignals.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompSwitches",
+        "top":  20,
+        "order_by":  "UID, ControlPoint, Name",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompSwitches.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompSwitches.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompSwitches.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblCompTracks",
+        "top":  25,
+        "order_by":  "UID, ControlPoint, Name",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompTracks.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompTracks.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblCompTracks.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemDispatchableStations",
+        "top":  20,
+        "order_by":  "UID, ControlPoint, Name, Type",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemDispatchableStations.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemDispatchableStations.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemDispatchableStations.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemMessages",
+        "top":  20,
+        "order_by":  "UID, MessageType, MessageContent",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemMessages.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemMessages.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemMessages.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSignalRoutes",
+        "top":  25,
+        "order_by":  "SystemUID, RouteGUID, EntrySignal",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSignalRoutes.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSignalRoutes.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSignalRoutes.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSubDivisions",
+        "top":  20,
+        "order_by":  "UID, Name, RailRoadName",
+        "row_count_exported":  3,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSubDivisions.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSubDivisions.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSubDivisions.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemSubdivisionStations",
+        "top":  25,
+        "order_by":  "UID, ControlPoint, Name",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSubdivisionStations.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSubdivisionStations.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemSubdivisionStations.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemTrackRoutes",
+        "top":  20,
+        "order_by":  "RouteGUID, RouteName, EntryPoint",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemTrackRoutes.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemTrackRoutes.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemTrackRoutes.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblSystemWorkStations",
+        "top":  25,
+        "order_by":  "UID, WrkStnName, IpAddress, Type",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemWorkStations.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemWorkStations.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblSystemWorkStations.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblTerritoryList",
+        "top":  20,
+        "order_by":  "UID, Name, CurrentControlTime",
+        "row_count_exported":  2,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTerritoryList.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTerritoryList.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTerritoryList.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblTrackRestrictionCodes",
+        "top":  25,
+        "order_by":  "TRUID, TRCode, TRDescription",
+        "row_count_exported":  25,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTrackRestrictionCodes.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTrackRestrictionCodes.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTrackRestrictionCodes.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseStatic",
+        "schema":  "dbo",
+        "table":  "tblTrainInterfaceImportConfiguration",
+        "top":  20,
+        "order_by":  "ConfigurationID, CarrierCode, LineCode",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTrainInterfaceImportConfiguration.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTrainInterfaceImportConfiguration.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseStatic.dbo.tblTrainInterfaceImportConfiguration.sample_rows.meta.json"
+    }
+]

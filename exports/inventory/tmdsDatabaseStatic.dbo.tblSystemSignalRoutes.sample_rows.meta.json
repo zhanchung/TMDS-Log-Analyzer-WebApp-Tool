@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemSignalRoutes",
+    "top":  25,
+    "order_by":  [
+                     "SystemUID",
+                     "RouteGUID",
+                     "EntrySignal"
+                 ],
+    "row_count_exported":  25
+}

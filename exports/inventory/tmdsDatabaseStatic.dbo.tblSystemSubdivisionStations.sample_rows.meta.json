@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblSystemSubdivisionStations",
+    "top":  25,
+    "order_by":  [
+                     "UID",
+                     "ControlPoint",
+                     "Name"
+                 ],
+    "row_count_exported":  25
+}

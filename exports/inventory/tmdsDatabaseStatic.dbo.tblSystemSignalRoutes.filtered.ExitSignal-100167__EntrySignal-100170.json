@@ -1,0 +1,11 @@
+﻿{
+    "SystemUID":  "01450EB5FA",
+    "RouteGUID":  "008@100",
+    "EntrySignal":  100170,
+    "ExitSignal":  100167,
+    "SwitchList":  "100169;3-SWITCH;FALSE|100168;1-SWITCH;FALSE",
+    "TerrUID":  100,
+    "CPUID":  100002,
+    "Priority":  1,
+    "IsEnabled":  true
+}

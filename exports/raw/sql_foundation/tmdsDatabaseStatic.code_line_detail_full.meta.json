@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "export_name":  "code_line_detail_full",
+    "row_count":  27,
+    "json_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_detail_full.json",
+    "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\raw\\sql_foundation\\tmdsDatabaseStatic.code_line_detail_full.csv"
+}

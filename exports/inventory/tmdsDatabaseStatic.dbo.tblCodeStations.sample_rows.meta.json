@@ -1,0 +1,13 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCodeStations",
+    "top":  25,
+    "order_by":  [
+                     "UID",
+                     "CodeLineNumber",
+                     "ControlPointNumber",
+                     "CodeStationNumber"
+                 ],
+    "row_count_exported":  25
+}

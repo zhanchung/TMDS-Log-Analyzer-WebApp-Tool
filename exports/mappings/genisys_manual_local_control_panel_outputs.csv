@@ -1,0 +1,12 @@
+application,source_scope,manual_pages,slot,output_name,flash_output_name,source_boolean,expression
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,4,1WGE-NVO,1WGE-F,1WGE,(.N.1WRGP + .N.VRDFRNT-DI)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,8,1EAGE-NVO,1EAGE-F,1EAGE,(.N.1EARGP * 2NWC + .N.VRDFRNT-DI)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,9,1EBGE-NVO,1EBGE-F,1EBGE,(.N.1EBRGP + .N.VRDFRNT-DI)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,10,2NE-NVO,2NE-F,2NE,(2NWZ)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,12,2RE-NVO,2RE-F,2RE,(2RWZ)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,18,1WAE-NVO,1WAE-F,1WAE,(.N.ET)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,19,1EAAE-NVO,1EAAE-F,1EAAE,(.N.WT)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,20,1EBAE-NVO,1EBAE-F,1EBAE,(.N.ST)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,21,2TE-NVO,,2TE,(.N.2TPP)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,29,LOCAL-NVO,,LOCALE,(.N.REMOTE-SLO)
+LOCAL CONTROL PANEL LIGHTING,sample manual mapping only; not an NCTD site-specific assignment,B-10 to B-11,30,MCALM-NVO,,MCALM,(MCE * .N.MCALMOFF)

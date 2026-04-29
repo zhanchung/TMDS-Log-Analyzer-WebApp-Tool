@@ -1,0 +1,7 @@
+﻿{
+    "database":  "tmdsDatabaseStatic,tmdsDatabaseDynamic",
+    "schema":  null,
+    "table":  null,
+    "row_count":  null,
+    "error":  "Exception calling \"Open\" with \"0\" argument(s): \"로그인에서 요청한 데이터베이스 \"tmdsDatabaseStatic,tmdsDatabaseDynamic\"을(를) 열 수 없습니다. 로그인이 실패했습니다.\r\n사용자 \u0027DESKTOP-P6BD8S3\\Ji\u0027이(가) 로그인하지 못했습니다.\""
+}

@@ -1,0 +1,266 @@
+[
+  {
+    "name": "code_station_inventory",
+    "json_path": "exports\\normalized\\code_station_inventory.json",
+    "csv_path": "exports\\normalized\\code_station_inventory.csv",
+    "row_count": 50
+  },
+  {
+    "name": "code_station_assignment_map",
+    "json_path": "exports\\normalized\\code_station_assignment_map.json",
+    "csv_path": "exports\\normalized\\code_station_assignment_map.csv",
+    "row_count": 50
+  },
+  {
+    "name": "code_line_protocol_summary",
+    "json_path": "exports\\normalized\\code_line_protocol_summary.json",
+    "csv_path": "exports\\normalized\\code_line_protocol_summary.csv",
+    "row_count": 27
+  },
+  {
+    "name": "subdivision_protocol_summary",
+    "json_path": "exports\\normalized\\subdivision_protocol_summary.json",
+    "csv_path": "exports\\normalized\\subdivision_protocol_summary.csv",
+    "row_count": 2
+  },
+  {
+    "name": "genisys_station_assignment_summary",
+    "json_path": "exports\\normalized\\genisys_station_assignment_summary.json",
+    "csv_path": "exports\\normalized\\genisys_station_assignment_summary.csv",
+    "row_count": 46
+  },
+  {
+    "name": "component_bit_reference_map",
+    "json_path": "exports\\normalized\\component_bit_reference_map.json",
+    "csv_path": "exports\\normalized\\component_bit_reference_map.csv",
+    "row_count": 11433
+  },
+  {
+    "name": "component_reference_scope_summary",
+    "json_path": "exports\\normalized\\component_reference_scope_summary.json",
+    "csv_path": "exports\\normalized\\component_reference_scope_summary.csv",
+    "row_count": 3074
+  },
+  {
+    "name": "zero_first_reference_summary",
+    "json_path": "exports\\normalized\\zero_first_reference_summary.json",
+    "csv_path": "exports\\normalized\\zero_first_reference_summary.csv",
+    "row_count": 6736
+  },
+  {
+    "name": "zero_first_reference_class_counts",
+    "json_path": "exports\\normalized\\zero_first_reference_class_counts.json",
+    "csv_path": "exports\\normalized\\zero_first_reference_class_counts.csv",
+    "row_count": 85
+  },
+  {
+    "name": "cp_assignment_summary",
+    "json_path": "exports\\normalized\\cp_assignment_summary.json",
+    "csv_path": "exports\\normalized\\cp_assignment_summary.csv",
+    "row_count": 2001
+  },
+  {
+    "name": "cp_assignment_slot_summary",
+    "json_path": "exports\\normalized\\cp_assignment_slot_summary.json",
+    "csv_path": "exports\\normalized\\cp_assignment_slot_summary.csv",
+    "row_count": 47
+  },
+  {
+    "name": "cp_assignment_resolved_patterns",
+    "json_path": "exports\\normalized\\cp_assignment_resolved_patterns.json",
+    "csv_path": "exports\\normalized\\cp_assignment_resolved_patterns.csv",
+    "row_count": 218
+  },
+  {
+    "name": "cp_zero_first_slot_summary",
+    "json_path": "exports\\normalized\\cp_zero_first_slot_summary.json",
+    "csv_path": "exports\\normalized\\cp_zero_first_slot_summary.csv",
+    "row_count": 57
+  },
+  {
+    "name": "cp_zero_first_pattern_summary",
+    "json_path": "exports\\normalized\\cp_zero_first_pattern_summary.json",
+    "csv_path": "exports\\normalized\\cp_zero_first_pattern_summary.csv",
+    "row_count": 858
+  },
+  {
+    "name": "cp_zero_first_candidate_scope_summary",
+    "json_path": "exports\\normalized\\cp_zero_first_candidate_scope_summary.json",
+    "csv_path": "exports\\normalized\\cp_zero_first_candidate_scope_summary.csv",
+    "row_count": 59
+  },
+  {
+    "name": "cp_direct_four_token_local_bit_diagnostic_rows",
+    "json_path": "exports\\normalized\\cp_direct_four_token_local_bit_diagnostic_rows.json",
+    "csv_path": "exports\\normalized\\cp_direct_four_token_local_bit_diagnostic_rows.csv",
+    "row_count": 144
+  },
+  {
+    "name": "cp_direct_four_token_local_bit_diagnostic_summary",
+    "json_path": "exports\\normalized\\cp_direct_four_token_local_bit_diagnostic_summary.json",
+    "csv_path": "exports\\normalized\\cp_direct_four_token_local_bit_diagnostic_summary.csv",
+    "row_count": 12
+  },
+  {
+    "name": "cp_direct_four_token_candidate_family_summary",
+    "json_path": "exports\\normalized\\cp_direct_four_token_candidate_family_summary.json",
+    "csv_path": "exports\\normalized\\cp_direct_four_token_candidate_family_summary.csv",
+    "row_count": 8
+  },
+  {
+    "name": "reference_family_summary",
+    "json_path": "exports\\normalized\\reference_family_summary.json",
+    "csv_path": "exports\\normalized\\reference_family_summary.csv",
+    "row_count": 70
+  },
+  {
+    "name": "switch_rcps_foundation_summary",
+    "json_path": "exports\\normalized\\switch_rcps_foundation_summary.json",
+    "csv_path": "exports\\normalized\\switch_rcps_foundation_summary.csv",
+    "row_count": 99
+  },
+  {
+    "name": "switch_rcps_pattern_summary",
+    "json_path": "exports\\normalized\\switch_rcps_pattern_summary.json",
+    "csv_path": "exports\\normalized\\switch_rcps_pattern_summary.csv",
+    "row_count": 52
+  },
+  {
+    "name": "switch_shared_anchor_summary",
+    "json_path": "exports\\normalized\\switch_shared_anchor_summary.json",
+    "csv_path": "exports\\normalized\\switch_shared_anchor_summary.csv",
+    "row_count": 99
+  },
+  {
+    "name": "switch_shared_anchor_pattern_summary",
+    "json_path": "exports\\normalized\\switch_shared_anchor_pattern_summary.json",
+    "csv_path": "exports\\normalized\\switch_shared_anchor_pattern_summary.csv",
+    "row_count": 40
+  },
+  {
+    "name": "track_family_foundation_summary",
+    "json_path": "exports\\normalized\\track_family_foundation_summary.json",
+    "csv_path": "exports\\normalized\\track_family_foundation_summary.csv",
+    "row_count": 444
+  },
+  {
+    "name": "track_family_pattern_summary",
+    "json_path": "exports\\normalized\\track_family_pattern_summary.json",
+    "csv_path": "exports\\normalized\\track_family_pattern_summary.csv",
+    "row_count": 218
+  },
+  {
+    "name": "track_control_cluster_summary",
+    "json_path": "exports\\normalized\\track_control_cluster_summary.json",
+    "csv_path": "exports\\normalized\\track_control_cluster_summary.csv",
+    "row_count": 444
+  },
+  {
+    "name": "track_control_cluster_pattern_summary",
+    "json_path": "exports\\normalized\\track_control_cluster_pattern_summary.json",
+    "csv_path": "exports\\normalized\\track_control_cluster_pattern_summary.csv",
+    "row_count": 216
+  },
+  {
+    "name": "signal_family_foundation_summary",
+    "json_path": "exports\\normalized\\signal_family_foundation_summary.json",
+    "csv_path": "exports\\normalized\\signal_family_foundation_summary.csv",
+    "row_count": 165
+  },
+  {
+    "name": "signal_family_pattern_summary",
+    "json_path": "exports\\normalized\\signal_family_pattern_summary.json",
+    "csv_path": "exports\\normalized\\signal_family_pattern_summary.csv",
+    "row_count": 106
+  },
+  {
+    "name": "signal_shared_anchor_summary",
+    "json_path": "exports\\normalized\\signal_shared_anchor_summary.json",
+    "csv_path": "exports\\normalized\\signal_shared_anchor_summary.csv",
+    "row_count": 165
+  },
+  {
+    "name": "signal_shared_anchor_pattern_summary",
+    "json_path": "exports\\normalized\\signal_shared_anchor_pattern_summary.json",
+    "csv_path": "exports\\normalized\\signal_shared_anchor_pattern_summary.csv",
+    "row_count": 50
+  },
+  {
+    "name": "signal_opposing_foundation_summary",
+    "json_path": "exports\\normalized\\signal_opposing_foundation_summary.json",
+    "csv_path": "exports\\normalized\\signal_opposing_foundation_summary.csv",
+    "row_count": 12
+  },
+  {
+    "name": "signal_opposing_pattern_summary",
+    "json_path": "exports\\normalized\\signal_opposing_pattern_summary.json",
+    "csv_path": "exports\\normalized\\signal_opposing_pattern_summary.csv",
+    "row_count": 4
+  },
+  {
+    "name": "table_profile_summary",
+    "json_path": "exports\\normalized\\table_profile_summary.json",
+    "csv_path": "exports\\normalized\\table_profile_summary.csv",
+    "row_count": 14
+  },
+  {
+    "name": "table_column_profile",
+    "json_path": "exports\\normalized\\table_column_profile.json",
+    "csv_path": "exports\\normalized\\table_column_profile.csv",
+    "row_count": 1003
+  },
+  {
+    "name": "station_foundation_summary",
+    "json_path": "exports\\normalized\\station_foundation_summary.json",
+    "csv_path": "exports\\normalized\\station_foundation_summary.csv",
+    "row_count": 50
+  },
+  {
+    "name": "train_runtime_foundation_summary",
+    "json_path": "exports\\normalized\\train_runtime_foundation_summary.json",
+    "csv_path": "exports\\normalized\\train_runtime_foundation_summary.csv",
+    "row_count": 310
+  },
+  {
+    "name": "train_runtime_join_summary",
+    "json_path": "exports\\normalized\\train_runtime_join_summary.json",
+    "csv_path": "exports\\normalized\\train_runtime_join_summary.csv",
+    "row_count": 3
+  },
+  {
+    "name": "authority_foundation_summary",
+    "json_path": "exports\\normalized\\authority_foundation_summary.json",
+    "csv_path": "exports\\normalized\\authority_foundation_summary.csv",
+    "row_count": 4
+  },
+  {
+    "name": "bulletin_foundation_summary",
+    "json_path": "exports\\normalized\\bulletin_foundation_summary.json",
+    "csv_path": "exports\\normalized\\bulletin_foundation_summary.csv",
+    "row_count": 19
+  },
+  {
+    "name": "os_event_foundation_summary",
+    "json_path": "exports\\normalized\\os_event_foundation_summary.json",
+    "csv_path": "exports\\normalized\\os_event_foundation_summary.csv",
+    "row_count": 130
+  },
+  {
+    "name": "route_switch_context",
+    "json_path": "exports\\normalized\\route_switch_context.json",
+    "csv_path": "exports\\normalized\\route_switch_context.csv",
+    "row_count": 637
+  },
+  {
+    "name": "bos_emp_message_candidates",
+    "json_path": "exports\\normalized\\bos_emp_message_candidates.json",
+    "csv_path": "exports\\normalized\\bos_emp_message_candidates.csv",
+    "row_count": 450
+  },
+  {
+    "name": "tmds_foundation_stats",
+    "json_path": "exports\\normalized\\tmds_foundation_stats.json",
+    "csv_path": "exports\\normalized\\tmds_foundation_stats.csv",
+    "row_count": 30
+  }
+]

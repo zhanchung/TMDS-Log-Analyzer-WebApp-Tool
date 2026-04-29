@@ -1,0 +1,5 @@
+﻿"database","schema","table","column","ordinal","data_type","is_nullable"
+"tmdsDatabaseStatic","dbo","tblTrackRestrictionCodes","TRUID","1","int","NO"
+"tmdsDatabaseStatic","dbo","tblTrackRestrictionCodes","TRCode","2","nvarchar","YES"
+"tmdsDatabaseStatic","dbo","tblTrackRestrictionCodes","TRDescription","3","nvarchar","YES"
+"tmdsDatabaseStatic","dbo","tblTrackRestrictionCodes","TRType","4","nvarchar","YES"

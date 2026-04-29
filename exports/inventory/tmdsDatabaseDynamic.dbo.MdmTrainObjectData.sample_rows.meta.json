@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "MdmTrainObjectData",
+    "top":  20,
+    "order_by":  [
+                     "Id",
+                     "LocomotiveId",
+                     "Last2100"
+                 ],
+    "row_count_exported":  20
+}

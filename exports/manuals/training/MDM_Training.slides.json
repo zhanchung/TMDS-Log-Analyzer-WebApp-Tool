@@ -1,0 +1,474 @@
+[
+  {
+    "slide_name": "ppt/slides/slide1.xml",
+    "slide_number": 1,
+    "text_items": [
+      "MDM Training"
+    ],
+    "text": "MDM Training"
+  },
+  {
+    "slide_name": "ppt/slides/slide2.xml",
+    "slide_number": 2,
+    "text_items": [
+      "This presentation is broken up into the following sections:",
+      "Overview",
+      "BackOfficeControl",
+      "Anatomy of the Server",
+      "Configuration Changes",
+      "Manuals",
+      "Performance Analytics",
+      "Agenda"
+    ],
+    "text": "This presentation is broken up into the following sections:\nOverview\nBackOfficeControl\nAnatomy of the Server\nConfiguration Changes\nManuals\nPerformance Analytics\nAgenda"
+  },
+  {
+    "slide_name": "ppt/slides/slide3.xml",
+    "slide_number": 3,
+    "text_items": [
+      "Changes have been made to MDM to address memory and performance issues.",
+      "The overall design and many components were retained, but intertwined UI/Business Logic was eliminated.",
+      "Functionality was separated into a new architecture where the Back Office Control (BOC) provides the UI, and a much more lightweight service-style system provides the Business Logic.",
+      "Test results have been",
+      "very",
+      "positive for memory usage as well as performance.",
+      "Note: This",
+      "document makes reference to “Admin Client” in several places. This applies to either of the applications “TMDS",
+      "AdminClient",
+      "” or “TMDS WebApp”. Both work with MDM and, for our purposes in this document, have the same functionality needed.",
+      "Overview"
+    ],
+    "text": "Changes have been made to MDM to address memory and performance issues.\nThe overall design and many components were retained, but intertwined UI/Business Logic was eliminated.\nFunctionality was separated into a new architecture where the Back Office Control (BOC) provides the UI, and a much more lightweight service-style system provides the Business Logic.\nTest results have been\nvery\npositive for memory usage as well as performance.\nNote: This\ndocument makes reference to “Admin Client” in several places. This applies to either of the applications “TMDS\nAdminClient\n” or “TMDS WebApp”. Both work with MDM and, for our purposes in this document, have the same functionality needed.\nOverview"
+  },
+  {
+    "slide_name": "ppt/slides/slide4.xml",
+    "slide_number": 4,
+    "text_items": [
+      "MDM (since v5.2) can now be installed as a service. The basic functionality to this is trivial. Simply open up a command prompt running as Administrator, navigate to the MDM install directory, and execute the following command:",
+      "> MobileDeviceManager.Service.exe install",
+      "Use the command “uninstall” in the same fashion to uninstall it from the service system.",
+      "It can be controlled via the Services administration tool or in the same fashion as above using the commands “start”, “stop”, or “restart”.",
+      "Of course, you can just double-click the executable or start it from the command prompt as you would with any application. It will run as a standalone console application or can be installed to run as a service.",
+      "MDM: Run as a Service"
+    ],
+    "text": "MDM (since v5.2) can now be installed as a service. The basic functionality to this is trivial. Simply open up a command prompt running as Administrator, navigate to the MDM install directory, and execute the following command:\n> MobileDeviceManager.Service.exe install\nUse the command “uninstall” in the same fashion to uninstall it from the service system.\nIt can be controlled via the Services administration tool or in the same fashion as above using the commands “start”, “stop”, or “restart”.\nOf course, you can just double-click the executable or start it from the command prompt as you would with any application. It will run as a standalone console application or can be installed to run as a service.\nMDM: Run as a Service"
+  },
+  {
+    "slide_name": "ppt/slides/slide5.xml",
+    "slide_number": 5,
+    "text_items": [
+      "With this release of BOC, you can now configure the application it will control via the config item “",
+      "ControllingApplication",
+      "” which is one of BOS, CIA, or MDM (BOS/CIA less than version 6.4 are incompatible with this change and you’ll need to use the previous version of BOC).",
+      "Based on this setting, the UI will re-configure itself for the specified application: Hiding parts which are not needed and showing others.",
+      "For MDM there are 4 main parts:",
+      "PTC Trains List – Quick look at Download/Upload states and focused train selection",
+      "MDM Raw Logs tab – Current MDM logs",
+      "Repository Downloads tab – Repository Download information (specific to train selection)",
+      "Uploads tab – Current Uploads status of active trains",
+      "Of note, for MDM and BOC to communicate, you must set up and configure RabbitMQ as with BOS and BOC.",
+      "Back Office Control (BOC): Overview"
+    ],
+    "text": "With this release of BOC, you can now configure the application it will control via the config item “\nControllingApplication\n” which is one of BOS, CIA, or MDM (BOS/CIA less than version 6.4 are incompatible with this change and you’ll need to use the previous version of BOC).\nBased on this setting, the UI will re-configure itself for the specified application: Hiding parts which are not needed and showing others.\nFor MDM there are 4 main parts:\nPTC Trains List – Quick look at Download/Upload states and focused train selection\nMDM Raw Logs tab – Current MDM logs\nRepository Downloads tab – Repository Download information (specific to train selection)\nUploads tab – Current Uploads status of active trains\nOf note, for MDM and BOC to communicate, you must set up and configure RabbitMQ as with BOS and BOC.\nBack Office Control (BOC): Overview"
+  },
+  {
+    "slide_name": "ppt/slides/slide6.xml",
+    "slide_number": 6,
+    "text_items": [
+      "BOC has been updated to enable controlling and viewing of the MDM.",
+      "Back Office Control (BOC)"
+    ],
+    "text": "BOC has been updated to enable controlling and viewing of the MDM.\nBack Office Control (BOC)"
+  },
+  {
+    "slide_name": "ppt/slides/slide7.xml",
+    "slide_number": 7,
+    "text_items": [
+      "The application being controlled is displayed along with the version number. This will make it much easier to identify from VM to VM.",
+      "Back Office Control (BOC): Title Bar"
+    ],
+    "text": "The application being controlled is displayed along with the version number. This will make it much easier to identify from VM to VM.\nBack Office Control (BOC): Title Bar"
+  },
+  {
+    "slide_name": "ppt/slides/slide8.xml",
+    "slide_number": 8,
+    "text_items": [
+      "Control",
+      "Exit – Exits the BOC, MDM is still running",
+      "View",
+      "View Connections Window (",
+      "The Connections Window (View > Connections Window or click the “status button”) shows all connections and cluster information. This includes HA servers and ITCM failovers (if configured), as well as Admin Client connections.)",
+      "View System Stats",
+      "Back Office Control (BOC): Menu Bar"
+    ],
+    "text": "Control\nExit – Exits the BOC, MDM is still running\nView\nView Connections Window (\nThe Connections Window (View > Connections Window or click the “status button”) shows all connections and cluster information. This includes HA servers and ITCM failovers (if configured), as well as Admin Client connections.)\nView System Stats\nBack Office Control (BOC): Menu Bar"
+  },
+  {
+    "slide_name": "ppt/slides/slide9.xml",
+    "slide_number": 9,
+    "text_items": [
+      "Tools",
+      "Cluster Logging Levels: Info, Warn, Error, Debug, Trace",
+      "EMP Message Filtering",
+      "Send 1100 to Selected Locomotive (Send current file set)",
+      "Downloads (see next slides)",
+      "Uploads",
+      "Test",
+      "– For testing purposes only",
+      "Help",
+      "– Opens a BOC information window",
+      "Back Office Control (BOC): Menu Bar",
+      "(continued)"
+    ],
+    "text": "Tools\nCluster Logging Levels: Info, Warn, Error, Debug, Trace\nEMP Message Filtering\nSend 1100 to Selected Locomotive (Send current file set)\nDownloads (see next slides)\nUploads\nTest\n– For testing purposes only\nHelp\n– Opens a BOC information window\nBack Office Control (BOC): Menu Bar\n(continued)"
+  },
+  {
+    "slide_name": "ppt/slides/slide10.xml",
+    "slide_number": 10,
+    "text_items": [
+      "When you have a train selected in the PTC Trains list, the Repository Downloads tab will request and populate with the information about that train. It will continue to update as that data changes. Changing to a different train will update to that train. Trains that are Downloading show in Yellow.",
+      "Back Office Control (BOC): Repository Downloads"
+    ],
+    "text": "When you have a train selected in the PTC Trains list, the Repository Downloads tab will request and populate with the information about that train. It will continue to update as that data changes. Changing to a different train will update to that train. Trains that are Downloading show in Yellow.\nBack Office Control (BOC): Repository Downloads"
+  },
+  {
+    "slide_name": "ppt/slides/slide11.xml",
+    "slide_number": 11,
+    "text_items": [
+      "The server has a maximum number of concurrent downloads setting. If reached, additional download requests are queued until a download completes and then the first on the queue is serviced. A visual display of this has been added to the lower-right corner of the BOC showing how many concurrent downloads, a percentage-based progress bar indicating how close the server is to the maximum, and the number of downloads which are queued. As the progress bar fills up, it changes color. Less than 75% it will be green, at 75% it will turn yellow, and at 85% it turns red. Having downloads queued is not necessarily a bad thing, this is just a way to reduce your resource load and protect against overloading the system. It can be controlled via the MDM config item",
+      "MaximumConcurrentActiveDownloads",
+      "in the",
+      "TransferSettings",
+      "section. A download is considered active if the 2104 has not been received and there was 2103 traffic within the last 30 seconds. The timeout value for a download is configurable on the server, the default is 5 minutes.",
+      "Back Office Control (BOC): Download Queue Status"
+    ],
+    "text": "The server has a maximum number of concurrent downloads setting. If reached, additional download requests are queued until a download completes and then the first on the queue is serviced. A visual display of this has been added to the lower-right corner of the BOC showing how many concurrent downloads, a percentage-based progress bar indicating how close the server is to the maximum, and the number of downloads which are queued. As the progress bar fills up, it changes color. Less than 75% it will be green, at 75% it will turn yellow, and at 85% it turns red. Having downloads queued is not necessarily a bad thing, this is just a way to reduce your resource load and protect against overloading the system. It can be controlled via the MDM config item\nMaximumConcurrentActiveDownloads\nin the\nTransferSettings\nsection. A download is considered active if the 2104 has not been received and there was 2103 traffic within the last 30 seconds. The timeout value for a download is configurable on the server, the default is 5 minutes.\nBack Office Control (BOC): Download Queue Status"
+  },
+  {
+    "slide_name": "ppt/slides/slide12.xml",
+    "slide_number": 12,
+    "text_items": [
+      "The Uploads tab shows all active trains (selection in PTC Trains list does not affect this view) with their current upload session (sorted by Status), and the progress on the current file being uploaded. Trains that are Synced and Uploading show in Cyan.",
+      "Back Office Control (BOC): Uploads"
+    ],
+    "text": "The Uploads tab shows all active trains (selection in PTC Trains list does not affect this view) with their current upload session (sorted by Status), and the progress on the current file being uploaded. Trains that are Synced and Uploading show in Cyan.\nBack Office Control (BOC): Uploads"
+  },
+  {
+    "slide_name": "ppt/slides/slide13.xml",
+    "slide_number": 13,
+    "text_items": [
+      "When you set a Loco Group to Inactive in the Admin Client, any locomotives currently displayed in the MDM will change to a Red color and all Download/Upload sessions are cancelled. 2100s are still serviced.",
+      "Back Office Control (BOC): Inactive Loco Groups"
+    ],
+    "text": "When you set a Loco Group to Inactive in the Admin Client, any locomotives currently displayed in the MDM will change to a Red color and all Download/Upload sessions are cancelled. 2100s are still serviced.\nBack Office Control (BOC): Inactive Loco Groups"
+  },
+  {
+    "slide_name": "ppt/slides/slide14.xml",
+    "slide_number": 14,
+    "text_items": [
+      "Colors are set in the following precedence:",
+      "Inactive [",
+      "Red",
+      "]",
+      "Downloading [",
+      "Yellow",
+      "]",
+      "Uploading [",
+      "Cyan",
+      "]",
+      "Not Synchronized (not downloading, not uploading) [",
+      "Orange",
+      "]",
+      "Synchronized [",
+      "GreenYellow",
+      "]",
+      "It’s technically possible you may see a train in",
+      "White",
+      ", indicating no status is known about that train, but that would be extremely rare.",
+      "Back Office Control (BOC): PTC Trains Colors"
+    ],
+    "text": "Colors are set in the following precedence:\nInactive [\nRed\n]\nDownloading [\nYellow\n]\nUploading [\nCyan\n]\nNot Synchronized (not downloading, not uploading) [\nOrange\n]\nSynchronized [\nGreenYellow\n]\nIt’s technically possible you may see a train in\nWhite\n, indicating no status is known about that train, but that would be extremely rare.\nBack Office Control (BOC): PTC Trains Colors"
+  },
+  {
+    "slide_name": "ppt/slides/slide15.xml",
+    "slide_number": 15,
+    "text_items": [
+      "What are the roles of the MDM?",
+      "Highest priority is to service Downloads, ensuring a locomotive can initialize and operate",
+      "Secondary priority is to allow RR owned locomotives to upload their logs",
+      "Provide a mechanism to prioritize non-initializing RR owned locomotives over foreign locomotives",
+      "What are the required features of the MDM?",
+      "Note:",
+      "All manuals are in the Documentation folder of the Installation Package.",
+      "Operate as a Windows Service",
+      "High Availability",
+      "Correct QoS and TTL settings for EMP messages",
+      "Maximum locomotives serviced for Uploads",
+      "Maximum threshold for Downloads",
+      "Security",
+      "Fileset",
+      "Support",
+      "KES Integration",
+      "ClassD",
+      "and AMQP Protocols",
+      "Subdivision Upload over File Transfer Messages",
+      "Admin Client Interface",
+      "ICD 3.0, 4.0, 132.0 US, and 132.0 Metric",
+      "Fully Parsed Message Traffic Logging",
+      "Anatomy of the Server"
+    ],
+    "text": "What are the roles of the MDM?\nHighest priority is to service Downloads, ensuring a locomotive can initialize and operate\nSecondary priority is to allow RR owned locomotives to upload their logs\nProvide a mechanism to prioritize non-initializing RR owned locomotives over foreign locomotives\nWhat are the required features of the MDM?\nNote:\nAll manuals are in the Documentation folder of the Installation Package.\nOperate as a Windows Service\nHigh Availability\nCorrect QoS and TTL settings for EMP messages\nMaximum locomotives serviced for Uploads\nMaximum threshold for Downloads\nSecurity\nFileset\nSupport\nKES Integration\nClassD\nand AMQP Protocols\nSubdivision Upload over File Transfer Messages\nAdmin Client Interface\nICD 3.0, 4.0, 132.0 US, and 132.0 Metric\nFully Parsed Message Traffic Logging\nAnatomy of the Server"
+  },
+  {
+    "slide_name": "ppt/slides/slide16.xml",
+    "slide_number": 16,
+    "text_items": [
+      "MDM now starts up similarly to BOS insofar as it has an Initialization stage.",
+      "During Initialization, MDM checks and verifies the configuration settings to make sure they are within any required ranges, correct values, or specific value sets. Previously, MDM would try to guess if you provided invalid input, but this is a mistake when we’re operating with a critical server, so those types of errors are now logged and required to be corrected (e.g. If you set “",
+      "DbConnectionTimeout",
+      "” to “A” instead of a number, you’ll get an error during Initialization). The reason these are now errors is most configuration item “guesses” have consequences down the road, so we simply ask they be fixed up front.",
+      "So, if your MDM is not making it through Initialization, please check the logfile for Error messages and correct the issues.",
+      "It is suggested that one routinely looks through Initialization logs for Warnings as well, since those will indicate possible issues which could cause aberrant behavior later.",
+      "Anatomy of the Server: Initialization"
+    ],
+    "text": "MDM now starts up similarly to BOS insofar as it has an Initialization stage.\nDuring Initialization, MDM checks and verifies the configuration settings to make sure they are within any required ranges, correct values, or specific value sets. Previously, MDM would try to guess if you provided invalid input, but this is a mistake when we’re operating with a critical server, so those types of errors are now logged and required to be corrected (e.g. If you set “\nDbConnectionTimeout\n” to “A” instead of a number, you’ll get an error during Initialization). The reason these are now errors is most configuration item “guesses” have consequences down the road, so we simply ask they be fixed up front.\nSo, if your MDM is not making it through Initialization, please check the logfile for Error messages and correct the issues.\nIt is suggested that one routinely looks through Initialization logs for Warnings as well, since those will indicate possible issues which could cause aberrant behavior later.\nAnatomy of the Server: Initialization"
+  },
+  {
+    "slide_name": "ppt/slides/slide17.xml",
+    "slide_number": 17,
+    "text_items": [
+      "As a quick review, here are the messages exchanged for Downloads and what they do:",
+      "Anatomy of the Server: Download Messages Review",
+      "MDM Msg#",
+      "Description",
+      "LOCO Msg#",
+      "Description",
+      "1100",
+      "“",
+      "Fileset",
+      "List” – Sent by MDM to the Loco to provide the current",
+      "fileset",
+      "list. Typically in response to a 2100, but can be sent unsolicited via Admin Client request.",
+      "2100",
+      "“Client",
+      "Fileset",
+      "List” – Sent by the Loco to MDM requesting the current",
+      "fileset",
+      "list. Provides the Loco’s current data for MDM synchronization purposes.",
+      "1101",
+      "“File Info” – Sent by MDM to provide information on a file for transfer. Only in response to a 2101.",
+      "2101",
+      "“File Info Request” – Sent by the Loco to MDM to request downloading a file.",
+      "1102",
+      "“File Part Checksum” – Sent by MDM to the Loco to aid the loco in resuming download of a file. Only in response to a 2102.",
+      "2102",
+      "“File Part Checksum Request” – Sent by the Loco to MDM to request the checksum over a portion of file. This allows the Loco to continue an interrupted download.",
+      "1103",
+      "“File Data” – Sent by MDM to the Loco providing a “chunk” of data. Only in request to a 2103.",
+      "2103",
+      "“File Data Request” – Sent by the Loco to MDM to request a “chunk” of data.",
+      "1104",
+      "“No File” – Sent by MDM to the Loco indicating the 2101 or 2103 request doesn’t match OR the file in an unsolicited 2120 cannot be supported.",
+      "2104",
+      "“File Complete” – Sent by the Loco to MDM indicating the Loco now has the up-to-date file.",
+      "1105",
+      "“File Transfer Unavailable” – Sent by MDM to the Loco indicating transfers are not available at this time.",
+      "2105",
+      "“File Download Failed” – Sent by the Loco to MDM indicating the Loco cannot download files."
+    ],
+    "text": "As a quick review, here are the messages exchanged for Downloads and what they do:\nAnatomy of the Server: Download Messages Review\nMDM Msg#\nDescription\nLOCO Msg#\nDescription\n1100\n“\nFileset\nList” – Sent by MDM to the Loco to provide the current\nfileset\nlist. Typically in response to a 2100, but can be sent unsolicited via Admin Client request.\n2100\n“Client\nFileset\nList” – Sent by the Loco to MDM requesting the current\nfileset\nlist. Provides the Loco’s current data for MDM synchronization purposes.\n1101\n“File Info” – Sent by MDM to provide information on a file for transfer. Only in response to a 2101.\n2101\n“File Info Request” – Sent by the Loco to MDM to request downloading a file.\n1102\n“File Part Checksum” – Sent by MDM to the Loco to aid the loco in resuming download of a file. Only in response to a 2102.\n2102\n“File Part Checksum Request” – Sent by the Loco to MDM to request the checksum over a portion of file. This allows the Loco to continue an interrupted download.\n1103\n“File Data” – Sent by MDM to the Loco providing a “chunk” of data. Only in request to a 2103.\n2103\n“File Data Request” – Sent by the Loco to MDM to request a “chunk” of data.\n1104\n“No File” – Sent by MDM to the Loco indicating the 2101 or 2103 request doesn’t match OR the file in an unsolicited 2120 cannot be supported.\n2104\n“File Complete” – Sent by the Loco to MDM indicating the Loco now has the up-to-date file.\n1105\n“File Transfer Unavailable” – Sent by MDM to the Loco indicating transfers are not available at this time.\n2105\n“File Download Failed” – Sent by the Loco to MDM indicating the Loco cannot download files."
+  },
+  {
+    "slide_name": "ppt/slides/slide18.xml",
+    "slide_number": 18,
+    "text_items": [
+      "As a quick review, here are the messages exchanged for Uploads and what they do:",
+      "These messages are used to perform what the MDM calls an “Upload Session”. The MDM has a list of wildcard strings used to request all of the logfiles on each slice from the Locomotive.",
+      "Anatomy of the Server: Upload Messages Review",
+      "MDM Msg#",
+      "Description",
+      "LOCO Msg#",
+      "Description",
+      "1120",
+      "“File Request” – Sent by MDM to the Loco to request particular file(s) from the Loco. This is typically a wildcard pattern like “CDU-1:/var/log/*.",
+      "gz",
+      "”.",
+      "2120",
+      "“File Info” – Sent by the Loco to MDM to provide information on a file for transfer. This will be the first match from the 1120, if found.",
+      "2121",
+      "“No File” – Sent by the Loco to MDM to indicate there are no matches to the 1120 request.",
+      "1122",
+      "“File Data Request” – Sent by MDM to the Loco to request a “chunk” of data.",
+      "2122",
+      "“File Data” – Sent by the Loco to MDM providing a “chunk” of data.",
+      "1123",
+      "“File Complete” – Sent by MDM to the Loco indicating the MDM has the up-to-date file."
+    ],
+    "text": "As a quick review, here are the messages exchanged for Uploads and what they do:\nThese messages are used to perform what the MDM calls an “Upload Session”. The MDM has a list of wildcard strings used to request all of the logfiles on each slice from the Locomotive.\nAnatomy of the Server: Upload Messages Review\nMDM Msg#\nDescription\nLOCO Msg#\nDescription\n1120\n“File Request” – Sent by MDM to the Loco to request particular file(s) from the Loco. This is typically a wildcard pattern like “CDU-1:/var/log/*.\ngz\n”.\n2120\n“File Info” – Sent by the Loco to MDM to provide information on a file for transfer. This will be the first match from the 1120, if found.\n2121\n“No File” – Sent by the Loco to MDM to indicate there are no matches to the 1120 request.\n1122\n“File Data Request” – Sent by MDM to the Loco to request a “chunk” of data.\n2122\n“File Data” – Sent by the Loco to MDM providing a “chunk” of data.\n1123\n“File Complete” – Sent by MDM to the Loco indicating the MDM has the up-to-date file."
+  },
+  {
+    "slide_name": "ppt/slides/slide19.xml",
+    "slide_number": 19,
+    "text_items": [
+      "Uploads are limited by the configured number of locomotives which can have an Upload Session at once. This puts a finite cap on the amount of bandwidth used for Uploads. Downloads, on the other hand, are only limited by the maximum number of simultaneous downloads. This value is configurable and will vary per customer depending on their available resources and desired configuration. These two items allow the customer to define the relationship between Upload and Download priority.",
+      "The basic formula is a locomotive will send a 2100 providing data about its current repositories and requesting MDM to provide the data it",
+      "should",
+      "have. If the locomotive finds discrepancies, it will then start requesting files to download (via the 2101) until it has satisfied the data MDM provided. Another 2100 is then sent to indicate everything is completed.",
+      "Once MDM has received (and agrees with) a 2100 which indicates all items are synchronized (or it receives a 2105 indicating the locomotive has no room to download data), it will add that locomotive to the “Upload Wait Queue”. Once a position is available (based on the",
+      "MaximumLocomotivesUploading",
+      "config item), the next locomotive in the wait queue begins its “Upload Session”. For a given “Upload Session”, MDM will query the locomotive for files on each of its slices until the locomotive indicates it has no more files to upload. This concludes an “Upload Session” which allows a new locomotive to begin.",
+      "Setting the Locomotive Group of a locomotive to Inactive will cause all Downloads and Uploads to be cancelled. Active or Inactive locomotives are always serviced for 2100/1100 message responses.",
+      "Anatomy of the Server: Uploads and Downloads"
+    ],
+    "text": "Uploads are limited by the configured number of locomotives which can have an Upload Session at once. This puts a finite cap on the amount of bandwidth used for Uploads. Downloads, on the other hand, are only limited by the maximum number of simultaneous downloads. This value is configurable and will vary per customer depending on their available resources and desired configuration. These two items allow the customer to define the relationship between Upload and Download priority.\nThe basic formula is a locomotive will send a 2100 providing data about its current repositories and requesting MDM to provide the data it\nshould\nhave. If the locomotive finds discrepancies, it will then start requesting files to download (via the 2101) until it has satisfied the data MDM provided. Another 2100 is then sent to indicate everything is completed.\nOnce MDM has received (and agrees with) a 2100 which indicates all items are synchronized (or it receives a 2105 indicating the locomotive has no room to download data), it will add that locomotive to the “Upload Wait Queue”. Once a position is available (based on the\nMaximumLocomotivesUploading\nconfig item), the next locomotive in the wait queue begins its “Upload Session”. For a given “Upload Session”, MDM will query the locomotive for files on each of its slices until the locomotive indicates it has no more files to upload. This concludes an “Upload Session” which allows a new locomotive to begin.\nSetting the Locomotive Group of a locomotive to Inactive will cause all Downloads and Uploads to be cancelled. Active or Inactive locomotives are always serviced for 2100/1100 message responses.\nAnatomy of the Server: Uploads and Downloads"
+  },
+  {
+    "slide_name": "ppt/slides/slide20.xml",
+    "slide_number": 20,
+    "text_items": [
+      "Interop traffic can be filtered in MDM via the",
+      "InteroperableSCACs",
+      "configuration item which defines no interop, all interop, or a list of acceptable interop SCACs.",
+      "The Foreign Loco Queue (when enabled) is a mechanism which allows for N download slots for each foreign SCAC. Once a queue fills up for a given SCAC, new download requests are refused until there is a slot open again. This",
+      "only",
+      "applies to non-initializing locomotives. Any locomotive which is initializing is serviced.",
+      "Anatomy of the Server: Foreign Loco Queue and Interop"
+    ],
+    "text": "Interop traffic can be filtered in MDM via the\nInteroperableSCACs\nconfiguration item which defines no interop, all interop, or a list of acceptable interop SCACs.\nThe Foreign Loco Queue (when enabled) is a mechanism which allows for N download slots for each foreign SCAC. Once a queue fills up for a given SCAC, new download requests are refused until there is a slot open again. This\nonly\napplies to non-initializing locomotives. Any locomotive which is initializing is serviced.\nAnatomy of the Server: Foreign Loco Queue and Interop"
+  },
+  {
+    "slide_name": "ppt/slides/slide21.xml",
+    "slide_number": 21,
+    "text_items": [
+      "MDM uses the same High Availability Cluster system as BOS. It works exactly the same and will alleviate many of the HA problems experienced with the previous system which required a network connection between two MDM instances. This was a major contributor to having both MDM’s online and actively reading messages at the same time.",
+      "Please review the HighAvailabilityCluster_Manual.pdf which ships with the Install Package in the Documentation folder.",
+      "Anatomy of the Server: High Availability"
+    ],
+    "text": "MDM uses the same High Availability Cluster system as BOS. It works exactly the same and will alleviate many of the HA problems experienced with the previous system which required a network connection between two MDM instances. This was a major contributor to having both MDM’s online and actively reading messages at the same time.\nPlease review the HighAvailabilityCluster_Manual.pdf which ships with the Install Package in the Documentation folder.\nAnatomy of the Server: High Availability"
+  },
+  {
+    "slide_name": "ppt/slides/slide22.xml",
+    "slide_number": 22,
+    "text_items": [
+      "MDM now properly sets the Quality of Service and Time to Live settings on EMP messages!",
+      "The MDM requirements dictate that for the 1100, 1101, 1102, 1103, 1104, and 1105 messages, the QoS and TTL settings will mirror the 21xx message to which it is responding. For example, if a 2101 was received indicating a Priority of 7, the 1101 response would be sent with the same Priority.",
+      "For unsolicited messages, MDM follows the settings from the configuration file “EmpMessageSettings.xml” from the installation directory. The default XML file is based off on the PTC BackOffice Loco ICD 4.0 table 15.1, but these settings are customer configurable.",
+      "The XSD is provided (EmpMessageSettings.xsd) if you wish to edit the XML file. The structure is analogous to the table provided in the PTC BackOffice Loco ICD 4.0. For each message, you can provide a “",
+      "datarow",
+      "” which defines the data settings according to the “",
+      "pollrate",
+      "” or “",
+      "qostype",
+      "” (as defined in columns “Poll Rate” and “Type” in table 15.1 of the ICD). For example, the 1101 message has two different data sets based on the QoS Type of “File Transfer” or “Urgent”. This translates to ‘",
+      "qostype",
+      "=“",
+      "file_transfer",
+      "”’ or ‘",
+      "qostype",
+      "=“urgent”’. Any of the “data” element options can be user-configured in accordance with valid settings as defined by the Edge Message Protocol specification.",
+      "It should be noted that for MDM, these settings only apply to",
+      "unsolicited",
+      "messages. Any message responding to a message from the locomotive will use the locomotive’s settings.",
+      "Anatomy of the Server: QoS and TTL Settings"
+    ],
+    "text": "MDM now properly sets the Quality of Service and Time to Live settings on EMP messages!\nThe MDM requirements dictate that for the 1100, 1101, 1102, 1103, 1104, and 1105 messages, the QoS and TTL settings will mirror the 21xx message to which it is responding. For example, if a 2101 was received indicating a Priority of 7, the 1101 response would be sent with the same Priority.\nFor unsolicited messages, MDM follows the settings from the configuration file “EmpMessageSettings.xml” from the installation directory. The default XML file is based off on the PTC BackOffice Loco ICD 4.0 table 15.1, but these settings are customer configurable.\nThe XSD is provided (EmpMessageSettings.xsd) if you wish to edit the XML file. The structure is analogous to the table provided in the PTC BackOffice Loco ICD 4.0. For each message, you can provide a “\ndatarow\n” which defines the data settings according to the “\npollrate\n” or “\nqostype\n” (as defined in columns “Poll Rate” and “Type” in table 15.1 of the ICD). For example, the 1101 message has two different data sets based on the QoS Type of “File Transfer” or “Urgent”. This translates to ‘\nqostype\n=“\nfile_transfer\n”’ or ‘\nqostype\n=“urgent”’. Any of the “data” element options can be user-configured in accordance with valid settings as defined by the Edge Message Protocol specification.\nIt should be noted that for MDM, these settings only apply to\nunsolicited\nmessages. Any message responding to a message from the locomotive will use the locomotive’s settings.\nAnatomy of the Server: QoS and TTL Settings"
+  },
+  {
+    "slide_name": "ppt/slides/slide23.xml",
+    "slide_number": 23,
+    "text_items": [
+      "Since MDM 5.0.0, SQL Notifications have been required to support changes to Loco Group data from the database. If you did not have notifications enabled, then you got lots of errors in the logs and a significantly delayed response time when making Loco Group changes via Admin Client.",
+      "“",
+      "LocoGroupIdDbCacheUseSqlDependency",
+      "” is a new Boolean config item which allows you to disable using notifications and the subsequent errors. We absolutely recommend SQL notifications be set up so you will get instant updates to Loco Group data changes, but if you don’t feel the need for this you now have the option to turn it off.",
+      "“",
+      "LocoGroupIdDbCacheUpdateInterval",
+      "” lets you set how often MDM will automatically update the Loco Group data cached in its memory. If you are",
+      "not",
+      "using SQL notifications, we recommend this be at 15 seconds. If you are using SQL notifications, you can set it to a bigger value such as 60 or 120 as it becomes just a fallback to ensure the cache is being updated. This cache eliminates a significant number of database queries for every message exchange, so even if you are updating the cache every 15 seconds this is a huge efficiency over querying every single message.",
+      "If you have notifications enabled, MDM will test it to make sure it works during initialization. If it does not, then it will disable it and log warnings. If you have warnings about this failing, they should be addressed as updates to Loco Group data will likely be significantly delayed (depending on your update interval).",
+      "Anatomy of the Server: SQL Notifications Change"
+    ],
+    "text": "Since MDM 5.0.0, SQL Notifications have been required to support changes to Loco Group data from the database. If you did not have notifications enabled, then you got lots of errors in the logs and a significantly delayed response time when making Loco Group changes via Admin Client.\n“\nLocoGroupIdDbCacheUseSqlDependency\n” is a new Boolean config item which allows you to disable using notifications and the subsequent errors. We absolutely recommend SQL notifications be set up so you will get instant updates to Loco Group data changes, but if you don’t feel the need for this you now have the option to turn it off.\n“\nLocoGroupIdDbCacheUpdateInterval\n” lets you set how often MDM will automatically update the Loco Group data cached in its memory. If you are\nnot\nusing SQL notifications, we recommend this be at 15 seconds. If you are using SQL notifications, you can set it to a bigger value such as 60 or 120 as it becomes just a fallback to ensure the cache is being updated. This cache eliminates a significant number of database queries for every message exchange, so even if you are updating the cache every 15 seconds this is a huge efficiency over querying every single message.\nIf you have notifications enabled, MDM will test it to make sure it works during initialization. If it does not, then it will disable it and log warnings. If you have warnings about this failing, they should be addressed as updates to Loco Group data will likely be significantly delayed (depending on your update interval).\nAnatomy of the Server: SQL Notifications Change"
+  },
+  {
+    "slide_name": "ppt/slides/slide24.xml",
+    "slide_number": 24,
+    "text_items": [
+      "The application configuration file (",
+      "MobileDeviceManager.Service.exe.config",
+      ") has undergone significant changes. The file is divided up into Sections in an effort to group various configuration items together.",
+      "Most configuration names are the same or very similar to the old, but there were updates and removals where it made sense for clarity or a configuration item that simply does not apply anymore.",
+      "The configuration file itself contains brief comments for every item which should be adequate in most cases, however the MDM_Configuration.pdf manual goes into depth about all the configuration file settings, as well as other configuration data.",
+      "Configuration Changes"
+    ],
+    "text": "The application configuration file (\nMobileDeviceManager.Service.exe.config\n) has undergone significant changes. The file is divided up into Sections in an effort to group various configuration items together.\nMost configuration names are the same or very similar to the old, but there were updates and removals where it made sense for clarity or a configuration item that simply does not apply anymore.\nThe configuration file itself contains brief comments for every item which should be adequate in most cases, however the MDM_Configuration.pdf manual goes into depth about all the configuration file settings, as well as other configuration data.\nConfiguration Changes"
+  },
+  {
+    "slide_name": "ppt/slides/slide25.xml",
+    "slide_number": 25,
+    "text_items": [
+      "Configuration Changes: MDM"
+    ],
+    "text": "Configuration Changes: MDM"
+  },
+  {
+    "slide_name": "ppt/slides/slide26.xml",
+    "slide_number": 26,
+    "text_items": [
+      "Configuration Changes: BOC",
+      "Please Note:",
+      "RabbitMQ needs to be",
+      "confirgured",
+      "for MDM to “talk” to BOC. Please see “",
+      "RMQ_Configuration",
+      "” document for set up. If not in the Documentation folder, please as Support Engineer for a copy."
+    ],
+    "text": "Configuration Changes: BOC\nPlease Note:\nRabbitMQ needs to be\nconfirgured\nfor MDM to “talk” to BOC. Please see “\nRMQ_Configuration\n” document for set up. If not in the Documentation folder, please as Support Engineer for a copy."
+  },
+  {
+    "slide_name": "ppt/slides/slide27.xml",
+    "slide_number": 27,
+    "text_items": [
+      "MDM_Configuration.pdf",
+      "Detailed info for each configuration item",
+      "Breakdown of the ConnectionSettings.xml",
+      "SQL Notification configuration",
+      "Installing MDM as a Windows Service",
+      "Security",
+      "Fileset",
+      "Overview",
+      "EMP Message Settings",
+      "HighAvailabilityCluster_Manual.pdf",
+      "Introduction and Design Explanation",
+      "Configuration",
+      "RMQ_Configuration.pdf",
+      "Introduction",
+      "Installation",
+      "Configuration",
+      "Example MDM/BOC configurations",
+      "NLog_Configuration.pdf",
+      "Understanding",
+      "Nlog",
+      "Configuration File",
+      "Extensibility",
+      "Manuals",
+      "The MDM Installation Package ships with the following manuals found in the Documentation folder. They are kept up-to-date with each release:"
+    ],
+    "text": "MDM_Configuration.pdf\nDetailed info for each configuration item\nBreakdown of the ConnectionSettings.xml\nSQL Notification configuration\nInstalling MDM as a Windows Service\nSecurity\nFileset\nOverview\nEMP Message Settings\nHighAvailabilityCluster_Manual.pdf\nIntroduction and Design Explanation\nConfiguration\nRMQ_Configuration.pdf\nIntroduction\nInstallation\nConfiguration\nExample MDM/BOC configurations\nNLog_Configuration.pdf\nUnderstanding\nNlog\nConfiguration File\nExtensibility\nManuals\nThe MDM Installation Package ships with the following manuals found in the Documentation folder. They are kept up-to-date with each release:"
+  },
+  {
+    "slide_name": "ppt/slides/slide28.xml",
+    "slide_number": 28,
+    "text_items": [
+      "Thanks!"
+    ],
+    "text": "Thanks!"
+  },
+  {
+    "slide_name": "ppt/slides/slide29.xml",
+    "slide_number": 29,
+    "text_items": [],
+    "text": ""
+  }
+]

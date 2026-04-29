@@ -1,0 +1,2 @@
+﻿"SystemUID","RouteGUID","EntrySignal","ExitSignal","SwitchList","TerrUID","CPUID","Priority","IsEnabled"
+"01450EB5FA","008@100","100170","100167","100169;3-SWITCH;FALSE|100168;1-SWITCH;FALSE","100","100002","1","True"

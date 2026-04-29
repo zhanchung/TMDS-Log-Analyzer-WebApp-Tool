@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open TMDS Log Analyzer</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: "Segoe UI", sans-serif;
+        background: #081018;
+        color: #e8f3f0;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 18% 15%, rgba(31, 188, 139, 0.24), transparent 32rem),
+          linear-gradient(145deg, #081018, #0d1a24 62%, #132117);
+      }
+      main {
+        width: min(720px, calc(100vw - 32px));
+        padding: 32px;
+        border: 1px solid rgba(128, 221, 184, 0.25);
+        border-radius: 24px;
+        background: rgba(7, 17, 24, 0.86);
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 5vw, 4rem);
+        letter-spacing: -0.05em;
+      }
+      p {
+        color: #a8c6bd;
+        line-height: 1.55;
+      }
+      ol {
+        color: #a8c6bd;
+        line-height: 1.6;
+        padding-left: 20px;
+      }
+      .server-config {
+        margin-top: 18px;
+        display: grid;
+        gap: 10px;
+      }
+      .server-config label {
+        color: #a8c6bd;
+        font-size: 0.95rem;
+      }
+      .server-config input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(133, 241, 193, 0.24);
+        background: rgba(9, 26, 18, 0.9);
+        color: #ebfff6;
+        font: inherit;
+      }
+      .server-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      a,
+      button {
+        display: inline-flex;
+        padding: 12px 18px;
+        border: 1px solid rgba(133, 241, 193, 0.45);
+        border-radius: 999px;
+        background: #143829;
+        color: #c8ffe9;
+        text-decoration: none;
+        font: inherit;
+        cursor: pointer;
+      }
+      code {
+        color: #d7ffe8;
+      }
+      .status {
+        margin-top: 18px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(133, 241, 193, 0.22);
+        background: rgba(20, 56, 41, 0.22);
+        color: #d6ffef;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>TMDS Log Analyzer</h1>
+      <p>This page opens a live TMDS webapp server.</p>
+      <p>The HTML file itself is not the parser or backend. For automatic updates, point this page at one central TMDS server that runs from your master copy.</p>
+      <ol>
+        <li>If this PC hosts the master tool, run <code>TMDS-Server-Switch.bat</code> here.</li>
+        <li>If another PC hosts the master tool, enter its TMDS server URL below, for example <code>http://YOUR-PC:4173/</code>.</li>
+        <li>Keep the master TMDS server running. Users who open this page will be sent to that live tool.</li>
+      </ol>
+      <div class="server-config">
+        <label for="shared-target">Shared TMDS server URL</label>
+        <input id="shared-target" type="text" placeholder="http://YOUR-PC:4173/" />
+        <div class="server-actions">
+          <button id="save-target" type="button">Save shared server</button>
+          <button id="clear-target" type="button">Clear saved server</button>
+        </div>
+      </div>
+      <div class="status" id="status">Checking whether a TMDS server is reachable...</div>
+      <a id="open-link" href="http://127.0.0.1:4173/">Open running tool</a>
+    </main>
+    <script>
+      const storageKey = "tmds-shared-target";
+      const localTarget = "http://127.0.0.1:4173/";
+      const configuredSharedTarget = "";
+      const openLink = document.getElementById("open-link");
+      const status = document.getElementById("status");
+      const sharedTargetInput = document.getElementById("shared-target");
+      const saveTargetButton = document.getElementById("save-target");
+      const clearTargetButton = document.getElementById("clear-target");
+
+      function normalizeTarget(rawValue) {
+        const value = String(rawValue || "").trim();
+        if (!value) {
+          return "";
+        }
+        return value.endsWith("/") ? value : `${value}/`;
+      }
+
+      function readSavedTarget() {
+        try {
+          return normalizeTarget(window.localStorage.getItem(storageKey) || "");
+        } catch {
+          return "";
+        }
+      }
+
+      function saveTarget(rawValue) {
+        const normalized = normalizeTarget(rawValue);
+        try {
+          if (normalized) {
+            window.localStorage.setItem(storageKey, normalized);
+          } else {
+            window.localStorage.removeItem(storageKey);
+          }
+        } catch {}
+        return normalized;
+      }
+
+      function getPreferredSharedTarget() {
+        const queryTarget = normalizeTarget(new URLSearchParams(window.location.search).get("target") || "");
+        return normalizeTarget(sharedTargetInput.value) || queryTarget || normalizeTarget(configuredSharedTarget) || readSavedTarget();
+      }
+
+      function updateOpenLink(target) {
+        openLink.href = target || localTarget;
+      }
+
+      function getHealthUrl(target) {
+        const normalized = normalizeTarget(target);
+        return normalized ? `${normalized}api/health` : "";
+      }
+
+      sharedTargetInput.value = getPreferredSharedTarget();
+      updateOpenLink(sharedTargetInput.value || localTarget);
+
+      saveTargetButton.addEventListener("click", () => {
+        const saved = saveTarget(sharedTargetInput.value);
+        sharedTargetInput.value = saved;
+        updateOpenLink(saved || localTarget);
+        status.textContent = saved
+          ? `Saved shared TMDS server ${saved}`
+          : "Cleared the shared TMDS server. This page will now try the local TMDS launcher URL only.";
+      });
+
+      clearTargetButton.addEventListener("click", () => {
+        saveTarget("");
+        sharedTargetInput.value = "";
+        updateOpenLink(localTarget);
+        status.textContent = "Cleared the shared TMDS server. This page will now try the local TMDS launcher URL only.";
+      });
+
+      async function canReach(target) {
+        const healthUrl = getHealthUrl(target);
+        if (!healthUrl) {
+          return false;
+        }
+        try {
+          await fetch(healthUrl, { mode: "no-cors", cache: "no-store" });
+          return true;
+        } catch {
+          return false;
+        }
+      }
+
+      async function openWhenReady() {
+        const sharedTarget = getPreferredSharedTarget();
+        updateOpenLink(sharedTarget || localTarget);
+
+        if (sharedTarget && await canReach(sharedTarget)) {
+          status.textContent = `Shared TMDS service detected at ${sharedTarget}. Opening the tool...`;
+          window.location.href = sharedTarget;
+          return;
+        }
+
+        if (await canReach(localTarget)) {
+          status.textContent = "Local TMDS service detected. Opening the tool...";
+          window.location.href = localTarget;
+          return;
+        }
+
+        if (sharedTarget) {
+          status.textContent = `The saved shared TMDS server ${sharedTarget} is not reachable yet.`;
+        } else {
+          status.textContent = "No TMDS server is reachable yet. Run TMDS-Server-Switch.bat on the host machine or save a shared TMDS server URL above.";
+        }
+      }
+
+      openWhenReady();
+      setInterval(openWhenReady, 2000);
+    </script>
+  </body>
+</html>

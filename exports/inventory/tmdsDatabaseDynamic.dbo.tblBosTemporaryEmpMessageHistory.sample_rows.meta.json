@@ -1,0 +1,12 @@
+﻿{
+    "database":  "tmdsDatabaseDynamic",
+    "schema":  "dbo",
+    "table":  "tblBosTemporaryEmpMessageHistory",
+    "top":  20,
+    "order_by":  [
+                     "Id",
+                     "Key",
+                     "Ttl"
+                 ],
+    "row_count_exported":  20
+}

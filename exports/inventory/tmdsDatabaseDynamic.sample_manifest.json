@@ -1,0 +1,222 @@
+﻿[
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "MdmTrainObjectData",
+        "top":  20,
+        "order_by":  "Id, LocomotiveId, Last2100",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.MdmTrainObjectData.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.MdmTrainObjectData.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.MdmTrainObjectData.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblAuthoritiesActive",
+        "top":  20,
+        "order_by":  "AuthGUID, AuthorityNumber, RailRoadName, DispatcherName",
+        "row_count_exported":  4,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblAuthoritiesActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblAuthoritiesActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblAuthoritiesActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblBosDepartureTestData",
+        "top":  20,
+        "order_by":  "Id, LocoId, TrainSymbol",
+        "row_count_exported":  14,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosDepartureTestData.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosDepartureTestData.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosDepartureTestData.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblBosTemporaryEmpMessageHistory",
+        "top":  20,
+        "order_by":  "Id, Key, Ttl",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosTemporaryEmpMessageHistory.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosTemporaryEmpMessageHistory.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosTemporaryEmpMessageHistory.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblBosTrainObjectData",
+        "top":  20,
+        "order_by":  "Id, LocoID, LastCommunicationTimestamp",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosTrainObjectData.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosTrainObjectData.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblBosTrainObjectData.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblDispatcherLog",
+        "top":  20,
+        "order_by":  "UID, DispatcherName, Event, EventTime",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblDispatcherLog.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblDispatcherLog.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblDispatcherLog.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblLocomotivePositionReport",
+        "top":  20,
+        "order_by":  "id, loco_id, train_symbol, head_end_latitude",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblLocomotivePositionReport.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblLocomotivePositionReport.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblLocomotivePositionReport.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblPlanningAutoRoutesActive",
+        "top":  20,
+        "order_by":  "UID, TerrUID, TrainSymbol",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblPlanningAutoRoutesActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblPlanningAutoRoutesActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblPlanningAutoRoutesActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblPlanningTacticalRoutesActive",
+        "top":  20,
+        "order_by":  "UID, TerrUID, TrainSymbol",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblPlanningTacticalRoutesActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblPlanningTacticalRoutesActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblPlanningTacticalRoutesActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblStoreRoutes",
+        "top":  20,
+        "order_by":  "RouteGUID, TerrUID, ControlPoint, CreateTime",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblStoreRoutes.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblStoreRoutes.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblStoreRoutes.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSubdivisionEvents",
+        "top":  20,
+        "order_by":  "UID, EventDate, EventMessage, Subdivision",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSubdivisionEvents.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSubdivisionEvents.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSubdivisionEvents.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSystemBulletins",
+        "top":  20,
+        "order_by":  "SystemUID, RestrictionUID, RestrictionType",
+        "row_count_exported":  19,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemBulletins.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemBulletins.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemBulletins.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSystemIncidentReportsActive",
+        "top":  20,
+        "order_by":  "UID, CreateTime, CreatedBy",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemIncidentReportsActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemIncidentReportsActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemIncidentReportsActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSystemPTCDataSetsActive",
+        "top":  20,
+        "order_by":  "UID, CreationDate, TrainSymbol",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemPTCDataSetsActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemPTCDataSetsActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemPTCDataSetsActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSystemPTCTrainsActive",
+        "top":  20,
+        "order_by":  "UID, CreationDate, TrainSymbol",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemPTCTrainsActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemPTCTrainsActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemPTCTrainsActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSystemQueueReceive",
+        "top":  20,
+        "order_by":  "TimeCreated, TimeProcessed, Status, MessageUID",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemQueueReceive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemQueueReceive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemQueueReceive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblSystemQueueTransmit",
+        "top":  20,
+        "order_by":  "TimeCreated, TimeProcessed, Status, MessageUID",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemQueueTransmit.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemQueueTransmit.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblSystemQueueTransmit.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainOsEventsActive",
+        "top":  20,
+        "order_by":  "RecordGUID, TrainSheetGUID, OsPoint, OsTime",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainOsEventsActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainOsEventsActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainOsEventsActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainRunTimesActive",
+        "top":  20,
+        "order_by":  "RecordGUID, TrainGUID, Symbol",
+        "row_count_exported":  0,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainRunTimesActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainRunTimesActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainRunTimesActive.sample_rows.meta.json"
+    },
+    {
+        "database":  "tmdsDatabaseDynamic",
+        "schema":  "dbo",
+        "table":  "tblTrainsActive",
+        "top":  20,
+        "order_by":  "Symbol, EngineID, InUsed",
+        "row_count_exported":  20,
+        "json_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainsActive.sample_rows.json",
+        "csv_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainsActive.sample_rows.csv",
+        "meta_path":  "D:\\NCTD TMDS Decoder\\exports\\inventory\\tmdsDatabaseDynamic.dbo.tblTrainsActive.sample_rows.meta.json"
+    }
+]

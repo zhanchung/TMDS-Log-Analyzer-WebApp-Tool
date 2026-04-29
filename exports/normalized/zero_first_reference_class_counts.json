@@ -1,0 +1,767 @@
+[
+  {
+    "structural_class": "scoped_zero_first_with_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "PCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "true",
+    "row_count": 165
+  },
+  {
+    "structural_class": "scoped_zero_first_with_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "true",
+    "row_count": 1
+  },
+  {
+    "structural_class": "scoped_zero_first_with_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "true",
+    "row_count": 12
+  },
+  {
+    "structural_class": "scoped_zero_first_with_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "PCTL",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "true",
+    "row_count": 85
+  },
+  {
+    "structural_class": "scoped_zero_first_with_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "true",
+    "row_count": 85
+  },
+  {
+    "structural_class": "scoped_zero_first_with_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "true",
+    "row_count": 7
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPCTL1",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPCTL2",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPCTL3",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPCTL4",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPCTL5",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 8
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND10",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 3
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 9
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 10
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND5",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND6",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND7",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND8",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND9",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "ScadaAlarmReportingIndicationBit",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 50
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPCTL1",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 114
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPCTL2",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 117
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPCTL3",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 119
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPIND1",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPIND2",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 75
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPIND2",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 44
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPIND3",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 75
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "misc_device",
+    "reference_column": "CPIND3",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 44
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "FleetControlBit",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 165
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 328
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "SIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 163
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 306
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "signal",
+    "reference_column": "TIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 165
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "PCTL",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 28
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "PIND",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 10
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "RCPSControlBits",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 396
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "RCPSIndicationBits",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 495
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 28
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "SIND",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 12
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 184
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "TIND",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 99
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "PCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 397
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "PCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 36
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "PCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "PIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 11
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "PIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 3
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "QCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 279
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "QCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 396
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 36
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 370
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 36
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 397
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 36
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 376
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "trailing_token4+component_codeline+unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 36
+  },
+  {
+    "structural_class": "scoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "unique_cp_line",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unknown_word_type_zero_first",
+    "component_family": "switch",
+    "reference_column": "LockBit",
+    "reference_format": "code_line_station_control_point",
+    "scope_source_key": "unknown_word_type",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 99
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND1",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND10",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND11",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND12",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND13",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 48
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND2",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND3",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND4",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND5",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND6",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND7",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND8",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "control_point",
+    "reference_column": "CPIND9",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "switch",
+    "reference_column": "SwitchBlockControlBit",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 2
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "PCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 6
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "PIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 3
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "QCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 28
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "QIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 36
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 6
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "SIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 5
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TCTL",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 6
+  },
+  {
+    "structural_class": "unscoped_zero_first_without_resolved_sibling",
+    "component_family": "track",
+    "reference_column": "TIND",
+    "reference_format": "code_line_station_control_point_bit",
+    "scope_source_key": "none",
+    "has_resolved_sibling_in_same_field": "false",
+    "row_count": 28
+  }
+]

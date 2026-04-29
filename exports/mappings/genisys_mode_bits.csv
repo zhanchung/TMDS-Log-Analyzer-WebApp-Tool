@@ -1,0 +1,5 @@
+mode_byte,bit,meaning
+0xE0,0,Data Base Complete
+0xE0,1,Checkback Control Enable
+0xE0,2,Secure Poll Enable
+0xE0,3,Common Command Enable

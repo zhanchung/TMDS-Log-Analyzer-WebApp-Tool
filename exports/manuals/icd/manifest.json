@@ -1,0 +1,26 @@
+[
+  {
+    "source": "D:\\NCTD TMDS Decoder\\exports\\raw\\icd_pdf_for_ptc\\WCR-ICD-1095 PTC On-Board Segment - Energy Management ICD (1.9).pdf",
+    "type": "pdf",
+    "page_count": 79,
+    "total_chars": 110809,
+    "text_path": "exports\\manuals\\icd\\WCR-ICD-1095_PTC_On-Board_Segment_-_Energy_Management_ICD__1.9_.txt",
+    "page_json_path": "exports\\manuals\\icd\\WCR-ICD-1095_PTC_On-Board_Segment_-_Energy_Management_ICD__1.9_.pages.json"
+  },
+  {
+    "source": "D:\\NCTD TMDS Decoder\\exports\\raw\\icd_pdf_for_ptc\\WPN-24-11-16541 I-ETMS On-Board Equipment ICD (Rev J).pdf",
+    "type": "pdf",
+    "page_count": 78,
+    "total_chars": 120294,
+    "text_path": "exports\\manuals\\icd\\WPN-24-11-16541_I-ETMS_On-Board_Equipment_ICD__Rev_J_.txt",
+    "page_json_path": "exports\\manuals\\icd\\WPN-24-11-16541_I-ETMS_On-Board_Equipment_ICD__Rev_J_.pages.json"
+  },
+  {
+    "source": "D:\\NCTD TMDS Decoder\\exports\\raw\\icd_pdf_for_ptc\\WPN_24-11-16541 I-ETMS On-Board Equipment ICD_Rev-H.pdf",
+    "type": "pdf",
+    "page_count": 84,
+    "total_chars": 89000,
+    "text_path": "exports\\manuals\\icd\\WPN_24-11-16541_I-ETMS_On-Board_Equipment_ICD_Rev-H.txt",
+    "page_json_path": "exports\\manuals\\icd\\WPN_24-11-16541_I-ETMS_On-Board_Equipment_ICD_Rev-H.pages.json"
+  }
+]

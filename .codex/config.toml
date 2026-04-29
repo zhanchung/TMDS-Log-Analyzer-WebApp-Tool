@@ -1,0 +1,7 @@
+# Repository policy lock: always use GPT-5.5 with high reasoning in this project.
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+approval_policy = "on-request"
+
+# Do not downgrade to gpt-5.4-mini, gpt-5.3-codex, or any lower-tier fallback in this repository unless the user explicitly changes the repository rule.
+# Critical work requires a separate gpt-5.5 audit before approval.

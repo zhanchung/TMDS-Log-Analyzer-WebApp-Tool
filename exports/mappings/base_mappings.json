@@ -1,0 +1,14 @@
+﻿{
+    "sources":  {
+                    "icd_manuals":  "ICD PDF FOR PTC.zip",
+                    "workflow_memo":  "TMDS Technical Memo - Near Side Signal Control.pdf",
+                    "genisys_manuals":  "03_GenisysManuals.zip"
+                },
+    "runtime_hints":  {
+                          "indication":  "field_state_update",
+                          "recall":  "state_refresh_anchor",
+                          "keepalive":  "transport_heartbeat",
+                          "alive":  "transport_reply"
+                      },
+    "unresolved_policy":  "No meaning is assigned unless the source document or verified database row defines it."
+}

@@ -1,0 +1,14 @@
+﻿{
+    "database":  "tmdsDatabaseStatic",
+    "schema":  "dbo",
+    "table":  "tblCodeBitAssignments",
+    "top":  50,
+    "where_clause":  "[CSNumber] = @p0 AND [CDLNNumber] = @p1 AND [CPNumber] = @p2",
+    "filter":  {
+                   "CSNumber":  1,
+                   "CDLNNumber":  5,
+                   "CPNumber":  100002
+               },
+    "row_count_exported":  48,
+    "sql":  "SELECT TOP (50) * FROM [dbo].[tblCodeBitAssignments] WHERE [CSNumber] = @p0 AND [CDLNNumber] = @p1 AND [CPNumber] = @p2;"
+}
