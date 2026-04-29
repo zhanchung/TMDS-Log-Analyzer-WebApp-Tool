@@ -2,7 +2,7 @@ import { Fragment, startTransition, useEffect, useMemo, useRef, useState } from 
 import type { Dispatch, DragEvent, ReactNode, SetStateAction } from "react";
 import type { DetailModel, ParsedLine, ReferenceArtifact, ReferenceChoiceGroup, ReferenceChoiceItem, ReferenceDiagram, SearchConfig, SessionData, WorkflowRelatedDetail, WorkspaceProgress } from "@shared/types";
 import type { WorkspaceMenuCommand } from "@shared/native-api";
-import { ingestBrowserFilesLocally } from "@shared/browser-parser";
+import { buildStaticReferenceSession, buildStaticReviewSampleSession, ingestBrowserFilesLocally } from "@shared/browser-parser";
 import { stripLeadingLogTimestamp } from "@shared/parser/primitives";
 import { AccountPanel, AdminPanel, LoginScreen, fetchAuthState, logout } from "./features/auth";
 import type { AuthState } from "./features/auth";
@@ -3559,7 +3559,18 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
 
   async function loadFoundationSession() {
     if (localOnlyMode) {
-      setWorkspaceError("Reference library needs the TMDS server. It's unavailable in local mode.");
+      setWorkspaceError("");
+      setWorkspaceBusy("Loading static reference library...");
+      setWorkspaceProgress(null);
+      try {
+        const session = buildStaticReferenceSession();
+        await applySessionWithProgress(session, "reference", { preserveEmptyReferenceSelection: true });
+      } catch (error) {
+        setWorkspaceError(error instanceof Error ? error.message : "Static reference library load failed.");
+      } finally {
+        setWorkspaceBusy("");
+        setWorkspaceProgress(null);
+      }
       return;
     }
     if (!referenceWindowMode && window.tmds?.openReferenceLibraryWindow) {
@@ -3585,7 +3596,21 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
 
   async function loadReviewSampleSession() {
     if (localOnlyMode) {
-      setWorkspaceError("Sample review logs need the TMDS server. They're unavailable in local mode.");
+      setWorkspaceError("");
+      setWorkspaceBusy("Loading static review logs...");
+      setWorkspaceProgress(null);
+      try {
+        const session = buildStaticReviewSampleSession();
+        await applySessionWithProgress(session, "logs");
+        if (!session.lines.length) {
+          setWorkspaceError("No readable static review logs were bundled.");
+        }
+      } catch (error) {
+        setWorkspaceError(error instanceof Error ? error.message : "Static review sample load failed.");
+      } finally {
+        setWorkspaceBusy("");
+        setWorkspaceProgress(null);
+      }
       return;
     }
     setWorkspaceError("");
@@ -4403,9 +4428,9 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                 }}
               />
               {webAppMode ? (
-                <>
+                <div className="joined-input-actions" role="group" aria-label="Add local inputs">
                   <button
-                    className="primary"
+                    className="primary joined-input-action joined-input-action-left"
                     onClick={openBrowserFilePicker}
                     disabled={Boolean(workspaceBusy)}
                     title="Pick one or more files (logs, ZIP, GZ). Drag/drop also works."
@@ -4413,14 +4438,14 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                     Add files
                   </button>
                   <button
-                    className="primary"
+                    className="primary joined-input-action joined-input-action-right"
                     onClick={openBrowserFolderPicker}
                     disabled={Boolean(workspaceBusy)}
                     title="Pick an entire folder. The browser will ask you to confirm the upload."
                   >
                     Add folder
                   </button>
-                </>
+                </div>
               ) : (
                 <button
                   className="primary"
@@ -4515,8 +4540,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                 <button
                   className="ghost"
                   onClick={() => void loadFoundationSession()}
-                  disabled={Boolean(workspaceBusy) || localOnlyMode}
-                  title={localOnlyMode ? "Reference library needs the TMDS server. Disabled in local mode." : undefined}
+                  disabled={Boolean(workspaceBusy)}
+                  title={localOnlyMode ? "Open the bundled static reference library available on GitHub Pages." : undefined}
                 >
                   {referenceWindowMode ? "Reload reference library" : "Open reference library"}
                 </button>
@@ -4525,8 +4550,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
               <button
                 className="ghost"
                 onClick={() => void loadReviewSampleSession()}
-                disabled={Boolean(workspaceBusy) || localOnlyMode}
-                title={localOnlyMode ? "Sample review logs need the TMDS server. Disabled in local mode." : undefined}
+                disabled={Boolean(workspaceBusy)}
+                title={localOnlyMode ? "Load the review sample logs bundled into the static GitHub build." : undefined}
               >
                 Reload review logs
               </button>

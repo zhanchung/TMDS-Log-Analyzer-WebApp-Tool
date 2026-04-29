@@ -1,5 +1,10 @@
 import { unzip, gunzipSync } from "fflate";
+import genisysProtocolReference from "../../exports/mappings/genisys_protocol_reference.json";
+import icdMessageCatalog from "../../exports/mappings/icd_message_catalog.json";
 import assignmentRows from "../../exports/normalized/code_station_assignment_map.json";
+import genisysSampleLog from "../../sample_logs/curated/genisys_sample.log?raw";
+import socketTraceSampleLog from "../../sample_logs/curated/sockettrace_sample.log?raw";
+import workflowSampleLog from "../../sample_logs/curated/workflow_sample.log?raw";
 import type { DetailModel, ParsedLine, SessionData, WorkspaceProgress } from "./types";
 import { isGzipFile, isTextFile, isZipFile, parseLinesWithoutTokens as parseLines } from "./parser/primitives";
 
@@ -26,8 +31,26 @@ type AssignmentRow = {
   indication_assignments?: AssignmentEntry[];
 };
 
+type IcdCatalogRow = {
+  document_title?: string;
+  release?: string;
+  section?: string;
+  message_id?: string;
+  message_name?: string;
+  message_version?: number;
+  page?: number;
+  direction?: string;
+};
+
 const staticAssignmentRows = assignmentRows as AssignmentRow[];
+const staticIcdRows = icdMessageCatalog as IcdCatalogRow[];
+const staticGenisysReference = genisysProtocolReference as {
+  office_headers?: Array<{ byte?: string; meaning?: string }>;
+  field_headers?: Array<{ byte?: string; meaning?: string }>;
+  mode_bit_definitions?: Array<{ bit?: number; meaning?: string }>;
+};
 const assignmentByKey = new Map<string, AssignmentRow>();
+const icdByMessageId = new Map<string, IcdCatalogRow>();
 
 function normalizeKey(value: string | undefined): string {
   return String(value ?? "").trim().toUpperCase().replace(/\s+/g, " ");
@@ -45,6 +68,18 @@ for (const row of staticAssignmentRows) {
   addAssignmentKey(row.control_point_name, row);
   addAssignmentKey(row.control_address, row);
   addAssignmentKey(row.indication_address, row);
+}
+
+function normalizeMessageId(value: string | number | undefined): string {
+  const digits = String(value ?? "").replace(/\D/g, "");
+  return digits ? String(Number(digits)) : "";
+}
+
+for (const row of staticIcdRows) {
+  const messageId = normalizeMessageId(row.message_id);
+  if (messageId && !icdByMessageId.has(messageId)) {
+    icdByMessageId.set(messageId, row);
+  }
 }
 
 async function decompressGzipBlob(blob: Blob): Promise<string> {
@@ -118,6 +153,75 @@ async function readZipBlobIntoLines(blob: Blob, sourcePath: string): Promise<Par
 
 async function readFileAsText(file: File): Promise<string> {
   return file.text();
+}
+
+function displayMessageId(value: string | number | undefined): string {
+  const normalized = normalizeMessageId(value);
+  return normalized ? normalized.padStart(normalized.length <= 4 ? 4 : 5, "0") : "";
+}
+
+function parseAngleFields(raw: string): string[] {
+  const fields: string[] = [];
+  const pattern = /<([^<>]+)>/g;
+  let match = pattern.exec(raw);
+  while (match) {
+    const value = match[1].trim();
+    if (value) fields.push(value);
+    match = pattern.exec(raw);
+  }
+  return fields;
+}
+
+function parseAngleFieldMap(raw: string): Map<string, string> {
+  const fields = new Map<string, string>();
+  for (const field of parseAngleFields(raw)) {
+    const separator = field.indexOf("=");
+    if (separator <= 0) continue;
+    fields.set(field.slice(0, separator).trim(), field.slice(separator + 1).trim());
+  }
+  return fields;
+}
+
+function extractJsonPayload(raw: string): unknown | null {
+  const start = raw.indexOf("{");
+  const end = raw.lastIndexOf("}");
+  if (start < 0 || end <= start) return null;
+  try {
+    return JSON.parse(raw.slice(start, end + 1)) as unknown;
+  } catch {
+    return null;
+  }
+}
+
+function valueAtPath(value: unknown, path: string[]): unknown {
+  let current = value;
+  for (const part of path) {
+    if (!current || typeof current !== "object" || !(part in current)) return undefined;
+    current = (current as Record<string, unknown>)[part];
+  }
+  return current;
+}
+
+function stringifyScalar(value: unknown): string {
+  if (value === undefined || value === null || value === "") return "";
+  if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") return String(value);
+  return "";
+}
+
+function formatBytes(value: string | undefined): string {
+  const bytes = Number(value);
+  if (!Number.isFinite(bytes)) return value ?? "";
+  return `${bytes} bytes (${(bytes / 1024 / 1024).toFixed(1)} MiB)`;
+}
+
+function sourceReference(id: string, title: string, path: string, notes: string) {
+  return {
+    id,
+    kind: "generated" as const,
+    title,
+    path,
+    notes,
+  };
 }
 
 function assignmentLabel(entry: AssignmentEntry | undefined): string {
@@ -264,15 +368,334 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
   };
 }
 
+function makeBocSystemStatsDetail(line: ParsedLine): DetailModel | null {
+  if (!/\bBackOfficeControl SystemStats:/i.test(line.raw)) return null;
+  const fields = parseAngleFieldMap(line.raw);
+  const computerName = fields.get("ComputerName") ?? "";
+  const softwareVersion = fields.get("SoftwareVersion") ?? "";
+  const summary = `BackOfficeControl system statistics from ${computerName || "unknown computer"}.`;
+  const payloadContext = [
+    computerName ? `Computer name: ${computerName}` : "",
+    softwareVersion ? `Software version: ${softwareVersion}` : "",
+    fields.get("AppStartTime") ? `App start time: ${fields.get("AppStartTime")}` : "",
+    fields.get("WorkingMemory") ? `Working memory: ${formatBytes(fields.get("WorkingMemory"))}` : "",
+    fields.get("PeakWorkingMemory") ? `Peak working memory: ${formatBytes(fields.get("PeakWorkingMemory"))}` : "",
+    fields.get("PagedMemory") ? `Paged memory: ${formatBytes(fields.get("PagedMemory"))}` : "",
+    fields.get("PeakPagedMemory") ? `Peak paged memory: ${formatBytes(fields.get("PeakPagedMemory"))}` : "",
+    fields.get("ThreadCount") ? `Thread count: ${fields.get("ThreadCount")}` : "",
+    fields.get("HandleCount") ? `Handle count: ${fields.get("HandleCount")}` : "",
+    fields.get("PrivilegedProcessorTime") ? `Privileged processor time: ${fields.get("PrivilegedProcessorTime")}` : "",
+    fields.get("TotalProcessorTime") ? `Total processor time: ${fields.get("TotalProcessorTime")}` : "",
+  ].filter(Boolean);
+
+  return {
+    lineId: line.id,
+    lineNumber: line.lineNumber,
+    timestamp: line.timestamp,
+    raw: line.raw,
+    translation: {
+      original: line.raw,
+      structured: [line.source ? `Source: ${line.source}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
+      english: [summary, "This is a BOC operational health snapshot logged by BackOfficeControl.ControlApp.LogBocStats."],
+      unresolved: [],
+    },
+    workflow: {
+      summary,
+      currentStep: "BOC system statistics",
+      systems: ["BackOfficeControl", computerName].filter(Boolean),
+      objects: computerName ? [computerName] : [],
+      knownState: softwareVersion ? `Running software ${softwareVersion}` : "",
+      unresolved: [],
+    },
+    genisysContext: [],
+    icdContext: [],
+    databaseContext: [],
+    workflowContext: ["BackOfficeControl logs this line as a periodic application/process health record."],
+    payloadContext,
+    sourceReferences: [
+      sourceReference("music_more_boc", "MORE BOC back-office control logs", "C:/Users/Ji/Music/MORE BOC", "Pattern grounded from local BackOfficeControl EventLog samples."),
+      sourceReference("mdm_training_boc", "BackOfficeControl training material", "exports/manuals/training/MDM_Training.txt", "Training material describes BOC as the UI/control application for the service-side system."),
+    ],
+  };
+}
+
+function makeIcdJsonDetail(line: ParsedLine): DetailModel | null {
+  const match = /TryDeserialize successfully deserialized to\s+(Msg(\d+)_([A-Za-z0-9_]+)):\s*(\{.*\})\|?$/i.exec(line.raw);
+  if (!match) return null;
+  const messageType = match[1];
+  const messageId = normalizeMessageId(match[2]);
+  const messageName = match[3].replace(/_/g, " ");
+  const catalogRow = icdByMessageId.get(messageId);
+  const payload = extractJsonPayload(line.raw);
+  const payloadRecord = payload && typeof payload === "object" ? payload as Record<string, unknown> : null;
+  const locomotives = Array.isArray(payloadRecord?.Locomotives) ? payloadRecord.Locomotives as Array<Record<string, unknown>> : [];
+  const firstLoco = locomotives[0];
+  const locoSummary = firstLoco ? [
+    stringifyScalar(firstLoco.LocoID) ? `Loco ID: ${stringifyScalar(firstLoco.LocoID)}` : "",
+    stringifyScalar(firstLoco.UpdateType) ? `Update type: ${stringifyScalar(firstLoco.UpdateType)}` : "",
+    stringifyScalar(firstLoco.LocoStateSummary) ? `State summary: ${stringifyScalar(firstLoco.LocoStateSummary)}` : "",
+    stringifyScalar(firstLoco.LocoState) ? `Loco state: ${stringifyScalar(firstLoco.LocoState)}` : "",
+    stringifyScalar(firstLoco.RepositoryTransferStates) ? `Repository transfer: ${stringifyScalar(firstLoco.RepositoryTransferStates)}` : "",
+    stringifyScalar(firstLoco.DownloadStatus) ? `Download status: ${stringifyScalar(firstLoco.DownloadStatus)}` : "",
+    stringifyScalar(firstLoco.UploadStatus) ? `Upload status: ${stringifyScalar(firstLoco.UploadStatus)}` : "",
+    stringifyScalar(firstLoco.CurrentUploadProgress) ? `Current upload progress: ${stringifyScalar(firstLoco.CurrentUploadProgress)}` : "",
+  ].filter(Boolean) : [];
+  const nestedStatus = [
+    stringifyScalar(valueAtPath(payload, ["LocoID"])) ? `Loco ID: ${stringifyScalar(valueAtPath(payload, ["LocoID"]))}` : "",
+    stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "LocoState"])) ? `Loco state: ${stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "LocoState"]))}` : "",
+    stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "StateSummary"])) ? `State summary: ${stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "StateSummary"]))}` : "",
+    stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "ReasonForChange"])) ? `Reason for change: ${stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "ReasonForChange"]))}` : "",
+    stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "LocoPositionInfo", "ReasonForReport"])) ? `Reason for report: ${stringifyScalar(valueAtPath(payload, ["LocomotiveStatus", "LocoPositionInfo", "ReasonForReport"]))}` : "",
+  ].filter(Boolean);
+  const payloadContext = [
+    `Message type: ${messageType}`,
+    `Message ID: ${displayMessageId(messageId)}`,
+    catalogRow?.message_name ? `Catalog name: ${catalogRow.message_name}` : `Name from log: ${messageName}`,
+    catalogRow?.direction ? `Catalog direction: ${catalogRow.direction}` : "",
+    catalogRow?.document_title ? `Catalog source: ${catalogRow.document_title}` : "",
+    `JSON payload parsed: ${payloadRecord ? "yes" : "no"}`,
+    locomotives.length ? `Locomotives in payload: ${locomotives.length}` : "",
+    ...locoSummary,
+    ...nestedStatus,
+  ].filter(Boolean);
+  const summary = catalogRow?.message_name
+    ? `ICD parser decoded ${displayMessageId(messageId)} ${catalogRow.message_name}.`
+    : `ICD parser decoded ${displayMessageId(messageId)} ${messageName}.`;
+
+  return {
+    lineId: line.id,
+    lineNumber: line.lineNumber,
+    timestamp: line.timestamp,
+    raw: line.raw,
+    translation: {
+      original: line.raw,
+      structured: [line.source ? `Source: ${line.source}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
+      english: [summary, firstLoco ? "Payload contains a BOC/BOS locomotive update record." : "Payload was parsed as an ICD JSON message."],
+      unresolved: catalogRow ? [] : ["No bundled ICD catalog row matched this message ID; message identity is grounded from the log line itself."],
+    },
+    workflow: {
+      summary,
+      currentStep: "ICD JSON deserialize",
+      systems: ["JsonDataIcdBase", "BackOfficeControl"],
+      objects: firstLoco && stringifyScalar(firstLoco.LocoID) ? [stringifyScalar(firstLoco.LocoID)] : [],
+      knownState: firstLoco && stringifyScalar(firstLoco.LocoState) ? `Loco state ${stringifyScalar(firstLoco.LocoState)}` : "",
+      unresolved: catalogRow ? [] : ["Bundled ICD catalog did not contain this message ID."],
+    },
+    genisysContext: [],
+    icdContext: payloadContext,
+    databaseContext: [],
+    workflowContext: ["The parser accepted the JSON payload and materialized it as the logged message class."],
+    payloadContext,
+    sourceReferences: [
+      sourceReference("icd_message_catalog", "Bundled ICD message catalog", "exports/mappings/icd_message_catalog.json", "Used when a message ID is present in the bundled catalog."),
+      sourceReference("music_more_boc", "MORE BOC back-office control logs", "C:/Users/Ji/Music/MORE BOC", "Pattern grounded from local BOC/BOS sample lines."),
+    ],
+  };
+}
+
+function makeBocBosProcessingDetail(line: ParsedLine): DetailModel | null {
+  const match = /<<(SEND|RECV)>>\s+(Msg(\d+)_([A-Za-z0-9_]+))\s+Processing Complete:\s+([^:]+?)\s+Message Data:\s+(.+?)\|?$/i.exec(line.raw);
+  if (!match) return null;
+  const direction = match[1].toUpperCase();
+  const messageType = match[2];
+  const messageId = normalizeMessageId(match[3]);
+  const messageName = match[4].replace(/_/g, " ");
+  const route = match[5].trim();
+  const data = match[6].trim();
+  const catalogRow = icdByMessageId.get(messageId);
+  const fields = parseAngleFieldMap(data);
+  const fieldList = parseAngleFields(data).slice(0, 48).map((field) => `Message field: ${field}`);
+  const locoId = fields.get("LocoID") ?? "";
+  const locoState = fields.get("LocoStatus") ?? fields.get("LocoState") ?? "";
+  const payloadContext = [
+    `Direction marker: ${direction}`,
+    `Route: ${route}`,
+    `Message type: ${messageType}`,
+    `Message ID: ${displayMessageId(messageId)}`,
+    catalogRow?.message_name ? `Catalog name: ${catalogRow.message_name}` : `Name from log: ${messageName}`,
+    fields.get("Version") ? `Version: ${fields.get("Version")}` : "",
+    locoId ? `Loco ID: ${locoId}` : "",
+    fields.get("UpdateType") ? `Update type: ${fields.get("UpdateType")}` : "",
+    fields.get("LocoStateSummary") ? `Loco state summary: ${fields.get("LocoStateSummary")}` : "",
+    locoState ? `Loco status: ${locoState}` : "",
+    fields.get("RepositoryTransferStates") ? `Repository transfer: ${fields.get("RepositoryTransferStates")}` : "",
+    fields.get("DownloadStatus") ? `Download status: ${fields.get("DownloadStatus")}` : "",
+    fields.get("UploadStatus") ? `Upload status: ${fields.get("UploadStatus")}` : "",
+    fields.get("CurrentUploadProgress") ? `Current upload progress: ${fields.get("CurrentUploadProgress")}` : "",
+    ...fieldList,
+  ].filter(Boolean);
+  const summary = `${route} ${direction === "RECV" ? "received" : "sent"} ${displayMessageId(messageId)} ${catalogRow?.message_name ?? messageName}; processing completed.`;
+
+  return {
+    lineId: line.id,
+    lineNumber: line.lineNumber,
+    timestamp: line.timestamp,
+    raw: line.raw,
+    translation: {
+      original: line.raw,
+      structured: [line.source ? `Source: ${line.source}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
+      english: [summary],
+      unresolved: catalogRow ? [] : ["No bundled ICD catalog row matched this message ID; message identity is grounded from the log line itself."],
+    },
+    workflow: {
+      summary,
+      currentStep: "BOC/BOS message processing complete",
+      systems: route.split("->").map((part) => part.trim()).filter(Boolean),
+      objects: locoId ? [locoId] : [],
+      knownState: locoState ? `Loco status ${locoState}` : "",
+      unresolved: catalogRow ? [] : ["Bundled ICD catalog did not contain this message ID."],
+    },
+    genisysContext: [],
+    icdContext: payloadContext,
+    databaseContext: [],
+    workflowContext: [`${route} processing path completed for ${messageType}.`],
+    payloadContext,
+    sourceReferences: [
+      sourceReference("icd_message_catalog", "Bundled ICD message catalog", "exports/mappings/icd_message_catalog.json", "Used when a message ID is present in the bundled catalog."),
+      sourceReference("music_more_boc", "MORE BOC back-office control logs", "C:/Users/Ji/Music/MORE BOC", "Pattern grounded from local BOC/BOS sample lines."),
+    ],
+  };
+}
+
+function makeStaticBrowserDetail(line: ParsedLine, lines: ParsedLine[], index: number): DetailModel | null {
+  return (
+    makeBocSystemStatsDetail(line) ??
+    makeIcdJsonDetail(line) ??
+    makeBocBosProcessingDetail(line) ??
+    (/\b(IND MNEM|CTL MNEM|SendControl|ProcessControlBegin|CONTROL UPDATED|PROCESS IND)\b/i.test(line.raw)
+      ? makeStaticDetail(line, lines, index)
+      : null)
+  );
+}
+
 function buildStaticLineDetails(lines: ParsedLine[]): Record<string, DetailModel> {
   const details: Record<string, DetailModel> = {};
   for (let index = 0; index < lines.length; index += 1) {
-    const raw = lines[index].raw;
-    if (/\b(IND MNEM|CTL MNEM|SendControl|ProcessControlBegin|CONTROL UPDATED|PROCESS IND)\b/i.test(raw)) {
-      details[lines[index].id] = makeStaticDetail(lines[index], lines, index);
+    const detail = makeStaticBrowserDetail(lines[index], lines, index);
+    if (detail) {
+      details[lines[index].id] = detail;
     }
   }
   return details;
+}
+
+function makeReferenceDetail(raw: string, summary: string, structured: string[], sourcePath: string): DetailModel {
+  return {
+    lineId: "",
+    lineNumber: 0,
+    raw,
+    translation: {
+      original: raw,
+      structured,
+      english: [summary],
+      unresolved: [],
+    },
+    workflow: {
+      summary,
+      currentStep: "Static reference entry",
+      systems: [],
+      objects: [],
+      knownState: "",
+      unresolved: [],
+    },
+    genisysContext: [],
+    icdContext: structured,
+    databaseContext: structured,
+    workflowContext: [],
+    payloadContext: [],
+    sourceReferences: [
+      sourceReference("static_reference_bundle", "Static GitHub reference bundle", sourcePath, "Bundled into the renderer for GitHub Pages local/static mode."),
+    ],
+  };
+}
+
+function makeReferenceLine(id: string, lineNumber: number, source: string, raw: string, detail: DetailModel): { line: ParsedLine; detail: DetailModel } {
+  const line: ParsedLine = {
+    id,
+    lineNumber,
+    source,
+    raw,
+    tokens: raw.split(/\s+/).filter(Boolean),
+  };
+  return { line, detail: { ...detail, lineId: id, lineNumber, raw } };
+}
+
+export function buildStaticReferenceSession(): SessionData {
+  const pairs: Array<{ line: ParsedLine; detail: DetailModel }> = [];
+  let lineNumber = 1;
+
+  for (const row of staticAssignmentRows.slice(0, 800)) {
+    const title = [row.station_name, row.control_point_name, row.code_line_name].filter(Boolean).join(" / ");
+    if (!title) continue;
+    const raw = `Code station assignment: ${title}`;
+    const structured = [
+      row.station_name ? `Station: ${row.station_name}` : "",
+      row.control_point_name ? `Control point: ${row.control_point_name}` : "",
+      row.code_line_name ? `Code line: ${row.code_line_name}` : "",
+      row.control_address ? `Control address: ${row.control_address}` : "",
+      row.indication_address ? `Indication address: ${row.indication_address}` : "",
+      `Control assignments: ${row.control_assignments?.length ?? 0}`,
+      `Indication assignments: ${row.indication_assignments?.length ?? 0}`,
+      ...(row.control_assignments ?? []).slice(0, 8).map((entry) => `Control bit ${entry.bit_position}: ${assignmentLabel(entry)}`),
+      ...(row.indication_assignments ?? []).slice(0, 8).map((entry) => `Indication bit ${entry.bit_position}: ${assignmentLabel(entry)}`),
+    ].filter(Boolean);
+    pairs.push(makeReferenceLine(`static-ref-code-${lineNumber}`, lineNumber, "reference:code-stations", raw, makeReferenceDetail(raw, `Static code station assignment reference for ${title}.`, structured, "exports/normalized/code_station_assignment_map.json")));
+    lineNumber += 1;
+  }
+
+  for (const row of staticIcdRows.slice(0, 1200)) {
+    const id = displayMessageId(row.message_id);
+    const raw = `Train/office ICD message ${id}: ${row.message_name ?? "unnamed"}${row.message_version ? ` v${row.message_version}` : ""}`;
+    const structured = [
+      row.message_id ? `Message ID: ${id}` : "",
+      row.message_name ? `Message name: ${row.message_name}` : "",
+      row.message_version ? `Message version: ${row.message_version}` : "",
+      row.direction ? `Direction: ${row.direction}` : "",
+      row.document_title ? `Document: ${row.document_title}` : "",
+      row.release ? `Release: ${row.release}` : "",
+      row.section ? `Section: ${row.section}` : "",
+      row.page ? `Page: ${row.page}` : "",
+    ].filter(Boolean);
+    pairs.push(makeReferenceLine(`static-ref-icd-${lineNumber}`, lineNumber, "reference:icd-messages", raw, makeReferenceDetail(raw, `Static ICD catalog entry for ${id} ${row.message_name ?? ""}.`.trim(), structured, "exports/mappings/icd_message_catalog.json")));
+    lineNumber += 1;
+  }
+
+  for (const header of [...(staticGenisysReference.office_headers ?? []), ...(staticGenisysReference.field_headers ?? [])]) {
+    if (!header.byte || !header.meaning) continue;
+    const raw = `Genisys header ${header.byte}: ${header.meaning}`;
+    pairs.push(makeReferenceLine(`static-ref-genisys-${lineNumber}`, lineNumber, "reference:genisys", raw, makeReferenceDetail(raw, `Genisys protocol header ${header.byte} means ${header.meaning}.`, [`Byte: ${header.byte}`, `Meaning: ${header.meaning}`], "exports/mappings/genisys_protocol_reference.json")));
+    lineNumber += 1;
+  }
+
+  for (const bit of staticGenisysReference.mode_bit_definitions ?? []) {
+    if (bit.bit === undefined || !bit.meaning) continue;
+    const raw = `Genisys mode bit ${bit.bit}: ${bit.meaning}`;
+    pairs.push(makeReferenceLine(`static-ref-genisys-${lineNumber}`, lineNumber, "reference:genisys", raw, makeReferenceDetail(raw, `Genisys mode bit ${bit.bit} means ${bit.meaning}.`, [`Bit: ${bit.bit}`, `Meaning: ${bit.meaning}`], "exports/mappings/genisys_protocol_reference.json")));
+    lineNumber += 1;
+  }
+
+  const lines = pairs.map((pair) => pair.line);
+  const lineDetails = Object.fromEntries(pairs.map((pair) => [pair.line.id, pair.detail]));
+  return {
+    sessionId: `static-reference-${Date.now()}`,
+    lines,
+    detail: lines[0] ? lineDetails[lines[0].id] : null,
+    lineDetails,
+  };
+}
+
+export function buildStaticReviewSampleSession(): SessionData {
+  const lines = [
+    ...parseLines(genisysSampleLog, "sample_logs/curated/genisys_sample.log"),
+    ...parseLines(socketTraceSampleLog, "sample_logs/curated/sockettrace_sample.log"),
+    ...parseLines(workflowSampleLog, "sample_logs/curated/workflow_sample.log"),
+  ];
+  return {
+    sessionId: `static-review-sample-${Date.now()}`,
+    lines,
+    detail: null,
+    lineDetails: buildStaticLineDetails(lines),
+  };
 }
 
 export type LocalIngestProgress = (progress: WorkspaceProgress) => void;

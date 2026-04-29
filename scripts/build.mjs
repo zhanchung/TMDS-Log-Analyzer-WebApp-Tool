@@ -39,6 +39,7 @@ async function buildRenderer() {
     entryNames: "[name]",
     loader: {
       ".css": "css",
+      ".log": "text",
     },
     jsx: "automatic",
     define: {
