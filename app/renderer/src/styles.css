@@ -553,27 +553,6 @@ p {
   box-shadow: inset 0 1px 0 rgba(57, 255, 20, 0.16);
 }
 
-.joined-input-actions {
-  display: inline-flex;
-  align-items: stretch;
-  gap: 0;
-}
-
-.joined-input-action {
-  border-radius: 0;
-}
-
-.joined-input-action-left {
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-}
-
-.joined-input-action-right {
-  margin-left: -1px;
-  border-top-right-radius: 7px;
-  border-bottom-right-radius: 7px;
-}
-
 .parse-cta {
   font-weight: 700;
   letter-spacing: 0.04em;

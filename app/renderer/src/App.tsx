@@ -3607,6 +3607,22 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }
 
   async function loadReviewSampleSession() {
+    const lastLoadedLogs = !referenceSession && lines.length
+      ? {
+          lines,
+          lineDetails,
+          selectedLineId: selected?.id ?? null,
+          activeSource,
+          activeTab,
+          search,
+          referenceSelections,
+        }
+      : previousNonReferenceWorkspaceRef.current;
+    if (lastLoadedLogs?.lines.length) {
+      restoreWorkspaceSnapshot(lastLoadedLogs, "Reloaded the last loaded log session.");
+      return;
+    }
+
     if (localOnlyMode) {
       setWorkspaceError("");
       setWorkspaceBusy("Loading review logs...");
@@ -3871,6 +3887,27 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     });
   }
 
+  function restoreWorkspaceSnapshot(snapshot: WorkspaceSnapshot, statusMessage = "") {
+    const restoredSelected = snapshot.selectedLineId
+      ? snapshot.lines.find((line) => line.id === snapshot.selectedLineId) ?? null
+      : null;
+    const fallback = restoredSelected ?? snapshot.lines[0] ?? null;
+    startTransition(() => {
+      setLines(snapshot.lines);
+      setLineDetails(snapshot.lineDetails);
+      setSelected(fallback);
+      setDetail(fallback ? snapshot.lineDetails[fallback.id] ?? makeFallbackDetail(fallback) : null);
+      setFinderDraftQuery(snapshot.search.query);
+      setSearch(snapshot.search);
+      setActiveSource(snapshot.activeSource);
+      setActiveTab(snapshot.activeTab);
+      setReferenceSelections(snapshot.referenceSelections);
+      setWorkspaceError(statusMessage);
+      setWorkspaceBusy("");
+      setWorkspaceProgress(null);
+    });
+  }
+
   function selectLine(line: ParsedLine) {
     selectedLineIdRef.current = line.id;
     setSelected(line);
@@ -3982,24 +4019,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       resetWorkspaceToEmpty();
       return;
     }
-    const restoredSelected = snapshot.selectedLineId
-      ? snapshot.lines.find((line) => line.id === snapshot.selectedLineId) ?? null
-      : null;
-    const fallback = restoredSelected ?? snapshot.lines[0] ?? null;
-    startTransition(() => {
-      setLines(snapshot.lines);
-      setLineDetails(snapshot.lineDetails);
-      setSelected(fallback);
-      setDetail(fallback ? snapshot.lineDetails[fallback.id] ?? makeFallbackDetail(fallback) : null);
-      setFinderDraftQuery(snapshot.search.query);
-      setSearch(snapshot.search);
-      setActiveSource(snapshot.activeSource);
-      setActiveTab(snapshot.activeTab);
-      setReferenceSelections(snapshot.referenceSelections);
-      setWorkspaceError("");
-      setWorkspaceBusy("");
-      setWorkspaceProgress(null);
-    });
+    restoreWorkspaceSnapshot(snapshot);
   }
 
   useEffect(() => {
@@ -4452,35 +4472,14 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                   if (files) void parseBrowserFiles(files);
                 }}
               />
-              {webAppMode ? (
-                <div className="joined-input-actions" role="group" aria-label="Add local inputs">
-                  <button
-                    className="primary joined-input-action joined-input-action-left"
-                    onClick={openBrowserFilePicker}
-                    disabled={Boolean(workspaceBusy)}
-                    title="Pick one or more files (logs, ZIP, GZ). Drag/drop also works."
-                  >
-                    Add files
-                  </button>
-                  <button
-                    className="primary joined-input-action joined-input-action-right"
-                    onClick={openBrowserFolderPicker}
-                    disabled={Boolean(workspaceBusy)}
-                    title="Pick an entire folder. The browser will ask you to confirm the upload."
-                  >
-                    Add folder
-                  </button>
-                </div>
-              ) : (
-                <button
-                  className="primary"
-                  onClick={() => void openFiles()}
-                  disabled={Boolean(workspaceBusy)}
-                  title="Choose files, folders, ZIP, or GZ sources."
-                >
-                  Add inputs
-                </button>
-              )}
+              <button
+                className="primary"
+                onClick={webAppMode ? openBrowserFolderPicker : () => void openFiles()}
+                disabled={Boolean(workspaceBusy)}
+                title={webAppMode ? "Choose a folder, or drag files and ZIP/GZ sources onto the page." : "Choose files, folders, ZIP, or GZ sources."}
+              >
+                Add inputs
+              </button>
               {webAppMode && queuedBrowserFiles.length ? (
                 <span className="queued-inline" aria-live="polite" title={queuedStatusTitle}>
                   {summarizeBrowserUpload(queuedBrowserFiles)} queued

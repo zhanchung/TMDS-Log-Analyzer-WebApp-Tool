@@ -10055,7 +10055,7 @@ function buildGenisysReferenceEntries(): Array<{
       badges: ["Office -> field", "Ack"],
       examples: [
         "Office send: FA 09 82 A6 F6",
-        "Field reply: FI 09 F6",
+        "Field reply: F1 09 F6",
       ],
     },
     {
@@ -10065,7 +10065,7 @@ function buildGenisysReferenceEntries(): Array<{
       badges: ["Office -> field", "Poll"],
       examples: [
         "Office send: FB 06 C3 32 F6",
-        "Field reply example: FI 06 F6",
+        "Field reply example: F1 06 F6",
       ],
     },
     {
@@ -10104,7 +10104,7 @@ function buildGenisysReferenceEntries(): Array<{
       meaning: "Field response with no indication payload data.",
       badges: ["Field -> office", "Ack"],
       examples: [
-        "Field send: FI 09 F6",
+        "Field send: F1 09 F6",
       ],
     },
     {
