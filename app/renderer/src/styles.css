@@ -527,16 +527,16 @@ p {
 }
 
 .toolbar {
-  gap: 12px;
+  gap: 8px;
   align-items: stretch;
 }
 
 .toolbar-group {
   display: inline-flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
-  padding: 8px 10px;
+  padding: 6px 8px;
   border: 1px solid rgba(79, 200, 156, 0.12);
   border-radius: 12px;
   background: linear-gradient(180deg, rgba(15, 22, 32, 0.94), rgba(11, 16, 24, 0.94));
@@ -557,7 +557,7 @@ p {
   font-weight: 700;
   letter-spacing: 0.04em;
   font-family: Consolas, "Cascadia Mono", monospace;
-  padding: 9px 16px;
+  padding: 7px 12px;
   border-radius: 10px;
 }
 
@@ -686,7 +686,7 @@ p {
 .primary,
 .ghost {
   border-radius: 7px;
-  padding: 9px 14px;
+  padding: 7px 11px;
   cursor: pointer;
   transition: border-color 120ms ease, background-color 120ms ease, color 120ms ease, transform 120ms ease;
   color: var(--accent-2);
@@ -747,8 +747,8 @@ p {
 
 .time-inline-bar {
   display: grid;
-  gap: 14px;
-  padding: 16px 18px;
+  gap: 8px;
+  padding: 9px 12px;
   border: 1px solid rgba(79, 200, 156, 0.2);
   border-radius: 14px;
   background:
@@ -761,16 +761,16 @@ p {
 }
 
 .time-inline-head {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 12px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   align-items: center;
 }
 
 .time-inline-head > strong {
   color: var(--log-text);
   font-family: Consolas, "Cascadia Mono", monospace;
-  font-size: 1rem;
+  font-size: 0.9rem;
   white-space: nowrap;
 }
 
@@ -817,26 +817,26 @@ p {
 .time-inline-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
   justify-content: flex-start;
 }
 
 .time-inline-pill {
   display: inline-flex;
   align-items: center;
-  padding: 8px 12px;
+  padding: 5px 9px;
   border-radius: 999px;
   border: 1px solid rgba(79, 200, 156, 0.18);
   background: rgba(14, 22, 32, 0.88);
   color: var(--accent-2);
   font-family: Consolas, "Cascadia Mono", monospace;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .time-inline-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 14px;
+  gap: 8px 10px;
   align-items: center;
 }
 
@@ -845,9 +845,9 @@ p {
   min-width: 0;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 10px 14px;
+  gap: 6px 9px;
   align-items: center;
-  padding: 10px 12px;
+  padding: 7px 9px;
   border: 1px solid rgba(79, 200, 156, 0.14);
   border-radius: 14px;
   background: rgba(11, 18, 27, 0.68);
@@ -863,7 +863,7 @@ p {
 .time-range-fields {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 7px;
 }
 
 .finder-query-field {
@@ -880,7 +880,7 @@ p {
 
 .time-field {
   display: grid;
-  gap: 8px;
+  gap: 4px;
 }
 
 .time-field span {
@@ -906,7 +906,7 @@ p {
   border: 1px solid rgba(79, 200, 156, 0.18);
   color: var(--log-text);
   border-radius: 12px;
-  padding: 11px 14px;
+  padding: 7px 10px;
   font-family: Consolas, "Cascadia Mono", monospace;
   box-shadow: inset 0 1px 0 rgba(130, 255, 106, 0.03);
 }
@@ -966,7 +966,7 @@ p {
   width: max-content;
   min-width: 100%;
   display: grid;
-  grid-template-columns: 6rem 13rem max-content;
+  grid-template-columns: 6rem minmax(9rem, 13rem) max-content;
   gap: 10px;
   align-items: baseline;
   padding: 3px 10px;
@@ -1025,7 +1025,7 @@ p {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 7px;
   margin-left: auto;
   align-items: center;
   justify-content: flex-end;
@@ -1595,19 +1595,16 @@ p {
 }
 
 .code-server-issue-panel {
-  position: sticky;
-  top: 0;
-  z-index: 3;
   display: grid;
-  gap: 8px;
-  min-width: 100%;
-  width: max-content;
-  margin: 0 0 8px;
-  padding: 10px;
+  gap: 6px;
+  min-width: 0;
+  width: 100%;
+  margin: 0 0 6px;
+  padding: 8px;
   border: 1px solid rgba(255, 176, 74, 0.28);
   border-radius: 10px;
   background: linear-gradient(180deg, rgba(29, 24, 15, 0.98), rgba(15, 18, 20, 0.98));
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.24);
+  box-shadow: inset 0 1px 0 rgba(255, 176, 74, 0.08);
 }
 
 .code-server-issue-head {
@@ -1627,7 +1624,7 @@ p {
 
 .code-server-issue {
   display: grid;
-  grid-template-columns: 5.5rem 5.5rem 12rem minmax(24rem, 1fr);
+  grid-template-columns: 8rem 5.5rem 11rem minmax(18rem, 1fr);
   gap: 8px;
   align-items: center;
   padding: 4px 8px;
@@ -1656,6 +1653,31 @@ p {
 
 .code-server-issue-summary {
   color: var(--accent-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code-server-issue-response-received {
+  border-color: rgba(79, 200, 156, 0.28);
+  background: rgba(79, 200, 156, 0.07);
+}
+
+.code-server-issue-response-received .code-server-issue-line,
+.code-server-issue-response-received .code-server-issue-kind {
+  color: #85f1c1;
+}
+
+.code-server-issue-missing-response,
+.code-server-issue-missing-office-ack {
+  border-color: rgba(255, 176, 74, 0.3);
+}
+
+.parsed-files-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .line-no {

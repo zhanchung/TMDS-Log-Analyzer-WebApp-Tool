@@ -52,6 +52,13 @@ const staticGenisysReference = genisysProtocolReference as {
 const assignmentByKey = new Map<string, AssignmentRow>();
 const icdByMessageId = new Map<string, IcdCatalogRow>();
 
+function getFileLabel(source?: string): string {
+  if (!source) return "";
+  const normalized = source.replace(/\\/g, "/");
+  const parts = normalized.split("/");
+  return parts[parts.length - 1] || source;
+}
+
 function normalizeKey(value: string | undefined): string {
   return String(value ?? "").trim().toUpperCase().replace(/\s+/g, " ");
 }
@@ -341,7 +348,7 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
     translation: {
       original: raw,
       structured: [
-        line.source ? `Source: ${line.source}` : "",
+        line.source ? `File: ${getFileLabel(line.source)}` : "",
         line.timestamp ? `Timestamp: ${line.timestamp}` : "",
         station ? `Nearby station: ${station}` : "",
         ...databaseContext,
@@ -377,7 +384,9 @@ function makeBocSystemStatsDetail(line: ParsedLine): DetailModel | null {
   const fields = parseAngleFieldMap(line.raw);
   const computerName = fields.get("ComputerName") ?? "";
   const softwareVersion = fields.get("SoftwareVersion") ?? "";
-  const summary = `BackOfficeControl system statistics from ${computerName || "unknown computer"}.`;
+  const summary = computerName
+    ? `BackOfficeControl system statistics from ${computerName}.`
+    : "BackOfficeControl system statistics.";
   const payloadContext = [
     computerName ? `Computer name: ${computerName}` : "",
     softwareVersion ? `Software version: ${softwareVersion}` : "",
@@ -399,7 +408,7 @@ function makeBocSystemStatsDetail(line: ParsedLine): DetailModel | null {
     raw: line.raw,
     translation: {
       original: line.raw,
-      structured: [line.source ? `Source: ${line.source}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
+      structured: [line.source ? `File: ${getFileLabel(line.source)}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
       english: [summary, "This is a BOC operational health snapshot logged by BackOfficeControl.ControlApp.LogBocStats."],
       unresolved: [],
     },
@@ -473,7 +482,7 @@ function makeIcdJsonDetail(line: ParsedLine): DetailModel | null {
     raw: line.raw,
     translation: {
       original: line.raw,
-      structured: [line.source ? `Source: ${line.source}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
+      structured: [line.source ? `File: ${getFileLabel(line.source)}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
       english: [summary, firstLoco ? "Payload contains a BOC/BOS locomotive update record." : "Payload was parsed as an ICD JSON message."],
       unresolved: catalogRow ? [] : ["No bundled ICD catalog row matched this message ID; message identity is grounded from the log line itself."],
     },
@@ -537,7 +546,7 @@ function makeBocBosProcessingDetail(line: ParsedLine): DetailModel | null {
     raw: line.raw,
     translation: {
       original: line.raw,
-      structured: [line.source ? `Source: ${line.source}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
+      structured: [line.source ? `File: ${getFileLabel(line.source)}` : "", line.timestamp ? `Timestamp: ${line.timestamp}` : "", ...payloadContext].filter(Boolean),
       english: [summary],
       unresolved: catalogRow ? [] : ["No bundled ICD catalog row matched this message ID; message identity is grounded from the log line itself."],
     },
@@ -570,6 +579,11 @@ function makeStaticBrowserDetail(line: ParsedLine, lines: ParsedLine[], index: n
       ? makeStaticDetail(line, lines, index)
       : null)
   );
+}
+
+export function buildStaticDetailForLine(lines: ParsedLine[], line: ParsedLine): DetailModel | null {
+  const index = lines.findIndex((candidate) => candidate.id === line.id);
+  return makeStaticBrowserDetail(line, lines, index >= 0 ? index : 0);
 }
 
 function buildStaticLineDetails(lines: ParsedLine[]): Record<string, DetailModel> {
@@ -769,7 +783,7 @@ export async function ingestBrowserFilesLocally(
     sessionId: `local-${Date.now()}`,
     lines: out,
     detail: null,
-    lineDetails: buildStaticLineDetails(out),
+    lineDetails: out.length > 25000 ? {} : buildStaticLineDetails(out),
   };
 
   onProgress?.({

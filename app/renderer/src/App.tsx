@@ -2,7 +2,7 @@ import { Fragment, startTransition, useEffect, useMemo, useRef, useState } from 
 import type { Dispatch, DragEvent, ReactNode, SetStateAction } from "react";
 import type { DetailModel, ParsedLine, ReferenceArtifact, ReferenceChoiceGroup, ReferenceChoiceItem, ReferenceDiagram, SearchConfig, SessionData, WorkflowRelatedDetail, WorkspaceProgress } from "@shared/types";
 import type { WorkspaceMenuCommand } from "@shared/native-api";
-import { buildStaticReferenceSession, buildStaticReviewSampleSession, ingestBrowserFilesLocally } from "@shared/browser-parser";
+import { buildStaticDetailForLine, buildStaticReferenceSession, buildStaticReviewSampleSession, ingestBrowserFilesLocally } from "@shared/browser-parser";
 import { stripLeadingLogTimestamp } from "@shared/parser/primitives";
 import { AccountPanel, AdminPanel, LoginScreen, fetchAuthState, logout } from "./features/auth";
 import type { AuthState } from "./features/auth";
@@ -546,7 +546,7 @@ function getInitialWorkspaceError(): string {
 }
 
 function getSourceLabel(source?: string): string {
-  if (!source) return "unknown";
+  if (!source) return "";
   const normalized = source.replace(/\\/g, "/");
   const parts = normalized.split("/");
   return parts[parts.length - 1] || source;
@@ -889,7 +889,7 @@ function makeFallbackDetail(line: ParsedLine): DetailModel {
   const observedFields = extractObservedLineFields(message);
   const bitStates = extractObservedBitStates(message);
   const structured = [
-    line.source ? `Source: ${line.source}` : "",
+    line.source ? `File: ${getSourceLabel(line.source)}` : "",
     line.timestamp ? `Timestamp: ${line.timestamp}` : "",
     `Line number: ${line.lineNumber}`,
     message && message !== line.raw ? `Message: ${message}` : "",
@@ -3229,6 +3229,25 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     () => referenceSession ? [] : buildCodeServerIssues(timeScopedLines),
     [referenceSession, timeScopedLines],
   );
+  const parsedFileSummary = useMemo(() => {
+    if (referenceSession) {
+      return { names: [] as string[], hasMore: false };
+    }
+    const names = new Set<string>();
+    let hasMore = false;
+    for (const line of lines) {
+      const label = getSourceLabel(line.source);
+      if (!label || names.has(label)) {
+        continue;
+      }
+      if (names.size >= 6) {
+        hasMore = true;
+        break;
+      }
+      names.add(label);
+    }
+    return { names: Array.from(names), hasMore };
+  }, [lines, referenceSession]);
   const virtualLogWindow = useMemo(() => {
     if (referenceSession) {
       return {
@@ -3442,6 +3461,12 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const nextLineDetails = session.lineDetails ?? {};
     const nextSelection = describeSessionSelection({ ...session, lineDetails: nextLineDetails });
     const referenceSession = isReferenceLibrarySession(session.lines);
+    const nextInitialDetail = !referenceSession && localOnlyMode && nextSelection.selected && !nextLineDetails[nextSelection.selected.id]
+      ? buildStaticDetailForLine(session.lines, nextSelection.selected) ?? nextSelection.detail
+      : nextSelection.detail;
+    if (nextInitialDetail && nextSelection.selected && !nextLineDetails[nextSelection.selected.id]) {
+      nextLineDetails[nextSelection.selected.id] = nextInitialDetail;
+    }
     const preserveEmptyReferenceSelection = Boolean(options?.preserveEmptyReferenceSelection && referenceSession);
     const nextActiveSource = referenceSession
       ? (preserveEmptyReferenceSelection ? "" : (Array.from(new Set(session.lines.map((line) => getLogCategory(line))))[0] ?? "all"))
@@ -3459,7 +3484,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       setCurrentSessionId(session.sessionId ?? null);
       setLines(session.lines);
       setSelected(preserveEmptyReferenceSelection ? null : nextSelection.selected);
-      setDetail(preserveEmptyReferenceSelection ? null : nextSelection.detail);
+      setDetail(preserveEmptyReferenceSelection ? null : nextInitialDetail);
       setLineDetails(nextLineDetails);
       setFinderDraftQuery("");
       setSearch(defaultSearch);
@@ -3914,8 +3939,14 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
 
   function selectLine(line: ParsedLine) {
     selectedLineIdRef.current = line.id;
+    const staticDetail = localOnlyMode && !lineDetails[line.id] ? buildStaticDetailForLine(lines, line) : null;
     setSelected(line);
-    setDetail(lineDetails[line.id] ?? makeFallbackDetail(line));
+    setDetail(lineDetails[line.id] ?? staticDetail ?? makeFallbackDetail(line));
+    if (staticDetail) {
+      startTransition(() => {
+        setLineDetails((current) => current[line.id] ? current : { ...current, [line.id]: staticDetail });
+      });
+    }
     const selectedIndex = visible.findIndex((candidate) => candidate.id === line.id);
     if (selectedIndex >= 0) {
       requestWarmLineDetails(visible.slice(Math.max(0, selectedIndex - 80), Math.min(visible.length, selectedIndex + 81)));
@@ -3923,6 +3954,29 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       requestWarmLineDetails([line]);
     }
     void loadLineDetail(line);
+  }
+
+  function jumpToLineId(lineId: string) {
+    const target = lines.find((candidate) => candidate.id === lineId);
+    if (!target) {
+      return;
+    }
+    if (!referenceSession && activeSource !== "all") {
+      setActiveSource("all");
+    }
+    selectLine(target);
+    const targetIndex = lines.findIndex((candidate) => candidate.id === target.id);
+    if (targetIndex >= 0) {
+      const targetTop = Math.max(0, (targetIndex * logRowHeight) - 120);
+      requestAnimationFrame(() => {
+        const node = logListRef.current;
+        if (!node) {
+          return;
+        }
+        node.scrollTop = targetTop;
+        setLogListScrollTop(targetTop);
+      });
+    }
   }
 
   function selectWorkflowRelatedLine(entry: WorkflowRelatedDetail) {
@@ -4282,9 +4336,14 @@ type CodeServerDirection = "office" | "field" | "neutral";
 type CodeServerIssue = {
   key: string;
   lineId: string;
+  responseLineId?: string;
   lineNumber: number;
+  responseLineNumber?: number;
   station: string;
   kind: string;
+  direction: "office-to-field" | "field-to-office";
+  status: "missing-response" | "response-received" | "missing-office-ack";
+  recallCount: number;
   summary: string;
 };
 
@@ -4330,13 +4389,13 @@ function getCodeServerLineClass(line: ParsedLine): string {
 function getOfficeRequest(line: ParsedLine): { station: string; kind: string; summary: string } | null {
   const raw = line.raw;
   const firstByte = firstGenisysByte(raw);
-  const station = normalizeCodeServerStation(raw) || "UNKNOWN";
-  if (firstByte === "FB") return { station, kind: "poll", summary: "Office poll did not show a later field response in this loaded window." };
+  const station = normalizeCodeServerStation(raw) || "station not listed";
+  if (firstByte === "FB") return { station, kind: "poll", summary: "Office poll awaiting field indication/response." };
   if (firstByte === "FC" || /CONTROL SENT|SendCommand:.*CONTROL|QueueTheCommand:.*CONTROL|CONTROL(?:\s+UPDATE\s+ONLY)?:/i.test(raw)) {
-    return { station, kind: "control", summary: "Office control/request did not show a later field response in this loaded window." };
+    return { station, kind: "control", summary: "Office control awaiting field delivery/indication." };
   }
   if (firstByte === "FD" || /RECALL SENT|QueueTheCommand:.*RECALL/i.test(raw)) {
-    return { station, kind: "recall", summary: "Office recall/request did not show a later field response in this loaded window." };
+    return { station, kind: "recall", summary: "Office recall awaiting field response." };
   }
   return null;
 }
@@ -4344,7 +4403,7 @@ function getOfficeRequest(line: ParsedLine): { station: string; kind: string; su
 function isFieldResponseFor(line: ParsedLine, request: { station: string; kind: string }): boolean {
   if (getCodeServerDirection(line) !== "field") return false;
   const station = normalizeCodeServerStation(line.raw);
-  if (request.station !== "UNKNOWN" && station && station !== request.station) return false;
+  if (request.station !== "station not listed" && station && station !== request.station) return false;
   const raw = line.raw;
   const firstByte = firstGenisysByte(raw);
   if (request.kind === "poll") return /^(F1|F2)$/.test(firstByte) || /INDICATION;/i.test(raw);
@@ -4354,26 +4413,76 @@ function isFieldResponseFor(line: ParsedLine, request: { station: string; kind: 
 }
 
 function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
-  const pending: Array<CodeServerIssue & { station: string; kind: string }> = [];
-  for (const line of lines) {
-    for (let index = pending.length - 1; index >= 0; index -= 1) {
-      if (isFieldResponseFor(line, pending[index])) {
-        pending.splice(index, 1);
+  const scanLines = lines.length > 75000 ? lines.slice(-75000) : lines;
+  const pendingOffice: Array<CodeServerIssue & { station: string; kind: string }> = [];
+  const pendingField: Array<{ line: ParsedLine; station: string; kind: string }> = [];
+  const resolved: CodeServerIssue[] = [];
+  const fieldResponses = new Set<string>();
+  for (const line of scanLines) {
+    const direction = getCodeServerDirection(line);
+    for (let index = pendingOffice.length - 1; index >= 0; index -= 1) {
+      const request = pendingOffice[index];
+      if (isFieldResponseFor(line, request)) {
+        resolved.push({
+          ...request,
+          responseLineId: line.id,
+          responseLineNumber: line.lineNumber,
+          status: "response-received",
+          summary: `${request.kind} response returned at line ${line.lineNumber}; ${request.recallCount} recall/request attempt${request.recallCount === 1 ? "" : "s"} before response.`,
+        });
+        fieldResponses.add(line.id);
+        pendingOffice.splice(index, 1);
+      }
+    }
+    if (direction === "office" && firstGenisysByte(line.raw) === "FA") {
+      const station = normalizeCodeServerStation(line.raw);
+      for (let index = pendingField.length - 1; index >= 0; index -= 1) {
+        if (!station || !pendingField[index].station || station === pendingField[index].station) {
+          pendingField.splice(index, 1);
+        }
       }
     }
     const request = getOfficeRequest(line);
     if (request) {
-      pending.push({
+      const priorRecallCount = pendingOffice.filter((candidate) => candidate.station === request.station).length;
+      pendingOffice.push({
         key: `${line.id}:${request.kind}`,
         lineId: line.id,
         lineNumber: line.lineNumber,
         station: request.station,
         kind: request.kind,
+        direction: "office-to-field",
+        status: "missing-response",
+        recallCount: priorRecallCount + 1,
         summary: request.summary,
+      });
+    } else if (direction === "field" && !fieldResponses.has(line.id)) {
+      const station = normalizeCodeServerStation(line.raw) || "station not listed";
+      pendingField.push({
+        line,
+        station,
+        kind: firstGenisysByte(line.raw) || (/INDICATION;/i.test(line.raw) ? "indication" : "field"),
       });
     }
   }
-  return pending.slice(0, 24);
+  const missingOffice = pendingOffice.map((request) => ({
+    ...request,
+    summary: `${request.kind} from office has no later field response in the scanned log window.`,
+  }));
+  const missingField = pendingField.slice(-12).map(({ line, station, kind }) => ({
+    key: `${line.id}:field-ack`,
+    lineId: line.id,
+    lineNumber: line.lineNumber,
+    station,
+    kind,
+    direction: "field-to-office" as const,
+    status: "missing-office-ack" as const,
+    recallCount: 0,
+    summary: "Field message has no later office acknowledgement in the scanned log window.",
+  }));
+  return [...missingOffice, ...missingField, ...resolved.slice(-24)]
+    .sort((left, right) => right.lineNumber - left.lineNumber)
+    .slice(0, 24);
 }
 
 async function onDrop(event: DragEvent<HTMLDivElement>) {
@@ -4852,6 +4961,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                         const referenceBubble = referenceSession ? getReferenceBubbleParts(line, lineDetails[line.id] ?? null) : null;
                         const primaryText = referenceBubble ? referenceBubble.primary : line.raw;
                         const secondaryText = referenceBubble?.secondary ?? "";
+                        const fileLabel = getSourceLabel(line.source);
                         return (
                           <button
                             key={`finder:${line.id}`}
@@ -4860,7 +4970,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                             onClick={() => selectLine(line)}
                           >
                             <span className="finder-result-line-number">{referenceSession ? `Entry ${line.lineNumber}` : `Line ${line.lineNumber}`}</span>
-                            <span className="finder-result-source">{getSourceLabel(line.source)}</span>
+                            {fileLabel ? <span className="finder-result-source">{fileLabel}</span> : null}
                             <span className="finder-result-primary">{renderHighlightedText(primaryText, activeSearch)}</span>
                             {secondaryText ? <span className="finder-result-secondary">{renderHighlightedText(secondaryText, activeSearch)}</span> : null}
                           </button>
@@ -4993,7 +5103,13 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
           <section className="viewer">
           <div className={referenceSession ? "viewer-header reference-viewer-header" : "viewer-header"}>
             <span>{referenceSession ? `${sourceScopedLines.length} entries` : workflowViewerMode ? `${visible.length} workflow lines` : `${visible.length} lines`}</span>
-            <span>{selectedLabel}</span>
+            {!referenceSession && parsedFileSummary.names.length ? (
+              <span className="parsed-files-label">
+                Files: {parsedFileSummary.names.join(", ")}{parsedFileSummary.hasMore ? ", ..." : ""}
+              </span>
+            ) : (
+              <span>{selectedLabel}</span>
+            )}
           </div>
           {referenceSession ? (
             <div className="tab-strip source-strip" role="tablist" aria-label="Log sources">
@@ -5219,38 +5335,39 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
               )}
             </div>
           ) : (
+            <>
+            {!referenceSession && codeServerIssues.length ? (
+              <div className="code-server-issue-panel" role="note">
+                <div className="code-server-issue-head">
+                  <span>CodeServer communication watch</span>
+                  <span>{codeServerIssues.length} recent event{codeServerIssues.length === 1 ? "" : "s"}</span>
+                </div>
+                <div className="code-server-issue-list">
+                  {codeServerIssues.slice(0, 8).map((issue) => (
+                    <button
+                      key={issue.key}
+                      type="button"
+                      className={`code-server-issue code-server-issue-${issue.status}`}
+                      onClick={() => jumpToLineId(issue.responseLineId ?? issue.lineId)}
+                      title={issue.responseLineNumber ? `Jump to response line ${issue.responseLineNumber}` : `Jump to line ${issue.lineNumber}`}
+                    >
+                      <span className="code-server-issue-line">
+                        {issue.responseLineNumber ? `L${issue.lineNumber}->L${issue.responseLineNumber}` : `Line ${issue.lineNumber}`}
+                      </span>
+                      <span className="code-server-issue-kind">{issue.kind}</span>
+                      <span className="code-server-issue-station">{issue.station}</span>
+                      <span className="code-server-issue-summary">{issue.summary}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
             <div
               ref={logListRef}
               className="log-list"
               role="list"
               onScroll={(event) => setLogListScrollTop(event.currentTarget.scrollTop)}
             >
-              {!referenceSession && codeServerIssues.length ? (
-                <div className="code-server-issue-panel" role="note">
-                  <div className="code-server-issue-head">
-                    <span>Office requests without later field response</span>
-                    <span>{codeServerIssues.length} open</span>
-                  </div>
-                  <div className="code-server-issue-list">
-                    {codeServerIssues.slice(0, 8).map((issue) => (
-                      <button
-                        key={issue.key}
-                        type="button"
-                        className="code-server-issue"
-                        onClick={() => {
-                          const target = lines.find((candidate) => candidate.id === issue.lineId);
-                          if (target) selectLine(target);
-                        }}
-                      >
-                        <span className="code-server-issue-line">Line {issue.lineNumber}</span>
-                        <span className="code-server-issue-kind">{issue.kind}</span>
-                        <span className="code-server-issue-station">{issue.station}</span>
-                        <span className="code-server-issue-summary">{issue.summary}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              ) : null}
               {visible.length ? (
                 <>
                   {virtualLogWindow.topPadding ? <div style={{ height: `${virtualLogWindow.topPadding}px` }} aria-hidden="true" /> : null}
@@ -5280,6 +5397,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                 <div className="card empty">{viewerEmptyCopy}</div>
               )}
             </div>
+            </>
           )}
         </section>
 
