@@ -558,6 +558,7 @@ const referenceCategoryOrder = ["MESSAGE EXCHANGE", "GENISYS", "TRAIN MESSAGES",
 type LogCategory = (typeof categoryOrder)[number] | "OTHER" | "NETWORK" | "WORKFLOW" | (typeof referenceCategoryOrder)[number];
 const logRowHeight = 28;
 const logRowOverscan = 18;
+const maxLogScrollHeight = 8_000_000;
 const finderResultRowHeight = 30;
 const finderResultOverscan = 24;
 const pacificTimeZone = "America/Los_Angeles";
@@ -586,6 +587,27 @@ type DateOnlyParts = {
   month: number;
   day: number;
 };
+
+type VirtualScrollMetrics = {
+  physicalTotalHeight: number;
+  logicalToPhysical: (logicalTop: number) => number;
+  physicalToLogical: (physicalTop: number) => number;
+};
+
+function getVirtualScrollMetrics(rowCount: number, rowHeight: number, viewportHeight: number): VirtualScrollMetrics {
+  const logicalTotalHeight = rowCount * rowHeight;
+  const physicalTotalHeight = logicalTotalHeight > maxLogScrollHeight ? maxLogScrollHeight : logicalTotalHeight;
+  const logicalScrollableHeight = Math.max(0, logicalTotalHeight - viewportHeight);
+  const physicalScrollableHeight = Math.max(0, physicalTotalHeight - viewportHeight);
+  const scale = logicalScrollableHeight > 0 && physicalScrollableHeight > 0
+    ? logicalScrollableHeight / physicalScrollableHeight
+    : 1;
+  return {
+    physicalTotalHeight,
+    logicalToPhysical: (logicalTop: number) => scale === 1 ? logicalTop : logicalTop / scale,
+    physicalToLogical: (physicalTop: number) => scale === 1 ? physicalTop : physicalTop * scale,
+  };
+}
 
 const viewerTimestampPattern = /^(?:(\d{2})-(\d{2})-(\d{4})|(\d{4})-(\d{2})-(\d{2})) (\d{2}):(\d{2}):(\d{2})\.(\d{3,4})$/;
 const viewerSlashTimestampPattern = /^(\d{4})\/(\d{2})\/(\d{2}) (\d{2}):(\d{2}):(\d{2})\.(\d{3,4})$/;
@@ -3258,6 +3280,10 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     return { byId, indexById };
   }, [lines]);
+  const logVirtualMetrics = useMemo(
+    () => getVirtualScrollMetrics(visible.length, logRowHeight, logListViewportHeight),
+    [logListViewportHeight, visible.length],
+  );
   const virtualLogWindow = useMemo(() => {
     if (referenceSession) {
       return {
@@ -3269,16 +3295,23 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       };
     }
     const viewportRows = Math.max(1, Math.ceil(logListViewportHeight / logRowHeight));
-    const start = Math.max(0, Math.floor(logListScrollTop / logRowHeight) - logRowOverscan);
+    const logicalScrollTop = logVirtualMetrics.physicalToLogical(logListScrollTop);
+    const start = Math.max(0, Math.floor(logicalScrollTop / logRowHeight) - logRowOverscan);
     const end = Math.min(visible.length, start + viewportRows + (logRowOverscan * 2));
+    const renderedHeight = (end - start) * logRowHeight;
+    const firstRenderedRowOffset = Math.max(0, ((logicalScrollTop / logRowHeight) - start) * logRowHeight);
+    const topPadding = Math.min(
+      Math.max(0, logListScrollTop - firstRenderedRowOffset),
+      Math.max(0, logVirtualMetrics.physicalTotalHeight - renderedHeight),
+    );
     return {
       start,
       end,
-      topPadding: start * logRowHeight,
-      bottomPadding: Math.max(0, (visible.length - end) * logRowHeight),
+      topPadding,
+      bottomPadding: Math.max(0, logVirtualMetrics.physicalTotalHeight - topPadding - renderedHeight),
       lines: visible.slice(start, end),
     };
-  }, [logListScrollTop, logListViewportHeight, referenceSession, visible]);
+  }, [logListScrollTop, logListViewportHeight, logVirtualMetrics, referenceSession, visible]);
 
   useEffect(() => {
     const node = logListRef.current;
@@ -3977,7 +4010,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     selectLine(target);
     const targetIndex = visible.findIndex((candidate) => candidate.id === target.id);
     if (targetIndex >= 0) {
-      const targetTop = Math.max(0, (targetIndex * logRowHeight) - 120);
+      const targetTop = Math.max(0, logVirtualMetrics.logicalToPhysical((targetIndex * logRowHeight) - 120));
       requestAnimationFrame(() => {
         const node = logListRef.current;
         if (!node) {
@@ -4012,8 +4045,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     if (selectedIndex < 0) {
       return;
     }
-    const targetTop = selectedIndex * logRowHeight;
-    const targetBottom = targetTop + logRowHeight;
+    const targetTop = logVirtualMetrics.logicalToPhysical(selectedIndex * logRowHeight);
+    const targetBottom = logVirtualMetrics.logicalToPhysical((selectedIndex + 1) * logRowHeight);
     const viewportTop = node.scrollTop;
     const viewportBottom = viewportTop + node.clientHeight;
     if (targetTop >= viewportTop && targetBottom <= viewportBottom) {
@@ -4022,7 +4055,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const centeredTop = Math.max(0, targetTop - Math.max(0, Math.floor((node.clientHeight - logRowHeight) / 2)));
     node.scrollTop = centeredTop;
     setLogListScrollTop(centeredTop);
-  }, [referenceSession, selected, visible]);
+  }, [logVirtualMetrics, referenceSession, selected, visible]);
 
   async function loadLineDetail(line: ParsedLine) {
     if (referenceSession || lineDetails[line.id] || loadingLineDetailId === line.id) {
