@@ -5684,6 +5684,7 @@ export default function App() {
     try {
       const url = new URL(window.location.href);
       url.searchParams.set("v", latestBuildVersion);
+      url.searchParams.set("reload", String(Date.now()));
       window.location.replace(url.toString());
     } catch {
       window.location.reload();

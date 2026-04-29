@@ -60,11 +60,11 @@ async function buildRenderer() {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log Analyzer</title>
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./main.css?v=${encodeURIComponent(buildVersion)}" />
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js?v=${encodeURIComponent(buildVersion)}"></script>
   </body>
 </html>
 `;
