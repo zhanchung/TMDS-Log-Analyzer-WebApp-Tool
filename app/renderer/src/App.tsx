@@ -3225,6 +3225,10 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }, [activeSearch, activeSearchPattern, lineDetails, searchActive, timeScopedLines]);
 
   const visible = referenceSession ? referenceVisible : runtimeVisible;
+  const codeServerIssues = useMemo(
+    () => referenceSession ? [] : buildCodeServerIssues(timeScopedLines),
+    [referenceSession, timeScopedLines],
+  );
   const virtualLogWindow = useMemo(() => {
     if (referenceSession) {
       return {
@@ -4268,12 +4272,111 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     return formatLineTimestampForModes(line, logTimeSourceMode, logTimeDisplayMode);
   }
 
-  function getViewerLineText(line: ParsedLine): string {
-    const stripped = stripLeadingViewerTimestamp(line.raw);
-    return stripped.length ? stripped : line.raw;
-  }
+function getViewerLineText(line: ParsedLine): string {
+  const stripped = stripLeadingViewerTimestamp(line.raw);
+  return stripped.length ? stripped : line.raw;
+}
 
-  async function onDrop(event: DragEvent<HTMLDivElement>) {
+type CodeServerDirection = "office" | "field" | "neutral";
+
+type CodeServerIssue = {
+  key: string;
+  lineId: string;
+  lineNumber: number;
+  station: string;
+  kind: string;
+  summary: string;
+};
+
+function normalizeCodeServerStation(raw: string): string {
+  return (
+    /FOR CODESTATION:\s*([A-Z0-9 _-]+)/i.exec(raw)?.[1] ??
+    /(?:QueueTheCommand|SendCommand):\s*([A-Z0-9 _-]+?)\s*:/i.exec(raw)?.[1] ??
+    /RECALL SENT:\s*([A-Z0-9 _-]+?)\s*:/i.exec(raw)?.[1] ??
+    /\(([^)]+)\)/.exec(raw)?.[1] ??
+    /(?:XMT|RCV):\s*([^:]+):/i.exec(raw)?.[1] ??
+    ""
+  ).trim().toUpperCase().replace(/\s+/g, " ");
+}
+
+function firstGenisysByte(raw: string): string {
+  const bracketed = /<\s*([A-F0-9]{2})\b/i.exec(raw)?.[1];
+  if (bracketed) return bracketed.toUpperCase();
+  const afterData = /\b(?:DATA|XMT|RCV):\s*(?:[A-Z0-9_]+,\s*)?([A-F0-9]{2})\b/i.exec(raw)?.[1];
+  if (afterData) return afterData.toUpperCase();
+  const standalone = /\b(F[0-9A-F])\b/i.exec(raw)?.[1];
+  return standalone ? standalone.toUpperCase() : "";
+}
+
+function getCodeServerDirection(line: ParsedLine): CodeServerDirection {
+  const raw = line.raw;
+  const firstByte = firstGenisysByte(raw);
+  if (/>>|QueueTheCommand|SendCommand|CONTROL SENT|CONTROL UPDATE|RECALL SENT/i.test(raw) || /^(FA|FB|FC|FD|FE)$/.test(firstByte)) {
+    return "office";
+  }
+  if (/<<|INDICATION;|PROCESS IND|IND MNEM|CONTROL DELIVERED/i.test(raw) || /^(F1|F2|F3)$/.test(firstByte)) {
+    return "field";
+  }
+  return "neutral";
+}
+
+function getCodeServerLineClass(line: ParsedLine): string {
+  const direction = getCodeServerDirection(line);
+  if (direction === "office") return "log-line-office";
+  if (direction === "field") return "log-line-field";
+  return "";
+}
+
+function getOfficeRequest(line: ParsedLine): { station: string; kind: string; summary: string } | null {
+  const raw = line.raw;
+  const firstByte = firstGenisysByte(raw);
+  const station = normalizeCodeServerStation(raw) || "UNKNOWN";
+  if (firstByte === "FB") return { station, kind: "poll", summary: "Office poll did not show a later field response in this loaded window." };
+  if (firstByte === "FC" || /CONTROL SENT|SendCommand:.*CONTROL|QueueTheCommand:.*CONTROL|CONTROL(?:\s+UPDATE\s+ONLY)?:/i.test(raw)) {
+    return { station, kind: "control", summary: "Office control/request did not show a later field response in this loaded window." };
+  }
+  if (firstByte === "FD" || /RECALL SENT|QueueTheCommand:.*RECALL/i.test(raw)) {
+    return { station, kind: "recall", summary: "Office recall/request did not show a later field response in this loaded window." };
+  }
+  return null;
+}
+
+function isFieldResponseFor(line: ParsedLine, request: { station: string; kind: string }): boolean {
+  if (getCodeServerDirection(line) !== "field") return false;
+  const station = normalizeCodeServerStation(line.raw);
+  if (request.station !== "UNKNOWN" && station && station !== request.station) return false;
+  const raw = line.raw;
+  const firstByte = firstGenisysByte(raw);
+  if (request.kind === "poll") return /^(F1|F2)$/.test(firstByte) || /INDICATION;/i.test(raw);
+  if (request.kind === "control") return firstByte === "F3" || /CONTROL DELIVERED|CONTROL UPDATED|PROCESS IND|INDICATION;/i.test(raw);
+  if (request.kind === "recall") return firstByte === "F2" || /INDICATION;/i.test(raw);
+  return false;
+}
+
+function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
+  const pending: Array<CodeServerIssue & { station: string; kind: string }> = [];
+  for (const line of lines) {
+    for (let index = pending.length - 1; index >= 0; index -= 1) {
+      if (isFieldResponseFor(line, pending[index])) {
+        pending.splice(index, 1);
+      }
+    }
+    const request = getOfficeRequest(line);
+    if (request) {
+      pending.push({
+        key: `${line.id}:${request.kind}`,
+        lineId: line.id,
+        lineNumber: line.lineNumber,
+        station: request.station,
+        kind: request.kind,
+        summary: request.summary,
+      });
+    }
+  }
+  return pending.slice(0, 24);
+}
+
+async function onDrop(event: DragEvent<HTMLDivElement>) {
     event.preventDefault();
     dragDepthRef.current = 0;
     setDragging(false);
@@ -5122,6 +5225,32 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
               role="list"
               onScroll={(event) => setLogListScrollTop(event.currentTarget.scrollTop)}
             >
+              {!referenceSession && codeServerIssues.length ? (
+                <div className="code-server-issue-panel" role="note">
+                  <div className="code-server-issue-head">
+                    <span>Office requests without later field response</span>
+                    <span>{codeServerIssues.length} open</span>
+                  </div>
+                  <div className="code-server-issue-list">
+                    {codeServerIssues.slice(0, 8).map((issue) => (
+                      <button
+                        key={issue.key}
+                        type="button"
+                        className="code-server-issue"
+                        onClick={() => {
+                          const target = lines.find((candidate) => candidate.id === issue.lineId);
+                          if (target) selectLine(target);
+                        }}
+                      >
+                        <span className="code-server-issue-line">Line {issue.lineNumber}</span>
+                        <span className="code-server-issue-kind">{issue.kind}</span>
+                        <span className="code-server-issue-station">{issue.station}</span>
+                        <span className="code-server-issue-summary">{issue.summary}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
               {visible.length ? (
                 <>
                   {virtualLogWindow.topPadding ? <div style={{ height: `${virtualLogWindow.topPadding}px` }} aria-hidden="true" /> : null}
@@ -5130,7 +5259,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                         key={line.id}
                         role="button"
                         tabIndex={0}
-                        className={`log-line ${selected?.id === line.id ? "selected" : ""}`}
+                        className={`log-line ${getCodeServerLineClass(line)} ${selected?.id === line.id ? "selected" : ""}`}
                         onClick={() => selectLine(line)}
                         onKeyDown={(event) => {
                           if (event.key === "Enter" || event.key === " ") {

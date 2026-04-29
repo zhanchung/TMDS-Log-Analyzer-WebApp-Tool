@@ -253,6 +253,7 @@ function assertedPositions(bits: string): number[] {
 function extractStationFromRaw(raw: string): string {
   return (
     /\(([A-Z0-9 _-]+(?:TC)?)\)/i.exec(raw)?.[1] ??
+    /FOR CODESTATION:\s*([A-Z0-9 _-]+)/i.exec(raw)?.[1] ??
     /(?:SendCommand|QueueTheCommand):([A-Z0-9 _-]+?):/i.exec(raw)?.[1] ??
     /ProcessSendQueue-?([A-Z0-9 _-]+?)(?:CONTROL|RECALL|$)/i.exec(raw)?.[1] ??
     /(?:CONTROL UPDATED|PROCESS IND):\s*([0-9A-Z]+)(?:\(([^)]+)\))?/i.exec(raw)?.[2] ??
@@ -298,8 +299,11 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
   const controlPayload = /\b(SendControl|ProcessControlBegin)(\d*)?:\s*([01]+)/i.exec(raw);
   const controlUpdated = /\bCONTROL UPDATED:\s*([0-9A-Z]+)(?:\(([^)]+)\))?\s+\[([01]+)\]/i.exec(raw);
   const processInd = /\bPROCESS IND:\s*([0-9A-Z]+)\s*\(([^)]+)\)\s*\(([01]+)\)/i.exec(raw);
-  const payloadBits = controlPayload?.[3] ?? controlUpdated?.[3] ?? processInd?.[3] ?? "";
-  const assignmentKind = isIndicationMnemonic || processInd ? "indication" : "control";
+  const directIndication = /\bINDICATION;(\d+):(\d+):(\d+):([01]+)\s+FOR CODESTATION:\s*([A-Z0-9 _-]+)/i.exec(raw);
+  const codeServerControl = /\bCONTROL(?:\s+UPDATE\s+ONLY)?:([0-9.]+):(\d+):(\d+):(\d+):([01]+)/i.exec(raw);
+  const controlSent = /\b<<CONTROL SENT:\s*(\d+)\s+\(([^)]+)\)\s*-\s*\(([01]+)\)/i.exec(raw);
+  const payloadBits = controlPayload?.[3] ?? controlUpdated?.[3] ?? processInd?.[3] ?? directIndication?.[4] ?? codeServerControl?.[5] ?? controlSent?.[3] ?? "";
+  const assignmentKind = isIndicationMnemonic || processInd || directIndication ? "indication" : "control";
   const assignments = assignmentKind === "indication" ? row?.indication_assignments : row?.control_assignments;
   const byPosition = positionMap(assignments);
   const activePositions = payloadBits ? assertedPositions(payloadBits) : [];
@@ -347,7 +351,7 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
     },
     workflow: {
       summary,
-      currentStep: controlPayload?.[1] ?? (controlUpdated ? "CONTROL UPDATED" : processInd ? "PROCESS IND" : isControlMnemonic ? "CTL MNEM" : isIndicationMnemonic ? "IND MNEM" : ""),
+      currentStep: controlPayload?.[1] ?? (controlUpdated ? "CONTROL UPDATED" : processInd ? "PROCESS IND" : directIndication ? "INDICATION" : codeServerControl ? "CONTROL" : controlSent ? "CONTROL SENT" : isControlMnemonic ? "CTL MNEM" : isIndicationMnemonic ? "IND MNEM" : ""),
       systems: ["Code line"],
       objects: station ? [station] : [],
       knownState: activePositions.length ? "One or more payload bits asserted" : payloadBits ? "All logged payload bits clear" : "",
@@ -562,7 +566,7 @@ function makeStaticBrowserDetail(line: ParsedLine, lines: ParsedLine[], index: n
     makeBocSystemStatsDetail(line) ??
     makeIcdJsonDetail(line) ??
     makeBocBosProcessingDetail(line) ??
-    (/\b(IND MNEM|CTL MNEM|SendControl|ProcessControlBegin|CONTROL UPDATED|PROCESS IND)\b/i.test(line.raw)
+    (/\b(IND MNEM|CTL MNEM|SendControl|ProcessControlBegin|CONTROL UPDATED|PROCESS IND|INDICATION;|CONTROL SENT|CONTROL(?:\s+UPDATE\s+ONLY)?:)\b/i.test(line.raw)
       ? makeStaticDetail(line, lines, index)
       : null)
   );
