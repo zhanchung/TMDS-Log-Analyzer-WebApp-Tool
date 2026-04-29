@@ -35,6 +35,18 @@ function buildMatchExpression(config: SearchConfig): RegExp | null {
   return new RegExp(source, flags);
 }
 
+function getSearchPatternError(config: SearchConfig): string {
+  if (!config.query || !config.regex) {
+    return "";
+  }
+  try {
+    new RegExp(config.query, config.caseSensitive ? "g" : "gi");
+    return "";
+  } catch (error) {
+    return error instanceof Error ? error.message : "Invalid regular expression.";
+  }
+}
+
 function textMatchesPattern(text: string | undefined, pattern: RegExp | null): boolean {
   if (!pattern) return true;
   pattern.lastIndex = 0;
@@ -2780,6 +2792,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   const [finderShowResults, setFinderShowResults] = useState(false);
   const [finderDraftQuery, setFinderDraftQuery] = useState("");
   const [finderResults, setFinderResults] = useState<ParsedLine[]>([]);
+  const [finderError, setFinderError] = useState("");
   const [finderSearchRunning, setFinderSearchRunning] = useState(false);
   const [finderResultsScrollTop, setFinderResultsScrollTop] = useState(0);
   const [finderResultsViewportHeight, setFinderResultsViewportHeight] = useState(240);
@@ -2884,6 +2897,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     setFinderShowResults(false);
     setFinderResults([]);
+    setFinderError("");
     setFinderSearchRunning(false);
   }, [search.query]);
 
@@ -2894,6 +2908,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     finderSearchRunIdRef.current += 1;
     setFinderShowResults(false);
     setFinderResults([]);
+    setFinderError("");
     setFinderSearchRunning(false);
   }, [finderDraftQuery, search.query]);
 
@@ -3999,6 +4014,12 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }
 
   function getFinderMatchPattern(config: SearchConfig) {
+    const error = getSearchPatternError(config);
+    if (error) {
+      setFinderError(error);
+      return null;
+    }
+    setFinderError("");
     return buildMatchExpression(config);
   }
 
@@ -4041,6 +4062,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     setFinderResults([]);
     setFinderResultsScrollTop(0);
     setFinderShowResults(false);
+    setFinderError("");
     setSearch((state) => {
       const nextState = { ...state, query: nextQuery };
       return state.query === nextQuery ? state : nextState;
@@ -4054,6 +4076,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       if (text.length >= 2) {
         setFinderDraftQuery(text);
         setFinderResults([]);
+        setFinderError("");
         setFinderResultsScrollTop(0);
       }
     } else {
@@ -4067,6 +4090,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     setFinderOpen(false);
     setFinderShowResults(false);
     setFinderResults([]);
+    setFinderError("");
     setFinderResultsScrollTop(0);
   }
 
@@ -4211,6 +4235,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     cancelFinderSearchRun();
     setFinderDraftQuery("");
     setFinderResults([]);
+    setFinderError("");
     setFinderResultsScrollTop(0);
     setFinderShowResults(false);
     setSearch(defaultSearch);
@@ -4637,6 +4662,11 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
                 {filterOnlyLabel}
               </label>
             </div>
+            {finderError ? (
+              <div className="finder-error" role="alert">
+                Invalid regex: {finderError}
+              </div>
+            ) : null}
             {finderShowResults ? (
               <div className="finder-results-panel">
                 <div className="finder-results-head">

@@ -932,6 +932,16 @@ p {
   padding-top: 2px;
 }
 
+.finder-error {
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 183, 77, 0.34);
+  border-radius: 10px;
+  background: rgba(255, 183, 77, 0.08);
+  color: #ffd08a;
+  font-family: Consolas, "Cascadia Mono", monospace;
+  font-size: 0.88rem;
+}
+
 .finder-results-panel {
   display: grid;
   gap: 6px;
@@ -996,7 +1006,7 @@ p {
   color: var(--log-text);
   font-family: Consolas, "Cascadia Mono", monospace;
   line-height: 1.35;
-  white-space: nowrap;
+  white-space: pre;
 }
 
 .finder-result-secondary,
@@ -1008,7 +1018,7 @@ p {
 
 .finder-result-secondary {
   color: var(--muted);
-  white-space: nowrap;
+  white-space: pre;
 }
 
 .time-inline-actions {
@@ -1346,8 +1356,8 @@ p {
 
 .workspace {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) minmax(220px, 0.42fr);
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 0.58fr);
+  grid-template-rows: minmax(0, 1fr);
   gap: 16px;
   min-height: 0;
   overflow: hidden;
@@ -1620,7 +1630,7 @@ p {
   display: block;
   overflow: visible;
   text-overflow: clip;
-  white-space: nowrap;
+  white-space: pre;
   user-select: text;
   color: var(--log-text);
   font-family: Consolas, "Cascadia Mono", monospace;
