@@ -3248,6 +3248,15 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     return { names: Array.from(names), hasMore };
   }, [lines, referenceSession]);
+  const lineLookup = useMemo(() => {
+    const byId = new Map<string, ParsedLine>();
+    const indexById = new Map<string, number>();
+    for (let index = 0; index < lines.length; index += 1) {
+      byId.set(lines[index].id, lines[index]);
+      indexById.set(lines[index].id, index);
+    }
+    return { byId, indexById };
+  }, [lines]);
   const virtualLogWindow = useMemo(() => {
     if (referenceSession) {
       return {
@@ -3462,7 +3471,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const nextSelection = describeSessionSelection({ ...session, lineDetails: nextLineDetails });
     const referenceSession = isReferenceLibrarySession(session.lines);
     const nextInitialDetail = !referenceSession && localOnlyMode && nextSelection.selected && !nextLineDetails[nextSelection.selected.id]
-      ? buildStaticDetailForLine(session.lines, nextSelection.selected) ?? nextSelection.detail
+      ? buildStaticDetailForLine(session.lines, nextSelection.selected, nextSelection.selected ? 0 : undefined) ?? nextSelection.detail
       : nextSelection.detail;
     if (nextInitialDetail && nextSelection.selected && !nextLineDetails[nextSelection.selected.id]) {
       nextLineDetails[nextSelection.selected.id] = nextInitialDetail;
@@ -3939,7 +3948,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
 
   function selectLine(line: ParsedLine) {
     selectedLineIdRef.current = line.id;
-    const staticDetail = localOnlyMode && !lineDetails[line.id] ? buildStaticDetailForLine(lines, line) : null;
+    const staticDetail = localOnlyMode && !lineDetails[line.id] ? buildStaticDetailForLine(lines, line, lineLookup.indexById.get(line.id)) : null;
     setSelected(line);
     setDetail(lineDetails[line.id] ?? staticDetail ?? makeFallbackDetail(line));
     if (staticDetail) {
@@ -3957,7 +3966,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }
 
   function jumpToLineId(lineId: string) {
-    const target = lines.find((candidate) => candidate.id === lineId);
+    const target = lineLookup.byId.get(lineId);
     if (!target) {
       return;
     }
@@ -3965,7 +3974,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       setActiveSource("all");
     }
     selectLine(target);
-    const targetIndex = lines.findIndex((candidate) => candidate.id === target.id);
+    const targetIndex = visible.findIndex((candidate) => candidate.id === target.id);
     if (targetIndex >= 0) {
       const targetTop = Math.max(0, (targetIndex * logRowHeight) - 120);
       requestAnimationFrame(() => {
@@ -4370,10 +4379,10 @@ function firstGenisysByte(raw: string): string {
 function getCodeServerDirection(line: ParsedLine): CodeServerDirection {
   const raw = line.raw;
   const firstByte = firstGenisysByte(raw);
-  if (/>>|QueueTheCommand|SendCommand|CONTROL SENT|CONTROL UPDATE|RECALL SENT/i.test(raw) || /^(FA|FB|FC|FD|FE)$/.test(firstByte)) {
+  if (/QueueTheCommand|SendCommand|CONTROL SENT|CONTROL UPDATE|RECALL SENT|\bXMT:/i.test(raw) || /^(FA|FB|FC|FD|FE)$/.test(firstByte)) {
     return "office";
   }
-  if (/<<|INDICATION;|PROCESS IND|IND MNEM|CONTROL DELIVERED/i.test(raw) || /^(F1|F2|F3)$/.test(firstByte)) {
+  if (/INDICATION;|PROCESS IND|IND MNEM|CONTROL DELIVERED|\bRCV:/i.test(raw) || /^(F1|F2|F3)$/.test(firstByte)) {
     return "field";
   }
   return "neutral";
@@ -4389,7 +4398,8 @@ function getCodeServerLineClass(line: ParsedLine): string {
 function getOfficeRequest(line: ParsedLine): { station: string; kind: string; summary: string } | null {
   const raw = line.raw;
   const firstByte = firstGenisysByte(raw);
-  const station = normalizeCodeServerStation(raw) || "station not listed";
+  const station = normalizeCodeServerStation(raw);
+  if (!station) return null;
   if (firstByte === "FB") return { station, kind: "poll", summary: "Office poll awaiting field indication/response." };
   if (firstByte === "FC" || /CONTROL SENT|SendCommand:.*CONTROL|QueueTheCommand:.*CONTROL|CONTROL(?:\s+UPDATE\s+ONLY)?:/i.test(raw)) {
     return { station, kind: "control", summary: "Office control awaiting field delivery/indication." };
@@ -4403,7 +4413,7 @@ function getOfficeRequest(line: ParsedLine): { station: string; kind: string; su
 function isFieldResponseFor(line: ParsedLine, request: { station: string; kind: string }): boolean {
   if (getCodeServerDirection(line) !== "field") return false;
   const station = normalizeCodeServerStation(line.raw);
-  if (request.station !== "station not listed" && station && station !== request.station) return false;
+  if (!station || station !== request.station) return false;
   const raw = line.raw;
   const firstByte = firstGenisysByte(raw);
   if (request.kind === "poll") return /^(F1|F2)$/.test(firstByte) || /INDICATION;/i.test(raw);
@@ -4413,13 +4423,14 @@ function isFieldResponseFor(line: ParsedLine, request: { station: string; kind: 
 }
 
 function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
-  const scanLines = lines.length > 75000 ? lines.slice(-75000) : lines;
-  const pendingOffice: Array<CodeServerIssue & { station: string; kind: string }> = [];
-  const pendingField: Array<{ line: ParsedLine; station: string; kind: string }> = [];
+  const pendingOfficeByStation = new Map<string, Array<CodeServerIssue & { station: string; kind: string }>>();
+  const pendingFieldByStation = new Map<string, Array<{ line: ParsedLine; station: string; kind: string }>>();
   const resolved: CodeServerIssue[] = [];
   const fieldResponses = new Set<string>();
-  for (const line of scanLines) {
+  for (const line of lines) {
     const direction = getCodeServerDirection(line);
+    const station = normalizeCodeServerStation(line.raw);
+    const pendingOffice = station ? pendingOfficeByStation.get(station) ?? [] : [];
     for (let index = pendingOffice.length - 1; index >= 0; index -= 1) {
       const request = pendingOffice[index];
       if (isFieldResponseFor(line, request)) {
@@ -4435,17 +4446,18 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
       }
     }
     if (direction === "office" && firstGenisysByte(line.raw) === "FA") {
-      const station = normalizeCodeServerStation(line.raw);
+      const pendingField = station ? pendingFieldByStation.get(station) ?? [] : [];
       for (let index = pendingField.length - 1; index >= 0; index -= 1) {
-        if (!station || !pendingField[index].station || station === pendingField[index].station) {
+        if (station === pendingField[index].station) {
           pendingField.splice(index, 1);
         }
       }
     }
     const request = getOfficeRequest(line);
     if (request) {
+      const pendingForStation = pendingOfficeByStation.get(request.station) ?? [];
       const priorRecallCount = pendingOffice.filter((candidate) => candidate.station === request.station).length;
-      pendingOffice.push({
+      pendingForStation.push({
         key: `${line.id}:${request.kind}`,
         lineId: line.id,
         lineNumber: line.lineNumber,
@@ -4456,15 +4468,21 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
         recallCount: priorRecallCount + 1,
         summary: request.summary,
       });
+      pendingOfficeByStation.set(request.station, pendingForStation);
     } else if (direction === "field" && !fieldResponses.has(line.id)) {
-      const station = normalizeCodeServerStation(line.raw) || "station not listed";
-      pendingField.push({
-        line,
-        station,
-        kind: firstGenisysByte(line.raw) || (/INDICATION;/i.test(line.raw) ? "indication" : "field"),
-      });
+      if (station && /^(F1|F2|F3)$/.test(firstGenisysByte(line.raw))) {
+        const pendingForStation = pendingFieldByStation.get(station) ?? [];
+        pendingForStation.push({
+          line,
+          station,
+          kind: firstGenisysByte(line.raw),
+        });
+        pendingFieldByStation.set(station, pendingForStation);
+      }
     }
   }
+  const pendingOffice = Array.from(pendingOfficeByStation.values()).flat();
+  const pendingField = Array.from(pendingFieldByStation.values()).flat();
   const missingOffice = pendingOffice.map((request) => ({
     ...request,
     summary: `${request.kind} from office has no later field response in the scanned log window.`,

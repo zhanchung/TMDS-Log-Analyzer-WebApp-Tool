@@ -581,8 +581,8 @@ function makeStaticBrowserDetail(line: ParsedLine, lines: ParsedLine[], index: n
   );
 }
 
-export function buildStaticDetailForLine(lines: ParsedLine[], line: ParsedLine): DetailModel | null {
-  const index = lines.findIndex((candidate) => candidate.id === line.id);
+export function buildStaticDetailForLine(lines: ParsedLine[], line: ParsedLine, lineIndex?: number): DetailModel | null {
+  const index = lineIndex ?? lines.findIndex((candidate) => candidate.id === line.id);
   return makeStaticBrowserDetail(line, lines, index >= 0 ? index : 0);
 }
 
