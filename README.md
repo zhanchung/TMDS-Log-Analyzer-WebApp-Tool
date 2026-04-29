@@ -121,8 +121,34 @@ One-time setup:
 After that, every `git push` to `main` redeploys, and any user with the page open will see the **Update available** banner appear automatically. The banner has **Update now** (reload to fresh build) and **Later** (dismiss until a newer version arrives) so nobody loses work mid-task.
 
 Two notes:
-- The static URL serves only the renderer. It auto-detects no server and parses files in the browser; server-only features (reference library, sample review logs, and fully grounded detail panels) are gated until the offline parser port is finished.
+- The static URL serves only the renderer. User-uploaded logs are parsed in the browser (Notepad++-style line view + finder); reference library and review sample logs come from `data/*.json` pre-baked off the home-server build flow (see next section).
 - Both `*.github.io` and `*.pages.dev` (Cloudflare Pages, same workflow concept) are usually allowed by corporate URL filters that block Tailscale Funnel hostnames, so this is the path through restricted networks at work.
+
+## Pre-Baking Reference Library + Review Sample for Static Deployment
+
+The home server builds the reference library and curated review-sample session by reading the local `exports/` folder. To get the same content into the static GitHub Pages build, dump those sessions to JSON files that ship alongside the renderer.
+
+One-time per data refresh, on a machine that has the full `exports/` folder:
+
+```powershell
+npm run dump:static-data
+```
+
+This builds `dist/main/main.js`, runs Electron with `--dump-static-data data`, and writes:
+
+- `data/reference-session.json` — the same SessionData the home server returns from `/api/reference`
+- `data/review-sample-session.json` — the same SessionData the home server returns from `/api/review-sample`
+- `data/static-data-manifest.json` — a generated-at timestamp + line counts for both files
+
+Commit `data/` to the repo:
+
+```powershell
+git add data
+git commit -m "Refresh static reference and review-sample sessions"
+git push
+```
+
+The GitHub Actions workflow runs `npm run build:renderer`, which automatically copies `data/*.json` into `dist/renderer/data/`. The static deployment then serves them at `./data/reference-session.json` etc., and the renderer fetches them in Local mode whenever a user opens the reference library or reloads the review logs. If `data/` is empty or missing, Local mode falls back to a partial in-browser stub and shows a notice in the workspace status bar.
 
 ## Test
 

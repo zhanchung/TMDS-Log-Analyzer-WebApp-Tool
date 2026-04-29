@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-04-29T17:02:16.415Z",
+  "referenceSession": {
+    "file": "reference-session.json",
+    "lineCount": 118
+  },
+  "reviewSampleSession": {
+    "file": "review-sample-session.json",
+    "lineCount": 1224
+  }
+}

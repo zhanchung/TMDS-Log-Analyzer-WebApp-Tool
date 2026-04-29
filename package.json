@@ -11,6 +11,7 @@
     "build": "node scripts/build.mjs",
     "build:renderer": "node scripts/build.mjs renderer",
     "build:main": "node scripts/build.mjs main",
+    "dump:static-data": "npm run build:main && electron . --dump-static-data data",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "preview": "vite preview",
     "inventory": "powershell -ExecutionPolicy Bypass -File scripts/inspect/Discover-MusicSources.ps1"

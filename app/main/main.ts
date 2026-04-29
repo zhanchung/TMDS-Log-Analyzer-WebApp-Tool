@@ -12871,12 +12871,44 @@ process.on("unhandledRejection", (reason) => {
 const auditFlagIndex = process.argv.findIndex((value) => value === "--audit-corpus");
 const isCorpusAuditMode = auditFlagIndex >= 0;
 
-if (!hasSingleInstanceLock && !isCorpusAuditMode) {
+const dumpFlagIndex = process.argv.findIndex((value) => value === "--dump-static-data");
+const isDumpStaticDataMode = dumpFlagIndex >= 0;
+
+async function runDumpStaticDataCli(outputDir: string): Promise<void> {
+  const targetDir = resolve(outputDir);
+  await mkdir(targetDir, { recursive: true });
+  console.log(`[dump-static-data] writing static session JSON to ${targetDir}`);
+
+  console.log("[dump-static-data] building reference library session...");
+  const referenceSession = await buildReferenceLibrarySession();
+  const referencePath = resolve(targetDir, "reference-session.json");
+  await writeFile(referencePath, JSON.stringify(referenceSession), "utf-8");
+  console.log(`[dump-static-data] wrote ${referencePath} (${referenceSession.lines.length} lines)`);
+
+  console.log("[dump-static-data] building curated review-sample session...");
+  const sampleSession = await buildCuratedSampleSession();
+  const samplePath = resolve(targetDir, "review-sample-session.json");
+  await writeFile(samplePath, JSON.stringify(sampleSession), "utf-8");
+  console.log(`[dump-static-data] wrote ${samplePath} (${sampleSession.lines.length} lines)`);
+
+  await writeFile(
+    resolve(targetDir, "static-data-manifest.json"),
+    JSON.stringify({
+      generatedAt: new Date().toISOString(),
+      referenceSession: { file: "reference-session.json", lineCount: referenceSession.lines.length },
+      reviewSampleSession: { file: "review-sample-session.json", lineCount: sampleSession.lines.length },
+    }, null, 2),
+    "utf-8",
+  );
+  console.log("[dump-static-data] done");
+}
+
+if (!hasSingleInstanceLock && !isCorpusAuditMode && !isDumpStaticDataMode) {
   app.quit();
 }
 
 app.on("second-instance", () => {
-  if (isCorpusAuditMode) {
+  if (isCorpusAuditMode || isDumpStaticDataMode) {
     return;
   }
   const requestedPort = Number(process.env.TMDS_WEB_PORT ?? "4173");
@@ -12892,6 +12924,20 @@ app.whenReady().then(() => {
     runCorpusAuditCli(auditPaths)
       .catch((error) => {
         console.error(`[audit-corpus] failed ${error instanceof Error ? error.stack ?? error.message : String(error)}`);
+        process.exitCode = 1;
+      })
+      .finally(() => {
+        app.quit();
+      });
+    return;
+  }
+
+  if (isDumpStaticDataMode) {
+    const dumpArgs = process.argv.slice(dumpFlagIndex + 1).filter((value) => !value.startsWith("--"));
+    const outDir = dumpArgs[0] ?? "data";
+    runDumpStaticDataCli(outDir)
+      .catch((error) => {
+        console.error(`[dump-static-data] failed ${error instanceof Error ? error.stack ?? error.message : String(error)}`);
         process.exitCode = 1;
       })
       .finally(() => {

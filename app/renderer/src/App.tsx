@@ -3560,13 +3560,25 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   async function loadFoundationSession() {
     if (localOnlyMode) {
       setWorkspaceError("");
-      setWorkspaceBusy("Loading static reference library...");
+      setWorkspaceBusy("Loading reference library...");
       setWorkspaceProgress(null);
       try {
-        const session = buildStaticReferenceSession();
+        let session: SessionData | null = null;
+        try {
+          const response = await fetch("./data/reference-session.json", { cache: "no-store" });
+          if (response.ok) {
+            session = (await response.json()) as SessionData;
+          }
+        } catch {
+          // network/parse failure — fall through to in-browser stub builder
+        }
+        if (!session) {
+          session = buildStaticReferenceSession();
+          setWorkspaceError("Loaded a partial in-browser reference library because no pre-baked data/reference-session.json was shipped with this build.");
+        }
         await applySessionWithProgress(session, "reference", { preserveEmptyReferenceSelection: true });
       } catch (error) {
-        setWorkspaceError(error instanceof Error ? error.message : "Static reference library load failed.");
+        setWorkspaceError(error instanceof Error ? error.message : "Reference library load failed.");
       } finally {
         setWorkspaceBusy("");
         setWorkspaceProgress(null);
@@ -3597,16 +3609,29 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   async function loadReviewSampleSession() {
     if (localOnlyMode) {
       setWorkspaceError("");
-      setWorkspaceBusy("Loading static review logs...");
+      setWorkspaceBusy("Loading review logs...");
       setWorkspaceProgress(null);
       try {
-        const session = buildStaticReviewSampleSession();
-        await applySessionWithProgress(session, "logs");
-        if (!session.lines.length) {
-          setWorkspaceError("No readable static review logs were bundled.");
+        let session: SessionData | null = null;
+        try {
+          const response = await fetch("./data/review-sample-session.json", { cache: "no-store" });
+          if (response.ok) {
+            session = (await response.json()) as SessionData;
+          }
+        } catch {
+          // network/parse failure — fall through to in-browser stub builder
         }
+        if (!session) {
+          session = buildStaticReviewSampleSession();
+          if (!session.lines.length) {
+            setWorkspaceError("No readable static review logs were bundled.");
+          } else {
+            setWorkspaceError("Loaded a partial in-browser review sample because no pre-baked data/review-sample-session.json was shipped with this build.");
+          }
+        }
+        await applySessionWithProgress(session, "logs");
       } catch (error) {
-        setWorkspaceError(error instanceof Error ? error.message : "Static review sample load failed.");
+        setWorkspaceError(error instanceof Error ? error.message : "Review sample load failed.");
       } finally {
         setWorkspaceBusy("");
         setWorkspaceProgress(null);
@@ -4564,7 +4589,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
 
         {localOnlyMode && showLocalModeBanner ? (
           <div className="local-mode-banner" role="note">
-            <strong>Local mode</strong> — TMDS server not reachable, so files are parsed in your browser. Line list, finder search, and ZIP/GZ archives all work; reference library, sample review logs, and per-line detail panels need the server.
+            <strong>Static GitHub mode</strong> Files are parsed in your browser. Line list, finder, ZIP/GZ archives, bundled reference/review data, and ported per-line details work without the home server. Some advanced server-only enrichment may still fall back to static detail.
             {serverReachable && onReconnect ? (
               <>
                 {" "}

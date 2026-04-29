@@ -1,5 +1,5 @@
-import { rm, mkdir, writeFile } from "node:fs/promises";
-import { resolve, dirname } from "node:path";
+import { rm, mkdir, writeFile, readdir, copyFile, stat } from "node:fs/promises";
+import { resolve, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { build } from "esbuild";
 
@@ -7,6 +7,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const distDir = resolve(root, "dist");
 const rendererOut = resolve(distDir, "renderer");
 const mainOut = resolve(distDir, "main");
+const staticDataSource = resolve(root, "data");
 
 function buildVersionStamp() {
   const now = new Date();
@@ -73,6 +74,35 @@ async function buildRenderer() {
     JSON.stringify({ version: buildVersion, buildAt }) + "\n",
     "utf8",
   );
+
+  // Copy any pre-baked static data (data/*.json) into dist/renderer/data/
+  // so the GitHub Pages static deployment can serve the same reference
+  // library and curated review-sample data the home server produces.
+  try {
+    const statResult = await stat(staticDataSource);
+    if (statResult.isDirectory()) {
+      const targetDir = resolve(rendererOut, "data");
+      await ensureDir(targetDir);
+      const entries = await readdir(staticDataSource, { withFileTypes: true });
+      let copied = 0;
+      for (const entry of entries) {
+        if (!entry.isFile()) continue;
+        if (!entry.name.toLowerCase().endsWith(".json")) continue;
+        await copyFile(join(staticDataSource, entry.name), join(targetDir, entry.name));
+        copied += 1;
+      }
+      if (copied) {
+        console.log(`[build] copied ${copied} static data file${copied === 1 ? "" : "s"} into dist/renderer/data/`);
+      }
+    }
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") {
+      // No pre-baked data yet. Renderer will fall back to its in-browser builders in local mode.
+    } else {
+      throw error;
+    }
+  }
+
   return result;
 }
 
