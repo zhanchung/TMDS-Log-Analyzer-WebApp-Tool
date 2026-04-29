@@ -7,6 +7,7 @@ import genisysSampleLog from "../../sample_logs/curated/genisys_sample.log?raw";
 import socketTraceSampleLog from "../../sample_logs/curated/sockettrace_sample.log?raw";
 import workflowSampleLog from "../../sample_logs/curated/workflow_sample.log?raw";
 import type { DetailModel, ParsedLine, SessionData, WorkspaceProgress } from "./types";
+import { decodeGenisysSocketFrame, extractBracketedHexBytes, formatHexByte } from "./genisys";
 import { isGzipFile, isTextFile, isZipFile, parseLinesWithoutTokens as parseLines } from "./parser/primitives";
 
 export { extractLogTimestamp, isGzipFile, isTextFile, isZipFile } from "./parser/primitives";
@@ -431,6 +432,80 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
   };
 }
 
+function makeSocketRawFrameDetail(line: ParsedLine): DetailModel | null {
+  const match = /(?:^|\s)([<>-]{3})\s+(XMT|RCV):([^:]+):(.+)$/i.exec(line.raw);
+  if (!match) return null;
+  const directionGlyph = match[1];
+  const socketAction = match[2].toUpperCase();
+  const stationToken = match[3].trim();
+  const payloadBytes = extractBracketedHexBytes(match[4]);
+  if (!payloadBytes.length) return null;
+  const decoded = decodeGenisysSocketFrame(payloadBytes);
+  const row = findAssignmentRow(stationToken);
+  const stationRow = findStationRow(stationToken);
+  const stationName = stationRow?.station_name ?? row?.station_name ?? stationToken;
+  const controlPoint = stationRow?.control_point_number || row?.control_point_number
+    ? `${stationRow?.control_point_number ?? row?.control_point_number} (${stationRow?.control_point_name ?? row?.control_point_name ?? stationName})`
+    : "";
+  const payloadPairs = decoded.payloadPairs.length
+    ? decoded.payloadPairs.map(({ address, data }, pairIndex) => `${pairIndex + 1}. 0x${formatHexByte(address)} = 0x${formatHexByte(data)} (${data})`)
+    : ["none"];
+  const summary = `${socketAction === "XMT" ? "Office transmitted" : "Field returned"} ${decoded.headerLabel} for ${stationName}.`;
+  const structured = [
+    line.source ? `File: ${getFileLabel(line.source)}` : "",
+    line.timestamp ? `Timestamp: ${line.timestamp}` : "",
+    `Direction marker: ${directionGlyph} ${socketAction}`,
+    `Station: ${stationName}`,
+    controlPoint ? `Control point: ${controlPoint}` : "",
+    stationRow?.subdivision_name ? `Subdivision: ${stationRow.subdivision_name}` : "",
+    stationRow?.code_line_number || row?.code_line_number ? `Code line ${stationRow?.code_line_number ?? row?.code_line_number}: ${stationRow?.code_line_name ?? row?.code_line_name ?? ""}`.replace(/\s+$/, "") : "",
+  ].filter(Boolean);
+  const payloadContext = [
+    "Decoded Genisys frame:",
+    `Header = ${decoded.headerLabel}${decoded.headerCode === null ? "" : ` (0x${formatHexByte(decoded.headerCode)})`}`,
+    `Role = ${decoded.protocolDirection}`,
+    decoded.serverAddress !== null ? `Server address = ${decoded.serverAddress}` : "",
+    decoded.crcHex ? `CRC = ${decoded.crcHex}` : "",
+    `Payload bytes = ${payloadBytes.join(" ")}`,
+    "Payload address/data pairs:",
+    ...payloadPairs,
+    ...decoded.issues.map((issue) => `Decode note: ${issue}`),
+  ].filter(Boolean);
+
+  return {
+    lineId: line.id,
+    lineNumber: line.lineNumber,
+    timestamp: line.timestamp,
+    raw: line.raw,
+    translation: {
+      original: line.raw,
+      structured,
+      english: [summary],
+      unresolved: [],
+    },
+    workflow: {
+      summary,
+      currentStep: decoded.headerLabel,
+      systems: ["CodeServer", "Genisys"],
+      objects: [stationName],
+      knownState: decoded.protocolDirection,
+      unresolved: [],
+    },
+    genisysContext: payloadContext,
+    icdContext: [],
+    databaseContext: structured,
+    workflowContext: [
+      socketAction === "XMT"
+        ? "This socket frame was transmitted from office toward the field endpoint."
+        : "This socket frame was received back from the field endpoint.",
+    ],
+    payloadContext,
+    sourceReferences: [
+      sourceReference("genisys_shared_decoder", "Shared Genisys frame decoder", "app/shared/genisys.ts", "Used by both Electron/server detail generation and GitHub static mode."),
+    ],
+  };
+}
+
 function makeBocSystemStatsDetail(line: ParsedLine): DetailModel | null {
   if (!/\bBackOfficeControl SystemStats:/i.test(line.raw)) return null;
   const fields = parseAngleFieldMap(line.raw);
@@ -627,6 +702,7 @@ function makeStaticBrowserDetail(line: ParsedLine, lines: ParsedLine[], index: n
     makeBocSystemStatsDetail(line) ??
     makeIcdJsonDetail(line) ??
     makeBocBosProcessingDetail(line) ??
+    makeSocketRawFrameDetail(line) ??
     (/\b(IND MNEM|CTL MNEM|SendControl|ProcessControlBegin|CONTROL UPDATED|PROCESS IND|INDICATION;|CONTROL SENT|CONTROL(?:\s+UPDATE\s+ONLY)?:)\b/i.test(line.raw)
       ? makeStaticDetail(line, lines, index)
       : null)
