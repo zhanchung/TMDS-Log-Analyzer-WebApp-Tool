@@ -3263,9 +3263,6 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         if (issue.responseLineId) {
           ids.add(issue.responseLineId);
         }
-        for (const entry of issue.evidence ?? []) {
-          ids.add(entry.lineId);
-        }
       }
       return ids;
     },
@@ -4069,7 +4066,30 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const attemptLine = issue.attemptLineNumbers?.length
       ? `Attempt lines: ${formatAttemptLines(issue.attemptLineNumbers)}`
       : "";
-    const evidenceLines = issue.evidence ?? [];
+    const issueLineById = new Map<string, ParsedLine>();
+    const issueLineIndexById = new Map<string, number>();
+    for (let index = 0; index < timeScopedLines.length; index += 1) {
+      issueLineById.set(timeScopedLines[index].id, timeScopedLines[index]);
+      issueLineIndexById.set(timeScopedLines[index].id, index);
+    }
+    const relatedEvidenceLines: Array<{ line: ParsedLine; relation: string }> = [];
+    for (const attemptLineId of issue.attemptLineIds ?? []) {
+      if (attemptLineId !== target.id) {
+        const attemptLineEntry = issueLineById.get(attemptLineId);
+        if (attemptLineEntry) {
+          relatedEvidenceLines.push({ line: attemptLineEntry, relation: `Repeated ${issue.kind} attempt before the selected watch line.` });
+        }
+      }
+    }
+    if (acknowledgementLine) {
+      relatedEvidenceLines.push({
+        line: acknowledgementLine,
+        relation: issue.direction === "field-to-office"
+          ? "Later office acknowledgement (FA) for the field message."
+          : `Later field response matched the pending ${issue.kind} request.`,
+      });
+    }
+    const evidenceLines = buildCodeServerEvidence(timeScopedLines, issueLineIndexById, target, issue.station, relatedEvidenceLines);
     const workflowEvidence = evidenceLines.map((entry) => (
       `Evidence L${entry.lineNumber}${entry.timestamp ? ` ${entry.timestamp}` : ""} (${entry.deltaLabel}): ${entry.relation} ${stripLeadingViewerTimestamp(entry.raw)}`
     ));
@@ -4561,8 +4581,8 @@ type CodeServerIssue = {
   status: "missing-response" | "response-received" | "missing-office-ack" | "error-observed";
   recallCount: number;
   attemptLineNumbers?: number[];
+  attemptLineIds?: string[];
   elapsedMs?: number;
-  evidence?: CodeServerEvidenceEntry[];
   summary: string;
 };
 
@@ -4741,12 +4761,17 @@ function buildCodeServerEvidence(
   return Array.from(evidence.values()).sort((left, right) => left.lineNumber - right.lineNumber);
 }
 
+function pushRecentCodeServerIssue(target: CodeServerIssue[], issue: CodeServerIssue, maxItems = 96) {
+  target.push(issue);
+  if (target.length > maxItems) {
+    target.splice(0, target.length - maxItems);
+  }
+}
+
 function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   const lineById = new Map<string, ParsedLine>();
-  const lineIndexById = new Map<string, number>();
   for (let index = 0; index < lines.length; index += 1) {
     lineById.set(lines[index].id, lines[index]);
-    lineIndexById.set(lines[index].id, index);
   }
   const pendingOfficeByStation = new Map<string, Array<CodeServerIssue & { station: string; kind: string }>>();
   const pendingFieldByStation = new Map<string, Array<{ line: ParsedLine; station: string; kind: string }>>();
@@ -4762,23 +4787,18 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     if (matchedOfficeRequests.length) {
       const firstRequest = matchedOfficeRequests[0];
       const attemptLineNumbers = matchedOfficeRequests.map((request) => request.lineNumber);
+      const attemptLineIds = matchedOfficeRequests.map((request) => request.lineId);
       const firstRequestLine = lineById.get(firstRequest.lineId) ?? line;
       const elapsedMs = getLineElapsedMs(firstRequestLine, line);
-      resolved.push({
+      pushRecentCodeServerIssue(resolved, {
         ...firstRequest,
         responseLineId: line.id,
         responseLineNumber: line.lineNumber,
         status: "response-received",
         recallCount: matchedOfficeRequests.length,
         attemptLineNumbers,
+        attemptLineIds,
         elapsedMs,
-        evidence: buildCodeServerEvidence(lines, lineIndexById, firstRequestLine, firstRequest.station, [
-          ...matchedOfficeRequests.slice(1).map((request) => ({
-            line: lineById.get(request.lineId) ?? firstRequestLine,
-            relation: `Repeated ${firstRequest.kind} attempt before the field response.`,
-          })),
-          { line, relation: `Field response matched the pending ${firstRequest.kind} request.` },
-        ]),
         summary: `${firstRequest.kind} response returned at line ${line.lineNumber} after ${matchedOfficeRequests.length} office attempt${matchedOfficeRequests.length === 1 ? "" : "s"} (${formatAttemptLines(attemptLineNumbers)})${elapsedMs !== undefined ? ` in ${formatElapsedDuration(elapsedMs)}` : ""}.`,
       });
       fieldResponses.add(line.id);
@@ -4790,7 +4810,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     }
     const problemText = getCodeServerProblemText(line.raw);
     if (problemText && station) {
-      observedProblems.push({
+      pushRecentCodeServerIssue(observedProblems, {
         key: `${line.id}:problem`,
         lineId: line.id,
         lineNumber: line.lineNumber,
@@ -4808,7 +4828,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
         const pending = pendingField[index];
         if (station === pending.station) {
           const elapsedMs = getLineElapsedMs(pending.line, line);
-          fieldAckResolved.push({
+          pushRecentCodeServerIssue(fieldAckResolved, {
             key: `${pending.line.id}:field-ack:${line.id}`,
             lineId: pending.line.id,
             responseLineId: line.id,
@@ -4820,9 +4840,6 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
             status: "response-received",
             recallCount: 0,
             elapsedMs,
-            evidence: buildCodeServerEvidence(lines, lineIndexById, pending.line, pending.station, [
-              { line, relation: "Later office acknowledgement (FA) for the field message." },
-            ]),
             summary: `Office acknowledgement returned at line ${line.lineNumber}${elapsedMs !== undefined ? ` after ${formatElapsedDuration(elapsedMs)}` : ""}.`,
           });
           pendingField.splice(index, 1);
@@ -4843,6 +4860,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
         status: "missing-response",
         recallCount: priorRecallCount + 1,
         attemptLineNumbers: [line.lineNumber],
+        attemptLineIds: [line.id],
         summary: request.summary,
       });
       pendingOfficeByStation.set(request.station, pendingForStation);
@@ -4868,20 +4886,15 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   const missingOffice = Array.from(missingOfficeGroups.values()).map((requests) => {
     const firstRequest = requests[0];
     const attemptLineNumbers = requests.map((request) => request.lineNumber);
+    const attemptLineIds = requests.map((request) => request.lineId);
     const anchorRequest = requests[requests.length - 1];
-    const anchorLine = lineById.get(anchorRequest.lineId);
     return {
       ...firstRequest,
       lineId: anchorRequest.lineId,
       lineNumber: anchorRequest.lineNumber,
       recallCount: requests.length,
       attemptLineNumbers,
-      evidence: anchorLine
-        ? buildCodeServerEvidence(lines, lineIndexById, anchorLine, firstRequest.station, requests.slice(0, -1).map((request) => ({
-            line: lineById.get(request.lineId) ?? anchorLine,
-            relation: `Earlier unresolved ${firstRequest.kind} attempt.`,
-          })))
-        : undefined,
+      attemptLineIds,
       summary: `${requests.length} ${firstRequest.kind} attempt${requests.length === 1 ? "" : "s"} from office (${formatAttemptLines(attemptLineNumbers)}) with no later field response in the scanned log window.`,
     };
   });
@@ -4894,7 +4907,6 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     direction: "field-to-office" as const,
     status: "missing-office-ack" as const,
     recallCount: 0,
-    evidence: buildCodeServerEvidence(lines, lineIndexById, line, station, []),
     summary: "Field message has no later office acknowledgement in the scanned log window.",
   }));
   return [...missingOffice, ...missingField, ...observedProblems.slice(-24), ...resolved.slice(-24), ...fieldAckResolved.slice(-24)]
