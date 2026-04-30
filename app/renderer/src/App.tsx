@@ -4267,7 +4267,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const nextScrollTop = Math.min(maxScrollTop, Math.max(0, currentScrollTop + physicalDelta));
     logListScrollTopRef.current = nextScrollTop;
     node.scrollTop = nextScrollTop;
-    // onScroll fires synchronously from the scrollTop assignment above and calls setLogListScrollTop there
+    setLogListScrollTop(nextScrollTop);
   }
 
   useEffect(() => {

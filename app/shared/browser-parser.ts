@@ -436,14 +436,26 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
     ...activeAssignments.map((entry) => `Active assignment: ${entry}`),
     ...mappedMnemonicStates.map((entry) => `Mnemonic state: ${entry}`),
   ].filter(Boolean);
+  const controlBitLines: string[] = row?.control_assignments?.length
+    ? [
+        "Control bits:",
+        ...row.control_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
+      ]
+    : [];
+  const indicationBitLines: string[] = row?.indication_assignments?.length
+    ? [
+        "Indication bits:",
+        ...row.indication_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
+      ]
+    : [];
   const databaseContext = [
     row || stationRow ? `Station: ${stationRow?.station_name ?? row?.station_name}` : station ? `Station context unresolved: ${station}` : "Station context unresolved in local static mode.",
     row?.control_point_number || stationRow?.control_point_number ? `Control point: ${stationRow?.control_point_number ?? row?.control_point_number} (${stationRow?.control_point_name ?? row?.control_point_name ?? ""})`.replace(/\s+\(\)$/, "") : "",
     stationRow?.subdivision_name || row?.subdivision_name ? `Subdivision: ${stationRow?.subdivision_name ?? row?.subdivision_name}` : "",
     row?.code_line_name || stationRow?.code_line_name ? `Code line ${stationRow?.code_line_number ?? row?.code_line_number ?? ""}: ${stationRow?.code_line_name ?? row?.code_line_name}`.replace(/^Code line :/, "Code line:") : "",
     stationRow ? `Station inventory: signals=${stationRow.signal_count ?? 0}, tracks=${stationRow.track_count ?? 0}, switches=${stationRow.switch_count ?? 0}, routes=${stationRow.route_count ?? 0}` : "",
-    row ? `Control assignments: ${row.control_assignments?.length ?? 0}` : "",
-    row ? `Indication assignments: ${row.indication_assignments?.length ?? 0}` : "",
+    ...controlBitLines,
+    ...indicationBitLines,
   ].filter(Boolean);
   const summary = payloadBits
     ? `${assignmentKind === "indication" ? "Indication" : "Control"} payload; ${activePositions.length} asserted bit${activePositions.length === 1 ? "" : "s"}.`
@@ -518,6 +530,13 @@ function makeSocketRawFrameDetail(line: ParsedLine): DetailModel | null {
     stationRow?.subdivision_name ? `Subdivision: ${stationRow.subdivision_name}` : "",
     stationRow?.code_line_number || row?.code_line_number ? `Code line ${stationRow?.code_line_number ?? row?.code_line_number}: ${stationRow?.code_line_name ?? row?.code_line_name ?? ""}`.replace(/\s+$/, "") : "",
   ].filter(Boolean);
+  const controlBitLines: string[] = row?.control_assignments?.length
+    ? ["Control bits:", ...row.control_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
+    : [];
+  const indicationBitLines: string[] = row?.indication_assignments?.length
+    ? ["Indication bits:", ...row.indication_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
+    : [];
+  const databaseContext = [...structured, ...controlBitLines, ...indicationBitLines];
   const payloadContext = [
     "Decoded Genisys frame:",
     `Header = ${decoded.headerLabel}${decoded.headerCode === null ? "" : ` (0x${formatHexByte(decoded.headerCode)})`}`,
@@ -551,7 +570,7 @@ function makeSocketRawFrameDetail(line: ParsedLine): DetailModel | null {
     },
     genisysContext: payloadContext,
     icdContext: [],
-    databaseContext: structured,
+    databaseContext,
     workflowContext: [
       socketAction === "XMT"
         ? "This socket frame was transmitted from office toward the field endpoint."
