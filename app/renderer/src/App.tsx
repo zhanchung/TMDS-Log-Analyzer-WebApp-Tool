@@ -1,5 +1,5 @@
 import { Fragment, startTransition, useEffect, useMemo, useRef, useState } from "react";
-import type { Dispatch, DragEvent, ReactNode, SetStateAction, WheelEvent } from "react";
+import type { Dispatch, DragEvent, ReactNode, SetStateAction } from "react";
 import type { DetailModel, ParsedLine, ReferenceArtifact, ReferenceChoiceGroup, ReferenceChoiceItem, ReferenceDiagram, SearchConfig, SessionData, WorkflowRelatedDetail, WorkspaceProgress } from "@shared/types";
 import type { WorkspaceMenuCommand } from "@shared/native-api";
 import { buildStaticDetailForLine, buildStaticReferenceSession, buildStaticReviewSampleSession, ingestBrowserFilesLocally } from "@shared/browser-parser";
@@ -559,6 +559,7 @@ type LogCategory = (typeof categoryOrder)[number] | "OTHER" | "NETWORK" | "WORKF
 const logRowHeight = 28;
 const logRowOverscan = 18;
 const maxLogScrollHeight = 8_000_000;
+const codeServerWatchScanLineLimit = 200_000;
 const finderResultRowHeight = 30;
 const finderResultOverscan = 24;
 const pacificTimeZone = "America/Los_Angeles";
@@ -2840,7 +2841,6 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   const previousNonReferenceWorkspaceRef = useRef<WorkspaceSnapshot | null>(null);
   const selectedLineIdRef = useRef<string | null>(null);
   const autoScrolledSelectedLineIdRef = useRef<string | null>(null);
-  const lastAppliedTimeWindowKeyRef = useRef("");
   const logListRef = useRef<HTMLDivElement | null>(null);
   const finderResultsListRef = useRef<HTMLDivElement | null>(null);
   const finderInputRef = useRef<HTMLInputElement | null>(null);
@@ -3253,7 +3253,6 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }, [activeSearch, activeSearchPattern, lineDetails, searchActive, timeScopedLines]);
 
   const visible = referenceSession ? referenceVisible : runtimeVisible;
-  const timeWindowKey = `${timeWindowStartMs ?? ""}:${timeWindowEndMs ?? ""}:${lines.length}:${lines[0]?.id ?? ""}`;
   const codeServerIssues = useMemo(
     () => referenceSession ? [] : buildCodeServerIssues(timeScopedLines),
     [referenceSession, timeScopedLines],
@@ -3300,39 +3299,6 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     return { byId, indexById };
   }, [lines]);
 
-  useEffect(() => {
-    if (referenceSession) {
-      lastAppliedTimeWindowKeyRef.current = "";
-      return;
-    }
-    if (!lastAppliedTimeWindowKeyRef.current) {
-      lastAppliedTimeWindowKeyRef.current = timeWindowKey;
-      return;
-    }
-    if (lastAppliedTimeWindowKeyRef.current === timeWindowKey) {
-      return;
-    }
-    lastAppliedTimeWindowKeyRef.current = timeWindowKey;
-    const firstVisible = visible[0] ?? null;
-    if (!firstVisible) {
-      return;
-    }
-    selectedLineIdRef.current = firstVisible.id;
-    autoScrolledSelectedLineIdRef.current = null;
-    setSelectedCodeServerIssue(null);
-    setSelected(firstVisible);
-    setDetail(lineDetails[firstVisible.id] ?? makeFallbackDetail(firstVisible));
-    setActiveTab("details");
-    const resetLogViewport = () => {
-      const node = logListRef.current;
-      if (node) {
-        node.scrollTop = 0;
-      }
-      setLogListScrollTop(0);
-    };
-    resetLogViewport();
-    requestAnimationFrame(resetLogViewport);
-  }, [lineDetails, referenceSession, timeWindowKey, visible]);
   const logVirtualMetrics = useMemo(
     () => getVirtualScrollMetrics(visible.length, logRowHeight, logListViewportHeight),
     [logListViewportHeight, visible.length],
@@ -4140,7 +4106,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
           ? "Response or acknowledgement received"
           : "Problem text observed in the log";
     const reason = issue.status === "missing-office-ack"
-      ? "This is flagged because the selected field-to-office frame has no later office FA acknowledgement in the scanned log window. A prior FA does not count because it happened before the selected field frame."
+      ? "This is flagged because the selected field-to-office data/control response has no later office FA acknowledgement before later same-station activity. F1 no-data poll responses are not treated as missing acknowledgements."
       : issue.status === "missing-response"
         ? `This is flagged because the office sent ${issue.recallCount > 1 ? `${issue.recallCount} ${issue.kind} attempts` : `a ${issue.kind} request`} and no later matching field response was found in the scanned log window.`
         : issue.status === "response-received"
@@ -4258,7 +4224,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     selectLine(target);
   }
 
-  function handleLogListWheel(event: WheelEvent<HTMLDivElement>) {
+  function handleLogListWheel(event: globalThis.WheelEvent) {
     if (referenceSession) {
       return;
     }
@@ -4280,6 +4246,16 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     node.scrollTop = nextScrollTop;
     setLogListScrollTop(nextScrollTop);
   }
+
+  useEffect(() => {
+    const node = logListRef.current;
+    if (!node || referenceSession) {
+      return;
+    }
+    const handleWheel = (event: globalThis.WheelEvent) => handleLogListWheel(event);
+    node.addEventListener("wheel", handleWheel, { passive: false });
+    return () => node.removeEventListener("wheel", handleWheel);
+  }, [logListViewportHeight, logVirtualMetrics, referenceSession]);
 
   useEffect(() => {
     if (referenceSession || !selected) {
@@ -4837,11 +4813,14 @@ function hasLaterCodeServerStationActivity(lines: ParsedLine[], startIndex: numb
 }
 
 function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
+  const scanLines = lines.length > codeServerWatchScanLineLimit
+    ? lines.slice(lines.length - codeServerWatchScanLineLimit)
+    : lines;
   const lineById = new Map<string, ParsedLine>();
   const lineIndexById = new Map<string, number>();
-  for (let index = 0; index < lines.length; index += 1) {
-    lineById.set(lines[index].id, lines[index]);
-    lineIndexById.set(lines[index].id, index);
+  for (let index = 0; index < scanLines.length; index += 1) {
+    lineById.set(scanLines[index].id, scanLines[index]);
+    lineIndexById.set(scanLines[index].id, index);
   }
   const pendingOfficeByStation = new Map<string, Array<CodeServerIssue & { station: string; kind: string }>>();
   const pendingFieldByStation = new Map<string, Array<{ line: ParsedLine; station: string; kind: string }>>();
@@ -4849,7 +4828,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   const fieldAckResolved: CodeServerIssue[] = [];
   const observedProblems: CodeServerIssue[] = [];
   const fieldResponses = new Set<string>();
-  for (const line of lines) {
+  for (const line of scanLines) {
     const direction = getCodeServerDirection(line);
     const station = normalizeCodeServerStation(line.raw);
     const pendingOffice = station ? pendingOfficeByStation.get(station) ?? [] : [];
@@ -4935,7 +4914,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
       });
       pendingOfficeByStation.set(request.station, pendingForStation);
     } else if (direction === "field" && !fieldResponses.has(line.id)) {
-      if (station && /^(F1|F2|F3)$/.test(firstGenisysByte(line.raw))) {
+      if (station && /^(F2|F3)$/.test(firstGenisysByte(line.raw))) {
         const pendingForStation = pendingFieldByStation.get(station) ?? [];
         pendingForStation.push({
           line,
@@ -4959,7 +4938,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     const attemptLineIds = requests.map((request) => request.lineId);
     const anchorRequest = requests[requests.length - 1];
     const anchorIndex = lineIndexById.get(anchorRequest.lineId) ?? -1;
-    if (anchorIndex < 0 || !hasLaterCodeServerStationActivity(lines, anchorIndex, firstRequest.station)) {
+    if (anchorIndex < 0 || !hasLaterCodeServerStationActivity(scanLines, anchorIndex, firstRequest.station)) {
       return [];
     }
     return {
@@ -4975,7 +4954,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   const missingField = pendingField
     .filter(({ line, station }) => {
       const index = lineIndexById.get(line.id) ?? -1;
-      return index >= 0 && hasLaterCodeServerStationActivity(lines, index, station);
+      return index >= 0 && hasLaterCodeServerStationActivity(scanLines, index, station);
     })
     .slice(-12)
     .map(({ line, station, kind }) => ({
@@ -5077,10 +5056,19 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
     : workspaceError
       ? { className: "status-chip error", text: workspaceError, title: workspaceError }
       : null;
+  const workflowTabActive = !referenceSession && activeTab === "workflow";
+  const selectedWatchWorkflowDetail = workflowTabActive && selected && detail && selectedCodeServerIssue && (selectedCodeServerIssue.lineId === selected.id || selectedCodeServerIssue.responseLineId === selected.id)
+    ? buildCodeServerIssueDetail(selectedCodeServerIssue, selected, lineDetails[selected.id] ?? detail)
+    : null;
+  const runtimeTabDetail = workflowTabActive
+    ? selectedWatchWorkflowDetail ?? workflowAnchorDetail ?? detail
+    : detail;
   const activeTabContent = buildReferenceTabDisplayText(
-    detail,
+    runtimeTabDetail,
     activeTab,
-    tabs.find((tab) => tab.key === activeTab)?.content ?? "",
+    activeTab === "workflow" && selectedWatchWorkflowDetail
+      ? selectedWatchWorkflowDetail.workflowContext?.join("\n") ?? ""
+      : tabs.find((tab) => tab.key === activeTab)?.content ?? "",
     referenceSelections,
     activeSearch,
   );
@@ -5089,7 +5077,6 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
   const inspectorTabContent = !showBlankAssignments && blankAssignmentsPresent
     ? filterBlankAssignments(activeTabContent)
     : activeTabContent;
-  const workflowTabActive = !referenceSession && activeTab === "workflow";
   const referenceDiagramMode = referenceSession && activeSource === "MESSAGE EXCHANGE";
   const showPrimaryInspector = !(trainMessageFlowMode || genisysInlineMode || referenceDiagramMode);
   const workspaceClassName = [
@@ -5177,7 +5164,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                 type="file"
                 multiple
                 onChange={(event) => {
-                  const files = event.currentTarget.files;
+                  const files = event.currentTarget.files ? Array.from(event.currentTarget.files) : null;
                   event.currentTarget.value = "";
                   if (files) void parseBrowserFiles(files);
                 }}
@@ -5188,7 +5175,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                 type="file"
                 multiple
                 onChange={(event) => {
-                  const files = event.currentTarget.files;
+                  const files = event.currentTarget.files ? Array.from(event.currentTarget.files) : null;
                   event.currentTarget.value = "";
                   if (files) void parseBrowserFiles(files);
                 }}
@@ -5875,7 +5862,6 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
               ref={logListRef}
               className="log-list"
               role="list"
-              onWheel={handleLogListWheel}
               onScroll={(event) => setLogListScrollTop(event.currentTarget.scrollTop)}
             >
               {visible.length ? (
@@ -5981,13 +5967,13 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                         <>
                           {inspectorTabContent.trim().length
                             ? renderRuntimeStructuredCards(
-                                workflowTabActive ? (workflowAnchorDetail ?? detail) : detail,
+                                runtimeTabDetail ?? detail,
                                 activeTab,
                                 inspectorTabContent,
                                 search,
                               )
                             : null}
-                          {workflowTabActive ? renderWorkflowRelatedCards(workflowAnchorDetail ?? detail, search, selectWorkflowRelatedLine) : null}
+                          {workflowTabActive ? renderWorkflowRelatedCards(runtimeTabDetail ?? detail, search, selectWorkflowRelatedLine) : null}
                         </>
                       )}
                   </div>
