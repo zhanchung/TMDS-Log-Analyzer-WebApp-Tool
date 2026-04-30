@@ -3256,7 +3256,19 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     [referenceSession, timeScopedLines],
   );
   const codeServerIssueLineIds = useMemo(
-    () => new Set(codeServerIssues.map((issue) => issue.lineId)),
+    () => {
+      const ids = new Set<string>();
+      for (const issue of codeServerIssues) {
+        ids.add(issue.lineId);
+        if (issue.responseLineId) {
+          ids.add(issue.responseLineId);
+        }
+        for (const entry of issue.evidence ?? []) {
+          ids.add(entry.lineId);
+        }
+      }
+      return ids;
+    },
     [codeServerIssues],
   );
   const parsedFileSummary = useMemo(() => {
@@ -4007,6 +4019,31 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     void loadLineDetail(line);
   }
 
+  function scrollLogListToLineId(lineId: string) {
+    const targetIndex = visible.findIndex((candidate) => candidate.id === lineId);
+    if (targetIndex < 0) {
+      return;
+    }
+    const logicalTop = Math.max(0, (targetIndex * logRowHeight) - 120);
+    const targetTop = Math.max(0, logVirtualMetrics.logicalToPhysical(logicalTop));
+    setLogListScrollTop(targetTop);
+    requestAnimationFrame(() => {
+      const node = logListRef.current;
+      if (!node) {
+        return;
+      }
+      node.scrollTop = targetTop;
+      setLogListScrollTop(targetTop);
+      requestAnimationFrame(() => {
+        const current = logListRef.current;
+        if (current) {
+          current.scrollTop = targetTop;
+          setLogListScrollTop(targetTop);
+        }
+      });
+    });
+  }
+
   function jumpToLineId(lineId: string) {
     const target = lineLookup.byId.get(lineId);
     if (!target) {
@@ -4016,19 +4053,118 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       setActiveSource("all");
     }
     selectLine(target);
-    autoScrolledSelectedLineIdRef.current = target.id;
-    const targetIndex = visible.findIndex((candidate) => candidate.id === target.id);
-    if (targetIndex >= 0) {
-      const targetTop = Math.max(0, logVirtualMetrics.logicalToPhysical((targetIndex * logRowHeight) - 120));
-      requestAnimationFrame(() => {
-        const node = logListRef.current;
-        if (!node) {
-          return;
-        }
-        node.scrollTop = targetTop;
-        setLogListScrollTop(targetTop);
-      });
+    scrollLogListToLineId(target.id);
+  }
+
+  function buildCodeServerIssueDetail(issue: CodeServerIssue, target: ParsedLine, baseDetail: DetailModel): DetailModel {
+    const acknowledgementLine = issue.responseLineId ? lineLookup.byId.get(issue.responseLineId) : null;
+    const elapsedLine = issue.elapsedMs !== undefined ? `Elapsed: ${formatElapsedDuration(issue.elapsedMs)}` : "";
+    const acknowledgementLineText = acknowledgementLine
+      ? `Later acknowledgement/response line: L${acknowledgementLine.lineNumber}${acknowledgementLine.timestamp ? ` at ${acknowledgementLine.timestamp}` : ""}`
+      : issue.status === "missing-office-ack"
+        ? "Later office acknowledgement: not found after this field line in the scanned log window."
+        : issue.status === "missing-response"
+          ? "Later field response: not found after this office request in the scanned log window."
+          : "";
+    const attemptLine = issue.attemptLineNumbers?.length
+      ? `Attempt lines: ${formatAttemptLines(issue.attemptLineNumbers)}`
+      : "";
+    const evidenceLines = issue.evidence ?? [];
+    const workflowEvidence = evidenceLines.map((entry) => (
+      `Evidence L${entry.lineNumber}${entry.timestamp ? ` ${entry.timestamp}` : ""} (${entry.deltaLabel}): ${entry.relation} ${stripLeadingViewerTimestamp(entry.raw)}`
+    ));
+    const payloadEvidence = evidenceLines.map((entry) => (
+      `L${entry.lineNumber} bytes ${firstGenisysByte(entry.raw) || "n/a"}: ${stripLeadingViewerTimestamp(entry.raw)}`
+    ));
+
+    return {
+      ...baseDetail,
+      translation: {
+        ...baseDetail.translation,
+        english: [
+          issue.summary,
+          acknowledgementLineText,
+          elapsedLine,
+          ...baseDetail.translation.english,
+        ].filter(Boolean),
+        unresolved: [
+          ...(issue.status === "missing-office-ack" || issue.status === "missing-response"
+            ? ["The watch did not find the expected later response in the scanned log window. A root cause is only shown when the local log line states one."]
+            : []),
+          ...baseDetail.translation.unresolved,
+        ],
+      },
+      workflow: {
+        ...baseDetail.workflow,
+        summary: issue.summary,
+        currentStep: `${issue.direction} ${issue.kind}`,
+        knownState: acknowledgementLineText || baseDetail.workflow.knownState,
+        unresolved: [
+          ...(issue.status === "missing-office-ack" || issue.status === "missing-response"
+            ? ["No grounded later acknowledgement/response was found for this watch item in the scanned window."]
+            : []),
+          ...baseDetail.workflow.unresolved,
+        ],
+      },
+      workflowContext: [
+        `Watch status: ${issue.status}`,
+        `Station: ${issue.station}`,
+        `Direction: ${issue.direction}`,
+        `Message kind: ${issue.kind}`,
+        issue.summary,
+        attemptLine,
+        acknowledgementLineText,
+        elapsedLine,
+        ...workflowEvidence,
+        ...(baseDetail.workflowContext ?? []),
+      ].filter(Boolean),
+      payloadContext: [
+        `Selected raw line: L${target.lineNumber}${target.timestamp ? ` ${target.timestamp}` : ""}`,
+        `Selected first Genisys byte: ${firstGenisysByte(target.raw) || "n/a"}`,
+        acknowledgementLine ? `Response/ack first Genisys byte: ${firstGenisysByte(acknowledgementLine.raw) || "n/a"}` : "",
+        ...payloadEvidence,
+        ...(baseDetail.payloadContext ?? []),
+      ].filter(Boolean),
+      workflowRelated: [
+        ...evidenceLines
+          .filter((entry) => entry.lineId !== target.id)
+          .map((entry) => ({
+            lineId: entry.lineId,
+            lineNumber: entry.lineNumber,
+            timestamp: entry.timestamp,
+            raw: entry.raw,
+            deltaLabel: entry.deltaLabel,
+            relation: entry.relation,
+          })),
+        ...(baseDetail.workflowRelated ?? []),
+      ],
+    };
+  }
+
+  function selectCodeServerIssue(issue: CodeServerIssue) {
+    const target = lineLookup.byId.get(issue.lineId) ?? (issue.responseLineId ? lineLookup.byId.get(issue.responseLineId) : undefined);
+    if (!target) {
+      return;
     }
+    if (!referenceSession && activeSource !== "all") {
+      setActiveSource("all");
+    }
+    selectedLineIdRef.current = target.id;
+    autoScrolledSelectedLineIdRef.current = null;
+    const staticDetail = localOnlyMode && !lineDetails[target.id] ? buildStaticDetailForLine(lines, target, lineLookup.indexById.get(target.id)) : null;
+    const baseDetail = lineDetails[target.id] ?? staticDetail ?? makeFallbackDetail(target);
+    const issueDetail = buildCodeServerIssueDetail(issue, target, baseDetail);
+    setSelected(target);
+    setDetail(issueDetail);
+    setActiveTab("workflow");
+    startTransition(() => {
+      setLineDetails((current) => ({ ...current, [target.id]: issueDetail }));
+    });
+    const selectedIndex = visible.findIndex((candidate) => candidate.id === target.id);
+    requestWarmLineDetails(selectedIndex >= 0
+      ? visible.slice(Math.max(0, selectedIndex - 80), Math.min(visible.length, selectedIndex + 81))
+      : [target]);
+    scrollLogListToLineId(target.id);
   }
 
   function selectWorkflowRelatedLine(entry: WorkflowRelatedDetail) {
@@ -4092,7 +4228,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     node.scrollTop = centeredTop;
     setLogListScrollTop(centeredTop);
     autoScrolledSelectedLineIdRef.current = selected.id;
-  }, [referenceSession, selected?.id]);
+  }, [logVirtualMetrics, referenceSession, selected?.id, visible]);
 
   async function loadLineDetail(line: ParsedLine) {
     if (referenceSession || lineDetails[line.id] || loadingLineDetailId === line.id) {
@@ -4425,7 +4561,18 @@ type CodeServerIssue = {
   status: "missing-response" | "response-received" | "missing-office-ack" | "error-observed";
   recallCount: number;
   attemptLineNumbers?: number[];
+  elapsedMs?: number;
+  evidence?: CodeServerEvidenceEntry[];
   summary: string;
+};
+
+type CodeServerEvidenceEntry = {
+  lineId: string;
+  lineNumber: number;
+  timestamp?: string;
+  raw: string;
+  deltaLabel: string;
+  relation: string;
 };
 
 function normalizeCodeServerStation(raw: string): string {
@@ -4509,10 +4656,102 @@ function formatAttemptLines(lines: number[]): string {
   return `${lines.slice(0, 2).map((line) => `L${line}`).join(", ")} ... ${lines.slice(-2).map((line) => `L${line}`).join(", ")}`;
 }
 
+function formatElapsedDuration(ms: number): string {
+  const absMs = Math.max(0, Math.round(ms));
+  if (absMs < 1000) {
+    return `${absMs} ms`;
+  }
+  const seconds = absMs / 1000;
+  if (seconds < 60) {
+    return `${seconds.toFixed(seconds < 10 ? 3 : 1)} sec (${absMs} ms)`;
+  }
+  const minutes = seconds / 60;
+  return `${minutes.toFixed(2)} min (${seconds.toFixed(1)} sec / ${absMs} ms)`;
+}
+
+function getLineElapsedMs(from: ParsedLine, to: ParsedLine): number | undefined {
+  const fromMs = parseViewerTimestamp(from.timestamp);
+  const toMs = parseViewerTimestamp(to.timestamp);
+  if (fromMs === null || toMs === null || toMs < fromMs) {
+    return undefined;
+  }
+  return toMs - fromMs;
+}
+
+function getEvidenceDelta(anchor: ParsedLine, line: ParsedLine): string {
+  if (line.id === anchor.id) {
+    return "selected line";
+  }
+  const elapsedMs = getLineElapsedMs(anchor, line);
+  if (elapsedMs !== undefined) {
+    return `+${formatElapsedDuration(elapsedMs)}`;
+  }
+  const priorMs = getLineElapsedMs(line, anchor);
+  if (priorMs !== undefined) {
+    return `-${formatElapsedDuration(priorMs)}`;
+  }
+  return line.lineNumber > anchor.lineNumber ? "later" : "earlier";
+}
+
+function makeEvidenceEntry(anchor: ParsedLine, line: ParsedLine, relation: string): CodeServerEvidenceEntry {
+  return {
+    lineId: line.id,
+    lineNumber: line.lineNumber,
+    timestamp: line.timestamp,
+    raw: line.raw,
+    deltaLabel: getEvidenceDelta(anchor, line),
+    relation,
+  };
+}
+
+function buildCodeServerEvidence(
+  lines: ParsedLine[],
+  lineIndexById: Map<string, number>,
+  anchor: ParsedLine,
+  station: string,
+  related: Array<{ line: ParsedLine; relation: string }>,
+): CodeServerEvidenceEntry[] {
+  const evidence = new Map<string, CodeServerEvidenceEntry>();
+  const add = (line: ParsedLine, relation: string) => {
+    evidence.set(line.id, makeEvidenceEntry(anchor, line, relation));
+  };
+  const anchorIndex = lineIndexById.get(anchor.id) ?? -1;
+  if (anchorIndex >= 0) {
+    let priorCount = 0;
+    for (let index = anchorIndex - 1; index >= 0 && priorCount < 2 && anchorIndex - index <= 200; index -= 1) {
+      if (normalizeCodeServerStation(lines[index].raw) === station) {
+        add(lines[index], "Previous same-station CodeServer line before the watched message.");
+        priorCount += 1;
+      }
+    }
+  }
+  add(anchor, "Watched CodeServer line.");
+  for (const entry of related) {
+    add(entry.line, entry.relation);
+  }
+  if (anchorIndex >= 0) {
+    let laterCount = 0;
+    for (let index = anchorIndex + 1; index < lines.length && laterCount < 3 && index - anchorIndex <= 300; index += 1) {
+      if (normalizeCodeServerStation(lines[index].raw) === station) {
+        add(lines[index], "Later same-station CodeServer line found after the watched message.");
+        laterCount += 1;
+      }
+    }
+  }
+  return Array.from(evidence.values()).sort((left, right) => left.lineNumber - right.lineNumber);
+}
+
 function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
+  const lineById = new Map<string, ParsedLine>();
+  const lineIndexById = new Map<string, number>();
+  for (let index = 0; index < lines.length; index += 1) {
+    lineById.set(lines[index].id, lines[index]);
+    lineIndexById.set(lines[index].id, index);
+  }
   const pendingOfficeByStation = new Map<string, Array<CodeServerIssue & { station: string; kind: string }>>();
   const pendingFieldByStation = new Map<string, Array<{ line: ParsedLine; station: string; kind: string }>>();
   const resolved: CodeServerIssue[] = [];
+  const fieldAckResolved: CodeServerIssue[] = [];
   const observedProblems: CodeServerIssue[] = [];
   const fieldResponses = new Set<string>();
   for (const line of lines) {
@@ -4523,6 +4762,8 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     if (matchedOfficeRequests.length) {
       const firstRequest = matchedOfficeRequests[0];
       const attemptLineNumbers = matchedOfficeRequests.map((request) => request.lineNumber);
+      const firstRequestLine = lineById.get(firstRequest.lineId) ?? line;
+      const elapsedMs = getLineElapsedMs(firstRequestLine, line);
       resolved.push({
         ...firstRequest,
         responseLineId: line.id,
@@ -4530,7 +4771,15 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
         status: "response-received",
         recallCount: matchedOfficeRequests.length,
         attemptLineNumbers,
-        summary: `${firstRequest.kind} response returned at line ${line.lineNumber} after ${matchedOfficeRequests.length} office attempt${matchedOfficeRequests.length === 1 ? "" : "s"} (${formatAttemptLines(attemptLineNumbers)}).`,
+        elapsedMs,
+        evidence: buildCodeServerEvidence(lines, lineIndexById, firstRequestLine, firstRequest.station, [
+          ...matchedOfficeRequests.slice(1).map((request) => ({
+            line: lineById.get(request.lineId) ?? firstRequestLine,
+            relation: `Repeated ${firstRequest.kind} attempt before the field response.`,
+          })),
+          { line, relation: `Field response matched the pending ${firstRequest.kind} request.` },
+        ]),
+        summary: `${firstRequest.kind} response returned at line ${line.lineNumber} after ${matchedOfficeRequests.length} office attempt${matchedOfficeRequests.length === 1 ? "" : "s"} (${formatAttemptLines(attemptLineNumbers)})${elapsedMs !== undefined ? ` in ${formatElapsedDuration(elapsedMs)}` : ""}.`,
       });
       fieldResponses.add(line.id);
       for (let index = pendingOffice.length - 1; index >= 0; index -= 1) {
@@ -4556,7 +4805,26 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     if (direction === "office" && firstGenisysByte(line.raw) === "FA") {
       const pendingField = station ? pendingFieldByStation.get(station) ?? [] : [];
       for (let index = pendingField.length - 1; index >= 0; index -= 1) {
-        if (station === pendingField[index].station) {
+        const pending = pendingField[index];
+        if (station === pending.station) {
+          const elapsedMs = getLineElapsedMs(pending.line, line);
+          fieldAckResolved.push({
+            key: `${pending.line.id}:field-ack:${line.id}`,
+            lineId: pending.line.id,
+            responseLineId: line.id,
+            lineNumber: pending.line.lineNumber,
+            responseLineNumber: line.lineNumber,
+            station: pending.station,
+            kind: pending.kind,
+            direction: "field-to-office",
+            status: "response-received",
+            recallCount: 0,
+            elapsedMs,
+            evidence: buildCodeServerEvidence(lines, lineIndexById, pending.line, pending.station, [
+              { line, relation: "Later office acknowledgement (FA) for the field message." },
+            ]),
+            summary: `Office acknowledgement returned at line ${line.lineNumber}${elapsedMs !== undefined ? ` after ${formatElapsedDuration(elapsedMs)}` : ""}.`,
+          });
           pendingField.splice(index, 1);
         }
       }
@@ -4600,12 +4868,20 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   const missingOffice = Array.from(missingOfficeGroups.values()).map((requests) => {
     const firstRequest = requests[0];
     const attemptLineNumbers = requests.map((request) => request.lineNumber);
+    const anchorRequest = requests[requests.length - 1];
+    const anchorLine = lineById.get(anchorRequest.lineId);
     return {
       ...firstRequest,
-      lineId: requests[requests.length - 1].lineId,
-      lineNumber: requests[requests.length - 1].lineNumber,
+      lineId: anchorRequest.lineId,
+      lineNumber: anchorRequest.lineNumber,
       recallCount: requests.length,
       attemptLineNumbers,
+      evidence: anchorLine
+        ? buildCodeServerEvidence(lines, lineIndexById, anchorLine, firstRequest.station, requests.slice(0, -1).map((request) => ({
+            line: lineById.get(request.lineId) ?? anchorLine,
+            relation: `Earlier unresolved ${firstRequest.kind} attempt.`,
+          })))
+        : undefined,
       summary: `${requests.length} ${firstRequest.kind} attempt${requests.length === 1 ? "" : "s"} from office (${formatAttemptLines(attemptLineNumbers)}) with no later field response in the scanned log window.`,
     };
   });
@@ -4618,9 +4894,10 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     direction: "field-to-office" as const,
     status: "missing-office-ack" as const,
     recallCount: 0,
+    evidence: buildCodeServerEvidence(lines, lineIndexById, line, station, []),
     summary: "Field message has no later office acknowledgement in the scanned log window.",
   }));
-  return [...missingOffice, ...missingField, ...observedProblems.slice(-24), ...resolved.slice(-24)]
+  return [...missingOffice, ...missingField, ...observedProblems.slice(-24), ...resolved.slice(-24), ...fieldAckResolved.slice(-24)]
     .sort((left, right) => right.lineNumber - left.lineNumber)
     .slice(0, 24);
 }
@@ -5488,8 +5765,8 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                       key={issue.key}
                       type="button"
                       className={`code-server-issue code-server-issue-${issue.status}`}
-                      onClick={() => jumpToLineId(issue.responseLineId ?? issue.lineId)}
-                      title={issue.responseLineNumber ? `Jump to response line ${issue.responseLineNumber}` : `Jump to line ${issue.lineNumber}`}
+                      onClick={() => selectCodeServerIssue(issue)}
+                      title={`Open watch evidence at line ${issue.lineNumber}`}
                     >
                       <span className="code-server-issue-line">
                         {issue.responseLineNumber ? `L${issue.lineNumber}->L${issue.responseLineNumber}` : issue.recallCount > 1 ? `${issue.recallCount} tries` : `Line ${issue.lineNumber}`}
