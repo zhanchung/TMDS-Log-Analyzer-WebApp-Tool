@@ -4129,12 +4129,20 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         : issue.status === "response-received"
           ? "Response or acknowledgement received"
           : "Problem text observed in the log";
+    const missingResponseReason =
+      issue.kind === "recall"
+        ? `This is flagged because the office sent ${issue.recallCount > 1 ? `${issue.recallCount} recall (FD) requests` : "a recall (FD) request"} to station ${issue.station} without receiving a field indication response (F2 or INDICATION). A recall asks the field unit to retransmit its current indication state. No response means the field unit either did not receive the request or could not reply — this can indicate a communication loss, power interruption, or hardware fault at the station.`
+        : issue.kind === "control"
+          ? `This is flagged because the office sent ${issue.recallCount > 1 ? `${issue.recallCount} control (FC) requests` : "a control (FC) request"} to station ${issue.station} without receiving a field delivery confirmation (F3 or CONTROL DELIVERED). A control command drives physical outputs such as signals, switches, and relays at the station. No confirmation means the field unit did not acknowledge execution — this can indicate a communication loss, a hardware fault, or the output being held by an interlock condition.`
+          : issue.kind === "poll"
+            ? `This is flagged because the office sent ${issue.recallCount > 1 ? `${issue.recallCount} poll (FB) frames` : "a poll (FB) frame"} to station ${issue.station} without receiving a field indication response (F1, F2, or INDICATION). A poll requests the field unit's current status. No response to ${issue.recallCount > 1 ? "multiple consecutive polls" : "a poll"} typically means the field unit is not responding — this can indicate the unit is offline, has lost power, or has a communication failure.`
+            : `This is flagged because the office sent ${issue.recallCount > 1 ? `${issue.recallCount} ${issue.kind} requests` : `a ${issue.kind} request`} to station ${issue.station} and no matching field response was found in the scanned log window.`;
     const reason = issue.status === "missing-office-ack"
       ? "This is flagged because the selected field-to-office data/control response has no later office FA acknowledgement before later same-station activity. F1 no-data poll responses are not treated as missing acknowledgements."
       : issue.status === "missing-response"
-        ? `This is flagged because the office sent ${issue.recallCount > 1 ? `${issue.recallCount} ${issue.kind} attempts` : `a ${issue.kind} request`} and no later matching field response was found in the scanned log window.`
+        ? missingResponseReason
         : issue.status === "response-received"
-          ? "This is shown because the tool matched the request with a later response/acknowledgement and measured the elapsed time."
+          ? `This is shown because the tool matched the ${issue.direction === "field-to-office" ? "field message with a later office FA acknowledgement" : `office ${issue.kind} request with a later field response`} and measured the elapsed time.`
           : "This is shown because the raw log line contains explicit problem text. The tool does not infer a root cause unless the log states one.";
 
     return {
@@ -4180,7 +4188,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         "Why this is flagged:",
         reason,
         "",
-        "Evidence timeline:",
+        "Evidence timeline (same-station primary lines + nearby cross-station socket traffic context):",
         ...workflowEvidence,
         ...(baseDetail.workflowContext ?? []),
       ].filter(Boolean),
@@ -4814,6 +4822,31 @@ function buildCodeServerEvidence(
         add(lines[index], "Later same-station CodeServer line found after the watched message.");
         laterCount += 1;
       }
+    }
+  }
+  // Cross-station socket context: show other stations' traffic within the evidence span so the full
+  // socket trace picture is visible (e.g. office was still polling other stations while this one went silent).
+  const evidenceIndexList = Array.from(evidence.keys())
+    .map((id) => lineIndexById.get(id) ?? -1)
+    .filter((i) => i >= 0);
+  if (evidenceIndexList.length > 0 && anchorIndex >= 0) {
+    const spanMin = evidenceIndexList.reduce((a, b) => Math.min(a, b), anchorIndex);
+    const spanMax = evidenceIndexList.reduce((a, b) => Math.max(a, b), anchorIndex);
+    const spanStart = Math.max(0, spanMin - 5);
+    const spanEnd = Math.min(lines.length - 1, spanMax + 30);
+    let contextCount = 0;
+    for (let index = spanStart; index <= spanEnd && contextCount < 6; index += 1) {
+      const line = lines[index];
+      if (evidence.has(line.id)) continue;
+      const lineStation = normalizeCodeServerStation(line.raw);
+      if (!lineStation || lineStation === station) continue;
+      const direction = getCodeServerDirection(line);
+      if (direction === "neutral") continue;
+      const firstByte = firstGenisysByte(line.raw);
+      const byteLabel = firstByte ? ` [${firstByte}]` : "";
+      const dirLabel = direction === "office" ? "office→field" : "field→office";
+      add(line, `Socket context — ${lineStation}${byteLabel} (${dirLabel}) during the watch window.`);
+      contextCount += 1;
     }
   }
   return Array.from(evidence.values()).sort((left, right) => left.lineNumber - right.lineNumber);
