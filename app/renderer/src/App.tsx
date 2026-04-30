@@ -2831,6 +2831,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   const [queuedInputPaths, setQueuedInputPaths] = useState<string[]>([]);
   const [queuedBrowserFiles, setQueuedBrowserFiles] = useState<BrowserUploadFile[]>([]);
   const [queuedBrowserSkipped, setQueuedBrowserSkipped] = useState<string[]>([]);
+  const [selectedCodeServerIssue, setSelectedCodeServerIssue] = useState<CodeServerIssue | null>(null);
   const [busyHeartbeatSeconds, setBusyHeartbeatSeconds] = useState(0);
   const [loadingLineDetailId, setLoadingLineDetailId] = useState<string | null>(null);
   const [logListScrollTop, setLogListScrollTop] = useState(0);
@@ -3318,6 +3319,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     selectedLineIdRef.current = firstVisible.id;
     autoScrolledSelectedLineIdRef.current = null;
+    setSelectedCodeServerIssue(null);
     setSelected(firstVisible);
     setDetail(lineDetails[firstVisible.id] ?? makeFallbackDetail(firstVisible));
     setActiveTab("details");
@@ -3448,6 +3450,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
 
     const workflowTabSourceDetail = workflowViewerMode ? workflowAnchorDetail ?? detail : detail;
+    const watchWorkflowPending = selectedCodeServerIssue?.lineId === detail.lineId || selectedCodeServerIssue?.responseLineId === detail.lineId;
 
     return [
       {
@@ -3458,7 +3461,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       {
         key: "workflow",
         label: "Workflow",
-        content: workflowTabSourceDetail.workflowContext?.join("\n") ?? "",
+        content: workflowTabSourceDetail.workflowContext?.join("\n") || (watchWorkflowPending ? "Watch workflow evidence is available for this selected log line." : ""),
       },
       {
         key: "payload",
@@ -3472,7 +3475,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         content: detail.databaseContext?.join("\n") ?? "",
       },
     ].filter((tab) => !tab.hidden && (tab.key === "details" || tab.content.trim().length > 0));
-  }, [detail, referenceSession, workflowAnchorDetail, workflowViewerMode]);
+  }, [detail, referenceSession, selectedCodeServerIssue, workflowAnchorDetail, workflowViewerMode]);
 
   useEffect(() => {
     if (tabs.length && !tabs.some((tab) => tab.key === activeTab)) {
@@ -3579,6 +3582,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       setLines(session.lines);
       setSelected(preserveEmptyReferenceSelection ? null : nextSelection.selected);
       setDetail(preserveEmptyReferenceSelection ? null : nextInitialDetail);
+      setSelectedCodeServerIssue(null);
       setLineDetails(nextLineDetails);
       setFinderDraftQuery("");
       setSearch(defaultSearch);
@@ -3999,6 +4003,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       setLineDetails({});
       setSelected(null);
       setDetail(null);
+      setSelectedCodeServerIssue(null);
       setFinderDraftQuery("");
       setSearch(defaultSearch);
       setActiveSource("all");
@@ -4020,6 +4025,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       setLineDetails(snapshot.lineDetails);
       setSelected(fallback);
       setDetail(fallback ? snapshot.lineDetails[fallback.id] ?? makeFallbackDetail(fallback) : null);
+      setSelectedCodeServerIssue(null);
       setFinderDraftQuery(snapshot.search.query);
       setSearch(snapshot.search);
       setActiveSource(snapshot.activeSource);
@@ -4034,6 +4040,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   function selectLine(line: ParsedLine) {
     selectedLineIdRef.current = line.id;
     autoScrolledSelectedLineIdRef.current = null;
+    setSelectedCodeServerIssue(null);
     const staticDetail = localOnlyMode && !lineDetails[line.id] ? buildStaticDetailForLine(lines, line, lineLookup.indexById.get(line.id)) : null;
     setSelected(line);
     setDetail(lineDetails[line.id] ?? staticDetail ?? makeFallbackDetail(line));
@@ -4221,15 +4228,23 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     selectedLineIdRef.current = target.id;
     autoScrolledSelectedLineIdRef.current = null;
     const baseDetail = lineDetails[target.id] ?? makeFallbackDetail(target);
-    const issueDetail = buildCodeServerIssueDetail(issue, target, baseDetail);
     setSelected(target);
-    setDetail(issueDetail);
-    setActiveTab("workflow");
+    setSelectedCodeServerIssue(issue);
+    setDetail(baseDetail);
+    setActiveTab("details");
     const selectedIndex = visible.findIndex((candidate) => candidate.id === target.id);
     requestWarmLineDetails(selectedIndex >= 0
       ? visible.slice(Math.max(0, selectedIndex - 80), Math.min(visible.length, selectedIndex + 81))
       : [target]);
     scrollLogListToLineId(target.id);
+  }
+
+  function openDetailTab(tabKey: string) {
+    if (tabKey === "workflow" && selected && selectedCodeServerIssue && (selectedCodeServerIssue.lineId === selected.id || selectedCodeServerIssue.responseLineId === selected.id)) {
+      const baseDetail = lineDetails[selected.id] ?? detail ?? makeFallbackDetail(selected);
+      setDetail(buildCodeServerIssueDetail(selectedCodeServerIssue, selected, baseDetail));
+    }
+    setActiveTab(tabKey);
   }
 
   function selectWorkflowRelatedLine(entry: WorkflowRelatedDetail) {
@@ -4251,16 +4266,15 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     if (!node) {
       return;
     }
-    const logicalDelta = event.deltaMode === 1
-      ? event.deltaY * logRowHeight
-      : event.deltaMode === 2
-        ? event.deltaY * Math.max(logListViewportHeight, logRowHeight)
-        : event.deltaY;
-    const physicalDelta = logVirtualMetrics.logicalDeltaToPhysical(logicalDelta);
-    if (physicalDelta === logicalDelta) {
-      return;
-    }
     event.preventDefault();
+    const rawRows = event.deltaMode === 1
+      ? event.deltaY
+      : event.deltaMode === 2
+        ? event.deltaY * Math.max(1, Math.floor(logListViewportHeight / logRowHeight))
+        : event.deltaY / 96;
+    const signedRows = rawRows === 0 ? 0 : Math.sign(rawRows) * Math.max(1, Math.min(6, Math.abs(rawRows)));
+    const logicalDelta = signedRows * logRowHeight;
+    const physicalDelta = logVirtualMetrics.logicalDeltaToPhysical(logicalDelta);
     const maxScrollTop = Math.max(0, logVirtualMetrics.physicalTotalHeight - node.clientHeight);
     const nextScrollTop = Math.min(maxScrollTop, Math.max(0, node.scrollTop + physicalDelta));
     node.scrollTop = nextScrollTop;
@@ -4813,10 +4827,21 @@ function pushRecentCodeServerIssue(target: CodeServerIssue[], issue: CodeServerI
   }
 }
 
+function hasLaterCodeServerStationActivity(lines: ParsedLine[], startIndex: number, station: string): boolean {
+  for (let index = startIndex + 1; index < lines.length && index - startIndex <= 300; index += 1) {
+    if (normalizeCodeServerStation(lines[index].raw) === station) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   const lineById = new Map<string, ParsedLine>();
+  const lineIndexById = new Map<string, number>();
   for (let index = 0; index < lines.length; index += 1) {
     lineById.set(lines[index].id, lines[index]);
+    lineIndexById.set(lines[index].id, index);
   }
   const pendingOfficeByStation = new Map<string, Array<CodeServerIssue & { station: string; kind: string }>>();
   const pendingFieldByStation = new Map<string, Array<{ line: ParsedLine; station: string; kind: string }>>();
@@ -4928,11 +4953,15 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     const key = `${request.station}:${request.kind}`;
     missingOfficeGroups.set(key, [...(missingOfficeGroups.get(key) ?? []), request]);
   }
-  const missingOffice = Array.from(missingOfficeGroups.values()).map((requests) => {
+  const missingOffice = Array.from(missingOfficeGroups.values()).flatMap((requests) => {
     const firstRequest = requests[0];
     const attemptLineNumbers = requests.map((request) => request.lineNumber);
     const attemptLineIds = requests.map((request) => request.lineId);
     const anchorRequest = requests[requests.length - 1];
+    const anchorIndex = lineIndexById.get(anchorRequest.lineId) ?? -1;
+    if (anchorIndex < 0 || !hasLaterCodeServerStationActivity(lines, anchorIndex, firstRequest.station)) {
+      return [];
+    }
     return {
       ...firstRequest,
       lineId: anchorRequest.lineId,
@@ -4943,17 +4972,23 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
       summary: `${requests.length} ${firstRequest.kind} attempt${requests.length === 1 ? "" : "s"} from office (${formatAttemptLines(attemptLineNumbers)}) with no later field response in the scanned log window.`,
     };
   });
-  const missingField = pendingField.slice(-12).map(({ line, station, kind }) => ({
-    key: `${line.id}:field-ack`,
-    lineId: line.id,
-    lineNumber: line.lineNumber,
-    station,
-    kind,
-    direction: "field-to-office" as const,
-    status: "missing-office-ack" as const,
-    recallCount: 0,
-    summary: "Field message has no later office acknowledgement in the scanned log window.",
-  }));
+  const missingField = pendingField
+    .filter(({ line, station }) => {
+      const index = lineIndexById.get(line.id) ?? -1;
+      return index >= 0 && hasLaterCodeServerStationActivity(lines, index, station);
+    })
+    .slice(-12)
+    .map(({ line, station, kind }) => ({
+      key: `${line.id}:field-ack`,
+      lineId: line.id,
+      lineNumber: line.lineNumber,
+      station,
+      kind,
+      direction: "field-to-office" as const,
+      status: "missing-office-ack" as const,
+      recallCount: 0,
+      summary: "Field message has no later office acknowledgement before later same-station CodeServer activity.",
+    }));
   return [...missingOffice, ...missingField, ...observedProblems.slice(-24), ...resolved.slice(-24), ...fieldAckResolved.slice(-24)]
     .sort((left, right) => right.lineNumber - left.lineNumber)
     .slice(0, 24);
@@ -5922,7 +5957,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                       <button
                         key={tab.key}
                         className={activeTab === tab.key ? "tab detail-tab active" : "tab detail-tab"}
-                        onClick={() => setActiveTab(tab.key)}
+                        onClick={() => openDetailTab(tab.key)}
                       >
                         {tab.label}
                       </button>
