@@ -436,16 +436,18 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
     ...activeAssignments.map((entry) => `Active assignment: ${entry}`),
     ...mappedMnemonicStates.map((entry) => `Mnemonic state: ${entry}`),
   ].filter(Boolean);
-  const controlBitLines: string[] = row?.control_assignments?.length
+  const nonBlankControlEntries = nonBlankAssignments(row?.control_assignments);
+  const nonBlankIndicationEntries = nonBlankAssignments(row?.indication_assignments);
+  const controlBitLines: string[] = nonBlankControlEntries.length
     ? [
         "Control bits:",
-        ...row.control_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
+        ...nonBlankControlEntries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
       ]
     : [];
-  const indicationBitLines: string[] = row?.indication_assignments?.length
+  const indicationBitLines: string[] = nonBlankIndicationEntries.length
     ? [
         "Indication bits:",
-        ...row.indication_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
+        ...nonBlankIndicationEntries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
       ]
     : [];
   const databaseContext = [
@@ -502,6 +504,58 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
   };
 }
 
+function isBlankAssignment(entry: AssignmentEntry): boolean {
+  return /^blank$/i.test(String(entry.mnemonic ?? "").trim());
+}
+
+function nonBlankAssignments(entries: AssignmentEntry[] | undefined): AssignmentEntry[] {
+  return (entries ?? []).filter((entry) => !isBlankAssignment(entry));
+}
+
+// Decodes Genisys word/data payload pairs into named bit states.
+// Each pair is (word_number, byte_value); bits are LSB-first (bit 0 of the byte = lowest
+// numbered bit in that word). 0xE0 is the special mode byte and is decoded as flags.
+function decodeFrameWordPairs(
+  payloadPairs: Array<{ address: number; data: number }>,
+  kind: "indication" | "control",
+  row: AssignmentRow | null,
+): string[] {
+  if (!payloadPairs.length) return [];
+  const assignments = kind === "indication" ? row?.indication_assignments : row?.control_assignments;
+  const byPosition = positionMap(assignments);
+  const kindLabel = kind === "indication" ? "Indication" : "Control";
+  const lines: string[] = [];
+  for (const { address, data } of payloadPairs) {
+    if (address === 0xe0) {
+      const flags: string[] = [];
+      if (data & 0x01) flags.push("Database Complete");
+      if (data & 0x02) flags.push("Checkback Control Enabled");
+      if (data & 0x04) flags.push("Secure Poll");
+      if (data & 0x08) flags.push("Common Command Enabled");
+      lines.push(`Mode byte (0xE0 = 0x${formatHexByte(data)}): ${flags.length ? flags.join(", ") : "no flags set"}`);
+      continue;
+    }
+    const wordNum = address;
+    const baseBit = wordNum * 8 + 1;
+    const asserted: string[] = [];
+    for (let bitIndex = 0; bitIndex < 8; bitIndex += 1) {
+      if ((data >> bitIndex) & 1) {
+        const bitPos = baseBit + bitIndex;
+        const entry = byPosition.get(bitPos);
+        const label = entry && !isBlankAssignment(entry) ? assignmentLabel(entry) : `bit ${bitPos}`;
+        asserted.push(label);
+      }
+    }
+    const wordRange = `${kindLabel} bits ${baseBit}–${baseBit + 7}`;
+    lines.push(
+      asserted.length
+        ? `Word ${wordNum} (${wordRange}): ${asserted.join(", ")}`
+        : `Word ${wordNum} (${wordRange}): all clear`,
+    );
+  }
+  return lines;
+}
+
 function makeSocketRawFrameDetail(line: ParsedLine): DetailModel | null {
   const match = /(?:^|\s)([<>-]{3})\s+(XMT|RCV):([^:]+):(.+)$/i.exec(line.raw);
   if (!match) return null;
@@ -530,22 +584,34 @@ function makeSocketRawFrameDetail(line: ParsedLine): DetailModel | null {
     stationRow?.subdivision_name ? `Subdivision: ${stationRow.subdivision_name}` : "",
     stationRow?.code_line_number || row?.code_line_number ? `Code line ${stationRow?.code_line_number ?? row?.code_line_number}: ${stationRow?.code_line_name ?? row?.code_line_name ?? ""}`.replace(/\s+$/, "") : "",
   ].filter(Boolean);
-  const controlBitLines: string[] = row?.control_assignments?.length
-    ? ["Control bits:", ...row.control_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
+  const nonBlankControls = nonBlankAssignments(row?.control_assignments);
+  const nonBlankIndications = nonBlankAssignments(row?.indication_assignments);
+  const controlBitLines: string[] = nonBlankControls.length
+    ? ["Control bits:", ...nonBlankControls.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
     : [];
-  const indicationBitLines: string[] = row?.indication_assignments?.length
-    ? ["Indication bits:", ...row.indication_assignments.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
+  const indicationBitLines: string[] = nonBlankIndications.length
+    ? ["Indication bits:", ...nonBlankIndications.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
     : [];
   const databaseContext = [...structured, ...controlBitLines, ...indicationBitLines];
+  // Determine payload kind for word/bit decoding
+  const framePayloadKind: "indication" | "control" | null =
+    decoded.headerCode === 0xf2 ? "indication"
+    : decoded.headerCode === 0xf3 || decoded.headerCode === 0xfc || decoded.headerCode === 0xf9 ? "control"
+    : null;
+  const decodedWordLines = framePayloadKind
+    ? decodeFrameWordPairs(decoded.payloadPairs, framePayloadKind, row)
+    : [];
   const payloadContext = [
     "Decoded Genisys frame:",
     `Header = ${decoded.headerLabel}${decoded.headerCode === null ? "" : ` (0x${formatHexByte(decoded.headerCode)})`}`,
     `Role = ${decoded.protocolDirection}`,
-    decoded.serverAddress !== null ? `Server address = ${decoded.serverAddress}` : "",
+    decoded.serverAddress !== null ? `Server address = 0x${formatHexByte(decoded.serverAddress)} (${decoded.serverAddress} decimal)` : "",
     decoded.crcHex ? `CRC = ${decoded.crcHex}` : "",
     `Payload bytes = ${payloadBytes.join(" ")}`,
-    "Payload address/data pairs:",
+    decoded.payloadPairs.length ? "Raw word/data pairs:" : "",
     ...payloadPairs,
+    decodedWordLines.length ? "Decoded bit states:" : "",
+    ...decodedWordLines,
     ...decoded.issues.map((issue) => `Decode note: ${issue}`),
   ].filter(Boolean);
 

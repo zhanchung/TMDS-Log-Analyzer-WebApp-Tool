@@ -10,15 +10,15 @@ export type DecodedGenisysSocketFrame = {
 };
 
 export const genisysHeaderLabels = new Map<number, string>([
-  [0xf1, "Acknowledge Client"],
+  [0xf1, "Acknowledge / No Data"],
   [0xf2, "Indication Data"],
-  [0xf3, "Control Data Checkback"],
-  [0xf9, "Common Control Data"],
-  [0xfa, "Acknowledge Indication and Poll"],
+  [0xf3, "Control Checkback"],
+  [0xf9, "Common Controls"],
+  [0xfa, "Acknowledge"],
   [0xfb, "Poll"],
-  [0xfc, "Control Data"],
-  [0xfd, "Recall Header"],
-  [0xfe, "Execute Controls"],
+  [0xfc, "Control"],
+  [0xfd, "Recall"],
+  [0xfe, "Execute"],
 ]);
 
 export function parseSocketHexByte(value: string): number | null {
