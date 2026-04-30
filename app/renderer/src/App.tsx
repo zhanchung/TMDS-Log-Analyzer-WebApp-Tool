@@ -2841,6 +2841,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   const previousNonReferenceWorkspaceRef = useRef<WorkspaceSnapshot | null>(null);
   const selectedLineIdRef = useRef<string | null>(null);
   const autoScrolledSelectedLineIdRef = useRef<string | null>(null);
+  const logListScrollTopRef = useRef(0);
+  const programmaticLogScrollRef = useRef<{ top: number; until: number } | null>(null);
   const logListRef = useRef<HTMLDivElement | null>(null);
   const finderResultsListRef = useRef<HTMLDivElement | null>(null);
   const finderInputRef = useRef<HTMLInputElement | null>(null);
@@ -3331,6 +3333,10 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       lines: visible.slice(start, end),
     };
   }, [logListScrollTop, logListViewportHeight, logVirtualMetrics, referenceSession, visible]);
+
+  useEffect(() => {
+    logListScrollTopRef.current = logListScrollTop;
+  }, [logListScrollTop]);
 
   useEffect(() => {
     const node = logListRef.current;
@@ -4031,6 +4037,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     const logicalTop = Math.max(0, (targetIndex * logRowHeight) - 120);
     const targetTop = Math.max(0, logVirtualMetrics.logicalToPhysical(logicalTop));
+    logListScrollTopRef.current = targetTop;
+    programmaticLogScrollRef.current = { top: targetTop, until: performance.now() + 500 };
     setLogListScrollTop(targetTop);
     requestAnimationFrame(() => {
       const node = logListRef.current;
@@ -4038,11 +4046,15 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         return;
       }
       node.scrollTop = targetTop;
+      logListScrollTopRef.current = targetTop;
+      programmaticLogScrollRef.current = { top: targetTop, until: performance.now() + 500 };
       setLogListScrollTop(targetTop);
       requestAnimationFrame(() => {
         const current = logListRef.current;
         if (current) {
           current.scrollTop = targetTop;
+          logListScrollTopRef.current = targetTop;
+          programmaticLogScrollRef.current = { top: targetTop, until: performance.now() + 500 };
           setLogListScrollTop(targetTop);
         }
       });
@@ -4242,7 +4254,9 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const logicalDelta = signedRows * logRowHeight;
     const physicalDelta = logVirtualMetrics.logicalDeltaToPhysical(logicalDelta);
     const maxScrollTop = Math.max(0, logVirtualMetrics.physicalTotalHeight - node.clientHeight);
-    const nextScrollTop = Math.min(maxScrollTop, Math.max(0, node.scrollTop + physicalDelta));
+    const currentScrollTop = logListScrollTopRef.current;
+    const nextScrollTop = Math.min(maxScrollTop, Math.max(0, currentScrollTop + physicalDelta));
+    logListScrollTopRef.current = nextScrollTop;
     node.scrollTop = nextScrollTop;
     setLogListScrollTop(nextScrollTop);
   }
@@ -5862,7 +5876,18 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
               ref={logListRef}
               className="log-list"
               role="list"
-              onScroll={(event) => setLogListScrollTop(event.currentTarget.scrollTop)}
+              onScroll={(event) => {
+                const programmatic = programmaticLogScrollRef.current;
+                if (programmatic && performance.now() < programmatic.until && Math.abs(event.currentTarget.scrollTop - programmatic.top) > 4) {
+                  event.currentTarget.scrollTop = programmatic.top;
+                  return;
+                }
+                if (programmatic && performance.now() >= programmatic.until) {
+                  programmaticLogScrollRef.current = null;
+                }
+                logListScrollTopRef.current = event.currentTarget.scrollTop;
+                setLogListScrollTop(event.currentTarget.scrollTop);
+              }}
             >
               {visible.length ? (
                 <>
