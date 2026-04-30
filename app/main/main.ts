@@ -9915,6 +9915,15 @@ function buildGenisysReferenceEntries(): Array<{
 }> {
   return [
     {
+      code: "F9",
+      title: "Office common controls",
+      meaning: "Broadcast common control command — sent without a station address.",
+      badges: ["Office -> field", "Common Controls"],
+      notes: [
+        "F9 has no CRC or station address; the single byte is the entire frame.",
+      ],
+    },
+    {
       code: "FA",
       title: "Office acknowledge",
       meaning: "Office acknowledgement sent to the field.",

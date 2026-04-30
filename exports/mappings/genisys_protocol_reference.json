@@ -14,6 +14,10 @@
   },
   "office_headers": [
     {
+      "byte": "0xF9",
+      "meaning": "Common Controls"
+    },
+    {
       "byte": "0xFA",
       "meaning": "Acknowledge"
     },
@@ -37,15 +41,15 @@
   "field_headers": [
     {
       "byte": "0xF1",
-      "meaning": "Poll Response No Data"
+      "meaning": "Acknowledge / No Data"
     },
     {
       "byte": "0xF2",
-      "meaning": "Poll Response With Data"
+      "meaning": "Indication Data"
     },
     {
       "byte": "0xF3",
-      "meaning": "Control Response With Data"
+      "meaning": "Control Checkback"
     }
   ],
   "mode_examples": [

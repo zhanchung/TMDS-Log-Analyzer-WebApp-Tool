@@ -223,7 +223,18 @@
     <div class="subtitle">Click on any message to view its structural fields as defined in MSRP Standard S-9361 v3.1</div>
 
     <h2>1. Initialization, Consist, and Registration</h2>
-    
+
+    <div class="flow-row">
+        <div class="node loco-node">Loco</div>
+        <div class="arrow to-right"><span class="msg-text" onclick="showDetails('02005', 'Configuration Version List Request (02005)')">Configuration Version List Request (02005)</span></div>
+        <div class="node office-node">Office</div>
+    </div>
+    <div class="flow-row">
+        <div class="node loco-node">Loco</div>
+        <div class="arrow to-left"><span class="msg-text" onclick="showDetails('01005', 'Configuration Version List (01005)')">Configuration Version List (01005)</span></div>
+        <div class="node office-node">Office</div>
+    </div>
+
     <div class="flow-row">
         <div class="node loco-node">Loco</div>
         <div class="arrow to-right"><span class="msg-text" onclick="showDetails('02000', 'Verify Employee Info Request (02000)')">Verify Employee Info Request (02000)</span></div>
@@ -286,17 +297,6 @@
     <div class="flow-row">
         <div class="node loco-node">Loco</div>
         <div class="arrow to-left"><span class="msg-text" onclick="showDetails('01033', 'Confirmation of Onboard Train Consist (01033)')">Confirmation of Onboard Train Consist (01033)</span></div>
-        <div class="node office-node">Office</div>
-    </div>
-
-    <div class="flow-row">
-        <div class="node loco-node">Loco</div>
-        <div class="arrow to-right"><span class="msg-text" onclick="showDetails('02005', 'Configuration Version List Request (02005)')">Configuration Version List Request (02005)</span></div>
-        <div class="node office-node">Office</div>
-    </div>
-    <div class="flow-row">
-        <div class="node loco-node">Loco</div>
-        <div class="arrow to-left"><span class="msg-text" onclick="showDetails('01005', 'Configuration Version List (01005)')">Configuration Version List (01005)</span></div>
         <div class="node office-node">Office</div>
     </div>
 
