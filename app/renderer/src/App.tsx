@@ -3255,6 +3255,10 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     () => referenceSession ? [] : buildCodeServerIssues(timeScopedLines),
     [referenceSession, timeScopedLines],
   );
+  const codeServerIssueLineIds = useMemo(
+    () => new Set(codeServerIssues.map((issue) => issue.lineId)),
+    [codeServerIssues],
+  );
   const parsedFileSummary = useMemo(() => {
     if (referenceSession) {
       return { names: [] as string[], hasMore: false };
@@ -5513,7 +5517,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                         key={line.id}
                         role="button"
                         tabIndex={0}
-                        className={`log-line ${getCodeServerLineClass(line)} ${selected?.id === line.id ? "selected" : ""}`}
+                        className={`log-line ${getCodeServerLineClass(line)} ${codeServerIssueLineIds.has(line.id) ? "log-line-problem" : ""} ${selected?.id === line.id ? "selected" : ""}`}
                         onClick={() => selectLine(line)}
                         onKeyDown={(event) => {
                           if (event.key === "Enter" || event.key === " ") {

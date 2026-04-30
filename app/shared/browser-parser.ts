@@ -3,6 +3,7 @@ import genisysProtocolReference from "../../exports/mappings/genisys_protocol_re
 import icdMessageCatalog from "../../exports/mappings/icd_message_catalog.json";
 import assignmentRows from "../../exports/normalized/code_station_assignment_map.json";
 import stationFoundationRows from "../../exports/normalized/station_foundation_summary.json";
+import componentLookupRows from "../../exports/raw/sql_foundation/tmdsDatabaseStatic.component_lookup.json";
 import genisysSampleLog from "../../sample_logs/curated/genisys_sample.log?raw";
 import socketTraceSampleLog from "../../sample_logs/curated/sockettrace_sample.log?raw";
 import workflowSampleLog from "../../sample_logs/curated/workflow_sample.log?raw";
@@ -57,6 +58,18 @@ type StationFoundationRow = {
   number_of_indications?: string | number;
 };
 
+type ComponentLookupRow = {
+  component_family?: string;
+  component_uid?: string | number;
+  parent_control_point_uid?: string | number;
+  component_name?: string;
+  component_secondary_name?: string;
+  component_detail_name?: string;
+  component_codeline?: string | number;
+  territory_assignment?: string | number;
+  subdivision?: string | number;
+};
+
 type IcdCatalogRow = {
   document_title?: string;
   release?: string;
@@ -70,6 +83,7 @@ type IcdCatalogRow = {
 
 const staticAssignmentRows = assignmentRows as AssignmentRow[];
 const staticStationRows = stationFoundationRows as StationFoundationRow[];
+const staticComponentRows = componentLookupRows as ComponentLookupRow[];
 const staticIcdRows = icdMessageCatalog as IcdCatalogRow[];
 const staticGenisysReference = genisysProtocolReference as {
   office_headers?: Array<{ byte?: string; meaning?: string }>;
@@ -78,6 +92,7 @@ const staticGenisysReference = genisysProtocolReference as {
 };
 const assignmentByKey = new Map<string, AssignmentRow>();
 const stationByKey = new Map<string, StationFoundationRow>();
+const componentByUid = new Map<string, ComponentLookupRow>();
 const icdByMessageId = new Map<string, IcdCatalogRow>();
 
 function getFileLabel(source?: string): string {
@@ -119,6 +134,12 @@ for (const row of staticStationRows) {
   addStationKey(row.control_point_name, row);
   addStationKey(row.control_point_number, row);
   addStationKey(row.code_station_number, row);
+}
+for (const row of staticComponentRows) {
+  const uid = normalizeKey(String(row.component_uid ?? ""));
+  if (uid && !componentByUid.has(uid)) {
+    componentByUid.set(uid, row);
+  }
 }
 
 function normalizeMessageId(value: string | number | undefined): string {
@@ -302,8 +323,13 @@ function assertedPositions(bits: string): number[] {
 }
 
 function extractStationFromRaw(raw: string): string {
+  const embeddedProtocolStation = /\b(?:INDICATION|CONTROL);(\d+):(\d+):(\d+):[01]+/i.exec(raw)?.[2];
+  if (embeddedProtocolStation) {
+    return embeddedProtocolStation.trim();
+  }
+  const namedParen = /\((CP\s+[A-Z0-9 _-]+|[A-Z][A-Z0-9 _-]*(?:TC|JCT))\)/i.exec(raw)?.[1];
   return (
-    /\(([A-Z0-9 _-]+(?:TC)?)\)/i.exec(raw)?.[1] ??
+    namedParen ??
     /FOR CODESTATION:\s*([A-Z0-9 _-]+)/i.exec(raw)?.[1] ??
     /(?:SendCommand|QueueTheCommand):([A-Z0-9 _-]+?):/i.exec(raw)?.[1] ??
     /ProcessSendQueue-?([A-Z0-9 _-]+?)(?:CONTROL|RECALL|$)/i.exec(raw)?.[1] ??
@@ -329,6 +355,36 @@ function findAssignmentRow(station: string): AssignmentRow | null {
 
 function findStationRow(station: string): StationFoundationRow | null {
   return stationByKey.get(normalizeKey(station)) ?? null;
+}
+
+function findComponentRow(uid: string | number | undefined): ComponentLookupRow | null {
+  return componentByUid.get(normalizeKey(String(uid ?? ""))) ?? null;
+}
+
+function getComponentStationRow(component: ComponentLookupRow | null): StationFoundationRow | null {
+  if (!component) return null;
+  return findStationRow(String(component.parent_control_point_uid ?? ""));
+}
+
+function getComponentAssignmentRow(component: ComponentLookupRow | null): AssignmentRow | null {
+  if (!component) return null;
+  return findAssignmentRow(String(component.parent_control_point_uid ?? ""))
+    ?? findAssignmentRow(getComponentStationRow(component)?.control_point_name ?? "");
+}
+
+function describeComponent(component: ComponentLookupRow | null): string {
+  if (!component) return "";
+  const uid = component.component_uid ?? "";
+  const family = component.component_family ?? "component";
+  const name = component.component_name ?? component.component_secondary_name ?? "";
+  const stationRow = getComponentStationRow(component);
+  const stationText = stationRow?.station_name || stationRow?.control_point_name
+    ? ` at ${stationRow.station_name ?? stationRow.control_point_name}`
+    : component.parent_control_point_uid
+      ? ` at CP ${component.parent_control_point_uid}`
+      : "";
+  const codeLineText = component.component_codeline ? ` on code line ${component.component_codeline}` : "";
+  return `${family} ${uid}${name ? ` ${name}` : ""}${stationText}${codeLineText}`.trim();
 }
 
 function findNearbyStation(lines: ParsedLine[], index: number): string {
@@ -358,10 +414,12 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
   const controlUpdated = /\bCONTROL UPDATED:\s*([0-9A-Z]+)(?:\(([^)]+)\))?\s+\[([01]+)\]/i.exec(raw);
   const processInd = /\bPROCESS IND:\s*([0-9A-Z]+)\s*\(([^)]+)\)\s*\(([01]+)\)/i.exec(raw);
   const directIndication = /\bINDICATION;(\d+):(\d+):(\d+):([01]+)\s+FOR CODESTATION:\s*([A-Z0-9 _-]+)/i.exec(raw);
+  const embeddedIndication = /\bINDICATION;(\d+):(\d+):(\d+):([01]+)/i.exec(raw);
+  const embeddedControl = /\bCONTROL;(\d+):(\d+):(\d+):([01]+)/i.exec(raw);
   const codeServerControl = /\bCONTROL(?:\s+UPDATE\s+ONLY)?:([0-9.]+):(\d+):(\d+):(\d+):([01]+)/i.exec(raw);
   const controlSent = /\b<<CONTROL SENT:\s*(\d+)\s+\(([^)]+)\)\s*-\s*\(([01]+)\)/i.exec(raw);
-  const payloadBits = controlPayload?.[3] ?? controlUpdated?.[3] ?? processInd?.[3] ?? directIndication?.[4] ?? codeServerControl?.[5] ?? controlSent?.[3] ?? "";
-  const assignmentKind = isIndicationMnemonic || processInd || directIndication ? "indication" : "control";
+  const payloadBits = controlPayload?.[3] ?? controlUpdated?.[3] ?? processInd?.[3] ?? directIndication?.[4] ?? embeddedIndication?.[4] ?? embeddedControl?.[4] ?? codeServerControl?.[5] ?? controlSent?.[3] ?? "";
+  const assignmentKind = isIndicationMnemonic || processInd || directIndication || embeddedIndication ? "indication" : "control";
   const assignments = assignmentKind === "indication" ? row?.indication_assignments : row?.control_assignments;
   const byPosition = positionMap(assignments);
   const activePositions = payloadBits ? assertedPositions(payloadBits) : [];
@@ -411,7 +469,7 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
     },
     workflow: {
       summary,
-      currentStep: controlPayload?.[1] ?? (controlUpdated ? "CONTROL UPDATED" : processInd ? "PROCESS IND" : directIndication ? "INDICATION" : codeServerControl ? "CONTROL" : controlSent ? "CONTROL SENT" : isControlMnemonic ? "CTL MNEM" : isIndicationMnemonic ? "IND MNEM" : ""),
+      currentStep: controlPayload?.[1] ?? (controlUpdated ? "CONTROL UPDATED" : processInd ? "PROCESS IND" : directIndication || embeddedIndication ? "INDICATION" : embeddedControl || codeServerControl ? "CONTROL" : controlSent ? "CONTROL SENT" : isControlMnemonic ? "CTL MNEM" : isIndicationMnemonic ? "IND MNEM" : ""),
       systems: ["Code line"],
       objects: (stationRow?.station_name ?? station) ? [stationRow?.station_name ?? station] : [],
       knownState: activePositions.length ? "One or more payload bits asserted" : payloadBits ? "All logged payload bits clear" : "",
@@ -502,6 +560,83 @@ function makeSocketRawFrameDetail(line: ParsedLine): DetailModel | null {
     payloadContext,
     sourceReferences: [
       sourceReference("genisys_shared_decoder", "Shared Genisys frame decoder", "app/shared/genisys.ts", "Used by both Electron/server detail generation and GitHub static mode."),
+    ],
+  };
+}
+
+function makeCadFeedbackProblemDetail(line: ParsedLine): DetailModel | null {
+  const problemMatch = /\b(?:FEEDBACK:)?\s*SWITCH ALIGNMENT ERROR:\s*([^(<]+?)\s*\((\d+)\)\s*<([^>]*)>/i.exec(line.raw);
+  if (!problemMatch) return null;
+  const reportedName = problemMatch[1].trim();
+  const signalUid = problemMatch[2].trim();
+  const fields = problemMatch[3];
+  const switchUid = /Switch\s+GUID\s*:\s*(\d+)/i.exec(fields)?.[1] ?? "";
+  const normalState = /NORMAL\s*:\s*([A-Za-z0-9_-]+)/i.exec(fields)?.[1] ?? "";
+  const reverseState = /REVERSE\s*:\s*([A-Za-z0-9_-]+)/i.exec(fields)?.[1] ?? "";
+  const signalComponent = findComponentRow(signalUid);
+  const switchComponent = findComponentRow(switchUid);
+  const stationRow = getComponentStationRow(signalComponent) ?? getComponentStationRow(switchComponent);
+  const assignmentRow = getComponentAssignmentRow(switchComponent) ?? getComponentAssignmentRow(signalComponent);
+  const switchControlAssignments = (assignmentRow?.control_assignments ?? [])
+    .filter((assignment) => /(?:NWS|RWS|NORMAL SWITCH|REVERSE SWITCH)/i.test(`${assignment.mnemonic} ${assignment.long_name}`))
+    .slice(0, 8)
+    .map((assignment) => `Switch control assignment: bit ${assignment.bit_position} ${assignmentLabel(assignment)}`);
+  const switchIndicationAssignments = (assignmentRow?.indication_assignments ?? [])
+    .filter((assignment) => /(?:NWK|RWK|NORMAL SWITCH|REVERSE SWITCH)/i.test(`${assignment.mnemonic} ${assignment.long_name}`))
+    .slice(0, 8)
+    .map((assignment) => `Switch indication assignment: bit ${assignment.bit_position} ${assignmentLabel(assignment)}`);
+  const structured = [
+    line.source ? `File: ${getFileLabel(line.source)}` : "",
+    line.timestamp ? `Timestamp: ${line.timestamp}` : "",
+    `Problem: switch alignment error`,
+    `Reported signal: ${reportedName} (${signalUid})`,
+    signalComponent ? `Resolved signal asset: ${describeComponent(signalComponent)}` : `Signal asset unresolved: ${signalUid}`,
+    switchUid ? `Reported switch GUID: ${switchUid}` : "",
+    switchComponent ? `Resolved switch asset: ${describeComponent(switchComponent)}` : switchUid ? `Switch asset unresolved: ${switchUid}` : "",
+    normalState ? `NORMAL flag: ${normalState}` : "",
+    reverseState ? `REVERSE flag: ${reverseState}` : "",
+    stationRow?.station_name ? `Station: ${stationRow.station_name}` : "",
+    stationRow?.control_point_number ? `Control point: ${stationRow.control_point_number} (${stationRow.control_point_name ?? stationRow.station_name ?? ""})`.replace(/\s+\(\)$/, "") : "",
+    stationRow?.subdivision_name ? `Subdivision: ${stationRow.subdivision_name}` : "",
+    stationRow?.code_line_number ? `Code line ${stationRow.code_line_number}: ${stationRow.code_line_name ?? ""}`.replace(/\s+$/, "") : "",
+    ...switchControlAssignments,
+    ...switchIndicationAssignments,
+  ].filter(Boolean);
+  const summary = `CAD logged switch alignment error for ${reportedName} (${signalUid})${switchComponent ? ` involving ${switchComponent.component_name ?? "switch"} (${switchUid})` : switchUid ? ` involving switch ${switchUid}` : ""}.`;
+
+  return {
+    lineId: line.id,
+    lineNumber: line.lineNumber,
+    timestamp: line.timestamp,
+    raw: line.raw,
+    translation: {
+      original: line.raw,
+      structured,
+      english: [summary],
+      unresolved: [
+        signalComponent ? "" : `Signal UID ${signalUid} was not found in bundled component lookup.`,
+        switchUid && !switchComponent ? `Switch UID ${switchUid} was not found in bundled component lookup.` : "",
+      ].filter(Boolean),
+    },
+    workflow: {
+      summary,
+      currentStep: "SWITCH ALIGNMENT ERROR",
+      systems: ["CAD", "Code Server", "Field indication"],
+      objects: [stationRow?.station_name ?? "", reportedName, switchComponent?.component_name ?? ""].filter(Boolean),
+      knownState: [normalState ? `NORMAL=${normalState}` : "", reverseState ? `REVERSE=${reverseState}` : ""].filter(Boolean).join("; "),
+      unresolved: signalComponent && (!switchUid || switchComponent) ? [] : ["One or more component UIDs did not resolve from bundled static data."],
+    },
+    genisysContext: [],
+    icdContext: [],
+    databaseContext: structured,
+    workflowContext: [
+      "The workstation log reports a switch alignment error from feedback, not a normal received indication.",
+      switchComponent ? `Switch GUID ${switchUid} resolves to ${switchComponent.component_name ?? "switch"} under ${stationRow?.station_name ?? "the parent control point"}.` : "",
+    ].filter(Boolean),
+    payloadContext: structured,
+    sourceReferences: [
+      sourceReference("component_lookup", "Raw static component lookup", "exports/raw/sql_foundation/tmdsDatabaseStatic.component_lookup.json", "Used to resolve signal and switch UIDs in CAD feedback errors."),
+      sourceReference("code_station_assignment_map", "Normalized code station assignment map", "exports/normalized/code_station_assignment_map.json", "Used to show related switch control/indication assignments for the parent control point."),
     ],
   };
 }
@@ -702,8 +837,9 @@ function makeStaticBrowserDetail(line: ParsedLine, lines: ParsedLine[], index: n
     makeBocSystemStatsDetail(line) ??
     makeIcdJsonDetail(line) ??
     makeBocBosProcessingDetail(line) ??
+    makeCadFeedbackProblemDetail(line) ??
     makeSocketRawFrameDetail(line) ??
-    (/\b(IND MNEM|CTL MNEM|SendControl|ProcessControlBegin|CONTROL UPDATED|PROCESS IND|INDICATION;|CONTROL SENT|CONTROL(?:\s+UPDATE\s+ONLY)?:)\b/i.test(line.raw)
+    (/\b(IND MNEM|CTL MNEM|SendControl|ProcessControlBegin|CONTROL UPDATED|PROCESS IND|INDICATION;|CONTROL;|CONTROL SENT|CONTROL(?:\s+UPDATE\s+ONLY)?:)\b/i.test(line.raw)
       ? makeStaticDetail(line, lines, index)
       : null)
   );

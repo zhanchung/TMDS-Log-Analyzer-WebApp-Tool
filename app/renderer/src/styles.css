@@ -1589,6 +1589,16 @@ p {
   color: #ffd08a;
 }
 
+.log-line-problem {
+  background: linear-gradient(90deg, rgba(255, 102, 102, 0.2), rgba(15, 20, 29, 0.98) 28%);
+  border-color: rgba(255, 102, 102, 0.48);
+}
+
+.log-line-problem .line-no,
+.log-line-problem .line-raw {
+  color: #ffb0b0;
+}
+
 .log-line-office.selected,
 .log-line-field.selected {
   box-shadow: inset 0 0 0 1px rgba(159, 214, 184, 0.24);
