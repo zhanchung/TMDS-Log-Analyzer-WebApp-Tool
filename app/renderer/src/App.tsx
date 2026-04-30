@@ -3449,6 +3449,18 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     ].filter((tab) => !tab.hidden && (tab.key === "details" || tab.content.trim().length > 0));
   }, [detail, referenceSession, selectedCodeServerIssue, workflowAnchorDetail, workflowViewerMode]);
 
+  const selectedWatchWorkflowDetail = useMemo(() => {
+    if (referenceSession || activeTab !== "workflow" || !selected || !detail || !selectedCodeServerIssue) {
+      return null;
+    }
+    if (selectedCodeServerIssue.lineId !== selected.id && selectedCodeServerIssue.responseLineId !== selected.id) {
+      return null;
+    }
+    return buildCodeServerIssueDetail(selectedCodeServerIssue, selected, lineDetails[selected.id] ?? detail);
+  // buildCodeServerIssueDetail closes over lines and lineLookup; include them so the memo stays fresh after a new file loads
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeTab, detail, lineDetails, lines, lineLookup, referenceSession, selected, selectedCodeServerIssue]);
+
   useEffect(() => {
     if (tabs.length && !tabs.some((tab) => tab.key === activeTab)) {
       setActiveTab(tabs[0].key);
@@ -4205,7 +4217,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     selectedLineIdRef.current = target.id;
     autoScrolledSelectedLineIdRef.current = null;
-    const baseDetail = lineDetails[target.id] ?? makeFallbackDetail(target);
+    const staticDetail = localOnlyMode && !lineDetails[target.id] ? buildStaticDetailForLine(lines, target, lineLookup.indexById.get(target.id)) : null;
+    const baseDetail = lineDetails[target.id] ?? staticDetail ?? makeFallbackDetail(target);
     setSelected(target);
     setSelectedCodeServerIssue(issue);
     setDetail(baseDetail);
@@ -4218,10 +4231,6 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }
 
   function openDetailTab(tabKey: string) {
-    if (tabKey === "workflow" && selected && selectedCodeServerIssue && (selectedCodeServerIssue.lineId === selected.id || selectedCodeServerIssue.responseLineId === selected.id)) {
-      const baseDetail = lineDetails[selected.id] ?? detail ?? makeFallbackDetail(selected);
-      setDetail(buildCodeServerIssueDetail(selectedCodeServerIssue, selected, baseDetail));
-    }
     setActiveTab(tabKey);
   }
 
@@ -4258,7 +4267,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const nextScrollTop = Math.min(maxScrollTop, Math.max(0, currentScrollTop + physicalDelta));
     logListScrollTopRef.current = nextScrollTop;
     node.scrollTop = nextScrollTop;
-    setLogListScrollTop(nextScrollTop);
+    // onScroll fires synchronously from the scrollTop assignment above and calls setLogListScrollTop there
   }
 
   useEffect(() => {
@@ -5071,9 +5080,6 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
       ? { className: "status-chip error", text: workspaceError, title: workspaceError }
       : null;
   const workflowTabActive = !referenceSession && activeTab === "workflow";
-  const selectedWatchWorkflowDetail = workflowTabActive && selected && detail && selectedCodeServerIssue && (selectedCodeServerIssue.lineId === selected.id || selectedCodeServerIssue.responseLineId === selected.id)
-    ? buildCodeServerIssueDetail(selectedCodeServerIssue, selected, lineDetails[selected.id] ?? detail)
-    : null;
   const runtimeTabDetail = workflowTabActive
     ? selectedWatchWorkflowDetail ?? workflowAnchorDetail ?? detail
     : detail;
