@@ -2839,6 +2839,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   const previousNonReferenceWorkspaceRef = useRef<WorkspaceSnapshot | null>(null);
   const selectedLineIdRef = useRef<string | null>(null);
   const autoScrolledSelectedLineIdRef = useRef<string | null>(null);
+  const lastAppliedTimeWindowKeyRef = useRef("");
   const logListRef = useRef<HTMLDivElement | null>(null);
   const finderResultsListRef = useRef<HTMLDivElement | null>(null);
   const finderInputRef = useRef<HTMLInputElement | null>(null);
@@ -3251,6 +3252,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }, [activeSearch, activeSearchPattern, lineDetails, searchActive, timeScopedLines]);
 
   const visible = referenceSession ? referenceVisible : runtimeVisible;
+  const timeWindowKey = `${timeWindowStartMs ?? ""}:${timeWindowEndMs ?? ""}:${lines.length}:${lines[0]?.id ?? ""}`;
   const codeServerIssues = useMemo(
     () => referenceSession ? [] : buildCodeServerIssues(timeScopedLines),
     [referenceSession, timeScopedLines],
@@ -3296,6 +3298,39 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     return { byId, indexById };
   }, [lines]);
+
+  useEffect(() => {
+    if (referenceSession) {
+      lastAppliedTimeWindowKeyRef.current = "";
+      return;
+    }
+    if (!lastAppliedTimeWindowKeyRef.current) {
+      lastAppliedTimeWindowKeyRef.current = timeWindowKey;
+      return;
+    }
+    if (lastAppliedTimeWindowKeyRef.current === timeWindowKey) {
+      return;
+    }
+    lastAppliedTimeWindowKeyRef.current = timeWindowKey;
+    const firstVisible = visible[0] ?? null;
+    if (!firstVisible) {
+      return;
+    }
+    selectedLineIdRef.current = firstVisible.id;
+    autoScrolledSelectedLineIdRef.current = null;
+    setSelected(firstVisible);
+    setDetail(lineDetails[firstVisible.id] ?? makeFallbackDetail(firstVisible));
+    setActiveTab("details");
+    const resetLogViewport = () => {
+      const node = logListRef.current;
+      if (node) {
+        node.scrollTop = 0;
+      }
+      setLogListScrollTop(0);
+    };
+    resetLogViewport();
+    requestAnimationFrame(resetLogViewport);
+  }, [lineDetails, referenceSession, timeWindowKey, visible]);
   const logVirtualMetrics = useMemo(
     () => getVirtualScrollMetrics(visible.length, logRowHeight, logListViewportHeight),
     [logListViewportHeight, visible.length],
@@ -4066,16 +4101,10 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const attemptLine = issue.attemptLineNumbers?.length
       ? `Attempt lines: ${formatAttemptLines(issue.attemptLineNumbers)}`
       : "";
-    const issueLineById = new Map<string, ParsedLine>();
-    const issueLineIndexById = new Map<string, number>();
-    for (let index = 0; index < timeScopedLines.length; index += 1) {
-      issueLineById.set(timeScopedLines[index].id, timeScopedLines[index]);
-      issueLineIndexById.set(timeScopedLines[index].id, index);
-    }
     const relatedEvidenceLines: Array<{ line: ParsedLine; relation: string }> = [];
     for (const attemptLineId of issue.attemptLineIds ?? []) {
       if (attemptLineId !== target.id) {
-        const attemptLineEntry = issueLineById.get(attemptLineId);
+        const attemptLineEntry = lineLookup.byId.get(attemptLineId);
         if (attemptLineEntry) {
           relatedEvidenceLines.push({ line: attemptLineEntry, relation: `Repeated ${issue.kind} attempt before the selected watch line.` });
         }
@@ -4089,13 +4118,27 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
           : `Later field response matched the pending ${issue.kind} request.`,
       });
     }
-    const evidenceLines = buildCodeServerEvidence(timeScopedLines, issueLineIndexById, target, issue.station, relatedEvidenceLines);
+    const evidenceLines = buildCodeServerEvidence(lines, lineLookup.indexById, target, issue.station, relatedEvidenceLines);
     const workflowEvidence = evidenceLines.map((entry) => (
-      `Evidence L${entry.lineNumber}${entry.timestamp ? ` ${entry.timestamp}` : ""} (${entry.deltaLabel}): ${entry.relation} ${stripLeadingViewerTimestamp(entry.raw)}`
+      `${entry.deltaLabel}: L${entry.lineNumber}${entry.timestamp ? ` at ${entry.timestamp}` : ""} - ${entry.relation} Raw: ${stripLeadingViewerTimestamp(entry.raw)}`
     ));
     const payloadEvidence = evidenceLines.map((entry) => (
       `L${entry.lineNumber} bytes ${firstGenisysByte(entry.raw) || "n/a"}: ${stripLeadingViewerTimestamp(entry.raw)}`
     ));
+    const outcome = issue.status === "missing-office-ack"
+      ? "Missing office acknowledgement after a field frame"
+      : issue.status === "missing-response"
+        ? `Missing field response after ${issue.kind} request`
+        : issue.status === "response-received"
+          ? "Response or acknowledgement received"
+          : "Problem text observed in the log";
+    const reason = issue.status === "missing-office-ack"
+      ? "This is flagged because the selected field-to-office frame has no later office FA acknowledgement in the scanned log window. A prior FA does not count because it happened before the selected field frame."
+      : issue.status === "missing-response"
+        ? `This is flagged because the office sent ${issue.recallCount > 1 ? `${issue.recallCount} ${issue.kind} attempts` : `a ${issue.kind} request`} and no later matching field response was found in the scanned log window.`
+        : issue.status === "response-received"
+          ? "This is shown because the tool matched the request with a later response/acknowledgement and measured the elapsed time."
+          : "This is shown because the raw log line contains explicit problem text. The tool does not infer a root cause unless the log states one.";
 
     return {
       ...baseDetail,
@@ -4127,14 +4170,20 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         ],
       },
       workflowContext: [
-        `Watch status: ${issue.status}`,
+        "Watch result:",
+        `Outcome: ${outcome}`,
         `Station: ${issue.station}`,
         `Direction: ${issue.direction}`,
         `Message kind: ${issue.kind}`,
-        issue.summary,
-        attemptLine,
-        acknowledgementLineText,
+        `Summary: ${issue.summary}`,
+        attemptLine ? `Attempts: ${attemptLine.replace(/^Attempt lines:\s*/i, "")}` : "",
+        acknowledgementLineText ? `Acknowledgement/response: ${acknowledgementLineText}` : "",
         elapsedLine,
+        "",
+        "Why this is flagged:",
+        reason,
+        "",
+        "Evidence timeline:",
         ...workflowEvidence,
         ...(baseDetail.workflowContext ?? []),
       ].filter(Boolean),
@@ -4171,15 +4220,11 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     selectedLineIdRef.current = target.id;
     autoScrolledSelectedLineIdRef.current = null;
-    const staticDetail = localOnlyMode && !lineDetails[target.id] ? buildStaticDetailForLine(lines, target, lineLookup.indexById.get(target.id)) : null;
-    const baseDetail = lineDetails[target.id] ?? staticDetail ?? makeFallbackDetail(target);
+    const baseDetail = lineDetails[target.id] ?? makeFallbackDetail(target);
     const issueDetail = buildCodeServerIssueDetail(issue, target, baseDetail);
     setSelected(target);
     setDetail(issueDetail);
     setActiveTab("workflow");
-    startTransition(() => {
-      setLineDetails((current) => ({ ...current, [target.id]: issueDetail }));
-    });
     const selectedIndex = visible.findIndex((candidate) => candidate.id === target.id);
     requestWarmLineDetails(selectedIndex >= 0
       ? visible.slice(Math.max(0, selectedIndex - 80), Math.min(visible.length, selectedIndex + 81))
