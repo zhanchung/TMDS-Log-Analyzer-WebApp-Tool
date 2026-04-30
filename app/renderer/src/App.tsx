@@ -1,5 +1,5 @@
 import { Fragment, startTransition, useEffect, useMemo, useRef, useState } from "react";
-import type { Dispatch, DragEvent, ReactNode, SetStateAction } from "react";
+import type { Dispatch, DragEvent, ReactNode, SetStateAction, WheelEvent } from "react";
 import type { DetailModel, ParsedLine, ReferenceArtifact, ReferenceChoiceGroup, ReferenceChoiceItem, ReferenceDiagram, SearchConfig, SessionData, WorkflowRelatedDetail, WorkspaceProgress } from "@shared/types";
 import type { WorkspaceMenuCommand } from "@shared/native-api";
 import { buildStaticDetailForLine, buildStaticReferenceSession, buildStaticReviewSampleSession, ingestBrowserFilesLocally } from "@shared/browser-parser";
@@ -592,6 +592,7 @@ type VirtualScrollMetrics = {
   physicalTotalHeight: number;
   logicalToPhysical: (logicalTop: number) => number;
   physicalToLogical: (physicalTop: number) => number;
+  logicalDeltaToPhysical: (logicalDelta: number) => number;
 };
 
 function getVirtualScrollMetrics(rowCount: number, rowHeight: number, viewportHeight: number): VirtualScrollMetrics {
@@ -606,6 +607,7 @@ function getVirtualScrollMetrics(rowCount: number, rowHeight: number, viewportHe
     physicalTotalHeight,
     logicalToPhysical: (logicalTop: number) => scale === 1 ? logicalTop : logicalTop / scale,
     physicalToLogical: (physicalTop: number) => scale === 1 ? physicalTop : physicalTop * scale,
+    logicalDeltaToPhysical: (logicalDelta: number) => scale === 1 ? logicalDelta : logicalDelta / scale,
   };
 }
 
@@ -2836,6 +2838,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   const [workflowAnchor, setWorkflowAnchor] = useState<{ lineId: string; detail: DetailModel } | null>(null);
   const previousNonReferenceWorkspaceRef = useRef<WorkspaceSnapshot | null>(null);
   const selectedLineIdRef = useRef<string | null>(null);
+  const autoScrolledSelectedLineIdRef = useRef<string | null>(null);
   const logListRef = useRef<HTMLDivElement | null>(null);
   const finderResultsListRef = useRef<HTMLDivElement | null>(null);
   const finderInputRef = useRef<HTMLInputElement | null>(null);
@@ -3982,6 +3985,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
 
   function selectLine(line: ParsedLine) {
     selectedLineIdRef.current = line.id;
+    autoScrolledSelectedLineIdRef.current = null;
     const staticDetail = localOnlyMode && !lineDetails[line.id] ? buildStaticDetailForLine(lines, line, lineLookup.indexById.get(line.id)) : null;
     setSelected(line);
     setDetail(lineDetails[line.id] ?? staticDetail ?? makeFallbackDetail(line));
@@ -4008,6 +4012,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       setActiveSource("all");
     }
     selectLine(target);
+    autoScrolledSelectedLineIdRef.current = target.id;
     const targetIndex = visible.findIndex((candidate) => candidate.id === target.id);
     if (targetIndex >= 0) {
       const targetTop = Math.max(0, logVirtualMetrics.logicalToPhysical((targetIndex * logRowHeight) - 120));
@@ -4033,8 +4038,35 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     selectLine(target);
   }
 
+  function handleLogListWheel(event: WheelEvent<HTMLDivElement>) {
+    if (referenceSession) {
+      return;
+    }
+    const node = logListRef.current;
+    if (!node) {
+      return;
+    }
+    const logicalDelta = event.deltaMode === 1
+      ? event.deltaY * logRowHeight
+      : event.deltaMode === 2
+        ? event.deltaY * Math.max(logListViewportHeight, logRowHeight)
+        : event.deltaY;
+    const physicalDelta = logVirtualMetrics.logicalDeltaToPhysical(logicalDelta);
+    if (physicalDelta === logicalDelta) {
+      return;
+    }
+    event.preventDefault();
+    const maxScrollTop = Math.max(0, logVirtualMetrics.physicalTotalHeight - node.clientHeight);
+    const nextScrollTop = Math.min(maxScrollTop, Math.max(0, node.scrollTop + physicalDelta));
+    node.scrollTop = nextScrollTop;
+    setLogListScrollTop(nextScrollTop);
+  }
+
   useEffect(() => {
     if (referenceSession || !selected) {
+      return;
+    }
+    if (autoScrolledSelectedLineIdRef.current === selected.id) {
       return;
     }
     const node = logListRef.current;
@@ -4055,7 +4087,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const centeredTop = Math.max(0, targetTop - Math.max(0, Math.floor((node.clientHeight - logRowHeight) / 2)));
     node.scrollTop = centeredTop;
     setLogListScrollTop(centeredTop);
-  }, [logVirtualMetrics, referenceSession, selected, visible]);
+    autoScrolledSelectedLineIdRef.current = selected.id;
+  }, [referenceSession, selected?.id]);
 
   async function loadLineDetail(line: ParsedLine) {
     if (referenceSession || lineDetails[line.id] || loadingLineDetailId === line.id) {
@@ -4385,8 +4418,9 @@ type CodeServerIssue = {
   station: string;
   kind: string;
   direction: "office-to-field" | "field-to-office";
-  status: "missing-response" | "response-received" | "missing-office-ack";
+  status: "missing-response" | "response-received" | "missing-office-ack" | "error-observed";
   recallCount: number;
+  attemptLineNumbers?: number[];
   summary: string;
 };
 
@@ -4451,28 +4485,69 @@ function isFieldResponseFor(line: ParsedLine, request: { station: string; kind: 
   return false;
 }
 
+function getCodeServerProblemText(raw: string): string {
+  const normalized = stripLeadingViewerTimestamp(raw).replace(/\s+/g, " ").trim();
+  const problem = /\b(?:ERROR|ERR|FAILED|FAILURE|TIMEOUT|TIMED OUT|NAK|NACK|REJECTED|DENIED|INVALID|CRC)\b[:\s-]*(.*)$/i.exec(normalized);
+  if (!problem) {
+    return "";
+  }
+  const suffix = problem[1]?.trim();
+  return suffix ? `${problem[0].split(/[:\s-]/)[0].toUpperCase()}: ${suffix}` : problem[0].trim();
+}
+
+function formatAttemptLines(lines: number[]): string {
+  if (!lines.length) {
+    return "";
+  }
+  if (lines.length <= 4) {
+    return lines.map((line) => `L${line}`).join(", ");
+  }
+  return `${lines.slice(0, 2).map((line) => `L${line}`).join(", ")} ... ${lines.slice(-2).map((line) => `L${line}`).join(", ")}`;
+}
+
 function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   const pendingOfficeByStation = new Map<string, Array<CodeServerIssue & { station: string; kind: string }>>();
   const pendingFieldByStation = new Map<string, Array<{ line: ParsedLine; station: string; kind: string }>>();
   const resolved: CodeServerIssue[] = [];
+  const observedProblems: CodeServerIssue[] = [];
   const fieldResponses = new Set<string>();
   for (const line of lines) {
     const direction = getCodeServerDirection(line);
     const station = normalizeCodeServerStation(line.raw);
     const pendingOffice = station ? pendingOfficeByStation.get(station) ?? [] : [];
-    for (let index = pendingOffice.length - 1; index >= 0; index -= 1) {
-      const request = pendingOffice[index];
-      if (isFieldResponseFor(line, request)) {
-        resolved.push({
-          ...request,
-          responseLineId: line.id,
-          responseLineNumber: line.lineNumber,
-          status: "response-received",
-          summary: `${request.kind} response returned at line ${line.lineNumber}; ${request.recallCount} recall/request attempt${request.recallCount === 1 ? "" : "s"} before response.`,
-        });
-        fieldResponses.add(line.id);
-        pendingOffice.splice(index, 1);
+    const matchedOfficeRequests = pendingOffice.filter((request) => isFieldResponseFor(line, request));
+    if (matchedOfficeRequests.length) {
+      const firstRequest = matchedOfficeRequests[0];
+      const attemptLineNumbers = matchedOfficeRequests.map((request) => request.lineNumber);
+      resolved.push({
+        ...firstRequest,
+        responseLineId: line.id,
+        responseLineNumber: line.lineNumber,
+        status: "response-received",
+        recallCount: matchedOfficeRequests.length,
+        attemptLineNumbers,
+        summary: `${firstRequest.kind} response returned at line ${line.lineNumber} after ${matchedOfficeRequests.length} office attempt${matchedOfficeRequests.length === 1 ? "" : "s"} (${formatAttemptLines(attemptLineNumbers)}).`,
+      });
+      fieldResponses.add(line.id);
+      for (let index = pendingOffice.length - 1; index >= 0; index -= 1) {
+        if (matchedOfficeRequests.some((request) => request.key === pendingOffice[index].key)) {
+          pendingOffice.splice(index, 1);
+        }
       }
+    }
+    const problemText = getCodeServerProblemText(line.raw);
+    if (problemText && station) {
+      observedProblems.push({
+        key: `${line.id}:problem`,
+        lineId: line.id,
+        lineNumber: line.lineNumber,
+        station,
+        kind: direction === "field" ? "field problem" : direction === "office" ? "office problem" : "problem",
+        direction: direction === "field" ? "field-to-office" : "office-to-field",
+        status: "error-observed",
+        recallCount: 0,
+        summary: `Observed problem text in ${direction === "field" ? "field" : direction === "office" ? "office" : "code server"} line: ${problemText}`,
+      });
     }
     if (direction === "office" && firstGenisysByte(line.raw) === "FA") {
       const pendingField = station ? pendingFieldByStation.get(station) ?? [] : [];
@@ -4495,6 +4570,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
         direction: "office-to-field",
         status: "missing-response",
         recallCount: priorRecallCount + 1,
+        attemptLineNumbers: [line.lineNumber],
         summary: request.summary,
       });
       pendingOfficeByStation.set(request.station, pendingForStation);
@@ -4512,10 +4588,23 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
   }
   const pendingOffice = Array.from(pendingOfficeByStation.values()).flat();
   const pendingField = Array.from(pendingFieldByStation.values()).flat();
-  const missingOffice = pendingOffice.map((request) => ({
-    ...request,
-    summary: `${request.kind} from office has no later field response in the scanned log window.`,
-  }));
+  const missingOfficeGroups = new Map<string, Array<CodeServerIssue & { station: string; kind: string }>>();
+  for (const request of pendingOffice) {
+    const key = `${request.station}:${request.kind}`;
+    missingOfficeGroups.set(key, [...(missingOfficeGroups.get(key) ?? []), request]);
+  }
+  const missingOffice = Array.from(missingOfficeGroups.values()).map((requests) => {
+    const firstRequest = requests[0];
+    const attemptLineNumbers = requests.map((request) => request.lineNumber);
+    return {
+      ...firstRequest,
+      lineId: requests[requests.length - 1].lineId,
+      lineNumber: requests[requests.length - 1].lineNumber,
+      recallCount: requests.length,
+      attemptLineNumbers,
+      summary: `${requests.length} ${firstRequest.kind} attempt${requests.length === 1 ? "" : "s"} from office (${formatAttemptLines(attemptLineNumbers)}) with no later field response in the scanned log window.`,
+    };
+  });
   const missingField = pendingField.slice(-12).map(({ line, station, kind }) => ({
     key: `${line.id}:field-ack`,
     lineId: line.id,
@@ -4527,7 +4616,7 @@ function buildCodeServerIssues(lines: ParsedLine[]): CodeServerIssue[] {
     recallCount: 0,
     summary: "Field message has no later office acknowledgement in the scanned log window.",
   }));
-  return [...missingOffice, ...missingField, ...resolved.slice(-24)]
+  return [...missingOffice, ...missingField, ...observedProblems.slice(-24), ...resolved.slice(-24)]
     .sort((left, right) => right.lineNumber - left.lineNumber)
     .slice(0, 24);
 }
@@ -5390,7 +5479,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                   <span>{codeServerIssues.length} recent event{codeServerIssues.length === 1 ? "" : "s"}</span>
                 </div>
                 <div className="code-server-issue-list">
-                  {codeServerIssues.slice(0, 8).map((issue) => (
+                  {codeServerIssues.map((issue) => (
                     <button
                       key={issue.key}
                       type="button"
@@ -5399,7 +5488,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
                       title={issue.responseLineNumber ? `Jump to response line ${issue.responseLineNumber}` : `Jump to line ${issue.lineNumber}`}
                     >
                       <span className="code-server-issue-line">
-                        {issue.responseLineNumber ? `L${issue.lineNumber}->L${issue.responseLineNumber}` : `Line ${issue.lineNumber}`}
+                        {issue.responseLineNumber ? `L${issue.lineNumber}->L${issue.responseLineNumber}` : issue.recallCount > 1 ? `${issue.recallCount} tries` : `Line ${issue.lineNumber}`}
                       </span>
                       <span className="code-server-issue-kind">{issue.kind}</span>
                       <span className="code-server-issue-station">{issue.station}</span>
@@ -5413,6 +5502,7 @@ async function onDrop(event: DragEvent<HTMLDivElement>) {
               ref={logListRef}
               className="log-list"
               role="list"
+              onWheel={handleLogListWheel}
               onScroll={(event) => setLogListScrollTop(event.currentTarget.scrollTop)}
             >
               {visible.length ? (

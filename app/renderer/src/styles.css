@@ -1620,6 +1620,9 @@ p {
 .code-server-issue-list {
   display: grid;
   gap: 4px;
+  max-height: 196px;
+  overflow: auto;
+  padding-right: 2px;
 }
 
 .code-server-issue {
@@ -1671,6 +1674,16 @@ p {
 .code-server-issue-missing-response,
 .code-server-issue-missing-office-ack {
   border-color: rgba(255, 176, 74, 0.3);
+}
+
+.code-server-issue-error-observed {
+  border-color: rgba(255, 102, 102, 0.38);
+  background: rgba(255, 102, 102, 0.08);
+}
+
+.code-server-issue-error-observed .code-server-issue-line,
+.code-server-issue-error-observed .code-server-issue-kind {
+  color: #ffb0b0;
 }
 
 .parsed-files-label {
