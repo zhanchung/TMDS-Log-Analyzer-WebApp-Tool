@@ -1059,7 +1059,21 @@ function buildDetailsPayloadSummaryLines(detail: DetailModel): string[] {
   const lines = getPayloadContextLines(detail);
   const payloadBits = lines.find((line) => /^Payload bits:/i.test(line));
   const assertedPositions = lines.find((line) => /^Asserted (?:payload )?positions(?: before clear)?:/i.test(line));
-  const summaryRows = [payloadBits, assertedPositions].filter((line): line is string => Boolean(line));
+
+  const decodedNames = lines
+    .filter((line) => /^Active assignment:\s*\d+\.\s*.+/i.test(line))
+    .map((line) => {
+      const stripped = line.replace(/^Active assignment:\s*\d+\.\s*/i, "").trim();
+      const dashAt = stripped.indexOf(" - ");
+      return dashAt >= 0 ? `${stripped.slice(0, dashAt)} (${stripped.slice(dashAt + 3)})` : stripped;
+    })
+    .filter((name) => name && name !== "unmapped");
+
+  const summaryRows = [
+    payloadBits,
+    assertedPositions,
+    decodedNames.length ? `Asserted bit names: ${decodedNames.join(", ")}` : "",
+  ].filter((line): line is string => Boolean(line));
 
   return summaryRows.length ? ["Payload:", ...summaryRows] : [];
 }
