@@ -296,6 +296,15 @@ function sourceReference(id: string, title: string, path: string, notes: string)
   };
 }
 
+function resolvedLongName(entry: AssignmentEntry): string {
+  const mnemonic = String(entry.mnemonic || "BLANK").trim().toUpperCase();
+  const longName = String(entry.long_name || "").trim();
+  if (longName && longName.toUpperCase() !== mnemonic) {
+    return longName;
+  }
+  return inferDescriptionFromMnemonic(mnemonic) || longName || mnemonic;
+}
+
 function inferDescriptionFromMnemonic(mnemonic: string): string {
   const m = mnemonic.toUpperCase();
   if (m === "TIMERST") return "TIMER RESET";
@@ -471,13 +480,13 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
   const controlBitLines: string[] = nonBlankControlEntries.length
     ? [
         "Control bits:",
-        ...nonBlankControlEntries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
+        ...nonBlankControlEntries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${resolvedLongName(entry)}`),
       ]
     : [];
   const indicationBitLines: string[] = nonBlankIndicationEntries.length
     ? [
         "Indication bits:",
-        ...nonBlankIndicationEntries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`),
+        ...nonBlankIndicationEntries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${resolvedLongName(entry)}`),
       ]
     : [];
   const databaseContext = [
@@ -618,10 +627,10 @@ function makeSocketRawFrameDetail(line: ParsedLine): DetailModel | null {
   const nonBlankControls = nonBlankAssignments(row?.control_assignments);
   const nonBlankIndications = nonBlankAssignments(row?.indication_assignments);
   const controlBitLines: string[] = nonBlankControls.length
-    ? ["Control bits:", ...nonBlankControls.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
+    ? ["Control bits:", ...nonBlankControls.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${resolvedLongName(entry)}`)]
     : [];
   const indicationBitLines: string[] = nonBlankIndications.length
-    ? ["Indication bits:", ...nonBlankIndications.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${entry.long_name || entry.mnemonic}`)]
+    ? ["Indication bits:", ...nonBlankIndications.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${resolvedLongName(entry)}`)]
     : [];
   const databaseContext = [...structured, ...controlBitLines, ...indicationBitLines];
   // Determine payload kind for word/bit decoding

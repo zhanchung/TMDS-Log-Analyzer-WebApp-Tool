@@ -1063,11 +1063,13 @@ function buildDetailsPayloadSummaryLines(detail: DetailModel): string[] {
   const decodedNames = lines
     .filter((line) => /^Active assignment:\s*\d+\.\s*.+/i.test(line))
     .map((line) => {
-      const stripped = line.replace(/^Active assignment:\s*\d+\.\s*/i, "").trim();
-      const dashAt = stripped.indexOf(" - ");
-      return dashAt >= 0 ? `${stripped.slice(0, dashAt)} (${stripped.slice(dashAt + 3)})` : stripped;
+      const match = /^Active assignment:\s*(\d+)\.\s*(\S+)(?:\s+-\s+(.+))?$/i.exec(line.trim());
+      if (!match) return "";
+      const pos = match[1];
+      const desc = (match[3] ?? match[2]).trim();
+      return desc && desc !== "unmapped" ? `${pos}. ${desc}` : "";
     })
-    .filter((name) => name && name !== "unmapped");
+    .filter(Boolean);
 
   const summaryRows = [
     payloadBits,
