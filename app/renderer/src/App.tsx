@@ -4065,6 +4065,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     const targetTop = Math.max(0, logVirtualMetrics.logicalToPhysical(logicalTop));
     logListScrollTopRef.current = targetTop;
     programmaticLogScrollRef.current = { top: targetTop, until: performance.now() + 500 };
+    autoScrolledSelectedLineIdRef.current = lineId;
     setLogListScrollTop(targetTop);
     requestAnimationFrame(() => {
       const node = logListRef.current;
@@ -4280,8 +4281,8 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       ? event.deltaY
       : event.deltaMode === 2
         ? event.deltaY * Math.max(1, Math.floor(logListViewportHeight / logRowHeight))
-        : event.deltaY / 96;
-    const signedRows = rawRows === 0 ? 0 : Math.sign(rawRows) * Math.max(1, Math.min(6, Math.abs(rawRows)));
+        : event.deltaY / logRowHeight;
+    const signedRows = rawRows === 0 ? 0 : Math.sign(rawRows) * Math.min(10, Math.abs(rawRows));
     const logicalDelta = signedRows * logRowHeight;
     const physicalDelta = logVirtualMetrics.logicalDeltaToPhysical(logicalDelta);
     const maxScrollTop = Math.max(0, logVirtualMetrics.physicalTotalHeight - node.clientHeight);

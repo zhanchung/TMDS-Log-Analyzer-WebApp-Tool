@@ -296,11 +296,33 @@ function sourceReference(id: string, title: string, path: string, notes: string)
   };
 }
 
+function inferDescriptionFromMnemonic(mnemonic: string): string {
+  const m = mnemonic.toUpperCase();
+  if (m.endsWith("LOK")) return "LIGHT OUT INDICATION";
+  if (m.endsWith("POK")) return "POWER OFF INDICATION";
+  if (m.endsWith("DOK")) return "ILLEGAL ENTRY INDICATION";
+  if (m.endsWith("MOK")) return "MANUAL OPERATE INDICATION";
+  if (m.endsWith("NWK")) return "NORMAL SWITCH INDICATION";
+  if (m.endsWith("RWK")) return "REVERSE SWITCH INDICATION";
+  if (m.endsWith("NWS")) return "NORMAL SWITCH CONTROL";
+  if (m.endsWith("RWS")) return "REVERSE SWITCH CONTROL";
+  if (m.endsWith("EGK") || m.endsWith("WGK") || m.endsWith("TEK")) return "SIGNAL INDICATION";
+  if (m.endsWith("EGS") || m.endsWith("WGS") || m.endsWith("TES")) return "SIGNAL CONTROL";
+  if (m.endsWith("STK") || m.endsWith("ATK")) return "TRACK INDICATION";
+  if (m.endsWith("BLK")) return "BLOCK INDICATION";
+  if (m.endsWith("RTE")) return "ROUTE INDICATION";
+  return "";
+}
+
 function assignmentLabel(entry: AssignmentEntry | undefined): string {
   if (!entry) return "unmapped";
   const mnemonic = entry.mnemonic || "BLANK";
   const longName = entry.long_name || "";
-  return longName && normalizeKey(longName) !== normalizeKey(mnemonic) ? `${mnemonic} - ${longName}` : mnemonic;
+  if (longName && normalizeKey(longName) !== normalizeKey(mnemonic)) {
+    return `${mnemonic} - ${longName}`;
+  }
+  const inferred = inferDescriptionFromMnemonic(mnemonic);
+  return inferred ? `${mnemonic} - ${inferred}` : mnemonic;
 }
 
 function positionMap(entries: AssignmentEntry[] | undefined): Map<number, AssignmentEntry> {
@@ -475,7 +497,6 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
       structured: [
         line.source ? `File: ${getFileLabel(line.source)}` : "",
         line.timestamp ? `Timestamp: ${line.timestamp}` : "",
-        station ? `Nearby station: ${station}` : "",
         ...databaseContext,
       ].filter(Boolean),
       english: [summary],
@@ -505,7 +526,9 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
 }
 
 function isBlankAssignment(entry: AssignmentEntry): boolean {
-  return /^blank$/i.test(String(entry.mnemonic ?? "").trim());
+  const mnemonic = String(entry.mnemonic ?? "").trim().toUpperCase();
+  const longName = String(entry.long_name ?? "").trim().toUpperCase();
+  return mnemonic === "BLANK" || longName === "BLANK" || longName === "BLANK CONTROL" || longName === "BLANK INDICATION";
 }
 
 function nonBlankAssignments(entries: AssignmentEntry[] | undefined): AssignmentEntry[] {

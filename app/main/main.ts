@@ -2531,7 +2531,7 @@ function formatAssignmentCatalog(title: string, entries: CodeAssignmentEntry[]):
   return [
     title,
     `${entries.length} bits total${namedEntries.length !== entries.length ? `, ${namedEntries.length} named, ${blankEntries} blank/unassigned` : ""}`,
-    ...entries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${describeAssignmentLongName(entry)}`),
+    ...namedEntries.map((entry) => `${entry.bit_position}. ${entry.mnemonic} = ${describeAssignmentLongName(entry)}`),
   ];
 }
 
