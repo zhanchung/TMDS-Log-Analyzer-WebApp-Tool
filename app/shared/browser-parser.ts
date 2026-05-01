@@ -298,6 +298,8 @@ function sourceReference(id: string, title: string, path: string, notes: string)
 
 function inferDescriptionFromMnemonic(mnemonic: string): string {
   const m = mnemonic.toUpperCase();
+  if (m === "TIMERST") return "TIMER RESET";
+  if (m === "EGNS") return "TRAIN READY";
   if (m.endsWith("LOK")) return "LIGHT OUT INDICATION";
   if (m.endsWith("POK")) return "POWER OFF INDICATION";
   if (m.endsWith("DOK")) return "ILLEGAL ENTRY INDICATION";
@@ -308,8 +310,14 @@ function inferDescriptionFromMnemonic(mnemonic: string): string {
   if (m.endsWith("RWS")) return "REVERSE SWITCH CONTROL";
   if (m.endsWith("EGK") || m.endsWith("WGK") || m.endsWith("TEK")) return "SIGNAL INDICATION";
   if (m.endsWith("EGS") || m.endsWith("WGS") || m.endsWith("TES")) return "SIGNAL CONTROL";
+  if (m.endsWith("BCAN")) return "BYPASS CANCEL";
+  if (m.endsWith("RQR") || m.endsWith("RQK")) return "REQUEST INDICATION";
+  if (m.endsWith("ATKR")) return "TRACK INDICATION";
   if (m.endsWith("STK") || m.endsWith("ATK")) return "TRACK INDICATION";
+  if (m.endsWith("AK")) return "TRACK INDICATION";
   if (m.endsWith("BLK")) return "BLOCK INDICATION";
+  if (m.endsWith("BK")) return "BLOCK OCCUPANCY INDICATION";
+  if (m.endsWith("TK")) return "TRACK INDICATION";
   if (m.endsWith("RTE")) return "ROUTE INDICATION";
   return "";
 }
