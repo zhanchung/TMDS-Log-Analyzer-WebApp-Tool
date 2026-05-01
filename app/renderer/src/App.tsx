@@ -944,7 +944,7 @@ function makeFallbackDetail(line: ParsedLine): DetailModel {
     },
     workflow: {
       summary: message || line.raw,
-      currentStep: "",
+      currentStep: "Log line",
       systems: [],
       objects: [],
       knownState: "",

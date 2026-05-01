@@ -104,6 +104,11 @@ export function decodeGenisysSocketFrame(payloadBytes: string[]): DecodedGenisys
         ? "request"
         : "unknown";
 
+  // F9 Common Controls is a broadcast single-byte frame — no station address, no CRC, no F6 terminator.
+  if (headerCode === 0xf9) {
+    return { headerCode, headerLabel, protocolDirection, serverAddress: null, crcHex: null, payloadPairs: [], rawPayloadBytes: [], issues };
+  }
+
   const terminatorIndex = bytes.lastIndexOf(0xf6);
   if (terminatorIndex === -1) {
     issues.push("frame terminator 0xF6 was not present");

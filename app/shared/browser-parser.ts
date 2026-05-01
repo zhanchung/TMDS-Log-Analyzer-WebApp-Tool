@@ -773,7 +773,7 @@ function makeBocSystemStatsDetail(line: ParsedLine): DetailModel | null {
     workflowContext: ["BackOfficeControl logs this line as a periodic application/process health record."],
     payloadContext,
     sourceReferences: [
-      sourceReference("music_more_boc", "MORE BOC back-office control logs", "C:/Users/Ji/Music/MORE BOC", "Pattern grounded from local BackOfficeControl EventLog samples."),
+      sourceReference("music_more_boc", "MORE BOC back-office control logs", "sample_logs/curated/boc_sample.log", "Pattern grounded from local BackOfficeControl EventLog samples."),
       sourceReference("mdm_training_boc", "BackOfficeControl training material", "exports/manuals/training/MDM_Training.txt", "Training material describes BOC as the UI/control application for the service-side system."),
     ],
   };
@@ -848,7 +848,7 @@ function makeIcdJsonDetail(line: ParsedLine): DetailModel | null {
     payloadContext,
     sourceReferences: [
       sourceReference("icd_message_catalog", "Bundled ICD message catalog", "exports/mappings/icd_message_catalog.json", "Used when a message ID is present in the bundled catalog."),
-      sourceReference("music_more_boc", "MORE BOC back-office control logs", "C:/Users/Ji/Music/MORE BOC", "Pattern grounded from local BOC/BOS sample lines."),
+      sourceReference("music_more_boc", "MORE BOC back-office control logs", "sample_logs/curated/boc_sample.log", "Pattern grounded from local BOC/BOS sample lines."),
     ],
   };
 }
@@ -912,7 +912,7 @@ function makeBocBosProcessingDetail(line: ParsedLine): DetailModel | null {
     payloadContext,
     sourceReferences: [
       sourceReference("icd_message_catalog", "Bundled ICD message catalog", "exports/mappings/icd_message_catalog.json", "Used when a message ID is present in the bundled catalog."),
-      sourceReference("music_more_boc", "MORE BOC back-office control logs", "C:/Users/Ji/Music/MORE BOC", "Pattern grounded from local BOC/BOS sample lines."),
+      sourceReference("music_more_boc", "MORE BOC back-office control logs", "sample_logs/curated/boc_sample.log", "Pattern grounded from local BOC/BOS sample lines."),
     ],
   };
 }
