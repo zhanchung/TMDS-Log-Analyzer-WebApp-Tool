@@ -1060,21 +1060,23 @@ function buildDetailsPayloadSummaryLines(detail: DetailModel): string[] {
   const payloadBits = lines.find((line) => /^Payload bits:/i.test(line));
   const assertedPositions = lines.find((line) => /^Asserted (?:payload )?positions(?: before clear)?:/i.test(line));
 
-  const decodedNames = lines
+  const decodedBitRows = lines
     .filter((line) => /^Active assignment:\s*\d+\.\s*.+/i.test(line))
     .map((line) => {
       const match = /^Active assignment:\s*(\d+)\.\s*(\S+)(?:\s+-\s+(.+))?$/i.exec(line.trim());
       if (!match) return "";
       const pos = match[1];
-      const desc = (match[3] ?? match[2]).trim();
-      return desc && desc !== "unmapped" ? `${pos}. ${desc}` : "";
+      const mnemonic = match[2];
+      const desc = match[3]?.trim() ?? "";
+      const label = desc && desc !== "unmapped" ? `${mnemonic} - ${desc}` : mnemonic;
+      return label && label !== "unmapped" ? `Bit ${pos}: ${label}` : "";
     })
     .filter(Boolean);
 
   const summaryRows = [
     payloadBits,
     assertedPositions,
-    decodedNames.length ? `Asserted bit names: ${decodedNames.join(", ")}` : "",
+    ...decodedBitRows,
   ].filter((line): line is string => Boolean(line));
 
   return summaryRows.length ? ["Payload:", ...summaryRows] : [];
