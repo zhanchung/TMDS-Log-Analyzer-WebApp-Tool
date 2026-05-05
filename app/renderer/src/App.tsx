@@ -4133,9 +4133,14 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
       });
     }
     const evidenceLines = buildCodeServerEvidence(lines, lineLookup.indexById, target, issue.station, relatedEvidenceLines);
-    const workflowEvidence = evidenceLines.map((entry) => (
-      `${entry.deltaLabel}: L${entry.lineNumber}${entry.timestamp ? ` at ${entry.timestamp}` : ""} - ${entry.relation} Raw: ${stripLeadingViewerTimestamp(entry.raw)}`
-    ));
+    const crossStationLines = evidenceLines.filter((e) => e.relation.startsWith("Socket context"));
+    const crossStationNote = crossStationLines.length > 0
+      ? `Cross-station note: ${crossStationLines.length} line${crossStationLines.length === 1 ? "" : "s"} from other stations are shown below (marked "Socket context"). These show whether the office was actively communicating with other stations during this window — if the office was polling others normally but not getting replies from station ${issue.station}, that points to a station-specific fault rather than a network-wide outage.`
+      : "";
+    const workflowEvidence = evidenceLines.map((entry) => {
+      const stationTag = entry.relation.startsWith("Socket context") ? "[OTHER STATION] " : "[STA " + issue.station + "] ";
+      return `${stationTag}${entry.deltaLabel}: L${entry.lineNumber}${entry.timestamp ? ` at ${entry.timestamp}` : ""} — ${entry.relation}\n  Raw: ${stripLeadingViewerTimestamp(entry.raw)}`;
+    });
     const payloadEvidence = evidenceLines.map((entry) => (
       `L${entry.lineNumber} bytes ${firstGenisysByte(entry.raw) || "n/a"}: ${stripLeadingViewerTimestamp(entry.raw)}`
     ));
@@ -4205,10 +4210,11 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
         "Why this is flagged:",
         reason,
         "",
-        "Evidence timeline (same-station primary lines + nearby cross-station socket traffic context):",
+        crossStationNote,
+        crossStationNote ? "" : null,
+        "Evidence timeline:",
         ...workflowEvidence,
-        ...(baseDetail.workflowContext ?? []),
-      ].filter(Boolean),
+      ].filter((v): v is string => v !== null && v !== undefined && v !== ""),
       payloadContext: [
         `Selected raw line: L${target.lineNumber}${target.timestamp ? ` ${target.timestamp}` : ""}`,
         `Selected first Genisys byte: ${firstGenisysByte(target.raw) || "n/a"}`,
@@ -4400,7 +4406,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
   }
 
   useEffect(() => {
-    if (referenceSession || !selected || workflowViewerMode) {
+    if (referenceSession || !selected || workflowViewerMode || !!selectedCodeServerIssue) {
       return;
     }
     if (activeSource === "all") {
@@ -4413,10 +4419,10 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     if (fallback) {
       selectLine(fallback);
     }
-  }, [activeSource, lineDetails, referenceSession, selected, sourceScopedLines, visible, workflowViewerMode]);
+  }, [activeSource, lineDetails, referenceSession, selected, selectedCodeServerIssue, sourceScopedLines, visible, workflowViewerMode]);
 
   useEffect(() => {
-    if (referenceSession || !selected || workflowViewerMode) {
+    if (referenceSession || !selected || workflowViewerMode || !!selectedCodeServerIssue) {
       return;
     }
     if (visible.some((line) => line.id === selected.id)) {
@@ -4429,7 +4435,7 @@ function AppMain({ authState, onLogout, onOpenAdmin, onOpenAccount, localOnlyMod
     }
     setSelected(null);
     setDetail(null);
-  }, [referenceSession, selected, visible, workflowViewerMode]);
+  }, [referenceSession, selected, selectedCodeServerIssue, visible, workflowViewerMode]);
 
   useEffect(() => {
     if (!referenceSession || activeSource !== "MESSAGE EXCHANGE" || selected || sourceScopedLines.length !== 1) {

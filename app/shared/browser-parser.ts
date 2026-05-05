@@ -514,7 +514,10 @@ function makeStaticDetail(line: ParsedLine, lines: ParsedLine[], index: number):
       structured: [
         line.source ? `File: ${getFileLabel(line.source)}` : "",
         line.timestamp ? `Timestamp: ${line.timestamp}` : "",
-        ...databaseContext,
+        row || stationRow ? `Station: ${stationRow?.station_name ?? row?.station_name}` : station ? `Station: ${station}` : "",
+        row?.control_point_number || stationRow?.control_point_number ? `Control point: ${stationRow?.control_point_number ?? row?.control_point_number} (${stationRow?.control_point_name ?? row?.control_point_name ?? ""})`.replace(/\s+\(\)$/, "") : "",
+        stationRow?.subdivision_name || row?.subdivision_name ? `Subdivision: ${stationRow?.subdivision_name ?? row?.subdivision_name}` : "",
+        row?.code_line_name || stationRow?.code_line_name ? `Code line ${stationRow?.code_line_number ?? row?.code_line_number ?? ""}: ${stationRow?.code_line_name ?? row?.code_line_name ?? ""}`.replace(/^Code line :/, "Code line:") : "",
       ].filter(Boolean),
       english: [summary],
       unresolved: row ? [] : ["No bundled assignment row was resolved for this line's nearby station context."],
